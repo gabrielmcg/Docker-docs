@@ -160,9 +160,7 @@ In the case of one ESX host failure, two nodes are enough to accommodate the amo
 |ucp2| |8| |
 |ucp3| | |8|
 |dtr1|16| | |
-| dtr2
-
- | |16| |
+|dtr2| |16| |
 |dtr3| | |16|
 |worker1|64| | |
 |worker2| |64| |
