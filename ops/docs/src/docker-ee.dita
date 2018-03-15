@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+		<topic id="docker-ee">
+			<title>About Docker Enterprise Edition</title>
+			<body>
+				<p>Docker Enterprise Edition (EE) is a leading enterprise containers-as-a-service (CaaS) software platform for IT that manages and secures diverse applications across disparate infrastructure, both on-premises and in the cloud. Docker EE provides integrated container management and security from development to production. Enterprise-ready capabilities like multi-architecture orchestration and secure software supply chain give IT teams the ability to manage and secure containers without breaking the developer experience.</p>
+				<p>Docker EE provides:</p>
+				<ul>
+					<li>
+						<ph>Integrated management of all application resources from a single web admin UI.</ph>
+					</li>
+					<li>
+						<ph>Frictionless deployment of applications and Compose files to production in a few clicks.</ph>
+					</li>
+					<li>
+						<ph>Multi-tenant system with granular role-based access control (RBAC) and LDAP/AD integration.</ph>
+					</li>
+					<li>
+						<ph>Self-healing application deployment with the ability to apply rolling application updates.</ph>
+					</li>
+					<li>
+						<ph>End-to-end security model with secrets management, image signing and image security scanning.</ph>
+					</li>
+				</ul>
+				<p>More information about Docker Enterprise
+                                Edition can be found at: <xref format="html" scope="external" href="https://www.docker.com/enterprise-edition">https://www.docker.com/enterprise-edition</xref></p>
+			</body>
+		</topic>

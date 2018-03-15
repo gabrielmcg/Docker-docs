@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE dita PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd">
+<dita>-->
+
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+
+<topic id="d2">
+	<title>Page title here</title>
+	<body>
+		<p/>
+	</body>
+	<topic id="d1e5" >  <!-- conref="introduction.dita" -->
+      <title>Introduction</title>
+		
+	  <body><section conref="introduction.dita#introduction/introduction-section"/></body>
+
+		<topic id="t123" conref="about-ansible.dita#about-ansible"><title/></topic>
+
+		<topic id="d1e57" conref="docker-ee.dita#docker-ee"><title/></topic>
+
+		<topic id="d1e58" conref="synergy.dita#synergy"><title/></topic>
+		
+	</topic>
+	
+	<topic id="d1e135">
+		<title>Architecture</title>
+
+		<body><section conref="architecture.dita#architecture/architecture-section"/></body>
+
+		<topic id="d1e224" conref="server-reqs.dita#server-reqs"><title/></topic>
+		
+		<topic id="d1e306" conref="storage-reqs.dita#storage-reqs"><title/></topic>
+		
+		<topic id="d1e352" conref="ha.dita#ha"><title/></topic>
+			
+		<topic id="d1e400" conref="sizing.dita#sizing"><title/></topic>
+		
+		<topic id="d1e1538" conref="disaster-recovery.dita#disaster-recovery"><title/></topic>
+		
+		<topic id="d1e1555" conref="security.dita#security"><title/></topic>
+		
+		
+	</topic>
+	<topic id="d1e1601">
+		<title>Provisioning the environment</title>
+		
+		<body><section conref="provisioning.dita#provisioning/provisioning-section"/></body>
+		
+		<topic id="d1e1625" conref="esxi-hosts.dita#esxi-hosts"><title/></topic>
+		
+		<topic id="d1e1820" conref="deploy-plugin.dita#deploy-plugin"><title/></topic>
+		
+		<topic id="d1e1952" conref="verify-prereqs.dita#verify-prereqs"><title/></topic>
+		
+		<topic id="d1e2120" conref="vsphere-ha.dita#vsphere-ha"><title/></topic>
+		
+		<topic id="d1e2144" conref="install-vdvs.dita#install-vdvs"><title/></topic>
+		
+		<topic id="d1e2183" conref="install-vdvs-win.dita#install-vdvs-win"><title/></topic>
+		
+		<topic id="d1e2251" conref="create-rhel-template.dita#create-rhel-template"><title/></topic>
+		
+		<topic id="d1e2388" conref="config-yum.dita#config-yum"><title/></topic>
+		
+		<topic id="d1e2564" conref="create-template-win.dita#create-template-win"><title/></topic>
+		
+		<topic id="d1e2725" conref="create-ansible-node.dita#create-ansible-node"><title/></topic>
+		
+		<topic id="d1e2880" conref="finalize-template.dita#finalize-template"><title/></topic>
+		
+		<topic id="d1e2955" conref="ansible-config.dita#ansible-config"><title/></topic>
+		
+		<topic id="d1e3035" conref="edit-inventory.dita#edit-inventory"><title/></topic>
+		
+		<topic id="d1e3269" conref="edit-group-var.dita#edit-group-var"><title/></topic>
+		
+		<topic id="d1e3907" conref="edit-vault.dita#edit-vault"><title/></topic>
+		
+		<topic id="d1e4054" conref="customer-certs.dita#customer-certs"><title/></topic>
+			
+	</topic>
+	
+	<topic id="d1e4137" conref="playbooks-overview.dita#playbooks-overview"><title/></topic>
+	
+	<topic id="d1e4317">
+		<title>Running the playbooks</title>
+		<body><section conref="running-playbooks.dita#running-playbooks/running-playbooks-section"></section></body>
+
+		<topic id="d1e4340" conref="post-deployment.dita#post-deployment"><title/></topic>
+		
+	</topic>
+</topic>
+<!--</dita>-->

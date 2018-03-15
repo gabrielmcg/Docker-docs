@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="running-playbooks">
+  <title>Running the playbooks</title>
+		<body>
+		  <section id="running-playbooks-section">
+			<p>At this point, the system is ready to be deployed.</p>
+			<p>Make sure you are logged on as root in your ansible box and that our current directory is /root/Docker-Synergy/ops</p>
+			<p>Start the deployment using the following command</p>
+			<pre>
+				<codeph># ansible-playbook -i vm_hosts site.yml --vault-password-file .vault_pass</codeph>
+			</pre>
+			<p>The playbooks should run for 35-40 minutes depending on your server specifications and the size of your environment.</p>
+			<p/>
+		    </section>
+		</body>
+</topic>

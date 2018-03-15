@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="finalize-template">
+			<title>Finalize the template</title>
+			<body>
+				<p>From the root account in the ansible box:</p>
+				<p>1) Copy the SSH public key you created on your ansible box to the VM Template so that, in the future, your Ansible node can SSH without the need of a password to all the Virtual Machines created from the VM Template.</p>
+				<pre>ssh-copy-id root@&lt;IP of your VM_Template&gt;</pre>
+				<p/>
+				<p>Now that the VM Template has the public key of the Ansible node, we’re ready to convert this VM to a VM Template. Perform the following steps in the VM Template to finalize its creation:</p>
+				<p/>
+				<p>
+					<ph>2) Clean up the template
+                                                by running the following commands from the
+                                                  <b>Virtual Machine Console</b></ph>
+				</p>
+				<pre># rm /etc/ssh/ssh_host_*# nmcli con del ens192# logrotate -f /etc/logrotate.conf</pre>
+				<pre># rm /var/log/*-201?*</pre>
+				<pre># history -c</pre>
+				<p/>
+				<p>
+					<ph>3) Shutdown the VM</ph>
+				</p>
+				<pre># shutdown -h now</pre>
+				<p>
+					<ph>4) Once the Virtual Machine is ready and turned off, convert it to a template</ph>
+				</p>
+				<p>
+					<ph>This completes the creation of the VM Template.</ph>
+				</p>
+				<p/>
+				<p/>
+			</body>
+		</topic>

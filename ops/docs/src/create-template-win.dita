@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="create-template-win">
+			<title>Create the Windows Template</title>
+			<body>
+				<p><ph>The section explains how to
+                                                create the Windows VM Template that you will use as
+                                                the base for all your Windows nodes. In order to
+                                                create a VM Template you will first create a Virtual
+                                                Machine with the OS installed and then convert the
+                                                Virtual Machine to a VM Template. Since the goal of
+                                                automation is to remove as many repetitive tasks as
+                                                possible, the VM Template is created as lean as
+                                                possible, with any additional software installs
+                                                and/or system configuration performed subsequently
+                                                using Ansible. </ph>It would be possible to
+                                        automate the creation of the template. However, as this is a
+                                        one-off task, it is appropriate to do it manually. The steps
+                                        to create a VM template manually are described below.</p>
+				<ol>
+					<li>
+						<ph>Log in to vCenter and create a new Virtual Machine with the following characteristics:</ph>
+					</li>
+				</ol>
+				<ol>
+					<li>
+						<ol>
+							<li>
+								<ph>Guest OS Family: Windows, Guest OS Version: Microsoft Windows Server 2016 (64-bit)</ph>
+							</li>
+						</ol>
+					<!--</li>-->
+					<ul>
+						<li>
+							<ph>Hard Disk size: 50GB, (Thin provisioning)</ph>
+						</li>
+						<li>
+							<ph>A single network controller connected to the network or VLAN of your choice. All VMs will connect to this same network.</ph>
+						</li>
+						<li>
+							<ph>You should change your network type to VMXNET3, and attach the windows 2016 ISO image from a datastore ensuring you connect the CD/DVD drive on boot.</ph>
+						</li>
+						<li>Don’t forget to click on the VM Options tab, and in the Boot Options section, select Force BIOS setup(*) to ensure that the machine enters the BIOS setup screen on next boot of this VM. This will allow you to adjust the boot order, placing the virtual CDROM in front of your hard drive.</li>
+						<li>
+							<ph>Optionally you can remove the floppy drive</ph>
+							<ph/>
+						</li>
+					</ul>
+					</li>
+					<li>Install Windows 2016</li>
+				</ol>
+				<ul>
+					<li>
+						<ul>
+							<li>Now we can power on the selected VM. Then Open Console.</li>
+							<li>Once connected to the console you will be
+                                                  placed in the BIOS setup screen, tab over to the
+                                                  Boot tab, click on CD-ROM Drive and hit the + sign
+                                                  which will move up the CDROM drive above the Hard
+                                                  drive which allows your Windows 2016 ISO image to
+                                                  be loaded first on boot. F10 Save and exit is next
+                                                  step.</li>
+							<li>Enter your choises for Language, Time/Currency Format, Keyboard and then Install Now</li>
+							<li>Select the OS you want to install, and then select Custom: Install Windows Only</li>
+							<li>Select drive 0, the 50 GB drive you specified earlier, as the location for installing windows</li>
+							<li>Add a password for the Administrator user, install VMware Tools and reboot</li>
+							<li>Once rebooted add a temporary network IP address.</li>
+							<li>Using sconfig utility from (Dos) command line:
+                                                  <ul><li>Install windows updates. </li><li>Enable
+                                                  remote desktop.</li></ul></li>
+							<li>Perform any other customisations you require at this point.</li>
+							<li>Prior to converting a VM to Template, just
+                                                  remember to use Sysprep:
+                                                  C:\Windows\System32\Sysprep\Sysprep.exe<ul><li>Ensure
+                                                  ‘System Out-of-Box Experience (OOBE)’ is
+                                                  selected</li><li>Select the ‘Generalise’
+                                                  option</li><li>Select ‘Shutdown’ from the Shutdown
+                                                  Options.</li></ul></li>
+							<li>Shutdown VM, and untick the connect CD/DVD so that the Windows 2016 ISO no longer going to be mounted.</li>
+							<li>Convert VM to Template</li>
+						</ul>
+					</li>
+				</ul>
+			</body>
+		</topic>

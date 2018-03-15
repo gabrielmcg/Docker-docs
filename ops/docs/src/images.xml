@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+    <title>Docker Synergy Images</title>
+    
+
+    <!--<image href="../media/create-volume.png"/>-->
+    <keydef keys="create-volume" 
+        navtitle="Create Volume"
+            href="media/create-volume.png"
+            format="png"/>
+
+
+    <keydef keys="load-balancers" 
+        navtitle="Load balancer architecture"
+            href="media/load-balancers.png"
+            format="png"/>
+    
+ 
+    <keydef keys="provisioning" 
+        navtitle="Provisioning steps"
+            href="media/provisioning.png"
+            format="png"/>   
+
+ 
+    <keydef keys="architecture1" 
+        navtitle="HPE Synergy Solution"
+            href="media/architecture1.png"
+            format="png"/>   
+
+     <keydef keys="architecture2" 
+        navtitle="HPE Synergy Solution"
+            href="media/architecture2.png"
+            format="png"/>   
+   
+
+</map>

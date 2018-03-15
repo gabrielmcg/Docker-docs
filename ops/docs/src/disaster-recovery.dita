@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="disaster-recovery">
+			<title>Disaster Recovery</title>
+			<body>
+				<p>In order to protect your installation from
+                                                  disasters, you need to take regular backups of the
+                                                  swarm, UCP and DTR. In the event where half or
+                                                  more manager nodes are lost and cannot be
+                                                  recovered to a healthy state, the system is
+                                                  considered to have lost quorum and can only be
+                                                  restored through the manual procedure described in
+                                                  the Docker documentation.</p>
+				<p>For more
+                                                  information, see <xref format="html" scope="external" href="https://docs.docker.com/datacenter/ucp/2.2/guides/admin/backups-and-disaster-recovery/">https://docs.docker.com/datacenter/ucp/2.2/guides/admin/backups-and-disaster-recovery/</xref>.</p>
+				<p/>
+			</body>
+		</topic>

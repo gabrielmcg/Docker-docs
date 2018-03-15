@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ansible-config">
+			<title>Prepare your Ansible configuration</title>
+			<body>
+				<p>On the Ansible node, retrieve the latest version of the playbooks using git.</p>
+				<pre>
+					<codeph># git clone &lt;repository&gt;</codeph>
+				</pre>
+				<p>Change to the directory which you just cloned:</p>
+				<p>
+					<codeph># cd ~/Docker-Synergy</codeph>
+				</p>
+				<p>Change to the <codeph>ops</codeph> directory: </p>
+				<p>
+					<codeph># cd ops</codeph>
+				</p>
+				<p>Note: File names are relative to the <codeph>ops</codeph> directory.
+                                        For example <codeph>vm_hosts</codeph> is located in
+                                                <codeph>~/Docker-Synergy/ops</codeph> and
+                                                <codeph>group_vars/vars</codeph> relates to
+                                                <codeph>~/Docker-Synergy/ops/groups_vars/vars</codeph>.</p>
+				<p>You now need to prepare the configuration to match your own environment, prior to deploying Docker EE and the rest of the nodes. To do so, you will need to edit and modify three different files:</p>
+				<ul>
+					<li><codeph>vm_hosts</codeph> (the inventory file)</li>
+					<li><codeph>group_vars/vars</codeph> (the group variables
+                                                file)</li>
+					<li><codeph>group_vars/vault</codeph> (the encrypted group
+                                                variable file)</li>
+					<li><codeph>group_vars/win_worker.yml</codeph> (the encrypted
+                                                group windows remote management variable file)</li>
+				</ul>
+				<p>You should work from the root account for the configuration steps and later when you run the playbooks.</p>
+			</body>
+		</topic>

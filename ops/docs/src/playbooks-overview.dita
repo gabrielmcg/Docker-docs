@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="playbooks-overview">
+		<title>Overview of the playbooks</title>
+		<body/>
+		<topic id="d1e4140">
+			<title>site.yml</title>
+			<body>
+				<p>The playbook ./site.yml is the day 0 playbook you use to deploy the solution. It calls the playbooks described later in this section</p>
+			</body>
+		</topic>
+		<topic id="d1e4146">
+			<title>playbooks/create_vms.yml</title>
+			<body>
+				<p>The playbook playbooks/create_vms.yml will create all the necessary Virtual Machines for the environment from the VM Template defined in the vm_template variable.</p>
+			</body>
+		</topic>
+		<topic id="d1e4153">
+			<title>playbooks/create_windows_vms.yml</title>
+			<body>
+				<p>The playbook playbooks/create_windows_vms.yml will create all the necessary windows 2016 Virtual Machines for the environment from the windows VM Template defined in the win_vm_template variable.</p>
+			</body>
+		</topic>
+		<topic id="d1e4159">
+			<title>playbooks/config_networking.yml</title>
+			<body>
+				<p>The playbook playbooks/config_networking.yml will configure the network settings in all the Virtual Machines.</p>
+			</body>
+		</topic>
+		<topic id="d1e4165">
+			<title>playbooks/distribute_keys.yml</title>
+			<body>
+				<p>The playbook playbooks/distribute_keys.yml distributes public keys between all nodes, to allow each node to password-less log in to every other node. As this is not essential and can be regarded as a security risk (a worker node probably should not be able to log in to a UCP node, for instance), this playbook is commented out in site.yml by default and must be explicitly uncommented to enable this functionality.</p>
+			</body>
+		</topic>
+		<topic id="d1e4172">
+			<title>playbooks/config_subscription.yml</title>
+			<body>
+				<p>The playbook playbooks/config_subscription.yml registers and subscribes all virtual machines to the Red Hat Customer Portal. This is only needed if you pull packages from Red Hat. This playbook is commented out by default but you should uncomment it to make sure each VM registers with the Red Hat portal. It is commented out so that you can test the deployment first without having to unregister all the VMs from the Red Hat Customer Portal between each test. If you are using an internal repository, as described in the section "Create a VM template", you can keep this playbook commented out.</p>
+			</body>
+		</topic>
+		<topic id="d1e4178">
+			<title>playbooks/install_haproxy.yml</title>
+			<body>
+				<p>The playbook playbooks/install_haproxy.yml installs and configures the HAProxy package in the load balancer nodes. HAProxy is the chosen tool to implement load balancing between UCP nodes, DTR nodes and worker nodes.</p>
+			</body>
+		</topic>
+		<topic id="d1e4184">
+			<title>playbooks/config_ntp.yml.yml</title>
+			<body>
+				<p>The playbook playbooks/config_ntp configures the chrony client package in all Virtual Machines in order to have a synchronized clock across the environment. It will use the list or servers specified in the ntp_servers variable in the file group_vars/vars</p>
+			</body>
+		</topic>
+		<topic id="d1e4191">
+			<title>playbooks/install_docker.yml</title>
+			<body>
+				<p>The playbook playbooks/install_docker.yml installs Docker along with all its dependencies</p>
+			</body>
+		</topic>
+		<topic id="d1e4197">
+			<title>playbooks/install_docker_windows.yml</title>
+			<body>
+				<p>The playbook playbooks/install_docker_windows.yml installs Docker along with all its dependencies on our windows Virtual Machines</p>
+			</body>
+		</topic>
+		<topic id="d1e4203">
+			<title>playbooks/install_rsyslog.yml</title>
+			<body>
+				<p>The playbook playbooks/install_rsyslog.yml installs and configures rsyslog in the logger node and in all Docker nodes. The logger node will be configured to receive all syslogs on port 514 and the Docker nodes will be configured to send all logs (including container logs) to the logger node.</p>
+			</body>
+		</topic>
+		<topic id="d1e4210">
+			<title>playbooks/config_docker_lvs.yml</title>
+			<body>
+				<p>The playbook playbooks/config_docker_lvs.yml performs a set of operations on the Docker nodes in order to create a partition on the second disk and carry out the LVM configuration, required for a sound Docker installation.</p>
+			</body>
+		</topic>
+		<topic id="d1e4216">
+			<title>playbooks/docker_post_config.yml</title>
+			<body>
+				<p>The playbook playbooks/docker_post_config.yml performs a variety of tasks to complete the installation of the Docker environment, including configuration of the http/https proxies if any and installation of the VMware vSphere Storage for Docker volume plugin.</p>
+			</body>
+		</topic>
+		<topic id="d1e4222">
+			<title>playbooks/install_nfs_server.yml</title>
+			<body>
+				<p>The playbook playbooks/install_nfs_server.yml installs and configures an NFS server on the NFS node.</p>
+			</body>
+		</topic>
+		<topic id="d1e4229">
+			<title>playbooks/install_nfs_clients.yml</title>
+			<body>
+				<p>The playbook playbooks/install_nfs_clients.yml installs the required packages on the DTR nodes to be able to mount an NFS share.</p>
+			</body>
+		</topic>
+		<topic id="d1e4235">
+			<title>playbooks/create_main_ucp.yml</title>
+			<body>
+				<p>The playbook playbooks/create_main_ucp.yml installs and
+                                        configures the first Docker UCP instance on the target node
+                                        defined by the group <xref format="html" scope="external" href="/pages/createpage.action?spaceKey=PE&amp;title=ucp_main&amp;linkCreation=true&amp;fromPageId=34967898">ucp_main</xref> in the
+                                        vm_hosts inventory.</p>
+			</body>
+		</topic>
+		<topic id="d1e4244">
+			<title>playbooks/scale_ucp.yml</title>
+			<body>
+				<p>The playbook playbooks/scale_ucp.yml installs and configures
+                                        additional instances of UCP on the target node defined by
+                                        the group <xref format="html" scope="external" href="/pages/createpage.action?spaceKey=PE&amp;title=ucp_main&amp;linkCreation=true&amp;fromPageId=34967898">u</xref>cp in the
+                                        vm_hosts inventory, except for the node defined in the group
+                                        ucp_main</p>
+			</body>
+		</topic>
+		<topic id="d1e4254">
+			<title>playbooks/create_main_dtr.yml</title>
+			<body>
+				<p>The playbook playbooks/create_main_dtr.yml installs and
+                                        configures the first Docker DTR instance on the target nodes
+                                        defined by the group <xref format="html" scope="external" href="/pages/createpage.action?spaceKey=PE&amp;title=ucp_main&amp;linkCreation=true&amp;fromPageId=34967898">dtr_main</xref> in the
+                                        vm_hosts inventory.</p>
+			</body>
+		</topic>
+		<topic id="d1e4263">
+			<title>playbooks/scale_dtr.yml</title>
+			<body>
+				<p>The playbook playbooks/scale_dtr.yml installs and configures additional instances (or replicas) of DTR on the target nodes defined by the group dtr in the vm_hosts inventory, except for the node defined in the group dtr_main</p>
+			</body>
+		</topic>
+		<topic id="d1e4269">
+			<title>playbooks/scale_workers.yml</title>
+			<body>
+				<p>The playbook playbooks/scale_workers.yml installs and configures additional workers on the target nodes defined by the group worker in the vm_hosts inventory.</p>
+			</body>
+		</topic>
+		<topic id="d1e4276">
+			<title>playbooks/scale_workers_windows.yml</title>
+			<body>
+				<p>The playbook playbooks/scale_workers_worker.yml installs and configures additional windows workers on the target nodes defined by the group win_worker in the vm_hosts inventory.</p>
+			</body>
+		</topic>
+		<topic id="d1e4282">
+			<title>playbooks/install_logspout.yml</title>
+			<body>
+				<p>The playbook playbooks/install_logspout.yml installs and configures logspout on all Docker nodes. logspout is repsonsible for sending logs produced by containers running on the docker nodes to the central logger VM.</p>
+			</body>
+		</topic>
+		<topic id="d1e4288">
+			<title>playbooks/config_scheduler.yml</title>
+			<body><p>The playbook playbooks/config_scheduler.yml configure the scheduler to prevent regular users 
+			  (ie non-admin) to schedule containers on the docker nodes running instances of UCP and DTR.</p></body>
+		</topic>
+		<topic id="d1e4295">
+			<title>playbooks/config_monitoring.yml</title>
+			<body>
+					<p>The playbook playbooks/config_monitoring.yml configures a monitoring system for the Docker environment by making use of Grafana, Prometheus, cAdvisor and node-exporter Docker containers.
+					Note: If you have your own monitoring solution, you can
+                                                comment out the corresponding line in the main
+                                                playbook <codeph>site.yml</codeph></p>
+					<pre>
+						<codeph>#- include: playbooks/config_monitoring.yml</codeph>
+					</pre>
+					<p/>
+					<p/>
+				</body>
+		</topic>
+	</topic>

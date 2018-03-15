@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="edit-inventory">
+			<title>Editing the inventory</title>
+			<body>
+				<p>The inventory is the file named <codeph>vm_hosts</codeph> in the
+                                                <codeph>~Docker-Synergy/ops</codeph> directory. You need
+                                        to edit this file to describe the configuration you want to
+                                        deploy.</p>
+				<p>The nodes inside the inventory are organized in groups. The groups are defined by brackets and the group names are static so they must not be changed. Anything else (hostnames, specifications, IP addresses…) are meant to be amended to match the user needs. The groups are as follows:</p>
+				<ul>
+					<li>[ucp_main]: A group containing one single node which will be the main UCP node and swarm leader. Do not add more than one node under this group.</li>
+					<li>[ucp]: A group containing all the UCP nodes, including the main UCP node. Typically you should have either 3 or 5 nodes under this group.</li>
+					<li>[dtr_main]: A group containing one single node which will be the first DTR node to be installed. Do not add more than one node under this group.</li>
+					<li>[dtr]: A group containing all the DTR nodes, including the main DTR node. Typically you should have either 3 or 5 nodes under this group.</li>
+					<li>[worker]: A group containing all the worker nodes. Typically you should have either 3 or 5 nodes under this group.</li>
+					<li>[win_worker]: A group containing all the windows worker nodes. Typically you should have either 3 or 5 nodes under this group.</li>
+					<li>[ucp_lb]: A group containing one single node which will be the load balancer for the UCP nodes. Do not add more than one node under this group.</li>
+					<li>[dtr_lb]: A group containing one single node which will be the load balancer for the DTR nodes. Do not add more than one node under this group.</li>
+					<li>[worker_lb]: A group containing one single node which will be the load balancer for the worker nodes. Do not add more than one node under this group.</li>
+					<li>[lbs]: A group containing all the load balancers. This group will have 3 nodes, also defined in the three groups above.</li>
+					<li>[nfs]: A group containing one single node which will be the NFS node. Do not add more than one node under this group.</li>
+					<li>[logger]: A group containing one single node which will be the logger node. Do not add more than one node under this group.</li>
+					<li>[local]: A group containing the local Ansible host. It contains an entry that should not be modified.</li>
+				</ul>
+				<p>There are also a few special groups:</p>
+				<ul>
+					<li>[docker:children]: A group of groups including all the nodes where Docker will be installed.</li>
+					<li>[vms:children]: A group of groups including all the Virtual Machines involved apart from the local host.</li>
+				</ul>
+				<p>Finally, you will find some variables defined for each group:</p>
+				<ul>
+					<li>[vms:vars]: A set of variables defined for all VMs. Currently only the size of the boot disk is defined here.</li>
+					<li>[ucp:vars]: A set of variables defined for all nodes in
+                                                the [<codeph>ucp</codeph>] group.</li>
+					<li>[dtr:vars]: A set of variables defined for all nodes in
+                                                the [<codeph>dtr</codeph>] group.</li>
+					<li>[worker:vars]: A set of variables defined for all nodes
+                                                in the [<codeph>worker</codeph>] group.</li>
+					<li>[win_worker:vars]: A set of variables defined for all
+                                                nodes in the [win_<codeph>worker</codeph>] group.</li>
+					<li>[lbs:vars]: A set of variables defined for all nodes in
+                                                the [<codeph>lbs</codeph>] group.</li>
+					<li>[nfs:vars]: A set of variables defined for all nodes in
+                                                the [<codeph>nfs</codeph>] group.</li>
+					<li>[logger:vars]: A set of variables defined for all nodes
+                                                in the [<codeph>logger</codeph>] group.</li>
+				</ul>
+				<p>If you wish to configure your nodes with different specifications rather than the ones defined by the group, it is possible to declare the same variables at the node level, overriding the group value. For instance, you could have one of your workers with higher specifications by doing:</p>
+				<pre>
+					<codeph>[worker] worker01 ip_addr='10.0.0.10/16' esxi_host='esxi1.domain.local' worker02 ip_addr='10.0.0.11/16' esxi_host='esxi1.domain.local' worker03 ip_addr='10.0.0.12/16' esxi_host='esxi1.domain.local' cpus='16' ram'32768' [worker:vars] cpus='4' ram='16384' disk2_size='200'</codeph>
+				</pre>
+				<p>In the example above, the <codeph>worker03</codeph> node would have 4
+                                        times more CPU and double the RAM compared to the rest of
+                                        the worker nodes.</p>
+				<p>The different variables you can use are as described in Table 4 below. They are all mandatory unless if specified otherwise.</p>
+				<p>Table 4. Variables</p>
+				<table>
+					<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+						<col/>
+						<col/>
+						<col/>
+					</colgroup>-->
+
+					<tgroup cols="3">
+						<colspec colnum="1" colname="c1"/>
+						<colspec colnum="2" colname="c2"/>
+						<colspec colnum="3" colname="c3"/>
+					  					<thead >
+						<row>
+							<entry>Variable</entry>
+							<entry>Scope</entry>
+							<entry>Description</entry>
+						</row>
+					</thead>
+						<tbody>
+							<row>
+								<entry>ip_addr</entry>
+								<entry>Node</entry>
+								<entry>IP address in CIDR format to be given to a node</entry>
+							</row>
+							<row>
+								<entry>esxi_host</entry>
+								<entry>Node</entry>
+								<entry>ESXi host where the node will be deployed. If the cluster is configured with DRS, this option will be overriden</entry>
+							</row>
+							<row>
+								<entry>cpus</entry>
+								<entry>Node/Group</entry>
+								<entry>Number of CPUs to assign to a VM or a group of VMs</entry>
+							</row>
+							<row>
+								<entry>ram</entry>
+								<entry>Node/Group</entry>
+								<entry>Amount of RAM in MB to assign to a VM or a group of VMs</entry>
+							</row>
+							<row>
+								<entry>disk2_usage</entry>
+								<entry>Node/Group</entry>
+								<entry>Size of the second disk in GB to attach to a VM or a group of VMs. This variable is only mandatory on Docker nodes (UCP, DTR, worker) and NFS node. It is not required for the logger node or the load balancers.</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</table>
+			</body>
+		</topic>

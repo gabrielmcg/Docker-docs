@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="edit-group-var">
+			<title>Editing the group variables</title>
+			<body>
+				<p>Once the inventory is ready, the next step is to modify the group
+                                        variables to match your environment. To do so, you need to
+                                        edit the file <codeph>group_vars/vars</codeph>. The variables
+                                        can be defined in any order but for the sake of clarity they
+                                        have been divided into sections.</p>
+			</body>
+			<topic id="d1e3279">
+				<title>VMware configuration</title>
+				<body>
+					<p>All VMware-related variables are mandatory and are described in Table 5.</p>
+					<p>Table 5. VMware variables</p>
+					<table>
+						<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+							<col/>
+							<col/>
+						</colgroup>-->
+
+						<tgroup cols="2">
+							<colspec colnum="1" colname="c1"/>
+							<colspec colnum="2" colname="c2"/>
+						 <thead >
+							<row>
+								<entry>Variable</entry>
+								<entry>Description</entry>
+							</row>
+						</thead>
+							<tbody>
+								<row>
+									<entry>vcenter_hostname</entry>
+									<entry>IP or hostname of the vCenter appliance</entry>
+								</row>
+								<row>
+									<entry>vcenter_username</entry>
+									<entry>Username to log in to the
+                                                  vCenter appliance. It might include a domain, for
+                                                  example, '<xref format="html" scope="external" href="mailto:administrator@vsphere.local">administrator@vsphere.local</xref>'. Note: The
+                                                  corresponding password is stored in a separate
+                                                  file (<codeph>group_vars/vault</codeph>) with the
+                                                  variable named <codeph>vcenter_password</codeph>.</entry>
+								</row>
+								<row>
+									<entry>vcenter_validate_certs</entry>
+									<entry>‘no’</entry>
+								</row>
+								<row>
+									<entry>datacenter</entry>
+									<entry>Name of the datacenter where the environment will be provisioned</entry>
+								</row>
+								<row>
+									<entry>vm_username</entry>
+									<entry>Username to log into the
+                                                  VMs. It needs to match the one from the VM
+                                                  Template, so unless you have created an user, you
+                                                  must use 'root'. Note: The corresponding password
+                                                  is stored in a separate file
+                                                  (<codeph>group_vars/vault</codeph>) with the variable
+                                                  named <codeph>vm_password</codeph>.</entry>
+								</row>
+								<row>
+									<entry>vm_template</entry>
+									<entry>Name of the RHEL VM Template to be use. Note that this is the name from a vCenter perspective, not the hostname.</entry>
+								</row>
+								<row>
+									<entry>win_vm_template</entry>
+									<entry>Name of the Windows 2016 VM Template to use. Note that this is the name from a vCenter perspective, not the hostname.</entry>
+								</row>
+								<row>
+									<entry>folder_name</entry>
+									<entry>vCenter folder to deploy
+                                                  the VMs. If you do not wish to deploy in a
+                                                  particular folder, the value should be
+                                                  <codeph>/</codeph>. Note: If you want to deploy in a
+                                                  specific folder, you need to create this folder in
+                                                  the inventory of the selected datacenter before
+                                                  starting the deployment.</entry>
+								</row>
+								<row>
+									<entry>datastores</entry>
+									<entry>List of datastores to be
+                                                  used, in list format, i.e.
+                                                  ['<codeph>Datastore1</codeph>','<codeph>Datastore2</codeph>'...].
+                                                  This or these datastore(s) must exist before you
+                                                  run the playbooks.</entry>
+								</row>
+								<row>
+									<entry>disk2</entry>
+									<entry>UNIX® name of the second
+                                                  disk for the Docker VMs. Typically
+                                                  <codeph>/dev/sdb</codeph></entry>
+								</row>
+								<row>
+									<entry>disk2_part</entry>
+									<entry>UNIX name of the
+                                                  partition of the second disk for the Docker VMs.
+                                                  Typically <codeph>/dev/sdb1</codeph></entry>
+								</row>
+								<row>
+									<entry>vsphere_plugin_version</entry>
+									<entry>Version of the vSphere plugin for Docker. The default is 0.20 which is the latest version at the time of writing this document. The version of the plugin should match the version of the vSphere Installation Bundle (VIB) that you installed on the ESXi servers.</entry>
+								</row>
+								<row>
+									<entry>vm_portgroup</entry>
+									<entry>TODO</entry>
+								</row>
+							</tbody>
+						</tgroup>
+					</table>
+				</body>
+			</topic>
+			<topic id="d1e3460">
+				<title>Networking configuration</title>
+				<body>
+					<p>All network-related variables are mandatory and are described in Table 7.</p>
+					<p>Table 7. Network variables</p>
+					<table>
+
+
+						<tgroup cols="2">
+							<colspec colnum="1" colname="c1"/>
+							<colspec colnum="2" colname="c2"/>
+						  						<thead >
+							<row>
+								<entry>Variable</entry>
+								<entry>Description</entry>
+							</row>
+						</thead>
+							<tbody>
+								<row>
+									<entry>nic_name</entry>
+									<entry>Name of the device, for
+                                                  RHEL this is typically <codeph>ens192</codeph> and it
+                                                  is recommended to leave it as is.</entry>
+								</row>
+								<row>
+									<entry>gateway</entry>
+									<entry>IP address of the gateway to be used</entry>
+								</row>
+								<row>
+									<entry>dns</entry>
+									<entry>List of DNS servers to be
+                                                  used, in list format, i.e.
+                                                  ['<codeph>10.10.173.1</codeph>','<codeph>10.10.173.2</codeph>'...]</entry>
+								</row>
+								<row>
+									<entry>domain_name</entry>
+									<entry>Domain name for your Virtual Machines</entry>
+								</row>
+								<row>
+									<entry>ntp_server</entry>
+									<entry>List of NTP servers to be
+                                                  used, in list format, i.e.
+                                                  ['<codeph>1.2.3.4</codeph>','<codeph><xref format="html" scope="external" href="http://0.us.pool.net.org/">0.us.pool.net.org</xref></codeph>'...]</entry>
+								</row>
+							</tbody>
+						</tgroup>
+					</table>
+				</body>
+			</topic>
+			<topic id="d1e3558">
+				<title>Docker configuration</title>
+				<body>
+					<p>All Docker-related variables are mandatory and are described in Table 8.</p>
+					
+					<table>
+					  <title>Docker variables</title>
+						<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+							<col/>
+							<col/>
+						</colgroup>-->
+
+						<tgroup cols="2">
+							<colspec colnum="1" colname="c1"/>
+							<colspec colnum="2" colname="c2"/>
+						  <thead>
+							<row>
+								<entry>Variable</entry>
+								<entry>Description</entry>
+							</row>
+						</thead>
+							<tbody>
+								<row>
+									<entry>docker_ee_url</entry>
+									<entry>Note: This is a private
+                                                  link to your Docker EE subscription. This should
+                                                  be kept secret and defined in
+                                                  <codeph>group_vars/vault</codeph>. The value for
+                                                  <codeph>docker_ee_url</codeph> is the URL documented
+                                                  at the following address: <xref format="html" scope="external" href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/">https://docs.docker.com/engine/installation/linux/docker-ee/rhel/</xref>.</entry>
+								</row>
+								<row>
+									<entry>rhel_version</entry>
+									<entry>Version of your RHEL OS,
+                                                  such as <codeph>7.4</codeph>. The playbooks were
+                                                  tested with RHEL 7.3. and RHEL 7.4.</entry>
+								</row>
+								<row>
+									<entry>dtr_version</entry>
+									<entry>Version of the Docker DTR
+                                                  you wish to install. You can use a numeric version
+                                                  or <codeph>latest</codeph> for the most recent one.
+                                                  The playbooks were tested with 2.3.3. and
+                                                  2.4.0.</entry>
+								</row>
+								<row>
+									<entry>ucp_version</entry>
+									<entry>Version of the Docker UCP
+                                                  you wish to install. You can use a numeric version
+                                                  or <codeph>latest</codeph> for the most recent one.
+                                                  The playbooks were tested with UCP 2.2.3. and
+                                                  2.2.4.</entry>
+								</row>
+								<row>
+									<entry>images_folder</entry>
+									<entry>Directory in the NFS server that will be mounted in the DTR nodes and that will host your Docker images.</entry>
+								</row>
+								<row>
+									<entry>license_file</entry>
+									<entry>Full path to your Docker EE license file (it should be stored in your Ansible host).License file is available from the Docker Store</entry>
+								</row>
+								<row>
+									<entry>ucp_username</entry>
+									<entry>Username of the
+                                                  administrator user for UCP and DTR, typically
+                                                  <codeph>admin</codeph>. Note: The corresponding
+                                                  password is stored in a separate file
+                                                  (<codeph>group_vars/vault</codeph>) with the variable
+                                                  named <codeph>ucp_password</codeph>.</entry>
+								</row>
+								<row>
+									<entry>enable_windows</entry>
+									<entry>If
+                                                  <codeph>true</codeph>, the creation of Windows 2016
+                                                  worker nodes will be actioned. The default value
+                                                  is <codeph>false</codeph>.</entry>
+								</row>
+							</tbody>
+						</tgroup>
+					</table>
+				</body>
+			</topic>
+			<topic id="d1e3701">
+				<title>Monitoring configuration</title>
+				<body>
+					<p>All Monitoring-related variables are described in Table 9. The variables determine the versions of various monitoring software tools that are used and it is recommended that the values given below are used.</p>
+
+					<table>
+					  <title>Monitoring variables</title>
+<!--						<colgroup xmlns:ac="ac" xmlns:ri="ri">
+							<col/>
+							<col/>
+						</colgroup>-->
+
+						<tgroup cols="2">
+							<colspec colnum="1" colname="c1"/>
+							<colspec colnum="2" colname="c2"/>
+						 <thead>
+							<row>
+								<entry>Variable</entry>
+								<entry>Description</entry>
+							</row>
+						</thead>
+							<tbody>
+								<row>
+									<entry>cadvisor_version</entry>
+									<entry>
+										<codeph>v0.25.0</codeph>
+									</entry>
+								</row>
+								<row>
+									<entry>node_exporter_version</entry>
+									<entry>
+										<codeph>v1.14.0</codeph>
+									</entry>
+								</row>
+								<row>
+									<entry>prometheus_version</entry>
+									<entry>
+										<codeph>v1.7.1</codeph>
+									</entry>
+								</row>
+								<row>
+									<entry>grafana_version</entry>
+									<entry>
+										<codeph>4.4.3</codeph>
+									</entry>
+								</row>
+								<row>
+									<entry>prom_persistent_vol_name</entry>
+									<entry>The name of the volume which will be used to store the monitoring data. The volume is created using the vsphere docker volume plugin.</entry>
+								</row>
+								<row>
+									<entry>prom_persistent_vol_size</entry>
+									<entry>The size of the volume which will hold the monitoring data. The exact syntax is dictated by the vSphere Docker Volume plugin. The default value is 10GB.</entry>
+								</row>
+							</tbody>
+						</tgroup>
+					</table>
+				</body>
+			</topic>
+			<topic id="d1e3802">
+				<title>Logspout configuration</title>
+				<body>
+					<p>Logspout is a log router for Docker containers that runs inside Docker. It attaches to all containers on a host, then routes their logs to the central logging VM. All Logspout-related variables are described in Table 10.</p>
+					<p>Table 10. Logspout variables</p>
+					<table>
+						<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+							<col/>
+							<col/>
+						</colgroup>-->
+
+						<tgroup cols="2">
+							<colspec colnum="1" colname="c1"/>
+							<colspec colnum="2" colname="c2"/>
+						  						<thead>
+							<row>
+								<entry>Variable</entry>
+								<entry>Description</entry>
+							</row>
+						</thead>
+							<tbody>
+								<row>
+									<entry>logspout_version</entry>
+									<entry><codeph>‘master’</codeph>
+                                                  More details on Logspout are available later
+                                                  in this document.</entry>
+								</row>
+							</tbody>
+						</tgroup>
+					</table>
+				</body>
+			</topic>
+			<topic id="d1e3850">
+				<title>Environment configuration</title>
+				<body>
+					<p>All Environment-related variables should be here. All of them are described in the Table 11 below.</p>
+					<p>Table 11. Environment variables</p>
+					<table>
+
+
+						<tgroup cols="2">
+							<colspec colnum="1" colname="c1"/>
+							<colspec colnum="2" colname="c2"/>
+						  
+						 <thead>
+							<row>
+								<entry>Variable</entry>
+								<entry>Description</entry>
+							</row>
+						</thead>
+						  
+							<tbody>
+								<row>
+									<entry>env</entry>
+									<entry>Dictionary containing all
+                                                  environment variables. It contains three entries
+                                                  described below. Please leave empty the proxy
+                                                  related settings if not
+                                                  required:<ul><li>http_proxy: HTTP proxy URL, such
+                                                  as '<xref format="html" scope="external" href="http://15.184.4.2:8080/">http://15.184.4.2:8080</xref>'. This
+                                                  variable defines the HTTP proxy url if your
+                                                  environment is behind a
+                                                  proxy.</li><li>https_proxy: HTTP proxy URL, such
+                                                  as '<xref format="html" scope="external" href="http://15.184.4.2:8080/">http://15.184.4.2:8080</xref>'. This
+                                                  variable defines the HTTPS proxy url if your
+                                                  environment is behind a proxy.</li><li>no_proxy:
+                                                  List of hostnames or IPs that don't require proxy,
+                                                  such as
+                                                  'localhost,127.0.0.1,.cloudra.local,10.10.174.'</li></ul></entry>
+								</row>
+							</tbody>
+						</tgroup>
+					</table>
+				</body>
+			</topic>
+		</topic>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map chunk="to-content">
+  <title>HPE Enterprise Containers as a Service with Docker Enterprise Edition </title>
+
+  <topicmeta>
+    <copyright>
+      <copyryear year="2018"/>
+      <copyrholder>HPE</copyrholder>
+    </copyright>
+    <prodinfo>
+      <prodname>HPE Enterprise Containers as a Service with Docker Enterprise Edition</prodname>
+      <vrmlist>
+        <vrm version="1.0"/>
+      </vrmlist>
+    </prodinfo> 
+  </topicmeta>
+
+  <!--<mapref href="images.xml" format="ditamap"/>-->
+  <!--<mapref href="images.xml" format="ditamap" processing-role="resource-only"/>-->
+  <!--<topicref href="images.xml" format="ditamap"/>-->
+  
+  <topicref href="introduction.dita" navtitle="Introduction">
+    
+    <topicref href="about-ansible.dita" navtitle="About Ansible"/>
+    
+    <topicref href="docker-ee.dita" navtitle="About Docker EE"/>
+ 
+    <topicref href="synergy.dita" navtitle="About Synergy"/>
+    
+  </topicref>
+  
+  <topicref href="architecture.dita" navtitle="Architecture">
+    
+    <topicref href="server-reqs.dita" navtitle="Server Requirements"/>
+    
+    <topicref href="storage-reqs.dita" navtitle="Storage Requirements"/>
+    
+    <topicref href="ha.dita" navtitle="High Availability"/>
+    
+    <topicref href="sizing.dita" navtitle="Sizing"/>
+    
+    <topicref href="disaster-recovery.dita" navtitle="Disaster Recovery"/>
+    
+    <topicref href="security.dita" navtitle="Security"/>
+    
+  </topicref>
+  
+  <topicref href="provisioning.dita" navtitle="Provisioning the environment">
+    
+    <topicref href="esxi-hosts.dita" navtitle="Creating ESXi hosts"/>
+    
+    <topicref href="deploy-plugin.dita" navtitle="Deploying the storage plugin"/>
+    
+    <topicref href="verify-prereqs.dita" navtitle="Verify prerequisites"/>
+    
+    <topicref href="vsphere-ha.dita" navtitle="Enable vSphere High Availability"/>
+    
+    <topicref href="install-vdvs.dita" navtitle="Install VDVS"/>
+    
+    <topicref href="install-vdvs-win.dita" navtitle="Install VDVS on Windows"/>
+    
+    <topicref href="create-rhel-template.dita" navtitle="Create RHEL template"/>
+    
+    <topicref href="config-yum.dita" navtitle="Config yum"/>
+      
+    <topicref href="create-template-win.dita" navtitle="Create Windows template"/>
+    
+    <topicref href="create-ansible-node.dita" navtitle="Create Ansible node"/>
+    
+    <topicref href="finalize-template.dita" navtitle="Finalize template"></topicref>
+    
+    <topicref href="ansible-config.dita" navtitle="Ansible configuration"/>
+    
+    <topicref href="edit-inventory.dita" navtitle="Editing the inventory"/>
+    
+    <topicref href="edit-group-var.dita" navtitle="Editing group variables"/>
+    
+    <topicref href="edit-vault.dita" navtitle="Editing the vault"/>
+    
+    <topicref href="customer-certs.dita" navtitle="Customer certificates"/>
+        
+  </topicref>
+ 
+</map>
