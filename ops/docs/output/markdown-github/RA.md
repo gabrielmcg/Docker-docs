@@ -154,114 +154,30 @@ Note
 
 In the case of one ESX host failure, two nodes are enough to accommodate the amount of vCPU required
 
-| RAM \(GB\)
-
- | node01
-
- | node02
-
- | node03
-
- |
-|--------------|----------|----------|----------|
-| ucp1
-
- | 8
-
- | | |
-| ucp2
-
- | .
-
- | 8
-
- | |
-| ucp3
-
- | | | 8
-
- |
-| dtr1
-
- | 16
-
- | | |
+|RAM \(GB\)|node01|node02|node03|
+|----------|------|------|------|
+|ucp1|8| | |
+|ucp2| |8| |
+|ucp3| | |8|
+|dtr1|16| | |
 | dtr2
 
- | | 16
-
- | |
-| dtr3
-
- | | | 16
-
- |
-| worker1
-
- | 64
-
- | | |
-| worker2
-
- | | 64
-
- | |
-| worker3
-
- | | | 64
-
- |
+ | |16| |
+|dtr3| | |16|
+|worker1|64| | |
+|worker2| |64| |
+|worker3| | |64|
 |win-worker1|64| | |
 |win-worker2| |64| |
 |win-worker3| | |64|
-| ucb\_lb
-
- | 4
-
- | | |
-| dtr\_lb
-
- | | 4
-
- | |
-| worker\_lb
-
- | | | 4
-
- |
-| nfs
-
- | | | 4
-
- |
-| logger
-
- | | 4
-
- | |
-| Total RAM required \(per node\)
-
- | 92
-
- | 96
-
- | 96
-
- |
-| Total RAM required
-
- | | 284
-
- | |
-| Available RAM
-
- | 384
-
- | 384
-
- | 384
-
- |
+|ucb\_lb|4| | |
+|dtr\_lb| |4| |
+|worker\_lb| | |4|
+|nfs| | |4|
+|logger| |4| |
+|Total RAM required \(per node\)|92|96|96|
+|Total RAM required| |284| |
+|Available RAM|384|384|384|
 
 **Note:** 
 
