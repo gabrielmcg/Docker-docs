@@ -72,16 +72,13 @@ These nodes can live in any of the hosts and they are not redundant. The Prometh
 Two platforms will be described / tested:
 
 1.   3 node HPE Synergy 480 Gen10 deployment with 1 node in each Synergy frame 
-
--    384 GB DDR4-2133 RAM 
--    2 Intel Xeon CPU Gold [6130 2.10GHz](mailto:6130@2.1GHz) x 16 core 
--    single ESXi cluster with control plane and docker workers spread out on all 3 nodes 
-
-1.   6 node HPE Synergy 480 Gen 10 deployment with 2 nodes in each Synergy frame 
-
--    384GB DDR4-2133 RAM 
--    2 Intel Xeon CPU Gold [6130 2.10GHz](mailto:6130@2.1GHz) x 16 core 
--    single ESXi cluster with control plane on 3 nodes and 3 nodes dedicated as Docker workers \(should this be 2 clusters?\) 
+    -    384 GB DDR4-2133 RAM 
+    -    2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core 
+    -    single ESXi cluster with control plane and docker workers spread out on all 3 nodes 
+2.   6 node HPE Synergy 480 Gen 10 deployment with 2 nodes in each Synergy frame 
+    -    384GB DDR4-2133 RAM 
+    -    2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core 
+    -    single ESXi cluster with control plane on 3 nodes and 3 nodes dedicated as Docker workers \(should this be 2 clusters?\) 
 
 TBD: How many workers should be deployed on a single ESXi host dedicated to Docker workers to maximize use of the server and justify the cost of VMware license.
 
