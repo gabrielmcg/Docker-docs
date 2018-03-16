@@ -8,12 +8,9 @@ This document describes the best practices for deploying and operating HPE Enter
 
 **Note:** 
 
-Note:
+The Ansible playbooks described in this document are only intended for Day 0 deployment automation of Docker EE on HPE Synergy.
 
--    The Ansible playbooks described in this document are only intended for Day 0 deployment automation of Docker EE on HPE Synergy. 
--    The Ansible playbooks described in this document are not directly supported by HPE and are intended as an example of deploying Docker EE on HPE Synergy. We welcome input from the user community via GitHub to help us prioritize all future bug fixes and feature enhancements. 
-
- 
+The Ansible playbooks described in this document are not directly supported by HPE and are intended as an example of deploying Docker EE on HPE Synergy. We welcome input from the user community via GitHub to help us prioritize all future bug fixes and feature enhancements.
 
 ## About Ansible
 
@@ -155,7 +152,7 @@ Note
 In the case of one ESX host failure, two nodes are enough to accommodate the amount of vCPU required
 
 |RAM \(GB\)|node01|node02|node03|
-|----------|------|------|------|
+|:---------|:----:|:----:|:----:|
 |ucp1|8| | |
 |ucp2| |8| |
 |ucp3| | |8|

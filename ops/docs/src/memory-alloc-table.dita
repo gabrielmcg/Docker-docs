@@ -9,10 +9,10 @@
 				  <title>Memory allocation</title>
 
 					<tgroup cols="4">
-						<colspec colnum="1" colname="c1"/>
-						<colspec colnum="2" colname="c2"/>
-						<colspec colnum="3" colname="c3"/>
-						<colspec colnum="4" colname="c4"/>
+            <colspec colnum="1" colname="c1" align="left"/>
+            <colspec colnum="2" colname="c2" align="center"/>
+            <colspec colnum="3" colname="c3" align="center"/>
+            <colspec colnum="4" colname="c4" align="center"/>
 						<thead>
 							<row>
 								<entry>RAM (GB)</entry>
