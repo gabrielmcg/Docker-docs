@@ -14,4 +14,8 @@
 -   [Provisioning the environment](RA.md#provisioning)
     -   [Creating ESXi hosts with OneView and Image Streamer](RA.md#esxi-hosts)
     -   [Deploying the vSphere Volume PlugIn](RA.md#deploy-plugin)
+    -   [Verify prerequisites](RA.md#verify-prereqs)
+    -   [Enable vSphere High Availability](RA.md#vsphere-ha)
+    -   [Install vSphere Docker Volume Service driver on all ESXi hosts](RA.md#install-vdvs)
+    -   [Install vSphere Docker Volume Service driver for Windows](RA.md#install-vdvs-win)
 

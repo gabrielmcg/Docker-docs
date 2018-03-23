@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install-vdvs">
-			<title>Install vSphere Docker Volume Service driver on all ESXi hosts</title>
-			<body>
-				<p>vSphere Docker Volume Service technology enables stateful containers to access the storage volumes. This is a one-off manual step. In order to be able to use Docker volumes using the vSphere driver, you must first install the latest release of the vSphere Docker Volume Service (vDVS) driver, which is available as a vSphere Installation Bundle (VIB). To perform this operation, log in to each of the ESXi hosts, download and install the latest release of vDVS driver.</p>
-				<!--<table>
+	<title>Install vSphere Docker Volume Service driver on all ESXi hosts</title>
+	<body>
+		<p>vSphere Docker Volume Service technology enables stateful containers to access the
+			storage volumes. This is a one-off manual step. In order to be able to use Docker
+			volumes using the vSphere driver, you must first install the latest release of the
+			vSphere Docker Volume Service (vDVS) driver, which is available as a vSphere
+			Installation Bundle (VIB). To perform this operation, log in to each of the ESXi hosts,
+			download and install the latest release of vDVS driver.</p>
+		<!--<table>
 					<row>
 						<entry>-->
-							<pre># esxcli software vib install -v /tmp/vmware-esx-vmdkops-&lt;version&gt;.vib --no-sig-check</pre>
-						<!--</entry>
+		<codeblock># esxcli software vib install -v /tmp/vmware-esx-vmdkops-&lt;version&gt;.vib --no-sig-check</codeblock>
+		<!--<pre># esxcli software vib install -v /tmp/vmware-esx-vmdkops-&lt;version&gt;.vib -\-no-sig-check</pre>-->
+		<!--</entry>
 					</row>
 				</table>-->
-				<p>More information on how to download and install the driver can be
-                                        found at <xref format="html" scope="external" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/install.html">http://vmware.github.io/vsphere-storage-for-docker/documentation/install.html</xref></p>
-				<!--<table>
+		<p>More information on how to download and install the driver can be found at <xref
+				format="html" scope="external"
+				href="http://vmware.github.io/vsphere-storage-for-docker/documentation/install.html"
+				>http://vmware.github.io/vsphere-storage-for-docker/documentation/install.html</xref></p>
+		<!--<table>
 					<row>
 						<entry>-->
-			  <note type="note">
-			    <p>Note:</p>
-							<p>You cannot mount the same persistent volume created through vSphere Docker Volume Service (vDVS) on containers running on two different hosts at the same time.</p>
-			  </note>
-						<!--</entry>
+		<note type="note">
+			<p>You cannot mount the same persistent volume created through vSphere Docker Volume
+				Service (vDVS) on containers running on two different hosts at the same time.</p>
+		</note>
+		<!--</entry>
 					</row>
 				</table>-->
-				<p/>
-			</body>
-		</topic>
+	</body>
+</topic>

@@ -52,7 +52,7 @@
     
     <topicref href="deploy-plugin.dita" navtitle="Deploying the storage plugin"/>
     
-     <!--<topicref href="verify-prereqs.dita" navtitle="Verify prerequisites"/>
+    <topicref href="verify-prereqs.dita" navtitle="Verify prerequisites"/>
     
     <topicref href="vsphere-ha.dita" navtitle="Enable vSphere High Availability"/>
     
@@ -60,7 +60,7 @@
     
     <topicref href="install-vdvs-win.dita" navtitle="Install VDVS on Windows"/>
     
-    <topicref href="create-rhel-template.dita" navtitle="Create RHEL template"/>
+     <!--<topicref href="create-rhel-template.dita" navtitle="Create RHEL template"/>
     
     <topicref href="config-yum.dita" navtitle="Config yum"/>
       

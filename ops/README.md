@@ -301,6 +301,62 @@ The Docker Extension is now installed on the ESXi host but you have to restart t
 
 If you use the esxcli storage guestvol command you can now see the status.
 
+## Verify prerequisites
+
+You must assemble the information required to assign values for each and every variable used by the playbooks, before you start deployment. The variables are fully documented in the following sections “Editing the group variables” and “Editing the vault”. A summary of the information required is presented in Table 3.
+
+|Component|Details|
+|---------|-------|
+|Virtual Infrastructure|The FQDN of your vCenter server and the name of the Datacenter. You will also need administrator credentials in order to create templates, and spin up virtual machines.|
+|L3 Network requirements|You will need one IP address for each and every VM configured in the Ansible inventory \(see the section “Editing the inventory”\). At the time of writing, the example inventory configures 14 virtual machines so you would need to allocate 14 IP addresses to use this example inventory. Note that the Ansible playbooks do not support DHCP so you need static IP addresses. All the IPs should be in the same subnet. You will also have to specify the size of the subnet \(for example /22 or /24\) and the L3 gateway for this subnet.|
+|DNS|You will need to know the IP addresses of your DNS server. In addition, all the VMs you configure in the inventory should have their names registered in DNS. In addition, you will need the domain name to use for configuring the virtual machines \(such as [example.com](http://example.com/)\)|
+|NTP Services|You need time services configured in your environment. The solution being deployed \(including Docker\) uses certificates and certificates are time sensitive. You will need the IP addresses of your time servers \(NTP\).|
+|RHEL Subscription|A RHEL subscription is required to pull extra packages that are not on the DVD.|
+|Docker Prerequisites|You will need a URL for the official Docker EE software download and a license file. Refer to the Docker documentation to learn more about this URL and the licensing requirements at: [https://docs.docker.com/engine/installation/linux/docker-ee/rhel/](https://docs.docker.com/engine/installation/linux/docker-ee/rhel/) in the section entitled “Docker EE repository URL”|
+|Proxy|The playbooks pull the Docker packages from the Internet. If your environment accesses the Internet through a proxy, you will need the details of the proxy including the fully qualified domain name and the port number.|
+
+## Enable vSphere High Availability
+
+You must enable vSphere High Availability \(HA\) to support virtual machine failover during an HA event such as a host failure. Sufficient CPU and memory resources must be reserved across the system so that all VMs on the affected host\(s\) can fail over to remaining available hosts in the system. You configure an Admission Control Policy \(ACP\) to specify the percentage CPU and memory to reserve on all the hosts in the cluster to support HA functionality.
+
+**Note:** 
+
+You should not use the default Admission Control Policy. Instead, you should calculate the memory and CPU requirements that are specific to your environment.
+
+## Install vSphere Docker Volume Service driver on all ESXi hosts
+
+vSphere Docker Volume Service technology enables stateful containers to access the storage volumes. This is a one-off manual step. In order to be able to use Docker volumes using the vSphere driver, you must first install the latest release of the vSphere Docker Volume Service \(vDVS\) driver, which is available as a vSphere Installation Bundle \(VIB\). To perform this operation, log in to each of the ESXi hosts, download and install the latest release of vDVS driver.
+
+```
+# esxcli software vib install -v /tmp/vmware-esx-vmdkops-<version>.vib --no-sig-check
+```
+
+More information on how to download and install the driver can be found at [http://vmware.github.io/vsphere-storage-for-docker/documentation/install.html](http://vmware.github.io/vsphere-storage-for-docker/documentation/install.html)
+
+**Note:** 
+
+You cannot mount the same persistent volume created through vSphere Docker Volume Service \(vDVS\) on containers running on two different hosts at the same time.
+
+## Install vSphere Docker Volume Service driver for Windows
+
+VMware README confirms that the same docker vsphere plugin we are using for Linux is supported for Docker \(Docker for Windows\) version 17.06.[https://github.com/vmware/vsphere-storage-for-docker/blob/master/README.md](https://github.com/vmware/vsphere-storage-for-docker/blob/master/README.md)
+
+Docker \(Windows\): 17.06 and above \(Windows containers mode only\)
+
+Following location has version 0.21 of the windows software packaged in a Zip file, please note this is a development branch. [https://bintray.com/vmware/vDVS/VDVS\_Windows](https://bintray.com/vmware/vDVS/VDVS_Windows)vsphere-storage-for-docker\_windows\_0.21.zip
+
+Image will need to be downloaded and installed direct
+
+```
+curl -L https://vmware.bintray.com/vDVS/<FILE_PATH>" -o <FILE.EXT>
+```
+
+Unpack vsphere-storage-for-docker\_windows\_0.20.zip - ZIP archive, unpacked size 5,884,055 bytes on each of the windows worker nodes.
+
+1.  Unzip file and then execute program.execute cmd.exe /C unzip -o Source\*.zip -d Destination ;
+2.  Run executable vdvs.exe, on each of the windows worker nodes this is dependent on [VDI-1515](https://jira.simplivt.local:8443/browse/VDI-1515) being finished.
+3.  Test scenario; Run docker info command to check that the storage vdvs plugin is available, then spin up a container with an attached volume, check you can create data within the volume.
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"

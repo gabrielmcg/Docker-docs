@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="install-vdvs-win">
-			<title>Install vSphere Docker Volume Service driver for Windows</title>
-			<body>
-				<p>VMware read me confirms that the same docker vsphere plugin we
-                                        are using for Linux is supported for Docker (Docker for
-                                        Windows) version 17.06.<xref format="html" scope="external" href="https://github.com/vmware/vsphere-storage-for-docker/blob/master/README.md">https://github.com/vmware/vsphere-storage-for-docker/blob/master/README.md</xref></p>
-				<p>Docker (Windows): 17.06 and above (Windows containers mode only)</p>
-				<p>Following location has version 0.21 of the windows software
-                                        packaged in a Zip file, please note this is a development
-                                        branch. <xref format="html" scope="external" href="https://bintray.com/vmware/vDVS/VDVS_Windows">https://bintray.com/vmware/vDVS/VDVS_Windows</xref>vsphere-storage-for-docker_windows_0.21.zip</p>
-				<p>Image will need to be downloaded and installed direct from curl
-                                        -L
-                                                "<!--<xref format="html" scope="external" href="">-->https://vmware.bintray.com/vDVS/&lt;FILE_PATH<!--</xref>-->&gt;"
-                                        -o &lt;FILE.EXT&gt;</p>
-				<p>Unpack vsphere-storage-for-docker_windows_0.20.zip - ZIP archive, unpacked size 5,884,055 bytes on each of the windows worker nodes.</p>
-				<p/>
-				<ol>
-					<li>Unzip file and then execute program.execute cmd.exe /C unzip -o Source*.zip -d Destination ;</li>
-					<li>Run executable vdvs.exe, on each of the
-                                                  windows worker nodes this is dependent on <xref format="html" scope="external" href="https://jira.simplivt.local:8443/browse/VDI-1515">VDI-1515</xref> being finished.</li>
-					<li>Test scenario; Run docker info command to check that the storage vdvs plugin is available, then spin up a container with an attached volume, check you can create data within the volume.</li>
-				</ol>
-				<p/>
-				<p/>
-				<p/>
-			</body>
-		</topic>
+	<title>Install vSphere Docker Volume Service driver for Windows</title>
+	<body>
+		<p>VMware README confirms that the same docker vsphere plugin we are using for Linux is
+			supported for Docker (Docker for Windows) version 17.06.<xref format="html"
+				scope="external"
+				href="https://github.com/vmware/vsphere-storage-for-docker/blob/master/README.md"
+				>https://github.com/vmware/vsphere-storage-for-docker/blob/master/README.md</xref></p>
+		<p>Docker (Windows): 17.06 and above (Windows containers mode only)</p>
+		<p>Following location has version 0.21 of the windows software packaged in a Zip file,
+			please note this is a development branch. <xref format="html" scope="external"
+				href="https://bintray.com/vmware/vDVS/VDVS_Windows"
+				>https://bintray.com/vmware/vDVS/VDVS_Windows</xref>vsphere-storage-for-docker_windows_0.21.zip</p>
+		<p>Image will need to be downloaded and installed direct
+			<codeblock>curl -L https://vmware.bintray.com/vDVS/&lt;FILE_PATH&gt;" -o &lt;FILE.EXT&gt;</codeblock>
+		</p>
+		<p>Unpack vsphere-storage-for-docker_windows_0.20.zip - ZIP archive, unpacked size 5,884,055
+			bytes on each of the windows worker nodes.</p>
+		<ol>
+			<li>Unzip file and then execute program.execute cmd.exe /C unzip -o Source*.zip -d
+				Destination ;</li>
+			<li>Run executable vdvs.exe, on each of the windows worker nodes this is dependent on
+					<xref format="html" scope="external"
+					href="https://jira.simplivt.local:8443/browse/VDI-1515">VDI-1515</xref> being
+				finished.</li>
+			<li>Test scenario; Run docker info command to check that the storage vdvs plugin is
+				available, then spin up a container with an attached volume, check you can create
+				data within the volume.</li>
+		</ol>
+	</body>
+</topic>
