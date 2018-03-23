@@ -835,8 +835,8 @@ Example:
 
 **Note that the installation will fail if** the ca.pem, cert.pem and key.pem cannot be found in the folders designated by dtr\_certs\_dir and ucp\_certs\_dir or if they don;t constitute valid certificates. Note that there is an ansible module that would help verifying the validity of the certificates byt it requires a version of PyOpenSSL which is not compatible with the version installed on Red Hat 7.4 \(PyOpenSSL is required by RH subscription manager\)
 
-[media-architecture1-png]:</media/architecture1.png> "Figure 1. HPE Synergy Solution"
-[media-architecture2-png]:</media/architecture2.png> "Figure 2. HPE Synergy Solution"
-[media-load-balancers-png]:</media/load-balancers.png> "Figure 3. Load balancer architecture"
-[media-provisioning-png]:</media/provisioning.png> "Figure 4. Provisioning steps"
-[media-create-volume-png]:</media/create-volume.png> "Figure 5. Create volume"
+[media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
+[media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Solution"
+[media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"
+[media-provisioning-png]:</ops/media/provisioning.png> "Figure 4. Provisioning steps"
+[media-create-volume-png]:</ops/media/create-volume.png> "Figure 5. Create volume"
