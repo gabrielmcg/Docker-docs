@@ -46,7 +46,7 @@
     
   </topicref>
   
-  <topicref href="provisioning.dita" navtitle="Provisioning the environment">
+  <!--<topicref href="provisioning.dita" navtitle="Provisioning the environment">
     
     <topicref href="esxi-hosts.dita" navtitle="Creating ESXi hosts"/>
     
@@ -80,6 +80,6 @@
     
     <topicref href="customer-certs.dita" navtitle="Customer certificates"/>
         
-  </topicref>
+  </topicref>-->
  
 </map>
