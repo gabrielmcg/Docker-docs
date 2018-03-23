@@ -205,6 +205,104 @@ With Docker EE Advanced, you can enable physical isolation of resources by organ
 
 More information about this subject can be found at: [https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/isolate-volumes-between-teams/](https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/isolate-volumes-between-teams/).
 
+# Provisioning the environment
+
+This section describes in detail how to provision the environment described previously in the architecture section. The high level steps this guide will take are shown in the figure:
+
+ ![ "Provisioning steps"][media-provisioning-png] 
+
+**Figure 4.** Provisioning steps
+
+## Creating ESXi hosts with OneView and Image Streamer
+
+OneView/Composer: 10.60.50.10
+
+A 3PAR \(StoreServ 8200 All-Flash\) is used for ESXi cluster storage in the Synergy environment and is connected via FCOE. The 3PAR in the Synergy environment is managed by OneView. Storage for the ESXi cluster can be configured in OneView and assigned in the server profile so that the storage is automatically attached when the server is deployed.
+
+Two volumes are necessary for an ESXi cluster, the large datastore for VM deployments and a smaller \(10GB is fine\) quorum disk. From OneView menu, select Volumes and Create Volume.
+
+-   Specify a unique name for the datastore
+-   The storage pool for this environment is ucpa\_r5.
+-   Specify a size
+-   Select Shared
+-   Leave it as Thin provisioned and then select Create.
+
+ ![ "Create volume"][media-create-volume-png] 
+
+**Figure 5.** Create volume
+
+Use the server profile template ESXi-6.5 for Docker to create a new server profile for an ESXi host. The server profile template uses the Image Streamer Deployment plan \(ESXi Deployment SAN and Docker enabled\) to deploy ESXi 6.5 and prepare it for use.
+
+From the Action drop down menu, select Create the server profile.
+
+You will be asked for
+
+-   Unique Server Profile name
+-   Location to deploy \(drop down will give you the list of available compute modules\)
+
+The following attributes are used by the Image Streamer scripts to customize the ESXi 6.5 golden image:
+
+-   Hostname: provide the short name here. It will set the domain to cloudra.local
+-   Networking information \(Management network is VLAN60\)
+
+-   -   IP address: provide the IP address on VLAN60.
+-   Netmask: 255.255.0.0
+-   Gateway: 10.60.0.1
+-   DNS1: 10.60.50.106
+-   DNS2: 10.60.1.53
+
+Note, you have to manually add the hostname + address to the DNS server at 10.60.50.106 since this is not automated.
+
+Storage customization for datastores:
+
+The networks should be set from the template. The networks are configured for High Availability so there are 2 of each:
+
+-   2 Deployment networks which are connected to the Image Streamer
+-   2 networks on MGMT1 \(VLAN 60\)
+-   2 FC networks for Storage connectivity, SAN-A, SAN-B
+-   2 vMotion networks
+
+The Storage may have to be modified depending on which cluster you are joining. If you need different volumes, delete the ones that were added for you and then add the new ones.
+
+When you are done with Storage changes, click Create to start the process to create the server profile on the selected compute host.
+
+After the profile is applied, use the Actions drop down to power on the server.
+
+As it powers on you will probably see connectivity error messages such as this:
+
+This error will \(should!\) clear once the server boots completely.
+
+Use the Actions Drop down to open the iLO session to verify the server booted completely.
+
+You should see the hostname and the IP set as specified in the server profile. After we get this host into vCenter and deploy the vSphere docker plugin we will use the iLO to restart the hostd service.
+
+Additional networking \(ie vMotion\) , distributed switches, attaching the datastore, etc is all manual setup using the vSphere client. All vCenter setup is manual \(vcenter.cloudra.local/10.60.50.103\). There are some licenses for compute hosts available though they all expire in March 2018.
+
+## Deploying the vSphere Volume PlugIn
+
+**Editors Note**: I had attempted to add the vSphere Volume plugin to the ESXi golden image but it does not work. I have reported this issue to the Image Streamer team. The ESXi 6.5 image can't be modified. All changes are lost as soon as it reboots. The existing Image Streamer capture ESXi scripts to create golden images which are supposed to remove all customizations also do not work. The only thing I could get to work is creating the "vanilla" ESXi 6.5 golden image and using the existing Image Streamer scripts to do the customization. Therefore, the addition of the vSphere Volume Plugin is not automated. Using the vSphere Update Manager seemed like the best option however even that requires additional steps as the package provided by VMware doesn't restart the hostd service and the plugin is unusable until you do that.
+
+After the new ESXi host is imported into vCenter, you can use the vSphere Update manager to install the vSphere Volume PlugIn.
+
+-   From vSphere Web Client, select your ESXi host
+-   Select the Update Manager tab
+
+-   Attach the baseline "ESXi 6.5 Docker Patch Extension" to your host.
+
+-   Select Scan for Updates and choose Patches and Extensions
+
+-   Select Remediate - you should see the VDVS\_Driver BuiltIn
+
+-   Keep the defaults for the Advanced and remediation options, click Finish. It doesn't refresh automatically but you can select anything else and return to this page and it should show that host is now compliant.
+
+The Docker Extension is now installed on the ESXi host but you have to restart the service in order to use it. Going back to the iLO session, you can select Alt F1 to go to the CLI and restart the hostd service. After logging in, enter
+
+-   /etc/init.d/hostd restart
+
+If you use the esxcli storage guestvol command you can now see the status.
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"
+[media-provisioning-png]:</ops/media/provisioning.png> "Figure 4. Provisioning steps"
+[media-create-volume-png]:</ops/media/create-volume.png> "Figure 5. Create volume"

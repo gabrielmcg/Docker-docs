@@ -11,4 +11,7 @@
     -   [Sizing considerations](RA.md#sizing)
     -   [Disaster Recovery](RA.md#disaster-recovery)
     -   [Security](RA.md#security)
+-   [Provisioning the environment](RA.md#provisioning)
+    -   [Creating ESXi hosts with OneView and Image Streamer](RA.md#esxi-hosts)
+    -   [Deploying the vSphere Volume PlugIn](RA.md#deploy-plugin)
 
