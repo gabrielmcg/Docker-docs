@@ -1,50 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="architecture">
-  <title>Architecture</title>
-		<body>
-		  <section id="architecture-section">
-  			<p>By default, the Ansible Playbooks will set up a 3 node environment. HPE and Docker recommend a minimal starter configuration of 3 physical nodes for running Docker in production. This is the minimal configuration that Docker recommends for cluster HA. The distribution of the Docker and non-Docker modules over the 3 physical nodes via virtual machines (VMs) is as follows:</p>
-  			<ul>
-  				<li>
-  					<ph>3 Docker Universal Control Plane (UCP) VM nodes for HA and cluster management</ph>
-  				</li>
-  				<li>
-  					<ph>3 Docker Trusted Registry (DTR) VM nodes for HA of the container registry</ph>
-  				</li>
-  				<li>
-  					<ph>3 Docker Swarm Linux worker VM nodes for container workloads</ph>
-  				</li>
-  				<li>
-  					<ph>3 Docker Swarm Windows worker VM nodes for container workloads</ph>
-  				</li>
-  				<li>
-  					<ph>1 Docker UCP load balancer VM to ensure access to UCP in the event of a node failure</ph>
-  				</li>
-  				<li>
-  					<ph>1 Docker DTR load balancer VM to ensure access to DTR in the event of a node failure</ph>
-  				</li>
-  				<li>
-  					<ph>1 Docker Swarm Worker node VM load balancer</ph>
-  				</li>
-  				<li>
-  					<ph>1 Logging server VM for central logging</ph>
-  				</li>
-  				<li>
-  					<ph>1 NFS server VM for storage Docker DTR images</ph>
-  				</li>
-  			</ul>
-  			<p>In addition to the above, the playbooks also set up:</p>
-  			<ul>
-  				<li>
-  					<ph>Docker persistent storage driver from VMware</ph>
-  				</li>
-  				<li>
-  					<ph>Prometheus and Grafana monitoring tools</ph>
-  				</li>
-  			</ul>
-  			<p>These nodes can live in any of the hosts and they are not redundant. The Prometheus and Grafana services are declared in a Docker stack as replicated services with one replica each, so if they fail, Docker EE will ensure that they are restarted on one of the UCP VMs. cAdvisor and node-exporter are declared in the same stack as global services, so Docker EE will ensure that there is always one copy of each running on every machine in the cluster. The vSphere Docker volume plug-in stores data in a shared datastore that can be accessed from any machine in the cluster.</p>
-  		    
-		    </section>
-		</body>
+	<title>Architecture</title>
+	<body>
+		<section id="architecture-section">
+			<p>By default, the Ansible Playbooks will set up a 3 node environment. HPE and Docker
+				recommend a minimal starter configuration of 3 physical nodes for running Docker in
+				production. This is the minimal configuration that Docker recommends for cluster HA.
+				The distribution of the Docker and non-Docker modules over the 3 physical nodes via
+				virtual machines (VMs) is as follows:</p>
+			
+			<ul>
+				<li>3 Docker Universal Control Plane (UCP) VM nodes for HA and cluster management </li>
+				<li>3 Docker Trusted Registry (DTR) VM nodes for HA of the container registry </li>
+				<li>3 Docker Swarm Linux worker VM nodes for container workloads </li>
+				<li>3 Docker Swarm Windows worker VM nodes for container workloads </li>
+				<li>1 Docker UCP load balancer VM to ensure access to UCP in the event of a node
+					failure </li>
+				<li>1 Docker DTR load balancer VM to ensure access to DTR in the event of a node
+					failure </li>
+				<li>1 Docker Swarm Worker node VM load balancer </li>
+				<li>1 Logging server VM for central logging </li>
+				<li>1 NFS server VM for storage Docker DTR images </li>
+			</ul>
+			
+			<p>In addition to the above, the playbooks also set up:</p>
+			
+			<ul>
+				<li>Docker persistent storage driver from VMware </li>
+				<li>Prometheus and Grafana monitoring tools </li>
+			</ul>
+			
+			<p>These nodes can live in any of the hosts and they are not redundant. The Prometheus
+				and Grafana services are declared in a Docker stack as replicated services with one
+				replica each, so if they fail, Docker EE will ensure that they are restarted on one
+				of the UCP VMs. cAdvisor and node-exporter are declared in the same stack as global
+				services, so Docker EE will ensure that there is always one copy of each running on
+				every machine in the cluster. The vSphere Docker volume plug-in stores data in a
+				shared datastore that can be accessed from any machine in the cluster.</p>
+		</section>
+	</body>
 </topic>

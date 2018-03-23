@@ -28,11 +28,11 @@ Docker Enterprise Edition \(EE\) is a leading enterprise containers-as-a-service
 
 Docker EE provides:
 
--    Integrated management of all application resources from a single web admin UI. 
--    Frictionless deployment of applications and Compose files to production in a few clicks. 
--    Multi-tenant system with granular role-based access control \(RBAC\) and LDAP/AD integration. 
--    Self-healing application deployment with the ability to apply rolling application updates. 
--    End-to-end security model with secrets management, image signing and image security scanning. 
+-   Integrated management of all application resources from a single web admin UI.
+-   Frictionless deployment of applications and Compose files to production in a few clicks.
+-   Multi-tenant system with granular role-based access control \(RBAC\) and LDAP/AD integration.
+-   Self-healing application deployment with the ability to apply rolling application updates.
+-   End-to-end security model with secrets management, image signing and image security scanning.
 
 More information about Docker Enterprise Edition can be found at: [https://www.docker.com/enterprise-edition](https://www.docker.com/enterprise-edition)
 
@@ -42,28 +42,28 @@ HPE Synergy, the first platform built from the ground up for composable infrastr
 
 HPE Synergy Frames contain a management appliance called the HPE Synergy Composer which hosts HPE OneView. HPE Synergy Composer manages the composable infrastructure and delivers:
 
--    Fluid pools of resources, where a single infrastructure of compute, storage and fabric boots up ready for workloads and demonstrates self-assimilating capacity. 
--    Software-defined intelligence, with a single interface that precisely composes logical infrastructures at near-instant speeds; and demonstrates template-driven, frictionless operations. 
--    Unified API access, which enables simple line-of-code programming of every infrastructure element; easily automates IT operational processes; and effortlessly automates applications through infrastructure deployment. 
+-   Fluid pools of resources, where a single infrastructure of compute, storage and fabric boots up ready for workloads and demonstrates self-assimilating capacity.
+-   Software-defined intelligence, with a single interface that precisely composes logical infrastructures at near-instant speeds; and demonstrates template-driven, frictionless operations.
+-   Unified API access, which enables simple line-of-code programming of every infrastructure element; easily automates IT operational processes; and effortlessly automates applications through infrastructure deployment.
 
 # Architecture
 
 By default, the Ansible Playbooks will set up a 3 node environment. HPE and Docker recommend a minimal starter configuration of 3 physical nodes for running Docker in production. This is the minimal configuration that Docker recommends for cluster HA. The distribution of the Docker and non-Docker modules over the 3 physical nodes via virtual machines \(VMs\) is as follows:
 
--    3 Docker Universal Control Plane \(UCP\) VM nodes for HA and cluster management 
--    3 Docker Trusted Registry \(DTR\) VM nodes for HA of the container registry 
--    3 Docker Swarm Linux worker VM nodes for container workloads 
--    3 Docker Swarm Windows worker VM nodes for container workloads 
--    1 Docker UCP load balancer VM to ensure access to UCP in the event of a node failure 
--    1 Docker DTR load balancer VM to ensure access to DTR in the event of a node failure 
--    1 Docker Swarm Worker node VM load balancer 
--    1 Logging server VM for central logging 
--    1 NFS server VM for storage Docker DTR images 
+-   3 Docker Universal Control Plane \(UCP\) VM nodes for HA and cluster management
+-   3 Docker Trusted Registry \(DTR\) VM nodes for HA of the container registry
+-   3 Docker Swarm Linux worker VM nodes for container workloads
+-   3 Docker Swarm Windows worker VM nodes for container workloads
+-   1 Docker UCP load balancer VM to ensure access to UCP in the event of a node failure
+-   1 Docker DTR load balancer VM to ensure access to DTR in the event of a node failure
+-   1 Docker Swarm Worker node VM load balancer
+-   1 Logging server VM for central logging
+-   1 NFS server VM for storage Docker DTR images
 
 In addition to the above, the playbooks also set up:
 
--    Docker persistent storage driver from VMware 
--    Prometheus and Grafana monitoring tools 
+-   Docker persistent storage driver from VMware
+-   Prometheus and Grafana monitoring tools
 
 These nodes can live in any of the hosts and they are not redundant. The Prometheus and Grafana services are declared in a Docker stack as replicated services with one replica each, so if they fail, Docker EE will ensure that they are restarted on one of the UCP VMs. cAdvisor and node-exporter are declared in the same stack as global services, so Docker EE will ensure that there is always one copy of each running on every machine in the cluster. The vSphere Docker volume plug-in stores data in a shared datastore that can be accessed from any machine in the cluster.
 
@@ -71,14 +71,14 @@ These nodes can live in any of the hosts and they are not redundant. The Prometh
 
 Two platforms will be described / tested:
 
-1.  3 node HPE Synergy 480 Gen10 deployment with 1 node in each Synergy frame 
-    -    384 GB DDR4-2133 RAM 
-    -    2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core 
-    -    single ESXi cluster with control plane and docker workers spread out on all 3 nodes 
-2.  6 node HPE Synergy 480 Gen 10 deployment with 2 nodes in each Synergy frame 
-    -    384GB DDR4-2133 RAM 
-    -    2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core 
-    -    single ESXi cluster with control plane on 3 nodes and 3 nodes dedicated as Docker workers \(should this be 2 clusters?\) 
+1.  3 node HPE Synergy 480 Gen10 deployment with 1 node in each Synergy frame
+    -   384 GB DDR4-2133 RAM
+    -   2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core
+    -   single ESXi cluster with control plane and docker workers spread out on all 3 nodes
+2.  6 node HPE Synergy 480 Gen 10 deployment with 2 nodes in each Synergy frame
+    -   384GB DDR4-2133 RAM
+    -   2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core
+    -   single ESXi cluster with control plane on 3 nodes and 3 nodes dedicated as Docker workers \(should this be 2 clusters?\)
 
 TBD: How many workers should be deployed on a single ESXi host dedicated to Docker workers to maximize use of the server and justify the cost of VMware license.
 
@@ -96,9 +96,9 @@ will need additional storage for File Persona
 
 **Figure 1.** HPE Synergy Solution
 
-![ "HPE Synergy Solution"][media-architecture2-png]
+![ "HPE Synergy Configuration"][media-architecture2-png]
 
-**Figure 2.** HPE Synergy Solution
+**Figure 2.** HPE Synergy Configuration
 
 ## High availability
 
@@ -118,10 +118,10 @@ A node is a machine in the cluster \(virtual or physical\) with Docker Engine ru
 
 To decide what size the node should be in terms of CPU, RAM, and storage resources, consider the following:
 
-1.   All nodes should at least fulfil the minimal requirements, for UCP 2.0, 2GB of RAM and 3GB of storage. More detailed requirements are in the UCP documentation. 
-2.   UCP Controller nodes should be provided with more than the minimal requirements, but won’t need much more if nothing else runs on them. 
-3.   Ideally, worker node size will vary based on your workloads so it is impossible to define a universal standard size. 
-4.   Other considerations like target density \(average number of containers per node\), whether one standard node type or several are preferred, and other operational considerations might also influence sizing. 
+1.  All nodes should at least fulfil the minimal requirements, for UCP 2.0, 2GB of RAM and 3GB of storage. More detailed requirements are in the UCP documentation.
+2.  UCP Controller nodes should be provided with more than the minimal requirements, but won’t need much more if nothing else runs on them.
+3.  Ideally, worker node size will vary based on your workloads so it is impossible to define a universal standard size.
+4.  Other considerations like target density \(average number of containers per node\), whether one standard node type or several are preferred, and other operational considerations might also influence sizing.
 
 If possible, node size should be determined by experimentation and testing actual workloads; and they should be refined iteratively. A good starting point is to select a standard or default machine type in your environment and use this size only. If your standard machine type provides more resources than the UCP Controllers need, it makes sense to have a smaller node size for these. Whatever the starting choice, it is important to monitor resource usage and cost to improve the model.
 
@@ -150,8 +150,6 @@ For HPE Enterprise Containers with Docker EE: Ops Edition, the following tables 
 
 **Note:** 
 
-Note
-
 In the case of one ESX host failure, two nodes are enough to accommodate the amount of vCPU required
 
 |RAM \(GB\)|node01|node02|node03|
@@ -178,8 +176,6 @@ In the case of one ESX host failure, two nodes are enough to accommodate the amo
 |Available RAM|384|384|384|
 
 **Note:** 
-
-Note
 
 In the case of one ESX host failure, the two surviving hosts can accommodate the amount of RAM required for all VMs.
 
@@ -210,5 +206,5 @@ With Docker EE Advanced, you can enable physical isolation of resources by organ
 More information about this subject can be found at: [https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/isolate-volumes-between-teams/](https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/isolate-volumes-between-teams/).
 
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
-[media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Solution"
+[media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"

@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-		<topic id="storage-reqs">
-			<title>Storage requirements:</title>
-			<body>
-				<p>3PAR store required for ESXi datastore (block storage)</p>
-				<p>Currently have 8x 480GB SSD used for datastore</p>
-				<p>NFS storage - TBD, this needs file persona enabled</p>
-				<p>will need additional storage for File Persona</p>
-				<p/>
-			  <fig>
-			    <title>HPE Synergy Solution</title>
-			    <!--<image keyref="architecture1" placement="break"/>-->
-			  	<image href="media/architecture1.png" placement="break"/>
-			  </fig>
+<topic id="storage-reqs">
+	<title>Storage requirements:</title>
+	<body>
+		<p>3PAR store required for ESXi datastore (block storage)</p>
+		<p>Currently have 8x 480GB SSD used for datastore</p>
+		<p>NFS storage - TBD, this needs file persona enabled</p>
+		<p>will need additional storage for File Persona</p>
 
-			  <fig>
-			    <title>HPE Synergy Solution</title>
-			    <!--<image keyref="architecture2" placement="break"/>-->
-			  	<image href="media/architecture2.png" placement="break"/>
-			  </fig>
 
-			</body>
-		</topic>
+		<fig>
+			<title>HPE Synergy Solution</title>
+			<!--<image keyref="architecture1" placement="break"/>-->
+			<image href="media/architecture1.png" placement="break"/>
+		</fig>
+
+		<fig>
+			<title>HPE Synergy Configuration</title>
+			<!--<image keyref="architecture2" placement="break"/>-->
+			<image href="media/architecture2.png" placement="break"/>
+		</fig>
+
+	</body>
+</topic>

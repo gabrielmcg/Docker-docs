@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="synergy">
-			<title>HPE Synergy</title>
-			<body>
-				<p>HPE Synergy, the first platform built from the ground up for composable infrastructure, empowers IT to create and deliver new value instantly and continuously. This single infrastructure reduces operational complexity for traditional workloads and increases operational velocity for the new breed of applications and services. Through a single interface, HPE Synergy composes compute, storage and fabric pools into any configuration for any application. It also enables a broad range of applications from bare metal to virtual machines to containers, and operational models like hybrid cloud and DevOps. HPE Synergy enables IT to rapidly react to new business demands.</p>
-				<p>HPE Synergy Frames contain a management appliance called the HPE Synergy Composer which hosts HPE OneView. HPE Synergy Composer manages the composable infrastructure and delivers:</p>
-				<ul>
-					<li>
-						<ph>Fluid pools of resources, where a single infrastructure of compute, storage and fabric boots up ready for workloads and demonstrates self-assimilating capacity.</ph>
-					</li>
-					<li>
-						<ph>Software-defined intelligence, with a single interface that precisely composes logical infrastructures at near-instant speeds; and demonstrates template-driven, frictionless operations.</ph>
-					</li>
-					<li>
-						<ph>Unified API access, which enables simple line-of-code programming of every infrastructure element; easily automates IT operational processes; and effortlessly automates applications through infrastructure deployment.</ph>
-					</li>
-				</ul>
-			</body>
-		</topic>
+	<title>HPE Synergy</title>
+	<body>
+		<p>HPE Synergy, the first platform built from the ground up for composable infrastructure,
+			empowers IT to create and deliver new value instantly and continuously. This single
+			infrastructure reduces operational complexity for traditional workloads and increases
+			operational velocity for the new breed of applications and services. Through a single
+			interface, HPE Synergy composes compute, storage and fabric pools into any configuration
+			for any application. It also enables a broad range of applications from bare metal to
+			virtual machines to containers, and operational models like hybrid cloud and DevOps. HPE
+			Synergy enables IT to rapidly react to new business demands.</p>
+		<p>HPE Synergy Frames contain a management appliance called the HPE Synergy Composer which
+			hosts HPE OneView. HPE Synergy Composer manages the composable infrastructure and
+			delivers:</p>
+		<ul>
+			<li>Fluid pools of resources, where a single infrastructure of compute, storage and
+				fabric boots up ready for workloads and demonstrates self-assimilating capacity. </li>
+			<li>Software-defined intelligence, with a single interface that precisely composes
+				logical infrastructures at near-instant speeds; and demonstrates template-driven,
+				frictionless operations. </li>
+			<li>Unified API access, which enables simple line-of-code programming of every
+				infrastructure element; easily automates IT operational processes; and effortlessly
+				automates applications through infrastructure deployment. </li>
+		</ul>
+	</body>
+</topic>

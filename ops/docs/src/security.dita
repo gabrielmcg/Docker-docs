@@ -1,42 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="security">
-			<title>Security</title>
-			<body>
-				<p>The Docker Reference architecture for Securing
-                                                  Docker EE and Security Best Practices is available
-                                                  at <xref format="html" scope="external" href="https://success.docker.com/article/Docker_Reference_Architecture-_Securing_Docker_EE_and_Security_Best_Practices">https://success.docker.com/article/Docker_Reference_Architecture-_Securing_Docker_EE_and_Security_Best_Practices</xref></p>
-				<p>In addition to
-                                                  having all logs centralized in a single place and
-                                                  the image scanning feature enabled for the DTR
-                                                  nodes, there are other guidelines that should be
-                                                  followed in order to keep your Docker environment
-                                                  as secure as possible. The HPE Reference
-                                                  Configuration paper for securing Docker on HPE
-                                                  Hardware places a special emphasis on securing
-                                                  Docker in DevOps environments and covers best
-                                                  practices in terms of Docker security. The
-                                                  document can be found at: <xref format="html" scope="external" href="http://h20195.www2.hpe.com/V2/GetDocument.aspx?docname=a00020437enw">http://h20195.www2.hpe.com/V2/GetDocument.aspx?docname=a00020437enw</xref>.
-                                                  Some newer Docker security features that were not
-                                                  covered in the reference configuration are
-                                                  outlined below.</p>
-			</body>
-			<topic id="d1e1570">
-				<title>Prevent tags from being overwritten</title>
-				<body>
-					<p>By default, an image tag can be overwritten by a user with the correct access rights. As an example, an image such as library/wordpress:latest can be pushed and tagged by different users, yet have different functionality. This might make it difficult to trace back the image to the build that generated it.</p>
-					<p>Docker DTR can prevent this from happening with the immutable tags feature that can be configured on a per repository basis. Once an image is pushed with a tag, that particular tag cannot be overwritten.</p>
-					<p>More information
-                                                  about immutable tags can be found at: <xref format="html" scope="external" href="https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/prevent-tags-from-being-overwritten/%20">https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/prevent-tags-from-being-overwritten/</xref></p>
-				</body>
-			</topic>
-			<topic id="d1e1585">
-				<title>Isolate swarm nodes to a specific team</title>
-				<body>
-					<p>With Docker EE Advanced, you can enable physical isolation of resources by organizing nodes into collections and granting Scheduler access for different users. To control access to nodes, move them to dedicated collections where you can grant access to specific users, teams, and organizations.</p>
-					<p>More
-                                                  information about this subject can be found at: <xref format="html" scope="external" href="https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/isolate-volumes-between-teams/">https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/isolate-volumes-between-teams/</xref>.</p>
-					<p/>
-				</body>
-			</topic>
-		</topic>
+	<title>Security</title>
+	<body>
+		<p>The Docker Reference architecture for Securing Docker EE and Security Best Practices is
+			available at <xref format="html" scope="external"
+				href="https://success.docker.com/article/Docker_Reference_Architecture-_Securing_Docker_EE_and_Security_Best_Practices"
+				>https://success.docker.com/article/Docker_Reference_Architecture-_Securing_Docker_EE_and_Security_Best_Practices</xref></p>
+		
+		<p>In addition to having all logs centralized in a single place and the image scanning
+			feature enabled for the DTR nodes, there are other guidelines that should be followed in
+			order to keep your Docker environment as secure as possible. The HPE Reference
+			Configuration paper for securing Docker on HPE Hardware places a special emphasis on
+			securing Docker in DevOps environments and covers best practices in terms of Docker
+			security. The document can be found at: <xref format="html" scope="external"
+				href="http://h20195.www2.hpe.com/V2/GetDocument.aspx?docname=a00020437enw"
+				>http://h20195.www2.hpe.com/V2/GetDocument.aspx?docname=a00020437enw</xref>. Some
+			newer Docker security features that were not covered in the reference configuration are
+			outlined below.</p>
+	</body>
+	
+	<topic id="d1e1570">
+		<title>Prevent tags from being overwritten</title>
+		
+		<body>
+			<p>By default, an image tag can be overwritten by a user with the correct access rights.
+				As an example, an image such as library/wordpress:latest can be pushed and tagged by
+				different users, yet have different functionality. This might make it difficult to
+				trace back the image to the build that generated it.</p>
+			
+			<p>Docker DTR can prevent this from happening with the immutable tags feature that can
+				be configured on a per repository basis. Once an image is pushed with a tag, that
+				particular tag cannot be overwritten.</p>
+			
+			<p>More information about immutable tags can be found at: <xref format="html"
+					scope="external"
+					href="https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/prevent-tags-from-being-overwritten/%20"
+					>https://docs.docker.com/datacenter/dtr/2.3/guides/user/manage-images/prevent-tags-from-being-overwritten/</xref></p>
+		</body>
+	</topic>
+	
+	<topic id="d1e1585">
+		<title>Isolate swarm nodes to a specific team</title>
+		
+		<body>
+			<p>With Docker EE Advanced, you can enable physical isolation of resources by organizing
+				nodes into collections and granting Scheduler access for different users. To control
+				access to nodes, move them to dedicated collections where you can grant access to
+				specific users, teams, and organizations.</p>
+			
+			<p>More information about this subject can be found at: <xref format="html"
+					scope="external"
+					href="https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/isolate-volumes-between-teams/"
+					>https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/isolate-volumes-between-teams/</xref>.</p>
+			<p/>
+		</body>
+	</topic>
+</topic>
