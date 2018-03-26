@@ -343,7 +343,7 @@ VMware README confirms that the same docker vsphere plugin we are using for Linu
 
 Docker \(Windows\): 17.06 and above \(Windows containers mode only\)
 
-Following location has version 0.21 of the windows software packaged in a Zip file, please note this is a development branch. [https://bintray.com/vmware/vDVS/VDVS\_Windows](https://bintray.com/vmware/vDVS/VDVS_Windows)vsphere-storage-for-docker\_windows\_0.21.zip
+Following location has version 0.21 of the windows software packaged in a Zip file, please note this is a development branch. Browse to [https://bintray.com/vmware/vDVS/VDVS\_Windows](https://bintray.com/vmware/vDVS/VDVS_Windows) and download `vsphere-storage-for-docker_windows_0.21.zip`
 
 Image will need to be downloaded and installed direct
 
@@ -356,6 +356,76 @@ Unpack vsphere-storage-for-docker\_windows\_0.20.zip - ZIP archive, unpacked siz
 1.  Unzip file and then execute program.execute cmd.exe /C unzip -o Source\*.zip -d Destination ;
 2.  Run executable vdvs.exe, on each of the windows worker nodes this is dependent on [VDI-1515](https://jira.simplivt.local:8443/browse/VDI-1515) being finished.
 3.  Test scenario; Run docker info command to check that the storage vdvs plugin is available, then spin up a container with an attached volume, check you can create data within the volume.
+
+## Create the Red Hat Linux Template
+
+The section explains how to create the Red Hat Linux VM Template that you will use as the base for all your nodes. In order to create a VM Template you will first create a Virtual Machine with the OS installed and then convert the Virtual Machine to a VM Template. Since the goal of automation is to remove as many repetitive tasks as possible, the VM Template is created as lean as possible, with any additional software installs and/or system configuration performed subsequently using Ansible. It would be possible to automate the creation of the template. However, as this is a one-off task, it is appropriate to do it manually. The steps to create a VM template manually are described below.
+
+1.  Log in to vCenter and create a new Virtual Machine with the following characteristics:
+    -   Guest OS Family: Linux, Guest OS Version: Red Hat Enterprise Linux \(64-bit\)
+    -   Hard Disk size: 50GB, \(Thin provisioning\)
+    -   A single network controller connected to the network or VLAN of your choice. All VMs will connect to this same network.
+    -   Optionally you can remove the floppy drive
+2.  Install Red Hat Enterprise 7
+    1.  Select a language which is selected by Docker
+    2.  For the software selection, choose **Infrastructure Server** as the base environment and add the **Guest Agents** from the lists of add-ons available for this environment. The Infrastructure Server environment is selected here versus the Minimal Install because Customization of Linux guest operating systems requires that Perl is installed in the Linux guest operating system.
+    3.  Configure the network settings so that you can later access the VM using SSH. Specify and IP address for the network interface, a default gateway, DNSs settings and possibly HTTP/HTTS proxy that apply in your environment.
+    4.  Specify a password for the root account and optionally created an admin user
+    5.  wait for the installation to finish and the VM to reboot.
+
+## Configure the yum repositories
+
+The Red Hat packages required during the deployment of the solution come from two repositories: `rhel-7-server-rpms`and `rhel 7-server-extras-rpms`. The first repository can be found on the Red Hat DVD but the second cannot. There are two options, with both options requiring a Red Hat Network account. Logon in your VM template using SSH using the credentials you configured for the root account and implement one of the two options below:
+
+**Option 1:** Use Red Hat subscription manager to register your system. This is the easiest way and will automatically give you access to the official Red Hat repositories. Use the `subscription-manager register` command as follows.
+
+```
+# subscription-manager register --auto-attach
+```
+
+If you are behind a proxy, you must configure this before running the above command to register.
+
+```
+# subscription-manager config --server.proxy_hostname=<proxy IP> --server.proxy_port=<proxy port>
+```
+
+ Verify that you don't have the issue described here: [https://access.redhat.com/solutions/3317671](https://access.redhat.com/solutions/3317671) by entering the following command. 
+
+```
+# yum repolist
+```
+
+If you have the issue, fix it with the following command
+
+```
+# subscription-manager repos --disable=rhel-7-server-rt-beta-rpms
+```
+
+The playbooks will later automatically enable the `extras` repository on the VMs that need it.
+
+**Option 2:** Use an internal repository. Instead of pulling the packages from Red Hat, you can create copies of the required repositories on a dedicated node. You can then configure the package manager to pull the packages from the dedicated node. Your `/etc/yum.repos.d/redhat.repo` could look as follows.
+
+```
+
+[RHEL7-Server]
+name=Red Hat Enterprise Linux $releasever - $basearch
+baseurl=http://yourserver.example.com/rhel-7-server-rpms/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+
+[RHEL7-Server-extras]
+name=Red Hat Enterprise Linux Extra pkg $releasever - $basearch
+baseurl=http://yourserver.example.com/rhel-7-server-extras-rpms/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+
+```
+
+The following articles explain how you can create a local mirror of the Red Hat repositories and how to share them. [https://access.redhat.com/solutions/23016](https://access.redhat.com/solutions/23016)  [https://access.redhat.com/solutions/7227](https://access.redhat.com/solutions/7227)  
+
+Before converting the VM to a template, you will need to setup access for the Ansible host to configure the individual VMs. This is explained in the next section.
 
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"

@@ -8,11 +8,14 @@
 				scope="external"
 				href="https://github.com/vmware/vsphere-storage-for-docker/blob/master/README.md"
 				>https://github.com/vmware/vsphere-storage-for-docker/blob/master/README.md</xref></p>
+		
 		<p>Docker (Windows): 17.06 and above (Windows containers mode only)</p>
+		
 		<p>Following location has version 0.21 of the windows software packaged in a Zip file,
-			please note this is a development branch. <xref format="html" scope="external"
+			please note this is a development branch. Browse to <xref format="html" scope="external"
 				href="https://bintray.com/vmware/vDVS/VDVS_Windows"
-				>https://bintray.com/vmware/vDVS/VDVS_Windows</xref>vsphere-storage-for-docker_windows_0.21.zip</p>
+				>https://bintray.com/vmware/vDVS/VDVS_Windows</xref> and download  <codeph>vsphere-storage-for-docker_windows_0.21.zip</codeph></p>
+		
 		<p>Image will need to be downloaded and installed direct
 			<codeblock>curl -L https://vmware.bintray.com/vDVS/&lt;FILE_PATH&gt;" -o &lt;FILE.EXT&gt;</codeblock>
 		</p>
@@ -25,6 +28,7 @@
 					<xref format="html" scope="external"
 					href="https://jira.simplivt.local:8443/browse/VDI-1515">VDI-1515</xref> being
 				finished.</li>
+			
 			<li>Test scenario; Run docker info command to check that the storage vdvs plugin is
 				available, then spin up a container with an attached volume, check you can create
 				data within the volume.</li>

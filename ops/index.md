@@ -18,4 +18,6 @@
     -   [Enable vSphere High Availability](RA.md#vsphere-ha)
     -   [Install vSphere Docker Volume Service driver on all ESXi hosts](RA.md#install-vdvs)
     -   [Install vSphere Docker Volume Service driver for Windows](RA.md#install-vdvs-win)
+    -   [Create the Red Hat Linux Template](RA.md#create-rhel-template)
+    -   [Configure the yum repositories](RA.md#config-yum)
 
