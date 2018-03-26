@@ -1,91 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="create-ansible-node">
-			<title>Create the Ansible node</title>
-			<body>
-				<p>In addition to the VM Template, you need another Virtual Machine where Ansible will be installed. This node will act as the driver to automate the provisioning of the environment and it is essential that it is properly installed. The steps are as follows:</p>
-				<ol>
-					<li>Create a Virtual Machine and install your preferred OS (in this example, and for the sake of simplicity, RHEL7 will be used). The rest of the instructions assume that, if you use a different OS, you understand the possible differences in syntax for the provided commands. If you use RHEL 7, select Infrastructure Server as the base environment and the Guests Agentsadd-on during the installation.</li>
-					<li>
-						<pre>Log in to the root account and create an SSH key pair. Do not protect the key with a passphrase (unless you want to use ssh-agent).</pre>
-						<!--<table>
-							<row>
-								<entry>-->
-									<pre># ssh-keygen</pre>
-								<!--</entry>
-							</row>
-						</table>-->
-					</li>
-					<li>
-							Configure the following yum repositories,
-                                                  rhel-7-server-rpms and rhel-7-server-extras-rpms
-                                                  as explained in <xref format="html" scope="external" href="https://confluence.simplivt.local/display/PE/Create+the+Linux+Red+Hat+Template">https://confluence.simplivt.local/display/PE/Create+the+Linux+Red+Hat+Template</xref>the
-                                                  "extras" repo can be enabled with:
-							<!--<table>
-								<row>
-									<entry>-->
-										<pre># subscription-manager repos --enable=rhel-7-server-extras-rpms</pre>
-									<!--</entry>
-								</row>
-							</table>-->
-							
-								
-								
-							
-						</li>
-					<li>
-							Configure the EPEL repository. For more
-                                                  information, see: <xref format="html" scope="external" href="http://fedoraproject.org/wiki/EPEL">http://fedoraproject.org/wiki/EPEL</xref>. Note that
-                                                  yum-config-manager comes with the Infrastructure
-                                                  Server base environment, if you did not select
-                                                  this environment you will have to install the
-                                                  yum-utils package.
-							<!--<table>
-								<row>
-									<entry>-->
-										<pre># rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm # yum-config-manager --enable rhel-7-server-extras-rpms</pre>
-									<!--</entry>
-								</row>
-							</table>-->
-						</li>
-					<li>
-							Install Ansible. The playbooks require Ansible 2.4.2 and above
-							<!--<table>
-								<row>
-									<entry>-->
-										<pre># yum install ansible</pre>
-									<!--</entry>
-								</row>
-							</table>-->
-						</li>
-					<li>Make a list of all the hostnames and IPs that will be in
-                                                your system and update your <codeph>/etc/hosts</codeph>
-                                                file accordingly. This includes your UCP nodes, DTR
-                                                nodes, worker nodes, NFS server, logger server and
-                                                load balancers.</li>
-					<li>
-							Install the following packages which are a mandatory requirement for the playbooks to function as expected. (Update pip if requested).
-							<!--<table>
-								<row>
-									<entry>-->
-										<pre># yum install python-pyvmomi python-netaddr python2-jmespath python-pip gcc python-devel openssl-devel git # pip install --upgrade pip # pip install cryptography # pip install pysphere # pip install "pywinrm&gt;=0.2.2"</pre>
-									<!--</entry>
-								</row>
-							</table>-->
-						</li>
-					<li>
-							Copy your SSH public key to the VM Template so that, in the future, your Ansible node can SSH without the need of a password to all the Virtual Machines created from the VM Template.
-							<!--<table>
-								<row>
-									<entry>-->
-										<pre># ssh-copy-id root@&lt;VM_Template&gt;</pre>
-									<!--</entry>
-								</row>
-							</table>-->
-						</li>
-				</ol>
-				<p>Please note that in both the Ansible node and the VM Template you might need to configure the network so one node can reach the other. Instructions for this step have been omitted since it is a basic step and could vary depending on the user’s environment.</p>
-				<p/>
-				<p/>
-			</body>
-		</topic>
+	<title>Create the Ansible node</title>
+	<body>
+		<p>In addition to the VM Template, you need another Virtual Machine where Ansible will be
+			installed. This node will act as the driver to automate the provisioning of the
+			environment and it is essential that it is properly installed. The steps are as
+			follows:</p>
+
+		<ol>
+			<li>Create a Virtual Machine and install your preferred OS (in this example, and for the
+				sake of simplicity, RHEL7 will be used). The rest of the instructions assume that,
+				if you use a different OS, you understand the possible differences in syntax for the
+				provided commands. If you use RHEL 7, select Infrastructure Server as the base
+				environment and the Guests Agentsadd-on during the installation.</li>
+			<li> Log in to the root account and create an SSH key pair. Do not protect the key with
+				a passphrase (unless you want to use ssh-agent). <codeblock># ssh-keygen</codeblock>
+			</li>
+			<li>Configure the following yum repositories, rhel-7-server-rpms and
+				rhel-7-server-extras-rpms as explained in <xref format="html" scope="external"
+					href="https://confluence.simplivt.local/display/PE/Create+the+Linux+Red+Hat+Template"
+					>https://confluence.simplivt.local/display/PE/Create+the+Linux+Red+Hat+Template</xref>the
+				"extras" repo can be enabled with:
+				<codeblock># subscription-manager repos --enable=rhel-7-server-extras-rpms</codeblock>
+			</li>
+			<li>Configure the EPEL repository. For more information, see: <xref format="html"
+					scope="external" href="http://fedoraproject.org/wiki/EPEL"
+					>http://fedoraproject.org/wiki/EPEL</xref>. Note that yum-config-manager comes
+				with the Infrastructure Server base environment, if you did not select this
+				environment you will have to install the yum-utils package.
+				<codeblock># rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 
+# yum-config-manager --enable rhel-7-server-extras-rpms</codeblock>
+			</li>
+			<li>Install Ansible. The playbooks require Ansible 2.4.2 and above
+				<codeblock># yum install ansible</codeblock>
+			</li>
+			<li>Make a list of all the hostnames and IPs that will be in your system and update your
+					<codeph>/etc/hosts</codeph> file accordingly. This includes your UCP nodes, DTR
+				nodes, worker nodes, NFS server, logger server and load balancers.</li>
+			<li>Install the following packages which are a mandatory requirement for the playbooks
+				to function as expected. (Update pip if requested).
+				<codeblock># yum install python-pyvmomi python-netaddr python2-jmespath python-pip gcc python-devel openssl-devel git 
+# pip install --upgrade pip 
+# pip install cryptography 
+# pip install pysphere 
+# pip install "pywinrm&gt;=0.2.2"</codeblock>
+			</li>
+			<li>Copy your SSH public key to the VM Template so that, in the future, your Ansible
+				node can SSH without the need of a password to all the Virtual Machines created from
+				the VM Template. <codeblock># ssh-copy-id root@&lt;VM_Template&gt;</codeblock>
+			</li>
+		</ol>
+		
+		<p>Please note that in both the Ansible node and the VM Template you might need to configure
+			the network so one node can reach the other. Instructions for this step have been
+			omitted since it is a basic step and could vary depending on the user’s environment.</p>
+
+	</body>
+</topic>

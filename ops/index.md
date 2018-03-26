@@ -20,4 +20,6 @@
     -   [Install vSphere Docker Volume Service driver for Windows](RA.md#install-vdvs-win)
     -   [Create the Red Hat Linux Template](RA.md#create-rhel-template)
     -   [Configure the yum repositories](RA.md#config-yum)
+    -   [Create the Windows Template](RA.md#create-template-win)
+    -   [Create the Ansible node](RA.md#create-ansible-node)
 

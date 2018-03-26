@@ -427,6 +427,86 @@ The following articles explain how you can create a local mirror of the Red Hat 
 
 Before converting the VM to a template, you will need to setup access for the Ansible host to configure the individual VMs. This is explained in the next section.
 
+## Create the Windows Template
+
+The section explains how to create the Windows VM Template that you will use as the base for all your Windows nodes. In order to create a VM Template you will first create a Virtual Machine with the OS installed and then convert the Virtual Machine to a VM Template. Since the goal of automation is to remove as many repetitive tasks as possible, the VM Template is created as lean as possible, with any additional software installs and/or system configuration performed subsequently using Ansible. It would be possible to automate the creation of the template. However, as this is a one-off task, it is appropriate to do it manually. The steps to create a VM template manually are described below.
+
+1.  Log in to vCenter and create a new Virtual Machine with the following characteristics:
+    -   Guest OS Family: Windows, Guest OS Version: Microsoft Windows Server 2016 \(64-bit\)
+    -   Hard Disk size: 50GB, \(Thin provisioning\)
+    -   A single network controller connected to the network or VLAN of your choice. All VMs will connect to this same network.
+    -   You should change your network type to VMXNET3, and attach the windows 2016 ISO image from a datastore ensuring you connect the CD/DVD drive on boot.
+    -   Don’t forget to click on the VM Options tab, and in the Boot Options section, select Force BIOS setup\(\*\) to ensure that the machine enters the BIOS setup screen on next boot of this VM. This will allow you to adjust the boot order, placing the virtual CDROM in front of your hard drive.
+    -   Optionally you can remove the floppy drive
+2.  Install Windows 2016
+    -   Now we can power on the selected VM. Then Open Console.
+    -   Once connected to the console you will be placed in the BIOS setup screen, tab over to the Boot tab, click on CD-ROM Drive and hit the + sign which will move up the CDROM drive above the Hard drive which allows your Windows 2016 ISO image to be loaded first on boot. F10 Save and exit is next step.
+    -   Enter your choices for Language, Time/Currency Format, Keyboard and then Install Now
+    -   Select the OS you want to install, and then select Custom: Install Windows Only
+    -   Select drive 0, the 50 GB drive you specified earlier, as the location for installing windows
+    -   Add a password for the Administrator user, install VMware Tools and reboot
+    -   Once rebooted add a temporary network IP address.
+    -   Using sconfig utility from \(Dos\) command line:
+        -   Install windows updates.
+        -   Enable remote desktop.
+    -   Perform any other customisations you require at this point.
+    -   Prior to converting a VM to Template, just remember to use Sysprep: `C:\Windows\System32\Sysprep\Sysprep.exe` 
+        -   Ensure ‘System Out-of-Box Experience \(OOBE\)’ is selected
+        -   Select the ‘Generalise’ option
+        -   Select ‘Shutdown’ from the Shutdown Options.
+    -   Shutdown VM, and untick the connect CD/DVD so that the Windows 2016 ISO no longer going to be mounted.
+    -   Convert VM to Template
+
+## Create the Ansible node
+
+In addition to the VM Template, you need another Virtual Machine where Ansible will be installed. This node will act as the driver to automate the provisioning of the environment and it is essential that it is properly installed. The steps are as follows:
+
+1.  Create a Virtual Machine and install your preferred OS \(in this example, and for the sake of simplicity, RHEL7 will be used\). The rest of the instructions assume that, if you use a different OS, you understand the possible differences in syntax for the provided commands. If you use RHEL 7, select Infrastructure Server as the base environment and the Guests Agentsadd-on during the installation.
+2.  Log in to the root account and create an SSH key pair. Do not protect the key with a passphrase \(unless you want to use ssh-agent\).
+
+    ```
+    # ssh-keygen
+    ```
+
+3.  Configure the following yum repositories, rhel-7-server-rpms and rhel-7-server-extras-rpms as explained in [https://confluence.simplivt.local/display/PE/Create+the+Linux+Red+Hat+Template](https://confluence.simplivt.local/display/PE/Create+the+Linux+Red+Hat+Template)the "extras" repo can be enabled with:
+
+    ```
+    # subscription-manager repos --enable=rhel-7-server-extras-rpms
+    ```
+
+4.  Configure the EPEL repository. For more information, see: [http://fedoraproject.org/wiki/EPEL](http://fedoraproject.org/wiki/EPEL). Note that yum-config-manager comes with the Infrastructure Server base environment, if you did not select this environment you will have to install the yum-utils package.
+
+    ```
+    # rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 
+    # yum-config-manager --enable rhel-7-server-extras-rpms
+    ```
+
+5.  Install Ansible. The playbooks require Ansible 2.4.2 and above
+
+    ```
+    # yum install ansible
+    ```
+
+6.  Make a list of all the hostnames and IPs that will be in your system and update your `/etc/hosts` file accordingly. This includes your UCP nodes, DTR nodes, worker nodes, NFS server, logger server and load balancers.
+7.  Install the following packages which are a mandatory requirement for the playbooks to function as expected. \(Update pip if requested\).
+
+    ```
+    # yum install python-pyvmomi python-netaddr python2-jmespath python-pip gcc python-devel openssl-devel git 
+    # pip install --upgrade pip 
+    # pip install cryptography 
+    # pip install pysphere 
+    # pip install "pywinrm>=0.2.2"
+    ```
+
+8.  Copy your SSH public key to the VM Template so that, in the future, your Ansible node can SSH without the need of a password to all the Virtual Machines created from the VM Template.
+
+    ```
+    # ssh-copy-id root@<VM_Template>
+    ```
+
+
+Please note that in both the Ansible node and the VM Template you might need to configure the network so one node can reach the other. Instructions for this step have been omitted since it is a basic step and could vary depending on the user’s environment.
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"

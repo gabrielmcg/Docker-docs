@@ -64,11 +64,11 @@
     
     <topicref href="config-yum.dita" navtitle="Config yum"/>
       
-    <!--<topicref href="create-template-win.dita" navtitle="Create Windows template"/>
+    <topicref href="create-template-win.dita" navtitle="Create Windows template"/>
     
     <topicref href="create-ansible-node.dita" navtitle="Create Ansible node"/>
     
-    <topicref href="finalize-template.dita" navtitle="Finalize template"></topicref>
+     <!--<topicref href="finalize-template.dita" navtitle="Finalize template"></topicref>
     
     <topicref href="ansible-config.dita" navtitle="Ansible configuration"/>
     
