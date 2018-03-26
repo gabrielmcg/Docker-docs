@@ -68,13 +68,13 @@
     
     <topicref href="create-ansible-node.dita" navtitle="Create Ansible node"/>
     
-     <!--<topicref href="finalize-template.dita" navtitle="Finalize template"></topicref>
+    <topicref href="finalize-template.dita" navtitle="Finalize template"></topicref>
     
     <topicref href="ansible-config.dita" navtitle="Ansible configuration"/>
     
     <topicref href="edit-inventory.dita" navtitle="Editing the inventory"/>
     
-    <topicref href="edit-group-var.dita" navtitle="Editing group variables"/>
+     <!--<topicref href="edit-group-var.dita" navtitle="Editing group variables"/>
     
     <topicref href="edit-vault.dita" navtitle="Editing the vault"/>
     

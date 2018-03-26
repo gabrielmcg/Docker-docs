@@ -7,27 +7,30 @@
                                                 <codeph>~Docker-Synergy/ops</codeph> directory. You need
                                         to edit this file to describe the configuration you want to
                                         deploy.</p>
+				
 				<p>The nodes inside the inventory are organized in groups. The groups are defined by brackets and the group names are static so they must not be changed. Anything else (hostnames, specifications, IP addresses…) are meant to be amended to match the user needs. The groups are as follows:</p>
 				<ul>
-					<li>[ucp_main]: A group containing one single node which will be the main UCP node and swarm leader. Do not add more than one node under this group.</li>
-					<li>[ucp]: A group containing all the UCP nodes, including the main UCP node. Typically you should have either 3 or 5 nodes under this group.</li>
-					<li>[dtr_main]: A group containing one single node which will be the first DTR node to be installed. Do not add more than one node under this group.</li>
-					<li>[dtr]: A group containing all the DTR nodes, including the main DTR node. Typically you should have either 3 or 5 nodes under this group.</li>
-					<li>[worker]: A group containing all the worker nodes. Typically you should have either 3 or 5 nodes under this group.</li>
-					<li>[win_worker]: A group containing all the windows worker nodes. Typically you should have either 3 or 5 nodes under this group.</li>
-					<li>[ucp_lb]: A group containing one single node which will be the load balancer for the UCP nodes. Do not add more than one node under this group.</li>
-					<li>[dtr_lb]: A group containing one single node which will be the load balancer for the DTR nodes. Do not add more than one node under this group.</li>
-					<li>[worker_lb]: A group containing one single node which will be the load balancer for the worker nodes. Do not add more than one node under this group.</li>
-					<li>[lbs]: A group containing all the load balancers. This group will have 3 nodes, also defined in the three groups above.</li>
-					<li>[nfs]: A group containing one single node which will be the NFS node. Do not add more than one node under this group.</li>
-					<li>[logger]: A group containing one single node which will be the logger node. Do not add more than one node under this group.</li>
-					<li>[local]: A group containing the local Ansible host. It contains an entry that should not be modified.</li>
+					<li><codeph>[ucp_main]</codeph>: A group containing one single node which will be the main UCP node and swarm leader. Do not add more than one node under this group.</li>
+					<li><codeph>[ucp]</codeph>: A group containing all the UCP nodes, including the main UCP node. Typically you should have either 3 or 5 nodes under this group.</li>
+					<li><codeph>[dtr_main]</codeph>: A group containing one single node which will be the first DTR node to be installed. Do not add more than one node under this group.</li>
+					<li><codeph>[dtr]</codeph>: A group containing all the DTR nodes, including the main DTR node. Typically you should have either 3 or 5 nodes under this group.</li>
+					<li><codeph>[worker]</codeph>: A group containing all the worker nodes. Typically you should have either 3 or 5 nodes under this group.</li>
+					<li><codeph>[win_worker]</codeph>: A group containing all the windows worker nodes. Typically you should have either 3 or 5 nodes under this group.</li>
+					<li><codeph>[ucp_lb]</codeph>: A group containing one single node which will be the load balancer for the UCP nodes. Do not add more than one node under this group.</li>
+					<li><codeph>[dtr_lb]</codeph>: A group containing one single node which will be the load balancer for the DTR nodes. Do not add more than one node under this group.</li>
+					<li><codeph>[worker_lb]</codeph>: A group containing one single node which will be the load balancer for the worker nodes. Do not add more than one node under this group.</li>
+					<li><codeph>[lbs]</codeph>: A group containing all the load balancers. This group will have 3 nodes, also defined in the three groups above.</li>
+					<li><codeph>[nfs]</codeph>: A group containing one single node which will be the NFS node. Do not add more than one node under this group.</li>
+					<li><codeph>[logger]</codeph>: A group containing one single node which will be the logger node. Do not add more than one node under this group.</li>
+					<li><codeph>[local]</codeph>: A group containing the local Ansible host. It contains an entry that should not be modified.</li>
 				</ul>
+				
 				<p>There are also a few special groups:</p>
 				<ul>
 					<li>[docker:children]: A group of groups including all the nodes where Docker will be installed.</li>
 					<li>[vms:children]: A group of groups including all the Virtual Machines involved apart from the local host.</li>
 				</ul>
+				
 				<p>Finally, you will find some variables defined for each group:</p>
 				<ul>
 					<li>[vms:vars]: A set of variables defined for all VMs. Currently only the size of the boot disk is defined here.</li>
@@ -38,7 +41,7 @@
 					<li>[worker:vars]: A set of variables defined for all nodes
                                                 in the [<codeph>worker</codeph>] group.</li>
 					<li>[win_worker:vars]: A set of variables defined for all
-                                                nodes in the [win_<codeph>worker</codeph>] group.</li>
+                                                nodes in the [<codeph>win_worker</codeph>] group.</li>
 					<li>[lbs:vars]: A set of variables defined for all nodes in
                                                 the [<codeph>lbs</codeph>] group.</li>
 					<li>[nfs:vars]: A set of variables defined for all nodes in
@@ -46,27 +49,27 @@
 					<li>[logger:vars]: A set of variables defined for all nodes
                                                 in the [<codeph>logger</codeph>] group.</li>
 				</ul>
+				
 				<p>If you wish to configure your nodes with different specifications rather than the ones defined by the group, it is possible to declare the same variables at the node level, overriding the group value. For instance, you could have one of your workers with higher specifications by doing:</p>
-				<pre>
-					<codeph>[worker] worker01 ip_addr='10.0.0.10/16' esxi_host='esxi1.domain.local' worker02 ip_addr='10.0.0.11/16' esxi_host='esxi1.domain.local' worker03 ip_addr='10.0.0.12/16' esxi_host='esxi1.domain.local' cpus='16' ram'32768' [worker:vars] cpus='4' ram='16384' disk2_size='200'</codeph>
-				</pre>
+
+					<codeblock>[worker] worker01 ip_addr='10.0.0.10/16' esxi_host='esxi1.domain.local' 
+worker02 ip_addr='10.0.0.11/16' esxi_host='esxi1.domain.local' 
+worker03 ip_addr='10.0.0.12/16' esxi_host='esxi1.domain.local' cpus='16' ram'32768' [worker:vars] cpus='4' ram='16384' disk2_size='200'</codeblock>
+				
 				<p>In the example above, the <codeph>worker03</codeph> node would have 4
                                         times more CPU and double the RAM compared to the rest of
                                         the worker nodes.</p>
 				<p>The different variables you can use are as described in Table 4 below. They are all mandatory unless if specified otherwise.</p>
-				<p>Table 4. Variables</p>
+				<p>Table 4. </p>
 				<table>
-					<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
-						<col/>
-						<col/>
-						<col/>
-					</colgroup>-->
+					<title>Variables</title>
+					
 
 					<tgroup cols="3">
 						<colspec colnum="1" colname="c1"/>
 						<colspec colnum="2" colname="c2"/>
 						<colspec colnum="3" colname="c3"/>
-					  					<thead >
+					 <thead >
 						<row>
 							<entry>Variable</entry>
 							<entry>Scope</entry>

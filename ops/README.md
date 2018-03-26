@@ -507,6 +507,129 @@ In addition to the VM Template, you need another Virtual Machine where Ansible w
 
 Please note that in both the Ansible node and the VM Template you might need to configure the network so one node can reach the other. Instructions for this step have been omitted since it is a basic step and could vary depending on the user’s environment.
 
+## Finalize the template
+
+From the root account in the ansible box:
+
+Copy the SSH public key you created on your ansible box to the VM Template so that, in the future, your Ansible node can SSH without the need of a password to all the Virtual Machines created from the VM Template.
+
+```
+ssh-copy-id root@<IP of your VM_Template>
+```
+
+Now that the VM Template has the public key of the Ansible node, we’re ready to convert this VM to a VM Template. Perform the following steps in the VM Template to finalize its creation:
+
+1.  Clean up the template by running the following commands from the **Virtual Machine Console** 
+
+    ```
+    
+    # rm /etc/ssh/ssh_host_*
+    # nmcli con del ens192
+    # logrotate -f /etc/logrotate.conf
+    # rm /var/log/*-201?*
+    # history -c		
+    
+    ```
+
+2.  Shutdown the VM
+
+    ```
+    # shutdown -h now
+    ```
+
+3.  Once the Virtual Machine is ready and turned off, convert it to a template
+
+This completes the creation of the VM Template.
+
+## Prepare your Ansible configuration
+
+On the Ansible node, retrieve the latest version of the playbooks using git.
+
+```
+# git clone <repository>
+```
+
+Change to the directory which you just cloned:
+
+```
+# cd ~/Docker-Synergy
+```
+
+Change to the `ops` directory:
+
+```
+# cd ops
+```
+
+Note: File names are relative to the `ops` directory. For example `vm_hosts` is located in `~/Docker-Synergy/ops` and `group_vars/vars` relates to `~/Docker-Synergy/ops/groups_vars/vars`.
+
+You now need to prepare the configuration to match your own environment, prior to deploying Docker EE and the rest of the nodes. To do so, you will need to edit and modify three different files:
+
+-   `vm_hosts` \(the inventory file\)
+-   `group_vars/vars` \(the group variables file\)
+-   `group_vars/vault` \(the encrypted group variable file\)
+-   `group_vars/win_worker.yml` \(the encrypted group windows remote management variable file\)
+
+You should work from the root account for the configuration steps and later when you run the playbooks.
+
+## Editing the inventory
+
+The inventory is the file named `vm_hosts` in the `~Docker-Synergy/ops` directory. You need to edit this file to describe the configuration you want to deploy.
+
+The nodes inside the inventory are organized in groups. The groups are defined by brackets and the group names are static so they must not be changed. Anything else \(hostnames, specifications, IP addresses…\) are meant to be amended to match the user needs. The groups are as follows:
+
+-   `[ucp_main]`: A group containing one single node which will be the main UCP node and swarm leader. Do not add more than one node under this group.
+-   `[ucp]`: A group containing all the UCP nodes, including the main UCP node. Typically you should have either 3 or 5 nodes under this group.
+-   `[dtr_main]`: A group containing one single node which will be the first DTR node to be installed. Do not add more than one node under this group.
+-   `[dtr]`: A group containing all the DTR nodes, including the main DTR node. Typically you should have either 3 or 5 nodes under this group.
+-   `[worker]`: A group containing all the worker nodes. Typically you should have either 3 or 5 nodes under this group.
+-   `[win_worker]`: A group containing all the windows worker nodes. Typically you should have either 3 or 5 nodes under this group.
+-   `[ucp_lb]`: A group containing one single node which will be the load balancer for the UCP nodes. Do not add more than one node under this group.
+-   `[dtr_lb]`: A group containing one single node which will be the load balancer for the DTR nodes. Do not add more than one node under this group.
+-   `[worker_lb]`: A group containing one single node which will be the load balancer for the worker nodes. Do not add more than one node under this group.
+-   `[lbs]`: A group containing all the load balancers. This group will have 3 nodes, also defined in the three groups above.
+-   `[nfs]`: A group containing one single node which will be the NFS node. Do not add more than one node under this group.
+-   `[logger]`: A group containing one single node which will be the logger node. Do not add more than one node under this group.
+-   `[local]`: A group containing the local Ansible host. It contains an entry that should not be modified.
+
+There are also a few special groups:
+
+-   \[docker:children\]: A group of groups including all the nodes where Docker will be installed.
+-   \[vms:children\]: A group of groups including all the Virtual Machines involved apart from the local host.
+
+Finally, you will find some variables defined for each group:
+
+-   \[vms:vars\]: A set of variables defined for all VMs. Currently only the size of the boot disk is defined here.
+-   \[ucp:vars\]: A set of variables defined for all nodes in the \[`ucp`\] group.
+-   \[dtr:vars\]: A set of variables defined for all nodes in the \[`dtr`\] group.
+-   \[worker:vars\]: A set of variables defined for all nodes in the \[`worker`\] group.
+-   \[win\_worker:vars\]: A set of variables defined for all nodes in the \[`win_worker`\] group.
+-   \[lbs:vars\]: A set of variables defined for all nodes in the \[`lbs`\] group.
+-   \[nfs:vars\]: A set of variables defined for all nodes in the \[`nfs`\] group.
+-   \[logger:vars\]: A set of variables defined for all nodes in the \[`logger`\] group.
+
+If you wish to configure your nodes with different specifications rather than the ones defined by the group, it is possible to declare the same variables at the node level, overriding the group value. For instance, you could have one of your workers with higher specifications by doing:
+
+```
+[worker] worker01 ip_addr='10.0.0.10/16' esxi_host='esxi1.domain.local' 
+worker02 ip_addr='10.0.0.11/16' esxi_host='esxi1.domain.local' 
+worker03 ip_addr='10.0.0.12/16' esxi_host='esxi1.domain.local' cpus='16' ram'32768' [worker:vars] cpus='4' ram='16384' disk2_size='200'
+```
+
+In the example above, the `worker03` node would have 4 times more CPU and double the RAM compared to the rest of the worker nodes.
+
+The different variables you can use are as described in Table 4 below. They are all mandatory unless if specified otherwise.
+
+Table 4.
+
+|Variable|Scope|Description|
+|--------|-----|-----------|
+|ip\_addr|Node|IP address in CIDR format to be given to a node|
+|esxi\_host|Node|ESXi host where the node will be deployed. If the cluster is configured with DRS, this option will be overriden|
+|cpus|Node/Group|Number of CPUs to assign to a VM or a group of VMs|
+|ram|Node/Group|Amount of RAM in MB to assign to a VM or a group of VMs|
+|disk2\_usage|Node/Group|Size of the second disk in GB to attach to a VM or a group of VMs. This variable is only mandatory on Docker nodes \(UCP, DTR, worker\) and NFS node. It is not required for the logger node or the load balancers.|
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"

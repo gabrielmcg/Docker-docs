@@ -22,4 +22,7 @@
     -   [Configure the yum repositories](RA.md#config-yum)
     -   [Create the Windows Template](RA.md#create-template-win)
     -   [Create the Ansible node](RA.md#create-ansible-node)
+    -   [Finalize the template](RA.md#finalize-template)
+    -   [Prepare your Ansible configuration](RA.md#ansible-config)
+    -   [Editing the inventory](RA.md#edit-inventory)
 
