@@ -11,8 +11,8 @@
 						</colgroup>-->
 
 				<tgroup cols="2">
-					<colspec colnum="1" colname="c1"/>
-					<colspec colnum="2" colname="c2"/>
+					<colspec colnum="1" colname="c1" align="left"/>
+					<colspec colnum="2" colname="c2" align="left"/>
 					<thead>
 						<row>
 							<entry>Variable</entry>

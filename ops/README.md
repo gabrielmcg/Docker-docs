@@ -641,7 +641,7 @@ Once the inventory is ready, the next step is to modify the group variables to m
 All VMware-related variables are mandatory and are described in Table 5.
 
 |Variable|Description|
-|--------|-----------|
+|:-------|:----------|
 |vcenter\_hostname|IP or hostname of the vCenter appliance|
 |vcenter\_username|Username to log in to the vCenter appliance. It might include a domain, for example, '`administrator@vsphere.local`'. Note: The corresponding password is stored in a separate file \(`group_vars/vault`\) with the variable named `vcenter_password`.|
 |vcenter\_validate\_certs|‘no’|
@@ -661,7 +661,7 @@ All VMware-related variables are mandatory and are described in Table 5.
 All network-related variables are mandatory and are described in Table 7.
 
 |Variable|Description|
-|--------|-----------|
+|:-------|:----------|
 |nic\_name|Name of the device, for RHEL this is typically `ens192` and it is recommended to leave it as is.|
 |gateway|IP address of the gateway to be used|
 |dns|List of DNS servers to be used, in list format, i.e. \['`10.10.173.1`','`10.10.173.2`'...\]|
@@ -673,7 +673,7 @@ All network-related variables are mandatory and are described in Table 7.
 All Docker-related variables are mandatory and are described in Table 8.
 
 |Variable|Description|
-|--------|-----------|
+|:-------|:----------|
 |docker\_ee\_url|Note: This is a private link to your Docker EE subscription. This should be kept secret and defined in `group_vars/vault`. The value for `docker_ee_url` is the URL documented at the following address: [https://docs.docker.com/engine/installation/linux/docker-ee/rhel/](https://docs.docker.com/engine/installation/linux/docker-ee/rhel/).|
 |rhel\_version|Version of your RHEL OS, such as `7.4`. The playbooks were tested with RHEL 7.3. and RHEL 7.4.|
 |dtr\_version|Version of the Docker DTR you wish to install. You can use a numeric version or `latest` for the most recent one. The playbooks were tested with 2.3.3. and 2.4.0.|
@@ -688,7 +688,7 @@ All Docker-related variables are mandatory and are described in Table 8.
 All Monitoring-related variables are described in Table 9. The variables determine the versions of various monitoring software tools that are used and it is recommended that the values given below are used.
 
 |Variable|Description|
-|--------|-----------|
+|:-------|:----------|
 |cadvisor\_version| `v0.25.0` |
 |node\_exporter\_version| `v1.14.0` |
 |prometheus\_version| `v1.7.1` |
