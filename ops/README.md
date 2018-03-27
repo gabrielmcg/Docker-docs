@@ -632,6 +632,30 @@ The different variables you can use are as described in Table 4 below. They are 
 |ram|Node/Group|Amount of RAM in MB to assign to a VM or a group of VMs|
 |disk2\_usage|Node/Group|Size of the second disk in GB to attach to a VM or a group of VMs. This variable is only mandatory on Docker nodes \(UCP, DTR, worker\) and NFS node. It is not required for the logger node or the load balancers.|
 
+## Editing the group variables
+
+Once the inventory is ready, the next step is to modify the group variables to match your environment. To do so, you need to edit the file `group_vars/vars`. The variables can be defined in any order but for the sake of clarity they have been divided into sections.
+
+### VMware configuration
+
+All VMware-related variables are mandatory and are described in Table 5.
+
+|Variable|Description|
+|--------|-----------|
+|vcenter\_hostname|IP or hostname of the vCenter appliance|
+|vcenter\_username|Username to log in to the vCenter appliance. It might include a domain, for example, '`administrator@vsphere.local`'. Note: The corresponding password is stored in a separate file \(`group_vars/vault`\) with the variable named `vcenter_password`.|
+|vcenter\_validate\_certs|‘no’|
+|datacenter|Name of the datacenter where the environment will be provisioned|
+|vm\_username|Username to log into the VMs. It needs to match the one from the VM Template, so unless you have created an user, you must use 'root'. Note: The corresponding password is stored in a separate file \(`group_vars/vault`\) with the variable named `vm_password`.|
+|vm\_template|Name of the RHEL VM Template to be use. Note that this is the name from a vCenter perspective, not the hostname.|
+|win\_vm\_template|Name of the Windows 2016 VM Template to use. Note that this is the name from a vCenter perspective, not the hostname.|
+|folder\_name|vCenter folder to deploy the VMs. If you do not wish to deploy in a particular folder, the value should be `/`. Note: If you want to deploy in a specific folder, you need to create this folder in the inventory of the selected datacenter before starting the deployment.|
+|datastores|List of datastores to be used, in list format, i.e. \['`Datastore1`','`Datastore2`'...\]. This or these datastore\(s\) must exist before you run the playbooks.|
+|disk2|UNIX® name of the second disk for the Docker VMs. Typically `/dev/sdb`|
+|disk2\_part|UNIX name of the partition of the second disk for the Docker VMs. Typically `/dev/sdb1`|
+|vsphere\_plugin\_version|Version of the vSphere plugin for Docker. The default is 0.20 which is the latest version at the time of writing this document. The version of the plugin should match the version of the vSphere Installation Bundle \(VIB\) that you installed on the ESXi servers.|
+|vm\_portgroup|TODO|
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"

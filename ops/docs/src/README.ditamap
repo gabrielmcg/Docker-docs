@@ -74,9 +74,13 @@
     
     <topicref href="edit-inventory.dita" navtitle="Editing the inventory"/>
     
-     <!--<topicref href="edit-group-var.dita" navtitle="Editing group variables"/>
+     <topicref href="edit-group-var.dita" navtitle="Editing group variables">
+       
+       <topicref href="vmware-config.dita" navtitle="VMware configuration"/>
+       
+     </topicref>
     
-    <topicref href="edit-vault.dita" navtitle="Editing the vault"/>
+    <!--<topicref href="edit-vault.dita" navtitle="Editing the vault"/>
     
     <topicref href="customer-certs.dita" navtitle="Customer certificates"/>-->
         

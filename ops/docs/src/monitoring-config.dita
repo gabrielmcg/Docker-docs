@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="monitoring-config">
+		<title>Monitoring configuration</title>
+		<body>
+			<p>All Monitoring-related variables are described in Table 9. The variables determine
+				the versions of various monitoring software tools that are used and it is
+				recommended that the values given below are used.</p>
+
+			<table>
+				<title>Monitoring variables</title>
+				<!--						<colgroup xmlns:ac="ac" xmlns:ri="ri">
+							<col/>
+							<col/>
+						</colgroup>-->
+
+				<tgroup cols="2">
+					<colspec colnum="1" colname="c1"/>
+					<colspec colnum="2" colname="c2"/>
+					<thead>
+						<row>
+							<entry>Variable</entry>
+							<entry>Description</entry>
+						</row>
+					</thead>
+					<tbody>
+						<row>
+							<entry>cadvisor_version</entry>
+							<entry>
+								<codeph>v0.25.0</codeph>
+							</entry>
+						</row>
+						<row>
+							<entry>node_exporter_version</entry>
+							<entry>
+								<codeph>v1.14.0</codeph>
+							</entry>
+						</row>
+						<row>
+							<entry>prometheus_version</entry>
+							<entry>
+								<codeph>v1.7.1</codeph>
+							</entry>
+						</row>
+						<row>
+							<entry>grafana_version</entry>
+							<entry>
+								<codeph>4.4.3</codeph>
+							</entry>
+						</row>
+						<row>
+							<entry>prom_persistent_vol_name</entry>
+							<entry>The name of the volume which will be used to store the monitoring
+								data. The volume is created using the vsphere docker volume
+								plugin.</entry>
+						</row>
+						<row>
+							<entry>prom_persistent_vol_size</entry>
+							<entry>The size of the volume which will hold the monitoring data. The
+								exact syntax is dictated by the vSphere Docker Volume plugin. The
+								default value is 10GB.</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</body>
+	</topic>

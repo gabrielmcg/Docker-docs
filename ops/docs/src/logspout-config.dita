@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="logspout-config">
+		<title>Logspout configuration</title>
+		<body>
+			<p>Logspout is a log router for Docker containers that runs inside Docker. It attaches
+				to all containers on a host, then routes their logs to the central logging VM. All
+				Logspout-related variables are described in Table 10.</p>
+			<p>Table 10. Logspout variables</p>
+			<table>
+				<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+							<col/>
+							<col/>
+						</colgroup>-->
+
+				<tgroup cols="2">
+					<colspec colnum="1" colname="c1"/>
+					<colspec colnum="2" colname="c2"/>
+					<thead>
+						<row>
+							<entry>Variable</entry>
+							<entry>Description</entry>
+						</row>
+					</thead>
+					<tbody>
+						<row>
+							<entry>logspout_version</entry>
+							<entry><codeph>‘master’</codeph> More details on Logspout are available
+								later in this document.</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</body>
+	</topic>

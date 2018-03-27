@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="environment-config">
+		<title>Environment configuration</title>
+		<body>
+			<p>All Environment-related variables should be here. All of them are described in the
+				Table 11 below.</p>
+			<p>Table 11. Environment variables</p>
+			<table>
+
+
+				<tgroup cols="2">
+					<colspec colnum="1" colname="c1"/>
+					<colspec colnum="2" colname="c2"/>
+
+					<thead>
+						<row>
+							<entry>Variable</entry>
+							<entry>Description</entry>
+						</row>
+					</thead>
+
+					<tbody>
+						<row>
+							<entry>env</entry>
+							<entry>Dictionary containing all environment variables. It contains
+								three entries described below. Please leave empty the proxy related
+								settings if not required:<ul>
+									<li>http_proxy: HTTP proxy URL, such as '<xref format="html"
+											scope="external" href="http://15.184.4.2:8080/"
+											>http://15.184.4.2:8080</xref>'. This variable defines
+										the HTTP proxy url if your environment is behind a
+										proxy.</li>
+									<li>https_proxy: HTTP proxy URL, such as '<xref format="html"
+											scope="external" href="http://15.184.4.2:8080/"
+											>http://15.184.4.2:8080</xref>'. This variable defines
+										the HTTPS proxy url if your environment is behind a
+										proxy.</li>
+									<li>no_proxy: List of hostnames or IPs that don't require proxy,
+										such as 'localhost,127.0.0.1,.cloudra.local,10.10.174.'</li>
+								</ul></entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</body>
+	</topic>
