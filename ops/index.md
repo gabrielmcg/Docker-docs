@@ -28,4 +28,5 @@
     -   [Editing the group variables](README.md#edit-group-var)
         -   [VMware configuration](README.md#vmware-config)
         -   [Networking configuration](README.md#network-config)
+        -   [Docker configuration](README.md#docker-config)
 

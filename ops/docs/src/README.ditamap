@@ -81,6 +81,8 @@
        
        <topicref href="network-config.dita" navtitle="Network configuration"/>
        
+       <topicref href="docker-config.dita" navtitle="Docker configuration"/>
+       
      </topicref>
     
     <!--<topicref href="edit-vault.dita" navtitle="Editing the vault"/>

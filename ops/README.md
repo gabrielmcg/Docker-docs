@@ -668,6 +668,21 @@ All network-related variables are mandatory and are described in Table 7.
 |domain\_name|Domain name for your Virtual Machines|
 |ntp\_server|List of NTP servers to be used, in list format, i.e. \['`1.2.3.4`','`[0.us.pool.net.org](http://0.us.pool.net.org/)`'...\]|
 
+### Docker configuration
+
+All Docker-related variables are mandatory and are described in Table 8.
+
+|Variable|Description|
+|--------|-----------|
+|docker\_ee\_url|Note: This is a private link to your Docker EE subscription. This should be kept secret and defined in `group_vars/vault`. The value for `docker_ee_url` is the URL documented at the following address: [https://docs.docker.com/engine/installation/linux/docker-ee/rhel/](https://docs.docker.com/engine/installation/linux/docker-ee/rhel/).|
+|rhel\_version|Version of your RHEL OS, such as `7.4`. The playbooks were tested with RHEL 7.3. and RHEL 7.4.|
+|dtr\_version|Version of the Docker DTR you wish to install. You can use a numeric version or `latest` for the most recent one. The playbooks were tested with 2.3.3. and 2.4.0.|
+|ucp\_version|Version of the Docker UCP you wish to install. You can use a numeric version or `latest` for the most recent one. The playbooks were tested with UCP 2.2.3. and 2.2.4.|
+|images\_folder|Directory in the NFS server that will be mounted in the DTR nodes and that will host your Docker images.|
+|license\_file|Full path to your Docker EE license file \(it should be stored in your Ansible host\).License file is available from the Docker Store|
+|ucp\_username|Username of the administrator user for UCP and DTR, typically `admin`. Note: The corresponding password is stored in a separate file \(`group_vars/vault`\) with the variable named `ucp_password`.|
+|enable\_windows|If `true`, the creation of Windows 2016 worker nodes will be actioned. The default value is `false`.|
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"
