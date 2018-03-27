@@ -27,4 +27,5 @@
     -   [Editing the inventory](README.md#edit-inventory)
     -   [Editing the group variables](README.md#edit-group-var)
         -   [VMware configuration](README.md#vmware-config)
+        -   [Networking configuration](README.md#network-config)
 

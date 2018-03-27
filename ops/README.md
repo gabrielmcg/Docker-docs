@@ -656,6 +656,10 @@ All VMware-related variables are mandatory and are described in Table 5.
 |vsphere\_plugin\_version|Version of the vSphere plugin for Docker. The default is 0.20 which is the latest version at the time of writing this document. The version of the plugin should match the version of the vSphere Installation Bundle \(VIB\) that you installed on the ESXi servers.|
 |vm\_portgroup|TODO|
 
+### Networking configuration
+
+All network-related variables are mandatory and are described in Table 7.
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"

@@ -3,7 +3,7 @@
 <topic id="network-config-table">
   <title></title>
   <body>
-    <table>
+    <table id="network-config-table-content">
 				<title>Network variables</title>
 
 
