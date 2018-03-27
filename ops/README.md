@@ -660,6 +660,14 @@ All VMware-related variables are mandatory and are described in Table 5.
 
 All network-related variables are mandatory and are described in Table 7.
 
+|Variable|Description|
+|--------|-----------|
+|nic\_name|Name of the device, for RHEL this is typically `ens192` and it is recommended to leave it as is.|
+|gateway|IP address of the gateway to be used|
+|dns|List of DNS servers to be used, in list format, i.e. \['`10.10.173.1`','`10.10.173.2`'...\]|
+|domain\_name|Domain name for your Virtual Machines|
+|ntp\_server|List of NTP servers to be used, in list format, i.e. \['`1.2.3.4`','`[0.us.pool.net.org](http://0.us.pool.net.org/)`'...\]|
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"

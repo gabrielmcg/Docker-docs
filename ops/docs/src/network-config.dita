@@ -5,7 +5,7 @@
 		<body>
 			<p>All network-related variables are mandatory and are described in Table 7.</p>
 
-		<table conref="network-config-table.dita#network-config/network-config-table-content">
+		<table conref="network-config-table.dita#network-config-table/network-config-table-content">
 			<title>Network variables</title>
 			<tgroup cols="2">
 				<tbody>
