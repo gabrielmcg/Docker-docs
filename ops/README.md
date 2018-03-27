@@ -696,6 +696,41 @@ All Monitoring-related variables are described in Table 9. The variables determi
 |prom\_persistent\_vol\_name|The name of the volume which will be used to store the monitoring data. The volume is created using the vsphere docker volume plugin.|
 |prom\_persistent\_vol\_size|The size of the volume which will hold the monitoring data. The exact syntax is dictated by the vSphere Docker Volume plugin. The default value is 10GB.|
 
+## Editing the vault
+
+Once your group variables file is ready, the next step is to create a vault file to match your environment. The vault file is essentially the same thing than the group variables but it will contain all sensitive variables and will be encrypted.
+
+There is a sample vault file named `group_vars/vault.sample` that you can use as a model for your vault file. To create a vault, you create a new file `group_vars/vault` and add entries similar to:
+
+```
+---
+vcenter_password: 'xxx' 
+docker_ee_url: 'yoururl'
+vm_password: 'xxx'
+ucp_password: 'xxx'
+rhn_orgid: 'Red Hat Organization ID'
+rhn_key: 'Red Hat Activation Key'
+```
+
+`rhn_orgid` and `rhn_key` are the credentials needed to subscribe the virtual machines with Red Hat Customer Portal. For more info regarding activation keys see the following URL: [https://access.redhat.com/articles/1378093](https://access.redhat.com/articles/1378093)
+
+To encrypt the vault you need to run the following command:
+
+```
+# ansible-vault encrypt group_vars/vault
+```
+
+You will be prompted for a password that will decrypt the vault when required. You can update the values in your vault by running:
+
+```
+# ansible-vault edit group_vars/vault
+```
+
+For Ansible to be able to read the vault, you need to specify a file where the password is stored, for instance in a file called `.vault_pass`. Once the file is created, take the following precautions to avoid illegitimate access to this file:
+
+1.  Change the permissions so only `root` can read it using `# chmod 600 .vault_pass` 
+2.  Add the file to your `.gitignore` file if you're pushing the set of playbooks to a git repository.
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"
