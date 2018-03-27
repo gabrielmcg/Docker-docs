@@ -29,4 +29,5 @@
         -   [VMware configuration](README.md#vmware-config)
         -   [Networking configuration](README.md#network-config)
         -   [Docker configuration](README.md#docker-config)
+        -   [Monitoring configuration](README.md#monitoring-config)
 

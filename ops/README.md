@@ -683,6 +683,19 @@ All Docker-related variables are mandatory and are described in Table 8.
 |ucp\_username|Username of the administrator user for UCP and DTR, typically `admin`. Note: The corresponding password is stored in a separate file \(`group_vars/vault`\) with the variable named `ucp_password`.|
 |enable\_windows|If `true`, the creation of Windows 2016 worker nodes will be actioned. The default value is `false`.|
 
+### Monitoring configuration
+
+All Monitoring-related variables are described in Table 9. The variables determine the versions of various monitoring software tools that are used and it is recommended that the values given below are used.
+
+|Variable|Description|
+|--------|-----------|
+|cadvisor\_version| `v0.25.0` |
+|node\_exporter\_version| `v1.14.0` |
+|prometheus\_version| `v1.7.1` |
+|grafana\_version| `4.4.3` |
+|prom\_persistent\_vol\_name|The name of the volume which will be used to store the monitoring data. The volume is created using the vsphere docker volume plugin.|
+|prom\_persistent\_vol\_size|The size of the volume which will hold the monitoring data. The exact syntax is dictated by the vSphere Docker Volume plugin. The default value is 10GB.|
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"
