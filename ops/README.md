@@ -611,19 +611,21 @@ Finally, you will find some variables defined for each group:
 If you wish to configure your nodes with different specifications rather than the ones defined by the group, it is possible to declare the same variables at the node level, overriding the group value. For instance, you could have one of your workers with higher specifications by doing:
 
 ```
-[worker] worker01 ip_addr='10.0.0.10/16' esxi_host='esxi1.domain.local' 
+[worker] 
+worker01 ip_addr='10.0.0.10/16' esxi_host='esxi1.domain.local' 
 worker02 ip_addr='10.0.0.11/16' esxi_host='esxi1.domain.local' 
-worker03 ip_addr='10.0.0.12/16' esxi_host='esxi1.domain.local' cpus='16' ram'32768' [worker:vars] cpus='4' ram='16384' disk2_size='200'
+worker03 ip_addr='10.0.0.12/16' esxi_host='esxi1.domain.local' cpus='16' ram'32768' 
+
+[worker:vars] 
+cpus='4' ram='16384' disk2_size='200'
 ```
 
 In the example above, the `worker03` node would have 4 times more CPU and double the RAM compared to the rest of the worker nodes.
 
 The different variables you can use are as described in Table 4 below. They are all mandatory unless if specified otherwise.
 
-Table 4.
-
 |Variable|Scope|Description|
-|--------|-----|-----------|
+|:-------|:----|:----------|
 |ip\_addr|Node|IP address in CIDR format to be given to a node|
 |esxi\_host|Node|ESXi host where the node will be deployed. If the cluster is configured with DRS, this option will be overriden|
 |cpus|Node/Group|Number of CPUs to assign to a VM or a group of VMs|
