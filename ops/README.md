@@ -780,6 +780,23 @@ More information is available at [Best Practices for HPE Synergy Firmware and Dr
 
 The solution in this deployment guide is built on VMware vSphere and leverages VMware ESXi and vCenter.
 
+## vSphere Docker Volume Service Plug-in
+
+vSphere Docker Volume service plug-in is part of an open source project by VMware that enables running stateful containers by providing persistent Docker volumes leveraging existing storage technology from VMware. There are two parts to the plug-in, namely, client software and server software \(see Table TODO\). Every version of the plug-in that is released includes both pieces of software and it is imperative that the version number installed on the client side and server side are the same.
+
+When updating the Docker Volume service plug-in, ensure the ESXi version you are running is supported and that the client software is compatible with the operating system.
+
+|Order|Component|Dependency \(compatibility\)|Download/Documentation|
+|:----|:--------|:---------------------------|:---------------------|
+|1.|Server Software|1.  VMware ESXi
+2.  Docker EE
+
+|vSphere Docker Volume Service on GitHub|
+|2.|Client Software|1.  VM Operating System
+2.  Docker EE
+
+| |
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"
