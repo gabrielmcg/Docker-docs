@@ -31,4 +31,6 @@
         -   [Docker configuration](README.md#docker-config)
         -   [Monitoring configuration](README.md#monitoring-config)
     -   [Editing the vault](README.md#edit-vault)
+    -   [Using Customer supplied certificates for UCP and DTR](README.md#customer-certs)
+-   [Solution lifecycle management](README.md#lifecycle)
 

@@ -731,6 +731,55 @@ For Ansible to be able to read the vault, you need to specify a file where the p
 1.  Change the permissions so only `root` can read it using `# chmod 600 .vault_pass` 
 2.  Add the file to your `.gitignore` file if you're pushing the set of playbooks to a git repository.
 
+## Using Customer supplied certificates for UCP and DTR
+
+### Variables
+
+**ucp\_certs\_dir:** in group\_vars/vars
+
+-   if **ucp\_certs\_dir** is not defined, UCP is installed with self-signed certificates and DTR is installed with the `--ucp-insecure-tls` switch
+-   If **ucp\_certs\_dir** is defined, it should points to a folder on the ansible machine which should contain 3 files
+    -   ca.pem, this is the root CA certificate in PEM format
+    -   cert.pem, this is the server certificate optionally followed by intermediate CAs
+    -   key.pem, this is the private key that comes with the cert.pem certificates
+
+**dtr\_certs\_dir:** in group\_vars/vars
+
+-   if **dtr\_certs\_dir** is not defined, DTR is installed with self-signed certificates
+-   if **dtr\_certs\_dir** is defined, this variable points to a folder on the ansible machine which should contain 3 files
+    -   ca.pem, this is the root CA certificate in PEM format
+    -   cert.pem, this is the DTR server certificate optionally followed by intermediate CAs
+    -   key.pem, this is the private key that comes with the cert.pem certificates
+
+**Note:** The installation will fail if the `ca.pem`, `cert.pem` and `key.pem` files cannot be found in the folders designated by `dtr_certs_dir` and `ucp_certs_dir` or if they don't constitute valid certificates. Note that there is an ansible module that would help verifying the validity of the certificates but it requires a version of PyOpenSSL which is not compatible with the version installed on Red Hat 7.4 \(PyOpenSSL is required by RH subscription manager\).
+
+# Solution lifecycle management
+
+## Introduction
+
+Lifecycle management with respect to this solution refers to the maintenance and management of software and hardware of various components that make up the solution stack. Lifecycle management is required to keep the solution up-to-date and ensure that the latest versions of the software are running to provide optimal performance, security and fix any existing defects within the product.
+
+In this section, we will cover life cycle management of the different components that are used in this solution.
+
+The lifecycle of the following stacks need to be maintained and managed.
+
+1.  Monitoring Tools \(Splunk or Prometheus and Grafana
+2.  Docker Enterprise Edition Environment
+3.  Virtual Machine Operating systems
+4.  Synergy environment
+
+The general practice and recommendation is to follow a bottom-up approach for updating all components of the environment and making sure the dependencies are met. In our solution, we would start with Synergy and end with the monitoring environment. If all components are not being updated at the same time, the same approach can be followed – updating only the components that require updates while adhering to the interdependencies of each component that is being updated.
+
+## Synergy environment
+
+HPE Synergy Composer powered by HPE OneView provides fast, reliable, and simplified firmware and driver management across many HPE Synergy components. HPE OneView manages firmware to reduce manual interactions and errors, in addition to minimizing downtime. Firmware updates of management appliances and shared infrastructure are nondisruptive to the production workload.
+
+More information is available at [Best Practices for HPE Synergy Firmware and Driver Updates](https://support.hpe.md)
+
+## VMware Components
+
+The solution in this deployment guide is built on VMware vSphere and leverages VMware ESXi and vCenter.
+
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
 [media-load-balancers-png]:</ops/media/load-balancers.png> "Figure 3. Load balancer architecture"
