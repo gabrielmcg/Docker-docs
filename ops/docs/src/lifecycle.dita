@@ -47,7 +47,7 @@
       <p> vSphere Docker Volume service plug-in is part of an open source project by VMware that
         enables running stateful containers by providing persistent Docker volumes leveraging
         existing storage technology from VMware. There are two parts to the plug-in, namely, client
-        software and server software (see Table <xref href="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-content" type="table"/>). Every version of the plug-in that is released
+        software and server software (see Table <xref href="lifecycle.dita#lifecycle/vdvs-components-table-conref" type="table"/>). Every version of the plug-in that is released
         includes both pieces of software and it is imperative that the version number installed on
         the client side and server side are the same. </p>
       
@@ -55,7 +55,7 @@
     running is supported and that the client software is compatible with the operating system.</p>
 
 
-<table conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-content">
+<table id="vdvs-components-table-conref" conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-content">
 	<title>vSphere Docker Volume service components</title>
 	<tgroup cols="2">
 		<tbody>
