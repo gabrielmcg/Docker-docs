@@ -47,7 +47,7 @@
       <p> vSphere Docker Volume service plug-in is part of an open source project by VMware that
         enables running stateful containers by providing persistent Docker volumes leveraging
         existing storage technology from VMware. There are two parts to the plug-in, namely, client
-        software and server software (see Table TODO). Every version of the plug-in that is released
+        software and server software (see Table <xref href="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-content" type="table"/>). Every version of the plug-in that is released
         includes both pieces of software and it is imperative that the version number installed on
         the client side and server side are the same. </p>
       
@@ -55,44 +55,16 @@
     running is supported and that the client software is compatible with the operating system.</p>
 
 
-    <table id="vdvs-components-table-content">
-				<title>vSphere Docker Volume service components</title>
-				<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
-							<col/>
-							<col/>
-						</colgroup>-->
-
-				<tgroup cols="2">
-					<colspec colnum="1" colname="c1" align="left"/>
-					<colspec colnum="2" colname="c2" align="left"/>
-				  <colspec colnum="3" colname="c3" align="left"/>
-				  <colspec colnum="4" colname="c4" align="left"/>
-					<thead>
-						<row>
-							<entry>Order</entry>
-							<entry>Component</entry>
-						  <entry>Dependency (compatibility)</entry>
-						  <entry>Download/Documentation</entry>
-						</row>
-					</thead>
-					<tbody>
-						<row>
-							<entry>1.</entry>
-							<entry>Server Software</entry>
-							<entry><ol><li>VMware ESXi</li><li>Docker EE</li></ol></entry>
-							<entry morerows="1">vSphere Docker Volume Service on GitHub</entry>
-						</row>
-					  <row>
-							<entry>2.</entry>
-							<entry>Client Software</entry>
-							<entry><ol><li>VM Operating System</li><li>Docker EE</li></ol></entry>
-							<entry></entry>
-						</row>
-					</tbody>
-				</tgroup>
-    </table>
-			
-      
+<table conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-content">
+	<title>vSphere Docker Volume service components</title>
+	<tgroup cols="2">
+		<tbody>
+			<row>
+				<entry/>
+			</row>
+		</tbody>
+	</tgroup>
+</table>
       
       
     </section> 

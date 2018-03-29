@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="RA-tables">
+  <title></title>
+  <body>
+    
+		<table conref="variables-table.dita#variables-table/variables-table-content">
+			<title>Variables</title>
+			<tgroup cols="3">
+				<tbody>
+					<row>
+						<entry/>
+					</row>
+				</tbody>
+			</tgroup>
+		</table>
+    
+    <table conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-content">
+    	<title>vSphere Docker Volume service components</title>
+    	<tgroup cols="2">
+    		<tbody>
+    			<row>
+    				<entry/>
+    			</row>
+    		</tbody>
+    	</tgroup>
+    </table>
+    
+    
+  </body>
+</topic>

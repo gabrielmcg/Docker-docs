@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<map>
+<map  chunk="to-content">
   <title>HPE Helion</title>
   <!--PDFTITLE "HPE Helion OpenStack 4.0 Complete Documentation"-->
   <topicmeta>
@@ -16,6 +16,17 @@
     </prodinfo>
   </topicmeta>
  
-        <topicref href="vcpu-table.dita" navtitle="vcpu table"/> 
+  <topicref href="vcpu-table.dita" navtitle="vCPU"/>
+  <topicref href="monitoring-config-table.dita" navtitle="Memory configuration"/>
+  
+  <topicref href="verify-prereqs-table.dita" navtitle="Summary of prerequisites"/>
+  
+  <topicref href="variables-table.dita" navtitle="Variables table"/>
+  <topicref href="vmware-variables-table.dita" navtitle="VMware variables"/>
+  <topicref href="network-config-table.dita" navtitle="Network variables"/>
+  <topicref href="docker-config-table.dita" navtitle="Docker variables"/>
+  <topicref href="monitoring-config-table.dita" navtitle="Monitoring variables"/>
+  
+  <topicref href="vdvs-components-table.dita" navtitle="vDVS components table"/> 
  
 </map>

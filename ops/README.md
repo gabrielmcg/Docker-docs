@@ -306,7 +306,7 @@ If you use the esxcli storage guestvol command you can now see the status.
 You must assemble the information required to assign values for each and every variable used by the playbooks, before you start deployment. The variables are fully documented in the following sections “Editing the group variables” and “Editing the vault”. A summary of the information required is presented in Table 3.
 
 |Component|Details|
-|---------|-------|
+|:--------|:------|
 |Virtual Infrastructure|The FQDN of your vCenter server and the name of the Datacenter. You will also need administrator credentials in order to create templates, and spin up virtual machines.|
 |L3 Network requirements|You will need one IP address for each and every VM configured in the Ansible inventory \(see the section “Editing the inventory”\). At the time of writing, the example inventory configures 14 virtual machines so you would need to allocate 14 IP addresses to use this example inventory. Note that the Ansible playbooks do not support DHCP so you need static IP addresses. All the IPs should be in the same subnet. You will also have to specify the size of the subnet \(for example /22 or /24\) and the L3 gateway for this subnet.|
 |DNS|You will need to know the IP addresses of your DNS server. In addition, all the VMs you configure in the inventory should have their names registered in DNS. In addition, you will need the domain name to use for configuring the virtual machines \(such as [example.com](http://example.com/)\)|
@@ -782,7 +782,7 @@ The solution in this deployment guide is built on VMware vSphere and leverages V
 
 ## vSphere Docker Volume Service Plug-in
 
-vSphere Docker Volume service plug-in is part of an open source project by VMware that enables running stateful containers by providing persistent Docker volumes leveraging existing storage technology from VMware. There are two parts to the plug-in, namely, client software and server software \(see Table TODO\). Every version of the plug-in that is released includes both pieces of software and it is imperative that the version number installed on the client side and server side are the same.
+vSphere Docker Volume service plug-in is part of an open source project by VMware that enables running stateful containers by providing persistent Docker volumes leveraging existing storage technology from VMware. There are two parts to the plug-in, namely, client software and server software \(see Table [vdvs-components-table.md\#vdvs-components-table-content](vdvs-components-table.md#vdvs-components-table-content)\). Every version of the plug-in that is released includes both pieces of software and it is imperative that the version number installed on the client side and server side are the same.
 
 When updating the Docker Volume service plug-in, ensure the ESXi version you are running is supported and that the client software is compatible with the operating system.
 
@@ -795,7 +795,7 @@ When updating the Docker Volume service plug-in, ensure the ESXi version you are
 |2.|Client Software|1.  VM Operating System
 2.  Docker EE
 
-| |
+|
 
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"

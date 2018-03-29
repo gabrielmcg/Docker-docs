@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="vdvs-components-table">
+  <title></title>
+  <body>
+    <table id="vdvs-components-table-content" frame="none">
+				<title>vSphere Docker Volume service components</title>
+				<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+							<col/>
+							<col/>
+						</colgroup>-->
+
+				<tgroup cols="4">
+					<colspec colnum="1" colname="c1" align="left"/>
+					<colspec colnum="2" colname="c2" align="left"/>
+				  <colspec colnum="3" colname="c3" align="left"/>
+				  <colspec colnum="4" colname="c4" align="left"/>
+					<thead>
+						<row>
+							<entry>Order</entry>
+							<entry>Component</entry>
+						  <entry>Dependency (compatibility)</entry>
+						  <entry>Download/Documentation</entry>
+						</row>
+					</thead>
+					<tbody>
+						<row>
+							<entry>1.</entry>
+							<entry>Server Software</entry>
+							<entry><ol><li>VMware ESXi</li><li>Docker EE</li></ol></entry>
+							<entry morerows="1" valign="middle">vSphere Docker Volume Service on GitHub</entry>
+						</row>
+					  <row>
+							<entry>2.</entry>
+							<entry>Client Software</entry>
+							<entry><ol><li>VM Operating System</li><li>Docker EE</li></ol></entry>
+						</row>
+					</tbody>
+				</tgroup>
+    </table>
+  </body>
+</topic>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="verify-prereqs-table">
+  <title></title>
+  <body>
+    <table id="verify-prereqs-table-content" frame="none">
+			<title>Summary of information required</title>
+
+			<tgroup cols="2">
+				<colspec colnum="1" colname="c1" align="left"/>
+				<colspec colnum="2" colname="c2" align="left"/>
+				<thead>
+					<row>
+						<entry>Component </entry>
+						<entry>Details </entry>
+					</row>
+				</thead>
+				<tbody>
+					<row>
+						<entry>Virtual Infrastructure </entry>
+						<entry>The FQDN of your vCenter server and the name of the Datacenter. You
+							will also need administrator credentials in order to create templates,
+							and spin up virtual machines. </entry>
+					</row>
+					<row>
+						<entry>L3 Network requirements </entry>
+						<entry>You will need one IP address for each and every VM configured in the
+							Ansible inventory (see the section “Editing the inventory”). At the time
+							of writing, the example inventory configures 14 virtual machines so you
+							would need to allocate 14 IP addresses to use this example inventory.
+							Note that the Ansible playbooks do not support DHCP so you need static
+							IP addresses. All the IPs should be in the same subnet. You will also
+							have to specify the size of the subnet (for example /22 or /24) and the
+							L3 gateway for this subnet. </entry>
+					</row>
+					<row>
+						<entry>DNS </entry>
+						<entry>You will need to know the IP addresses of your DNS server. In
+							addition, all the VMs you configure in the inventory should have their
+							names registered in DNS. In addition, you will need the domain name to
+							use for configuring the virtual machines (such as <xref format="html"
+								scope="external" href="http://example.com/">example.com</xref>)
+						</entry>
+					</row>
+					<row>
+						<entry>NTP Services </entry>
+						<entry>You need time services configured in your environment. The solution
+							being deployed (including Docker) uses certificates and certificates are
+							time sensitive. You will need the IP addresses of your time servers
+							(NTP). </entry>
+					</row>
+					<row>
+						<entry>RHEL Subscription </entry>
+						<entry>A RHEL subscription is required to pull extra packages that are not
+							on the DVD. </entry>
+					</row>
+					<row>
+						<entry>Docker Prerequisites </entry>
+						<entry>You will need a URL for the official Docker EE software download and
+							a license file. Refer to the Docker documentation to learn more about
+							this URL and the licensing requirements at: <xref format="html"
+								scope="external"
+								href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/"
+								>https://docs.docker.com/engine/installation/linux/docker-ee/rhel/</xref>
+							in the section entitled “Docker EE repository URL” </entry>
+					</row>
+					<row>
+						<entry>Proxy </entry>
+						<entry>The playbooks pull the Docker packages from the Internet. If your
+							environment accesses the Internet through a proxy, you will need the
+							details of the proxy including the fully qualified domain name and the
+							port number. </entry>
+					</row>
+				</tbody>
+			</tgroup>
+		</table>
+  </body>
+</topic>
