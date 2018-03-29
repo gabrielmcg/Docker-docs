@@ -786,16 +786,42 @@ vSphere Docker Volume service plug-in is part of an open source project by VMwar
 
 When updating the Docker Volume service plug-in, ensure the ESXi version you are running is supported and that the client software is compatible with the operating system.
 
-|Order|Component|Dependency \(compatibility\)|Download/Documentation|
-|:----|:--------|:---------------------------|:---------------------|
-|1.|Server Software|1.  VMware ESXi
-2.  Docker EE
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 9. </span>vSphere Docker Volume service components</span></caption>
+<colgroup>
+<col />
+<col />
+<col />
+<col />
+</colgroup>
+<thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry nocellnorowborder" align="left" valign="top" id="d30e3750">Order</th>
+							<th class="entry nocellnorowborder" align="left" valign="top" id="d30e3753">Component</th>
+						  <th class="entry nocellnorowborder" align="left" valign="top" id="d30e3756">Dependency (compatibility)</th>
+						  <th class="entry nocellnorowborder" align="left" valign="top" id="d30e3759">Download/Documentation</th>
+						</tr>
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry nocellnorowborder" align="left" valign="top" headers="d30e3750 ">1.</td>
+							<td class="entry nocellnorowborder" align="left" valign="top" headers="d30e3753 ">Server Software</td>
+							<td class="entry nocellnorowborder" align="left" valign="top" headers="d30e3756 "><ol class="ol"><li class="li">VMware ESXi</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>
+							<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d30e3759 ">vSphere Docker Volume Service on GitHub</td>
+						</tr>
+					  <tr class="row">
+							<td class="entry nocellnorowborder" align="left" valign="top" headers="d30e3750 ">2.</td>
+							<td class="entry nocellnorowborder" align="left" valign="top" headers="d30e3753 ">Client Software</td>
+							<td class="entry nocellnorowborder" align="left" valign="top" headers="d30e3756 "><ol class="ol"><li class="li">VM Operating System</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>
+						</tr>
+					</tbody>
 
-|vSphere Docker Volume Service on GitHub|
-|2.|Client Software|1.  VM Operating System
-2.  Docker EE
-
-|
+</table>
 
 [media-architecture1-png]:</ops/media/architecture1.png> "Figure 1. HPE Synergy Solution"
 [media-architecture2-png]:</ops/media/architecture2.png> "Figure 2. HPE Synergy Configuration"
