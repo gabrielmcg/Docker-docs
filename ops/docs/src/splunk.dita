@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="splunk">
+<title>Splunk</title>
+<body>
+<section>
+<title>Architecture</title>
+
+<fig>
+<title>Splunk architecture</title>
+<image href="../../media/splunk-architecture.png"/>
+</fig>
+
+<ol>
+<li>All universal forwarders are running natively on the operating system. This is to allow
+greater flexibility in terms of configuration options</li>
+<li>Each and every Universal forwarder sends the data it collects to one or more indexers
+(blue arrows to the central splunk). Although the diagram only shows one indexer it is
+possible to configure several indexers.</li>
+<li>The "blue" universal forwarders are running natively on the host. They collect and forward the data they find in the following files by use of a splunk 'monitor'
+<ul>
+<li>/var/log/messages</li>
+<li>/var/log/secure (Red Hat)</li>
+</ul>
+
+<note type="note">The list of files that the Universal Forwarder should monitor can be modified very easily</note>
+</li>
+<li>The "green" Universal Forwarders are running on the Linux worker nodes and collect the following data:
+<ul>
+<li>logs
+<ul>
+<li>/var/log/messages from the docker host (this include the daemon engine logs)</li>
+<li>/var/log/secure from the docker hosts</li>
+<li>container logs via a splunk technical addon</li>
+</ul>
+</li>
+<li>metrics (via a technical addon)
+<ul>
+<li>docker stats</li>
+<li>docker top</li>
+<li>docker events</li>
+<li>docker service stats</li>
+</ul>
+</li>
+</ul>
+
+</li>
+<li>The orange Universal Forwarders are running on the Windows worker nodes  and collect the following data
+<ul>
+<li>windows logs</li>
+<li>CPU stats</li>
+<li>Memory Stats</li>
+<li>Network Interface Stats</li>
+<li>and more</li>
+</ul>
+
+See <xref href="https://splunkbase.splunk.com/app/1680/" format="html">https://splunkbase.splunk.com/app/1680/</xref> for more information (Splunk App for Windows Infrastructure)
+</li>
+<li>UCP operational logs and ESXi logs are forwarded to the logger VM respectively via TCP ports 1514 and 514. Port 1514 is assigned a special "sourcetype" ('ucp') which is then used by the Splunk Docker APP to interpret UCP logs. The Universal forwarder runs the rsyslog daemon which will record the log messages coming from the ESX machines into the VM's /var/log/messages. </li>
+<li>Other syslog senders can be configured to send their data to the logger VM or directly to central splunk</li>       
+<li>On your central splunk installation, you should install the following add-ons and apps
+<ul>
+<li>to monitor Linux Worker nodes, the <b>Docker app</b> should be installed on central splunk. More info on this docker app can be found at: 
+<ul>
+<li><xref href="https://github.com/splunk/docker-itmonitoring" format="html"/></li>
+<li><xref href="https://hub.docker.com/r/splunk/universalforwarder/" format="html"/></li>
+</ul>
+</li>
+<li>To monitor the Windows worker nodes, install the <b>Splunk App for Windows Infrastructure</b> on central splunk and its dependencies
+<ul>
+<li>Splunk App for Windows Infrastructure - see <xref href="https://splunkbase.splunk.com/app/1680/" format="html"/></li>
+<li>Splunk Add-on for Microsoft Windows - see <xref href="https://splunkbase.splunk.com/app/742/" format="html"/></li>
+<li>Splunk Add-on for Microsoft Windows DNS (if not installed on central splunk, you will see yellow icons on some dashboards with 
+the message 'eventtype wineventlog-dns does not exist or is disabled') -  see <xref href="https://splunkbase.splunk.com/app/3208/" format="html"/></li>
+<li>Splunk Supporting Add-on for Active Directory (if not installed on central splunk, you will see yellow icons on some dashboards with 
+the message 'eventtype 'wineventlog-ds does not exist or is disabled') - see <xref href="https://splunkbase.splunk.com/app/1151/" format="html"/></li>
+</ul>
+
+</li>
+</ul>
+</li>
+
+
+</ol>
+
+</section>
+
+
+
+
+</body>
+</topic>

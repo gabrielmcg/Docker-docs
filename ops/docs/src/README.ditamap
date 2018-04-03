@@ -44,6 +44,10 @@
     
     <topicref href="security.dita" navtitle="Security"/>
     
+    <topicref href="monitoring.dita" navtitle="Monitoring">
+      <topicref href="splunk.dita" navtitle="Splunk integration"/> 
+    </topicref>
+    
   </topicref>
   
  <topicref href="provisioning.dita" navtitle="Provisioning the environment">
