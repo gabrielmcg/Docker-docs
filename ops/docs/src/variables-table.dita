@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="variables-table">
-  <title></title>
-  <body>
-    <table id="variables-table-content"  frame="none">
-					<title>Variables</title>
-					
+<title></title>
+<body>
+<table id="variables-table-content"  frame="none">
+<title>Variables</title>
 
-					<tgroup cols="3">
-						<colspec colnum="1" colname="c1" align="left"/>
-						<colspec colnum="2" colname="c2" align="left"/>
-						<colspec colnum="3" colname="c3" align="left"/>
-					 <thead >
-						<row>
-							<entry>Variable</entry>
-							<entry>Scope</entry>
-							<entry>Description</entry>
-						</row>
-					</thead>
-						<tbody>
-							<row>
-								<entry>ip_addr</entry>
-								<entry>Node</entry>
-								<entry>IP address in CIDR format to be given to a node</entry>
-							</row>
-							<row>
-								<entry>esxi_host</entry>
-								<entry>Node</entry>
-								<entry>ESXi host where the node will be deployed. If the cluster is configured with DRS, this option will be overriden</entry>
-							</row>
-							<row>
-								<entry>cpus</entry>
-								<entry>Node/Group</entry>
-								<entry>Number of CPUs to assign to a VM or a group of VMs</entry>
-							</row>
-							<row>
-								<entry>ram</entry>
-								<entry>Node/Group</entry>
-								<entry>Amount of RAM in MB to assign to a VM or a group of VMs</entry>
-							</row>
-							<row>
-								<entry>disk2_usage</entry>
-								<entry>Node/Group</entry>
-								<entry>Size of the second disk in GB to attach to a VM or a group of VMs. This variable is only mandatory on Docker nodes (UCP, DTR, worker) and NFS node. It is not required for the logger node or the load balancers.</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</table>
-  </body>
+
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead >
+<row>
+<entry>Variable</entry>
+<entry>Scope</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>ip_addr</entry>
+<entry>Node</entry>
+<entry>IP address in CIDR format to be given to a node</entry>
+</row>
+<row>
+<entry>esxi_host</entry>
+<entry>Node</entry>
+<entry>ESXi host where the node will be deployed. If the cluster is configured with DRS, this option will be overriden</entry>
+</row>
+<row>
+<entry>cpus</entry>
+<entry>Node/Group</entry>
+<entry>Number of CPUs to assign to a VM or a group of VMs</entry>
+</row>
+<row>
+<entry>ram</entry>
+<entry>Node/Group</entry>
+<entry>Amount of RAM in MB to assign to a VM or a group of VMs</entry>
+</row>
+<row>
+<entry>disk2_usage</entry>
+<entry>Node/Group</entry>
+<entry>Size of the second disk in GB to attach to a VM or a group of VMs. This variable is only mandatory on Docker nodes (UCP, DTR, worker) and NFS node. It is not required for the logger node or the load balancers.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</body>
 </topic>

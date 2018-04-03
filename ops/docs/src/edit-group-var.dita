@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="edit-group-var">
-	<title>Editing the group variables</title>
-	<body>
-		<p>Once the inventory is ready, the next step is to modify the group variables to match your
-			environment. To do so, you need to edit the file <codeph>group_vars/vars</codeph>. The
-			variables can be defined in any order but for the sake of clarity they have been divided
-			into sections.</p>
-	</body>
-	
-		
+<title>Editing the group variables</title>
+<body>
+<p>Once the inventory is ready, the next step is to modify the group variables to match your
+environment. To do so, you need to edit the file <codeph>group_vars/vars</codeph>. The
+variables can be defined in any order but for the sake of clarity they have been divided
+into sections.</p>
+</body>
+
+
 </topic>

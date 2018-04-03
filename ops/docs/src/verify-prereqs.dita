@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="verify-prereqs">
-	<title>Verify prerequisites</title>
-	<body>
-		<p>You must assemble the information required to assign values for each and every variable
-			used by the playbooks, before you start deployment. The variables are fully documented
-			in the following sections “Editing the group variables” and “Editing the vault”. A
-			summary of the information required is presented in Table 3.</p>
+<title>Verify prerequisites</title>
+<body>
+<p>You must assemble the information required to assign values for each and every variable
+used by the playbooks, before you start deployment. The variables are fully documented
+in the following sections “Editing the group variables” and “Editing the vault”. A
+summary of the information required is presented in Table 3.</p>
 
-		<table conref="verify-prereqs-table.dita#verify-prereqs-table/verify-prereqs-table-content">
-			<title>Summary of information required</title>
-			<tgroup cols="2">
-				<tbody>
-					<row>
-						<entry/>
-					</row>
-				</tbody>
-			</tgroup>
-		</table>
-		
+<table conref="verify-prereqs-table.dita#verify-prereqs-table/verify-prereqs-table-content">
+<title>Summary of information required</title>
+<tgroup cols="2">
+<tbody>
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table>
 
 
-	</body>
+
+</body>
 </topic>

@@ -1,172 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="memory-alloc-table">
-  <title></title>
-  <body>
+<title></title>
+<body>
 
 
 <table id="memory-alloc-table-content">
-				  <title>Memory allocation</title>
+<title>Memory allocation</title>
 
-					<tgroup cols="4">
-            <colspec colnum="1" colname="c1" align="left"/>
-            <colspec colnum="2" colname="c2" align="center"/>
-            <colspec colnum="3" colname="c3" align="center"/>
-            <colspec colnum="4" colname="c4" align="center"/>
-						<thead>
-							<row>
-								<entry>RAM (GB)</entry>
-								<entry>node01</entry>
-								<entry>node02</entry>
-								<entry>node03</entry>
-							</row>
-						</thead>
-					  
-						<tbody>		
-						  
-							<row>
-								<entry>ucp1</entry>
-								<entry>8</entry>
-								<entry/>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>ucp2</entry>
-								<entry/>							
-								<entry>8</entry>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>ucp3</entry>
-								<entry/>
-								<entry/>
-								<entry>8</entry>
-							</row>
-						  
-							<row>
-								<entry>dtr1</entry>
-								<entry>16</entry>
-								<entry/>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>dtr2</entry>
-								<entry/>
-								<entry>16</entry>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>dtr3</entry>
-								<entry/>
-								<entry/>
-								<entry>16</entry>
-							</row>
-						  
-							<row>
-								<entry>worker1</entry>
-								<entry>64</entry>
-								<entry/>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>worker2</entry>
-								<entry/>
-								<entry>64</entry>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>worker3</entry>
-								<entry/>
-								<entry/>
-								<entry>64</entry>
-							</row>
-						  
-							<row>
-								<entry>win-worker1</entry>
-								<entry>64</entry>
-								<entry/>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>win-worker2</entry>
-								<entry/>
-								<entry>64</entry>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>win-worker3</entry>
-								<entry/>
-								<entry/>
-								<entry>64</entry>
-							</row>
-						  
-							<row>
-								<entry>ucb_lb</entry>
-								<entry>4</entry>
-								<entry/>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>dtr_lb</entry>
-								<entry/>
-								<entry>4</entry>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>worker_lb</entry>
-								<entry/>
-								<entry/>
-								<entry>4</entry>
-							</row>
-						  
-							<row>
-								<entry>nfs</entry>
-								<entry/>
-								<entry/>
-								<entry>4</entry>
-							</row>
-						  
-							<row>
-								<entry>logger</entry>
-								<entry/>
-								<entry>4</entry>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>Total RAM required (per node)</entry>
-								<entry>92</entry>
-								<entry>96</entry>
-								<entry>96</entry>
-							</row>
-						  
-							<row>
-								<entry>Total RAM required</entry>
-								<entry/>
-								<entry>284</entry>
-								<entry/>
-							</row>
-						  
-							<row>
-								<entry>Available RAM</entry>
-								<entry>384</entry>
-								<entry>384</entry>
-								<entry>384</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</table>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="center"/>
+<colspec colnum="3" colname="c3" align="center"/>
+<colspec colnum="4" colname="c4" align="center"/>
+<thead>
+<row>
+<entry>RAM (GB)</entry>
+<entry>node01</entry>
+<entry>node02</entry>
+<entry>node03</entry>
+</row>
+</thead>
+
+<tbody>		
+
+<row>
+<entry>ucp1</entry>
+<entry>8</entry>
+<entry/>
+<entry/>
+</row>
+
+<row>
+<entry>ucp2</entry>
+<entry/>							
+<entry>8</entry>
+<entry/>
+</row>
+
+<row>
+<entry>ucp3</entry>
+<entry/>
+<entry/>
+<entry>8</entry>
+</row>
+
+<row>
+<entry>dtr1</entry>
+<entry>16</entry>
+<entry/>
+<entry/>
+</row>
+
+<row>
+<entry>dtr2</entry>
+<entry/>
+<entry>16</entry>
+<entry/>
+</row>
+
+<row>
+<entry>dtr3</entry>
+<entry/>
+<entry/>
+<entry>16</entry>
+</row>
+
+<row>
+<entry>worker1</entry>
+<entry>64</entry>
+<entry/>
+<entry/>
+</row>
+
+<row>
+<entry>worker2</entry>
+<entry/>
+<entry>64</entry>
+<entry/>
+</row>
+
+<row>
+<entry>worker3</entry>
+<entry/>
+<entry/>
+<entry>64</entry>
+</row>
+
+<row>
+<entry>win-worker1</entry>
+<entry>64</entry>
+<entry/>
+<entry/>
+</row>
+
+<row>
+<entry>win-worker2</entry>
+<entry/>
+<entry>64</entry>
+<entry/>
+</row>
+
+<row>
+<entry>win-worker3</entry>
+<entry/>
+<entry/>
+<entry>64</entry>
+</row>
+
+<row>
+<entry>ucb_lb</entry>
+<entry>4</entry>
+<entry/>
+<entry/>
+</row>
+
+<row>
+<entry>dtr_lb</entry>
+<entry/>
+<entry>4</entry>
+<entry/>
+</row>
+
+<row>
+<entry>worker_lb</entry>
+<entry/>
+<entry/>
+<entry>4</entry>
+</row>
+
+<row>
+<entry>nfs</entry>
+<entry/>
+<entry/>
+<entry>4</entry>
+</row>
+
+<row>
+<entry>logger</entry>
+<entry/>
+<entry>4</entry>
+<entry/>
+</row>
+
+<row>
+<entry>Total RAM required (per node)</entry>
+<entry>92</entry>
+<entry>96</entry>
+<entry>96</entry>
+</row>
+
+<row>
+<entry>Total RAM required</entry>
+<entry/>
+<entry>284</entry>
+<entry/>
+</row>
+
+<row>
+<entry>Available RAM</entry>
+<entry>384</entry>
+<entry>384</entry>
+<entry>384</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
 
 
-  </body>
+</body>
 </topic>

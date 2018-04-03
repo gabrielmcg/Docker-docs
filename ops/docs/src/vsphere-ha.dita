@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="vsphere-ha">
-	<title>Enable vSphere High Availability</title>
-	<body>
-		<p>You must enable vSphere High Availability (HA) to support virtual machine failover during
-			an HA event such as a host failure. Sufficient CPU and memory resources must be reserved
-			across the system so that all VMs on the affected host(s) can fail over to remaining
-			available hosts in the system. You configure an Admission Control Policy (ACP) to
-			specify the percentage CPU and memory to reserve on all the hosts in the cluster to
-			support HA functionality.</p>
-		<note type="note">
-			<p>You should not use the default Admission Control Policy. Instead, you should
-				calculate the memory and CPU requirements that are specific to your environment.</p>
-		</note>
-		<p/>
-	</body>
+<title>Enable vSphere High Availability</title>
+<body>
+<p>You must enable vSphere High Availability (HA) to support virtual machine failover during
+an HA event such as a host failure. Sufficient CPU and memory resources must be reserved
+across the system so that all VMs on the affected host(s) can fail over to remaining
+available hosts in the system. You configure an Admission Control Policy (ACP) to
+specify the percentage CPU and memory to reserve on all the hosts in the cluster to
+support HA functionality.</p>
+<note type="note">
+<p>You should not use the default Admission Control Policy. Instead, you should
+calculate the memory and CPU requirements that are specific to your environment.</p>
+</note>
+<p/>
+</body>
 </topic>

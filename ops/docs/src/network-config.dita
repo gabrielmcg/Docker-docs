@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="network-config">
-		<title>Networking configuration</title>
-		<body>
-			<p>All network-related variables are mandatory and are described in Table 7.</p>
+<title>Networking configuration</title>
+<body>
+<p>All network-related variables are mandatory and are described in Table 7.</p>
 
-		<table conref="network-config-table.dita#network-config-table/network-config-table-content">
-			<title>Network variables</title>
-			<tgroup cols="2">
-				<tbody>
-					<row>
-						<entry/>
-					</row>
-				</tbody>
-			</tgroup>
+<table conref="network-config-table.dita#network-config-table/network-config-table-content">
+<title>Network variables</title>
+<tgroup cols="2">
+<tbody>
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
 
-		</table>
+</table>
 
-			
-		</body>
-	</topic>
+
+</body>
+</topic>

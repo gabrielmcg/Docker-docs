@@ -1,103 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="vmware-variables-table">
-  <title></title>
-  <body>
-    <table id="vmware-variables-table-content">
-				<title>VMware variables</title>
-				<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
-							<col/>
-							<col/>
-						</colgroup>-->
+<title></title>
+<body>
+<table id="vmware-variables-table-content">
+<title>VMware variables</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
 
-				<tgroup cols="2">
-					<colspec colnum="1" colname="c1" align="left"/>
-					<colspec colnum="2" colname="c2" align="left"/>
-					<thead>
-						<row>
-							<entry>Variable</entry>
-							<entry>Description</entry>
-						</row>
-					</thead>
-					<tbody>
-						<row>
-							<entry>vcenter_hostname</entry>
-							<entry>IP or hostname of the vCenter appliance</entry>
-						</row>
-						<row>
-							<entry>vcenter_username</entry>
-							<entry>Username to log in to the vCenter appliance. It might include a
-								domain, for example, '<codeph>administrator@vsphere.local</codeph>'. Note: The corresponding
-								password is stored in a separate file
-									(<codeph>group_vars/vault</codeph>) with the variable named
-									<codeph>vcenter_password</codeph>.</entry>
-						</row>
-						<row>
-							<entry>vcenter_validate_certs</entry>
-							<entry>‘no’</entry>
-						</row>
-						<row>
-							<entry>datacenter</entry>
-							<entry>Name of the datacenter where the environment will be
-								provisioned</entry>
-						</row>
-						<row>
-							<entry>vm_username</entry>
-							<entry>Username to log into the VMs. It needs to match the one from the
-								VM Template, so unless you have created an user, you must use
-								'root'. Note: The corresponding password is stored in a separate
-								file (<codeph>group_vars/vault</codeph>) with the variable named
-									<codeph>vm_password</codeph>.</entry>
-						</row>
-						<row>
-							<entry>vm_template</entry>
-							<entry>Name of the RHEL VM Template to be use. Note that this is the
-								name from a vCenter perspective, not the hostname.</entry>
-						</row>
-						<row>
-							<entry>win_vm_template</entry>
-							<entry>Name of the Windows 2016 VM Template to use. Note that this is
-								the name from a vCenter perspective, not the hostname.</entry>
-						</row>
-						<row>
-							<entry>folder_name</entry>
-							<entry>vCenter folder to deploy the VMs. If you do not wish to deploy in
-								a particular folder, the value should be <codeph>/</codeph>. Note:
-								If you want to deploy in a specific folder, you need to create this
-								folder in the inventory of the selected datacenter before starting
-								the deployment.</entry>
-						</row>
-						<row>
-							<entry>datastores</entry>
-							<entry>List of datastores to be used, in list format, i.e.
-									['<codeph>Datastore1</codeph>','<codeph>Datastore2</codeph>'...].
-								This or these datastore(s) must exist before you run the
-								playbooks.</entry>
-						</row>
-						<row>
-							<entry>disk2</entry>
-							<entry>UNIX® name of the second disk for the Docker VMs. Typically
-									<codeph>/dev/sdb</codeph></entry>
-						</row>
-						<row>
-							<entry>disk2_part</entry>
-							<entry>UNIX name of the partition of the second disk for the Docker VMs.
-								Typically <codeph>/dev/sdb1</codeph></entry>
-						</row>
-						<row>
-							<entry>vsphere_plugin_version</entry>
-							<entry>Version of the vSphere plugin for Docker. The default is 0.20
-								which is the latest version at the time of writing this document.
-								The version of the plugin should match the version of the vSphere
-								Installation Bundle (VIB) that you installed on the ESXi
-								servers.</entry>
-						</row>
-						<row>
-							<entry>vm_portgroup</entry>
-							<entry>TODO</entry>
-						</row>
-					</tbody>
-				</tgroup>
-			</table>
-  </body>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry>Variable</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>vcenter_hostname</entry>
+<entry>IP or hostname of the vCenter appliance</entry>
+</row>
+<row>
+<entry>vcenter_username</entry>
+<entry>Username to log in to the vCenter appliance. It might include a
+domain, for example, '<codeph>administrator@vsphere.local</codeph>'. Note: The corresponding
+password is stored in a separate file
+(<codeph>group_vars/vault</codeph>) with the variable named
+<codeph>vcenter_password</codeph>.</entry>
+</row>
+<row>
+<entry>vcenter_validate_certs</entry>
+<entry>‘no’</entry>
+</row>
+<row>
+<entry>datacenter</entry>
+<entry>Name of the datacenter where the environment will be
+provisioned</entry>
+</row>
+<row>
+<entry>vm_username</entry>
+<entry>Username to log into the VMs. It needs to match the one from the
+VM Template, so unless you have created an user, you must use
+'root'. Note: The corresponding password is stored in a separate
+file (<codeph>group_vars/vault</codeph>) with the variable named
+<codeph>vm_password</codeph>.</entry>
+</row>
+<row>
+<entry>vm_template</entry>
+<entry>Name of the RHEL VM Template to be use. Note that this is the
+name from a vCenter perspective, not the hostname.</entry>
+</row>
+<row>
+<entry>win_vm_template</entry>
+<entry>Name of the Windows 2016 VM Template to use. Note that this is
+the name from a vCenter perspective, not the hostname.</entry>
+</row>
+<row>
+<entry>folder_name</entry>
+<entry>vCenter folder to deploy the VMs. If you do not wish to deploy in
+a particular folder, the value should be <codeph>/</codeph>. Note:
+If you want to deploy in a specific folder, you need to create this
+folder in the inventory of the selected datacenter before starting
+the deployment.</entry>
+</row>
+<row>
+<entry>datastores</entry>
+<entry>List of datastores to be used, in list format, i.e.
+['<codeph>Datastore1</codeph>','<codeph>Datastore2</codeph>'...].
+This or these datastore(s) must exist before you run the
+playbooks.</entry>
+</row>
+<row>
+<entry>disk2</entry>
+<entry>UNIX® name of the second disk for the Docker VMs. Typically
+<codeph>/dev/sdb</codeph></entry>
+</row>
+<row>
+<entry>disk2_part</entry>
+<entry>UNIX name of the partition of the second disk for the Docker VMs.
+Typically <codeph>/dev/sdb1</codeph></entry>
+</row>
+<row>
+<entry>vsphere_plugin_version</entry>
+<entry>Version of the vSphere plugin for Docker. The default is 0.20
+which is the latest version at the time of writing this document.
+The version of the plugin should match the version of the vSphere
+Installation Bundle (VIB) that you installed on the ESXi
+servers.</entry>
+</row>
+<row>
+<entry>vm_portgroup</entry>
+<entry>TODO</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</body>
 </topic>

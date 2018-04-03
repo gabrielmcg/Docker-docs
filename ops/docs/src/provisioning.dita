@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="provisioning">
-	<title>Provisioning the environment</title>
-	<body>
-		<section id="provisioning-section">
-			<p>This section describes in detail how to provision the environment described
-				previously in the architecture section. The high level steps this guide will take
-				are shown in the figure:</p>
-			
-			<fig>
-				<title>Provisioning steps</title>
-				<!--<image keyref="provisioning"/>-->
-				<image href="media/provisioning.png"/>
-			</fig>
-		</section>
-	</body>
+<title>Provisioning the environment</title>
+<body>
+<section id="provisioning-section">
+<p>This section describes in detail how to provision the environment described
+previously in the architecture section. The high level steps this guide will take
+are shown in the figure:</p>
+
+<fig>
+<title>Provisioning steps</title>
+<!--<image keyref="provisioning"/>-->
+<image href="media/provisioning.png"/>
+</fig>
+</section>
+</body>
 </topic>

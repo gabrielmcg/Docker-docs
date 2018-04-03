@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="esxi-hosts">
-	<title>Creating ESXi hosts with OneView and Image Streamer</title>
-	<body>
-		<p>OneView/Composer: 10.60.50.10</p>
-		<p>A 3PAR (StoreServ 8200 All-Flash) is used for ESXi cluster storage in the Synergy
-			environment and is connected via FCOE. The 3PAR in the Synergy environment is managed by
-			OneView. Storage for the ESXi cluster can be configured in OneView and assigned in the
-			server profile so that the storage is automatically attached when the server is
-			deployed.</p>
-		<p>Two volumes are necessary for an ESXi cluster, the large datastore for VM deployments and
-			a smaller (10GB is fine) quorum disk. From OneView menu, select Volumes and Create
-			Volume.</p>
-		<ul>
-			<li>Specify a unique name for the datastore</li>
-			<li>The storage pool for this environment is ucpa_r5.</li>
-			<li>Specify a size</li>
-			<li>Select Shared</li>
-			<li>Leave it as Thin provisioned and then select Create.</li>
-		</ul>
+<title>Creating ESXi hosts with OneView and Image Streamer</title>
+<body>
+<p>OneView/Composer: 10.60.50.10</p>
+<p>A 3PAR (StoreServ 8200 All-Flash) is used for ESXi cluster storage in the Synergy
+environment and is connected via FCOE. The 3PAR in the Synergy environment is managed by
+OneView. Storage for the ESXi cluster can be configured in OneView and assigned in the
+server profile so that the storage is automatically attached when the server is
+deployed.</p>
+<p>Two volumes are necessary for an ESXi cluster, the large datastore for VM deployments and
+a smaller (10GB is fine) quorum disk. From OneView menu, select Volumes and Create
+Volume.</p>
+<ul>
+<li>Specify a unique name for the datastore</li>
+<li>The storage pool for this environment is ucpa_r5.</li>
+<li>Specify a size</li>
+<li>Select Shared</li>
+<li>Leave it as Thin provisioned and then select Create.</li>
+</ul>
 
-		<fig>
-			<title>Create volume</title>
-			<!--<image keyref="create-volume"/>-->
-			<image href="media/create-volume.png"/>
-		</fig>
+<fig>
+<title>Create volume</title>
+<!--<image keyref="create-volume"/>-->
+<image href="media/create-volume.png"/>
+</fig>
 
 
-		<p>Use the server profile template ESXi-6.5 for Docker to create a new server profile for an
-			ESXi host. The server profile template uses the Image Streamer Deployment plan (ESXi
-			Deployment SAN and Docker enabled) to deploy ESXi 6.5 and prepare it for use.</p>
+<p>Use the server profile template ESXi-6.5 for Docker to create a new server profile for an
+ESXi host. The server profile template uses the Image Streamer Deployment plan (ESXi
+Deployment SAN and Docker enabled) to deploy ESXi 6.5 and prepare it for use.</p>
 
-		<p>From the Action drop down menu, select Create the server profile.</p>
-		<p>You will be asked for</p>
-		
-		<ul>
-			<li>Unique Server Profile name</li>
-			<li>Location to deploy (drop down will give you the list of available compute
-				modules)</li>
-		</ul>
-		
-		<p>The following attributes are used by the Image Streamer scripts to customize the ESXi 6.5
-			golden image:</p>
-		<ul>
-			<li>Hostname: provide the short name here. It will set the domain to cloudra.local</li>
-			<li>Networking information (Management network is VLAN60)</li>
-		</ul>
-		<ul>
-			<li>
-				<ul>
-					<li>IP address: provide the IP address on VLAN60.</li>
-					<li>Netmask: 255.255.0.0</li>
-					<li>Gateway: 10.60.0.1</li>
-					<li>DNS1: 10.60.50.106</li>
-					<li>DNS2: 10.60.1.53</li>
-				</ul>
-			</li>
-		</ul>
+<p>From the Action drop down menu, select Create the server profile.</p>
+<p>You will be asked for</p>
 
-		<p>Note, you have to manually add the hostname + address to the DNS server at 10.60.50.106
-			since this is not automated.</p>
-		<p>Storage customization for datastores:</p>
-		<p>The networks should be set from the template. The networks are configured for High
-			Availability so there are 2 of each:</p>
-		<ul>
-			<li>2 Deployment networks which are connected to the Image Streamer</li>
-			<li>2 networks on MGMT1 (VLAN 60)</li>
-			<li>2 FC networks for Storage connectivity, SAN-A, SAN-B</li>
-			<li>2 vMotion networks</li>
-		</ul>
-		<p>The Storage may have to be modified depending on which cluster you are joining. If you
-			need different volumes, delete the ones that were added for you and then add the new
-			ones.</p>
+<ul>
+<li>Unique Server Profile name</li>
+<li>Location to deploy (drop down will give you the list of available compute
+modules)</li>
+</ul>
 
-		<p>When you are done with Storage changes, click Create to start the process to create the
-			server profile on the selected compute host.</p>
-		<p>After the profile is applied, use the Actions drop down to power on the server.</p>
-		<p>As it powers on you will probably see connectivity error messages such as this:</p>
+<p>The following attributes are used by the Image Streamer scripts to customize the ESXi 6.5
+golden image:</p>
+<ul>
+<li>Hostname: provide the short name here. It will set the domain to cloudra.local</li>
+<li>Networking information (Management network is VLAN60)</li>
+</ul>
+<ul>
+<li>
+<ul>
+<li>IP address: provide the IP address on VLAN60.</li>
+<li>Netmask: 255.255.0.0</li>
+<li>Gateway: 10.60.0.1</li>
+<li>DNS1: 10.60.50.106</li>
+<li>DNS2: 10.60.1.53</li>
+</ul>
+</li>
+</ul>
 
-		<p>This error will (should!) clear once the server boots completely.</p>
-		<p>Use the Actions Drop down to open the iLO session to verify the server booted
-			completely.</p>
+<p>Note, you have to manually add the hostname + address to the DNS server at 10.60.50.106
+since this is not automated.</p>
+<p>Storage customization for datastores:</p>
+<p>The networks should be set from the template. The networks are configured for High
+Availability so there are 2 of each:</p>
+<ul>
+<li>2 Deployment networks which are connected to the Image Streamer</li>
+<li>2 networks on MGMT1 (VLAN 60)</li>
+<li>2 FC networks for Storage connectivity, SAN-A, SAN-B</li>
+<li>2 vMotion networks</li>
+</ul>
+<p>The Storage may have to be modified depending on which cluster you are joining. If you
+need different volumes, delete the ones that were added for you and then add the new
+ones.</p>
 
-		<p>You should see the hostname and the IP set as specified in the server profile. After we
-			get this host into vCenter and deploy the vSphere docker plugin we will use the iLO to
-			restart the hostd service.</p>
-		<p>Additional networking (ie vMotion) , distributed switches, attaching the datastore, etc
-			is all manual setup using the vSphere client. All vCenter setup is manual
-			(vcenter.cloudra.local/10.60.50.103). There are some licenses for compute hosts
-			available though they all expire in March 2018.</p>
-	</body>
+<p>When you are done with Storage changes, click Create to start the process to create the
+server profile on the selected compute host.</p>
+<p>After the profile is applied, use the Actions drop down to power on the server.</p>
+<p>As it powers on you will probably see connectivity error messages such as this:</p>
+
+<p>This error will (should!) clear once the server boots completely.</p>
+<p>Use the Actions Drop down to open the iLO session to verify the server booted
+completely.</p>
+
+<p>You should see the hostname and the IP set as specified in the server profile. After we
+get this host into vCenter and deploy the vSphere docker plugin we will use the iLO to
+restart the hostd service.</p>
+<p>Additional networking (ie vMotion) , distributed switches, attaching the datastore, etc
+is all manual setup using the vSphere client. All vCenter setup is manual
+(vcenter.cloudra.local/10.60.50.103). There are some licenses for compute hosts
+available though they all expire in March 2018.</p>
+</body>
 </topic>

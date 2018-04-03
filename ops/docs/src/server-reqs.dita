@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="server-reqs">
-	<title>Server requirements:</title>
-	<body>
-		<p>Two platforms will be described / tested:</p>
-		<ol>
-			<li>3 node HPE Synergy 480 Gen10 deployment with 1 node in each Synergy frame <ul>
-					<li>384 GB DDR4-2133 RAM </li>
-					<li>2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core </li>
-					<li>single ESXi cluster with control plane and docker workers spread out on all
-						3 nodes </li>
-				</ul>
-			</li>
-			<li>6 node HPE Synergy 480 Gen 10 deployment with 2 nodes in each Synergy frame <ul>
-					<li>384GB DDR4-2133 RAM </li>
-					<li>2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core </li>
-					<li>single ESXi cluster with control plane on 3 nodes and 3 nodes dedicated as
-						Docker workers (should this be 2 clusters?) </li>
-				</ul>
-			</li>
-		</ol>
+<title>Server requirements:</title>
+<body>
+<p>Two platforms will be described / tested:</p>
+<ol>
+<li>3 node HPE Synergy 480 Gen10 deployment with 1 node in each Synergy frame <ul>
+<li>384 GB DDR4-2133 RAM </li>
+<li>2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core </li>
+<li>single ESXi cluster with control plane and docker workers spread out on all
+3 nodes </li>
+</ul>
+</li>
+<li>6 node HPE Synergy 480 Gen 10 deployment with 2 nodes in each Synergy frame <ul>
+<li>384GB DDR4-2133 RAM </li>
+<li>2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core </li>
+<li>single ESXi cluster with control plane on 3 nodes and 3 nodes dedicated as
+Docker workers (should this be 2 clusters?) </li>
+</ul>
+</li>
+</ol>
 
-		<p>TBD: How many workers should be deployed on a single ESXi host dedicated to Docker
-			workers to maximize use of the server and justify the cost of VMware license.</p>
-	</body>
+<p>TBD: How many workers should be deployed on a single ESXi host dedicated to Docker
+workers to maximize use of the server and justify the cost of VMware license.</p>
+</body>
 </topic>

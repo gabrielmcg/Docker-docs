@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="lifecycle">
-  <title>Solution lifecycle management</title>
-  <body>
-    <section>
-      <title>Introduction</title>
-      <p>Lifecycle management with respect to this solution refers to the maintenance and management
-        of software and hardware of various components that make up the solution stack. Lifecycle
-        management is required to keep the solution up-to-date and ensure that the latest versions
-        of the software are running to provide optimal performance, security and fix any existing
-        defects within the product.</p>
-      <p>In this section, we will cover life cycle management of the different components that are
-        used in this solution. </p>
-      <p>The lifecycle of the following stacks need to be maintained and managed. </p>
-      <ol>
-        <li>Monitoring Tools (Splunk or Prometheus and Grafana</li>
-        <li>Docker Enterprise Edition Environment</li>
-        <li>Virtual Machine Operating systems</li>
-        <li>Synergy environment</li>
-      </ol>
-      <p>The general practice and recommendation is to follow a bottom-up approach for updating all
-        components of the environment and making sure the dependencies are met. In our solution, we
-        would start with Synergy and end with the monitoring environment. If all components are not
-        being updated at the same time, the same approach can be followed – updating only the
-        components that require updates while adhering to the interdependencies of each component
-        that is being updated.</p>
-    </section>
-    <section>
-      <title>Synergy environment</title>
-      <p>HPE Synergy Composer powered by HPE OneView provides fast, reliable, and simplified
-        firmware and driver management across many HPE Synergy components. HPE OneView manages
-        firmware to reduce manual interactions and errors, in addition to minimizing downtime.
-        Firmware updates of management appliances and shared infrastructure are nondisruptive to the
-        production workload. </p>
-      <p>More information is available at <xref
-          href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310" format="html">Best
-          Practices for HPE Synergy Firmware and Driver Updates</xref></p>
-    </section>
-    <section>
-      <title>VMware Components</title>
-      <p>The solution in this deployment guide is built on VMware vSphere and leverages VMware ESXi
-        and vCenter.</p>
-    </section>
-    <section>
-      <title>vSphere Docker Volume Service Plug-in</title>
-      <p> vSphere Docker Volume service plug-in is part of an open source project by VMware that
-        enables running stateful containers by providing persistent Docker volumes leveraging
-        existing storage technology from VMware. There are two parts to the plug-in, namely, client
-        software and server software (see Table <xref href="lifecycle.dita#lifecycle/vdvs-components-table-conref" type="table"/>). Every version of the plug-in that is released
-        includes both pieces of software and it is imperative that the version number installed on
-        the client side and server side are the same. </p>
-      
-      <p>When updating the Docker Volume service plug-in, ensure the ESXi version you are
-    running is supported and that the client software is compatible with the operating system.</p>
+<title>Solution lifecycle management</title>
+<body>
+<section>
+<title>Introduction</title>
+<p>Lifecycle management with respect to this solution refers to the maintenance and management
+of software and hardware of various components that make up the solution stack. Lifecycle
+management is required to keep the solution up-to-date and ensure that the latest versions
+of the software are running to provide optimal performance, security and fix any existing
+defects within the product.</p>
+<p>In this section, we will cover life cycle management of the different components that are
+used in this solution. </p>
+<p>The lifecycle of the following stacks need to be maintained and managed. </p>
+<ol>
+<li>Monitoring Tools (Splunk or Prometheus and Grafana</li>
+<li>Docker Enterprise Edition Environment</li>
+<li>Virtual Machine Operating systems</li>
+<li>Synergy environment</li>
+</ol>
+<p>The general practice and recommendation is to follow a bottom-up approach for updating all
+components of the environment and making sure the dependencies are met. In our solution, we
+would start with Synergy and end with the monitoring environment. If all components are not
+being updated at the same time, the same approach can be followed – updating only the
+components that require updates while adhering to the interdependencies of each component
+that is being updated.</p>
+</section>
+<section>
+<title>Synergy environment</title>
+<p>HPE Synergy Composer powered by HPE OneView provides fast, reliable, and simplified
+firmware and driver management across many HPE Synergy components. HPE OneView manages
+firmware to reduce manual interactions and errors, in addition to minimizing downtime.
+Firmware updates of management appliances and shared infrastructure are nondisruptive to the
+production workload. </p>
+<p>More information is available at <xref
+href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310" format="html">Best
+Practices for HPE Synergy Firmware and Driver Updates</xref></p>
+</section>
+<section>
+<title>VMware Components</title>
+<p>The solution in this deployment guide is built on VMware vSphere and leverages VMware ESXi
+and vCenter.</p>
+</section>
+<section>
+<title>vSphere Docker Volume Service Plug-in</title>
+<p> vSphere Docker Volume service plug-in is part of an open source project by VMware that
+enables running stateful containers by providing persistent Docker volumes leveraging
+existing storage technology from VMware. There are two parts to the plug-in, namely, client
+software and server software (see <xref href="lifecycle.dita#lifecycle/vdvs-components-table-conref" type="table"/>). Every version of the plug-in that is released
+includes both pieces of software and it is imperative that the version number installed on
+the client side and server side are the same. </p>
+
+<p>When updating the Docker Volume service plug-in, ensure the ESXi version you are
+running is supported and that the client software is compatible with the operating system.</p>
 
 
 <table id="vdvs-components-table-conref" conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-content">
-	<title>vSphere Docker Volume service components</title>
-	<tgroup cols="2">
-		<tbody>
-			<row>
-				<entry/>
-			</row>
-		</tbody>
-	</tgroup>
+<title>vSphere Docker Volume service components</title>
+<tgroup cols="2">
+<tbody>
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
 </table>
-      
-      
-    </section> 
-  </body>
+
+
+</section> 
+</body>
 </topic>

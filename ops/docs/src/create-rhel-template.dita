@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="create-rhel-template">
-	<title>Create the Red Hat Linux Template</title>
-	<body>
-		<p>The section explains how to create the Red Hat Linux VM Template that you will use as
-				the base for all your nodes. In order to create a VM Template you will first create
-				a Virtual Machine with the OS installed and then convert the Virtual Machine to a VM
-				Template. Since the goal of automation is to remove as many repetitive tasks as
-				possible, the VM Template is created as lean as possible, with any additional
-				software installs and/or system configuration performed subsequently using Ansible.
-			It would be possible to automate the creation of the template. However, as this is
-			a one-off task, it is appropriate to do it manually. The steps to create a VM template
-			manually are described below.</p>
-		<ol>
-			<li>Log in to vCenter and create a new Virtual Machine with the following
-					characteristics:
-				<ul>
-					<li>Guest OS Family: Linux, Guest OS Version: Red Hat Enterprise Linux (64-bit) </li>
+<title>Create the Red Hat Linux Template</title>
+<body>
+<p>The section explains how to create the Red Hat Linux VM Template that you will use as
+the base for all your nodes. In order to create a VM Template you will first create
+a Virtual Machine with the OS installed and then convert the Virtual Machine to a VM
+Template. Since the goal of automation is to remove as many repetitive tasks as
+possible, the VM Template is created as lean as possible, with any additional
+software installs and/or system configuration performed subsequently using Ansible.
+It would be possible to automate the creation of the template. However, as this is
+a one-off task, it is appropriate to do it manually. The steps to create a VM template
+manually are described below.</p>
+<ol>
+<li>Log in to vCenter and create a new Virtual Machine with the following
+characteristics:
+<ul>
+<li>Guest OS Family: Linux, Guest OS Version: Red Hat Enterprise Linux (64-bit) </li>
 
 
-					<li>Hard Disk size: 50GB, (Thin provisioning) </li>
-					<li>A single network controller connected to the network or VLAN of your choice.
-						All VMs will connect to this same network. </li>
-					<li>Optionally you can remove the floppy drive </li>
-				</ul>
-			</li>
-			<li>Install Red Hat Enterprise 7
-				<ol>
-					<li>Select a language which is selected by Docker </li>
-					<li>For the software selection, choose <b>Infrastructure Server</b> as the base
-						environment and add the <b>Guest Agents</b> from the lists of add-ons
-						available for this environment. The Infrastructure Server environment is
-						selected here versus the Minimal Install because Customization of Linux
-						guest operating systems requires that Perl is installed in the Linux guest
-						operating system. </li>
-					<li>Configure the network settings so that you can later access the VM using
-						SSH. Specify and IP address for the network interface, a default gateway,
-						DNSs settings and possibly HTTP/HTTS proxy that apply in your environment. </li>
-					<li>Specify a password for the root account and optionally created an admin user </li>
-					<li>wait for the installation to finish and the VM to reboot. </li>
-				</ol>
-			</li>
-		</ol>
-	</body>
+<li>Hard Disk size: 50GB, (Thin provisioning) </li>
+<li>A single network controller connected to the network or VLAN of your choice.
+All VMs will connect to this same network. </li>
+<li>Optionally you can remove the floppy drive </li>
+</ul>
+</li>
+<li>Install Red Hat Enterprise 7
+<ol>
+<li>Select a language which is selected by Docker </li>
+<li>For the software selection, choose <b>Infrastructure Server</b> as the base
+environment and add the <b>Guest Agents</b> from the lists of add-ons
+available for this environment. The Infrastructure Server environment is
+selected here versus the Minimal Install because Customization of Linux
+guest operating systems requires that Perl is installed in the Linux guest
+operating system. </li>
+<li>Configure the network settings so that you can later access the VM using
+SSH. Specify and IP address for the network interface, a default gateway,
+DNSs settings and possibly HTTP/HTTS proxy that apply in your environment. </li>
+<li>Specify a password for the root account and optionally created an admin user </li>
+<li>wait for the installation to finish and the VM to reboot. </li>
+</ol>
+</li>
+</ol>
+</body>
 </topic>

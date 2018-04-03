@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="config-yum">
-	<title>Configure the yum repositories</title>
-	<body>
-		<p>The Red Hat packages required during the deployment of the solution come from two
-			repositories: <codeph>rhel-7-server-rpms </codeph>and <codeph>rhel
-				7-server-extras-rpms</codeph>. The first repository can be found on the Red Hat DVD
-			but the second cannot. There are two options, with both options requiring a Red Hat
-			Network account. Logon in your VM template using SSH using the credentials you
-			configured for the root account and implement one of the two options below: </p>
-		
-		<p><b>Option 1:</b> Use Red Hat subscription manager to register your system. This is the
-			easiest way and will automatically give you access to the official Red Hat repositories.
-			Use the <codeph>subscription-manager register</codeph> command as follows. </p>
+<title>Configure the yum repositories</title>
+<body>
+<p>The Red Hat packages required during the deployment of the solution come from two
+repositories: <codeph>rhel-7-server-rpms </codeph>and <codeph>rhel
+7-server-extras-rpms</codeph>. The first repository can be found on the Red Hat DVD
+but the second cannot. There are two options, with both options requiring a Red Hat
+Network account. Logon in your VM template using SSH using the credentials you
+configured for the root account and implement one of the two options below: </p>
+
+<p><b>Option 1:</b> Use Red Hat subscription manager to register your system. This is the
+easiest way and will automatically give you access to the official Red Hat repositories.
+Use the <codeph>subscription-manager register</codeph> command as follows. </p>
 
 
-		<codeblock># subscription-manager register --auto-attach</codeblock>
+<codeblock># subscription-manager register --auto-attach</codeblock>
 
 
-		<p>If you are behind a proxy, you must configure this before running the above command
-				to register.
-		</p>
+<p>If you are behind a proxy, you must configure this before running the above command
+to register.
+</p>
 
-		<codeblock># subscription-manager config --server.proxy_hostname=&lt;proxy IP&gt; --server.proxy_port=&lt;proxy port&gt;</codeblock>
+<codeblock># subscription-manager config --server.proxy_hostname=&lt;proxy IP&gt; --server.proxy_port=&lt;proxy port&gt;</codeblock>
 
-		<p>
-			<ph>Verify that you don't have the issue described here: <xref format="html"
-					scope="external" href="https://access.redhat.com/solutions/3317671"
-					>https://access.redhat.com/solutions/3317671</xref> by entering the following
-				command.</ph>
-		</p>
+<p>
+<ph>Verify that you don't have the issue described here: <xref format="html"
+scope="external" href="https://access.redhat.com/solutions/3317671"
+>https://access.redhat.com/solutions/3317671</xref> by entering the following
+command.</ph>
+</p>
 
-		<codeblock># yum repolist</codeblock>
+<codeblock># yum repolist</codeblock>
 
-		<p>If you have the issue, fix it with the following command</p>
+<p>If you have the issue, fix it with the following command</p>
 
-		<codeblock># subscription-manager repos --disable=rhel-7-server-rt-beta-rpms</codeblock>
+<codeblock># subscription-manager repos --disable=rhel-7-server-rt-beta-rpms</codeblock>
 
 
-		<p>The playbooks will later automatically enable the <codeph>extras</codeph> repository on
-			the VMs that need it.</p>
+<p>The playbooks will later automatically enable the <codeph>extras</codeph> repository on
+the VMs that need it.</p>
 
-		<p><b>Option 2:</b> Use an internal repository. Instead of pulling the packages from
-				Red Hat, you can create copies of the required repositories on a dedicated node. You
-				can then configure the package manager to pull the packages from the dedicated node.
-				Your <codeph>/etc/yum.repos.d/redhat.repo</codeph> could look as follows.
-		</p>
+<p><b>Option 2:</b> Use an internal repository. Instead of pulling the packages from
+Red Hat, you can create copies of the required repositories on a dedicated node. You
+can then configure the package manager to pull the packages from the dedicated node.
+Your <codeph>/etc/yum.repos.d/redhat.repo</codeph> could look as follows.
+</p>
 
-		<codeblock>
+<codeblock>
 [RHEL7-Server]
 name=Red Hat Enterprise Linux $releasever - $basearch
 baseurl=http://yourserver.example.com/rhel-7-server-rpms/
@@ -62,22 +62,22 @@ enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 </codeblock>
-		
 
-		<p>The following articles explain how you can create a local mirror of the Red Hat
-				repositories and how to share them. <xref format="html" scope="external"
-					href="https://access.redhat.com/solutions/23016"
-					>https://access.redhat.com/solutions/23016</xref>
-			<ph>
-				<xref format="html" scope="external" href="https://access.redhat.com/solutions/7227"
-					>https://access.redhat.com/solutions/7227</xref>
-			</ph>
-		</p>
-		
-		<p>Before converting the VM to a template, you will need to setup access for the
-				Ansible host to configure the individual VMs. This is explained in the next
-				section.
-		</p>
 
-	</body>
+<p>The following articles explain how you can create a local mirror of the Red Hat
+repositories and how to share them. <xref format="html" scope="external"
+href="https://access.redhat.com/solutions/23016"
+>https://access.redhat.com/solutions/23016</xref>
+<ph>
+<xref format="html" scope="external" href="https://access.redhat.com/solutions/7227"
+>https://access.redhat.com/solutions/7227</xref>
+</ph>
+</p>
+
+<p>Before converting the VM to a template, you will need to setup access for the
+Ansible host to configure the individual VMs. This is explained in the next
+section.
+</p>
+
+</body>
 </topic>

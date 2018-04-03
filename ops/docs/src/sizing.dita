@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="sizing">
-	<title>Sizing considerations</title>
-	<body>
-		<p>A node is a machine in the cluster (virtual or physical) with Docker Engine running on
-			it. When provisioning each node, assign it a role: UCP Controller, DTR, or worker node
-			so that it is protected from running application workloads.</p>
-		<p>To decide what size the node should be in terms of CPU, RAM, and storage resources,
-			consider the following:</p>
-		<ol>
-			<li>All nodes should at least fulfil the minimal requirements, for UCP 2.0, 2GB of RAM
-				and 3GB of storage. More detailed requirements are in the UCP documentation. </li>
-			<li>UCP Controller nodes should be provided with more than the minimal requirements, but
-				won’t need much more if nothing else runs on them. </li>
-			<li>Ideally, worker node size will vary based on your workloads so it is impossible to
-				define a universal standard size. </li>
-			<li>Other considerations like target density (average number of containers per node),
-				whether one standard node type or several are preferred, and other operational
-				considerations might also influence sizing. </li>
-		</ol>
+<title>Sizing considerations</title>
+<body>
+<p>A node is a machine in the cluster (virtual or physical) with Docker Engine running on
+it. When provisioning each node, assign it a role: UCP Controller, DTR, or worker node
+so that it is protected from running application workloads.</p>
+<p>To decide what size the node should be in terms of CPU, RAM, and storage resources,
+consider the following:</p>
+<ol>
+<li>All nodes should at least fulfil the minimal requirements, for UCP 2.0, 2GB of RAM
+and 3GB of storage. More detailed requirements are in the UCP documentation. </li>
+<li>UCP Controller nodes should be provided with more than the minimal requirements, but
+won’t need much more if nothing else runs on them. </li>
+<li>Ideally, worker node size will vary based on your workloads so it is impossible to
+define a universal standard size. </li>
+<li>Other considerations like target density (average number of containers per node),
+whether one standard node type or several are preferred, and other operational
+considerations might also influence sizing. </li>
+</ol>
 
-		<p>If possible, node size should be determined by experimentation and testing actual
-			workloads; and they should be refined iteratively. A good starting point is to select a
-			standard or default machine type in your environment and use this size only. If your
-			standard machine type provides more resources than the UCP Controllers need, it makes
-			sense to have a smaller node size for these. Whatever the starting choice, it is
-			important to monitor resource usage and cost to improve the model.</p>
-
-
-		<p>For HPE Enterprise Containers with Docker EE: Ops Edition, the following tables describe
-			sizing configurations. The vCPU allocations are described in Table 1 while the memory
-			allocation is described in Table 2.</p>
-
-		<table conref="vcpu-table.dita#vcpu-table/vcpu-table-content">
-			<title>vCPU</title>
-			<tgroup cols="4">
-				<tbody>
-					<row>
-						<entry/>
-					</row>
-				</tbody>
-			</tgroup>
-
-		</table>
+<p>If possible, node size should be determined by experimentation and testing actual
+workloads; and they should be refined iteratively. A good starting point is to select a
+standard or default machine type in your environment and use this size only. If your
+standard machine type provides more resources than the UCP Controllers need, it makes
+sense to have a smaller node size for these. Whatever the starting choice, it is
+important to monitor resource usage and cost to improve the model.</p>
 
 
-		<note type="note">
-			<p>In the case of one ESX host failure, two nodes are enough to accommodate the amount
-				of vCPU required</p>
-		</note>
+<p>For HPE Enterprise Containers with Docker EE: Ops Edition, the following tables describe
+sizing configurations. The vCPU allocations are described in Table 1 while the memory
+allocation is described in Table 2.</p>
 
-		<p/>
-		<!--<p>Table 2. Memory allocation</p>-->
-		<table conref="memory-alloc-table.dita#memory-alloc-table/memory-alloc-table-content">
-			<title>Memory allocation</title>
-			<tgroup cols="4">
-				<tbody>
-					<row>
-						<entry/>
-					</row>
-				</tbody>
-			</tgroup>
+<table conref="vcpu-table.dita#vcpu-table/vcpu-table-content">
+<title>vCPU</title>
+<tgroup cols="4">
+<tbody>
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
 
-		</table>
+</table>
 
 
-		<note type="note">
-			<p>In the case of one ESX host failure, the two surviving hosts can accommodate the
-				amount of RAM required for all VMs.</p>
-		</note>
+<note type="note">
+<p>In the case of one ESX host failure, two nodes are enough to accommodate the amount
+of vCPU required</p>
+</note>
+
+<p/>
+<!--<p>Table 2. Memory allocation</p>-->
+<table conref="memory-alloc-table.dita#memory-alloc-table/memory-alloc-table-content">
+<title>Memory allocation</title>
+<tgroup cols="4">
+<tbody>
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+
+</table>
 
 
-	</body>
+<note type="note">
+<p>In the case of one ESX host failure, the two surviving hosts can accommodate the
+amount of RAM required for all VMs.</p>
+</note>
+
+
+</body>
 </topic>
