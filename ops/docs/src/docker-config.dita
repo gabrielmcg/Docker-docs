@@ -3,10 +3,10 @@
 <topic id="docker-config">
 <title>Docker configuration</title>
 <body>
-<p>All Docker-related variables are mandatory and are described in Table 8.</p>
+<p>All Docker-related variables are mandatory and are described in <xref href="docker-config.dita#docker-config/docker-config-table-conref" type="table"/>.</p>
 
 
-<table conref="docker-config-table.dita#docker-config-table/docker-config-table-content">
+<table id="docker-config-table-conref" conref="docker-config-table.dita#docker-config-table/docker-config-table-content">
 <title>Docker variables</title>
 <tgroup cols="2">
 <tbody>

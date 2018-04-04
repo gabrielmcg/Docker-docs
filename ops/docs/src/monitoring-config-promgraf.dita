@@ -3,7 +3,7 @@
 <topic id="monitoring-config-promgraf">
 <title>Prometheus and Grafana configuration</title>
 <body>
-<p>All Monitoring-related variables for Prometheus and Grafana are described in <xref href="monitoring-config-promgraf.dita#monitoring-config-table-conref" type="table"/>. The variables determine
+<p>All Monitoring-related variables for Prometheus and Grafana are described in <xref href="monitoring-config-promgraf.dita#monitoring-config-promgraf/monitoring-config-table-conref" type="table"/>. The variables determine
 the versions of various software tools that are used and it is
 recommended that the values given below are used.</p> 
 

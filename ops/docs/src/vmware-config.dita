@@ -3,10 +3,10 @@
 <topic id="vmware-config">
 <title>VMware configuration</title>
 <body>
-<p>All VMware-related variables are mandatory and are described in Table 5.</p>
+<p>All VMware-related variables are mandatory and are described in <xref href="vmware-config.dita#vmware-config/vmware-variables-table-conref"/>.</p>
 
 
-<table conref="vmware-variables-table.dita#vmware-variables-table/vmware-variables-table-content">
+<table id="vmware-variables-table-conref" conref="vmware-variables-table.dita#vmware-variables-table/vmware-variables-table-content">
 <title>VMware variables</title>
 <tgroup cols="2">
 <tbody>
