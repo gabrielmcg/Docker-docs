@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="splunk-options">
+  <title>Splunk deployment types and options</title>
+  <body>
+<section>
+
+<p> There are two deployment types called 'splunk' and 'splunk_demo'. The 'splunk' deployment
+option (also called 'splunk' stack sometimes) is the production deployment where we expect
+to configure the universal forwarders with external "forward servers" (splunk indexers). The
+'splunk_demo' deployment is for demo purposes only and deploys a splunk enterprise instance
+as a stack and configures all the universal forwarders to forward the data they collect to
+this splunk enterprise instance. The splunk UI can be reached at htttp://&lt;fqdn>:8000,
+where &lt;fqdn> is the fqdn of one of your linux docker node (mesh routing is not working on
+Windows at this point in time).</p>
+<p>The variable monitoring_stack in group_vars/vars is used to specify the type of deployment
+you want. The following setting will tell the playbooks to chose the 'splunk_demo'
+deployment</p>
+<codeblock>monitoring_stack: splunk_demo</codeblock>
+<p>If chosing the 'splunk' deployment, the following variables (in group_vars/vars) are also
+used: splunk_architecture_forward_servers and splunk_ssl.</p>
+<ul>
+<li><p><b>splunk_architecture_forward_servers</b></p>
+<p> a list of splunk indexers the universal forwarders should send the data to. In the
+example below, the universal forwarders will be configured to send the data to two
+indexers. Note that the indexerx are configured in a single load balancing group. </p>
+<codeblock>
+splunk_architecture_forward_servers:
+- splunk-indexer1.cloudra.local:9997
+- splunk-indexer2.cloudra.local:9997
+</codeblock>
+<p>By default, the indexers are configured in a single load balancing group. This can be
+changed by editing the file outputs.conf.j2 in the folder template/monitoring/splunk/.
+but make sure you understand what you are doing. More information regarding this
+forwarding with Universal Forwader can be found here
+http://docs.splunk.com/Documentation/Forwarder/7.0.2/Forwarder/Configureforwardingwithoutputs.conf.</p>
+<note type="note">The playbooks ignore this variable when the chosen deployment type is
+'splunk_demo'. The Universal forwarder will be configured to send the data they collect
+to the splunk enterprise instance deployed by the playbooks.</note>
+</li>
+<li><p><b>splunk_ssl</b></p>
+<p>If defined, this will enable SSL authentication between the universal forwarders and
+the indexers. If you don't want SSL, do not define this variable (comment out the
+corresponding line). The 'splunk_demo' deployment ignores this variable (and will not
+enable SSL between the universal forwarders and the splunk enterprise instance deployed
+by the playbooks)</p>
+</li>
+</ul>
+</section>
+  </body>
+</topic>

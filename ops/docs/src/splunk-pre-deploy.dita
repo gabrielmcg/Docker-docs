@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="splunk-pre-deploy">
+  <title>Before you deploy</title>
+  <body>
+<section>
+<ol>
+<li>Select the splunk deployment type and specify the variable
+<codeph>monitoring_stack</codeph> in group_vars/vars</li>
+<li>If you choose 'splunk', specify the list of indexers using the variable
+<codeph>splunk_architecture_forward_servers </codeph>in group_vars/vars</li>
+<li>if you choose 'splunk and if you want to use your own certificates to secure the
+communications between the indexers and the universal forwaders <ol>
+<li>define the variable splunk_ssl in group_vars/vars</li>
+<li>put your root CA certificate and your server certificate files in
+/root/Docker-Synergy/ops/files/splunk/linux/SPLUNK_HOME/etc/mycerts. For more
+information, refer to the section discussing SSL later in this document. </li>
+<li>edit the file server.conf in /files/splunk/linux/SPLUNK_HOME/etc/system/local.
+Uncomment the [sslConfig] stanza and its content
+<codeblock>
+[sslConfig]
+sslRootCAPath = /opt/splunkforwarder/etc/mycerts/ca.pem
+</codeblock>
+</li>
+
+</ol>
+</li>
+<li>Copy the Splunk Universal forwarder packages. The solution currently supports the Linux
+64-bit and the Windows 8.1/Windows 10 64-bit forwarders. <ol>
+<li>Open https://www.splunk.com/en_us/download/universal-forwarder.html</li>
+<li>Download the MSI package for Windows 64 bit and store it in
+files/splunk/windows</li>
+<li>Download the RPM package for Linux 64-bit (2.6+ kernel Linux distributions) and
+store it in files/splunk/linux <note> Both images/packages must be at the same
+version, and have the same name, but they should keep their respective extension,
+.rpm for linux .msi for windows. For example you will have the following files <ul>
+<li>files/splunk/windows/splunkforwarder-7.0.2.msi</li>
+<li>files/splunk/linux/splunkforwarder-7.0.2.rpm</li>
+</ul>
+</note>
+</li>
+<li>Edit the vars.yml files located in
+<codeph>templates\monitoring\&lt;monitoring_stack></codeph>, where
+<codeph>&lt;monitoring_stack></codeph> is <b>splunk</b> or <b>splunk_demo</b> and
+set the variable <codeph>splunk_architecture_universal_forwarder_package</codeph> to
+the name you selected for the package(s), not including the file extension.
+<codeblock>
+splunk_architecture_universal_forwarder_package: 'splunkforwarder-7.0.2'
+</codeblock>
+</li>
+</ol>
+</li>
+<li>Optionnally (advanced), make adjustements in the following folder hierarchies. The files
+located here will be copied as-is to the systems running the universal forwarder <ul>
+<li>files/splunk/linux/SPLUNK_HOME</li>
+<li>files/splunk/linux/DOCKER_TAS</li>
+<li>files/splunk/windows/SPLUNK_HOME</li>
+</ul>
+</li>
+
+</ol>
+</section>
+  </body>
+</topic>
