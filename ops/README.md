@@ -2384,17 +2384,154 @@ nodes will be actioned. The default value is
 <h3 class="title topictitle3" id="ariaid-title35">Monitoring configuration</h3>
 
 <div class="body">
-    <p class="p">This solution facilitates a number of different monitoring solutions.</p>
+<p class="p">This solution facilitates a number of different monitoring solutions.</p>
 
 </div>
 
 <div class="topic nested3" aria-labelledby="ariaid-title36" id="monitoring-config-splunk">
-  <h4 class="title topictitle4" id="ariaid-title36">Splunk configuration</h4>
+<h4 class="title topictitle4" id="ariaid-title36">Splunk configuration</h4>
 
-  <div class="body">
-    <p class="p"></p>
+<div class="body">
+<div class="section"><h5 class="title sectiontitle">Deployment types and options</h5>
 
-  </div>
+<p class="p"> There are two deployment types called 'splunk' and 'splunk_demo'. The 'splunk' deployment
+option (also called 'splunk' stack sometimes) is the production deployment where we expect
+to configure the universal forwarders with external "forward servers" (splunk indexers). The
+'splunk_demo' deployment is for demo purposes only and deploys a splunk enterprise instance
+as a stack and configures all the universal forwarders to forward the data they collect to
+this splunk enterprise instance. The splunk UI can be reached at htttp://&lt;fqdn&gt;:8000,
+where &lt;fqdn&gt; is the fqdn of one of your linux docker node (mesh routing is not working on
+Windows at this point in time).</p>
+
+<p class="p">The variable monitoring_stack in group_vars/vars is used to specify the type of deployment
+you want. The following setting will tell the playbooks to chose the 'splunk_demo'
+deployment</p>
+
+<pre class="pre codeblock"><code>monitoring_stack: splunk_demo</code></pre>
+<p class="p">If chosing the 'splunk' deployment, the following variables (in group_vars/vars) are also
+used: splunk_architecture_forward_servers and splunk_ssl.</p>
+
+<ul class="ul">
+<li class="li"><p class="p"><strong class="ph b">splunk_architecture_forward_servers</strong></p>
+
+<p class="p"> a list of splunk indexers the universal forwarders should send the data to. In the
+example below, the universal forwarders will be configured to send the data to two
+indexers. Note that the indexerx are configured in a single load balancing group. </p>
+
+<pre class="pre codeblock"><code>
+splunk_architecture_forward_servers:
+- splunk-indexer1.cloudra.local:9997
+- splunk-indexer2.cloudra.local:9997
+</code></pre>
+<p class="p">By default, the indexers are configured in a single load balancing group. This can be
+changed by editing the file outputs.conf.j2 in the folder template/monitoring/splunk/.
+but make sure you understand what you are doing. More information regarding this
+forwarding with Universal Forwader can be found here
+http://docs.splunk.com/Documentation/Forwarder/7.0.2/Forwarder/Configureforwardingwithoutputs.conf.</p>
+
+<div class="note note"><span class="notetitle">Note:</span> The playbooks ignore this variable when the chosen deployment type is
+'splunk_demo'. The Universal forwarder will be configured to send the data they collect
+to the splunk enterprise instance deployed by the playbooks.</div>
+
+</li>
+
+<li class="li"><p class="p"><strong class="ph b">splunk_ssl</strong></p>
+
+<p class="p">If defined, this will enable SSL authentication between the universal forwarders and
+the indexers. If you don't want SSL, do not define this variable (comment out the
+corresponding line). The 'splunk_demo' deployment ignores this variable (and will not
+enable SSL between the universal forwarders and the splunk enterprise instance deployed
+by the playbooks)</p>
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="section"><h5 class="title sectiontitle">Before you deploy</h5>
+
+<ol class="ol">
+<li class="li">Select the splunk deployment type and specify the variable
+<code class="ph codeph">monitoring_stack</code> in group_vars/vars</li>
+
+<li class="li">If you choose 'splunk', specify the list of indexers using the variable
+<code class="ph codeph">splunk_architecture_forward_servers </code>in group_vars/vars</li>
+
+<li class="li">if you choose 'splunk and if you want to use your own certificates to secure the
+communications between the indexers and the universal forwaders <ol class="ol" type="a">
+<li class="li">define the variable splunk_ssl in group_vars/vars</li>
+
+<li class="li">put your root CA certificate and your server certificate files in
+/root/Docker-Synergy/ops/files/splunk/linux/SPLUNK_HOME/etc/mycerts. For more
+information, refer to the section discussing SSL later in this document. </li>
+
+<li class="li">edit the file server.conf in /files/splunk/linux/SPLUNK_HOME/etc/system/local.
+Uncomment the [sslConfig] stanza and its content
+<pre class="pre codeblock"><code>
+[sslConfig]
+sslRootCAPath = /opt/splunkforwarder/etc/mycerts/ca.pem
+</code></pre>
+</li>
+
+
+</ol>
+
+</li>
+
+<li class="li">Copy the Splunk Universal forwarder packages. The solution currently supports the Linux
+64-bit and the Windows 8.1/Windows 10 64-bit forwarders. <ol class="ol" type="a">
+<li class="li">Open https://www.splunk.com/en_us/download/universal-forwarder.html</li>
+
+<li class="li">Download the MSI package for Windows 64 bit and store it in
+files/splunk/windows</li>
+
+<li class="li">Download the RPM package for Linux 64-bit (2.6+ kernel Linux distributions) and
+store it in files/splunk/linux <div class="note note"><span class="notetitle">Note:</span>  Both images/packages must be at the same
+version, and have the same name, but they should keep their respective extension,
+.rpm for linux .msi for windows. For example you will have the following files <ul class="ul">
+<li class="li">files/splunk/windows/splunkforwarder-7.0.2.msi</li>
+
+<li class="li">files/splunk/linux/splunkforwarder-7.0.2.rpm</li>
+
+</ul>
+
+</div>
+
+</li>
+
+<li class="li">Edit the vars.yml files located in
+<code class="ph codeph">templates\monitoring\&lt;monitoring_stack&gt;</code>, where
+<code class="ph codeph">&lt;monitoring_stack&gt;</code> is <strong class="ph b">splunk</strong> or <strong class="ph b">splunk_demo</strong> and
+set the variable <code class="ph codeph">splunk_architecture_universal_forwarder_package</code> to
+the name you selected for the package(s), not including the file extension.
+<pre class="pre codeblock"><code>
+splunk_architecture_universal_forwarder_package: 'splunkforwarder-7.0.2'
+</code></pre>
+</li>
+
+</ol>
+
+</li>
+
+<li class="li">Optionnally (advanced), make adjustements in the following folder hierarchies. The files
+located here will be copied as-is to the systems running the universal forwarder <ul class="ul">
+<li class="li">files/splunk/linux/SPLUNK_HOME</li>
+
+<li class="li">files/splunk/linux/DOCKER_TAS</li>
+
+<li class="li">files/splunk/windows/SPLUNK_HOME</li>
+
+</ul>
+
+</li>
+
+
+</ol>
+
+</div>
+
+</div>
 
 </div>
 <div class="topic nested3" aria-labelledby="ariaid-title37" id="monitoring-config-promgraf">
@@ -2412,43 +2549,43 @@ recommended that the values given below are used.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-promgraf__monitoring-config-table-conref" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 8. </span>Monitoring variables</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3664">Variable</th>
-<th class="entry cell-norowborder" style="text-align:left;vertical-align:top;" id="d29e3667">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3814">Variable</th>
+<th class="entry cell-norowborder" style="text-align:left;vertical-align:top;" id="d29e3817">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3664 ">cadvisor_version</td>
-<td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d29e3667 ">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3814 ">cadvisor_version</td>
+<td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d29e3817 ">
 <code class="ph codeph">v0.25.0</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3664 ">node_exporter_version</td>
-<td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d29e3667 ">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3814 ">node_exporter_version</td>
+<td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d29e3817 ">
 <code class="ph codeph">v1.14.0</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3664 ">prometheus_version</td>
-<td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d29e3667 ">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3814 ">prometheus_version</td>
+<td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d29e3817 ">
 <code class="ph codeph">v1.7.1</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3664 ">grafana_version</td>
-<td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d29e3667 ">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3814 ">grafana_version</td>
+<td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d29e3817 ">
 <code class="ph codeph">4.4.3</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3664 ">prom_persistent_vol_name</td>
-<td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d29e3667 ">The name of the volume which will be used to store the monitoring
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3814 ">prom_persistent_vol_name</td>
+<td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d29e3817 ">The name of the volume which will be used to store the monitoring
 data. The volume is created using the vsphere docker volume
 plugin.</td>
 </tr>
 <tr class="row">
-<td class="entry row-nocellborder" style="text-align:left;vertical-align:top;" headers="d29e3664 ">prom_persistent_vol_size</td>
-<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29e3667 ">The size of the volume which will hold the monitoring data. The
+<td class="entry row-nocellborder" style="text-align:left;vertical-align:top;" headers="d29e3814 ">prom_persistent_vol_size</td>
+<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29e3817 ">The size of the volume which will hold the monitoring data. The
 exact syntax is dictated by the vSphere Docker Volume plugin. The
 default value is 10GB.</td>
 </tr>
@@ -2668,25 +2805,25 @@ running is supported and that the client software is compatible with the operati
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 9. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4030">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4033">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4036">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4039">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4180">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4183">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4186">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4189">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4030 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4033 ">Server Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4036 "><ol class="ol"><li class="li">VMware ESXi</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4180 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4183 ">Server Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4186 "><ol class="ol"><li class="li">VMware ESXi</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e4039 ">vSphere Docker Volume Service on GitHub</td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e4189 ">vSphere Docker Volume Service on GitHub</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4030 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4033 ">Client Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4036 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4180 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4183 ">Client Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4186 "><ol class="ol"><li class="li">VM Operating System</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
