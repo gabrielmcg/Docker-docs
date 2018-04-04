@@ -2564,158 +2564,158 @@ located here will be copied as-is to the systems running the universal forwarder
 
 </div>
 <div class="topic nested4" aria-labelledby="ariaid-title39" id="splunk-ssl">
-  <h5 class="title topictitle5" id="ariaid-title39">Enabling SSL between the universal forwarders and the splunk indexers using your
-    certificates</h5>
+<h5 class="title topictitle5" id="ariaid-title39">Enabling SSL between the universal forwarders and the splunk indexers using your
+certificates</h5>
 
-  <div class="body">
-    <div class="section"><h6 class="title sectiontitle">Limitations</h6>
-      
-      <ul class="ul">
-        <li class="li">This only works with Linux worker nodes</li>
+<div class="body">
+<div class="section"><h6 class="title sectiontitle">Limitations</h6>
 
-        <li class="li">Universal Forwarders verify that the indexers they connect to have a certificate signed
-          by the configured root CA and that the Common Name in the certificate presented by the
-          indexer matches its fqdn as listed by the variable
-            <code class="ph codeph">splunk_architecture_forward_servers</code>.</li>
+<ul class="ul">
+<li class="li">This only works with Linux worker nodes</li>
 
-      </ul>
+<li class="li">Universal Forwarders verify that the indexers they connect to have a certificate signed
+by the configured root CA and that the Common Name in the certificate presented by the
+indexer matches its fqdn as listed by the variable
+<code class="ph codeph">splunk_architecture_forward_servers</code>.</li>
 
-    </div>
+</ul>
+
+</div>
 
 
-    <div class="section"><h6 class="title sectiontitle">Prerequisites</h6>
-      
-      <ol class="ol">
-        <li class="li">Configure your indexers to use SSL on port 9998. The following is an example inputs.conf
-          file located in $SPLUNK_HOME/etc/system/local that enables SSL on port 9998 and configures
-          the certificate file for use by the indexer itself. (here
-          /opt/splunk/etc/mycerts/indexer.pem). For more info see
-          https://docs.splunk.com/Documentation/Splunk/7.0.2/Security/ConfigureSplunkforwardingtousesignedcertificates.
-          In addition the following page tells you how to create your own certificates:
-          http://docs.splunk.com/Documentation/Splunk/7.0.2/Security/Howtoself-signcertificates and
-          the content of the file designated with serverCert. In this case, the folder mycerts was
-          created under /opt/splunk/etc and the indexer.pem file was copied in this folder.
-          <pre class="pre codeblock"><code>[splunktcp-ssl://9998]
+<div class="section"><h6 class="title sectiontitle">Prerequisites</h6>
+
+<ol class="ol">
+<li class="li">Configure your indexers to use SSL on port 9998. The following is an example inputs.conf
+file located in $SPLUNK_HOME/etc/system/local that enables SSL on port 9998 and configures
+the certificate file for use by the indexer itself. (here
+/opt/splunk/etc/mycerts/indexer.pem). For more info see
+https://docs.splunk.com/Documentation/Splunk/7.0.2/Security/ConfigureSplunkforwardingtousesignedcertificates.
+In addition the following page tells you how to create your own certificates:
+http://docs.splunk.com/Documentation/Splunk/7.0.2/Security/Howtoself-signcertificates and
+the content of the file designated with serverCert. In this case, the folder mycerts was
+created under /opt/splunk/etc and the indexer.pem file was copied in this folder.
+<pre class="pre codeblock"><code>[splunktcp-ssl://9998]
 disabled=0
 connection_host = ip
- 
+
 [SSL]
 serverCert=/opt/splunk/etc/mycerts/indexer.pem
 #requireClientCert = true
 #sslAltNameToCheck = forwarder,forwarder.cloudra.local
- 
+
 [tcp://1514]
 connection_host = dns
 sourcetype = ucp
 </code></pre>
-        </li>
+</li>
 
-        <li class="li">Indexers are configured with the Root CA cert used to signed all certificates. This can
-          be done by editing the file server.conf in $SPLUNK_HOME/etc/system/local on your
-          indexer(s). The following code block shows the relevant portion of this file where
-          sssRootCaPath is pointing to the root CA certificate. <pre class="pre codeblock"><code>[sslConfig]
+<li class="li">Indexers are configured with the Root CA cert used to signed all certificates. This can
+be done by editing the file server.conf in $SPLUNK_HOME/etc/system/local on your
+indexer(s). The following code block shows the relevant portion of this file where
+sssRootCaPath is pointing to the root CA certificate. <pre class="pre codeblock"><code>[sslConfig]
 sslRootCAPath = /opt/splunk/etc/mycerts/ca.pem</code></pre>
-          <div class="note note"><span class="notetitle">Note:</span> In order to be able to download and install additional applications, you
-            may want to happend the file $SPLUNK_HOME/auth/appsCA.pem to your file ca.pem. If you
-            don;t do so, the Splunk UI will make this suggestion when you attempt to "Find more
-            apps"</div>
+<div class="note note"><span class="notetitle">Note:</span> In order to be able to download and install additional applications, you
+may want to happend the file $SPLUNK_HOME/auth/appsCA.pem to your file ca.pem. If you
+don;t do so, the Splunk UI will make this suggestion when you attempt to "Find more
+apps"</div>
 
-        </li>
+</li>
 
-        <li class="li">Splunk should be restarted on the indexers if you had to make these changes (see the
-          Splunk documentation)</li>
-
-
-      </ol>
-
-    </div>
+<li class="li">Splunk should be restarted on the indexers if you had to make these changes (see the
+Splunk documentation)</li>
 
 
-    <div class="section"><h6 class="title sectiontitle">Before you deploy</h6>
-      
-      <ol class="ol">
-        <li class="li">Generate the forwarder certificate, give it the name forwarder.pem. Make sure you have a
-          copy of the root CA certificate and name the copy ca.pem</li>
+</ol>
 
-        <li class="li">Copy ca.pem and forwarder.pem to files/splunk/linux/SPLUNK_HOME/etc/mycerts/ (erase the
-          existing files)</li>
+</div>
 
-        <li class="li">Edit the file server.conf under files/splunk/linux/SPLUNK_HOME/etc/system/local and
-          uncomment the last two lines as suggested in the file itself. Your file should look like
-          this
-          <pre class="pre codeblock"><code>#
+
+<div class="section"><h6 class="title sectiontitle">Before you deploy</h6>
+
+<ol class="ol">
+<li class="li">Generate the forwarder certificate, give it the name forwarder.pem. Make sure you have a
+copy of the root CA certificate and name the copy ca.pem</li>
+
+<li class="li">Copy ca.pem and forwarder.pem to files/splunk/linux/SPLUNK_HOME/etc/mycerts/ (erase the
+existing files)</li>
+
+<li class="li">Edit the file server.conf under files/splunk/linux/SPLUNK_HOME/etc/system/local and
+uncomment the last two lines as suggested in the file itself. Your file should look like
+this
+<pre class="pre codeblock"><code>#
 # uncomment the section below if you want to enable SSL
 #
 [sslConfig]
 sslRootCAPath = /opt/splunkforwarder/etc/mycerts/ca.pem</code></pre>
-        </li>
+</li>
 
-        <li class="li">Edit group_vars/vars and uncomment the line splunk_ssl. Make sure the
-          splunk_architecture_forward_servers list specifies all your indexers together with the
-          port that was configured to accept SSL
-          <pre class="pre codeblock"><code>monitoring_stack: splunk
+<li class="li">Edit group_vars/vars and uncomment the line splunk_ssl. Make sure the
+splunk_architecture_forward_servers list specifies all your indexers together with the
+port that was configured to accept SSL
+<pre class="pre codeblock"><code>monitoring_stack: splunk
 splunk_ssl: yes
 splunk_architecture_forward_servers:
-  - indexer1.cloudra.local:9998
-  - indexer2.cloudra.local:9998</code></pre>
-        </li>
+- indexer1.cloudra.local:9998
+- indexer2.cloudra.local:9998</code></pre>
+</li>
 
-      </ol>
+</ol>
 
-    </div>
-
-
+</div>
 
 
-    <div class="section"><h6 class="title sectiontitle">Hybrid environment Linux/ Windows</h6>
-      
-      <p class="p">Currently, you cannot deploy your own certificates for use by the Universal Forwarders
-        deployed on Windows machines. If you want to have your linux machines use SSL proceed as
-        indicated below</p>
 
-      <ol class="ol">
-        <li class="li">Comment out the <code class="ph codeph">splunk_architecture_forward_servers</code> (and its values)
-          from group_vars/vars
-          <pre class="pre codeblock"><code>monitoring_stack: splunk
+
+<div class="section"><h6 class="title sectiontitle">Hybrid environment Linux/ Windows</h6>
+
+<p class="p">Currently, you cannot deploy your own certificates for use by the Universal Forwarders
+deployed on Windows machines. If you want to have your linux machines use SSL proceed as
+indicated below</p>
+
+<ol class="ol">
+<li class="li">Comment out the <code class="ph codeph">splunk_architecture_forward_servers</code> (and its values)
+from group_vars/vars
+<pre class="pre codeblock"><code>monitoring_stack: splunk
 splunk_ssl: yes
 #splunk_architecture_forward_servers:
 #  - clh2-ansible.cloudra.local:9998</code></pre>
-        </li>
+</li>
 
-        <li class="li">create a file named vms.yml in the folder group_vars and specify the list of forward
-          servers to use by the linux servers. This list is typically the same as the one used for
-          windows servers but specifies a TCP port that enables SSL.
-        <pre class="pre codeblock"><code>splunk_architecture_forward_servers:
-  - clh2-ansible.cloudra.local:9998</code></pre>
-        </li>
+<li class="li">create a file named vms.yml in the folder group_vars and specify the list of forward
+servers to use by the linux servers. This list is typically the same as the one used for
+windows servers but specifies a TCP port that enables SSL.
+<pre class="pre codeblock"><code>splunk_architecture_forward_servers:
+- clh2-ansible.cloudra.local:9998</code></pre>
+</li>
 
-        <li class="li">edit the group_vars/win_worker.yml file and specify the list of forward servers to use by the windows servers.This list is typically the same as the one used for linux servers  but specifies a TCP port that does not enable SSL.
-        <pre class="pre codeblock"><code>splunk_architecture_forward_servers:
-  - clh2-ansible.cloudra.local:9997</code></pre>
-        </li>
-
-
-      </ol>
-
-    </div>
+<li class="li">edit the group_vars/win_worker.yml file and specify the list of forward servers to use by the windows servers.This list is typically the same as the one used for linux servers  but specifies a TCP port that does not enable SSL.
+<pre class="pre codeblock"><code>splunk_architecture_forward_servers:
+- clh2-ansible.cloudra.local:9997</code></pre>
+</li>
 
 
-  </div>
+</ol>
+
+</div>
+
+
+</div>
 
 </div>
 <div class="topic nested4" aria-labelledby="ariaid-title40" id="splunk-ucp-syslog">
-  <h5 class="title topictitle5" id="ariaid-title40">Configuring UCP syslog</h5>
+<h5 class="title topictitle5" id="ariaid-title40">Configuring UCP syslog</h5>
 
-  <div class="body">
-    <p class="p">In order to see some data in the UCP operational Dashboard. You need to have UCP send its
-      logs to the VM configured in the [logger] group. For example if your vm_host file looks like
-      the following, you will configure UCP to send its logs to clh-logger.cloudra.local:1514. You
-      need to select the TCP protocol</p>
+<div class="body">
+<p class="p">In order to see some data in the UCP operational Dashboard. You need to have UCP send its
+logs to the VM configured in the [logger] group. For example if your vm_host file looks like
+the following, you will configure UCP to send its logs to clh-logger.cloudra.local:1514. You
+need to select the TCP protocol</p>
 
-    
-    
-    
-  </div>
+
+
+
+</div>
 
 </div>
 </div>
