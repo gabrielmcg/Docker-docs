@@ -3,23 +3,6 @@
 <topic id="monitoring-config">
 <title>Monitoring configuration</title>
 <body>
-<p>All Monitoring-related variables are described in Table 9. The variables determine
-the versions of various monitoring software tools that are used and it is
-recommended that the values given below are used.</p> 
-
-
-<table conref="monitoring-config-table.dita#monitoring-config-table/monitoring-config-table-content">
-<title>Monitoring variables</title>
-<tgroup cols="2">
-<tbody>
-<row>
-<entry/>
-</row>
-</tbody>
-</tgroup>
-
-</table>
-
-
+    <p>This solution facilitates a number of different monitoring solutions.</p>
 </body>
 </topic>

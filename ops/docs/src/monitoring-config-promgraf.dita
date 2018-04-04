@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="monitoring-config-promgraf">
+<title>Prometheus and Grafana configuration</title>
+<body>
+<p>All Monitoring-related variables for Prometheus and Grafana are described in <xref href="#monitoring-config-table-conref"/>. The variables determine
+the versions of various software tools that are used and it is
+recommended that the values given below are used.</p> 
+
+
+<table id="monitoring-config-table-conref" conref="monitoring-config-table.dita#monitoring-config-table/monitoring-config-table-content">
+<title>Monitoring variables</title>
+<tgroup cols="2">
+<tbody>
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+
+</table>
+
+
+</body>
+</topic>

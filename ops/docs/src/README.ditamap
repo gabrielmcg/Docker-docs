@@ -87,7 +87,10 @@
        
        <topicref href="docker-config.dita" navtitle="Docker configuration"/>
        
-       <topicref href="monitoring-config.dita" navtitle="Monitoring configuration"/>
+       <topicref href="monitoring-config.dita" navtitle="Monitoring configuration">
+         <topicref href="monitoring-config-splunk.dita" navtitle="Splunk configuration"/>
+         <topicref href="monitoring-config-promgraf.dita" navtitle="Prometheus and Grafana configuration"/>
+       </topicref>
        
      </topicref>
     
