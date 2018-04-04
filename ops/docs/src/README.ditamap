@@ -91,6 +91,8 @@
          <topicref href="monitoring-config-splunk.dita" navtitle="Splunk configuration">
            <topicref href="splunk-options.dita" navtitle="Splunk options"/>
            <topicref href="splunk-pre-deploy.dita" navtitle="Before you deploy"/>
+           <topicref href="splunk-ssl.dita" navtitle="Splink and SSL"/>
+           <topicref href="splunk-ucp-syslog.dita" navtitle="Configuring UCP syslog"></topicref>
          </topicref>         
          
          <topicref href="monitoring-config-promgraf.dita" navtitle="Prometheus and Grafana configuration"/>

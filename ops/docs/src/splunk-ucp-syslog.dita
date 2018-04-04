@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="splunk-ucp-syslog">
+  <title>Configuring UCP syslog</title>
+  <body>
+    <p>In order to see some data in the UCP operational Dashboard. You need to have UCP send its
+      logs to the VM configured in the [logger] group. For example if your vm_host file looks like
+      the following, you will configure UCP to send its logs to clh-logger.cloudra.local:1514. You
+      need to select the TCP protocol</p>
+    
+    
+    
+  </body>
+</topic>
