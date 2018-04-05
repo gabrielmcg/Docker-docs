@@ -2804,25 +2804,25 @@ https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.security.doc/GU
 
 </div>
 <div class="topic nested4" aria-labelledby="ariaid-title43" id="splunk-limitations">
-  <h5 class="title topictitle5" id="ariaid-title43">Limitations</h5>
+<h5 class="title topictitle5" id="ariaid-title43">Limitations</h5>
 
-  <div class="body">
-    <ul class="ul">
-      <li class="li">The Docker App has a number of open issues
-        <ul class="ul">
-          <li class="li">https://github.com/splunk/docker-itmonitoring/issues/19</li>
+<div class="body">
+<ul class="ul">
+<li class="li">The Docker App has a number of open issues
+<ul class="ul">
+<li class="li">https://github.com/splunk/docker-itmonitoring/issues/19</li>
 
-          <li class="li">https://github.com/splunk/docker-itmonitoring/issues/20</li>
+<li class="li">https://github.com/splunk/docker-itmonitoring/issues/20</li>
 
-        </ul>
+</ul>
 
-      </li>
+</li>
 
-      <li class="li">The Docker events tab is not working</li>
+<li class="li">The Docker events tab is not working</li>
 
-    </ul>
+</ul>
 
-  </div>
+</div>
 
 </div>
 </div>
