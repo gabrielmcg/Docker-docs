@@ -6,9 +6,9 @@
 <p>You must assemble the information required to assign values for each and every variable
 used by the playbooks, before you start deployment. The variables are fully documented
 in the following sections “Editing the group variables” and “Editing the vault”. A
-summary of the information required is presented in Table 3.</p>
+summary of the information required is presented in <xref href="verify-prereqs.dita#verify-prereqs/verify-prereqs-table-conref" type="table"/>.</p>
 
-<table conref="verify-prereqs-table.dita#verify-prereqs-table/verify-prereqs-table-content">
+<table id="verify-prereqs-table-conref" conref="verify-prereqs-table.dita#verify-prereqs-table/verify-prereqs-table-content">
 <title>Summary of information required</title>
 <tgroup cols="2">
 <tbody>

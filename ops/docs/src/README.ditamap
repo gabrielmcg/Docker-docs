@@ -85,6 +85,8 @@
        
        <topicref href="network-config.dita" navtitle="Network configuration"/>
        
+       <topicref href="environment-config.dita" navtitle="Environment configuration"/>
+       
        <topicref href="docker-config.dita" navtitle="Docker configuration"/>
        
        <topicref href="monitoring-config.dita" navtitle="Monitoring configuration">

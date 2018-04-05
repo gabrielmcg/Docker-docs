@@ -3,7 +3,7 @@
 <topic id="docker-config-table">
 <title></title>
 <body>
-<table id="docker-config-table-content">
+<table id="docker-config-table-content" frame="none">
 <title>Docker variables</title>
 <!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
 <col/>

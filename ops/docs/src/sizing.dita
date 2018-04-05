@@ -29,10 +29,10 @@ important to monitor resource usage and cost to improve the model.</p>
 
 
 <p>For HPE Enterprise Containers with Docker EE: Ops Edition, the following tables describe
-sizing configurations. The vCPU allocations are described in Table 1 while the memory
-allocation is described in Table 2.</p>
+sizing configurations. The vCPU allocations are described in <xref href="sizing.dita#sizing/vcpu-table-conref"/> while the memory
+allocation is described in <xref href="sizing.dita#sizing/memory-alloc-table-conref"/>.</p>
 
-<table conref="vcpu-table.dita#vcpu-table/vcpu-table-content">
+<table id="vcpu-table-conref" conref="vcpu-table.dita#vcpu-table/vcpu-table-content">
 <title>vCPU</title>
 <tgroup cols="4">
 <tbody>
@@ -52,7 +52,7 @@ of vCPU required</p>
 
 <p/>
 <!--<p>Table 2. Memory allocation</p>-->
-<table conref="memory-alloc-table.dita#memory-alloc-table/memory-alloc-table-content">
+<table id="memory-alloc-table-conref" conref="memory-alloc-table.dita#memory-alloc-table/memory-alloc-table-content">
 <title>Memory allocation</title>
 <tgroup cols="4">
 <tbody>

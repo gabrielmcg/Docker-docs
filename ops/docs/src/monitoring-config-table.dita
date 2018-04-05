@@ -3,7 +3,7 @@
 <topic id="monitoring-config-table">
 <title></title>
 <body>
-<table id="monitoring-config-table-content">
+<table id="monitoring-config-table-content" frame="none">
 <title>Monitoring variables</title>
 <!--						<colgroup xmlns:ac="ac" xmlns:ri="ri">
 <col/>

@@ -5,7 +5,7 @@
 <body>
 
 
-<table id="memory-alloc-table-content">
+<table id="memory-alloc-table-content" frame="none">
 <title>Memory allocation</title>
 
 <tgroup cols="4">
