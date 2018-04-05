@@ -92,7 +92,9 @@
            <topicref href="splunk-options.dita" navtitle="Splunk options"/>
            <topicref href="splunk-pre-deploy.dita" navtitle="Before you deploy"/>
            <topicref href="splunk-ssl.dita" navtitle="Splink and SSL"/>
-           <topicref href="splunk-ucp-syslog.dita" navtitle="Configuring UCP syslog"></topicref>
+           <topicref href="splunk-ucp-syslog.dita" navtitle="Configuring syslog in UCP"/>
+           <topicref href="splunk-esx-syslog.dita" navtitle="Configuring syslog in ESX"/>
+           <topicref href="splunk-limitations.dita" navtitle="Limitations"/>
          </topicref>         
          
          <topicref href="monitoring-config-promgraf.dita" navtitle="Prometheus and Grafana configuration"/>

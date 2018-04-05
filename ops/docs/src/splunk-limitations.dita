@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="splunk-limitations">
+  <title>Limitations</title>
+  <body>
+    <ul>
+      <li>The Docker App has a number of open issues
+        <ul>
+          <li>https://github.com/splunk/docker-itmonitoring/issues/19</li>
+          <li>https://github.com/splunk/docker-itmonitoring/issues/20</li>
+        </ul>
+      </li>
+      <li>The Docker events tab is not working</li>
+    </ul>
+  </body>
+</topic>
