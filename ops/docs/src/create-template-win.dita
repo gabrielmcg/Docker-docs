@@ -22,7 +22,7 @@ characteristics:
 2016 (64-bit)
 </li>
 
-<li>Hard Disk size: 50GB, (Thin provisioning)
+<li>Hard Disk size: 50GB (Thin provisioning), 1 vCPU and 4 GB of RAM. Both vCPU and memory can be altered later after you deploy from this template. 
 </li>
 <li>A single network controller connected to the network or VLAN of your
 choice. All VMs will connect to this same network.
@@ -53,7 +53,8 @@ Install Now</li>
 Only</li>
 <li>Select drive 0, the 50 GB drive you specified earlier, as the location for
 installing windows</li>
-<li>Add a password for the Administrator user, install VMware Tools and
+<li>Add a password for the Administrator user</li>
+<li> install VMware Tools and
 reboot</li>
 <li>Once rebooted add a temporary network IP address.</li>
 <li>Using sconfig utility from (Dos) command line: 
@@ -72,7 +73,11 @@ reboot</li>
 </li>
 <li>Shutdown VM, and untick the connect CD/DVD so that the Windows 2016 ISO no
 longer going to be mounted.</li>
-<li>Convert VM to Template</li>
+<li>Boot the windows VM one final time and enter, regional settings applicable to your location, and enter keyboard mapping, then Shutdown VM.</li>
+<li>vmware_guest module used by the playbooks will generate a new SID.</li>
+<li>Then we’re ready to turn our VM into a template. Right click on your VM and click on Template -&lt; Convert to Template.</li>	
+	
+<li><codeph>Convert VM to Template</codeph>  will create a new template visible under VM Templates in Folders, ready for future use.</li>
 </ul>
 </li>
 </ol>

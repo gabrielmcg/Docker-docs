@@ -28,6 +28,8 @@
  
     <topicref href="synergy.dita" navtitle="About Synergy"/>
     
+    <topicref href="audience-assumptions.dita" navtitle="Audience and Assumptions"/>
+    
   </topicref>
   
   <topicref href="architecture.dita" navtitle="Architecture">

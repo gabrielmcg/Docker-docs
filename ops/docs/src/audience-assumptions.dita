@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="audience-assumptions">
+<title/>
+<body>
+<p><b>Target Audience: </b>This document is primarily aimed at technical individuals working in the
+Operations side of the pipeline, such as system administrators and infrastructure engineers,
+but anybody with an interest in automating the provisioning of virtual servers and containers
+may find this document useful. 
+</p>
+<p><b>Assumptions: </b>The present document assumes a minimum
+understanding in concepts such as virtualization and containerization and also some knowledge
+around Linux® and VMware® technologies.</p>
+</body>
+</topic>
