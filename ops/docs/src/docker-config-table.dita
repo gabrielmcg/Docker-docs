@@ -31,6 +31,17 @@ href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/"
 >https://docs.docker.com/engine/installation/linux/docker-ee/rhel/</xref>.</entry>
 </row>
 <row>
+<entry>docker_ee_version</entry>
+<entry>
+<ul>
+<li>If this variable is ommited, install_docker.yml will install the latest stable version of docker-ee available in the repo specified with docker_ee_url</li>
+<li>If you want to install a specific version of Docker EE, enter the full speficication of the packages, for example:
+<codeblock>docker_ee_version: 'docker-ee-17.06.2.ee.6-3.el7.rhel.x86_64'</codeblock>
+</li>
+</ul>
+</entry>
+</row>
+<row>
 <entry>rhel_version</entry>
 <entry>Version of your RHEL OS, such as <codeph>7.4</codeph>. The
 playbooks were tested with RHEL 7.3. and RHEL 7.4.</entry>
