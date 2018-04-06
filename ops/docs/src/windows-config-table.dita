@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="windows-config-table">
-<title></title>
+<title/>
 <body>
 <table id="windows-config-table-content" frame="none">
 <title>Windows variables</title>
@@ -22,9 +22,30 @@
 <tbody>
 <row>
 <entry>win_username</entry>
-<entry>
-<codeph>Windows user name. The dafault is <codeph>Administrator</codeph></codeph>
+<entry>Windows user name. The default is <codeph>Administrator</codeph>
 </entry>
+</row>
+<row>
+<entry>win_vdvs_ps</entry>
+<entry>Variable used to download the <codeph>install-vdvs.ps1</codeph> PowerShell script. For example,
+<codeph>https://raw.githubusercontent.com/vmware/vsphere-storage-for-docker/master/install-vdvs.ps1</codeph>
+</entry>
+</row>
+<row>
+<entry>win_vdvs_path</entry>
+<entry>Variable used to download vSphere Docker Volume Service software. This variable is combined 
+with <codeph>win_vdvs_version</codeph> (below) to generate a URL of the form {{ windows_vdvs_path }}_{{ windows_vdvs_version }}.zip to download the software. 
+For example, to download version 0.21, set <codeph>win_vdvs_path</codeph> equal to https://vmware.bintray.com/vDVS/vsphere-storage-for-docker_windows 
+and <codeph>win_vdvs_path</codeph> equal to <codeph>0.21</codeph>
+</entry>
+</row>
+<row>
+<entry>win_vdvs_version</entry>
+<entry>Combined with <codeph>win_vdvs_path</codeph>, this variable is used to generate the URL for downloading the software.</entry>
+</row>  
+<row>
+<entry>win_vdvs_directory</entry>
+<entry>Variable used to determine where vDVS software will be unzipped and installed from. The default is <codeph>C:\Users\Administrator\Downloads</codeph></entry>
 </row>
 </tbody>
 </tgroup>
