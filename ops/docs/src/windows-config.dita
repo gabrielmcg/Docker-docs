@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="windows-config">
+<title>Windows configuration</title>
+<body>
+<p></p>
+
+
+<table id="windows-config-table-conref" conref="windows-config-table.dita#windows-config-table/windows-config-table-content">
+<title>Docker variables</title>
+<tgroup cols="2"> 
+<tbody>
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+
+</table>    
+
+</body>
+</topic>

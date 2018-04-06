@@ -91,6 +91,8 @@
        
        <topicref href="docker-config.dita" navtitle="Docker configuration"/>
        
+       <topicref href="windows-config.dita" navtitle="Windows configuration"/>
+       
        <topicref href="monitoring-config.dita" navtitle="Monitoring configuration">
          <topicref href="monitoring-config-splunk.dita" navtitle="Splunk configuration">
            <topicref href="splunk-options.dita" navtitle="Splunk options"/>

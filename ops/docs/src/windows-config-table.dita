@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="windows-config-table">
+<title></title>
+<body>
+<table id="windows-config-table-content" frame="none">
+<title>Windows variables</title>
+<!--						<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="2">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry>Variable</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>win_username</entry>
+<entry>
+<codeph>Windows user name. The dafault is <codeph>Administrator</codeph></codeph>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</body>
+</topic>
