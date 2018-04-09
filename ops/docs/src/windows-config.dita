@@ -3,7 +3,7 @@
 <topic id="windows-config">
 <title>Windows configuration</title>
 <body>
-<p></p>
+<section>
 
 
 <table id="windows-config-table-conref" conref="windows-config-table.dita#windows-config-table/windows-config-table-content">
@@ -16,7 +16,98 @@
 </tbody>
 </tgroup>
 
+</table>   
+    </section>
+ 
+ 
+<section>
+    <title>group_vars/win_worker.yml</title>
+    
+    <p>There is a separate file in the <codeph>group_vars</codeph> directory for Windows-specific congiguration. These variables are
+        used in the following playbooks:  
+    </p>
+    
+    <ul>
+        <li>create_windows_vms.yml</li>
+        <li>install_docker_window.yml</li>
+        <li>scale_workers_windows.yml</li>
+    </ul>
+    
+
+<table id="windows-config-table-content" frame="none">
+<title>Windows variables</title>
+<!--						<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Variable</entry>
+<entry>File</entry>
+<entry>Description</entry>
+</row>
+</thead>
+    
+<tbody> 
+    
+<row>
+<entry>ansible_user</entry>
+<entry>group_vars/win_worker.yml</entry>  
+<entry>Defaults to the Windows user account <codeph>'{{ win_username }}'</codeph> as specified in <codeph>groupr_vars/vars</codeph> </entry>
+</row>   
+
+<row>
+<entry>ansible_password</entry>
+<entry>group_vars/win_worker.yml</entry>  
+<entry>Defaults to the Windows user password <codeph>'{{ win_password }}'</codeph> as specified in <codeph>group_vars/vault</codeph></entry>
+</row>   
+
+<row>
+<entry>ansible_port</entry>
+<entry>group_vars/win_worker.yml</entry> 
+<entry>5986</entry>
+</row>
+  
+<row>
+<entry>ansible_connection</entry>
+<entry>group_vars/win_worker.yml</entry>
+<entry>winrm</entry>
+</row>
+ 
+<row>
+<entry>ansible_winrm_server_cert_validation</entry>
+<entry>group_vars/win_worker.yml</entry>  
+<entry>Defaults to <codeph>ignore</codeph></entry>
+</row>
+     
+<row>
+<entry>ansible_winrm_operation_timeout_sec</entry>
+<entry>group_vars/win_worker.yml</entry>   
+<entry>Defaults to <codeph>250</codeph></entry>
+</row>
+ 
+<row>
+<entry>ansible_winrm_read_timeout_sec</entry>
+<entry>group_vars/win_worker.yml</entry>   
+<entry>Defaults to <codeph>300</codeph></entry>
+</row>
+  
+<row>
+<entry>windows_timezone</entry>
+<entry>group_vars/win_worker.yml</entry>  
+<entry>Defaults to <codeph>15</codeph></entry>
+</row>
+  
+</tbody>
+</tgroup>
 </table>    
+</section> 
+    
 
 </body>
 </topic>
