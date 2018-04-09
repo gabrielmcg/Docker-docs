@@ -20,6 +20,9 @@
   <!--<mapref href="images.xml" format="ditamap" processing-role="resource-only"/>-->
   <!--<topicref href="images.xml" format="ditamap"/>-->
   
+  
+  <topicref href="enterprise-caas.dita" navtitle="Enterprise CaaS"/>
+  
   <topicref href="introduction.dita" navtitle="Introduction">
     
     <topicref href="about-ansible.dita" navtitle="About Ansible"/>
@@ -28,7 +31,9 @@
  
     <topicref href="synergy.dita" navtitle="About Synergy"/>
     
-    <topicref href="audience-assumptions.dita" navtitle="Audience and Assumptions"/>
+    <topicref href="audience-assumptions.dita" navtitle="Audience and assumptions"/>
+    
+    <topicref href="required-versions.dita" navtitle="Required versions"></topicref>
     
   </topicref>
   

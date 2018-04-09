@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="required-versions">
+<title>Required Versions</title>
+<body>
+<p>The following software versions were used to implement the playbooks that are described in later sections. Other version may work but have not been tested.
+</p>
+
+<ul>
+<li>Ansible 2.4.2</li>
+<li>Docker EE 17.06 (tested with UCP 2.2.3 and 2.2.4 and DTR 2.4.0)</li>
+<li>Red Hat® Enterprise Linux 7.3 and 7.4</li>
+<li>VMWare ESXi 6.5.0 and vCenter 6.5.0</li>
+</ul>
+
+
+
+
+</body>
+</topic>
