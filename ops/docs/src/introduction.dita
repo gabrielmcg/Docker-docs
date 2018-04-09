@@ -3,6 +3,22 @@
 <topic id="introduction">
 <title>Introduction</title>
 <body>
+    
+<ul>
+<li><xref href="introduction.dita#introduction"/>
+<ul>
+<li><xref href="about-ansible.dita#about-ansible"/></li>
+<li><xref href="docker-ee.dita"/></li>  
+<li><xref href="synergy.dita"/></li>
+</ul>
+</li>    
+<li><xref href="architecture.dita"/>
+<ul>
+<li><xref href="server-reqs.dita"/></li>    
+</ul>
+</li>       
+</ul>    
+    
 <section id="introduction-section">
 <p>HPE Enterprise Containers as a Service with Docker Enterprise Edition (EE) is a
 complete solution from Hewlett Packard Enterprise that includes all the hardware,
