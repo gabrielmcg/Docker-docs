@@ -9,11 +9,23 @@
 <li><xref href="about-ansible.dita#about-ansible"/></li>
 <li><xref href="docker-ee.dita"/></li>  
 <li><xref href="synergy.dita"/></li>
+<li><xref href="required-versions.dita"/></li>
 </ul>
 </li>    
 <li><xref href="architecture.dita"/>
 <ul>
 <li><xref href="server-reqs.dita"/></li>    
+<li><xref href="storage-reqs.dita"/></li>
+<li><xref href="ha.dita"/></li>
+<li><xref href="sizing.dita"/></li>
+<li><xref href="disaster-recovery.dita"/></li>
+<li><xref href="security.dita"/></li>
+<li><xref href="monitoring.dita"/>
+<ul>
+<li><xref href="splunk.dita"/></li>
+</ul>
+</li>
+    
 </ul>
 </li>       
 </ul>   
