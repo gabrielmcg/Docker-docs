@@ -22,7 +22,7 @@
 </row>
 </thead>
 <tbody>
-    
+
 <row>
 <entry>enable_windows</entry>
 <entry>group_vars/vars</entry>  
@@ -37,7 +37,7 @@ nodes will be actioned. The default value is
 <entry>Name of the Windows 2016 VM Template to use. Note that this is the name from a
 vCenter perspective, not the hostname.</entry>
 </row>
-    
+
 <row>
 <entry>win_username</entry>
 <entry>group_vars/vars</entry>     
@@ -51,7 +51,7 @@ vCenter perspective, not the hostname.</entry>
 <entry>The password for the Windows account.
 </entry>
 </row>
-    
+
 <row>
 <entry>windows_vdvs_ps</entry>
 <entry>group_vars/vars</entry>     
@@ -59,7 +59,7 @@ vCenter perspective, not the hostname.</entry>
 <codeph>https://raw.githubusercontent.com/vmware/vsphere-storage-for-docker/master/install-vdvs.ps1</codeph>
 </entry>
 </row>
-    
+
 <row>
 <entry>windows_vdvs_path</entry>
 <entry>group_vars/vars</entry>     
@@ -69,13 +69,13 @@ For example, to download version 0.21, set <codeph>windows_vdvs_path</codeph> eq
 and <codeph>windows_vdvs_version</codeph> equal to <codeph>0.21</codeph>
 </entry>
 </row>
-    
+
 <row>
 <entry>windows_vdvs_version</entry>
 <entry>group_vars/vars</entry> 
 <entry>Combined with <codeph>windows_vdvs_path</codeph>, this variable is used to generate the URL for downloading the software.</entry>
 </row>  
-    
+
 <row>
 <entry>windows_vdvs_directory</entry>
 <entry>group_vars/vars</entry>    

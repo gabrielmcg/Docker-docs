@@ -2518,7 +2518,7 @@ Store</td>
 <th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3978">Description</th>
 </tr>
 </thead><tbody class="tbody">
-    
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3972 ">enable_windows</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3975 ">group_vars/vars</td>  
@@ -2533,7 +2533,7 @@ nodes will be actioned. The default value is
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3978 ">Name of the Windows 2016 VM Template to use. Note that this is the name from a
 vCenter perspective, not the hostname.</td>
 </tr>
-    
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3972 ">win_username</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3975 ">group_vars/vars</td>     
@@ -2547,7 +2547,7 @@ vCenter perspective, not the hostname.</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3978 ">The password for the Windows account.
 </td>
 </tr>
-    
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3972 ">windows_vdvs_ps</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3975 ">group_vars/vars</td>     
@@ -2555,7 +2555,7 @@ vCenter perspective, not the hostname.</td>
 <code class="ph codeph">https://raw.githubusercontent.com/vmware/vsphere-storage-for-docker/master/install-vdvs.ps1</code>
 </td>
 </tr>
-    
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3972 ">windows_vdvs_path</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3975 ">group_vars/vars</td>     
@@ -2565,13 +2565,13 @@ For example, to download version 0.21, set <code class="ph codeph">windows_vdvs_
 and <code class="ph codeph">windows_vdvs_version</code> equal to <code class="ph codeph">0.21</code>
 </td>
 </tr>
-    
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3972 ">windows_vdvs_version</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3975 ">group_vars/vars</td> 
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3978 ">Combined with <code class="ph codeph">windows_vdvs_path</code>, this variable is used to generate the URL for downloading the software.</td>
 </tr>  
-    
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3972 ">windows_vdvs_directory</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3975 ">group_vars/vars</td>    
@@ -2580,28 +2580,28 @@ and <code class="ph codeph">windows_vdvs_version</code> equal to <code class="ph
 </tbody></table>
 </div>
    
-    </div>
+</div>
 
- 
- 
+
+
 <div class="section"><h4 class="title sectiontitle">group_vars/win_worker.yml</h4>
-    
-    
-    <p class="p">There is a separate file in the <code class="ph codeph">group_vars</code> directory for Windows-specific congiguration. These variables are
-        used in the following playbooks:  
-    </p>
 
-    
-    <ul class="ul">
-        <li class="li">create_windows_vms.yml</li>
 
-        <li class="li">install_docker_window.yml</li>
+<p class="p">There is a separate file in the <code class="ph codeph">group_vars</code> directory for Windows-specific congiguration. These variables are
+used in the following playbooks:  
+</p>
 
-        <li class="li">scale_workers_windows.yml</li>
 
-    </ul>
+<ul class="ul">
+<li class="li">create_windows_vms.yml</li>
 
-    
+<li class="li">install_docker_window.yml</li>
+
+<li class="li">scale_workers_windows.yml</li>
+
+</ul>
+
+
 
 
 <div class="tablenoborder">
@@ -2613,7 +2613,7 @@ and <code class="ph codeph">windows_vdvs_version</code> equal to <code class="ph
 <th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4162">Description</th>
 </tr>
 </thead><tbody class="tbody"> 
-    
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4156 ">ansible_user</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4159 ">group_vars/win_worker.yml</td>  
@@ -2631,43 +2631,43 @@ and <code class="ph codeph">windows_vdvs_version</code> equal to <code class="ph
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4159 ">group_vars/win_worker.yml</td> 
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4162 ">5986</td>
 </tr>
-  
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4156 ">ansible_connection</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4159 ">group_vars/win_worker.yml</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4162 ">winrm</td>
 </tr>
- 
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4156 ">ansible_winrm_server_cert_validation</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4159 ">group_vars/win_worker.yml</td>  
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4162 ">Defaults to <code class="ph codeph">ignore</code></td>
 </tr>
-     
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4156 ">ansible_winrm_operation_timeout_sec</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4159 ">group_vars/win_worker.yml</td>   
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4162 ">Defaults to <code class="ph codeph">250</code></td>
 </tr>
- 
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4156 ">ansible_winrm_read_timeout_sec</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4159 ">group_vars/win_worker.yml</td>   
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4162 ">Defaults to <code class="ph codeph">300</code></td>
 </tr>
-  
+
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4156 ">windows_timezone</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4159 ">group_vars/win_worker.yml</td>  
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4162 ">Defaults to <code class="ph codeph">15</code></td>
 </tr>
-  
+
 </tbody></table>
 </div>
     
 </div>
  
-    
+
 
 </div>
 

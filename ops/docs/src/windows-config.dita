@@ -17,22 +17,22 @@
 </tgroup>
 
 </table>   
-    </section>
- 
- 
+</section>
+
+
 <section>
-    <title>group_vars/win_worker.yml</title>
-    
-    <p>There is a separate file in the <codeph>group_vars</codeph> directory for Windows-specific congiguration. These variables are
-        used in the following playbooks:  
-    </p>
-    
-    <ul>
-        <li>create_windows_vms.yml</li>
-        <li>install_docker_window.yml</li>
-        <li>scale_workers_windows.yml</li>
-    </ul>
-    
+<title>group_vars/win_worker.yml</title>
+
+<p>There is a separate file in the <codeph>group_vars</codeph> directory for Windows-specific congiguration. These variables are
+used in the following playbooks:  
+</p>
+
+<ul>
+<li>create_windows_vms.yml</li>
+<li>install_docker_window.yml</li>
+<li>scale_workers_windows.yml</li>
+</ul>
+
 
 <table id="windows-config-table-content" frame="none">
 <title>Windows variables</title>
@@ -52,9 +52,9 @@
 <entry>Description</entry>
 </row>
 </thead>
-    
+
 <tbody> 
-    
+
 <row>
 <entry>ansible_user</entry>
 <entry>group_vars/win_worker.yml</entry>  
@@ -72,42 +72,42 @@
 <entry>group_vars/win_worker.yml</entry> 
 <entry>5986</entry>
 </row>
-  
+
 <row>
 <entry>ansible_connection</entry>
 <entry>group_vars/win_worker.yml</entry>
 <entry>winrm</entry>
 </row>
- 
+
 <row>
 <entry>ansible_winrm_server_cert_validation</entry>
 <entry>group_vars/win_worker.yml</entry>  
 <entry>Defaults to <codeph>ignore</codeph></entry>
 </row>
-     
+
 <row>
 <entry>ansible_winrm_operation_timeout_sec</entry>
 <entry>group_vars/win_worker.yml</entry>   
 <entry>Defaults to <codeph>250</codeph></entry>
 </row>
- 
+
 <row>
 <entry>ansible_winrm_read_timeout_sec</entry>
 <entry>group_vars/win_worker.yml</entry>   
 <entry>Defaults to <codeph>300</codeph></entry>
 </row>
-  
+
 <row>
 <entry>windows_timezone</entry>
 <entry>group_vars/win_worker.yml</entry>  
 <entry>Defaults to <codeph>15</codeph></entry>
 </row>
-  
+
 </tbody>
 </tgroup>
 </table>    
 </section> 
-    
+
 
 </body>
 </topic>
