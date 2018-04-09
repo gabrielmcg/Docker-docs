@@ -8,7 +8,7 @@
 
 <table id="docker-config-table-conref" conref="docker-config-table.dita#docker-config-table/docker-config-table-content">
 <title>Docker variables</title>
-<tgroup cols="2">
+<tgroup cols="3">
 <tbody>
 <row>
 <entry/>

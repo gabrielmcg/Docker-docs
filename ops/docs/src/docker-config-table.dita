@@ -10,21 +10,22 @@
 <col/>
 </colgroup>-->
 
-<tgroup cols="2">
+<tgroup cols="3">
 <colspec colnum="1" colname="c1" align="left"/>
 <colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
 <thead>
 <row>
 <entry>Variable</entry>
+<entry>File</entry>
 <entry>Description</entry>
 </row>
 </thead>
 <tbody>
 <row>
 <entry>docker_ee_url</entry>
-<entry>Note: This is a private link to your Docker EE subscription. This
-should be kept secret and defined in
-<codeph>group_vars/vault</codeph>. The value for
+<entry><b>group_vars/vault</b></entry>
+<entry>Note: This is a private link to your Docker EE subscription.  The value for
 <codeph>docker_ee_url</codeph> is the URL documented at the
 following address: <xref format="html" scope="external"
 href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/"
@@ -32,9 +33,10 @@ href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/"
 </row>
 <row>
 <entry>docker_ee_version</entry>
+<entry>group_vars/vars</entry>    
 <entry>
 <ul>
-<li>If this variable is ommited, install_docker.yml will install the latest stable version of docker-ee available in the repo specified with docker_ee_url</li>
+<li>If this variable is ommited, <codeph>install_docker.yml</codeph> will install the latest stable version of docker-ee available in the repo specified with <codeph>docker_ee_url</codeph></li>
 <li>If you want to install a specific version of Docker EE, enter the full speficication of the packages, for example:
 <codeblock>docker_ee_version: 'docker-ee-17.06.2.ee.6-3.el7.rhel.x86_64'</codeblock>
 </li>
@@ -43,45 +45,48 @@ href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/"
 </row>
 <row>
 <entry>rhel_version</entry>
-<entry>Version of your RHEL OS, such as <codeph>7.4</codeph>. The
+<entry>group_vars/vars</entry>  
+<entry>For the Docker installation, this sets the version of your RHEL OS, such as <codeph>7.4</codeph>. The
 playbooks were tested with RHEL 7.3. and RHEL 7.4.</entry>
 </row>
 <row>
 <entry>dtr_version</entry>
+<entry>group_vars/vars</entry>  
 <entry>Version of the Docker DTR you wish to install. You can use a
 numeric version or <codeph>latest</codeph> for the most recent one.
 The playbooks were tested with 2.3.3. and 2.4.0.</entry>
 </row>
 <row>
 <entry>ucp_version</entry>
+<entry>group_vars/vars</entry>      
 <entry>Version of the Docker UCP you wish to install. You can use a
 numeric version or <codeph>latest</codeph> for the most recent one.
 The playbooks were tested with UCP 2.2.3. and 2.2.4.</entry>
 </row>
 <row>
 <entry>images_folder</entry>
+<entry>group_vars/vars</entry>     
 <entry>Directory in the NFS server that will be mounted in the DTR nodes
 and that will host your Docker images.</entry>
 </row>
 <row>
 <entry>license_file</entry>
-<entry>Full path to your Docker EE license file (it should be stored in
-your Ansible host).License file is available from the Docker
+<entry>group_vars/vars</entry>     
+<entry>Full path to your Docker EE license file on your Ansible host. The license file is available from the Docker
 Store</entry>
 </row>
 <row>
 <entry>ucp_username</entry>
+<entry>group_vars/vars</entry>     
 <entry>Username of the administrator user for UCP and DTR, typically
-<codeph>admin</codeph>. Note: The corresponding password is
-stored in a separate file (<codeph>group_vars/vault</codeph>) with
-the variable named <codeph>ucp_password</codeph>.</entry>
+<codeph>admin</codeph>.</entry>
 </row>
 <row>
-<entry>enable_windows</entry>
-<entry>If <codeph>true</codeph>, the creation of Windows 2016 worker
-nodes will be actioned. The default value is
-<codeph>false</codeph>.</entry>
+<entry>ucp_password</entry>
+<entry><b>group_vars/vault</b></entry>     
+<entry>The password for the <codeph>ucp_username</codeph> account.</entry> 
 </row>
+
 </tbody>
 </tgroup>
 </table>

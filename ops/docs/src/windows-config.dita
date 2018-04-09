@@ -8,7 +8,7 @@
 
 <table id="windows-config-table-conref" conref="windows-config-table.dita#windows-config-table/windows-config-table-content">
 <title>Docker variables</title>
-<tgroup cols="2"> 
+<tgroup cols="3"> 
 <tbody>
 <row>
 <entry/>

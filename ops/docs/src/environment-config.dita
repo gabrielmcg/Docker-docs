@@ -32,7 +32,7 @@ scope="external" href="http://15.184.4.2:8080/"
 >http://15.184.4.2:8080</xref>'. This variable defines
 the HTTP proxy url if your environment is behind a
 proxy.</li>
-<li>https_proxy: HTTP proxy URL, such as '<xref format="html"
+<li>https_proxy: HTTPS proxy URL, such as '<xref format="html"
 scope="external" href="http://15.184.4.2:8080/"
 >http://15.184.4.2:8080</xref>'. This variable defines
 the HTTPS proxy url if your environment is behind a

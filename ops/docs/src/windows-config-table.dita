@@ -10,9 +10,10 @@
 <col/>
 </colgroup>-->
 
-<tgroup cols="2">
+<tgroup cols="3">
 <colspec colnum="1" colname="c1" align="left"/>
 <colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
 <thead>
 <row>
 <entry>Variable</entry>
@@ -20,31 +21,63 @@
 </row>
 </thead>
 <tbody>
+    
+<row>
+<entry>enable_windows</entry>
+<entry>group_vars/vars</entry>  
+<entry>If <codeph>true</codeph>, the creation of Windows 2016 worker
+nodes will be actioned. The default value is
+<codeph>false</codeph>.</entry>
+</row>   
+
+<row>
+<entry>win_vm_template</entry>
+<entry>group_vars/vars</entry>  
+<entry>Name of the Windows 2016 VM Template to use. Note that this is the name from a
+vCenter perspective, not the hostname.</entry>
+</row>
+    
 <row>
 <entry>win_username</entry>
+<entry>group_vars/vars</entry>     
 <entry>Windows user name. The default is <codeph>Administrator</codeph>
 </entry>
 </row>
+
 <row>
-<entry>win_vdvs_ps</entry>
-<entry>Variable used to download the <codeph>install-vdvs.ps1</codeph> PowerShell script. For example,
+<entry>win_password</entry>
+<entry><b>group_vars/vault</b></entry>     
+<entry>The password for the Windows account.
+</entry>
+</row>
+    
+<row>
+<entry>windows_vdvs_ps</entry>
+<entry>group_vars/vars</entry>     
+<entry>Variable used to download the PowerShell script that is used to install vDVS for Windows. For example,
 <codeph>https://raw.githubusercontent.com/vmware/vsphere-storage-for-docker/master/install-vdvs.ps1</codeph>
 </entry>
 </row>
+    
 <row>
-<entry>win_vdvs_path</entry>
+<entry>windows_vdvs_path</entry>
+<entry>group_vars/vars</entry>     
 <entry>Variable used to download vSphere Docker Volume Service software. This variable is combined 
-with <codeph>win_vdvs_version</codeph> (below) to generate a URL of the form {{ windows_vdvs_path }}_{{ windows_vdvs_version }}.zip to download the software. 
-For example, to download version 0.21, set <codeph>win_vdvs_path</codeph> equal to https://vmware.bintray.com/vDVS/vsphere-storage-for-docker_windows 
-and <codeph>win_vdvs_path</codeph> equal to <codeph>0.21</codeph>
+with <codeph>windows_vdvs_version</codeph> (below) to generate a URL of the form {{ windows_vdvs_path }}_{{ windows_vdvs_version }}.zip to download the software. 
+For example, to download version 0.21, set <codeph>windows_vdvs_path</codeph> equal to https://vmware.bintray.com/vDVS/vsphere-storage-for-docker_windows 
+and <codeph>windows_vdvs_version</codeph> equal to <codeph>0.21</codeph>
 </entry>
 </row>
+    
 <row>
-<entry>win_vdvs_version</entry>
-<entry>Combined with <codeph>win_vdvs_path</codeph>, this variable is used to generate the URL for downloading the software.</entry>
+<entry>windows_vdvs_version</entry>
+<entry>group_vars/vars</entry> 
+<entry>Combined with <codeph>windows_vdvs_path</codeph>, this variable is used to generate the URL for downloading the software.</entry>
 </row>  
+    
 <row>
-<entry>win_vdvs_directory</entry>
+<entry>windows_vdvs_directory</entry>
+<entry>group_vars/vars</entry>    
 <entry>Variable used to determine where vDVS software will be unzipped and installed from. The default is <codeph>C:\Users\Administrator\Downloads</codeph></entry>
 </row>
 </tbody>

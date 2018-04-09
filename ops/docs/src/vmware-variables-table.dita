@@ -51,11 +51,7 @@ named <codeph>vm_password</codeph>.</entry>
 <entry>Name of the RHEL VM Template to be use. Note that this is the name from a vCenter
 perspective, not the hostname.</entry>
 </row>
-<row>
-<entry>win_vm_template</entry>
-<entry>Name of the Windows 2016 VM Template to use. Note that this is the name from a
-vCenter perspective, not the hostname.</entry>
-</row>
+
 <row>
 <entry>folder_name</entry>
 <entry>vCenter folder to deploy the VMs. If you do not wish to deploy in a particular
