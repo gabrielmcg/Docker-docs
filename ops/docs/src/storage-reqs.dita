@@ -9,15 +9,14 @@
 <p>will need additional storage for File Persona</p>
 
 
-<fig>
+<!--<fig>
 <title>HPE Synergy Solution</title>
-<!--<image keyref="architecture1" placement="break"/>-->
 <image href="media/architecture1.png" placement="break"/>
 </fig>
-
+-->
+    
 <fig>
 <title>HPE Synergy Configuration</title>
-<!--<image keyref="architecture2" placement="break"/>-->
 <image href="media/architecture2.png" placement="break"/>
 </fig>
 

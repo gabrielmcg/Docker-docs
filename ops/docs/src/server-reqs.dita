@@ -3,7 +3,18 @@
 <topic id="server-reqs">
 <title>Server requirements:</title>
 <body>
-<p>Two platforms will be described / tested:</p>
+<p>The platform used in this configuration is a 3 node HPE Synergy 480 Gen10 deployment with
+1 node in each Synergy frame and </p>
+
+<ul>
+<li>384 GB DDR4-2133 RAM </li>
+<li>2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core </li>
+<li>single ESXi cluster with control plane and docker workers spread out on all 3 nodes
+</li>
+</ul>
+
+
+<!--<p>Two platforms will be described / tested:</p>
 <ol>
 <li>3 node HPE Synergy 480 Gen10 deployment with 1 node in each Synergy frame <ul>
 <li>384 GB DDR4-2133 RAM </li>
@@ -19,9 +30,9 @@
 Docker workers (should this be 2 clusters?) </li>
 </ul>
 </li>
-</ol>
+</ol>-->
 
-<p>TBD: How many workers should be deployed on a single ESXi host dedicated to Docker
-workers to maximize use of the server and justify the cost of VMware license.</p>
+<!--<p>TODO : How many workers should be deployed on a single ESXi host dedicated to Docker
+workers to maximize use of the server and justify the cost of VMware license.</p>-->
 </body>
 </topic>
