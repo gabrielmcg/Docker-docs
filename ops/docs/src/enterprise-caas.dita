@@ -53,6 +53,12 @@
 <li><xref href="customer-certs.dita"/></li>  
 </ul>
 </li> 
+<li><xref href="backup-restore.dita"/>
+<ul>
+<li><xref href="backup-restore-docker-volumes.dita"/></li>
+</ul>
+  
+</li>  
 <li><xref href="lifecycle.dita"/></li> 
 </ul>   
   
