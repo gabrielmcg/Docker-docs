@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="backup-restore-docker-volumes">
+<title>Backup and restore Docker persistent volumes</title>
+<body>
+<section>
+<title>Prerequisites</title>
+<ul>
+<li>VSphere clusters should have access to a datastore specifically for backups.  This is a separate Virtual Volume created on the 3PAR StoreServ and presented to all the hosts in the vSphere cluster.  
+</li>
+<li>Backup software must be available.  A recommendation for HPE Recovery Manager Central and HPE StoreServ is included but other customer backup/restore solutions are acceptable
+</li>
+</ul>
+
+</section>
+
+<section>
+<title>Restrictions</title>
+<ul>
+<li>Volumes may not be in use when a volume is cloned.  Any container that has the volume attached must be paused prior to creating the clone.  The container can be resumed once the clone is complete.</li>
+<li>When docker volumes need to be restored from backup, the backup datastore needs to be detached from all vSphere cluster servers prior to restoration.</li>
+</ul>
+
+
+
+
+</section>
+
+</body>
+<topic id="backup-solution">
+<title>Persistent storage backup solution</title>
+
+<body>
+<section>
+<title>Creating the volume</title>
+
+<p>Docker persistent volumes can be created from a worker node using the following command:</p>
+
+<codeblock>docker volume create --driver=vsphere --name=MyVolume@MyDatastore -o size=10gb </codeblock>
+</section>
+
+</body>
+
+</topic>
+</topic>

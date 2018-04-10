@@ -119,6 +119,12 @@
         
   </topicref>
   
+  <topicref href="backup-restore.dita" navtitle="Backup and restore">
+    <topicref href="backup-restore-docker-volumes.dita"/>
+    
+    
+  </topicref>
+  
   <topicref href="lifecycle.dita" navtitle="Solution lifecycle"/>
  
 </map>
