@@ -51,9 +51,9 @@
     
     <topicref href="security.dita" navtitle="Security"/>
     
-    <topicref href="monitoring.dita" navtitle="Monitoring">
-      <topicref href="splunk.dita" navtitle="Splunk integration"/> 
-    </topicref>
+    <!--<topicref href="monitoring.dita" navtitle="Monitoring">-->
+      <topicref href="splunk.dita" navtitle="Monitoring with Splunk"/> 
+    <!--</topicref>-->
     
   </topicref>
   
@@ -98,7 +98,7 @@
        
        <topicref href="windows-config.dita" navtitle="Windows configuration"/>
        
-       <topicref href="monitoring-config.dita" navtitle="Monitoring configuration">
+       <!--<topicref href="monitoring-config.dita" navtitle="Monitoring configuration">-->
          <topicref href="monitoring-config-splunk.dita" navtitle="Splunk configuration">
            <topicref href="splunk-options.dita" navtitle="Splunk options"/>
            <topicref href="splunk-pre-deploy.dita" navtitle="Before you deploy"/>
@@ -109,7 +109,7 @@
          </topicref>         
          
          <topicref href="monitoring-config-promgraf.dita" navtitle="Prometheus and Grafana configuration"/>
-       </topicref>
+       <!--</topicref>-->
        
      </topicref>
     
