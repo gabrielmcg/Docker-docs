@@ -6,24 +6,23 @@
 <section>
 <title>Prerequisites</title>
 <ul>
-<li>VSphere clusters should have access to a datastore specifically for backups.  This is a separate Virtual Volume created on the 3PAR StoreServ and presented to all the hosts in the vSphere cluster.  
-</li>
-<li>Backup software must be available.  A recommendation for HPE Recovery Manager Central and HPE StoreServ is included but other customer backup/restore solutions are acceptable
-</li>
+<li>VSphere clusters should have access to a datastore specifically for backups. This is a
+separate Virtual Volume created on the 3PAR StoreServ and presented to all the hosts in
+the vSphere cluster. </li>
+<li>Backup software must be available. A recommendation for HPE Recovery Manager Central and
+HPE StoreServ is included but other customer backup/restore solutions are acceptable </li>
 </ul>
-
 </section>
 
 <section>
 <title>Restrictions</title>
 <ul>
-<li>Volumes may not be in use when a volume is cloned.  Any container that has the volume attached must be paused prior to creating the clone.  The container can be resumed once the clone is complete.</li>
-<li>When docker volumes need to be restored from backup, the backup datastore needs to be detached from all vSphere cluster servers prior to restoration.</li>
+<li>Volumes may not be in use when a volume is cloned. Any container that has the volume
+attached must be paused prior to creating the clone. The container can be resumed once the
+clone is complete.</li>
+<li>When docker volumes need to be restored from backup, the backup datastore needs to be
+detached from all vSphere cluster servers prior to restoration.</li>
 </ul>
-
-
-
-
 </section>
 
 </body>
@@ -33,11 +32,84 @@
 <body>
 <section>
 <title>Creating the volume</title>
-
-<p>Docker persistent volumes can be created from a worker node using the following command:</p>
-
+<p>Docker persistent volumes can be created from a worker node using the following
+command:</p>
 <codeblock>docker volume create --driver=vsphere --name=MyVolume@MyDatastore -o size=10gb </codeblock>
 </section>
+
+<section>
+<title>Cloning the volume</title>
+<note type="note">Prior to creating a clone of a volume, any containers accessing the volume
+should be paused or stopped.</note>
+<p>Docker volumes can be cloned to a new datastore:</p>
+<codeblock>docker volume create --driver=vsphere --name=CloneVolumme@DockerBackup -o clone-from=MyVolume@MyDatastore -o access=read-only </codeblock>
+</section>
+
+
+<section>
+<title>Snapshot and Backup 3PAR Virtual Volumes with Recovery Manager Central and
+StoreOnce</title>
+<p>HPE Recovery Manager Central (RMC) software integrates HPE 3PAR StoreServ All-Flash
+arrays with HPE StoreOnce Systems to leverage the performance of snapshots with the
+protection of backups. RMC uses a direct backup model to orchestrate data protection
+between the array and the backup system without a backup application. When the first full
+backup is complete, each subsequent backup is incremental, making it significantly faster
+than traditional backup methods, particularly for higher volumes of data. Backups to HPE
+StoreOnce are block-level copies of volumes, de-duplicated to save space. Because RMC
+snapshots are self-contained, fully independent volumes, they can be restored to any 3PAR
+array in the event of a disaster.</p>
+<p>RMC enables you to replicate data from the source storage system (HPE 3PAR StoreServ) to
+destination storage system (HPE StoreOnce). The replication is based on point-in-time
+snapshots.</p>
+<p>Recovery Manager Central is installed as a VM on VMware vSphere ESXi. It can be installed
+on the Synergy platform on a separate (from the Docker Solution) vSphere cluster or
+external to the Synergy environment as long as the external server has connectivity to the
+HPE 3PAR StoreServ and HPE StoreOnce. RMC can be installed directly on an ESXi host or can
+be deployed to a VMware vCenter managed environment. For this solution, the standalone
+"RMC only" is installed. If RMC is installed in the Synergy environment, iSCSI connection
+to the 3PAR StoreServ is required.</p>
+<fig>
+<title>HPE Recovery Manger Central and StoreOnce</title>
+<image href="media/rmc-storeonce.png"/>
+</fig>
+<ul>
+<li>The connectivity between HPE 3PAR StoreServ and RMC for data traffic is over iSCSI. </li>
+<li>The connectivity between StoreOnce and RMC is over CoEthernet (Catalyst
+OverEthernet)</li>
+<li>The connectivity between RMC, HPE 3PAR StoreServ, and HPEStoreOnce for management
+traffic is over IP. </li>
+</ul>
+<fig>
+<title>Connectivity</title>
+<image href="media/3par-storeonce-networking.png"/>
+
+</fig>
+<p>Refer to <xref
+href="https://hpe.sharepoint.com/teams/StorageSolutions/Data%20Center%20Virtualization/RMC-V/Manuals/Manual_5.0/RMC_5.0_user_guide.pdf#search=RMC"
+format="html">RMC User guide</xref> TODO PUBLIC URL NEEDED for detailed instructions on
+setup and configuration of RMC and StoreOnce. When RMC is installed, it can be configured
+with the Backup Appliance Persona. The Backup persona allows the RMC to manage snapshots
+and Express Protect Backups. During installation, RMC configuration should specify Data
+Protection of RMC Core. The initial configuration of backups can be set up using the
+Protection Wizard. The Protection Wizard assists with creation of a Recovery Set. Create a
+Recovery Set and select to protect your DockerBackup volume. Once you have created your
+Recovery Set, the next step is to create Protection Jobs. The Auto Protection Job
+simplifies the initial configuration of policies. The Auto Protection Job will
+automatically configure the storage, define default backup policies and protection
+policies and will schedule snapshots or express protect jobs with the created
+policies.</p>
+<fig>
+<title>Recovery Set Overview</title>
+<image href="media/recovery-set-overview.png"/>
+</fig>
+</section>
+
+
+
+
+
+
+
 
 </body>
 

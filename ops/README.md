@@ -3366,14 +3366,14 @@ PyOpenSSL which is not compatible with the version installed on Red Hat 7.4
 <div class="section"><h3 class="title sectiontitle">Prerequisites</h3>
 
 <ul class="ul">
-<li class="li">VSphere clusters should have access to a datastore specifically for backups.  This is a separate Virtual Volume created on the 3PAR StoreServ and presented to all the hosts in the vSphere cluster.  
-</li>
+<li class="li">VSphere clusters should have access to a datastore specifically for backups. This is a
+separate Virtual Volume created on the 3PAR StoreServ and presented to all the hosts in
+the vSphere cluster. </li>
 
-<li class="li">Backup software must be available.  A recommendation for HPE Recovery Manager Central and HPE StoreServ is included but other customer backup/restore solutions are acceptable
-</li>
+<li class="li">Backup software must be available. A recommendation for HPE Recovery Manager Central and
+HPE StoreServ is included but other customer backup/restore solutions are acceptable </li>
 
 </ul>
-
 
 </div>
 
@@ -3381,15 +3381,14 @@ PyOpenSSL which is not compatible with the version installed on Red Hat 7.4
 <div class="section"><h3 class="title sectiontitle">Restrictions</h3>
 
 <ul class="ul">
-<li class="li">Volumes may not be in use when a volume is cloned.  Any container that has the volume attached must be paused prior to creating the clone.  The container can be resumed once the clone is complete.</li>
+<li class="li">Volumes may not be in use when a volume is cloned. Any container that has the volume
+attached must be paused prior to creating the clone. The container can be resumed once the
+clone is complete.</li>
 
-<li class="li">When docker volumes need to be restored from backup, the backup datastore needs to be detached from all vSphere cluster servers prior to restoration.</li>
+<li class="li">When docker volumes need to be restored from backup, the backup datastore needs to be
+detached from all vSphere cluster servers prior to restoration.</li>
 
 </ul>
-
-
-
-
 
 </div>
 
@@ -3403,12 +3402,98 @@ PyOpenSSL which is not compatible with the version installed on Red Hat 7.4
 <div class="body">
 <div class="section"><h4 class="title sectiontitle">Creating the volume</h4>
 
-
-<p class="p">Docker persistent volumes can be created from a worker node using the following command:</p>
-
+<p class="p">Docker persistent volumes can be created from a worker node using the following
+command:</p>
 
 <pre class="pre codeblock"><code>docker volume create --driver=vsphere --name=MyVolume@MyDatastore -o size=10gb </code></pre>
 </div>
+
+
+<div class="section"><h4 class="title sectiontitle">Cloning the volume</h4>
+
+<div class="note note"><span class="notetitle">Note:</span> Prior to creating a clone of a volume, any containers accessing the volume
+should be paused or stopped.</div>
+
+<p class="p">Docker volumes can be cloned to a new datastore:</p>
+
+<pre class="pre codeblock"><code>docker volume create --driver=vsphere --name=CloneVolumme@DockerBackup -o clone-from=MyVolume@MyDatastore -o access=read-only </code></pre>
+</div>
+
+
+
+<div class="section"><h4 class="title sectiontitle">Snapshot and Backup 3PAR Virtual Volumes with Recovery Manager Central and
+StoreOnce</h4>
+
+<p class="p">HPE Recovery Manager Central (RMC) software integrates HPE 3PAR StoreServ All-Flash
+arrays with HPE StoreOnce Systems to leverage the performance of snapshots with the
+protection of backups. RMC uses a direct backup model to orchestrate data protection
+between the array and the backup system without a backup application. When the first full
+backup is complete, each subsequent backup is incremental, making it significantly faster
+than traditional backup methods, particularly for higher volumes of data. Backups to HPE
+StoreOnce are block-level copies of volumes, de-duplicated to save space. Because RMC
+snapshots are self-contained, fully independent volumes, they can be restored to any 3PAR
+array in the event of a disaster.</p>
+
+<p class="p">RMC enables you to replicate data from the source storage system (HPE 3PAR StoreServ) to
+destination storage system (HPE StoreOnce). The replication is based on point-in-time
+snapshots.</p>
+
+<p class="p">Recovery Manager Central is installed as a VM on VMware vSphere ESXi. It can be installed
+on the Synergy platform on a separate (from the Docker Solution) vSphere cluster or
+external to the Synergy environment as long as the external server has connectivity to the
+HPE 3PAR StoreServ and HPE StoreOnce. RMC can be installed directly on an ESXi host or can
+be deployed to a VMware vCenter managed environment. For this solution, the standalone
+"RMC only" is installed. If RMC is installed in the Synergy environment, iSCSI connection
+to the 3PAR StoreServ is required.</p>
+
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 8. </span>HPE Recovery Manger Central and StoreOnce</span>
+
+<img class="image" src="media/rmc-storeonce.png" />
+</div>
+
+<ul class="ul">
+<li class="li">The connectivity between HPE 3PAR StoreServ and RMC for data traffic is over iSCSI. </li>
+
+<li class="li">The connectivity between StoreOnce and RMC is over CoEthernet (Catalyst
+OverEthernet)</li>
+
+<li class="li">The connectivity between RMC, HPE 3PAR StoreServ, and HPEStoreOnce for management
+traffic is over IP. </li>
+
+</ul>
+
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 9. </span>Connectivity</span>
+
+<img class="image" src="media/3par-storeonce-networking.png" />
+
+</div>
+
+<p class="p">Refer to <a class="xref" href="https://hpe.sharepoint.com/teams/StorageSolutions/Data%20Center%20Virtualization/RMC-V/Manuals/Manual_5.0/RMC_5.0_user_guide.pdf#search=RMC">RMC User guide</a> TODO PUBLIC URL NEEDED for detailed instructions on
+setup and configuration of RMC and StoreOnce. When RMC is installed, it can be configured
+with the Backup Appliance Persona. The Backup persona allows the RMC to manage snapshots
+and Express Protect Backups. During installation, RMC configuration should specify Data
+Protection of RMC Core. The initial configuration of backups can be set up using the
+Protection Wizard. The Protection Wizard assists with creation of a Recovery Set. Create a
+Recovery Set and select to protect your DockerBackup volume. Once you have created your
+Recovery Set, the next step is to create Protection Jobs. The Auto Protection Job
+simplifies the initial configuration of policies. The Auto Protection Job will
+automatically configure the storage, define default backup policies and protection
+policies and will schedule snapshots or express protect jobs with the created
+policies.</p>
+
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 10. </span>Recovery Set Overview</span>
+
+<img class="image" src="media/recovery-set-overview.png" />
+</div>
+
+</div>
+
+
+
+
+
+
+
 
 
 </div>
@@ -3495,25 +3580,25 @@ running is supported and that the client software is compatible with the operati
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 12. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5406">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5409">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5412">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5415">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5480">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5483">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5486">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5489">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5406 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5409 ">Server Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5412 "><ol class="ol"><li class="li">VMware ESXi</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5480 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5483 ">Server Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5486 "><ol class="ol"><li class="li">VMware ESXi</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5415 ">vSphere Docker Volume Service on GitHub</td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5489 ">vSphere Docker Volume Service on GitHub</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5406 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5409 ">Client Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5412 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5480 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5483 ">Client Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5486 "><ol class="ol"><li class="li">VM Operating System</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
