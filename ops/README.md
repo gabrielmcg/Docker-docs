@@ -3360,175 +3360,175 @@ PyOpenSSL which is not compatible with the version installed on Red Hat 7.4
 </div>
 
 <div class="topic nested1" aria-labelledby="ariaid-title51" id="backup-restore-docker-volumes">
-  <h2 class="title topictitle2" id="ariaid-title51">Backup and restore Docker persistent volumes</h2>
+<h2 class="title topictitle2" id="ariaid-title51">Backup and restore Docker persistent volumes</h2>
 
-  <div class="body">
-    <div class="section"><h3 class="title sectiontitle">Prerequisites</h3>
-      
-      <ul class="ul">
-        <li class="li">VSphere clusters should have access to a datastore specifically for backups. This is a
-          separate Virtual Volume created on the 3PAR StoreServ and presented to all the hosts in
-          the vSphere cluster. </li>
+<div class="body">
+<div class="section"><h3 class="title sectiontitle">Prerequisites</h3>
 
-        <li class="li">Backup software must be available. A recommendation for HPE Recovery Manager Central and
-          HPE StoreServ is included but other customer backup/restore solutions are acceptable </li>
+<ul class="ul">
+<li class="li">VSphere clusters should have access to a datastore specifically for backups. This is a
+separate Virtual Volume created on the 3PAR StoreServ and presented to all the hosts in
+the vSphere cluster. </li>
 
-      </ul>
+<li class="li">Backup software must be available. A recommendation for HPE Recovery Manager Central and
+HPE StoreServ is included but other customer backup/restore solutions are acceptable </li>
 
-    </div>
+</ul>
 
-
-    <div class="section"><h3 class="title sectiontitle">Restrictions</h3>
-      
-      <ul class="ul">
-        <li class="li">Volumes may not be in use when a volume is cloned. Any container that has the volume
-          attached must be paused prior to creating the clone. The container can be resumed once the
-          clone is complete.</li>
-
-        <li class="li">When docker volumes need to be restored from backup, the backup datastore needs to be
-          detached from all vSphere cluster servers prior to restoration.</li>
-
-      </ul>
-
-    </div>
+</div>
 
 
-  </div>
+<div class="section"><h3 class="title sectiontitle">Restrictions</h3>
 
-  <div class="topic nested2" aria-labelledby="ariaid-title52" id="backup-solution">
-    <h3 class="title topictitle3" id="ariaid-title52">Persistent storage backup solution</h3>
+<ul class="ul">
+<li class="li">Volumes may not be in use when a volume is cloned. Any container that has the volume
+attached must be paused prior to creating the clone. The container can be resumed once the
+clone is complete.</li>
 
+<li class="li">When docker volumes need to be restored from backup, the backup datastore needs to be
+detached from all vSphere cluster servers prior to restoration.</li>
 
-    <div class="body">
-      <div class="section"><h4 class="title sectiontitle">Creating the volume</h4>
-        
-        <p class="p">Docker persistent volumes can be created from a worker node using the following
-          command:</p>
+</ul>
 
-        <pre class="pre codeblock"><code>docker volume create --driver=vsphere --name=MyVolume@MyDatastore -o size=10gb </code></pre>
-      </div>
-
-
-      <div class="section"><h4 class="title sectiontitle">Cloning the volume</h4>
-        
-        <div class="note note"><span class="notetitle">Note:</span> Prior to creating a clone of a volume, any containers accessing the volume
-          should be paused or stopped.</div>
-
-        <p class="p">Docker volumes can be cloned to a new datastore:</p>
-
-        <pre class="pre codeblock"><code>docker volume create --driver=vsphere --name=CloneVolumme@DockerBackup -o clone-from=MyVolume@MyDatastore -o access=read-only </code></pre>
-      </div>
+</div>
 
 
+</div>
 
-      <div class="section"><h4 class="title sectiontitle">Snapshot and Backup 3PAR Virtual Volumes with Recovery Manager Central and
-          StoreOnce</h4>
-        
-        <p class="p">HPE Recovery Manager Central (RMC) software integrates HPE 3PAR StoreServ All-Flash
-          arrays with HPE StoreOnce Systems to leverage the performance of snapshots with the
-          protection of backups. RMC uses a direct backup model to orchestrate data protection
-          between the array and the backup system without a backup application. When the first full
-          backup is complete, each subsequent backup is incremental, making it significantly faster
-          than traditional backup methods, particularly for higher volumes of data. Backups to HPE
-          StoreOnce are block-level copies of volumes, de-duplicated to save space. Because RMC
-          snapshots are self-contained, fully independent volumes, they can be restored to any 3PAR
-          array in the event of a disaster.</p>
-
-        <p class="p">RMC enables you to replicate data from the source storage system (HPE 3PAR StoreServ) to
-          destination storage system (HPE StoreOnce). The replication is based on point-in-time
-          snapshots.</p>
-
-        <p class="p">Recovery Manager Central is installed as a VM on VMware vSphere ESXi. It can be installed
-          on the Synergy platform on a separate (from the Docker Solution) vSphere cluster or
-          external to the Synergy environment as long as the external server has connectivity to the
-          HPE 3PAR StoreServ and HPE StoreOnce. RMC can be installed directly on an ESXi host or can
-          be deployed to a VMware vCenter managed environment. For this solution, the standalone
-          "RMC only" is installed. If RMC is installed in the Synergy environment, iSCSI connection
-          to the 3PAR StoreServ is required.</p>
-
-        <div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 8. </span>HPE Recovery Manger Central and StoreOnce</span>
-          
-          <img class="image" src="media/rmc-storeonce.png" />
-        </div>
-
-        <ul class="ul">
-          <li class="li">The connectivity between HPE 3PAR StoreServ and RMC for data traffic is over iSCSI. </li>
-
-          <li class="li">The connectivity between StoreOnce and RMC is over CoEthernet (Catalyst
-            OverEthernet)</li>
-
-          <li class="li">The connectivity between RMC, HPE 3PAR StoreServ, and HPEStoreOnce for management
-            traffic is over IP. </li>
-
-        </ul>
-
-        <div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 9. </span>Connectivity</span>
-          
-          <img class="image" src="media/3par-storeonce-networking.png" />
-
-        </div>
-
-        <p class="p">Refer to <a class="xref" href="https://hpe.sharepoint.com/teams/StorageSolutions/Data%20Center%20Virtualization/RMC-V/Manuals/Manual_5.0/RMC_5.0_user_guide.pdf#search=RMC">RMC User guide</a> TODO PUBLIC URL NEEDED for detailed instructions on
-          setup and configuration of RMC and StoreOnce. When RMC is installed, it can be configured
-          with the Backup Appliance Persona. The Backup persona allows the RMC to manage snapshots
-          and Express Protect Backups. During installation, RMC configuration should specify Data
-          Protection of RMC Core. The initial configuration of backups can be set up using the
-          Protection Wizard. The Protection Wizard assists with creation of a Recovery Set. Create a
-          Recovery Set and select to protect your DockerBackup volume. Once you have created your
-          Recovery Set, the next step is to create Protection Jobs. The Auto Protection Job
-          simplifies the initial configuration of policies. The Auto Protection Job will
-          automatically configure the storage, define default backup policies and protection
-          policies and will schedule snapshots or express protect jobs with the created
-          policies.</p>
-
-        <div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 10. </span>Recovery Set Overview</span>
-          
-          <img class="image" src="media/recovery-set-overview.png" />
-        </div>
-
-        <p class="p">RMC uses the Express Protect feature to enable the backup of the snapshot data from the
-          3PAR array to the StoreOnce system for deduplication and long-term retention. </p>
-
-        <div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 11. </span>Express Protect</span>
-          
-          <img class="image" src="media/express-protect.png" />
-        </div>
-
-        <p class="p">The Express Restore feature restores either snapshots or base volumes.</p>
-
-        <p class="p">RMC leverages 3PAR StoreServ SnapDiff technology to create an application-consistent
-          snapshot. Only changed blocks are sent to the StoreOnce system, which minimizes network
-          traffic and saves disk space on the backup system. </p>
-
-      </div>
+<div class="topic nested2" aria-labelledby="ariaid-title52" id="backup-solution">
+<h3 class="title topictitle3" id="ariaid-title52">Persistent storage backup solution</h3>
 
 
-      <div class="section"><h4 class="title sectiontitle">Restoring the volume</h4>
-        
-        <p class="p">If a docker persistent storage volume needs to be restored from backup, the 3PAR volume
-          can be restored either from a snapshot saved on the 3PAR or from a backup on StoreOnce.
-          Stop any applications using the docker volume. Use vSphere Web UI to Unmount the datastore
-          from the vSphere cluster. Use RMC to detach the 3PAR virtual volumes prior to restoring
-          the backup. The volume can be restored from a Recovery Set restore point. The Express
-          Protect restore point will restore the volume from the StoreOnce system. A Snapshot Set
-          restore point will restore a 3PAR StoreServ snapshot.</p>
+<div class="body">
+<div class="section"><h4 class="title sectiontitle">Creating the volume</h4>
 
-        <div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 12. </span>Restore points</span>
-          
-          <img class="image" src="media/restore-points.png" />
-        </div>
+<p class="p">Docker persistent volumes can be created from a worker node using the following
+command:</p>
 
-        <p class="p">Once the 3PAR virtual volume is restored, the volume must be reattached to the vSphere
-          cluster from RMC. After the volume is reattached, the datastore must be mounted.
-          Applications can then access the restored docker volume.</p>
-
-      </div>
+<pre class="pre codeblock"><code>docker volume create --driver=vsphere --name=MyVolume@MyDatastore -o size=10gb </code></pre>
+</div>
 
 
-    </div>
+<div class="section"><h4 class="title sectiontitle">Cloning the volume</h4>
+
+<div class="note note"><span class="notetitle">Note:</span> Prior to creating a clone of a volume, any containers accessing the volume
+should be paused or stopped.</div>
+
+<p class="p">Docker volumes can be cloned to a new datastore:</p>
+
+<pre class="pre codeblock"><code>docker volume create --driver=vsphere --name=CloneVolumme@DockerBackup -o clone-from=MyVolume@MyDatastore -o access=read-only </code></pre>
+</div>
 
 
-  </div>
+
+<div class="section"><h4 class="title sectiontitle">Snapshot and Backup 3PAR Virtual Volumes with Recovery Manager Central and
+StoreOnce</h4>
+
+<p class="p">HPE Recovery Manager Central (RMC) software integrates HPE 3PAR StoreServ All-Flash
+arrays with HPE StoreOnce Systems to leverage the performance of snapshots with the
+protection of backups. RMC uses a direct backup model to orchestrate data protection
+between the array and the backup system without a backup application. When the first full
+backup is complete, each subsequent backup is incremental, making it significantly faster
+than traditional backup methods, particularly for higher volumes of data. Backups to HPE
+StoreOnce are block-level copies of volumes, de-duplicated to save space. Because RMC
+snapshots are self-contained, fully independent volumes, they can be restored to any 3PAR
+array in the event of a disaster.</p>
+
+<p class="p">RMC enables you to replicate data from the source storage system (HPE 3PAR StoreServ) to
+destination storage system (HPE StoreOnce). The replication is based on point-in-time
+snapshots.</p>
+
+<p class="p">Recovery Manager Central is installed as a VM on VMware vSphere ESXi. It can be installed
+on the Synergy platform on a separate (from the Docker Solution) vSphere cluster or
+external to the Synergy environment as long as the external server has connectivity to the
+HPE 3PAR StoreServ and HPE StoreOnce. RMC can be installed directly on an ESXi host or can
+be deployed to a VMware vCenter managed environment. For this solution, the standalone
+"RMC only" is installed. If RMC is installed in the Synergy environment, iSCSI connection
+to the 3PAR StoreServ is required.</p>
+
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 8. </span>HPE Recovery Manger Central and StoreOnce</span>
+
+<img class="image" src="media/rmc-storeonce.png" />
+</div>
+
+<ul class="ul">
+<li class="li">The connectivity between HPE 3PAR StoreServ and RMC for data traffic is over iSCSI. </li>
+
+<li class="li">The connectivity between StoreOnce and RMC is over CoEthernet (Catalyst
+OverEthernet)</li>
+
+<li class="li">The connectivity between RMC, HPE 3PAR StoreServ, and HPEStoreOnce for management
+traffic is over IP. </li>
+
+</ul>
+
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 9. </span>Connectivity</span>
+
+<img class="image" src="media/3par-storeonce-networking.png" />
+
+</div>
+
+<p class="p">Refer to <a class="xref" href="https://hpe.sharepoint.com/teams/StorageSolutions/Data%20Center%20Virtualization/RMC-V/Manuals/Manual_5.0/RMC_5.0_user_guide.pdf#search=RMC">RMC User guide</a> TODO PUBLIC URL NEEDED for detailed instructions on
+setup and configuration of RMC and StoreOnce. When RMC is installed, it can be configured
+with the Backup Appliance Persona. The Backup persona allows the RMC to manage snapshots
+and Express Protect Backups. During installation, RMC configuration should specify Data
+Protection of RMC Core. The initial configuration of backups can be set up using the
+Protection Wizard. The Protection Wizard assists with creation of a Recovery Set. Create a
+Recovery Set and select to protect your DockerBackup volume. Once you have created your
+Recovery Set, the next step is to create Protection Jobs. The Auto Protection Job
+simplifies the initial configuration of policies. The Auto Protection Job will
+automatically configure the storage, define default backup policies and protection
+policies and will schedule snapshots or express protect jobs with the created
+policies.</p>
+
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 10. </span>Recovery Set Overview</span>
+
+<img class="image" src="media/recovery-set-overview.png" />
+</div>
+
+<p class="p">RMC uses the Express Protect feature to enable the backup of the snapshot data from the
+3PAR array to the StoreOnce system for deduplication and long-term retention. </p>
+
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 11. </span>Express Protect</span>
+
+<img class="image" src="media/express-protect.png" />
+</div>
+
+<p class="p">The Express Restore feature restores either snapshots or base volumes.</p>
+
+<p class="p">RMC leverages 3PAR StoreServ SnapDiff technology to create an application-consistent
+snapshot. Only changed blocks are sent to the StoreOnce system, which minimizes network
+traffic and saves disk space on the backup system. </p>
+
+</div>
+
+
+<div class="section"><h4 class="title sectiontitle">Restoring the volume</h4>
+
+<p class="p">If a docker persistent storage volume needs to be restored from backup, the 3PAR volume
+can be restored either from a snapshot saved on the 3PAR or from a backup on StoreOnce.
+Stop any applications using the docker volume. Use vSphere Web UI to Unmount the datastore
+from the vSphere cluster. Use RMC to detach the 3PAR virtual volumes prior to restoring
+the backup. The volume can be restored from a Recovery Set restore point. The Express
+Protect restore point will restore the volume from the StoreOnce system. A Snapshot Set
+restore point will restore a 3PAR StoreServ snapshot.</p>
+
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 12. </span>Restore points</span>
+
+<img class="image" src="media/restore-points.png" />
+</div>
+
+<p class="p">Once the 3PAR virtual volume is restored, the volume must be reattached to the vSphere
+cluster from RMC. After the volume is reattached, the datastore must be mounted.
+Applications can then access the restored docker volume.</p>
+
+</div>
+
+
+</div>
+
+
+</div>
 
 
 </div>
