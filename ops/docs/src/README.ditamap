@@ -122,6 +122,8 @@
   <topicref href="backup-restore.dita" navtitle="Backup and restore">
     <topicref href="backup-restore-docker-volumes.dita"/>
     
+    <topicref href="backup-restore-ucp-dtr.dita" navtitle="Backup and restore UCP and DTR"/>
+    
     
   </topicref>
   

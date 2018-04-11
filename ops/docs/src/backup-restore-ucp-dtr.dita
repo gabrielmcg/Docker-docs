@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="backup-restore-ucp-dtr">
+  <title>Backup and restore UCP and DTR</title>
+  <body>
+    <p>The playbooks provided in this solution implement the backup and restore procedures as they are
+      described in the Docker documentation at <xref href="https://docs.docker.com/enterprise/backup/" format="html"/></p>
+  </body>
+</topic>
