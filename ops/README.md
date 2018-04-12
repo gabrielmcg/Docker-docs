@@ -3598,8 +3598,7 @@ but their content will be lost). You backup the swarm using the playbook named
 <code class="ph codeph">backup_swarm.yml</code> which is located in the <code class="ph codeph">playbooks</code>
 folder on your Ansible box. The playbook is invoked as follows: </p>
 
-<pre class="pre codeblock"><code>
-# ansible-playbook -i vm_hosts playbooks/backup_swarm.yml</code></pre>
+<pre class="pre codeblock"><code># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml</code></pre>
 </div>
 
 
@@ -3608,14 +3607,35 @@ folder on your Ansible box. The playbook is invoked as follows: </p>
 are named using the following pattern:</p>
 
 
-<pre class="pre codeblock"><code>backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tar
-backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.vars.tgz</code></pre>
+<pre class="pre codeblock"><code>&lt;backup_dest&gt;/backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tar
+&lt;backup_dest&gt;/backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.vars.tgz</code></pre>
 
 <p class="p">where <code class="ph codeph">&lt;vmname&gt;</code> is the name of the host (in the inventory) that was used
 to take the backup, and <code class="ph codeph">&lt;timestamp&gt;</code> is the time at which the backup was
-taken.</p>
+taken. The <code class="ph codeph">.tar</code> contains the backup data while the <code class="ph codeph">.vars.tgz</code>
+file contains metadata regarding the backup.</p>
 
 
+<div class="p">If is possible to override the generated file names by defining the variable
+<strong class="ph b">backup_name</strong> on the command line when running the playbook. In the example below: 
+
+<pre class="pre codeblock"><code># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml -e backup_name=<strong class="ph b">my_swarm_backup</strong></code></pre>
+
+the generated files won't have <code class="ph codeph">vmanme</code> or
+<code class="ph codeph">timestamp</code> appended:
+
+<pre class="pre codeblock"><code>&lt;backup_dest&gt;/my_swarm_backup.tar
+&lt;backup_dest&gt;/my_swarm_backup.vars.tgz</code></pre>
+
+</div>
+
+
+<div class="note warning"><span class="warningtitle">Warning:</span> The playbook stops the Docker daemon on the machine which will be used to
+take the backup. The playbook will verify that enough managers are running in the cluster to
+maintain the quroum. However, you must understand that during a backup, your Docker cluster will not
+survive the failure of an additional manager. For more information,  see the Docker
+documentation at
+https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv</div>
 
 </div>
 
@@ -3698,25 +3718,25 @@ running is supported and that the client software is compatible with the operati
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 13. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5683">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5686">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5689">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5692">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5712">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5715">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5718">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5721">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5683 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5686 ">Server Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5689 "><ol class="ol"><li class="li">VMware ESXi</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5712 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5715 ">Server Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5718 "><ol class="ol"><li class="li">VMware ESXi</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5692 ">vSphere Docker Volume Service on GitHub</td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5721 ">vSphere Docker Volume Service on GitHub</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5683 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5686 ">Client Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5689 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5712 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5715 ">Client Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5718 "><ol class="ol"><li class="li">VM Operating System</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>

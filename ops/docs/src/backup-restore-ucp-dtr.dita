@@ -60,21 +60,39 @@ Docker volumes are defined in stacks, they will be re-created when you restore t
 but their content will be lost). You backup the swarm using the playbook named
 <codeph>backup_swarm.yml</codeph> which is located in the <codeph>playbooks</codeph>
 folder on your Ansible box. The playbook is invoked as follows: </p>
-<codeblock>
-# ansible-playbook -i vm_hosts playbooks/backup_swarm.yml</codeblock>
+<codeblock># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml</codeblock>
 </section>
 
 <p>This playbook creates two archives in the folder specified by the variable
 <codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, these files
 are named using the following pattern:</p>
 
-<codeblock>backup_swarm_&lt;vmname>_&lt;timestamp>.tar
-backup_swarm_&lt;vmname>_&lt;timestamp>.vars.tgz</codeblock>
+<codeblock>&lt;backup_dest>/backup_swarm_&lt;vmname>_&lt;timestamp>.tar
+&lt;backup_dest>/backup_swarm_&lt;vmname>_&lt;timestamp>.vars.tgz</codeblock>
 
 <p>where <codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used
 to take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
-taken.</p>
+taken. The <codeph>.tar</codeph> contains the backup data while the <codeph>.vars.tgz</codeph>
+file contains metadata regarding the backup.</p>
 
+<p>If is possible to override the generated file names by defining the variable
+<b>backup_name</b> on the command line when running the playbook. In the example below: 
 
+<codeblock># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml -e backup_name=<b>my_swarm_backup</b></codeblock>
+
+the generated files won't have <codeph>vmanme</codeph> or
+<codeph>timestamp</codeph> appended:
+
+<codeblock>&lt;backup_dest>/my_swarm_backup.tar
+&lt;backup_dest>/my_swarm_backup.vars.tgz</codeblock>
+
+</p>
+
+<note type="warning">The playbook stops the Docker daemon on the machine which will be used to
+take the backup. The playbook will verify that enough managers are running in the cluster to
+maintain the quroum. However, you must understand that during a backup, your Docker cluster will not
+survive the failure of an additional manager. For more information,  see the Docker
+documentation at
+https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv</note>
 </body>
 </topic>
