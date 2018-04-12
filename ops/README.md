@@ -3610,7 +3610,6 @@ but their content will be lost). You backup the swarm using the playbook named
 folder on your Ansible box. The playbook is invoked as follows: </p>
 
 <pre class="pre codeblock"><code># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml</code></pre>
-</div>
 
 
 <p class="p">This playbook creates an archive in the folder specified by the variable
@@ -3646,6 +3645,63 @@ survive the failure of an additional manager. For more information,  see the Doc
 documentation at
 <a class="xref" href="https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv">https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv</a></div>
 
+  
+  
+</div>
+
+
+<div class="section"><h3 class="title sectiontitle">Backing up the Universal Control Plane (UCP)</h3>
+ 
+  
+<p class="p">When you backup UCP, you save the following data/metadata: </p>
+  
+
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-ucp-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 13. </span>UCP data backed up</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5651">Data</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5654">Description</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Configurations</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">The UCP cluster configurations, as shown by <code class="ph codeph">docker config ls</code>, including Docker EE license and swarm and client CAs	</td>
+</tr>  
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Access control</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">Permissions for teams to swarm resources, including collections, grants, and roles</td>
+</tr>  
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Certificates and keys</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">The certificates, public keys, and private keys that are used for authentication and mutual TLS communication</td>
+</tr>  
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Metrics data</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">Monitoring data gathered by UCP</td>
+</tr>  
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Organizations</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">Your users, teams, and orgs</td>
+</tr>	 	 
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Volumes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">All UCP named volumes, which include all UCP component certs and data</td>
+</tr>	
+</tbody></table>
+</div>
+
+		 	 
+		 	 
+		 	 
+	  
+  
+  
+  
+</div>
+
+  
 </div>
 
 </div>
@@ -3712,7 +3768,7 @@ and vCenter.</p>
 <p class="p"> vSphere Docker Volume service plug-in is part of an open source project by VMware that
 enables running stateful containers by providing persistent Docker volumes leveraging
 existing storage technology from VMware. There are two parts to the plug-in, namely, client
-software and server software (see <a class="xref" href="#lifecycle__vdvs-components-table-conref">Table 13</a>). Every version of the plug-in that is released
+software and server software (see <a class="xref" href="#lifecycle__vdvs-components-table-conref">Table 14</a>). Every version of the plug-in that is released
 includes both pieces of software and it is imperative that the version number installed on
 the client side and server side are the same. </p>
 
@@ -3725,27 +3781,27 @@ running is supported and that the client software is compatible with the operati
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 13. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 14. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5733">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5736">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5739">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5742">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5828">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5831">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5834">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5837">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5733 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5736 ">Server Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5739 "><ol class="ol"><li class="li">VMware ESXi</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5828 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5831 ">Server Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5834 "><ol class="ol"><li class="li">VMware ESXi</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5742 ">vSphere Docker Volume Service on GitHub</td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5837 ">vSphere Docker Volume Service on GitHub</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5733 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5736 ">Client Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5739 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5828 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5831 ">Client Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5834 "><ol class="ol"><li class="li">VM Operating System</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>

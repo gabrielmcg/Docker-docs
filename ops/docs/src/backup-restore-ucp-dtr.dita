@@ -71,7 +71,7 @@ but their content will be lost). You backup the swarm using the playbook named
 <codeph>backup_swarm.yml</codeph> which is located in the <codeph>playbooks</codeph>
 folder on your Ansible box. The playbook is invoked as follows: </p>
 <codeblock># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml</codeblock>
-</section>
+
 
 <p>This playbook creates an archive in the folder specified by the variable
 <codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the file
@@ -102,5 +102,67 @@ maintain the quroum. However, you must understand that during a backup, your Doc
 survive the failure of an additional manager. For more information,  see the Docker
 documentation at
 <xref href="https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv" format="html"/></note>
+  
+  
+</section>
+
+<section>
+<title>Backing up the Universal Control Plane (UCP)</title> 
+  
+<p>When you backup UCP, you save the following data/metadata: </p>  
+
+<table id="backup-ucp-data-meta-table-content" frame="none">
+<title>UCP data backed up</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="2">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry>Data</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Configurations</entry>
+<entry>The UCP cluster configurations, as shown by <codeph>docker config ls</codeph>, including Docker EE license and swarm and client CAs	</entry>
+</row>  
+<row>
+<entry>Access control</entry>
+<entry>Permissions for teams to swarm resources, including collections, grants, and roles</entry>
+</row>  
+<row>
+<entry>Certificates and keys</entry>
+<entry>The certificates, public keys, and private keys that are used for authentication and mutual TLS communication</entry>
+</row>  
+<row>
+<entry>Metrics data</entry>
+<entry>Monitoring data gathered by UCP</entry>
+</row>  
+<row>
+<entry>Organizations</entry>
+<entry>Your users, teams, and orgs</entry>
+</row>	 	 
+<row>
+<entry>Volumes</entry>
+<entry>All UCP named volumes, which include all UCP component certs and data</entry>
+</row>	
+</tbody>
+</tgroup>
+</table>
+		 	 
+		 	 
+		 	 
+	  
+  
+  
+  
+</section>
+  
 </body>
 </topic>
