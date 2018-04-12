@@ -56,6 +56,7 @@
 <li><xref href="backup-restore.dita"/>
 <ul>
 <li><xref href="backup-restore-docker-volumes.dita"/></li>
+<li><xref href="backup-restore-ucp-dtr.dita"/></li>
 </ul>
   
 </li>  

@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="backup-restore-ucp-dtr">
-  <title>Backup and restore UCP and DTR</title>
-  <body>
-    <p>The playbooks provided in this solution implement the backup and restore procedures as they are
-      described in the Docker documentation at <xref href="https://docs.docker.com/enterprise/backup/" format="html"/></p>
-  </body>
+<title>Backup and restore UCP and DTR</title>
+<body>
+
+<section>
+<title>Introduction</title>
+<p>The playbooks provided in this solution implement the backup and restore procedures as they
+are described in the Docker documentation at <xref
+href="https://docs.docker.com/enterprise/backup/" format="html"/></p>
+<ul>
+<li><codeph>playbooks/backup_swarm.yml</codeph> is used to backup the swarm data</li>
+<li><codeph>playbooks/backup_ucp.yml</codeph> is used to backup UCP</li>
+<li><codeph>playbooks/backup_dtr.yml</codeph> is used to backup DTR and the NFS backend
+</li>
+</ul>
+</section>
+
+<section>
+<title>Backup variables</title>
+<p><xref href="backup-restore-ucp-dtr.dita#backup-restore-ucp-dtr/backup-ucp-table-content"/>
+shows the variables related to backing up UCP and DTR.</p>
+<table id="backup-ucp-table-content" frame="none">
+<title>Backup variables</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Variable</entry>
+<entry>File</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>backup_dest</entry>
+<entry><b>group_vars/backup</b></entry>
+<entry>This variable should point to an existing folder on your ansible box where the
+root use has write access. All the backups will be stored in this folder. For
+example, <codeph>/root/backup</codeph></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+
+<section>
+<title>Backing up the Swarm</title>
+<p> When you backup the swarm, your services and stacks definitions ar backed up as well as
+networks definitions. However, Docker volumes or their contents are not backed up. (If
+Docker volumes are defined in stacks, they will be re-created when you restore the stacks,
+but their content will be lost). You backup the swarm using the playbook named
+<codeph>backup_swarm.yml</codeph> which is located in the <codeph>playbooks</codeph>
+folder on your Ansible box. The playbook is invoked as follows: </p>
+<codeblock>
+# ansible-playbook -i vm_hosts playbooks/backup_swarm.yml</codeblock>
+</section>
+
+<p>This playbook creates two archives in the folder specified by the variable
+<codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, these files
+are named using the following pattern:</p>
+
+<codeblock>backup_swarm_&lt;vmname>_&lt;timestamp>.tar
+backup_swarm_&lt;vmname>_&lt;timestamp>.vars.tgz</codeblock>
+
+<p>where <codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used
+to take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
+taken.</p>
+
+
+</body>
 </topic>
