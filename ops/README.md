@@ -3553,8 +3553,9 @@ are described in the Docker documentation at <a class="xref" href="https://docs.
 
 <li class="li"><code class="ph codeph">playbooks/backup_ucp.yml</code> is used to backup UCP</li>
 
-<li class="li"><code class="ph codeph">playbooks/backup_dtr.yml</code> is used to backup DTR and the NFS backend
-</li>
+<li class="li"><code class="ph codeph">playbooks/backup_dtr_meta.yml</code> is used to backup DTR metadata</li>
+
+<li class="li"><code class="ph codeph">playbooks/backup_dtr_images.yml</code> is used to backup DTR images</li>
 
 </ul>
 
@@ -3564,22 +3565,32 @@ are described in the Docker documentation at <a class="xref" href="https://docs.
 <div class="section"><h3 class="title sectiontitle">Backup variables</h3>
 
 <p class="p"><a class="xref" href="#backup-restore-ucp-dtr__backup-ucp-table-content">Table 12</a>
-shows the variables related to backing up UCP and DTR.</p>
+shows the variables related to backing up UCP and DTR. All these variables are 
+defined in the file <strong class="ph b">group_vars/backup</strong>. All the data that is backed up is streamed 
+over an SSH connection to the backup server. Currently, the playbooks only support the use of the
+Ansible box as the backup server.</p>
 
+  
 
 <div class="tablenoborder">
 
 <table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-ucp-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 12. </span>Backup variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5506">Variable</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5509">File</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5512">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5514">Variable</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5517">File</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5520">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5506 ">backup_dest</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5509 "><strong class="ph b">group_vars/backup</strong></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5512 ">This variable should point to an existing folder on your ansible box where the
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5514 ">backup_server</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5517 "><strong class="ph b">group_vars/backup</strong></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5520 ">Currently, the playbooks only support the use of the
+Ansible box as the backup server. </td>
+</tr>  
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5514 ">backup_dest</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5517 "><strong class="ph b">group_vars/backup</strong></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5520 ">This variable should point to an existing folder on your ansible box where the
 root use has write access. All the backups will be stored in this folder. For
 example, <code class="ph codeph">/root/backup</code></td>
 </tr>
@@ -3602,36 +3613,33 @@ folder on your Ansible box. The playbook is invoked as follows: </p>
 </div>
 
 
-<p class="p">This playbook creates two archives in the folder specified by the variable
-<code class="ph codeph">backup_dest</code> in <code class="ph codeph">group_vars/backup</code>. By default, these files
-are named using the following pattern:</p>
+<p class="p">This playbook creates an archive in the folder specified by the variable
+<code class="ph codeph">backup_dest</code> in <code class="ph codeph">group_vars/backup</code>. By default, the file
+is named using the following pattern:</p>
 
 
-<pre class="pre codeblock"><code>&lt;backup_dest&gt;/backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tar
-&lt;backup_dest&gt;/backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.vars.tgz</code></pre>
+<pre class="pre codeblock"><code>&lt;backup_dest&gt;/backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tar</code></pre>
 
 <p class="p">where <code class="ph codeph">&lt;vmname&gt;</code> is the name of the host (in the inventory) that was used
 to take the backup, and <code class="ph codeph">&lt;timestamp&gt;</code> is the time at which the backup was
-taken. The <code class="ph codeph">.tar</code> contains the backup data while the <code class="ph codeph">.vars.tgz</code>
-file contains metadata regarding the backup.</p>
+taken. </p>
 
 
-<p class="p">You can override the generated file names by defining the variable
+<p class="p">You can override the generated file name by defining the variable
 <strong class="ph b">backup_name</strong> on the command line when running the playbook. In the example below: </p>
 
 
 <pre class="pre codeblock"><code># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml -e backup_name=<strong class="ph b">my_swarm_backup</strong></code></pre>
 
-<p class="p">the generated files won't have <code class="ph codeph">&lt;vmname&gt;</code> or
+<p class="p">the generated file won't have <code class="ph codeph">&lt;vmname&gt;</code> or
 <code class="ph codeph">&lt;timestamp&gt;</code> appended:</p>
 
 
-<pre class="pre codeblock"><code>&lt;backup_dest&gt;/my_swarm_backup.tar
-&lt;backup_dest&gt;/my_swarm_backup.vars.tgz</code></pre>
+<pre class="pre codeblock"><code>&lt;backup_dest&gt;/my_swarm_backup.tar</code></pre>
 
 
 
-<div class="note warning"><span class="warningtitle">Warning:</span> The playbook stops the Docker daemon on the machine that will be used to
+<div class="note warning"><span class="warningtitle">Warning:</span> The playbook stops the Docker daemon on the machine that is used to
 take the backup. The playbook will verify that enough managers are running in the cluster to
 maintain the quroum. However, you must understand that during a backup, your Docker cluster will not
 survive the failure of an additional manager. For more information,  see the Docker
@@ -3719,25 +3727,25 @@ running is supported and that the client software is compatible with the operati
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 13. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5718">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5721">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5724">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5727">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5733">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5736">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5739">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5742">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5718 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5721 ">Server Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5724 "><ol class="ol"><li class="li">VMware ESXi</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5733 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5736 ">Server Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5739 "><ol class="ol"><li class="li">VMware ESXi</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5727 ">vSphere Docker Volume Service on GitHub</td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5742 ">vSphere Docker Volume Service on GitHub</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5718 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5721 ">Client Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5724 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5733 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5736 ">Client Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5739 "><ol class="ol"><li class="li">VM Operating System</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
