@@ -3565,12 +3565,11 @@ are described in the Docker documentation at <a class="xref" href="https://docs.
 <div class="section"><h3 class="title sectiontitle">Backup variables</h3>
 
 <p class="p"><a class="xref" href="#backup-restore-ucp-dtr__backup-ucp-table-content">Table 12</a>
-shows the variables related to backing up UCP and DTR. All these variables are 
-defined in the file <strong class="ph b">group_vars/backup</strong>. All the data that is backed up is streamed 
-over an SSH connection to the backup server. Currently, the playbooks only support the use of the
+shows the variables related to backing up UCP and DTR. All these variables are defined in
+the file <strong class="ph b">group_vars/backup</strong>. All the data that is backed up is streamed over an SSH
+connection to the backup server. Currently, the playbooks only support the use of the
 Ansible box as the backup server.</p>
 
-  
 
 <div class="tablenoborder">
 
@@ -3584,9 +3583,9 @@ Ansible box as the backup server.</p>
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5514 ">backup_server</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5517 "><strong class="ph b">group_vars/backup</strong></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5520 ">Currently, the playbooks only support the use of the
-Ansible box as the backup server. </td>
-</tr>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5520 ">Currently, the playbooks only support the use of the Ansible box as the backup
+server. </td>
+</tr>
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5514 ">backup_dest</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5517 "><strong class="ph b">group_vars/backup</strong></td>
@@ -3610,51 +3609,36 @@ but their content will be lost). You backup the swarm using the playbook named
 folder on your Ansible box. The playbook is invoked as follows: </p>
 
 <pre class="pre codeblock"><code># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml</code></pre>
-
-
 <p class="p">This playbook creates an archive in the folder specified by the variable
 <code class="ph codeph">backup_dest</code> in <code class="ph codeph">group_vars/backup</code>. By default, the file
 is named using the following pattern:</p>
 
-
-<pre class="pre codeblock"><code>&lt;backup_dest&gt;/backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tar</code></pre>
-
+<pre class="pre codeblock"><code>&lt;backup_dest&gt;/backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tgz</code></pre>
 <p class="p">where <code class="ph codeph">&lt;vmname&gt;</code> is the name of the host (in the inventory) that was used
 to take the backup, and <code class="ph codeph">&lt;timestamp&gt;</code> is the time at which the backup was
-taken. </p>
+taken.
+</p>
 
-
-<p class="p">You can override the generated file name by defining the variable
-<strong class="ph b">backup_name</strong> on the command line when running the playbook. In the example below: </p>
-
+<p class="p">You can override the generated file name by defining the variable <strong class="ph b">backup_name</strong> on the
+command line when running the playbook. In the example below: </p>
 
 <pre class="pre codeblock"><code># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml -e backup_name=<strong class="ph b">my_swarm_backup</strong></code></pre>
-
 <p class="p">the generated file won't have <code class="ph codeph">&lt;vmname&gt;</code> or
 <code class="ph codeph">&lt;timestamp&gt;</code> appended:</p>
 
+<pre class="pre codeblock"><code>&lt;backup_dest&gt;/my_swarm_backup.tgz</code></pre>
+<div class="note warning"><span class="warningtitle">Warning:</span> The playbook stops the Docker daemon on the machine that is used to take
+the backup. The playbook will verify that enough managers are running in the cluster to
+maintain the quroum. However, you must understand that during a backup, your Docker cluster
+will not survive the failure of an additional manager. For more information, see the Docker
+documentation at <a class="xref" href="https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv">https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv</a></div>
 
-<pre class="pre codeblock"><code>&lt;backup_dest&gt;/my_swarm_backup.tar</code></pre>
-
-
-
-<div class="note warning"><span class="warningtitle">Warning:</span> The playbook stops the Docker daemon on the machine that is used to
-take the backup. The playbook will verify that enough managers are running in the cluster to
-maintain the quroum. However, you must understand that during a backup, your Docker cluster will not
-survive the failure of an additional manager. For more information,  see the Docker
-documentation at
-<a class="xref" href="https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv">https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv</a></div>
-
-  
-  
 </div>
 
 
 <div class="section"><h3 class="title sectiontitle">Backing up the Universal Control Plane (UCP)</h3>
- 
-  
+
 <p class="p">When you backup UCP, you save the following data/metadata: </p>
-  
 
 
 <div class="tablenoborder">
@@ -3667,41 +3651,71 @@ documentation at
 </thead><tbody class="tbody">
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Configurations</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">The UCP cluster configurations, as shown by <code class="ph codeph">docker config ls</code>, including Docker EE license and swarm and client CAs	</td>
-</tr>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">The UCP cluster configurations, as shown by <code class="ph codeph">docker config ls</code>,
+including Docker EE license and swarm and client CAs </td>
+</tr>
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Access control</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">Permissions for teams to swarm resources, including collections, grants, and roles</td>
-</tr>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">Permissions for teams to swarm resources, including collections, grants, and
+roles</td>
+</tr>
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Certificates and keys</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">The certificates, public keys, and private keys that are used for authentication and mutual TLS communication</td>
-</tr>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">The certificates, public keys, and private keys that are used for
+authentication and mutual TLS communication</td>
+</tr>
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Metrics data</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">Monitoring data gathered by UCP</td>
-</tr>  
+</tr>
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Organizations</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">Your users, teams, and orgs</td>
-</tr>	 	 
+</tr>
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5651 ">Volumes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">All UCP named volumes, which include all UCP component certs and data</td>
-</tr>	
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5654 ">All <a class="xref" href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp">UCP named volumes</a>, which include all UCP component certs and
+data</td>
+</tr>
 </tbody></table>
 </div>
 
-		 	 
-		 	 
-		 	 
-	  
+<p class="p">To make a backup of UCP, use <code class="ph codeph">playbook/backup_ucp.yml</code></p>
+
+<pre class="pre codeblock"><code># ansible-playbook -i vm_host playbooks/backup_ucp.yml</code></pre>
+<p class="p">This playbook creates an archive in the folder specified by the variable
+<code class="ph codeph">backup_dest</code> in <code class="ph codeph">group_vars/backup</code>. By default, the file
+is named using the following pattern:</p>
+
+<pre class="pre codeblock"><code>&lt;backup_dest&gt;/backup_ucp_&lt;ucpid&gt;_&lt;vmname&gt;_&lt;timestamp&gt;.tgz</code></pre>
+<p class="p">where <code class="ph codeph">&lt;ucpid&gt;</code> is the ID of the UCP instance,
+<code class="ph codeph">&lt;vmname&gt;</code> is the name of the host (in the inventory) that was used to
+take the backup, and <code class="ph codeph">&lt;timestamp&gt;</code> is the time at which the backup was
+taken.</p>
+
+<p class="p">You can override the generated file name by defining the variable <strong class="ph b">backup_name</strong> on the
+command line when running the playbook. In the example below: </p>
+
+<pre class="pre codeblock"><code># ansible-playbook -i vm_hosts playbooks/backup_ucp.yml -e backup_name=<strong class="ph b">my_ucp_backup</strong></code></pre>
+<p class="p">the generated file won't have <code class="ph codeph">&lt;vmname&gt;</code> or
+<code class="ph codeph">&lt;timestamp&gt;</code> appended:</p>
+
+<pre class="pre codeblock"><code>&lt;backup_dest&gt;/my_ucp_backup.tgz</code></pre>
+<div class="note warning"><span class="warningtitle">Warning:</span> To create a consistent backup, the backup command temporarily stops the
+UCP containers running on the node where the backup is being performed. User resources, such
+as services, containers, and stacks are not affected by this operation and will continue
+to operate as expected. Any long-lasting <code class="ph codeph">docker exec</code>, <code class="ph codeph">docker logs</code>, <code class="ph codeph">docker events</code>, 
+or <code class="ph codeph">docker attach</code> operations on the
+affected manager node will be disconnected.</div>
+
   
+<p class="p">For more information on UCP backup, see the Docker documentation at
+<a class="xref" href="https://docs.docker.com/datacenter/ucp/2.2/guides/admin/backups-and-disaster-recovery/">https://docs.docker.com/datacenter/ucp/2.2/guides/admin/backups-and-disaster-recovery/</a></p>
   
   
 </div>
 
-  
+
 </div>
 
 </div>
@@ -3783,25 +3797,25 @@ running is supported and that the client software is compatible with the operati
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 14. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5828">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5831">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5834">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5837">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5910">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5913">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5916">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5919">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5828 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5831 ">Server Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5834 "><ol class="ol"><li class="li">VMware ESXi</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5910 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5913 ">Server Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5916 "><ol class="ol"><li class="li">VMware ESXi</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5837 ">vSphere Docker Volume Service on GitHub</td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5919 ">vSphere Docker Volume Service on GitHub</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5828 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5831 ">Client Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5834 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5910 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5913 ">Client Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5916 "><ol class="ol"><li class="li">VM Operating System</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>

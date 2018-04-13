@@ -20,11 +20,10 @@ href="https://docs.docker.com/enterprise/backup/" format="html"/></p>
 <section>
 <title>Backup variables</title>
 <p><xref href="backup-restore-ucp-dtr.dita#backup-restore-ucp-dtr/backup-ucp-table-content"/>
-shows the variables related to backing up UCP and DTR. All these variables are 
-defined in the file <b>group_vars/backup</b>. All the data that is backed up is streamed 
-over an SSH connection to the backup server. Currently, the playbooks only support the use of the
+shows the variables related to backing up UCP and DTR. All these variables are defined in
+the file <b>group_vars/backup</b>. All the data that is backed up is streamed over an SSH
+connection to the backup server. Currently, the playbooks only support the use of the
 Ansible box as the backup server.</p>
-  
 <table id="backup-ucp-table-content" frame="none">
 <title>Backup variables</title>
 <!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
@@ -47,9 +46,9 @@ Ansible box as the backup server.</p>
 <row>
 <entry>backup_server</entry>
 <entry><b>group_vars/backup</b></entry>
-<entry>Currently, the playbooks only support the use of the
-Ansible box as the backup server. </entry>
-</row>  
+<entry>Currently, the playbooks only support the use of the Ansible box as the backup
+server. </entry>
+</row>
 <row>
 <entry>backup_dest</entry>
 <entry><b>group_vars/backup</b></entry>
@@ -71,46 +70,33 @@ but their content will be lost). You backup the swarm using the playbook named
 <codeph>backup_swarm.yml</codeph> which is located in the <codeph>playbooks</codeph>
 folder on your Ansible box. The playbook is invoked as follows: </p>
 <codeblock># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml</codeblock>
-
-
 <p>This playbook creates an archive in the folder specified by the variable
 <codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the file
 is named using the following pattern:</p>
-
-<codeblock>&lt;backup_dest>/backup_swarm_&lt;vmname>_&lt;timestamp>.tar</codeblock>
-
+<codeblock>&lt;backup_dest>/backup_swarm_&lt;vmname>_&lt;timestamp>.tgz</codeblock>
 <p>where <codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used
 to take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
-taken. <!--The <codeph>.tar</codeph> contains the backup data while the <codeph>.vars.tgz</codeph>
+taken.
+<!--The <codeph>.tar</codeph> contains the backup data while the <codeph>.vars.tgz</codeph>
 file contains metadata regarding the backup.--></p>
-
-<p>You can override the generated file name by defining the variable
-<b>backup_name</b> on the command line when running the playbook. In the example below: </p>
-
+<p>You can override the generated file name by defining the variable <b>backup_name</b> on the
+command line when running the playbook. In the example below: </p>
 <codeblock># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml -e backup_name=<b>my_swarm_backup</b></codeblock>
-
 <p>the generated file won't have <codeph>&lt;vmname></codeph> or
 <codeph>&lt;timestamp></codeph> appended:</p>
-
-<codeblock>&lt;backup_dest>/my_swarm_backup.tar</codeblock>
-
-
-
-<note type="warning">The playbook stops the Docker daemon on the machine that is used to
-take the backup. The playbook will verify that enough managers are running in the cluster to
-maintain the quroum. However, you must understand that during a backup, your Docker cluster will not
-survive the failure of an additional manager. For more information,  see the Docker
-documentation at
-<xref href="https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv" format="html"/></note>
-  
-  
+<codeblock>&lt;backup_dest>/my_swarm_backup.tgz</codeblock>
+<note type="warning">The playbook stops the Docker daemon on the machine that is used to take
+the backup. The playbook will verify that enough managers are running in the cluster to
+maintain the quroum. However, you must understand that during a backup, your Docker cluster
+will not survive the failure of an additional manager. For more information, see the Docker
+documentation at <xref
+href="https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv"
+format="html"/></note>
 </section>
 
 <section>
-<title>Backing up the Universal Control Plane (UCP)</title> 
-  
-<p>When you backup UCP, you save the following data/metadata: </p>  
-
+<title>Backing up the Universal Control Plane (UCP)</title>
+<p>When you backup UCP, you save the following data/metadata: </p>
 <table id="backup-ucp-data-meta-table-content" frame="none">
 <title>UCP data backed up</title>
 <!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
@@ -130,39 +116,64 @@ documentation at
 <tbody>
 <row>
 <entry>Configurations</entry>
-<entry>The UCP cluster configurations, as shown by <codeph>docker config ls</codeph>, including Docker EE license and swarm and client CAs	</entry>
-</row>  
+<entry>The UCP cluster configurations, as shown by <codeph>docker config ls</codeph>,
+including Docker EE license and swarm and client CAs </entry>
+</row>
 <row>
 <entry>Access control</entry>
-<entry>Permissions for teams to swarm resources, including collections, grants, and roles</entry>
-</row>  
+<entry>Permissions for teams to swarm resources, including collections, grants, and
+roles</entry>
+</row>
 <row>
 <entry>Certificates and keys</entry>
-<entry>The certificates, public keys, and private keys that are used for authentication and mutual TLS communication</entry>
-</row>  
+<entry>The certificates, public keys, and private keys that are used for
+authentication and mutual TLS communication</entry>
+</row>
 <row>
 <entry>Metrics data</entry>
 <entry>Monitoring data gathered by UCP</entry>
-</row>  
+</row>
 <row>
 <entry>Organizations</entry>
 <entry>Your users, teams, and orgs</entry>
-</row>	 	 
+</row>
 <row>
 <entry>Volumes</entry>
-<entry>All UCP named volumes, which include all UCP component certs and data</entry>
-</row>	
+<entry>All <xref
+href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp"
+format="html">UCP named volumes</xref>, which include all UCP component certs and
+data</entry>
+</row>
 </tbody>
 </tgroup>
 </table>
-		 	 
-		 	 
-		 	 
-	  
+<p>To make a backup of UCP, use <codeph>playbook/backup_ucp.yml</codeph></p>
+<codeblock># ansible-playbook -i vm_host playbooks/backup_ucp.yml</codeblock>
+<p>This playbook creates an archive in the folder specified by the variable
+<codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the file
+is named using the following pattern:</p>
+<codeblock>&lt;backup_dest>/backup_ucp_&lt;ucpid>_&lt;vmname>_&lt;timestamp>.tgz</codeblock>
+<p>where <codeph>&lt;ucpid></codeph> is the ID of the UCP instance,
+<codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used to
+take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
+taken.</p>
+<p>You can override the generated file name by defining the variable <b>backup_name</b> on the
+command line when running the playbook. In the example below: </p>
+<codeblock># ansible-playbook -i vm_hosts playbooks/backup_ucp.yml -e backup_name=<b>my_ucp_backup</b></codeblock>
+<p>the generated file won't have <codeph>&lt;vmname></codeph> or
+<codeph>&lt;timestamp></codeph> appended:</p>
+<codeblock>&lt;backup_dest>/my_ucp_backup.tgz</codeblock>
+<note type="warning">To create a consistent backup, the backup command temporarily stops the
+UCP containers running on the node where the backup is being performed. User resources, such
+as services, containers, and stacks are not affected by this operation and will continue
+to operate as expected. Any long-lasting <codeph>docker exec</codeph>, <codeph>docker logs</codeph>, <codeph>docker events</codeph>, 
+or <codeph>docker attach</codeph> operations on the
+affected manager node will be disconnected.</note>
   
-  
+<p>For more information on UCP backup, see the Docker documentation at
+<xref href="https://docs.docker.com/datacenter/ucp/2.2/guides/admin/backups-and-disaster-recovery/" format="html"/></p>  
   
 </section>
-  
+
 </body>
 </topic>
