@@ -5,13 +5,13 @@
 <body>
 <section>
 <title>Introduction</title>
-<p>Lifecycle management with respect to this solution refers to the maintenance and management
-of software and hardware of various components that make up the solution stack. Lifecycle
-management is required to keep the solution up-to-date and ensure that the latest versions
-of the software are running to provide optimal performance, security and fix any existing
-defects within the product.</p>
-<p>In this section, we will cover life cycle management of the different components that are
-used in this solution. </p>
+<p>Lifecycle management with respect to this solution refers to the maintenance and
+management of software and hardware of various components that make up the solution
+stack. Lifecycle management is required to keep the solution up-to-date and ensure
+that the latest versions of the software are running to provide optimal performance,
+security and fix any existing defects within the product.</p>
+<p>In this section, we will cover life cycle management of the different components that
+are used in this solution. </p>
 <p>The lifecycle of the following stacks need to be maintained and managed. </p>
 <ol>
 <li>Monitoring Tools (Splunk or Prometheus and Grafana</li>
@@ -19,43 +19,48 @@ used in this solution. </p>
 <li>Virtual Machine Operating systems</li>
 <li>Synergy environment</li>
 </ol>
-<p>The general practice and recommendation is to follow a bottom-up approach for updating all
-components of the environment and making sure the dependencies are met. In our solution, we
-would start with Synergy and end with the monitoring environment. If all components are not
-being updated at the same time, the same approach can be followed – updating only the
-components that require updates while adhering to the interdependencies of each component
-that is being updated.</p>
+<p>The general practice and recommendation is to follow a bottom-up approach for
+updating all components of the environment and making sure the dependencies are met.
+In our solution, we would start with Synergy and end with the monitoring
+environment. If all components are not being updated at the same time, the same
+approach can be followed – updating only the components that require updates while
+adhering to the interdependencies of each component that is being updated.</p>
 </section>
 <section>
 <title>Synergy environment</title>
 <p>HPE Synergy Composer powered by HPE OneView provides fast, reliable, and simplified
-firmware and driver management across many HPE Synergy components. HPE OneView manages
-firmware to reduce manual interactions and errors, in addition to minimizing downtime.
-Firmware updates of management appliances and shared infrastructure are nondisruptive to the
-production workload. </p>
+firmware and driver management across many HPE Synergy components. HPE OneView
+manages firmware to reduce manual interactions and errors, in addition to minimizing
+downtime. Firmware updates of management appliances and shared infrastructure are
+nondisruptive to the production workload. </p>
 <p>More information is available at <xref
-href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310" format="html">Best
-Practices for HPE Synergy Firmware and Driver Updates</xref></p>
+href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310"
+format="html">Best Practices for HPE Synergy Firmware and Driver
+Updates</xref></p>
 </section>
 <section>
 <title>VMware Components</title>
-<p>The solution in this deployment guide is built on VMware vSphere and leverages VMware ESXi
-and vCenter.</p>
+<p>The solution in this deployment guide is built on VMware vSphere and leverages VMware
+ESXi and vCenter. For more information on upgrading vSphere, see the VMware
+documentation: <xref
+href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.upgrade.doc/GUID-EB29D42E-7174-467C-AB40-DB37236FEAF5.html"
+format="html">Introduction to vSphere Upgrade</xref>.</p>
 </section>
 <section>
 <title>vSphere Docker Volume Service Plug-in</title>
-<p> vSphere Docker Volume service plug-in is part of an open source project by VMware that
-enables running stateful containers by providing persistent Docker volumes leveraging
-existing storage technology from VMware. There are two parts to the plug-in, namely, client
-software and server software (see <xref href="lifecycle.dita#lifecycle/vdvs-components-table-conref" type="table"/>). Every version of the plug-in that is released
-includes both pieces of software and it is imperative that the version number installed on
-the client side and server side are the same. </p>
-
+<p> vSphere Docker Volume service plug-in is part of an open source project by VMware
+that enables running stateful containers by providing persistent Docker volumes
+leveraging existing storage technology from VMware. There are two parts to the
+plug-in, namely, client software and server software (see <xref
+href="lifecycle.dita#lifecycle/vdvs-components-table-conref" type="table"/>).
+Every version of the plug-in that is released includes both pieces of software and
+it is imperative that the version number installed on the client side and server
+side are the same. </p>
 <p>When updating the Docker Volume service plug-in, ensure the ESXi version you are
-running is supported and that the client software is compatible with the operating system.</p>
-
-
-<table id="vdvs-components-table-conref" conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-content">
+running is supported and that the client software is compatible with the operating
+system.</p>
+<table id="vdvs-components-table-conref"
+conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-content">
 <title>vSphere Docker Volume service components</title>
 <tgroup cols="2">
 <tbody>
@@ -65,8 +70,69 @@ running is supported and that the client software is compatible with the operati
 </tbody>
 </tgroup>
 </table>
+</section>
 
 
-</section> 
+<section>
+<title>Docker EE Environment</title>
+<p>Each release of Docker Enterprise Edition contains three technology components – UCP,
+DTR and the Docker Daemon or Engine. It is imperative that the components belonging
+to the same version are deployed or upgraded together – see <xref href="lifecycle.dita#lifecycle/dockeree-components-table-content" type="table"/> </p>
+<p>A banner will be displayed on the UI, as shown in <xref href="lifecycle.dita#lifecycle/docker-update" type="fig"/>, when an update is
+available for UCP or DTR. You can start the upgrade process by clicking on the
+banner.</p>
+    
+<fig id="docker-update">
+<title>Docker update notification</title>
+<image href="media/dockerupdate.png"/>
+</fig>    
+    
+
+
+<table id="dockeree-components-table-content" frame="none">
+<title>Docker EE components</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="4">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<colspec colnum="4" colname="c4" align="left"/>
+<thead>
+<row>
+<entry>Order</entry>
+<entry>Component</entry>
+<entry>Dependency (compatibility)</entry>
+<entry>Download/Documentation</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1.</entry>
+<entry>Docker Daemon/Engine</entry>
+<entry morerows="2" valign="middle"><ol><li>VM Operating System</li><li>vDVS plugin</li><li>Prometheus and Grafana</li></ol></entry>
+<entry morerows="2" valign="middle"><xref href="https://success.docker.com/Policies/Maintenance_Lifecycle" format="html">Docker Lifecycle Maintenance</xref>
+<xref href="https://success.docker.com/Policies/Compatibility_Matrix" format="html">Docker Compatibility Matrix</xref>
+</entry>
+</row>
+<row>
+<entry>2.</entry>
+<entry>Universal Control Plane</entry>
+</row>
+<row>
+<entry>3.</entry>
+<entry>Docker Trusted Registry</entry>
+</row>    
+</tbody>
+</tgroup>
+</table>
+    
+    
+</section>
+
+
 </body>
 </topic>

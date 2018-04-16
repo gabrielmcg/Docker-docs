@@ -28,7 +28,7 @@
 <entry>1.</entry>
 <entry>Server Software</entry>
 <entry><ol><li>VMware ESXi</li><li>Docker EE</li></ol></entry>
-<entry morerows="1" valign="middle">vSphere Docker Volume Service on GitHub</entry>
+<entry morerows="1" valign="middle"><xref href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html" format="html">vSphere Docker Volume Service on GitHub</xref></entry>
 </row>
 <row>
 <entry>2.</entry>
