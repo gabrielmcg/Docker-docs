@@ -25,8 +25,8 @@
 </li>  
 <li><xref href="provisioning.dita"/>
 <ul>
-<li><xref href="esxi-hosts.dita"/></li>
-<li><xref href="deploy-plugin.dita"/></li>
+<!--<li><xref href="esxi-hosts.dita"/></li>-->
+<!--<li><xref href="deploy-plugin.dita"/></li>-->
 <li><xref href="verify-prereqs.dita"/></li>
 <li><xref href="vsphere-ha.dita"/></li>
 <li><xref href="install-vdvs.dita"/></li>
