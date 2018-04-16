@@ -59,9 +59,9 @@
   
  <topicref href="provisioning.dita" navtitle="Provisioning the environment">
     
-    <topicref href="esxi-hosts.dita" navtitle="Creating ESXi hosts"/>
+    <!--<topicref href="esxi-hosts.dita" navtitle="Creating ESXi hosts"/>-->
     
-    <topicref href="deploy-plugin.dita" navtitle="Deploying the storage plugin"/>
+    <!--<topicref href="deploy-plugin.dita" navtitle="Deploying the storage plugin"/>-->
     
     <topicref href="verify-prereqs.dita" navtitle="Verify prerequisites"/>
     
