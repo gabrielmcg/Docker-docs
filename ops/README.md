@@ -3660,14 +3660,14 @@ the locations of your backed up data using the following variables in <code clas
 <div class="body">
 <div class="section"><h2 class="title sectiontitle">Introduction</h2>
 
-<p class="p">Lifecycle management with respect to this solution refers to the maintenance and management
-of software and hardware of various components that make up the solution stack. Lifecycle
-management is required to keep the solution up-to-date and ensure that the latest versions
-of the software are running to provide optimal performance, security and fix any existing
-defects within the product.</p>
+<p class="p">Lifecycle management with respect to this solution refers to the maintenance and
+management of software and hardware of various components that make up the solution
+stack. Lifecycle management is required to keep the solution up-to-date and ensure
+that the latest versions of the software are running to provide optimal performance,
+security and fix any existing defects within the product.</p>
 
-<p class="p">In this section, we will cover life cycle management of the different components that are
-used in this solution. </p>
+<p class="p">In this section, we will cover life cycle management of the different components that
+are used in this solution. </p>
 
 <p class="p">The lifecycle of the following stacks need to be maintained and managed. </p>
 
@@ -3682,74 +3682,74 @@ used in this solution. </p>
 
 </ol>
 
-<p class="p">The general practice and recommendation is to follow a bottom-up approach for updating all
-components of the environment and making sure the dependencies are met. In our solution, we
-would start with Synergy and end with the monitoring environment. If all components are not
-being updated at the same time, the same approach can be followed – updating only the
-components that require updates while adhering to the interdependencies of each component
-that is being updated.</p>
+<p class="p">The general practice and recommendation is to follow a bottom-up approach for
+updating all components of the environment and making sure the dependencies are met.
+In our solution, we would start with Synergy and end with the monitoring
+environment. If all components are not being updated at the same time, the same
+approach can be followed – updating only the components that require updates while
+adhering to the interdependencies of each component that is being updated.</p>
 
 </div>
 
 <div class="section"><h2 class="title sectiontitle">Synergy environment</h2>
 
 <p class="p">HPE Synergy Composer powered by HPE OneView provides fast, reliable, and simplified
-firmware and driver management across many HPE Synergy components. HPE OneView manages
-firmware to reduce manual interactions and errors, in addition to minimizing downtime.
-Firmware updates of management appliances and shared infrastructure are nondisruptive to the
-production workload. </p>
+firmware and driver management across many HPE Synergy components. HPE OneView
+manages firmware to reduce manual interactions and errors, in addition to minimizing
+downtime. Firmware updates of management appliances and shared infrastructure are
+nondisruptive to the production workload. </p>
 
-<p class="p">More information is available at <a class="xref" href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310">Best
-Practices for HPE Synergy Firmware and Driver Updates</a></p>
+<p class="p">More information is available at <a class="xref" href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310">Best Practices for HPE Synergy Firmware and Driver
+Updates</a></p>
 
 </div>
 
 <div class="section"><h2 class="title sectiontitle">VMware Components</h2>
 
-<p class="p">The solution in this deployment guide is built on VMware vSphere and leverages VMware ESXi
-and vCenter.</p>
+<p class="p">The solution in this deployment guide is built on VMware vSphere and leverages VMware
+ESXi and vCenter. For more information on upgrading vSphere, see the VMware
+documentation: <a class="xref" href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.upgrade.doc/GUID-EB29D42E-7174-467C-AB40-DB37236FEAF5.html">Introduction to vSphere Upgrade</a>.</p>
 
 </div>
 
 <div class="section"><h2 class="title sectiontitle">vSphere Docker Volume Service Plug-in</h2>
 
-<p class="p"> vSphere Docker Volume service plug-in is part of an open source project by VMware that
-enables running stateful containers by providing persistent Docker volumes leveraging
-existing storage technology from VMware. There are two parts to the plug-in, namely, client
-software and server software (see <a class="xref" href="#lifecycle__vdvs-components-table-conref">Table 15</a>). Every version of the plug-in that is released
-includes both pieces of software and it is imperative that the version number installed on
-the client side and server side are the same. </p>
-
+<p class="p"> vSphere Docker Volume service plug-in is part of an open source project by VMware
+that enables running stateful containers by providing persistent Docker volumes
+leveraging existing storage technology from VMware. There are two parts to the
+plug-in, namely, client software and server software (see <a class="xref" href="#lifecycle__vdvs-components-table-conref">Table 15</a>).
+Every version of the plug-in that is released includes both pieces of software and
+it is imperative that the version number installed on the client side and server
+side are the same. </p>
 
 <p class="p">When updating the Docker Volume service plug-in, ensure the ESXi version you are
-running is supported and that the client software is compatible with the operating system.</p>
-
-
+running is supported and that the client software is compatible with the operating
+system.</p>
 
 
 <div class="tablenoborder">
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 15. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5943">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5946">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5949">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5952">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5947">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5950">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5953">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5956">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5943 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5946 ">Server Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5949 "><ol class="ol"><li class="li">VMware ESXi</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5947 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5950 ">Server Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5953 "><ol class="ol"><li class="li">VMware ESXi</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5952 ">vSphere Docker Volume Service on GitHub</td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5956 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html">vSphere Docker Volume Service on GitHub</a></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5943 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5946 ">Client Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5949 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5947 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5950 ">Client Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5953 "><ol class="ol"><li class="li">VM Operating System</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
@@ -3757,10 +3757,69 @@ running is supported and that the client software is compatible with the operati
 </tbody></table>
 </div>
 
-
-
 </div>
- 
+
+
+
+<div class="section"><h2 class="title sectiontitle">Docker EE Environment</h2>
+
+<p class="p">Each release of Docker Enterprise Edition contains three technology components – UCP,
+DTR and the Docker Daemon or Engine. It is imperative that the components belonging
+to the same version are deployed or upgraded together – see <a class="xref" href="#lifecycle__dockeree-components-table-content">Table 16</a> </p>
+
+<p class="p">A banner will be displayed on the UI, as shown in <a class="xref" href="#lifecycle__docker-update">Figure 12</a>, when an update is
+available for UCP or DTR. You can start the upgrade process by clicking on the
+banner.</p>
+
+    
+<div class="fig fignone" id="lifecycle__docker-update"><span class="figcap"><span class="fig--title-label">Figure 12. </span>Docker update notification</span>
+
+<img class="image" src="media/dockerupdate.png" />
+</div>
+    
+    
+
+
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__dockeree-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 16. </span>Docker EE components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6051">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6054">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6057">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6060">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6051 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6054 ">Docker Daemon/Engine</td>
+<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6057 "><ol class="ol"><li class="li">VM Operating System</li>
+<li class="li">vDVS plugin</li>
+<li class="li">Prometheus and Grafana</li>
+</ol>
+</td>
+<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6060 "><a class="xref" href="https://success.docker.com/Policies/Maintenance_Lifecycle">Docker Lifecycle Maintenance</a>
+<a class="xref" href="https://success.docker.com/Policies/Compatibility_Matrix">Docker Compatibility Matrix</a>
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6051 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6054 ">Universal Control Plane</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6051 ">3.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6054 ">Docker Trusted Registry</td>
+</tr>    
+</tbody></table>
+</div>
+
+    
+    
+</div>
+
+
+
 </div>
 
 </div>
