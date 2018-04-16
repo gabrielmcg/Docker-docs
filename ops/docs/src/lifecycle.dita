@@ -14,7 +14,7 @@ security and fix any existing defects within the product.</p>
 are used in this solution. </p>
 <p>The lifecycle of the following stacks need to be maintained and managed. </p>
 <ol>
-<li>Monitoring Tools (Splunk or Prometheus and Grafana</li>
+<li>Monitoring Tools (Splunk or Prometheus and Grafana)</li>
 <li>Docker Enterprise Edition Environment</li>
 <li>Virtual Machine Operating systems</li>
 <li>Synergy environment</li>
@@ -70,6 +70,48 @@ conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-c
 </tbody>
 </tgroup>
 </table>
+</section>
+
+
+<section>
+<title>Red Hat Enterprise Linux operating system</title>
+<p>This solution is built using Red Hat Enterprise Linux (see <xref href="lifecycle.dita#lifecycle/rhel-components-table-content" type="table"/>) as the base operating system. When upgrading the operating system on the 
+VMs, first verify that the OS version is compatible to run Docker EE by looking at the Docker OS compatibility metric.</p>
+
+
+<table id="rhel-components-table-content" frame="none">
+<title>Operating system</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="4">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<colspec colnum="4" colname="c4" align="left"/>
+<thead>
+<row>
+<entry>Order</entry>
+<entry>Component</entry>
+<entry>Dependency (compatibility)</entry>
+<entry>Download/Documentation</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1.</entry>
+<entry>Red Hat Enterprise Linux</entry>
+<entry><ul><li>Docker EE</li><li>vDVS client software plugin</li></ul></entry>
+<entry><xref href="https://access.redhat.com/articles/11258" format="html">RHEL</xref></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+    
+    
+
 </section>
 
 
@@ -167,7 +209,7 @@ used is compatible with the version of Docker EE.</p>
 <entry>1.</entry>
 <entry>Prometheus</entry>
 <entry><ol><li>Grafana</li><li>Docker EE</li></ol></entry>
-<entry morerows="1" valign="middle"><ol><li>rometheus Images on Docker Hub</li><li><xref href="http://docs.grafana.org/installation/upgrading/" format="html">Upgrading Grafana</xref></li>
+<entry morerows="1" valign="middle"><ol><li>Prometheus Images on Docker Hub</li><li><xref href="http://docs.grafana.org/installation/upgrading/" format="html">Upgrading Grafana</xref></li>
 </ol></entry>
 </row>    
 <row>
