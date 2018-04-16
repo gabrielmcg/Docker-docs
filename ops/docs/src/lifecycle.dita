@@ -114,8 +114,8 @@ banner.</p>
 <entry>1.</entry>
 <entry>Docker Daemon/Engine</entry>
 <entry morerows="2" valign="middle"><ol><li>VM Operating System</li><li>vDVS plugin</li><li>Prometheus and Grafana</li></ol></entry>
-<entry morerows="2" valign="middle"><xref href="https://success.docker.com/Policies/Maintenance_Lifecycle" format="html">Docker Lifecycle Maintenance</xref>
-<xref href="https://success.docker.com/Policies/Compatibility_Matrix" format="html">Docker Compatibility Matrix</xref>
+<entry morerows="2" valign="middle"><sl><sli><xref href="https://success.docker.com/Policies/Maintenance_Lifecycle" format="html">Docker Lifecycle Maintenance</xref></sli>
+<sli><xref href="https://success.docker.com/Policies/Compatibility_Matrix" format="html">Docker Compatibility Matrix</xref></sli></sl>
 </entry>
 </row>
 <row>
