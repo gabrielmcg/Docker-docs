@@ -3765,20 +3765,17 @@ system.</p>
 
 <p class="p">Each release of Docker Enterprise Edition contains three technology components – UCP,
 DTR and the Docker Daemon or Engine. It is imperative that the components belonging
-to the same version are deployed or upgraded together – see <a class="xref" href="#lifecycle__dockeree-components-table-content">Table 16</a> </p>
+to the same version are deployed or upgraded together – see <a class="xref" href="#lifecycle__dockeree-components-table-content">Table 16</a>
+</p>
 
 <p class="p">A banner will be displayed on the UI, as shown in <a class="xref" href="#lifecycle__docker-update">Figure 12</a>, when an update is
 available for UCP or DTR. You can start the upgrade process by clicking on the
 banner.</p>
 
-    
 <div class="fig fignone" id="lifecycle__docker-update"><span class="figcap"><span class="fig--title-label">Figure 12. </span>Docker update notification</span>
 
 <img class="image" src="media/dockerupdate.png" />
 </div>
-    
-    
-
 
 
 <div class="tablenoborder">
@@ -3794,14 +3791,20 @@ banner.</p>
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6051 ">1.</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6054 ">Docker Daemon/Engine</td>
-<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6057 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6057 "><ol class="ol">
+<li class="li">VM Operating System</li>
+
 <li class="li">vDVS plugin</li>
+
 <li class="li">Prometheus and Grafana</li>
+
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6060 "><ul class="sl simple"><li class="sli"><a class="xref" href="https://success.docker.com/Policies/Maintenance_Lifecycle">Docker Lifecycle Maintenance</a></li>
+<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6060 "><ul class="ul">
+<li class="li"><a class="xref" href="https://success.docker.com/Policies/Maintenance_Lifecycle">Docker Lifecycle Maintenance</a></li>
 
-<li class="sli"><a class="xref" href="https://success.docker.com/Policies/Compatibility_Matrix">Docker Compatibility Matrix</a></li>
+<li class="li"><a class="xref" href="https://success.docker.com/Policies/Compatibility_Matrix">Docker Compatibility Matrix</a></li>
+
 </ul>
 
 </td>
@@ -3813,10 +3816,56 @@ banner.</p>
 <tr class="row">
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6051 ">3.</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6054 ">Docker Trusted Registry</td>
-</tr>    
+</tr>
 </tbody></table>
 </div>
 
+</div>
+
+
+<div class="section"><h2 class="title sectiontitle">Monitoring Tools</h2>
+
+<p class="p">Prometheus and Grafana monitoring tools (see <a class="xref" href="#lifecycle__promgraf-table-content">Table 17</a>) run as containers within the
+Docker environment. Newer versions of these tools can be deployed by pulling the
+Docker images from Docker Hub. Verify that the version of Prometheus that is being
+used is compatible with the version of Docker EE.</p>
+
+    
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__promgraf-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 17. </span>Monitoring tools: Prometheus and Grafana</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6159">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6162">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6165">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6168">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">  
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6159 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6162 ">Prometheus</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6165 "><ol class="ol"><li class="li">Grafana</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6168 "><ol class="ol"><li class="li">rometheus Images on Docker Hub</li>
+<li class="li"><a class="xref" href="http://docs.grafana.org/installation/upgrading/">Upgrading Grafana</a></li>
+
+</ol>
+</td>
+</tr>    
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6159 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6162 ">Grafana</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6165 "><ol class="ol"><li class="li">Prometheus</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>   
+</tr>
+</tbody></table>
+</div>
+    
     
     
 </div>

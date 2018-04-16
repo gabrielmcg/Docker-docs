@@ -77,18 +77,17 @@ conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-c
 <title>Docker EE Environment</title>
 <p>Each release of Docker Enterprise Edition contains three technology components – UCP,
 DTR and the Docker Daemon or Engine. It is imperative that the components belonging
-to the same version are deployed or upgraded together – see <xref href="lifecycle.dita#lifecycle/dockeree-components-table-content" type="table"/> </p>
-<p>A banner will be displayed on the UI, as shown in <xref href="lifecycle.dita#lifecycle/docker-update" type="fig"/>, when an update is
+to the same version are deployed or upgraded together – see <xref
+href="lifecycle.dita#lifecycle/dockeree-components-table-content" type="table"/>
+</p>
+<p>A banner will be displayed on the UI, as shown in <xref
+href="lifecycle.dita#lifecycle/docker-update" type="fig"/>, when an update is
 available for UCP or DTR. You can start the upgrade process by clicking on the
 banner.</p>
-    
 <fig id="docker-update">
 <title>Docker update notification</title>
 <image href="media/dockerupdate.png"/>
-</fig>    
-    
-
-
+</fig>
 <table id="dockeree-components-table-content" frame="none">
 <title>Docker EE components</title>
 <!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
@@ -113,9 +112,19 @@ banner.</p>
 <row>
 <entry>1.</entry>
 <entry>Docker Daemon/Engine</entry>
-<entry morerows="2" valign="middle"><ol><li>VM Operating System</li><li>vDVS plugin</li><li>Prometheus and Grafana</li></ol></entry>
-<entry morerows="2" valign="middle"><sl><sli><xref href="https://success.docker.com/Policies/Maintenance_Lifecycle" format="html">Docker Lifecycle Maintenance</xref></sli>
-<sli><xref href="https://success.docker.com/Policies/Compatibility_Matrix" format="html">Docker Compatibility Matrix</xref></sli></sl>
+<entry morerows="2" valign="middle"><ol>
+<li>VM Operating System</li>
+<li>vDVS plugin</li>
+<li>Prometheus and Grafana</li>
+</ol></entry>
+<entry morerows="2" valign="middle"><ul>
+<li><xref
+href="https://success.docker.com/Policies/Maintenance_Lifecycle"
+format="html">Docker Lifecycle Maintenance</xref></li>
+<li><xref
+href="https://success.docker.com/Policies/Compatibility_Matrix"
+format="html">Docker Compatibility Matrix</xref></li>
+</ul>
 </entry>
 </row>
 <row>
@@ -125,10 +134,50 @@ banner.</p>
 <row>
 <entry>3.</entry>
 <entry>Docker Trusted Registry</entry>
-</row>    
+</row>
 </tbody>
 </tgroup>
 </table>
+</section>
+
+<section>
+<title>Monitoring Tools</title>
+<p>Prometheus and Grafana monitoring tools (see <xref href="lifecycle.dita#lifecycle/promgraf-table-content" type="table"/>) run as containers within the
+Docker environment. Newer versions of these tools can be deployed by pulling the
+Docker images from Docker Hub. Verify that the version of Prometheus that is being
+used is compatible with the version of Docker EE.</p>
+    
+<table id="promgraf-table-content" frame="none">
+<title>Monitoring tools: Prometheus and Grafana</title>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<colspec colnum="4" colname="c4" align="left"/>
+<thead>
+<row>
+<entry>Order</entry>
+<entry>Component</entry>
+<entry>Dependency (compatibility)</entry>
+<entry>Download/Documentation</entry>
+</row>
+</thead>
+<tbody>  
+<row>
+<entry>1.</entry>
+<entry>Prometheus</entry>
+<entry><ol><li>Grafana</li><li>Docker EE</li></ol></entry>
+<entry morerows="1" valign="middle"><ol><li>rometheus Images on Docker Hub</li><li><xref href="http://docs.grafana.org/installation/upgrading/" format="html">Upgrading Grafana</xref></li>
+</ol></entry>
+</row>    
+<row>
+<entry>2.</entry>
+<entry>Grafana</entry>
+<entry><ol><li>Prometheus</li><li>Docker EE</li></ol></entry>   
+</row>
+</tbody>
+</tgroup>
+</table>    
     
     
 </section>
