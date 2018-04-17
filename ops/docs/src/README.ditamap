@@ -53,6 +53,8 @@
     
     <!--<topicref href="monitoring.dita" navtitle="Monitoring">-->
       <topicref href="splunk.dita" navtitle="Monitoring with Splunk"/> 
+    
+      <topicref href="sysdig.dita" navtitle="Monitoring with Sysdig"/> 
     <!--</topicref>-->
     
   </topicref>
