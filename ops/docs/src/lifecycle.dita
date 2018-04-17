@@ -233,7 +233,7 @@ used is compatible with the version of Docker EE.</p>
 
 <p>Docker Enterprise Edition for Windows Server (Docker EE) enables native Docker containers on Windows Server. 
 Windows Server 2016 and later versions are supported. This solution has been tested with Windows worker nodes running Windows Server 2016 
-and with Docker EE 17.06 running UCP 2.2.7 and DTR 2.4.3. </p>
+and with Docker EE 17.06.</p>
 
     
 <note type="note">
