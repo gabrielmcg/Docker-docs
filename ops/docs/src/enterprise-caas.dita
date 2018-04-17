@@ -21,6 +21,7 @@
 <li><xref href="disaster-recovery.dita"/></li>
 <li><xref href="security.dita"/></li>
 <li><xref href="splunk.dita"/></li>  
+<li><xref href="sysdig.dita"/></li>
 </ul>
 </li>  
 <li><xref href="provisioning.dita"/>
@@ -46,6 +47,7 @@
 <li><xref href="docker-config.dita"/></li>   
 <li><xref href="windows-config.dita"/></li> 
 <li><xref href="monitoring-config-splunk.dita"/></li> 
+<li><xref href="monitoring-config-sysdig.dita"/></li>
 <li><xref href="monitoring-config-promgraf.dita"/></li>      
 </ul>
 </li>  

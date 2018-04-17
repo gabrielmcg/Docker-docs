@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="monitoring-config-sysdig">
+<title>Sysdig configuration</title>
+<body>
+<p>The playbook <codeph>playbooks/install_sysdig.yml</codeph> is used to automate the
+configuration of the SaaS setup. By default, the playbook is commented out in
+<codeph>site.yml</codeph> and must be explicitly enabled. An access key variable must be set
+in the <codeph>group_vars/vault</codeph> file as detailed in <xref
+href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-table-content"
+/>.</p>
+
+<table id="sysdig-config-table-content" frame="none">
+<title>Sysdig variables</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Variable</entry>
+<entry>File</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>sysdig_access_key</entry>
+<entry><b>group_vars/vault</b></entry>
+<entry>This is your access key for the Sysdig portal</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+
+<note type="note">You must have outgoing port 6666 open in your firewall, to allow data to flow
+to <codeph>collector.sysdigcloud.com</codeph></note>
+
+<p>Using the Sysdig software as a solution (SaaS) website <xref
+href="https://app.sysdigcloud.com" format="html"/>, you are able to view, analyze and
+inspect various different dashboards.</p>
+
+</body>
+</topic>
