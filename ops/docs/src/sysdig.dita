@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="sysdig">
-  <title>Monitoring with Sysdig</title>
-  <body>
-    <p>Sysdig's approach to Docker monitoring uses transparent instrumentation to see inside containers from the outside, with no need for agents in each container.
-    Metrics from Docker containers, and from your applications runnning inside them, are aggregated in real-time across each service to provide 
-    meaningful monitoring dashboards and alerts for your application.</p>
-  </body>
+<title>Monitoring with Sysdig</title>
+<body>
+<p>Sysdig's approach to Docker monitoring uses transparent instrumentation to see inside
+containers from the outside, with no need for agents in each container. Metrics from Docker
+containers, and from your applications running inside them, are aggregated in real-time across
+each service to provide meaningful monitoring dashboards and alerts for your application.</p>
+<p>
+<b>Sysdig Monitor</b> allows you to analyze response times, application performance metrics,
+container and server utilization metrics, and network metrics. You can build dashboards across
+applications, micro-services, container and networks, and explore metadata from Docker,
+Kubernetes, Mesos and AWS. </p>
+
+<p><b>Sysdig Secure</b> provides security at the orchestrator as well as the container level.
+You create service-aware policies that allow you to take actions (like killing a container) or
+send alerts (to Slack, Splunk, etc) whenever a policy violation occurs. All commands are
+audited to help you identigy anomolous actions, along with taking snapshots of all activities
+pre-and-post a policy violation. </p>
+
+<p> The implementation in this solution uses the Software as a Service (SaaS) version of Sysdig.
+A Sysdig Agent software is deployed on each UCP, DTR and Linux worker node and captured data
+is relayed back to your Sysdig SaaS Cloud portal. </p>
+
+<note type="note">The Sysdig functionality is not turned on by default in this solution - see
+the section on Configuration for more information on how to enable Sysdig.</note>
+</body>
 </topic>
