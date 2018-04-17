@@ -184,6 +184,9 @@ format="html">Docker Compatibility Matrix</xref></li>
 
 <section>
 <title>Monitoring Tools</title>
+    
+<p>To learn more about upgrading Splunk, see the relevant documentation at <xref href="http://docs.splunk.com/Documentation/Splunk/7.0.3/Installation/HowtoupgradeSplunk" format="html">How to upgrade Splunk Enterprise</xref></p>    
+    
 <p>Prometheus and Grafana monitoring tools (see <xref href="lifecycle.dita#lifecycle/promgraf-table-content" type="table"/>) run as containers within the
 Docker environment. Newer versions of these tools can be deployed by pulling the
 Docker images from Docker Hub. Verify that the version of Prometheus that is being
