@@ -3959,6 +3959,11 @@ banner.</p>
     
 <p class="p">To learn more about upgrading Splunk, see the relevant documentation at <a class="xref" href="http://docs.splunk.com/Documentation/Splunk/7.0.3/Installation/HowtoupgradeSplunk">How to upgrade Splunk Enterprise</a></p>
     
+
+<p class="p">The Sysdig agent runs as a container and the latest version is pulled from the Docker hub on first installation. Re-run the<code class="ph codeph">install_sysdig.yml</code> playbook
+to update to the newest version if required.</p>
+
+    
     
 <p class="p">Prometheus and Grafana monitoring tools (see <a class="xref" href="#lifecycle__promgraf-table-content">Table 19</a>) run as containers within the
 Docker environment. Newer versions of these tools can be deployed by pulling the
@@ -3971,29 +3976,29 @@ used is compatible with the version of Docker EE.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__promgraf-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 19. </span>Monitoring tools: Prometheus and Grafana</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6411">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6414">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6417">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6420">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6417">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6420">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6423">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6426">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">  
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6411 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6414 ">Prometheus</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6417 "><ol class="ol"><li class="li">Grafana</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6417 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6420 ">Prometheus</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6423 "><ol class="ol"><li class="li">Grafana</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6420 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6426 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
 <li class="li"><a class="xref" href="http://docs.grafana.org/installation/upgrading/">Upgrading Grafana</a></li>
 
 </ol>
 </td>
 </tr>    
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6411 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6414 ">Grafana</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6417 "><ol class="ol"><li class="li">Prometheus</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6417 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6420 ">Grafana</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6423 "><ol class="ol"><li class="li">Prometheus</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>   
