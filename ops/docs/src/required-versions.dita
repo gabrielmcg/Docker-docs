@@ -8,8 +8,8 @@
 
 <ul>
 <li>Ansible 2.4.2</li>
-<li>Docker EE 17.06 (tested with UCP 2.2.3 and 2.2.4 and DTR 2.4.0)</li>
-<li>Red Hat® Enterprise Linux 7.3 and 7.4</li>
+<li>Docker EE 17.06 (tested with UCP 2.2.7 and DTR 2.4.3)</li>
+<li>Red Hat® Enterprise Linux 7.4</li>
 <li>VMWare ESXi 6.5.0 and vCenter 6.5.0</li>
 </ul>
 

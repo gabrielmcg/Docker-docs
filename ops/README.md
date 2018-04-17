@@ -490,9 +490,9 @@ around Linux® and VMware® technologies.</p>
 <ul class="ul">
 <li class="li">Ansible 2.4.2</li>
 
-<li class="li">Docker EE 17.06 (tested with UCP 2.2.3 and 2.2.4 and DTR 2.4.0)</li>
+<li class="li">Docker EE 17.06 (tested with UCP 2.2.7 and DTR 2.4.3)</li>
 
-<li class="li">Red Hat® Enterprise Linux 7.3 and 7.4</li>
+<li class="li">Red Hat® Enterprise Linux 7.4</li>
 
 <li class="li">VMWare ESXi 6.5.0 and vCenter 6.5.0</li>
 
@@ -3912,6 +3912,37 @@ used is compatible with the version of Docker EE.</p>
 </div>
 
 
+<div class="section"><h2 class="title sectiontitle">Windows operating system and Docker EE</h2>
+
+
+
+<p class="p">Docker Enterprise Edition for Windows Server (Docker EE) enables native Docker containers on Windows Server. 
+Windows Server 2016 and later versions are supported. This solution has been tested with Windows worker nodes running Windows Server 2016 
+and with Docker EE 17.06 running UCP 2.2.7 and DTR 2.4.3. </p>
+
+
+    
+<div class="note note"><span class="notetitle">Note:</span> 
+<p class="p">Docker Universal Control Plane is not currently supported on Windows Server 1709 due to image incompatibility issues. 
+For more information, see the Docker documentation <a class="xref" href="https://docs.docker.com/install/windows/docker-ee/">Install Docker Enterprise Edition for Windows Server</a></p>
+        
+
+<p class="p">This solution recommends that you only run Windows Server 2016 on your Windows worker nodes 
+and that you install any required updates to your Windows nodes in a timely manner.</p>
+
+</div>
+    
+
+  
+<p class="p">For information on how to update Docker EE on Windows Server 2016, see the Docker 
+documentation <a class="xref" href="https://docs.docker.com/install/windows/docker-ee/#update-docker-ee">Update Docker EE</a></p>
+
+
+
+
+</div>
+
+    
 
 </div>
 
