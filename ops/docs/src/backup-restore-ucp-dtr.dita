@@ -390,17 +390,21 @@ shows the file names produced by <codeph>backup.sh</codeph> based on the argumen
 <row>
 <entry>Default</entry>
 <entry><codeph>./backup.sh</codeph></entry>
-<entry>backup_swarm_&lt;vmname>_&lt;timestamp>.tgz, backup_ucp_&lt;vmname>_&lt;timestamp>.tgz, etc and the corresponding <codeph>.vars.tgz</codeph> files</entry>
+<entry>backup_swarm_&lt;vmname>_&lt;timestamp>.tgz, 
+backup_ucp_&lt;vmname>_&lt;timestamp>.tgz, 
+backup_dtr_meta_&lt;vmname>_&lt;timestamp>.tgz,
+backup_dtr_data_&lt;vmname>_&lt;timestamp>.tgz
+and the corresponding <codeph>.vars.tgz</codeph> files</entry>
 </row>
 <row>
 <entry>Custom</entry>
 <entry><codeph>./backup.sh my_backup</codeph></entry>
-<entry>my_backup_swarm.tgz, my_backup_ucp.vars.tgz, etc and the corresponding <codeph>.vars.tgz</codeph> files</entry>
+<entry>my_backup_swarm.tgz, my_backup_ucp.tgz, my_backup_dtr_meta.tgz, my_backup_dtr_data.tgz, and the corresponding <codeph>.vars.tgz</codeph> files</entry>
 </row>
 <row>
 <entry>Date</entry>
 <entry><codeph>./backup.sh $(date '+%Y_%m_%d_%H%M%S')</codeph></entry>
-<entry>&lt;date>_swarm.tgz, &lt;date>_ucp.vars.tgz, etc and the corresponding <codeph>.vars.tgz</codeph> files</entry>
+<entry>&lt;date>_swarm.tgz, &lt;date>_ucp.tgz, &lt;date>_dtr_meta.tgz,  &lt;date>_dtr_data.tgz, and the corresponding <codeph>.vars.tgz</codeph> files</entry>
 </row>    
 </tbody>
 </tgroup>
@@ -412,9 +416,18 @@ shows the file names produced by <codeph>backup.sh</codeph> based on the argumen
 
 
 
+
+
+
+</body>
+<topic id="restore-ucp-dtr">
+<title>Restoring your cluster after a disaster</title>
+    
+    
+<body>
 <section>
-<title>Restoring your cluster after a disaster</title>  
-  
+<title>Introduction</title>
+
 <p>The playbooks address a disaster recovery scenario where you have lost your entire cluster and all the VMs. 
 Other scenarios and how to handle them are described in the Docker documentation including the following scenarios:</p>
     
@@ -425,10 +438,33 @@ Other scenarios and how to handle them are described in the Docker documentation
 <li>You have lost the quorum of your DTR cluster but still have one DTR instance running.</li>    
 </ul>    
   
-  
-  
+</section> 
+
+<section>
+<title>Before you restore</title>    
+ 
+<p><b>Step 1.</b> Retrieve the backup files using your chosen backup solution and save them to a 
+folder on your ansible server. If you have used timestamps in the naming of your backup files, you can 
+use them to determine the chronologial order. If you used the <codeph>backup.sh</codeph> script specifiying a date prefix,
+you can use that to identify the matching set of backup files. You should 
+choose the files in the following reverse chronological order, from the most recent to the oldest file. 
+Make sure you restore both the *.tgz and the *.vars.tgz files.</p> 
+
+<ol>
+<li>DTR images backup</li>
+<li>DTR metadata backup</li>
+<li>UCP backup</li>
+<li>Swarm backup</li>
+</ol>
+    
+
+
+
 </section>
-
-
-</body>
+    
+    
+</body>   
+</topic>    
+    
+    
 </topic>
