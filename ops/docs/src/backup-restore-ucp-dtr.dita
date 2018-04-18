@@ -212,11 +212,6 @@ affected manager node will be disconnected.</note>
 <p>When you backup DTR, you save the following data/metadata: </p>
 <table id="backup-dtr-data-meta-table-content" frame="none">
 <title>UCP data backed up</title>
-<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
-<col/>
-<col/>
-</colgroup>-->
-
 <tgroup cols="3">
 <colspec colnum="1" colname="c1" align="left"/>
 <colspec colnum="2" colname="c2" align="left"/>
@@ -369,7 +364,49 @@ dtr_version="&lt;DTR version of DTR backup>"</codeblock>
 
     
 </section>    
+
+
+<section>
+<title>Backup Utility</title>    
+<p>The script <codeph>backup.sh</codeph> can be used to take a backup of the swarm, UCP DTR and the DTR images in one go. 
+You can pass this script an argument to override the default naming of the backup files. The following table 
+shows the file names produced by <codeph>backup.sh</codeph> based on the argument passed in the command line.    
+</p>
+
+<table id="backup-utility-table-content" frame="none">
+<title>Backup utility</title>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Example</entry>
+<entry>Command line</entry>
+<entry>Generated filenames</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Default</entry>
+<entry><codeph>./backup.sh</codeph></entry>
+<entry>backup_swarm_&lt;vmname>_&lt;timestamp>.tgz, backup_ucp_&lt;vmname>_&lt;timestamp>.tgz, etc and the corresponding <codeph>.vars.tgz</codeph> files</entry>
+</row>
+<row>
+<entry>Custom</entry>
+<entry><codeph>./backup.sh my_backup</codeph></entry>
+<entry>my_backup_swarm.tgz, my_backup_ucp.vars.tgz, etc and the corresponding <codeph>.vars.tgz</codeph> files</entry>
+</row>
+<row>
+<entry>Date</entry>
+<entry><codeph>./backup.sh $(date '+%Y_%m_%d_%H%M%S')</codeph></entry>
+<entry>&lt;date>_swarm.tgz, &lt;date>_ucp.vars.tgz, etc and the corresponding <codeph>.vars.tgz</codeph> files</entry>
+</row>    
+</tbody>
+</tgroup>
+</table>
     
+</section>
 
 
 
@@ -378,8 +415,15 @@ dtr_version="&lt;DTR version of DTR backup>"</codeblock>
 <section>
 <title>Restoring your cluster after a disaster</title>  
   
-<p>The playbooks address a disaster recovery scenario where you have lost all your cluster. Before you can recover, you need to specify 
-the locations of your backed up data using the following variables in <codeph>group_vars/backups</codeph></p>  
+<p>The playbooks address a disaster recovery scenario where you have lost your entire cluster and all the VMs. 
+Other scenarios and how to handle them are described in the Docker documentation including the following scenarios:</p>
+    
+<ul>
+<li>You have lost one UCP instance but your cluster still has the quorum. The easiest way is to recreate the missing UCP instance from scratch.</li> 
+<li>You have lost the quorum in your UCP cluster but there is still one UCP instance running</li> 
+<li>You have lost one instance of DTR but still have a quorum of replicas. The easiest way is to recreate the missing DTR instance from scratch.</li>
+<li>You have lost the quorum of your DTR cluster but still have one DTR instance running.</li>    
+</ul>    
   
   
   

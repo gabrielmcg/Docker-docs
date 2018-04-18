@@ -3802,7 +3802,47 @@ dtr_version="&lt;DTR version of DTR backup&gt;"</code></pre>
     
 </div>
     
+
+
+<div class="section"><h3 class="title sectiontitle">Backup Utility</h3>
     
+<p class="p">The script <code class="ph codeph">backup.sh</code> can be used to take a backup of the swarm, UCP DTR and the DTR images in one go. 
+You can pass this script an argument to override the default naming of the backup files. The following table 
+shows the file names produced by <code class="ph codeph">backup.sh</code> based on the argument passed in the command line.    
+</p>
+
+
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-utility-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 16. </span>Backup utility</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6116">Example</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6119">Command line</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6122">Generated filenames</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6116 ">Default</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6119 "><code class="ph codeph">./backup.sh</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6122 ">backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, backup_ucp_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, etc and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6116 ">Custom</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6119 "><code class="ph codeph">./backup.sh my_backup</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6122 ">my_backup_swarm.tgz, my_backup_ucp.vars.tgz, etc and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6116 ">Date</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6119 "><code class="ph codeph">./backup.sh $(date '+%Y_%m_%d_%H%M%S')</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6122 ">&lt;date&gt;_swarm.tgz, &lt;date&gt;_ucp.vars.tgz, etc and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
+</tr>    
+</tbody></table>
+</div>
+
+    
+</div>
+
 
 
 
@@ -3811,9 +3851,21 @@ dtr_version="&lt;DTR version of DTR backup&gt;"</code></pre>
 <div class="section"><h3 class="title sectiontitle">Restoring your cluster after a disaster</h3>
   
   
-<p class="p">The playbooks address a disaster recovery scenario where you have lost all your cluster. Before you can recover, you need to specify 
-the locations of your backed up data using the following variables in <code class="ph codeph">group_vars/backups</code></p>
-  
+<p class="p">The playbooks address a disaster recovery scenario where you have lost your entire cluster and all the VMs. 
+Other scenarios and how to handle them are described in the Docker documentation including the following scenarios:</p>
+
+    
+<ul class="ul">
+<li class="li">You have lost one UCP instance but your cluster still has the quorum. The easiest way is to recreate the missing UCP instance from scratch.</li>
+ 
+<li class="li">You have lost the quorum in your UCP cluster but there is still one UCP instance running</li>
+ 
+<li class="li">You have lost one instance of DTR but still have a quorum of replicas. The easiest way is to recreate the missing DTR instance from scratch.</li>
+
+<li class="li">You have lost the quorum of your DTR cluster but still have one DTR instance running.</li>
+    
+</ul>
+    
   
   
   
@@ -3888,7 +3940,7 @@ documentation: <a class="xref" href="https://docs.vmware.com/en/VMware-vSphere/6
 <p class="p"> vSphere Docker Volume service plug-in is part of an open source project by VMware
 that enables running stateful containers by providing persistent Docker volumes
 leveraging existing storage technology from VMware. There are two parts to the
-plug-in, namely, client software and server software (see <a class="xref" href="#lifecycle__vdvs-components-table-conref">Table 16</a>).
+plug-in, namely, client software and server software (see <a class="xref" href="#lifecycle__vdvs-components-table-conref">Table 17</a>).
 Every version of the plug-in that is released includes both pieces of software and
 it is imperative that the version number installed on the client side and server
 side are the same. </p>
@@ -3900,27 +3952,27 @@ system.</p>
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 16. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 17. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6205">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6208">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6211">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6214">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6314">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6317">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6320">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6323">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6205 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6208 ">Server Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6211 "><ol class="ol"><li class="li">VMware ESXi</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6314 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6317 ">Server Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6320 "><ol class="ol"><li class="li">VMware ESXi</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6214 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html">vSphere Docker Volume Service on GitHub</a></td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6323 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html">vSphere Docker Volume Service on GitHub</a></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6205 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6208 ">Client Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6211 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6314 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6317 ">Client Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6320 "><ol class="ol"><li class="li">VM Operating System</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
@@ -3934,7 +3986,7 @@ system.</p>
 
 <div class="section"><h2 class="title sectiontitle">Red Hat Enterprise Linux operating system</h2>
 
-<p class="p">This solution is built using Red Hat Enterprise Linux (see <a class="xref" href="#lifecycle__rhel-components-table-content">Table 17</a>) as the base operating system. When upgrading the operating system on the 
+<p class="p">This solution is built using Red Hat Enterprise Linux (see <a class="xref" href="#lifecycle__rhel-components-table-content">Table 18</a>) as the base operating system. When upgrading the operating system on the 
 VMs, first verify that the OS version is compatible to run Docker EE by looking at the Docker OS compatibility metric.</p>
 
 
@@ -3942,22 +3994,22 @@ VMs, first verify that the OS version is compatible to run Docker EE by looking 
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__rhel-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 17. </span>Operating system</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__rhel-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 18. </span>Operating system</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6294">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6297">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6300">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6303">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6403">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6406">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6409">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6412">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6294 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6297 ">Red Hat Enterprise Linux</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6300 "><ul class="ul"><li class="li">Docker EE</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6403 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6406 ">Red Hat Enterprise Linux</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6409 "><ul class="ul"><li class="li">Docker EE</li>
 <li class="li">vDVS client software plugin</li>
 </ul>
 </td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6303 "><a class="xref" href="https://access.redhat.com/articles/11258">RHEL</a></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6412 "><a class="xref" href="https://access.redhat.com/articles/11258">RHEL</a></td>
 </tr>
 </tbody></table>
 </div>
@@ -3973,7 +4025,7 @@ VMs, first verify that the OS version is compatible to run Docker EE by looking 
 
 <p class="p">Each release of Docker Enterprise Edition contains three technology components – UCP,
 DTR and the Docker Daemon or Engine. It is imperative that the components belonging
-to the same version are deployed or upgraded together – see <a class="xref" href="#lifecycle__dockeree-components-table-content">Table 18</a>
+to the same version are deployed or upgraded together – see <a class="xref" href="#lifecycle__dockeree-components-table-content">Table 19</a>
 </p>
 
 <p class="p">A banner will be displayed on the UI, as shown in <a class="xref" href="#lifecycle__docker-update">Figure 13</a>, when an update is
@@ -3988,18 +4040,18 @@ banner.</p>
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__dockeree-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 18. </span>Docker EE components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__dockeree-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 19. </span>Docker EE components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6383">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6386">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6389">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6392">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6492">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6495">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6498">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6501">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6383 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6386 ">Docker Daemon/Engine</td>
-<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6389 "><ol class="ol">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6492 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6495 ">Docker Daemon/Engine</td>
+<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6498 "><ol class="ol">
 <li class="li">VM Operating System</li>
 
 <li class="li">vDVS plugin</li>
@@ -4008,7 +4060,7 @@ banner.</p>
 
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6392 "><ul class="ul">
+<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6501 "><ul class="ul">
 <li class="li"><a class="xref" href="https://success.docker.com/Policies/Maintenance_Lifecycle">Docker Lifecycle Maintenance</a></li>
 
 <li class="li"><a class="xref" href="https://success.docker.com/Policies/Compatibility_Matrix">Docker Compatibility Matrix</a></li>
@@ -4018,12 +4070,12 @@ banner.</p>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6383 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6386 ">Universal Control Plane</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6492 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6495 ">Universal Control Plane</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6383 ">3.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6386 ">Docker Trusted Registry</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6492 ">3.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6495 ">Docker Trusted Registry</td>
 </tr>
 </tbody></table>
 </div>
@@ -4042,7 +4094,7 @@ to update to the newest version if required.</p>
 
     
     
-<p class="p">Prometheus and Grafana monitoring tools (see <a class="xref" href="#lifecycle__promgraf-table-content">Table 19</a>) run as containers within the
+<p class="p">Prometheus and Grafana monitoring tools (see <a class="xref" href="#lifecycle__promgraf-table-content">Table 20</a>) run as containers within the
 Docker environment. Newer versions of these tools can be deployed by pulling the
 Docker images from Docker Hub. Verify that the version of Prometheus that is being
 used is compatible with the version of Docker EE.</p>
@@ -4051,31 +4103,31 @@ used is compatible with the version of Docker EE.</p>
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__promgraf-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 19. </span>Monitoring tools: Prometheus and Grafana</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__promgraf-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 20. </span>Monitoring tools: Prometheus and Grafana</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6502">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6505">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6508">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6511">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6611">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6614">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6617">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6620">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">  
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6502 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6505 ">Prometheus</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6508 "><ol class="ol"><li class="li">Grafana</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6611 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6614 ">Prometheus</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6617 "><ol class="ol"><li class="li">Grafana</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6511 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6620 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
 <li class="li"><a class="xref" href="http://docs.grafana.org/installation/upgrading/">Upgrading Grafana</a></li>
 
 </ol>
 </td>
 </tr>    
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6502 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6505 ">Grafana</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6508 "><ol class="ol"><li class="li">Prometheus</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6611 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6614 ">Grafana</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6617 "><ol class="ol"><li class="li">Prometheus</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>   
