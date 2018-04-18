@@ -18,7 +18,8 @@ href="https://docs.docker.com/enterprise/backup/" format="html"/></p>
   
 <note type="note">It is important that you make copies of the backed up data and that you store the copies in a separate physical location. 
 You must also recognize that the backed up data contains sensitive information such as private keys and so it is important to restrict
-access to the generated files.</note>  
+access to the generated files. However, the playbooks do not backup the sensitive information in your <codeph>group_vars/vault</codeph> file so you should make 
+sure to keep track of the credentials for the UCP Administrator. </note>  
   
 </section>
 
@@ -83,9 +84,11 @@ folder on your Ansible server. The playbook is invoked as follows: </p>
 <p>This playbook creates two archives in the folder specified by the variable
 <codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the file
 is named using the following pattern:</p>
+    
 <codeblock>&lt;backup_dest>/backup_swarm_&lt;vmname>_&lt;timestamp>.tgz
 &lt;backup_dest>/backup_swarm_&lt;vmname>_&lt;timestamp>.vars.tgz
 </codeblock>
+    
 <p>where <codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used
 to take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
 taken. The file with the extension <codeph>.vars.tgz</codeph> contains information 
@@ -96,10 +99,12 @@ command line when running the playbook. In the example below: </p>
 <codeblock># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml -e backup_name=<b>my_swarm_backup</b></codeblock>
 <p>the generated files won't have <codeph>&lt;vmname></codeph> or
 <codeph>&lt;timestamp></codeph> appended:</p>
+    
 <codeblock>&lt;backup_dest>/my_swarm_backup.tgz
 &lt;backup_dest>/my_swarm_backup.vars.tgz
 </codeblock>
-<note type="warning"><b>Online versus offline backups:</b> By default, The playbook performs online backups.
+
+    <note type="warning"><b>Online versus offline backups:</b> By default, The playbook performs online backups.
 You can take offline backups by setting the variable <codeph>swarm_backup_offline</codeph> to <codeph>"true"</codeph>.
 The playbook will then stop the Docker daemon on the machine used to take the backup (a manager/UCP node).
 Before it does so, the playbook will verify that enough managers are running in the cluster to
@@ -136,7 +141,7 @@ including Docker EE license and swarm and client CAs </entry>
 </row>
 <row>
 <entry>Access control</entry>
-<entry>Permissions for teams to swarm resources, including collections, grants, and
+<entry>Permissions for team access to swarm resources, including collections, grants, and
 roles</entry>
 </row>
 <row>
@@ -162,24 +167,35 @@ data</entry>
 </tbody>
 </tgroup>
 </table>
-<p>To make a backup of UCP, use <codeph>playbook/backup_ucp.yml</codeph></p>
+    
+<p>To make a backup of UCP, use <codeph>playbook/backup_ucp.yml</codeph> as follows:</p>
 <codeblock># ansible-playbook -i vm_host playbooks/backup_ucp.yml</codeblock>
-<p>This playbook creates an archive in the folder specified by the variable
-<codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the file
-is named using the following pattern:</p>
-<codeblock>&lt;backup_dest>/backup_ucp_&lt;ucpid>_&lt;vmname>_&lt;timestamp>.tgz</codeblock>
+    
+<p>This playbook creates two archives in the folder specified by the variable
+<codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the files
+are named using the following pattern:</p>
+    
+<codeblock>&lt;backup_dest>/backup_ucp_&lt;ucpid>_&lt;vmname>_&lt;timestamp>.tgz
+&lt;backup_dest>/backup_ucp_&lt;ucpid>_&lt;vmname>_&lt;timestamp>.vars.tgz
+</codeblock>
+    
 <p>where <codeph>&lt;ucpid></codeph> is the ID of the UCP instance,
 <codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used to
 take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
-taken.</p>
+taken. The file with the extension <codeph>.vars.tgz</codeph> contains information regarding the system which was backed up.</p>
+    
 <p>You can override the generated file name by defining the variable <b>backup_name</b> on the
 command line when running the playbook. In the example below: </p>
 <codeblock># ansible-playbook -i vm_hosts playbooks/backup_ucp.yml -e backup_name=<b>my_ucp_backup</b></codeblock>
-<p>the generated file won't have <codeph>&lt;vmname></codeph> or
+<p>the generated files won't have <codeph>&lt;vmname></codeph> or
 <codeph>&lt;timestamp></codeph> appended:</p>
-<codeblock>&lt;backup_dest>/my_ucp_backup.tgz</codeblock>
-<note type="warning">To create a consistent backup, the backup command temporarily stops the
-UCP containers running on the node where the backup is being performed. User resources, such
+    
+<codeblock>&lt;backup_dest>/my_ucp_backup.tgz
+&lt;backup_dest>/my_ucp_backup.vars.tgz
+</codeblock>
+    
+<note type="warning">To create a consistent backup, the backup command <b>temporarily stops the
+UCP containers running on the node where the backup is being performed</b>. User resources, such
 as services, containers, and stacks are not affected by this operation and will continue
 to operate as expected. Any long-lasting <codeph>docker exec</codeph>, <codeph>docker logs</codeph>, <codeph>docker events</codeph>, 
 or <codeph>docker attach</codeph> operations on the
@@ -265,21 +281,28 @@ affected manager node will be disconnected.</note>
 
 <p>To make a backup of DTR metadata, use <codeph>playbook/backup_dtr_metadata.yml</codeph></p>
 <codeblock># ansible-playbook -i vm_host playbooks/backup_dtr_metadata.yml</codeblock>
-<p>This playbook creates an archive in the folder specified by the variable
+<p>This playbook creates two archives in the folder specified by the variable
 <codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the file
 is named using the following pattern:</p>
-<codeblock>&lt;backup_dest>/backup_dtr_meta_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.tgz</codeblock>
+    
+<codeblock>&lt;backup_dest>/backup_dtr_meta_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.tgz
+&lt;backup_dest>/backup_dtr_meta_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.vars.tgz
+</codeblock>
+    
 <p>where <codeph>&lt;replica_id></codeph> is the ID of the DTR replica that was backed up,
 <codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used to
 take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
-taken.</p>
+taken. The file with the extension <codeph>.vars.tgz</codeph> contains information regarding the system that was backed up.</p>
   
 <p>You can override the generated file name by defining the variable <b>backup_name</b> on the
 command line when running the playbook. In the example below: </p>
 <codeblock># ansible-playbook -i vm_hosts playbooks/backup_dtr_metadata.yml -e backup_name=<b>my_dtr_metadata_backup</b></codeblock>
-<p>the generated file won't have <codeph>&lt;vmname></codeph> or
+<p>the generated files won't have <codeph>&lt;vmname></codeph> or
 <codeph>&lt;timestamp></codeph> appended:</p>
-<codeblock>&lt;backup_dest>/my_dtr_metadata_backup.tgz</codeblock>
+    
+<codeblock>&lt;backup_dest>/my_dtr_metadata_backup.tgz
+&lt;backup_dest>/my_dtr_metadata_backup.vars.tgz
+</codeblock>
 
 <p>For more information on DTR backups, see the Docker documentation at 
 <xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/backups-and-disaster-recovery/" format="html"/></p>
@@ -294,10 +317,14 @@ command line when running the playbook. In the example below: </p>
   
 <codeblock># ansible-playbook -i vm_host playbooks/backup_dtr_images.yml</codeblock>  
   
-<p>This playbook creates an archive in the folder specified by the variable
+<p>This playbook creates two archives in the folder specified by the variable
 <codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the file
 is named using the following pattern:</p>
-<codeblock>&lt;backup_dest>/backup_dtr_data_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.tgz</codeblock>
+    
+<codeblock>&lt;backup_dest>/backup_dtr_data_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.tgz
+&lt;backup_dest>/backup_dtr_data_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.vars.tgz
+</codeblock>
+
 <p>where <codeph>&lt;replica_id></codeph> is the ID of the DTR replica that was backed up,
 <codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used to
 take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
@@ -308,13 +335,45 @@ command line when running the playbook. In the example below: </p>
 <codeblock># ansible-playbook -i vm_hosts playbooks/backup_dtr_images.yml -e backup_name=<b>my_dtr_data_backup</b></codeblock>
 <p>the generated file won't have <codeph>&lt;vmname></codeph> or
 <codeph>&lt;timestamp></codeph> appended:</p>
-<codeblock>&lt;backup_dest>/my_dtr_data_backup.tgz</codeblock>  
+    
+<codeblock>&lt;backup_dest>/my_dtr_data_backup.tgz
+&lt;backup_dest>/my_dtr_data_backup.vars.tgz
+</codeblock>  
   
 <p>For more information on DTR backups, see the Docker documentation at 
 <xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/backups-and-disaster-recovery/" format="html"/></p>
   
   
 </section>
+    
+<section>
+<title>Backing up other metadata, including passwords</title>   
+    
+<p>The backup playbooks do not backup the sensitive data in your <codeph>group_vars/vault</codeph> file. 
+The information stored in the <codeph>.vars.tgz</codeph> files includes backups of the following files:</p>
+    
+<ul>
+<li><b>vm_hosts</b>, a copy of the <codeph>vm_hosts</codeph> file at the time the backup was taken</li>
+<li><b>vars</b>, a copy of your <codeph>group_vars/vars</codeph> file at the time the backup was taken</li>
+<li><b>meta.yml</b>, a generated file containing information pertaining to the backup</li>    
+</ul>    
+
+<p>The <b>meta.yml</b> file contains the following information:</p>
+    
+<codeblock>backup_node="&lt;node that took the backup>"
+replica_id="&lt;ID of DTR replica if DTR backup>"
+backup_source=""
+ucp_version="&lt;UCP version if UCP backup>"
+dtr_version="&lt;DTR version of DTR backup>"</codeblock>    
+
+
+    
+</section>    
+    
+
+
+
+
 
 <section>
 <title>Restoring your cluster after a disaster</title>  
