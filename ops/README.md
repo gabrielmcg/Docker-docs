@@ -3995,7 +3995,7 @@ the VMS in your cluster and want to redeploy using data that you backed up earli
 
 
 <ol class="ol">
-<li class="li">Ensure that you have completed all the preliminary steps as outlined in the section <a class="xref" href="#backup-restore-ucp-dtr__before-restore">Before you restore</a> </li>
+<li class="li">Ensure that you have completed all the preliminary steps as outlined in the section <a class="xref" href="#restore-ucp-dtr__before-restore">Before you restore</a> </li>
 
 </ol>
 

@@ -530,7 +530,7 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 the VMS in your cluster and want to redeploy using data that you backed up earlier.</note>
 
 <ol>
-<li>Ensure that you have completed all the preliminary steps as outlined in the section <xref href="backup-restore-ucp-dtr.dita#backup-restore-ucp-dtr/before-restore" type="section">Before you restore</xref> </li>
+<li>Ensure that you have completed all the preliminary steps as outlined in the section <xref href="backup-restore-ucp-dtr.dita#restore-ucp-dtr/before-restore" type="section">Before you restore</xref> </li>
 </ol>
     
 </section>
