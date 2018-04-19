@@ -123,6 +123,10 @@
         
   </topicref>
   
+  <topicref href="running-playbooks.dita" navtitle="Running the playbooks">
+    <topicref href="post-deployment.dita" navtitle="Post-deployment"/>    
+  </topicref>
+  
   <topicref href="backup-restore.dita" navtitle="Backup and restore">
     <topicref href="backup-restore-docker-volumes.dita"/>
     
