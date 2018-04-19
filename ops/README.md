@@ -3365,7 +3365,7 @@ If you'd like to turn off curl's verification of the certificate, use
 	
 <div class="fig fignone" id="d1e4431__manage-computer-certificates"><span class="figcap"><span class="fig--title-label">Figure 8. </span>Manage computer certificates</span>
 
-<img class="image" src="media/manage-computer-certificates.png" />	
+<br /><img class="image" src="media/manage-computer-certificates.png" /><br />	
 </div>
 	
 
@@ -3374,23 +3374,25 @@ If you'd like to turn off curl's verification of the certificate, use
 
 <div class="fig fignone" id="d1e4431__import-ca-pem"><span class="figcap"><span class="fig--title-label">Figure 9. </span>Import the ca.pem</span>
 	
-<img class="image" src="media/import-ca-pem.png" />	
+<br /><img class="image" src="media/import-ca-pem.png" /><br />	
 </div>
 
 	
 <p class="p">It should show up in the list of certificates:</p>
 
+	
 <div class="fig fignone" id="d1e4431__list-certs"><span class="figcap"><span class="fig--title-label">Figure 10. </span>List certificates</span>
 	
-<img class="image" src="media/list-certs.png" />
+<br /><img class="image" src="media/list-certs.png" /><br />
 </div>
 
 
 <p class="p">You may need to restart your browser for this to take effect:</p>
 
+	
 <div class="fig fignone" id="d1e4431__green-https"><span class="figcap"><span class="fig--title-label">Figure 11. </span>Secure HTTPS</span>
 
-<img class="image" src="media/green-https.png" />	
+<br /><img class="image" src="media/green-https.png" /><br />	
 </div>
 
 	

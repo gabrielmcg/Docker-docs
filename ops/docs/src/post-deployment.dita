@@ -85,26 +85,28 @@ If you'd like to turn off curl's verification of the certificate, use
 	
 <fig id="manage-computer-certificates">
 <title>Manage computer certificates</title>
-<image href="media/manage-computer-certificates.png"/>	
+<image href="media/manage-computer-certificates.png" placement="break"/>	
 </fig>	
 
 <p>Import the <codeph>ca.pem</codeph> for UCP into the Trusted Root Certification Authorities</p>
 
 <fig id="import-ca-pem">
 <title>Import the ca.pem</title>	
-<image href="media/import-ca-pem.png"/>	
+<image href="media/import-ca-pem.png"  placement="break"/>	
 </fig>
 	
 <p>It should show up in the list of certificates:</p>
+	
 <fig id="list-certs">
 <title>List certificates</title>	
-<image href="media/list-certs.png"/>
+<image href="media/list-certs.png"  placement="break"/>
 </fig>
 
 <p>You may need to restart your browser for this to take effect:</p>
+	
 <fig id="green-https">
 <title>Secure HTTPS</title>
-<image href="media/green-https.png"/>	
+<image href="media/green-https.png"  placement="break"/>	
 </fig>
 	
 	
