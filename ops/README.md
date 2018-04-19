@@ -4020,6 +4020,57 @@ For more information, see the Docker documentation  <a class="xref" href="https:
 
 
 
+<ol class="ol">
+<li class="li">Ensure that you have completed all the preliminary steps as outlined in the section <a class="xref" href="#restore-ucp-dtr__before-restore">Before you restore</a>. 
+In this scenario, you need the archives for the DTR metadata and the DTR images.
+</li>
+
+<li class="li">Ensure that all the DTR VMs listed in your inventory are destroyed, using the vSphere Web Client to delete them if required. If you want to restore the DTR images you should also delete the NFS VM.</li>
+
+<li class="li">Remove the DTR nodes from the swarm by running the <code class="ph codeph">docker node rm &lt;DTR node&gt;</code> command on a UCP node for each DTR node in your cluster.
+The following example shows the sequence of commands to use to remove the DTR nodes:
+    
+<pre class="pre codeblock"><code>[root@clh2-ansible ops]# docker node ls
+ID                            HOSTNAME                     STATUS              AVAILABILITY        MANAGER STATUS
+aizd270nd7f0bsrxzu0vkdvfe *   clh-ucp02.cloudra.local      Ready               Active              Reachable
+gvf30phdia7xvdyomnms2li8t     clh-dtr01.cloudra.local      Down                Active
+ir4evcb4m84wtohuwmr6wuz11     clh-ucp03.cloudra.local      Ready               Active              Reachable
+mwfsg9bxnk2z5q9cg05tbcs2f     clh-dtr02.cloudra.local      Down                Active
+oqyulx95woy68w6ylcx111ug1     clh-ucp01.cloudra.local      Ready               Active              Leader
+xqeq0sv3dhwgzbis0fx2x3h4a     clh-worker01.cloudra.local   Ready               Active
+zdutvd4ajlh23zohd6xuf0p9e     clh-dtr03.cloudra.local      Down                Active
+</code></pre>    
+
+
+<pre class="pre codeblock"><code>[root@clh2-ansible ops]# docker node rm clh-dtr01.cloudra.local
+clh-dtr01.cloudra.local
+[root@clh2-ansible ops]# docker node rm clh-dtr02.cloudra.local
+clh-dtr02.cloudra.local
+[root@clh2-ansible ops]# docker node rm clh-dtr03.cloudra.local
+clh-dtr03.cloudra.local</code></pre>
+
+<pre class="pre codeblock"><code>[root@clh2-ansible ops]# docker node ls
+ID                            HOSTNAME                     STATUS              AVAILABILITY        MANAGER STATUS
+aizd270nd7f0bsrxzu0vkdvfe     clh-ucp02.cloudra.local      Ready               Active              Reachable
+ir4evcb4m84wtohuwmr6wuz11     clh-ucp03.cloudra.local      Ready               Active              Reachable
+oqyulx95woy68w6ylcx111ug1 *   clh-ucp01.cloudra.local      Ready               Active              Leader
+xqeq0sv3dhwgzbis0fx2x3h4a     clh-worker01.cloudra.local   Ready               Active
+</code></pre>
+</li>
+
+
+<li class="li">Run the restore script:
+<pre class="pre codeblock"><code>./restore_dtr.sh</code></pre>        
+</li>
+
+
+<li class="li">If you are using the image scanning fuctionality in DTR, you will need to re-download the vilnerability database. 
+For more information, see the Docker documentation  <a class="xref" href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license">here</a>.</li>
+
+
+    
+</ol>
+
 
 </div>
  
@@ -4109,25 +4160,25 @@ system.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 17. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6515">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6518">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6521">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6524">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6556">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6559">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6562">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6565">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6515 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6518 ">Server Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6521 "><ol class="ol"><li class="li">VMware ESXi</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6556 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6559 ">Server Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6562 "><ol class="ol"><li class="li">VMware ESXi</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6524 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html">vSphere Docker Volume Service on GitHub</a></td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6565 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html">vSphere Docker Volume Service on GitHub</a></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6515 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6518 ">Client Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6521 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6556 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6559 ">Client Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6562 "><ol class="ol"><li class="li">VM Operating System</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
@@ -4151,20 +4202,20 @@ VMs, first verify that the OS version is compatible to run Docker EE by looking 
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__rhel-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 18. </span>Operating system</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6604">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6607">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6610">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6613">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6645">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6648">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6651">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6654">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6604 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6607 ">Red Hat Enterprise Linux</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6610 "><ul class="ul"><li class="li">Docker EE</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6645 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6648 ">Red Hat Enterprise Linux</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6651 "><ul class="ul"><li class="li">Docker EE</li>
 <li class="li">vDVS client software plugin</li>
 </ul>
 </td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6613 "><a class="xref" href="https://access.redhat.com/articles/11258">RHEL</a></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6654 "><a class="xref" href="https://access.redhat.com/articles/11258">RHEL</a></td>
 </tr>
 </tbody></table>
 </div>
@@ -4197,16 +4248,16 @@ banner.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__dockeree-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 19. </span>Docker EE components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6693">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6696">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6699">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6702">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6734">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6737">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6740">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6743">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6693 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6696 ">Docker Daemon/Engine</td>
-<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6699 "><ol class="ol">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6734 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6737 ">Docker Daemon/Engine</td>
+<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6740 "><ol class="ol">
 <li class="li">VM Operating System</li>
 
 <li class="li">vDVS plugin</li>
@@ -4215,7 +4266,7 @@ banner.</p>
 
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6702 "><ul class="ul">
+<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6743 "><ul class="ul">
 <li class="li"><a class="xref" href="https://success.docker.com/Policies/Maintenance_Lifecycle">Docker Lifecycle Maintenance</a></li>
 
 <li class="li"><a class="xref" href="https://success.docker.com/Policies/Compatibility_Matrix">Docker Compatibility Matrix</a></li>
@@ -4225,12 +4276,12 @@ banner.</p>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6693 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6696 ">Universal Control Plane</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6734 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6737 ">Universal Control Plane</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6693 ">3.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6696 ">Docker Trusted Registry</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6734 ">3.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6737 ">Docker Trusted Registry</td>
 </tr>
 </tbody></table>
 </div>
@@ -4260,29 +4311,29 @@ used is compatible with the version of Docker EE.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__promgraf-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 20. </span>Monitoring tools: Prometheus and Grafana</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6812">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6815">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6818">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6821">Download/Documentation</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6853">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6856">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6859">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6862">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">  
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6812 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6815 ">Prometheus</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6818 "><ol class="ol"><li class="li">Grafana</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6853 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6856 ">Prometheus</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6859 "><ol class="ol"><li class="li">Grafana</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6821 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6862 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
 <li class="li"><a class="xref" href="http://docs.grafana.org/installation/upgrading/">Upgrading Grafana</a></li>
 
 </ol>
 </td>
 </tr>    
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6812 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6815 ">Grafana</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6818 "><ol class="ol"><li class="li">Prometheus</li>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6853 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6856 ">Grafana</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6859 "><ol class="ol"><li class="li">Prometheus</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>   

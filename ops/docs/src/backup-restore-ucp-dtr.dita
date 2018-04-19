@@ -548,6 +548,51 @@ For more information, see the Docker documentation  <xref href="https://docs.doc
 <note>This procedure restores DTR metadata and images and assumes you have lost all the DTR VMs in your cluster.  It will redeploy using the DTR data that you backed up earlier and will also restore the images if the folder exported by the NFS VM is empty.</note>
 
 
+<ol>
+<li>Ensure that you have completed all the preliminary steps as outlined in the section <xref href="backup-restore-ucp-dtr.dita#restore-ucp-dtr/before-restore" type="section">Before you restore</xref>. 
+In this scenario, you need the archives for the DTR metadata and the DTR images.
+</li>
+<li>Ensure that all the DTR VMs listed in your inventory are destroyed, using the vSphere Web Client to delete them if required. If you want to restore the DTR images you should also delete the NFS VM.</li>
+<li>Remove the DTR nodes from the swarm by running the <codeph>docker node rm &lt;DTR node></codeph> command on a UCP node for each DTR node in your cluster.
+The following example shows the sequence of commands to use to remove the DTR nodes:
+    
+<codeblock>[root@clh2-ansible ops]# docker node ls
+ID                            HOSTNAME                     STATUS              AVAILABILITY        MANAGER STATUS
+aizd270nd7f0bsrxzu0vkdvfe *   clh-ucp02.cloudra.local      Ready               Active              Reachable
+gvf30phdia7xvdyomnms2li8t     clh-dtr01.cloudra.local      Down                Active
+ir4evcb4m84wtohuwmr6wuz11     clh-ucp03.cloudra.local      Ready               Active              Reachable
+mwfsg9bxnk2z5q9cg05tbcs2f     clh-dtr02.cloudra.local      Down                Active
+oqyulx95woy68w6ylcx111ug1     clh-ucp01.cloudra.local      Ready               Active              Leader
+xqeq0sv3dhwgzbis0fx2x3h4a     clh-worker01.cloudra.local   Ready               Active
+zdutvd4ajlh23zohd6xuf0p9e     clh-dtr03.cloudra.local      Down                Active
+</codeblock>    
+
+
+<codeblock>[root@clh2-ansible ops]# docker node rm clh-dtr01.cloudra.local
+clh-dtr01.cloudra.local
+[root@clh2-ansible ops]# docker node rm clh-dtr02.cloudra.local
+clh-dtr02.cloudra.local
+[root@clh2-ansible ops]# docker node rm clh-dtr03.cloudra.local
+clh-dtr03.cloudra.local</codeblock>
+
+<codeblock>[root@clh2-ansible ops]# docker node ls
+ID                            HOSTNAME                     STATUS              AVAILABILITY        MANAGER STATUS
+aizd270nd7f0bsrxzu0vkdvfe     clh-ucp02.cloudra.local      Ready               Active              Reachable
+ir4evcb4m84wtohuwmr6wuz11     clh-ucp03.cloudra.local      Ready               Active              Reachable
+oqyulx95woy68w6ylcx111ug1 *   clh-ucp01.cloudra.local      Ready               Active              Leader
+xqeq0sv3dhwgzbis0fx2x3h4a     clh-worker01.cloudra.local   Ready               Active
+</codeblock>
+</li>
+
+<li>Run the restore script:
+<codeblock>./restore_dtr.sh</codeblock>        
+</li>
+
+<li>If you are using the image scanning fuctionality in DTR, you will need to re-download the vilnerability database. 
+For more information, see the Docker documentation  <xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license" format="html">here</xref>.</li>
+
+    
+</ol>
 
 </section> 
  
