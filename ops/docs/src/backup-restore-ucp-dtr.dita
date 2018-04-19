@@ -529,12 +529,28 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 <note type="warning">This procedure is aimed at restoring a cluster after a disaster. It assumes you have lost all 
 the VMS in your cluster and want to redeploy using data that you backed up earlier.</note>
 
+<p></p>
+    
 <ol>
 <li>Ensure that you have completed all the preliminary steps as outlined in the section <xref href="backup-restore-ucp-dtr.dita#restore-ucp-dtr/before-restore" type="section">Before you restore</xref> </li>
+<li>Run the restore playbook
+<codeblock>ansible-playbook -i vm_hosts restore.yml</codeblock>
+</li>
+<li>If you are using the image scanning fuctionality in DTR, you will need to re-download the vilnerability database. 
+For more information, see the Docker documentation  <xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license" format="html">here</xref>.</li>
 </ol>
     
 </section>
-    
+ 
+<section>
+<title>Restore DTR metadata and DTR images</title>    
+
+<note>This procedure restores DTR metadata and images and assumes you have lost all the DTR VMs in your cluster.  It will redeploy using the DTR data that you backed up earlier and will also restore the images if the folder exported by the NFS VM is empty.</note>
+
+
+
+</section> 
+ 
 </body>   
 </topic>    
     
