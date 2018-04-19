@@ -123,6 +123,8 @@
         
   </topicref>
   
+  <topicref href="playbooks-overview.dita" navtitle="Overview of playbooks"/>
+  
   <topicref href="running-playbooks.dita" navtitle="Running the playbooks">
     <topicref href="post-deployment.dita" navtitle="Post-deployment"/>    
   </topicref>
