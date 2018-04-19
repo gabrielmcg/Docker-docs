@@ -440,7 +440,7 @@ Other scenarios and how to handle them are described in the Docker documentation
   
 </section> 
 
-<section>
+<section id="before-restore">
 <title>Before you restore</title>    
  
 <p><b>Step 1.</b> Retrieve the backup files using your chosen backup solution and save them to a 
@@ -521,7 +521,19 @@ credentials for the duration of the restore procedure.</p>
 <p>Your inventory must reflect the enviroment that was present when the backup files were created. 
 You can find a copy of the inventory as it was when the backup was taken in the  <codeph>*.vars.tgz</codeph> files. </p> 
 </section>
+
+
+<section>
+<title>Restore UCP and DTR</title>  
+
+<note type="warning">This procedure is aimed at restoring a cluster after a disaster. It assumes you have lost all 
+the VMS in your cluster and want to redeploy using data that you backed up earlier.</note>
+
+<ol>
+<li>Ensure that you have completed all the preliminary steps as outlined in the section <xref href="backup-restore-ucp-dtr.dita#backup-restore-ucp-dtr/before-restore" type="section">Before you restore</xref> </li>
+</ol>
     
+</section>
     
 </body>   
 </topic>    
