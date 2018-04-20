@@ -3,159 +3,163 @@
 <topic id="playbooks-overview">
 <title>Overview of the playbooks</title>
 <body/>
-	
-<topic id="d1e4140">
+
+<topic id="site">
+<title>site.yml and related playbooks</title>
+<body>  
+    
+<section id="d1e4140">
 <title>site.yml</title>
-<body>
+
 <p>The playbook <codeph>./site.yml</codeph> is the day 0 playbook you use to deploy the solution. It calls the 
 playbooks described later in this section.</p>
-</body>
-</topic>
+
+</section>
 	
-<topic id="d1e4146">
+<section id="d1e4146">
 <title>playbooks/create_vms.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/create_vms.yml</codeph> will create all the necessary Virtual Machines for 
 the environment from the VM Template defined in the <codeph>vm_template</codeph> variable.</p>
-</body>
-</topic>
-	
-<topic id="d1e4159">
-<title>playbooks/config_networking.yml</title>
-<body>
-<p>The playbook <codeph>playbooks/config_networking.yml</codeph> will configure the network settings in all the Virtual Machines.</p>
-</body>
-</topic>	
 
-<topic id="d1e4172">
+</section>
+	
+<section id="d1e4159">
+<title>playbooks/config_networking.yml</title>
+
+<p>The playbook <codeph>playbooks/config_networking.yml</codeph> will configure the network settings in all the Virtual Machines.</p>
+
+</section>	
+
+<section id="d1e4172">
 <title>playbooks/config_subscription.yml</title>
-<body>
+
 <p>The playbook playbooks/config_subscription.yml registers and subscribes all virtual machines to the Red Hat Customer Portal. 
 This is only needed if you pull packages from Red Hat. This playbook is commented out by default but you should uncomment 
 it to make sure each VM registers with the Red Hat portal. It is commented out so that you can test the deployment first 
 without having to unregister all the VMs from the Red Hat Customer Portal between each test. If you are using an 
 internal repository, as described in the section "Create a VM template", you can keep this playbook commented out.</p>
-</body>
-</topic>
+
+</section>
 
 
-<topic id="d1e4178">
+<section id="d1e4178">
 <title>playbooks/install_haproxy.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/install_haproxy.yml</codeph> installs and configures the HAProxy package in the 
 load balancer nodes. HAProxy is the tool chosen to implement load balancing for UCP nodes, DTR nodes and worker nodes.</p>
-</body>
-</topic>
+
+</section>
 	
-<topic id="d1e4184">
+<section id="d1e4184">
 <title>playbooks/config_ntp.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/config_ntp.yml</codeph> configures the <b>chrony</b> client package in all Virtual Machines in 
 order to have a synchronized clock across the environment. It will use the list of servers specified in the 
 <codeph>ntp_servers</codeph> variable in the file <codeph>group_vars/vars</codeph>.</p>
-</body>
-</topic>	
+
+</section>	
 	
-<topic id="d1e4191">
+<section id="d1e4191">
 <title>playbooks/install_docker.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/install_docker.yml</codeph> installs Docker along with all its dependencies.</p>
-</body>
-</topic>	
+
+</section>	
 	
-<topic id="d1e4203">
+<section id="d1e4203">
 <title>playbooks/install_rsyslog.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/install_rsyslog.yml</codeph> installs and configures <b>rsyslog</b> in the logger node 
 and in all Docker nodes. The logger node will be configured to receive all <codeph>syslogs</codeph> on port 514 and 
 the Docker nodes will be configured to send all logs (including container logs) to the logger node.</p>
-</body>
-</topic>	
+
+</section>	
 	
-<topic id="d1e4210">
+<section id="d1e4210">
 <title>playbooks/config_docker_lvs.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/config_docker_lvs.yml</codeph> performs a set of operations on the Docker nodes 
 in order to create a partition on the second disk and carry out the LVM configuration, 
 required for a sound Docker installation.</p>
-</body>
-</topic>	
+
+</section>	
 	
-<topic id="d1e4216">
+<section id="d1e4216">
 <title>playbooks/docker_post_config.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/docker_post_config.yml</codeph> performs a variety of tasks to complete 
 the installation of the Docker environment, including configuration of the HTTP/HTTPS proxies, if any, 
 and installation of the VMware vSphere Storage for Docker volume plugin.</p>
-</body>
-</topic>	
 
-<topic id="d1e4222">
+</section>	
+
+<section id="d1e4222">
 <title>playbooks/install_nfs_server.yml</title>
-<body>
-<p>The playbook <codeph>playbooks/install_nfs_server.yml</codeph> installs and configures an NFS server on the NFS node.</p>
-</body>
-</topic>
 
-<topic id="d1e4229">
+<p>The playbook <codeph>playbooks/install_nfs_server.yml</codeph> installs and configures an NFS server on the NFS node.</p>
+
+</section>
+
+<section id="d1e4229">
 <title>playbooks/install_nfs_clients.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/install_nfs_clients.yml</codeph> installs the required packages on the DTR nodes 
 to be able to mount an NFS share.</p>
-</body>
-</topic>
+
+</section>
 	
-<topic id="d1e4235">
+<section id="d1e4235">
 <title>playbooks/create_main_ucp.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/create_main_ucp.yml</codeph> installs and
 configures the first Docker UCP instance on the target node
 defined by the group <codeph>ucp_main</codeph> in the
 <codeph>vm_hosts</codeph> inventory.</p>
-</body>
-</topic>	
 
-<topic id="d1e4244">
+</section>	
+
+<section id="d1e4244">
 <title>playbooks/scale_ucp.yml</title>
-<body>
+
 <p>The <codeph>playbook playbooks/scale_ucp.yml</codeph> installs and configures
 additional instances of UCP on the target node defined by
 the group <codeph>ucp</codeph> in the
 vm_hosts inventory, except for the node defined in the group
 <codeph>ucp_main</codeph>.</p>
-</body>
-</topic>
+
+</section>
 	
-<topic id="d1e4254">
+<section id="d1e4254">
 <title>playbooks/create_main_dtr.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/create_main_dtr.yml</codeph> installs and
 configures the first Docker DTR instance on the target nodes
 defined by the group <codeph>dtr_main</codeph> in the <codeph>vm_hosts</codeph> inventory.</p>
-</body>
-</topic>	
+
+</section>	
 	
-<topic id="d1e4269">
+<section id="d1e4269">
 <title>playbooks/scale_workers.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/scale_workers.yml</codeph> installs and configures additional workers 
 on the target nodes defined by the group <codeph>worker</codeph> in the <codeph>vm_hosts</codeph> inventory.</p>
-</body>
-</topic>	
+
+</section>	
 	
-<topic id="d1e4282">
+<section id="d1e4282">
 <title>playbooks/install_logspout.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/install_logspout.yml</codeph> installs and configures <b>Logspout</b> on all Docker nodes. 
 Logspout is repsonsible for sending logs produced by containers running on the Docker nodes to the central logger VM.</p>
 	
 <p>By default, this playbook is commented out in <codeph>site.yml</codeph>.</p>
-</body>
-</topic>
 
-<topic id="d1e4295">
+</section>
+
+<section id="d1e4295">
 <title>playbooks/config_monitoring.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/config_monitoring.yml</codeph> configures a monitoring system for the Docker environment 
 based on Grafana, Prometheus, cAdvisor and node-exporter Docker containers.</p>
 
@@ -163,65 +167,138 @@ based on Grafana, Prometheus, cAdvisor and node-exporter Docker containers.</p>
 deploy a Prometheus/Grafana monitoring system, you must explicitly uncomment both this and the <codeph>playbooks/install_logspout.yml</codeph>
 playbook.</p>
 
-</body>
-</topic>
 
-<topic id="monitoring">
+</section>
+
+<section id="monitoring">
 <title>playbooks/monitoring.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/monitoring.yml</codeph> configures Splunk for monitoring. 
 The variable <codeph>monitoring_stack</codeph> in <codeph>group_vars/vars</codeph> is used to specify the type of deployment you want.	
 A value of <codeph>splunk_demo</codeph> will result in this playbook deploying a splunk enterprise instance for demo purposes. A value of <codeph>splunk</codeph>
 is used to configure an external production Splunk deployment.
 </p>
-</body>
-</topic>
 
-<topic id="d1e4288">
+</section>
+
+<section id="d1e4288">
 <title>playbooks/config_scheduler.yml</title>
-<body><p>The playbook <codeph>playbooks/config_scheduler.yml</codeph> configures the scheduler to prevent regular users 
-(i.e. non-admin users) to schedule containers on the Docker nodes running instances of UCP and DTR.</p></body>
-</topic>	
+<p>The playbook <codeph>playbooks/config_scheduler.yml</codeph> configures the scheduler to prevent regular users 
+(i.e. non-admin users) to schedule containers on the Docker nodes running instances of UCP and DTR.</p>
+</section>	
 	
-<topic id="d1e4263">
+<section id="d1e4263">
 <title>playbooks/scale_dtr.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/scale_dtr.yml</codeph> installs and configures additional instances (or replicas) 
 of DTR on the target nodes defined by the group <codeph>dtr</codeph> in the <codeph>vm_hosts</codeph> inventory, 
 with the exception of the node defined in the group <codeph>dtr_main</codeph>.</p>
-</body>
-</topic>	
+
+</section>	
 	
-<topic id="reconfigure_dtr">
+<section id="reconfigure_dtr">
 <title>playbooks/reconfigure_dtr.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/reconfigure_dtr.yml</codeph>	is used to reconfigure DTR with the FQDN of the UCP Load Balancer and also 
 enables image scanning.
 </p>
-</body>
-</topic>
+
+</section>
 	
-<topic id="install_sysdig">
+<section id="install_sysdig">
 <title>playbooks/install_sysdig.yml</title>
-<body>
+
 <p>The playbook <codeph>playbooks/install_sysdig.yml</codeph> is used to configure Sysdig. It opens the required port in the firewall, 
 and installs the latest version of the Sysdig agent image on the nodes. 
 </p>
 <p>By default, this playbook is commented out in <codeph>site.yml</codeph>, so if you want to use the solution to 
 automatically configure Sysdig, you must uncomment this line.</p>
 	
-</body>
-</topic>	
-	
-	
-<!--	
 
-<topic id="d1e4153">
-<title>playbooks/create_windows_vms.yml</title>
+</section>	
+
+</body> 
+</topic>
+
+
+<topic id="windows-playbooks">
+<title>Windows playbooks</title>
+    
 <body>
-<p>The playbook playbooks/create_windows_vms.yml will create all the necessary windows 2016 Virtual Machines for the environment from the windows VM Template defined in the win_vm_template variable.</p>
+    
+<section>
+<title>playbooks/create_windows_vms.yml</title>    
+<p>The playbook <codeph>playbooks/create_windows_vms.yml</codeph> will create all the necessary Windows 2016 VMs 
+for the environment based on the Windows VM Template defined in the <codeph>win_vm_template</codeph> variable.</p>   
+</section> 
+    
+<section>
+<title>playbooks/install_docker_windows.yml</title>  
+<p>The playbook <codeph>playbooks/install_docker_windows.yml</codeph> installs Docker along with all its dependencies 
+on your Windows VMs</p>
+</section>    
+
+<section>
+<title>playbooks/scale_workers_windows.yml</title>
+<p>The playbook <codeph>playbooks/scale_workers_worker.yml</codeph> installs and configures additional Windows workers on the target nodes 
+    defined by the group <codeph>win_worker</codeph> in the <codeph>vm_hosts</codeph> inventory.</p>    
+</section>
+
+</body>    
+</topic>
+    
+
+<topic id="backup-restore-playbooks">
+<title>Backup and restore playbooks</title>
+    
+<body>
+    
+<section>
+    
+<ul>
+<li><codeph>playbooks/backup_swarm.yml</codeph> is used to backup the swarm data</li>
+<li><codeph>playbooks/backup_ucp.yml</codeph> is used to backup UCP</li>
+<li><codeph>playbooks/backup_dtr_meta.yml</codeph> is used to backup DTR metadata</li>
+<li><codeph>playbooks/backup_dtr_images.yml</codeph> is used to backup DTR images</li>
+</ul>
+
+
+</section>
+    
+<section>
+
+<ul>
+<li><codeph>playbooks/restore_dtr_images.yml</codeph> is used to restore DTR images</li>
+<li><codeph>playbooks/restore_dtr_metadata.yml</codeph> is used to restore DTR metadata</li>
+<li><codeph>playbooks/restore_ucp.yml</codeph> is used to restore UCP</li>
+</ul>
+    
+    
+</section>    
+    
+
 </body>
 </topic>
+
+<topic id="convenience-playbooks">
+<title>Convenience playbooks</title>
+    
+<body>
+ 
+<section>
+
+<ul>
+<li><codeph>playbooks/clean_all.yml</codeph> powers off and deletes all VMs in your inventory.</li>    
+    
+</ul>
+    
+</section> 
+</body>        
+</topic>
+    
+<!--	
+
+
 
 <topic id="d1e4165">
 <title>playbooks/distribute_keys.yml</title>
@@ -229,23 +306,5 @@ automatically configure Sysdig, you must uncomment this line.</p>
 <p>The playbook playbooks/distribute_keys.yml distributes public keys between all nodes, to allow each node to password-less log in to every other node. As this is not essential and can be regarded as a security risk (a worker node probably should not be able to log in to a UCP node, for instance), this playbook is commented out in site.yml by default and must be explicitly uncommented to enable this functionality.</p>
 </body>
 </topic>
-
-<topic id="d1e4197">
-<title>playbooks/install_docker_windows.yml</title>
-<body>
-<p>The playbook playbooks/install_docker_windows.yml installs Docker along with all its dependencies on our windows Virtual Machines</p>
-</body>
-</topic>
-
-
-
-<topic id="d1e4276">
-<title>playbooks/scale_workers_windows.yml</title>
-<body>
-<p>The playbook playbooks/scale_workers_worker.yml installs and configures additional windows workers on the target nodes defined by the group win_worker in the vm_hosts inventory.</p>
-</body>
-</topic>
-
-
 -->
 </topic>

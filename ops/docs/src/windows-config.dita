@@ -27,10 +27,10 @@
 used in the following playbooks:  
 </p>
 
-<ul>
-<li>create_windows_vms.yml</li>
-<li>install_docker_window.yml</li>
-<li>scale_workers_windows.yml</li>
+<ul id="windows-playbooks">
+<li>playbooks/create_windows_vms.yml</li>
+<li>playbooks/install_docker_window.yml</li>
+<li>playbooks/scale_workers_windows.yml</li>
 </ul>
 
 
@@ -58,13 +58,13 @@ used in the following playbooks:
 <row>
 <entry>ansible_user</entry>
 <entry>group_vars/win_worker.yml</entry>  
-<entry>Defaults to the Windows user account <codeph>'{{ win_username }}'</codeph> as specified in <codeph>groupr_vars/vars</codeph> </entry>
+<entry>Defaults to the Windows user account <codeph>win_username</codeph> as specified in <codeph>groupr_vars/vars</codeph> </entry>
 </row>   
 
 <row>
 <entry>ansible_password</entry>
 <entry>group_vars/win_worker.yml</entry>  
-<entry>Defaults to the Windows user password <codeph>'{{ win_password }}'</codeph> as specified in <codeph>group_vars/vault</codeph></entry>
+<entry>Defaults to the Windows user password <codeph>win_password</codeph> as specified in <codeph>group_vars/vault</codeph></entry>
 </row>   
 
 <row>
