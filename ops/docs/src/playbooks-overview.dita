@@ -94,9 +94,7 @@ By default, this playbook is commented out in <codeph>site.yml</codeph>.
 
 
 <li><codeph>playbooks/config_monitoring.yml</codeph> configures a monitoring system for the Docker environment 
-based on Grafana, Prometheus, cAdvisor and node-exporter Docker containers.
-
-By default, this playbook is commented out in <codeph>site.yml</codeph>, so if you want to use the solution to automatically
+based on Grafana, Prometheus, cAdvisor and node-exporter Docker containers. By default, this playbook is commented out in <codeph>site.yml</codeph>, so if you want to use the solution to automatically
 deploy a Prometheus/Grafana monitoring system, you must explicitly uncomment both this and the <codeph>playbooks/install_logspout.yml</codeph>
 playbook.
 </li>
@@ -126,9 +124,7 @@ enables image scanning.
 </li>
 
 <li><codeph>playbooks/install_sysdig.yml</codeph> is used to configure Sysdig. It opens the required port in the firewall, 
-and installs the latest version of the Sysdig agent image on the nodes. 
-
-By default, this playbook is commented out in <codeph>site.yml</codeph>, so if you want to use the solution to 
+and installs the latest version of the Sysdig agent image on the nodes. By default, this playbook is commented out in <codeph>site.yml</codeph>, so if you want to use the solution to 
 automatically configure Sysdig, you must uncomment this line.
 </li>	
 </ul>
