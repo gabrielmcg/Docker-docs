@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="splunk-pre-deploy">
-  <title>Before you deploy Splunk</title>
-  <body>
+<title>Before you deploy Splunk</title>
+<body>
 <section>
   
-<p>Select the splunk deployment type you require in the <codeph>group_vars/vars</codeph> by setting the variable
-<codeph>monitoring_stack</codeph> to  <b>splunk</b> to use a standalone Splunk deployment or <b>splunk_demo</b> for the built-in version.
+<p>You should select the Splunk deployment type that you require  by setting the variable 
+<codeph>monitoring_stack</codeph> in the <codeph>group_vars/vars</codeph> file to either <b>splunk</b>,
+ to use a standalone Splunk deployment, or <b>splunk_demo</b> for the built-in version.
 If you omit this variable, or if it has an invalid value, no Splunk deployment will be configured.
 </p>
   
 <p>For both types of deployment, you need to download the Splunk Universal forwarder images/packages from 
 <xref href="https://www.splunk.com/en_us/download/universal-forwarder.html" format="html"/>. 
  Packages are available for 64-bit Linux  and 64-bit Windows 8.1/Windows 10.  
- Download the RPM package for Linux 64-bit (2.6+ kernel Linux distributions) to <codeph>./files/splunk/linux</codeph>.</p>
-  
-<p>If you are deploying Windows nodes, download the MSI package for Windows 64 bit to <codeph>./files/splunk/windows</codeph>.
+ Download the RPM package for Linux 64-bit (2.6+ kernel Linux distributions) to <codeph>./files/splunk/linux</codeph>.
+If you are deploying Windows nodes, download the MSI package for Windows 64 bit to <codeph>./files/splunk/windows</codeph>.
 For a dual Linux/Windows deployment, the images and packages must have same name and version, with their respective extensions, for example:
 </p>  
 
@@ -35,7 +35,7 @@ and set the variable, for example:
 
 
 
-<p>If you have chosen to use a standalone Splunk deployment, you must specify the list of indexers using the variable
+<p>If you are using a standalone Splunk deployment, you must specify the list of indexers using the variable
 <codeph>splunk_architecture_forward_servers</codeph>in <codeph>group_vars/vars</codeph>, for example: </p>
   
 <codeblock>splunk_architecture_forward_servers:
@@ -49,36 +49,23 @@ More information regarding  forwarding using Universal Forwader can be found at
 <xref href="http://docs.splunk.com/Documentation/Forwarder/7.0.2/Forwarder/Configureforwardingwithoutputs.conf" format="html"/>.</p>
 
 <p>If you want to use your own certificates 
-  to secure the communications between the indexers and the universal forwaders, then you should follow these steps:
+  to secure the communications between the indexers and the universal forwaders,
+  see the following section <xref href="splunk-ssl.dita#splunk-ssl">Enabling SSL</xref>.
 </p>
   
-<ol>
-<li>Define the variable <codeph>splunk_ssl</codeph> in <codeph>group_vars/vars</codeph></li>
-<li>Put your root CA certificate and your server certificate files in
-<codeph>/root/Docker-Synergy/ops/files/splunk/linux/SPLUNK_HOME/etc/mycerts</codeph>. For more
-information, refer to the section discussing Splunk and SSL. </li>
-<li>Edit the  <codeph>server.conf</codeph> file in <codeph>/files/splunk/linux/SPLUNK_HOME/etc/system/local</codeph>.
-Uncomment the <codeph>[sslConfig]</codeph> stanza and its content
-<codeblock>
-[sslConfig]
-sslRootCAPath = /opt/splunkforwarder/etc/mycerts/ca.pem
-</codeblock>
-</li>
-</ol>
 
 
-   
   
   
-<p>If required, use the following files to make advanced changes to the Splunk configuration. These files will be copied as-is to the systems running the universal forwarder. </p>
+<p>You can specify advanced Splunk configuration in the following files:  </p>
 <ul>
 <li>files/splunk/linux/SPLUNK_HOME</li>
 <li>files/splunk/linux/DOCKER_TAS</li>
 <li>files/splunk/windows/SPLUNK_HOME</li>
 </ul>
-
+<p>These files will be copied as-is to the systems running the universal forwarder.</p>
 
 
 </section>
-  </body>
+</body>
 </topic>

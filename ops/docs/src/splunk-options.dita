@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="splunk-options">
-  <title>Splunk deployment overview</title>
-  <body>
+<title>Splunk deployment overview</title>
+<body>
 <section>
 
-<p>This solution supports two types on Splunk deployment. Firstly, there is a built-in deployment 
+<p>This solution supports two types of Splunk deployment. Firstly, there is a built-in deployment 
 useful for demos and for getting up to speed with Splunk. Alternatively, the solution can be configuired
 to interact with a standalone production Splunk deployment that you set up independently.  In this case, you must
-explicitly configure the universal forwarders with external "forward servers" (splunk indexers) whereas this
+explicitly configure the universal forwarders with external "forward servers" (splunk indexers), whereas this
 happens automatically with the built-in option.
 
 </p>
 
-<p>You can enable SSL authentication between the universal forwarders and
-the indexers in the standalone deployment, by setting the <codeph>splunk_ssl</codeph> to <codeph>yes</codeph>
-in the file <codeph>group_vars/vars</codeph>. The built-in deployment cannot use SSL and ignores this setting.</p>
+<p>In the standalone deployment, you can enable SSL authentication between the universal forwarders and
+the indexers, by setting the <codeph>splunk_ssl</codeph> variable to <codeph>yes</codeph>
+in the file <codeph>group_vars/vars</codeph>. The built-in deployment does not support SSL and so, in this instance,
+the <codeph>splunk_ssl</codeph> variable is ignored.</p>
 
-<p> 
-
-The Splunk UI can be reached at htttp://&lt;fqdn>:8000,
-where &lt;fqdn> is the FQDN of one of your Linux Docker nodes  - mesh routing is not working on
-Windows at this point in time.</p>
+<p>After the installation is complete, the Splunk UI can be reached at htttp://&lt;fqdn>:8000,
+where &lt;fqdn> is the FQDN of one of your Linux Docker nodes. Mesh routing does not currently work on
+Windows so you must use a Linux node to access the UI.</p>
   
 
 </section>
-  </body>
+</body>
 </topic>
