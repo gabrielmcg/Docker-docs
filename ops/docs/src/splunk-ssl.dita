@@ -126,28 +126,33 @@ splunk_architecture_forward_servers:
 <section>
 <title>Hybrid environment Linux/ Windows</title>
 <p>Currently, you cannot deploy your own certificates for use by the Universal Forwarders
-deployed on Windows machines. If you want to have your linux machines use SSL proceed as
-indicated below</p>
-<ol>
-<li>Comment out the <codeph>splunk_architecture_forward_servers</codeph> (and its values)
-from group_vars/vars
+deployed on Windows machines. If you want to have your Linux machines in a hybrid deployment to use SSL proceed as
+follows.</p>
+    
+    
+<p>Comment out the <codeph>splunk_architecture_forward_servers</codeph> (and its values)
+from <codeph>group_vars/vars</codeph></p>
 <codeblock>monitoring_stack: splunk
 splunk_ssl: yes
 #splunk_architecture_forward_servers:
 #  - clh2-ansible.cloudra.local:9998</codeblock>
-</li>
-<li>create a file named vms.yml in the folder group_vars and specify the list of forward
-servers to use by the linux servers. This list is typically the same as the one used for
-windows servers but specifies a TCP port that enables SSL.
+
+<p>Create a file named <codeph>vms.yml</codeph> in the folder <codeph>group_vars</codeph> and specify the list of forward
+servers to use by the Linux servers. This list is typically the same as the one used for
+Windows servers but specifies a TCP port that enables SSL.</p>
+    
 <codeblock>splunk_architecture_forward_servers:
 - clh2-ansible.cloudra.local:9998</codeblock>
-</li>
-<li>edit the group_vars/win_worker.yml file and specify the list of forward servers to use by the windows servers.This list is typically the same as the one used for linux servers  but specifies a TCP port that does not enable SSL.
+
+    
+<p>Edit the <codeph>group_vars/win_worker.yml</codeph> file and specify the list of forward servers to use by the Windows servers.
+ This list is typically the same as the one used for Linux servers  but specifies a TCP port that does not enable SSL.
+ 
 <codeblock>splunk_architecture_forward_servers:
 - clh2-ansible.cloudra.local:9997</codeblock>
-</li>
+</p>
 
-</ol>
+
 </section>
 
 </body>
