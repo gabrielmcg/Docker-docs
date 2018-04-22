@@ -6,7 +6,9 @@
 <section>
   
 <p>Select the splunk deployment type you require in the <codeph>group_vars/vars</codeph> by setting the variable
-<codeph>monitoring_stack</codeph> to  <b>splunk</b> to use a standalone Splunk deployment or <b>splunk_demo</b> for the built-in version.</p>
+<codeph>monitoring_stack</codeph> to  <b>splunk</b> to use a standalone Splunk deployment or <b>splunk_demo</b> for the built-in version.
+If you omit this variable, or if it has an invalid value, no Splunk deployment will be configured.
+</p>
   
 <p>For both types of deployment, you need to download the Splunk Universal forwarder images/packages from 
 <xref href="https://www.splunk.com/en_us/download/universal-forwarder.html" format="html"/>. 
@@ -24,12 +26,11 @@ For a dual Linux/Windows deployment, the images and packages must have same name
 
 <p>You need to set the variable <codeph>splunk_architecture_universal_forwarder_package</codeph> to
 the name you selected for the package(s), not including the file extension. Depending on the Splunk deployment you have chosen,
-edit the file <codeph>templates\monitoring\<b>splunk</b>\vars.yml</codeph> or the file <codeph>templates\monitoring\<b>splunk_demo</b>\vars.yml</codeph>
+edit the file <codeph>templates/monitoring/<b>splunk</b>/vars.yml</codeph> or the file <codeph>templates/monitoring/<b>splunk_demo</b>/vars.yml</codeph>
 and set the variable, for example:   
 </p>
   
-<codeblock>
-splunk_architecture_universal_forwarder_package: 'splunkforwarder-7.0.2'
+<codeblock>splunk_architecture_universal_forwarder_package: 'splunkforwarder-7.0.2'
 </codeblock>  
 
 
@@ -37,12 +38,16 @@ splunk_architecture_universal_forwarder_package: 'splunkforwarder-7.0.2'
 <p>If you have chosen to use a standalone Splunk deployment, you must specify the list of indexers using the variable
 <codeph>splunk_architecture_forward_servers</codeph>in <codeph>group_vars/vars</codeph>, for example: </p>
   
-<codeblock>
-splunk_architecture_forward_servers:
+<codeblock>splunk_architecture_forward_servers:
 - splunk-indexer1.cloudra.local:9997
 - splunk-indexer2.cloudra.local:9997
 </codeblock>  
-  
+ 
+<p>By default, the indexers are configured in a single load balancing group. This can be
+changed by editing the file <codeph>outputs.conf.j2</codeph> in the folder <codeph>template/monitoring/splunk/</codeph>.
+More information regarding  forwarding using Universal Forwader can be found at
+<xref href="http://docs.splunk.com/Documentation/Forwarder/7.0.2/Forwarder/Configureforwardingwithoutputs.conf" format="html"/>.</p>
+
 <p>If you want to use your own certificates 
   to secure the communications between the indexers and the universal forwaders, then you should follow these steps:
 </p>
