@@ -97,7 +97,7 @@ copy the root CA certificate to <codeph>ca.pem</codeph></p>
 <p>Copy <codeph>ca.pem</codeph> and <codeph>forwarder.pem</codeph> to <codeph>files/splunk/linux/SPLUNK_HOME/etc/mycerts/</codeph>
 (overwriting any existing files)</p>
     
-<p>Edit the file server.conf under files/splunk/linux/SPLUNK_HOME/etc/system/local and
+<p>Edit the file <codeph>server.conf</codeph> under <codeph>files/splunk/linux/SPLUNK_HOME/etc/system/local</codeph> and
 uncomment the last two lines as suggested in the file itself. Your file should look like
 this:
 </p>
