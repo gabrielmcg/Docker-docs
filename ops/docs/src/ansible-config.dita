@@ -3,7 +3,7 @@
 <topic id="ansible-config">
 <title>Prepare your Ansible configuration</title>
 <body>
-<p>On the Ansible node, retrieve the latest version of the playbooks using git.</p>
+<p>On the Ansible node, retrieve the latest version of the playbooks using Git.</p>
 
 <codeblock># git clone &lt;repository&gt;</codeblock>
 
@@ -22,13 +22,18 @@
 
 
 <p>You now need to prepare the configuration to match your own environment, prior to
-deploying Docker EE and the rest of the nodes. To do so, you will need to edit and
-modify three different files:</p>
+deploying Docker EE and the rest of the nodes. To do so, you will need to create or
+modify a number of files including:</p>
 <ul>
+<li><codeph>site.yml</codeph> (the main entry point for the playbooks)</li>   
 <li><codeph>vm_hosts</codeph> (the inventory file)</li>
+</ul>
+
+<p> and also: </p>
+<ul>   
 <li><codeph>group_vars/vars</codeph> (the group variables file)</li>
 <li><codeph>group_vars/vault</codeph> (the encrypted group variable file)</li>
-<li><codeph>group_vars/win_worker.yml</codeph> (the encrypted group windows remote
+<li><codeph>group_vars/win_worker.yml</codeph> (the windows remote
 management variable file)</li>
 </ul>
 

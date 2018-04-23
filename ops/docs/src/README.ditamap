@@ -87,7 +87,7 @@
 
     <topicref href="edit-inventory.dita" navtitle="Editing the inventory"/>
 
-    <topicref href="edit-vault.dita" navtitle="Editing the vault"/>
+
 
   </topicref>
 
@@ -121,6 +121,7 @@
     <topicref href="monitoring-config-promgraf.dita" navtitle="Prometheus and Grafana configuration"/>
     <!--</topicref>-->
 
+    <topicref href="edit-vault.dita" navtitle="Protecting sensitive information"/>
   </topicref>
 
 

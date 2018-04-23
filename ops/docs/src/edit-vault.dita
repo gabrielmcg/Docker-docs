@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="edit-vault">
-<title>Editing the vault</title>
+<title>Protecting sensitive information</title>
 <body>
-<p>Once your group variables file is ready, the next step is to create a vault file to match
-your environment. The vault file is essentially the same thing than the group variables
-but it will contain all sensitive variables and will be encrypted.</p>
-<p>There is a sample vault file named <codeph>group_vars/vault.sample</codeph> that you can
-use as a model for your vault file. To create a vault, you create a new file
+<p>A vault file is used to protect any sensitive variables that should not appear in clear text in your
+<codeph>group_vars/vars</codeph> file. The vault file will be encrypted and will require a password to be entered before
+it can be read or updated.</p>
+    
+<p>A sample vault file is provided named <codeph>group_vars/vault.sample</codeph> that you can
+use as a model for your vault file. To create a vault, you create a new file called
 <codeph>group_vars/vault</codeph> and add entries similar to:</p>
 
 <codeblock>---
-vcenter_password: 'xxx' 
-docker_ee_url: 'yoururl'
-vm_password: 'xxx'
-ucp_password: 'xxx'
-rhn_orgid: 'Red Hat Organization ID'
-rhn_key: 'Red Hat Activation Key'</codeblock>
+docker_ee_url: 'your_url_here'
+vcenter_password: 'xxxx'
+vm_password: 'xxxx'
+ucp_password: 'zzzz'
+win_password: 'yourpass'
+sysdig_access_key: 'enter_sysdig_access_key'
+rhn_orgid: "YourOrgId"
+rhn_key: "YourActivationKey"</codeblock>
 
 <p><codeph>rhn_orgid</codeph> and <codeph>rhn_key</codeph> are the credentials needed to
 subscribe the virtual machines with Red Hat Customer Portal. For more info regarding
 activation keys see the following URL: <xref format="html" scope="external"
 href="https://access.redhat.com/articles/1378093"
 >https://access.redhat.com/articles/1378093</xref></p>
+    
 <p>To encrypt the vault you need to run the following command:</p>
 
 <codeblock># ansible-vault encrypt group_vars/vault</codeblock>
@@ -39,8 +43,7 @@ created, take the following precautions to avoid illegitimate access to this fil
 <li> Change the permissions so only <codeph>root</codeph> can read it using <codeph>#
 chmod 600 .vault_pass</codeph>
 </li>
-<li> Add the file to your <codeph>.gitignore</codeph> file if you're pushing the set of
-playbooks to a git repository. </li>
+<li> Add the file to your <codeph>.gitignore</codeph> file if you are using a Git repository to manage your playbooks. </li>
 </ol>
 <p/>
 </body>

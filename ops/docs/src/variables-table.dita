@@ -11,7 +11,7 @@
 <colspec colnum="1" colname="c1" align="left"/>
 <colspec colnum="2" colname="c2" align="left"/>
 <colspec colnum="3" colname="c3" align="left"/>
-<thead >
+<thead>
 <row>
 <entry>Variable</entry>
 <entry>Scope</entry>

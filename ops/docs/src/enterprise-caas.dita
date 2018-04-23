@@ -39,28 +39,35 @@
 <li><xref href="finalize-template.dita"/></li>
 <li><xref href="ansible-config.dita"/></li>
 <li><xref href="edit-inventory.dita"/></li>  
+
+ 
+
+</ul>
+</li>
 <li><xref href="edit-group-var.dita"/>
 <ul>
 <li><xref href="vmware-config.dita"/></li>
 <li><xref href="network-config.dita"/></li>   
 <li><xref href="environment-config.dita"/></li>   
-<li><xref href="docker-config.dita"/></li>   
+<li><xref href="docker-config.dita"/>
+<ul>
+<li><xref href="customer-certs.dita"/></li>      
+</ul>
+</li>   
 <li><xref href="windows-config.dita"/></li> 
 <li><xref href="monitoring-config-splunk.dita"/></li> 
 <li><xref href="monitoring-config-sysdig.dita"/></li>
-<li><xref href="monitoring-config-promgraf.dita"/></li>      
+<li><xref href="monitoring-config-promgraf.dita"/></li>   
+<li><xref href="edit-vault.dita"/></li>     
 </ul>
-</li>  
-<li><xref href="edit-vault.dita"/></li>  
-<li><xref href="customer-certs.dita"/></li>  
-</ul>
-</li>
+</li>      
 <li><xref href="playbooks-overview.dita"/></li>
 <li><xref href="running-playbooks.dita"/>
 <ul>
 <li><xref href="post-deployment.dita"/></li>    
 </ul>
 </li>
+<li><xref href="lifecycle.dita"/></li>     
 <li><xref href="backup-restore.dita"/>
 <ul>
 <li><xref href="backup-restore-docker-volumes.dita"/></li>
@@ -68,7 +75,7 @@
 </ul>
   
 </li>  
-<li><xref href="lifecycle.dita"/></li> 
+
 </ul>   
   
 </body>
