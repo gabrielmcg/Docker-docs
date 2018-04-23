@@ -37,8 +37,7 @@
 <li><xref href="create-template-win.dita"/></li>
 <li><xref href="create-ansible-node.dita"/></li>
 <li><xref href="finalize-template.dita"/></li>
-<li><xref href="ansible-config.dita"/></li>
-<li><xref href="edit-inventory.dita"/></li>  
+ 
 
  
 
@@ -46,6 +45,8 @@
 </li>
 <li><xref href="edit-group-var.dita"/>
 <ul>
+<li><xref href="ansible-config.dita"/></li>
+<li><xref href="edit-inventory.dita"/></li>     
 <li><xref href="vmware-config.dita"/></li>
 <li><xref href="network-config.dita"/></li>   
 <li><xref href="environment-config.dita"/></li>   

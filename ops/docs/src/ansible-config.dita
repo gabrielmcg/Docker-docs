@@ -15,10 +15,10 @@
 
 <codeblock># cd ops</codeblock>
 
-<p>Note: File names are relative to the <codeph>ops</codeph> directory. For example
+<note type="note">All subsequent file names are relative to the <codeph>ops</codeph> directory. For example
 <codeph>vm_hosts</codeph> is located in <codeph>~/Docker-Synergy/ops</codeph> and
-<codeph>group_vars/vars</codeph> relates to
-<codeph>~/Docker-Synergy/ops/groups_vars/vars</codeph>.</p>
+<codeph>group_vars/vars</codeph> corresponds to
+<codeph>~/Docker-Synergy/ops/groups_vars/vars</codeph>.</note>
 
 
 <p>You now need to prepare the configuration to match your own environment, prior to
@@ -47,7 +47,7 @@ modify a number of files including:</p>
 <p>The file <codeph>group_vars/win_worker.yml</codeph> supports  advanced configuration of Windows remote
 management and in general should not require modification.</p>
 
-<p>You should work from the <codeph>root</codeph> account for the configuration steps and later when you run
+<p>You should work from the <codeph>root</codeph> account for the configuration steps and also later on when you run
 the playbooks.</p>
 </body>
 </topic>

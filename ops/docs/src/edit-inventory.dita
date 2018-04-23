@@ -8,9 +8,9 @@
 describe the configuration you want to deploy.</p>
 
 <p>The nodes inside the inventory are organized in groups. The groups are defined by
-brackets and the group names are static so they must not be changed. Anything else
-(hostnames, specifications, IP addresses…) are meant to be amended to match the user
-needs. The groups are as follows:</p>
+brackets and the group names are static so they must not be changed. Other fields
+(hostnames, specifications, IP addresses…) are edited to match your setup.
+The groups are as follows:</p>
 <ul>
 <li><codeph>[ucp_main]</codeph>: A group containing one single node which will be the
 main UCP node and swarm leader. Do not add more than one node under this group.</li>
@@ -20,10 +20,12 @@ node. Typically you should have either 3 or 5 nodes under this group.</li>
 first DTR node to be installed. Do not add more than one node under this group.</li>
 <li><codeph>[dtr]</codeph>: A group containing all the DTR nodes, including the main DTR
 node. Typically you should have either 3 or 5 nodes under this group.</li>
+    
 <li><codeph>[worker]</codeph>: A group containing all the worker nodes. Typically you
 should have either 3 or 5 nodes under this group.</li>
 <li><codeph>[win_worker]</codeph>: A group containing all the windows worker nodes.
 Typically you should have either 3 or 5 nodes under this group.</li>
+    
 <li><codeph>[ucp_lb]</codeph>: A group containing one single node which will be the load
 balancer for the UCP nodes. Do not add more than one node under this group.</li>
 <li><codeph>[dtr_lb]</codeph>: A group containing one single node which will be the load
@@ -31,6 +33,7 @@ balancer for the DTR nodes. Do not add more than one node under this group.</li>
 <li><codeph>[worker_lb]</codeph>: A group containing one single node which will be the
 load balancer for the worker nodes. Do not add more than one node under this
 group.</li>
+    
 <li><codeph>[lbs]</codeph>: A group containing all the load balancers. This group will
 have 3 nodes, also defined in the three groups above.</li>
 <li><codeph>[nfs]</codeph>: A group containing one single node which will be the NFS
