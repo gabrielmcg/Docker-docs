@@ -68,7 +68,7 @@ created under <codeph>/opt/splunk/etc</codeph> and the file <codeph>indexer.pem<
     
     
 <p>Indexers are configured with the Root CA cert used to signed all certificates. This can
-be done by editing the file <codeph>server.conf</codeph> in <codeph>$SPLUNK_HOME/etc/system/local</codeph> on your
+be achieved by editing the file <codeph>server.conf</codeph> in <codeph>$SPLUNK_HOME/etc/system/local</codeph> on your
 indexer(s). The following code block shows the relevant portion of this file where
 <codeph>sssRootCaPath</codeph> is pointing to the root CA certificate. 
 </p>
@@ -94,10 +94,10 @@ Splunk documentation for more information).</p>
 <p>Generate the forwarder certificate and  name it <codeph>forwarder.pem</codeph>. Make sure that you
 copy the root CA certificate to <codeph>ca.pem</codeph></p>
     
-<p>Copy <codeph>ca.pem</codeph> and <codeph>forwarder.pem</codeph> to <codeph>files/splunk/linux/SPLUNK_HOME/etc/mycerts/</codeph>
-(overwriting any existing files)</p>
+<p>Copy both the <codeph>ca.pem</codeph> and the <codeph>forwarder.pem</codeph> files to <codeph>files/splunk/linux/SPLUNK_HOME/etc/mycerts/</codeph>
+(overwriting any existing files).</p>
     
-<p>Edit the file <codeph>server.conf</codeph> under <codeph>files/splunk/linux/SPLUNK_HOME/etc/system/local</codeph> and
+<p>Edit the file <codeph>server.conf</codeph> in the folder <codeph>files/splunk/linux/SPLUNK_HOME/etc/system/local</codeph> and
 uncomment the last two lines as suggested in the file itself. Your file should look like
 this:
 </p>
@@ -110,7 +110,7 @@ sslRootCAPath = /opt/splunkforwarder/etc/mycerts/ca.pem</codeblock>
     
     
 <p>Set <codeph>splunk_ssl</codeph> to <codeph>yes</codeph> in the file <codeph>group_vars/vars</codeph>, uncommenting the line if required.
-  Make sure that the <codeph>splunk_architecture_forward_servers</codeph> list specifies all your indexers together with the
+Make sure that the <codeph>splunk_architecture_forward_servers</codeph> list specifies all your indexers together with the
 port that was configured to accept SSL:</p>
     
 <codeblock>monitoring_stack: splunk
@@ -126,11 +126,11 @@ splunk_architecture_forward_servers:
 <section>
 <title>Hybrid environment Linux/ Windows</title>
 <p>Currently, you cannot deploy your own certificates for use by the Universal Forwarders
-deployed on Windows machines. If you want to have your Linux machines in a hybrid deployment to use SSL proceed as
+deployed on Windows machines. If you want to have your Linux machines in a hybrid deployment to use SSL, proceed as
 follows.</p>
     
     
-<p>Comment out the <codeph>splunk_architecture_forward_servers</codeph> (and its values)
+<p>Comment out the <codeph>splunk_architecture_forward_servers</codeph> variable (and its values)
 from <codeph>group_vars/vars</codeph></p>
 <codeblock>monitoring_stack: splunk
 splunk_ssl: yes
@@ -145,7 +145,7 @@ Windows servers but specifies a TCP port that enables SSL.</p>
 - clh2-ansible.cloudra.local:9998</codeblock>
 
     
-<p>Edit the <codeph>group_vars/win_worker.yml</codeph> file and specify the list of forward servers to use by the Windows servers.
+<p>Edit the <codeph>group_vars/win_worker.yml</codeph> file and specify the list of forward servers to be used by the Windows servers.
  This list is typically the same as the one used for Linux servers  but specifies a TCP port that does not enable SSL.
  
 <codeblock>splunk_architecture_forward_servers:

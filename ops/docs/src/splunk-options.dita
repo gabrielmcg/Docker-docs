@@ -8,7 +8,7 @@
 <p>This solution supports two types of Splunk deployment. Firstly, there is a built-in deployment 
 useful for demos and for getting up to speed with Splunk. Alternatively, the solution can be configuired
 to interact with a standalone production Splunk deployment that you set up independently.  In this case, you must
-explicitly configure the universal forwarders with external "forward servers" (splunk indexers), whereas this
+explicitly configure the universal forwarders with external "forward servers" (Splunk indexers), whereas this
 happens automatically with the built-in option.
 
 </p>
@@ -16,7 +16,7 @@ happens automatically with the built-in option.
 <p>In the standalone deployment, you can enable SSL authentication between the universal forwarders and
 the indexers, by setting the <codeph>splunk_ssl</codeph> variable to <codeph>yes</codeph>
 in the file <codeph>group_vars/vars</codeph>. The built-in deployment does not support SSL and so, in this instance,
-the <codeph>splunk_ssl</codeph> variable is ignored.</p>
+the value of the <codeph>splunk_ssl</codeph> variable is ignored.</p>
 
 <p>After the installation is complete, the Splunk UI can be reached at htttp://&lt;fqdn>:8000,
 where &lt;fqdn> is the FQDN of one of your Linux Docker nodes. Mesh routing does not currently work on

@@ -4,17 +4,16 @@
 <title>Configuring syslog in ESX</title>
 <body>
 <p>This configuration must be done manually for each ESX server. The syslog server should be the
-server configured in the [logger] group of the vm_hosts inventory. The protocol should tcp and
-the port 514.</p>
+server configured in the [logger] group in your <codeph>vm_hosts</codeph> inventory. The protocol should <codeph>tcp</codeph> and
+the port <codeph>514</codeph> as shown in <xref href="splunk-esx-syslog.dita#splunk-esx-syslog/esx-config-syslog" type="fig"/>.</p>
 
-<p>More information can be found here:
-https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.security.doc/GUID-9F67DB52-F469-451F-B6C8-DAE8D95976E7.html</p>
-
-<fig>
+<fig id="esx-config-syslog">
 <title>Configure Syslog on ESXi Hosts</title>
 <image href="media/esx-config-syslog.png"/>
 </fig>
 
+<p>For more information, see the VMware documentation at
+<xref href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.security.doc/GUID-9F67DB52-F469-451F-B6C8-DAE8D95976E7.html" format="html"/>.</p>
 
 </body>
 </topic>
