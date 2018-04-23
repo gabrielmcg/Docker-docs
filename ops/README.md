@@ -282,10 +282,7 @@
 
 <li class="li"><a class="xref" href="#finalize-template">Finalize the template</a></li>
 
-<li class="li"><a class="xref" href="#ansible-config">Ansible configuration</a></li>
-
-<li class="li"><a class="xref" href="#edit-inventory">Editing the inventory</a></li>
-  
+ 
 
  
 
@@ -295,6 +292,10 @@
 
 <li class="li"><a class="xref" href="#edit-group-var">Configuring the solution components</a>
 <ul class="ul">
+<li class="li"><a class="xref" href="#ansible-config">Ansible configuration</a></li>
+
+<li class="li"><a class="xref" href="#edit-inventory">Editing the inventory</a></li>
+     
 <li class="li"><a class="xref" href="#vmware-config">VMware configuration</a></li>
 
 <li class="li"><a class="xref" href="#network-config">Networking configuration</a></li>
@@ -2016,10 +2017,10 @@ into sections.</p>
 
 <pre class="pre codeblock"><code># cd ops</code></pre>
 
-<p class="p">Note: File names are relative to the <code class="ph codeph">ops</code> directory. For example
+<div class="note note"><span class="notetitle">Note:</span> All subsequent file names are relative to the <code class="ph codeph">ops</code> directory. For example
 <code class="ph codeph">vm_hosts</code> is located in <code class="ph codeph">~/Docker-Synergy/ops</code> and
-<code class="ph codeph">group_vars/vars</code> relates to
-<code class="ph codeph">~/Docker-Synergy/ops/groups_vars/vars</code>.</p>
+<code class="ph codeph">group_vars/vars</code> corresponds to
+<code class="ph codeph">~/Docker-Synergy/ops/groups_vars/vars</code>.</div>
 
 
 
@@ -2064,7 +2065,7 @@ modify a number of files including:</p>
 management and in general should not require modification.</p>
 
 
-<p class="p">You should work from the <code class="ph codeph">root</code> account for the configuration steps and later when you run
+<p class="p">You should work from the <code class="ph codeph">root</code> account for the configuration steps and also later on when you run
 the playbooks.</p>
 
 </div>
@@ -2080,9 +2081,9 @@ describe the configuration you want to deploy.</p>
 
 
 <p class="p">The nodes inside the inventory are organized in groups. The groups are defined by
-brackets and the group names are static so they must not be changed. Anything else
-(hostnames, specifications, IP addresses…) are meant to be amended to match the user
-needs. The groups are as follows:</p>
+brackets and the group names are static so they must not be changed. Other fields
+(hostnames, specifications, IP addresses…) are edited to match your setup.
+The groups are as follows:</p>
 
 <ul class="ul">
 <li class="li"><code class="ph codeph">[ucp_main]</code>: A group containing one single node which will be the
@@ -2097,12 +2098,14 @@ first DTR node to be installed. Do not add more than one node under this group.<
 <li class="li"><code class="ph codeph">[dtr]</code>: A group containing all the DTR nodes, including the main DTR
 node. Typically you should have either 3 or 5 nodes under this group.</li>
 
+    
 <li class="li"><code class="ph codeph">[worker]</code>: A group containing all the worker nodes. Typically you
 should have either 3 or 5 nodes under this group.</li>
 
 <li class="li"><code class="ph codeph">[win_worker]</code>: A group containing all the windows worker nodes.
 Typically you should have either 3 or 5 nodes under this group.</li>
 
+    
 <li class="li"><code class="ph codeph">[ucp_lb]</code>: A group containing one single node which will be the load
 balancer for the UCP nodes. Do not add more than one node under this group.</li>
 
@@ -2113,6 +2116,7 @@ balancer for the DTR nodes. Do not add more than one node under this group.</li>
 load balancer for the worker nodes. Do not add more than one node under this
 group.</li>
 
+    
 <li class="li"><code class="ph codeph">[lbs]</code>: A group containing all the load balancers. This group will
 have 3 nodes, also defined in the three groups above.</li>
 
