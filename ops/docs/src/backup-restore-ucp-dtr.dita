@@ -588,7 +588,7 @@ xqeq0sv3dhwgzbis0fx2x3h4a     clh-worker01.cloudra.local   Ready               A
 <codeblock>./restore_dtr.sh</codeblock>        
 </li>
 
-<li>If you are using the image scanning fuctionality in DTR, you will need to re-download the vilnerability database. 
+<li>If you are using the image scanning fuctionality in DTR, you will need to re-download the vulnerability database. 
 For more information, see the Docker documentation  <xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license" format="html">here</xref>.</li>
 
     

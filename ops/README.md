@@ -286,7 +286,7 @@
 
 <li class="li"><a class="xref" href="#edit-inventory">Editing the inventory</a></li>
   
-<li class="li"><a class="xref" href="#edit-group-var">Editing the group variables</a>
+<li class="li"><a class="xref" href="#edit-group-var">Configuration of the solution components</a>
 <ul class="ul">
 <li class="li"><a class="xref" href="#vmware-config">VMware configuration</a></li>
 
@@ -2189,8 +2189,68 @@ mandatory unless if specified otherwise.</p>
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title32" id="edit-group-var">
-<h2 class="title topictitle2" id="ariaid-title32">Editing the group variables</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title32" id="edit-vault">
+<h2 class="title topictitle2" id="ariaid-title32">Editing the vault</h2>
+
+<div class="body">
+<p class="p">Once your group variables file is ready, the next step is to create a vault file to match
+your environment. The vault file is essentially the same thing than the group variables
+but it will contain all sensitive variables and will be encrypted.</p>
+
+<p class="p">There is a sample vault file named <code class="ph codeph">group_vars/vault.sample</code> that you can
+use as a model for your vault file. To create a vault, you create a new file
+<code class="ph codeph">group_vars/vault</code> and add entries similar to:</p>
+
+
+<pre class="pre codeblock"><code>---
+vcenter_password: 'xxx' 
+docker_ee_url: 'yoururl'
+vm_password: 'xxx'
+ucp_password: 'xxx'
+rhn_orgid: 'Red Hat Organization ID'
+rhn_key: 'Red Hat Activation Key'</code></pre>
+
+<p class="p"><code class="ph codeph">rhn_orgid</code> and <code class="ph codeph">rhn_key</code> are the credentials needed to
+subscribe the virtual machines with Red Hat Customer Portal. For more info regarding
+activation keys see the following URL: <a class="xref" href="https://access.redhat.com/articles/1378093" target="_blank">https://access.redhat.com/articles/1378093</a></p>
+
+<p class="p">To encrypt the vault you need to run the following command:</p>
+
+
+<pre class="pre codeblock"><code># ansible-vault encrypt group_vars/vault</code></pre>
+
+<p class="p">You will be prompted for a password that will decrypt the vault when required. You can
+update the values in your vault by running:</p>
+
+
+<pre class="pre codeblock"><code># ansible-vault edit group_vars/vault</code></pre>
+
+<p class="p">For Ansible to be able to read the vault, you need to specify a file where the password
+is stored, for instance in a file called <code class="ph codeph">.vault_pass</code>. Once the file is
+created, take the following precautions to avoid illegitimate access to this file:</p>
+
+<ol class="ol">
+<li class="li"> Change the permissions so only <code class="ph codeph">root</code> can read it using <code class="ph codeph">#
+chmod 600 .vault_pass</code>
+</li>
+
+<li class="li"> Add the file to your <code class="ph codeph">.gitignore</code> file if you're pushing the set of
+playbooks to a git repository. </li>
+
+</ol>
+
+<p class="p"></p>
+
+</div>
+
+
+
+
+
+</div>
+</div>
+<div class="topic nested0" aria-labelledby="ariaid-title33" id="edit-group-var">
+<h1 class="title topictitle1" id="ariaid-title33">Configuration of the solution components</h1>
 
 <div class="body">
 <p class="p">Once the inventory is ready, the next step is to modify the group variables to match your
@@ -2202,8 +2262,8 @@ into sections.</p>
 
 
 
-<div class="topic nested2" aria-labelledby="ariaid-title33" id="vmware-config">
-<h3 class="title topictitle3" id="ariaid-title33">VMware configuration</h3>
+<div class="topic nested1" aria-labelledby="ariaid-title34" id="vmware-config">
+<h2 class="title topictitle2" id="ariaid-title34">VMware configuration</h2>
 
 <div class="body">
 <p class="p">All VMware-related variables are mandatory and are described in <a class="xref" href="#vmware-config__vmware-variables-table-conref">Table 5</a>.</p>
@@ -2215,75 +2275,75 @@ into sections.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="vmware-config__vmware-variables-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 5. </span>VMware variables</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3560">Variable</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3563">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3637">Variable</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3640">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">vcenter_hostname</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">IP or hostname of the vCenter appliance</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">vcenter_hostname</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">IP or hostname of the vCenter appliance</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">vcenter_username</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">Username to log in to the vCenter appliance. It might include a domain, for
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">vcenter_username</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">Username to log in to the vCenter appliance. It might include a domain, for
 example, '<code class="ph codeph">administrator@vsphere.local</code>'. Note: The corresponding
 password is stored in a separate file (<code class="ph codeph">group_vars/vault</code>) with the
 variable named <code class="ph codeph">vcenter_password</code>.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">vcenter_validate_certs</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">‘no’</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">vcenter_validate_certs</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">‘no’</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">datacenter</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">Name of the datacenter where the environment will be provisioned</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">datacenter</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">Name of the datacenter where the environment will be provisioned</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">vm_username</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">Username to log into the VMs. It needs to match the one from the VM Template, so
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">vm_username</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">Username to log into the VMs. It needs to match the one from the VM Template, so
 unless you have created an user, you must use 'root'. Note: The corresponding password
 is stored in a separate file (<code class="ph codeph">group_vars/vault</code>) with the variable
 named <code class="ph codeph">vm_password</code>.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">vm_template</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">Name of the RHEL VM Template to be use. Note that this is the name from a vCenter
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">vm_template</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">Name of the RHEL VM Template to be use. Note that this is the name from a vCenter
 perspective, not the hostname.</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">folder_name</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">vCenter folder to deploy the VMs. If you do not wish to deploy in a particular
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">folder_name</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">vCenter folder to deploy the VMs. If you do not wish to deploy in a particular
 folder, the value should be <code class="ph codeph">/</code>. Note: If you want to deploy in a
 specific folder, you need to create this folder in the inventory of the selected
 datacenter before starting the deployment.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">datastores</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">List of datastores to be used, in list format, i.e.
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">datastores</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">List of datastores to be used, in list format, i.e.
 ['<code class="ph codeph">Datastore1</code>','<code class="ph codeph">Datastore2</code>'...]. This or these
 datastore(s) must exist before you run the playbooks.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">disk2</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">UNIX® name of the second disk for the Docker VMs. Typically
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">disk2</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">UNIX® name of the second disk for the Docker VMs. Typically
 <code class="ph codeph">/dev/sdb</code></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">disk2_part</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">UNIX name of the partition of the second disk for the Docker VMs. Typically
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">disk2_part</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">UNIX name of the partition of the second disk for the Docker VMs. Typically
 <code class="ph codeph">/dev/sdb1</code></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">vsphere_plugin_version</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">Version of the vSphere plugin for Docker. The default is 0.20 which is the latest
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">vsphere_plugin_version</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">Version of the vSphere plugin for Docker. The default is 0.20 which is the latest
 version at the time of writing this document. The version of the plugin should match
 the version of the vSphere Installation Bundle (VIB) that you installed on the ESXi
 servers.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3560 ">vm_portgroup</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3563 ">Used by the playbook <code class="ph codeph">create_vms.yml</code>, this variable is used to
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3637 ">vm_portgroup</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3640 ">Used by the playbook <code class="ph codeph">create_vms.yml</code>, this variable is used to
 specify the portgroup connected to the network that connects all the VMs. There is
 currently only one network. 
 <div class="note note"><span class="notetitle">Note:</span> It is recommended that the template which is used as the base
@@ -2302,8 +2362,8 @@ In addition, you should make sure that the adapter specifies <code class="ph cod
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title34" id="network-config">
-<h3 class="title topictitle3" id="ariaid-title34">Networking configuration</h3>
+<div class="topic nested1" aria-labelledby="ariaid-title35" id="network-config">
+<h2 class="title topictitle2" id="ariaid-title35">Networking configuration</h2>
 
 <div class="body">
 <p class="p">All network-related variables are mandatory and are described in <a class="xref" href="#network-config__network-config-table-conref">Table 6</a>.</p>
@@ -2314,32 +2374,32 @@ In addition, you should make sure that the adapter specifies <code class="ph cod
 
 <table cellpadding="4" cellspacing="0" summary="" id="network-config__network-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 6. </span>Network variables</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3758">Variable</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3761">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3835">Variable</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3838">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3758 ">nic_name</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3761 ">Name of the device, for RHEL this is typically
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3835 ">nic_name</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3838 ">Name of the device, for RHEL this is typically
 <code class="ph codeph">ens192</code> and it is recommended to leave it as
 is.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3758 ">gateway</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3761 ">IP address of the gateway to be used</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3835 ">gateway</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3838 ">IP address of the gateway to be used</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3758 ">dns</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3761 ">List of DNS servers to be used, in list format, i.e.
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3835 ">dns</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3838 ">List of DNS servers to be used, in list format, i.e.
 ['<code class="ph codeph">10.10.173.1</code>','<code class="ph codeph">10.10.173.2</code>'...]</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3758 ">domain_name</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3761 ">Domain name for your Virtual Machines</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3835 ">domain_name</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3838 ">Domain name for your Virtual Machines</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3758 ">ntp_server</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3761 ">List of NTP servers to be used, in list format, i.e.
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3835 ">ntp_server</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3838 ">List of NTP servers to be used, in list format, i.e.
 ['<code class="ph codeph">1.2.3.4</code>','<code class="ph codeph"><a class="xref" href="http://0.us.pool.net.org/" target="_blank">0.us.pool.net.org</a></code>'...]</td>
 </tr>
 </tbody></table>
@@ -2350,8 +2410,8 @@ is.</td>
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title35" id="environment-config">
-<h3 class="title topictitle3" id="ariaid-title35">Environment configuration</h3>
+<div class="topic nested1" aria-labelledby="ariaid-title36" id="environment-config">
+<h2 class="title topictitle2" id="ariaid-title36">Environment configuration</h2>
 
 <div class="body">
 <p class="p">All Environment-related variables should be here. All of them are described in
@@ -2363,13 +2423,13 @@ is.</td>
 
 <table cellpadding="4" cellspacing="0" summary="" id="environment-config__env-variables-table" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 7. </span>Environment variables</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="vertical-align:top;" id="d29e3867">Variable</th>
-<th class="entry nocellnorowborder" style="vertical-align:top;" id="d29e3870">Description</th>
+<th class="entry nocellnorowborder" style="vertical-align:top;" id="d29e3944">Variable</th>
+<th class="entry nocellnorowborder" style="vertical-align:top;" id="d29e3947">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="vertical-align:top;" headers="d29e3867 ">env</td>
-<td class="entry nocellnorowborder" style="vertical-align:top;" headers="d29e3870 ">Dictionary containing all environment variables. It contains
+<td class="entry nocellnorowborder" style="vertical-align:top;" headers="d29e3944 ">env</td>
+<td class="entry nocellnorowborder" style="vertical-align:top;" headers="d29e3947 ">Dictionary containing all environment variables. It contains
 three entries described below. Please leave empty the proxy related
 settings if not required:<ul class="ul">
 <li class="li">http_proxy: HTTP proxy URL, such as '<a class="xref" href="http://15.184.4.2:8080/" target="_blank">http://15.184.4.2:8080</a>'. This variable defines
@@ -2392,8 +2452,8 @@ such as 'localhost,127.0.0.1,.cloudra.local,10.10.174.'</li>
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title36" id="docker-config">
-<h3 class="title topictitle3" id="ariaid-title36">Docker configuration</h3>
+<div class="topic nested1" aria-labelledby="ariaid-title37" id="docker-config">
+<h2 class="title topictitle2" id="ariaid-title37">Docker configuration</h2>
 
 <div class="body">
 <p class="p">All Docker-related variables are mandatory and are described in <a class="xref" href="#docker-config__docker-config-table-conref">Table 8</a>.</p>
@@ -2405,22 +2465,22 @@ such as 'localhost,127.0.0.1,.cloudra.local,10.10.174.'</li>
 
 <table cellpadding="4" cellspacing="0" summary="" id="docker-config__docker-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 8. </span>Docker variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3944">Variable</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3947">File</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e3950">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4021">Variable</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4024">File</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4027">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3944 ">docker_ee_url</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3947 "><strong class="ph b">group_vars/vault</strong></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3950 ">Note: This is a private link to your Docker EE subscription.  The value for
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4021 ">docker_ee_url</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4024 "><strong class="ph b">group_vars/vault</strong></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4027 ">Note: This is a private link to your Docker EE subscription.  The value for
 <code class="ph codeph">docker_ee_url</code> is the URL documented at the
 following address: <a class="xref" href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/" target="_blank">https://docs.docker.com/engine/installation/linux/docker-ee/rhel/</a>.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3944 ">docker_ee_version</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3947 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3950 ">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4021 ">docker_ee_version</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4024 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4027 ">
 <ul class="ul">
 <li class="li">If this variable is ommited, <code class="ph codeph">install_docker.yml</code> will install the latest stable version of docker-ee available in the repo specified with <code class="ph codeph">docker_ee_url</code></li>
 
@@ -2433,47 +2493,47 @@ following address: <a class="xref" href="https://docs.docker.com/engine/installa
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3944 ">rhel_version</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3947 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3950 ">For the Docker installation, this sets the version of your RHEL OS, such as <code class="ph codeph">7.4</code>. The
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4021 ">rhel_version</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4024 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4027 ">For the Docker installation, this sets the version of your RHEL OS, such as <code class="ph codeph">7.4</code>. The
 playbooks were tested with RHEL 7.3. and RHEL 7.4.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3944 ">dtr_version</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3947 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3950 ">Version of the Docker DTR you wish to install. You can use a
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4021 ">dtr_version</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4024 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4027 ">Version of the Docker DTR you wish to install. You can use a
 numeric version or <code class="ph codeph">latest</code> for the most recent one.
 The playbooks were tested with 2.3.3. and 2.4.0.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3944 ">ucp_version</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3947 ">group_vars/vars</td>      
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3950 ">Version of the Docker UCP you wish to install. You can use a
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4021 ">ucp_version</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4024 ">group_vars/vars</td>      
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4027 ">Version of the Docker UCP you wish to install. You can use a
 numeric version or <code class="ph codeph">latest</code> for the most recent one.
 The playbooks were tested with UCP 2.2.3. and 2.2.4.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3944 ">images_folder</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3947 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3950 ">Directory in the NFS server that will be mounted in the DTR nodes
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4021 ">images_folder</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4024 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4027 ">Directory in the NFS server that will be mounted in the DTR nodes
 and that will host your Docker images.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3944 ">license_file</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3947 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3950 ">Full path to your Docker EE license file on your Ansible host. The license file is available from the Docker
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4021 ">license_file</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4024 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4027 ">Full path to your Docker EE license file on your Ansible host. The license file is available from the Docker
 Store</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3944 ">ucp_username</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3947 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3950 ">Username of the administrator user for UCP and DTR, typically
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4021 ">ucp_username</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4024 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4027 ">Username of the administrator user for UCP and DTR, typically
 <code class="ph codeph">admin</code>.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3944 ">ucp_password</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3947 "><strong class="ph b">group_vars/vault</strong></td>     
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e3950 ">The password for the <code class="ph codeph">ucp_username</code> account.</td> 
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4021 ">ucp_password</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4024 "><strong class="ph b">group_vars/vault</strong></td>     
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4027 ">The password for the <code class="ph codeph">ucp_username</code> account.</td> 
 </tr>
 
 </tbody></table>
@@ -2482,9 +2542,78 @@ Store</td>
 
 </div>
 
+<div class="topic nested2" aria-labelledby="ariaid-title38" id="customer-certs">
+<h3 class="title topictitle3" id="ariaid-title38">Using customer supplied certificates for UCP and DTR</h3>
+
+<div class="body"></div>
+
+<div class="topic nested3" aria-labelledby="ariaid-title39" id="d1e4057">
+<h4 class="title topictitle4" id="ariaid-title39">Variables</h4>
+
+<div class="body">
+<p class="p"><strong class="ph b">ucp_certs_dir:</strong> in group_vars/vars</p>
+
+<ul class="ul">
+<li class="li">if <strong class="ph b">ucp_certs_dir</strong> is not defined, UCP is installed with self-signed
+certificates and DTR is installed with the <code class="ph codeph">--ucp-insecure-tls</code>
+switch</li>
+
+<li class="li">If <strong class="ph b">ucp_certs_dir</strong> is defined, it should points to a folder on the ansible
+machine which should contain 3 files <ul class="ul">
+<li class="li">ca.pem, this is the root CA certificate in PEM format</li>
+
+<li class="li">cert.pem, this is the server certificate optionally followed by
+intermediate CAs</li>
+
+<li class="li">key.pem, this is the private key that comes with the cert.pem
+certificates</li>
+
+</ul>
+
+</li>
+
+</ul>
+
+
+<p class="p"><strong class="ph b">dtr_certs_dir:</strong> in group_vars/vars </p>
+
+<ul class="ul">
+<li class="li">if <strong class="ph b">dtr_certs_dir</strong> is not defined, DTR is installed with self-signed
+certificates</li>
+
+<li class="li">if <strong class="ph b">dtr_certs_dir</strong> is defined, this variable points to a folder on the
+ansible machine which should contain 3 files <ul class="ul">
+<li class="li">ca.pem, this is the root CA certificate in PEM format </li>
+
+<li class="li">cert.pem, this is the DTR server certificate optionally followed by
+intermediate CAs</li>
+
+<li class="li">key.pem, this is the private key that comes with the cert.pem
+certificates</li>
+
+</ul>
+
+</li>
+
+</ul>
+
+
+<div class="note note"><span class="notetitle">Note:</span> The installation will fail if the <code class="ph codeph">ca.pem</code>, <code class="ph codeph">cert.pem</code> and <code class="ph codeph">key.pem</code> files
+cannot be found in the folders designated by <code class="ph codeph">dtr_certs_dir</code> and <code class="ph codeph">ucp_certs_dir</code> or if
+they don't constitute valid certificates. Note that there is an ansible module that
+would help verifying the validity of the certificates but it requires a version of
+PyOpenSSL which is not compatible with the version installed on Red Hat 7.4
+(PyOpenSSL is required by RH subscription manager).</div>
+
+
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title37" id="windows-config">
-<h3 class="title topictitle3" id="ariaid-title37">Windows configuration</h3>
+
+</div>
+
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title40" id="windows-config">
+<h2 class="title topictitle2" id="ariaid-title40">Windows configuration</h2>
 
 <div class="body">
 <div class="section">
@@ -2495,53 +2624,53 @@ Store</td>
 
 <table cellpadding="4" cellspacing="0" summary="" id="windows-config__windows-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 9. </span>Windows variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4142">Variable</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4145">File</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4148">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4324">Variable</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4327">File</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4330">Description</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4142 ">enable_windows</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4145 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4148 ">If <code class="ph codeph">true</code>, the creation of Windows 2016 worker
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4324 ">enable_windows</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4327 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4330 ">If <code class="ph codeph">true</code>, the creation of Windows 2016 worker
 nodes will be actioned. The default value is
 <code class="ph codeph">false</code>.</td>
 </tr>   
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4142 ">win_vm_template</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4145 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4148 ">Name of the Windows 2016 VM Template to use. Note that this is the name from a
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4324 ">win_vm_template</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4327 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4330 ">Name of the Windows 2016 VM Template to use. Note that this is the name from a
 vCenter perspective, not the hostname.</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4142 ">win_username</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4145 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4148 ">Windows user name. The default is <code class="ph codeph">Administrator</code>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4324 ">win_username</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4327 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4330 ">Windows user name. The default is <code class="ph codeph">Administrator</code>
 </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4142 ">win_password</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4145 "><strong class="ph b">group_vars/vault</strong></td>     
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4148 ">The password for the Windows account.
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4324 ">win_password</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4327 "><strong class="ph b">group_vars/vault</strong></td>     
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4330 ">The password for the Windows account.
 </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4142 ">windows_vdvs_ps</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4145 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4148 ">Variable used to download the PowerShell script that is used to install vDVS for Windows. For example,
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4324 ">windows_vdvs_ps</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4327 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4330 ">Variable used to download the PowerShell script that is used to install vDVS for Windows. For example,
 <code class="ph codeph">https://raw.githubusercontent.com/vmware/vsphere-storage-for-docker/master/install-vdvs.ps1</code>
 </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4142 ">windows_vdvs_path</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4145 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4148 ">Variable used to download vSphere Docker Volume Service software. This variable is combined 
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4324 ">windows_vdvs_path</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4327 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4330 ">Variable used to download vSphere Docker Volume Service software. This variable is combined 
 with <code class="ph codeph">windows_vdvs_version</code> (below) to generate a URL of the form {{ windows_vdvs_path }}_{{ windows_vdvs_version }}.zip to download the software. 
 For example, to download version 0.21, set <code class="ph codeph">windows_vdvs_path</code> equal to https://vmware.bintray.com/vDVS/vsphere-storage-for-docker_windows 
 and <code class="ph codeph">windows_vdvs_version</code> equal to <code class="ph codeph">0.21</code>
@@ -2549,15 +2678,15 @@ and <code class="ph codeph">windows_vdvs_version</code> equal to <code class="ph
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4142 ">windows_vdvs_version</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4145 ">group_vars/vars</td> 
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4148 ">Combined with <code class="ph codeph">windows_vdvs_path</code>, this variable is used to generate the URL for downloading the software.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4324 ">windows_vdvs_version</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4327 ">group_vars/vars</td> 
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4330 ">Combined with <code class="ph codeph">windows_vdvs_path</code>, this variable is used to generate the URL for downloading the software.</td>
 </tr>  
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4142 ">windows_vdvs_directory</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4145 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4148 ">Variable used to determine where vDVS software will be unzipped and installed from. The default is <code class="ph codeph">C:\Users\Administrator\Downloads</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4324 ">windows_vdvs_directory</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4327 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4330 ">Variable used to determine where vDVS software will be unzipped and installed from. The default is <code class="ph codeph">C:\Users\Administrator\Downloads</code></td>
 </tr>
 </tbody></table>
 </div>
@@ -2566,7 +2695,7 @@ and <code class="ph codeph">windows_vdvs_version</code> equal to <code class="ph
 
 
 
-<div class="section"><h4 class="title sectiontitle">group_vars/win_worker.yml</h4>
+<div class="section"><h3 class="title sectiontitle">group_vars/win_worker.yml</h3>
 
 
 <p class="p">There is a separate file in the <code class="ph codeph">group_vars</code> directory for Windows-specific congiguration. These variables are
@@ -2590,58 +2719,58 @@ used in the following playbooks:
 
 <table cellpadding="4" cellspacing="0" summary="" id="windows-config__windows-config-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 10. </span>Windows variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4326">Variable</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4329">File</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4332">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4508">Variable</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4511">File</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4514">Description</th>
 </tr>
 </thead><tbody class="tbody"> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4326 ">ansible_user</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4329 ">group_vars/win_worker.yml</td>  
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4332 ">Defaults to the Windows user account <code class="ph codeph">win_username</code> as specified in <code class="ph codeph">groupr_vars/vars</code> </td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4508 ">ansible_user</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4511 ">group_vars/win_worker.yml</td>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4514 ">Defaults to the Windows user account <code class="ph codeph">win_username</code> as specified in <code class="ph codeph">groupr_vars/vars</code> </td>
 </tr>   
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4326 ">ansible_password</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4329 ">group_vars/win_worker.yml</td>  
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4332 ">Defaults to the Windows user password <code class="ph codeph">win_password</code> as specified in <code class="ph codeph">group_vars/vault</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4508 ">ansible_password</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4511 ">group_vars/win_worker.yml</td>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4514 ">Defaults to the Windows user password <code class="ph codeph">win_password</code> as specified in <code class="ph codeph">group_vars/vault</code></td>
 </tr>   
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4326 ">ansible_port</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4329 ">group_vars/win_worker.yml</td> 
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4332 ">5986</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4508 ">ansible_port</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4511 ">group_vars/win_worker.yml</td> 
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4514 ">5986</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4326 ">ansible_connection</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4329 ">group_vars/win_worker.yml</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4332 ">winrm</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4508 ">ansible_connection</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4511 ">group_vars/win_worker.yml</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4514 ">winrm</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4326 ">ansible_winrm_server_cert_validation</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4329 ">group_vars/win_worker.yml</td>  
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4332 ">Defaults to <code class="ph codeph">ignore</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4508 ">ansible_winrm_server_cert_validation</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4511 ">group_vars/win_worker.yml</td>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4514 ">Defaults to <code class="ph codeph">ignore</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4326 ">ansible_winrm_operation_timeout_sec</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4329 ">group_vars/win_worker.yml</td>   
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4332 ">Defaults to <code class="ph codeph">250</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4508 ">ansible_winrm_operation_timeout_sec</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4511 ">group_vars/win_worker.yml</td>   
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4514 ">Defaults to <code class="ph codeph">250</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4326 ">ansible_winrm_read_timeout_sec</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4329 ">group_vars/win_worker.yml</td>   
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4332 ">Defaults to <code class="ph codeph">300</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4508 ">ansible_winrm_read_timeout_sec</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4511 ">group_vars/win_worker.yml</td>   
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4514 ">Defaults to <code class="ph codeph">300</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4326 ">windows_timezone</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4329 ">group_vars/win_worker.yml</td>  
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4332 ">Defaults to <code class="ph codeph">15</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4508 ">windows_timezone</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4511 ">group_vars/win_worker.yml</td>  
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4514 ">Defaults to <code class="ph codeph">15</code></td>
 </tr>
 
 </tbody></table>
@@ -2654,15 +2783,15 @@ used in the following playbooks:
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title38" id="monitoring-config-splunk">
-<h3 class="title topictitle3" id="ariaid-title38">Splunk configuration</h3>
+<div class="topic nested1" aria-labelledby="ariaid-title41" id="monitoring-config-splunk">
+<h2 class="title topictitle2" id="ariaid-title41">Splunk configuration</h2>
 
 <div class="body">
 
 </div>
 
-<div class="topic nested3" aria-labelledby="ariaid-title39" id="splunk-options">
-<h4 class="title topictitle4" id="ariaid-title39">Splunk deployment overview</h4>
+<div class="topic nested2" aria-labelledby="ariaid-title42" id="splunk-options">
+<h3 class="title topictitle3" id="ariaid-title42">Splunk deployment overview</h3>
 
 <div class="body">
 <div class="section">
@@ -2693,8 +2822,8 @@ Windows so you must use a Linux node to access the UI.</p>
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title40" id="splunk-pre-deploy">
-<h4 class="title topictitle4" id="ariaid-title40">Before you deploy Splunk</h4>
+<div class="topic nested2" aria-labelledby="ariaid-title43" id="splunk-pre-deploy">
+<h3 class="title topictitle3" id="ariaid-title43">Before you deploy Splunk</h3>
 
 <div class="body">
 <div class="section">
@@ -2780,13 +2909,13 @@ More information regarding  forwarding using Universal Forwader can be found at
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title41" id="splunk-ssl">
-<h4 class="title topictitle4" id="ariaid-title41">Enabling SSL between the universal forwarders and the Splunk indexers using your
-certificates</h4>
+<div class="topic nested2" aria-labelledby="ariaid-title44" id="splunk-ssl">
+<h3 class="title topictitle3" id="ariaid-title44">Enabling SSL between the universal forwarders and the Splunk indexers using your
+certificates</h3>
 
 <div class="body">
     
-<div class="section"><h5 class="title sectiontitle">Summary</h5>
+<div class="section"><h4 class="title sectiontitle">Summary</h4>
 
 
 <ol class="ol">
@@ -2809,7 +2938,7 @@ certificates</h4>
     
     
     
-<div class="section"><h5 class="title sectiontitle">Limitations</h5>
+<div class="section"><h4 class="title sectiontitle">Limitations</h4>
     
 
 
@@ -2821,7 +2950,7 @@ indexer matches its FQDN as listed by the variable
 </div>
 
 
-<div class="section"><h5 class="title sectiontitle">Prerequisites</h5>
+<div class="section"><h4 class="title sectiontitle">Prerequisites</h4>
 
     
 <p class="p">Configure your indexers to use SSL on port 9998. The following is an example <code class="ph codeph">inputs.conf</code>
@@ -2882,7 +3011,7 @@ Splunk documentation for more information).</p>
 </div>
 
 
-<div class="section"><h5 class="title sectiontitle">Before you deploy</h5>
+<div class="section"><h4 class="title sectiontitle">Before you deploy</h4>
 
 
 <p class="p">Generate the forwarder certificate and  name it <code class="ph codeph">forwarder.pem</code>. Make sure that you
@@ -2922,7 +3051,7 @@ splunk_architecture_forward_servers:
 
 
 
-<div class="section"><h5 class="title sectiontitle">Hybrid environment Linux/ Windows</h5>
+<div class="section"><h4 class="title sectiontitle">Hybrid environment Linux/ Windows</h4>
 
 <p class="p">Currently, you cannot deploy your own certificates for use by the Universal Forwarders
 deployed on Windows machines. If you want to have your Linux machines in a hybrid deployment to use SSL proceed as
@@ -2962,8 +3091,8 @@ Windows servers but specifies a TCP port that enables SSL.</p>
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title42" id="splunk-ucp-syslog">
-<h4 class="title topictitle4" id="ariaid-title42">Configuring syslog in UCP</h4>
+<div class="topic nested2" aria-labelledby="ariaid-title45" id="splunk-ucp-syslog">
+<h3 class="title topictitle3" id="ariaid-title45">Configuring syslog in UCP</h3>
 
 <div class="body">
 <p class="p">In order to see some data in the UCP operational dashboard. You need to have UCP send its
@@ -2985,8 +3114,8 @@ clh-logger ip_addr='10.60.59.24/16' esxi_host='esxi-clh-2.cloudra.local'</code><
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title43" id="splunk-esx-syslog">
-<h4 class="title topictitle4" id="ariaid-title43">Configuring syslog in ESX</h4>
+<div class="topic nested2" aria-labelledby="ariaid-title46" id="splunk-esx-syslog">
+<h3 class="title topictitle3" id="ariaid-title46">Configuring syslog in ESX</h3>
 
 <div class="body">
 <p class="p">This configuration must be done manually for each ESX server. The syslog server should be the
@@ -3008,8 +3137,8 @@ https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.security.doc/GU
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title44" id="splunk-limitations">
-<h4 class="title topictitle4" id="ariaid-title44">Limitations</h4>
+<div class="topic nested2" aria-labelledby="ariaid-title47" id="splunk-limitations">
+<h3 class="title topictitle3" id="ariaid-title47">Limitations</h3>
 
 <div class="body">
 <ul class="ul">
@@ -3031,8 +3160,8 @@ https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.security.doc/GU
 
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title45" id="monitoring-config-sysdig">
-<h3 class="title topictitle3" id="ariaid-title45">Sysdig configuration</h3>
+<div class="topic nested1" aria-labelledby="ariaid-title48" id="monitoring-config-sysdig">
+<h2 class="title topictitle2" id="ariaid-title48">Sysdig configuration</h2>
 
 <div class="body">
 <p class="p">The playbook <code class="ph codeph">playbooks/install_sysdig.yml</code> is used to automate the
@@ -3046,15 +3175,15 @@ in the <code class="ph codeph">group_vars/vault</code> file as detailed in <a cl
 
 <table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-sysdig__sysdig-config-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 11. </span>Sysdig variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4993">Variable</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4996">File</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e4999">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5175">Variable</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5178">File</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5181">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4993 ">sysdig_access_key</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4996 "><strong class="ph b">group_vars/vault</strong></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4999 ">This is your access key for the Sysdig portal</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5175 ">sysdig_access_key</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5178 "><strong class="ph b">group_vars/vault</strong></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5181 ">This is your access key for the Sysdig portal</td>
 </tr>
 </tbody></table>
 </div>
@@ -3072,8 +3201,8 @@ inspect various different dashboards.</p>
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title46" id="monitoring-config-promgraf">
-<h3 class="title topictitle3" id="ariaid-title46">Prometheus and Grafana configuration</h3>
+<div class="topic nested1" aria-labelledby="ariaid-title49" id="monitoring-config-promgraf">
+<h2 class="title topictitle2" id="ariaid-title49">Prometheus and Grafana configuration</h2>
 
 <div class="body">
 <p class="p">All Monitoring-related variables for Prometheus and Grafana are described in <a class="xref" href="#monitoring-config-promgraf__monitoring-config-table-conref">Table 12</a>. The variables determine
@@ -3087,43 +3216,43 @@ recommended that the values given below are used.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-promgraf__monitoring-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 12. </span>Monitoring variables</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5069">Variable</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5072">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5251">Variable</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5254">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5069 ">cadvisor_version</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5072 ">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5251 ">cadvisor_version</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5254 ">
 <code class="ph codeph">v0.25.0</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5069 ">node_exporter_version</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5072 ">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5251 ">node_exporter_version</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5254 ">
 <code class="ph codeph">v1.14.0</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5069 ">prometheus_version</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5072 ">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5251 ">prometheus_version</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5254 ">
 <code class="ph codeph">v1.7.1</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5069 ">grafana_version</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5072 ">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5251 ">grafana_version</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5254 ">
 <code class="ph codeph">4.4.3</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5069 ">prom_persistent_vol_name</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5072 ">The name of the volume which will be used to store the monitoring
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5251 ">prom_persistent_vol_name</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5254 ">The name of the volume which will be used to store the monitoring
 data. The volume is created using the vsphere docker volume
 plugin.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5069 ">prom_persistent_vol_size</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5072 ">The size of the volume which will hold the monitoring data. The
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5251 ">prom_persistent_vol_size</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5254 ">The size of the volume which will hold the monitoring data. The
 exact syntax is dictated by the vSphere Docker Volume plugin. The
 default value is 10GB.</td>
 </tr>
@@ -3131,135 +3260,6 @@ default value is 10GB.</td>
 </div>
 
 
-
-</div>
-
-</div>
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title47" id="edit-vault">
-<h2 class="title topictitle2" id="ariaid-title47">Editing the vault</h2>
-
-<div class="body">
-<p class="p">Once your group variables file is ready, the next step is to create a vault file to match
-your environment. The vault file is essentially the same thing than the group variables
-but it will contain all sensitive variables and will be encrypted.</p>
-
-<p class="p">There is a sample vault file named <code class="ph codeph">group_vars/vault.sample</code> that you can
-use as a model for your vault file. To create a vault, you create a new file
-<code class="ph codeph">group_vars/vault</code> and add entries similar to:</p>
-
-
-<pre class="pre codeblock"><code>---
-vcenter_password: 'xxx' 
-docker_ee_url: 'yoururl'
-vm_password: 'xxx'
-ucp_password: 'xxx'
-rhn_orgid: 'Red Hat Organization ID'
-rhn_key: 'Red Hat Activation Key'</code></pre>
-
-<p class="p"><code class="ph codeph">rhn_orgid</code> and <code class="ph codeph">rhn_key</code> are the credentials needed to
-subscribe the virtual machines with Red Hat Customer Portal. For more info regarding
-activation keys see the following URL: <a class="xref" href="https://access.redhat.com/articles/1378093" target="_blank">https://access.redhat.com/articles/1378093</a></p>
-
-<p class="p">To encrypt the vault you need to run the following command:</p>
-
-
-<pre class="pre codeblock"><code># ansible-vault encrypt group_vars/vault</code></pre>
-
-<p class="p">You will be prompted for a password that will decrypt the vault when required. You can
-update the values in your vault by running:</p>
-
-
-<pre class="pre codeblock"><code># ansible-vault edit group_vars/vault</code></pre>
-
-<p class="p">For Ansible to be able to read the vault, you need to specify a file where the password
-is stored, for instance in a file called <code class="ph codeph">.vault_pass</code>. Once the file is
-created, take the following precautions to avoid illegitimate access to this file:</p>
-
-<ol class="ol">
-<li class="li"> Change the permissions so only <code class="ph codeph">root</code> can read it using <code class="ph codeph">#
-chmod 600 .vault_pass</code>
-</li>
-
-<li class="li"> Add the file to your <code class="ph codeph">.gitignore</code> file if you're pushing the set of
-playbooks to a git repository. </li>
-
-</ol>
-
-<p class="p"></p>
-
-</div>
-
-
-
-
-
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title48" id="customer-certs">
-<h2 class="title topictitle2" id="ariaid-title48">Using customer supplied certificates for UCP and DTR</h2>
-
-<div class="body"></div>
-
-<div class="topic nested2" aria-labelledby="ariaid-title49" id="d1e4057">
-<h3 class="title topictitle3" id="ariaid-title49">Variables</h3>
-
-<div class="body">
-<p class="p"><strong class="ph b">ucp_certs_dir:</strong> in group_vars/vars</p>
-
-<ul class="ul">
-<li class="li">if <strong class="ph b">ucp_certs_dir</strong> is not defined, UCP is installed with self-signed
-certificates and DTR is installed with the <code class="ph codeph">--ucp-insecure-tls</code>
-switch</li>
-
-<li class="li">If <strong class="ph b">ucp_certs_dir</strong> is defined, it should points to a folder on the ansible
-machine which should contain 3 files <ul class="ul">
-<li class="li">ca.pem, this is the root CA certificate in PEM format</li>
-
-<li class="li">cert.pem, this is the server certificate optionally followed by
-intermediate CAs</li>
-
-<li class="li">key.pem, this is the private key that comes with the cert.pem
-certificates</li>
-
-</ul>
-
-</li>
-
-</ul>
-
-
-<p class="p"><strong class="ph b">dtr_certs_dir:</strong> in group_vars/vars </p>
-
-<ul class="ul">
-<li class="li">if <strong class="ph b">dtr_certs_dir</strong> is not defined, DTR is installed with self-signed
-certificates</li>
-
-<li class="li">if <strong class="ph b">dtr_certs_dir</strong> is defined, this variable points to a folder on the
-ansible machine which should contain 3 files <ul class="ul">
-<li class="li">ca.pem, this is the root CA certificate in PEM format </li>
-
-<li class="li">cert.pem, this is the DTR server certificate optionally followed by
-intermediate CAs</li>
-
-<li class="li">key.pem, this is the private key that comes with the cert.pem
-certificates</li>
-
-</ul>
-
-</li>
-
-</ul>
-
-
-<div class="note note"><span class="notetitle">Note:</span> The installation will fail if the <code class="ph codeph">ca.pem</code>, <code class="ph codeph">cert.pem</code> and <code class="ph codeph">key.pem</code> files
-cannot be found in the folders designated by <code class="ph codeph">dtr_certs_dir</code> and <code class="ph codeph">ucp_certs_dir</code> or if
-they don't constitute valid certificates. Note that there is an ansible module that
-would help verifying the validity of the certificates but it requires a version of
-PyOpenSSL which is not compatible with the version installed on Red Hat 7.4
-(PyOpenSSL is required by RH subscription manager).</div>
-
-
-</div>
 
 </div>
 
@@ -3719,16 +3719,314 @@ If you'd like to turn off curl's verification of the certificate, use
 
 </div>
 </div>
-<div class="topic nested0" aria-labelledby="ariaid-title60" id="backup-restore">
-<h1 class="title topictitle1" id="ariaid-title60">Backup and restore</h1>
+<div class="topic nested0" aria-labelledby="ariaid-title60" id="lifecycle">
+<h1 class="title topictitle1" id="ariaid-title60">Solution lifecycle management</h1>
+
+<div class="body">
+<div class="section"><h2 class="title sectiontitle">Introduction</h2>
+
+<p class="p">Lifecycle management with respect to this solution refers to the maintenance and
+management of software and hardware of various components that make up the solution
+stack. Lifecycle management is required to keep the solution up-to-date and ensure
+that the latest versions of the software are running to provide optimal performance,
+security and fix any existing defects within the product.</p>
+
+<p class="p">In this section, we will cover life cycle management of the different components that
+are used in this solution. </p>
+
+<p class="p">The lifecycle of the following stacks need to be maintained and managed. </p>
+
+<ol class="ol">
+<li class="li">Monitoring Tools (Splunk or Prometheus and Grafana)</li>
+
+<li class="li">Docker Enterprise Edition Environment</li>
+
+<li class="li">Virtual Machine Operating systems</li>
+
+<li class="li">Synergy environment</li>
+
+</ol>
+
+<p class="p">The general practice and recommendation is to follow a bottom-up approach for
+updating all components of the environment and making sure the dependencies are met.
+In our solution, we would start with Synergy and end with the monitoring
+environment. If all components are not being updated at the same time, the same
+approach can be followed – updating only the components that require updates while
+adhering to the interdependencies of each component that is being updated.</p>
+
+</div>
+
+<div class="section"><h2 class="title sectiontitle">Synergy environment</h2>
+
+<p class="p">HPE Synergy Composer powered by HPE OneView provides fast, reliable, and simplified
+firmware and driver management across many HPE Synergy components. HPE OneView
+manages firmware to reduce manual interactions and errors, in addition to minimizing
+downtime. Firmware updates of management appliances and shared infrastructure are
+nondisruptive to the production workload. </p>
+
+<p class="p">More information is available at <a class="xref" href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310">Best Practices for HPE Synergy Firmware and Driver
+Updates</a></p>
+
+</div>
+
+<div class="section"><h2 class="title sectiontitle">VMware Components</h2>
+
+<p class="p">The solution in this deployment guide is built on VMware vSphere and leverages VMware
+ESXi and vCenter. For more information on upgrading vSphere, see the VMware
+documentation: <a class="xref" href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.upgrade.doc/GUID-EB29D42E-7174-467C-AB40-DB37236FEAF5.html">Introduction to vSphere Upgrade</a>.</p>
+
+</div>
+
+<div class="section"><h2 class="title sectiontitle">vSphere Docker Volume Service Plug-in</h2>
+
+<p class="p"> vSphere Docker Volume service plug-in is part of an open source project by VMware
+that enables running stateful containers by providing persistent Docker volumes
+leveraging existing storage technology from VMware. There are two parts to the
+plug-in, namely, client software and server software (see <a class="xref" href="#lifecycle__vdvs-components-table-conref">Table 13</a>).
+Every version of the plug-in that is released includes both pieces of software and
+it is imperative that the version number installed on the client side and server
+side are the same. </p>
+
+<p class="p">When updating the Docker Volume service plug-in, ensure the ESXi version you are
+running is supported and that the client software is compatible with the operating
+system.</p>
+
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 13. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5989">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5992">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5995">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e5998">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5989 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5992 ">Server Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5995 "><ol class="ol"><li class="li">VMware ESXi</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e5998 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html">vSphere Docker Volume Service on GitHub</a></td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5989 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5992 ">Client Software</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e5995 "><ol class="ol"><li class="li">VM Operating System</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+</div>
+
+
+
+<div class="section"><h2 class="title sectiontitle">Red Hat Enterprise Linux operating system</h2>
+
+<p class="p">This solution is built using Red Hat Enterprise Linux (see <a class="xref" href="#lifecycle__rhel-components-table-content">Table 14</a>) as the base operating system. When upgrading the operating system on the 
+VMs, first verify that the OS version is compatible to run Docker EE by looking at the Docker OS compatibility metric.</p>
+
+
+
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__rhel-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 14. </span>Operating system</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6078">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6081">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6084">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6087">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6078 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6081 ">Red Hat Enterprise Linux</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6084 "><ul class="ul"><li class="li">Docker EE</li>
+<li class="li">vDVS client software plugin</li>
+</ul>
+</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6087 "><a class="xref" href="https://access.redhat.com/articles/11258">RHEL</a></td>
+</tr>
+</tbody></table>
+</div>
+
+    
+    
+
+</div>
+
+
+
+<div class="section"><h2 class="title sectiontitle">Docker EE Environment</h2>
+
+<p class="p">Each release of Docker Enterprise Edition contains three technology components – UCP,
+DTR and the Docker Daemon or Engine. It is imperative that the components belonging
+to the same version are deployed or upgraded together – see <a class="xref" href="#lifecycle__dockeree-components-table-content">Table 15</a>
+</p>
+
+<p class="p">A banner will be displayed on the UI, as shown in <a class="xref" href="#lifecycle__docker-update">Figure 12</a>, when an update is
+available for UCP or DTR. You can start the upgrade process by clicking on the
+banner.</p>
+
+<div class="fig fignone" id="lifecycle__docker-update"><span class="figcap"><span class="fig--title-label">Figure 12. </span>Docker update notification</span>
+
+<img class="image" src="media/dockerupdate.png" />
+</div>
+
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__dockeree-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 15. </span>Docker EE components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6167">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6170">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6173">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6176">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6167 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6170 ">Docker Daemon/Engine</td>
+<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6173 "><ol class="ol">
+<li class="li">VM Operating System</li>
+
+<li class="li">vDVS plugin</li>
+
+<li class="li">Prometheus and Grafana</li>
+
+</ol>
+</td>
+<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e6176 "><ul class="ul">
+<li class="li"><a class="xref" href="https://success.docker.com/Policies/Maintenance_Lifecycle">Docker Lifecycle Maintenance</a></li>
+
+<li class="li"><a class="xref" href="https://success.docker.com/Policies/Compatibility_Matrix">Docker Compatibility Matrix</a></li>
+
+</ul>
+
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6167 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6170 ">Universal Control Plane</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6167 ">3.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6170 ">Docker Trusted Registry</td>
+</tr>
+</tbody></table>
+</div>
+
+</div>
+
+
+<div class="section"><h2 class="title sectiontitle">Monitoring Tools</h2>
+
+    
+<p class="p">To learn more about upgrading Splunk, see the relevant documentation at <a class="xref" href="http://docs.splunk.com/Documentation/Splunk/7.0.3/Installation/HowtoupgradeSplunk">How to upgrade Splunk Enterprise</a></p>
+    
+
+<p class="p">The Sysdig agent runs as a container and the latest version is pulled from the Docker hub on first installation. Re-run the<code class="ph codeph">install_sysdig.yml</code> playbook
+to update to the newest version if required.</p>
+
+    
+    
+<p class="p">Prometheus and Grafana monitoring tools (see <a class="xref" href="#lifecycle__promgraf-table-content">Table 16</a>) run as containers within the
+Docker environment. Newer versions of these tools can be deployed by pulling the
+Docker images from Docker Hub. Verify that the version of Prometheus that is being
+used is compatible with the version of Docker EE.</p>
+
+    
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__promgraf-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 16. </span>Monitoring tools: Prometheus and Grafana</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6286">Order</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6289">Component</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6292">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6295">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">  
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6286 ">1.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6289 ">Prometheus</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6292 "><ol class="ol"><li class="li">Grafana</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>
+<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e6295 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
+<li class="li"><a class="xref" href="http://docs.grafana.org/installation/upgrading/">Upgrading Grafana</a></li>
+
+</ol>
+</td>
+</tr>    
+<tr class="row">
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6286 ">2.</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6289 ">Grafana</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6292 "><ol class="ol"><li class="li">Prometheus</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>   
+</tr>
+</tbody></table>
+</div>
+    
+    
+    
+</div>
+
+
+<div class="section"><h2 class="title sectiontitle">Windows operating system and Docker EE</h2>
+
+
+
+<p class="p">Docker Enterprise Edition for Windows Server (Docker EE) enables native Docker containers on Windows Server. 
+Windows Server 2016 and later versions are supported. This solution has been tested with Windows worker nodes running Windows Server 2016 
+and with Docker EE 17.06.</p>
+
+
+    
+<div class="note note"><span class="notetitle">Note:</span> 
+<p class="p">Docker Universal Control Plane is not currently supported on Windows Server 1709 due to image incompatibility issues. 
+For more information, see the Docker documentation <a class="xref" href="https://docs.docker.com/install/windows/docker-ee/">Install Docker Enterprise Edition for Windows Server</a></p>
+        
+
+<p class="p">This solution recommends that you only run Windows Server 2016 on your Windows worker nodes 
+and that you install any required updates to your Windows nodes in a timely manner.</p>
+
+</div>
+    
+
+  
+<p class="p">For information on how to update Docker EE on Windows Server 2016, see the Docker 
+documentation <a class="xref" href="https://docs.docker.com/install/windows/docker-ee/#update-docker-ee">Update Docker EE</a></p>
+
+
+
+
+</div>
+
+    
+
+</div>
+
+</div>
+<div class="topic nested0" aria-labelledby="ariaid-title61" id="backup-restore">
+<h1 class="title topictitle1" id="ariaid-title61">Backup and restore</h1>
 
 <div class="body">
 <p class="p"></p>
 
 </div>
 
-<div class="topic nested1" aria-labelledby="ariaid-title61" id="backup-restore-docker-volumes">
-<h2 class="title topictitle2" id="ariaid-title61">Backup and restore Docker persistent volumes</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title62" id="backup-restore-docker-volumes">
+<h2 class="title topictitle2" id="ariaid-title62">Backup and restore Docker persistent volumes</h2>
 
 <div class="body">
 <div class="section"><h3 class="title sectiontitle">Prerequisites</h3>
@@ -3763,8 +4061,8 @@ detached from all vSphere cluster servers prior to restoration.</li>
 
 </div>
 
-<div class="topic nested2" aria-labelledby="ariaid-title62" id="backup-solution">
-<h3 class="title topictitle3" id="ariaid-title62">Persistent storage backup solution</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title63" id="backup-solution">
+<h3 class="title topictitle3" id="ariaid-title63">Persistent storage backup solution</h3>
 
 
 <div class="body">
@@ -3814,7 +4112,7 @@ be deployed to a VMware vCenter managed environment. For this solution, the stan
 "RMC only" is installed. If RMC is installed in the Synergy environment, iSCSI connection
 to the 3PAR StoreServ is required.</p>
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 12. </span>HPE Recovery Manger Central and StoreOnce</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 13. </span>HPE Recovery Manger Central and StoreOnce</span>
 
 <img class="image" src="media/rmc-storeonce.png" />
 </div>
@@ -3830,7 +4128,7 @@ traffic is over IP. </li>
 
 </ul>
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 13. </span>Connectivity</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 14. </span>Connectivity</span>
 
 <img class="image" src="media/3par-storeonce-networking.png" />
 
@@ -3849,7 +4147,7 @@ automatically configure the storage, define default backup policies and protecti
 policies and will schedule snapshots or express protect jobs with the created
 policies.</p>
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 14. </span>Recovery Set Overview</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 15. </span>Recovery Set Overview</span>
 
 <img class="image" src="media/recovery-set-overview.png" />
 </div>
@@ -3857,7 +4155,7 @@ policies.</p>
 <p class="p">RMC uses the Express Protect feature to enable the backup of the snapshot data from the
 3PAR array to the StoreOnce system for deduplication and long-term retention. </p>
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 15. </span>Express Protect</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 16. </span>Express Protect</span>
 
 <img class="image" src="media/express-protect.png" />
 </div>
@@ -3881,7 +4179,7 @@ the backup. The volume can be restored from a Recovery Set restore point. The Ex
 Protect restore point will restore the volume from the StoreOnce system. A Snapshot Set
 restore point will restore a 3PAR StoreServ snapshot.</p>
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 16. </span>Restore points</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 17. </span>Restore points</span>
 
 <img class="image" src="media/restore-points.png" />
 </div>
@@ -3900,8 +4198,8 @@ Applications can then access the restored docker volume.</p>
 
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title63" id="backup-restore-ucp-dtr">
-<h2 class="title topictitle2" id="ariaid-title63">Backup and restore UCP and DTR</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title64" id="backup-restore-ucp-dtr">
+<h2 class="title topictitle2" id="ariaid-title64">Backup and restore UCP and DTR</h2>
 
 <div class="body">
 
@@ -3933,7 +4231,7 @@ sure to keep track of the credentials for the UCP Administrator. </div>
 
 <div class="section"><h3 class="title sectiontitle">Backup variables</h3>
 
-<p class="p"><a class="xref" href="#backup-restore-ucp-dtr__backup-ucp-table-content">Table 13</a>
+<p class="p"><a class="xref" href="#backup-restore-ucp-dtr__backup-ucp-table-content">Table 17</a>
 shows the variables related to backing up UCP and DTR. All these variables are defined in
 the file <strong class="ph b">group_vars/backup</strong>. All the data that is backed up is streamed over an SSH
 connection to the backup server. Currently, the playbooks only support the use of the
@@ -3942,30 +4240,30 @@ Ansible box as the backup server.</p>
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-ucp-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 13. </span>Backup variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-ucp-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 17. </span>Backup variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6156">Variable</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6159">File</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6162">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6651">Variable</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6654">File</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6657">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6156 ">backup_server</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6159 "><strong class="ph b">group_vars/backup</strong></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6162 ">Currently, the playbooks only support the use of the Ansible box as the backup
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6651 ">backup_server</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6654 "><strong class="ph b">group_vars/backup</strong></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6657 ">Currently, the playbooks only support the use of the Ansible box as the backup
 server. </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6156 ">backup_dest</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6159 "><strong class="ph b">group_vars/backup</strong></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6162 ">This variable should point to an existing folder on your ansible box where the
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6651 ">backup_dest</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6654 "><strong class="ph b">group_vars/backup</strong></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6657 ">This variable should point to an existing folder on your ansible box where the
 root use has write access. All the backups will be stored in this folder. For
 example, <code class="ph codeph">/root/backup</code></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6156 ">#swarm_offline_backup</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6159 "><strong class="ph b">group_vars/backup</strong></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6162 ">This variable is commented out by default. More information on the use of this variable is provided below. </td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6651 ">#swarm_offline_backup</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6654 "><strong class="ph b">group_vars/backup</strong></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6657 ">This variable is commented out by default. More information on the use of this variable is provided below. </td>
 </tr>    
 </tbody></table>
 </div>
@@ -4027,38 +4325,38 @@ documentation at <a class="xref" href="https://docs.docker.com/engine/swarm/admi
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-ucp-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 14. </span>UCP data backed up</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-ucp-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 18. </span>UCP data backed up</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6317">Data</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6320">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6812">Data</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6815">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6317 ">Configurations</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6320 ">The UCP cluster configurations, as shown by <code class="ph codeph">docker config ls</code>,
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6812 ">Configurations</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6815 ">The UCP cluster configurations, as shown by <code class="ph codeph">docker config ls</code>,
 including Docker EE license and swarm and client CAs </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6317 ">Access control</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6320 ">Permissions for team access to swarm resources, including collections, grants, and
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6812 ">Access control</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6815 ">Permissions for team access to swarm resources, including collections, grants, and
 roles</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6317 ">Certificates and keys</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6320 ">The certificates, public keys, and private keys that are used for
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6812 ">Certificates and keys</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6815 ">The certificates, public keys, and private keys that are used for
 authentication and mutual TLS communication</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6317 ">Metrics data</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6320 ">Monitoring data gathered by UCP</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6812 ">Metrics data</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6815 ">Monitoring data gathered by UCP</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6317 ">Organizations</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6320 ">Your users, teams, and orgs</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6812 ">Organizations</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6815 ">Your users, teams, and orgs</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6317 ">Volumes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6320 ">All <a class="xref" href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp">UCP named volumes</a>, which include all UCP component certs and
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6812 ">Volumes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6815 ">All <a class="xref" href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp">UCP named volumes</a>, which include all UCP component certs and
 data</td>
 </tr>
 </tbody></table>
@@ -4119,57 +4417,57 @@ affected manager node will be disconnected.</div>
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-dtr-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 15. </span>UCP data backed up</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-dtr-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 19. </span>UCP data backed up</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6503">Data</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6506">Backed up?</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6509">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6998">Data</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7001">Backed up?</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7004">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6503 ">Configurations</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6506 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6509 ">DTR settings</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6998 ">Configurations</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7001 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7004 ">DTR settings</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6503 ">Repository metadata</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6506 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6509 ">Metadata like image architecture and size</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6998 ">Repository metadata</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7001 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7004 ">Metadata like image architecture and size</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6503 ">Access control to repos and images</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6506 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6509 ">Data about who has access to which images</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6998 ">Access control to repos and images</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7001 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7004 ">Data about who has access to which images</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6503 ">Notary data</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6506 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6509 ">Signatures and digests for images that are signed</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6998 ">Notary data</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7001 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7004 ">Signatures and digests for images that are signed</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6503 ">Scan results</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6506 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6509 ">Information about vulnerabilities in your images</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6998 ">Scan results</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7001 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7004 ">Information about vulnerabilities in your images</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6503 ">Certificates and keys</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6506 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6509 ">TLS certificates and keys used by DTR</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6998 ">Certificates and keys</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7001 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7004 ">TLS certificates and keys used by DTR</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6503 ">Image content</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6506 ">no</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6509 ">Needs to be backed up separately, depends on DTR configuration</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6998 ">Image content</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7001 ">no</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7004 ">Needs to be backed up separately, depends on DTR configuration</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6503 ">Users, orgs, teams</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6506 ">no</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6509 ">Create a UCP backup to backup this data</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6998 ">Users, orgs, teams</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7001 ">no</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7004 ">Create a UCP backup to backup this data</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6503 ">Vulnerability database</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6506 ">no</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6509 ">Can be re-downloaded after a restore</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6998 ">Vulnerability database</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7001 ">no</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7004 ">Can be re-downloaded after a restore</td>
 </tr>  
 </tbody></table>
 </div>
@@ -4300,31 +4598,31 @@ shows the file names produced by <code class="ph codeph">backup.sh</code> based 
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-utility-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 16. </span>Backup utility</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-utility-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 20. </span>Backup utility</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6844">Example</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6847">Command line</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6850">Generated filenames</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7339">Example</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7342">Command line</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7345">Generated filenames</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6844 ">Default</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6847 "><code class="ph codeph">./backup.sh</code></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6850 ">backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7339 ">Default</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7342 "><code class="ph codeph">./backup.sh</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7345 ">backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
 backup_ucp_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
 backup_dtr_meta_&lt;vmname&gt;_&lt;timestamp&gt;.tgz,
 backup_dtr_data_&lt;vmname&gt;_&lt;timestamp&gt;.tgz
 and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6844 ">Custom</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6847 "><code class="ph codeph">./backup.sh my_backup</code></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6850 ">my_backup_swarm.tgz, my_backup_ucp.tgz, my_backup_dtr_meta.tgz, my_backup_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7339 ">Custom</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7342 "><code class="ph codeph">./backup.sh my_backup</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7345 ">my_backup_swarm.tgz, my_backup_ucp.tgz, my_backup_dtr_meta.tgz, my_backup_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6844 ">Date</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6847 "><code class="ph codeph">./backup.sh $(date '+%Y_%m_%d_%H%M%S')</code></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6850 ">&lt;date&gt;_swarm.tgz, &lt;date&gt;_ucp.tgz, &lt;date&gt;_dtr_meta.tgz,  &lt;date&gt;_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7339 ">Date</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7342 "><code class="ph codeph">./backup.sh $(date '+%Y_%m_%d_%H%M%S')</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7345 ">&lt;date&gt;_swarm.tgz, &lt;date&gt;_ucp.tgz, &lt;date&gt;_dtr_meta.tgz,  &lt;date&gt;_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>    
 </tbody></table>
 </div>
@@ -4342,8 +4640,8 @@ and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 
 </div>
 
-<div class="topic nested2" aria-labelledby="ariaid-title64" id="restore-ucp-dtr">
-<h3 class="title topictitle3" id="ariaid-title64">Restoring your cluster after a disaster</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title65" id="restore-ucp-dtr">
+<h3 class="title topictitle3" id="ariaid-title65">Restoring your cluster after a disaster</h3>
 
     
     
@@ -4549,7 +4847,7 @@ xqeq0sv3dhwgzbis0fx2x3h4a     clh-worker01.cloudra.local   Ready               A
 </li>
 
 
-<li class="li">If you are using the image scanning fuctionality in DTR, you will need to re-download the vilnerability database. 
+<li class="li">If you are using the image scanning fuctionality in DTR, you will need to re-download the vulnerability database. 
 For more information, see the Docker documentation  <a class="xref" href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license">here</a>.</li>
 
 
@@ -4567,304 +4865,6 @@ For more information, see the Docker documentation  <a class="xref" href="https:
     
     
 </div>
-</div>
-<div class="topic nested0" aria-labelledby="ariaid-title65" id="lifecycle">
-<h1 class="title topictitle1" id="ariaid-title65">Solution lifecycle management</h1>
-
-<div class="body">
-<div class="section"><h2 class="title sectiontitle">Introduction</h2>
-
-<p class="p">Lifecycle management with respect to this solution refers to the maintenance and
-management of software and hardware of various components that make up the solution
-stack. Lifecycle management is required to keep the solution up-to-date and ensure
-that the latest versions of the software are running to provide optimal performance,
-security and fix any existing defects within the product.</p>
-
-<p class="p">In this section, we will cover life cycle management of the different components that
-are used in this solution. </p>
-
-<p class="p">The lifecycle of the following stacks need to be maintained and managed. </p>
-
-<ol class="ol">
-<li class="li">Monitoring Tools (Splunk or Prometheus and Grafana)</li>
-
-<li class="li">Docker Enterprise Edition Environment</li>
-
-<li class="li">Virtual Machine Operating systems</li>
-
-<li class="li">Synergy environment</li>
-
-</ol>
-
-<p class="p">The general practice and recommendation is to follow a bottom-up approach for
-updating all components of the environment and making sure the dependencies are met.
-In our solution, we would start with Synergy and end with the monitoring
-environment. If all components are not being updated at the same time, the same
-approach can be followed – updating only the components that require updates while
-adhering to the interdependencies of each component that is being updated.</p>
-
-</div>
-
-<div class="section"><h2 class="title sectiontitle">Synergy environment</h2>
-
-<p class="p">HPE Synergy Composer powered by HPE OneView provides fast, reliable, and simplified
-firmware and driver management across many HPE Synergy components. HPE OneView
-manages firmware to reduce manual interactions and errors, in addition to minimizing
-downtime. Firmware updates of management appliances and shared infrastructure are
-nondisruptive to the production workload. </p>
-
-<p class="p">More information is available at <a class="xref" href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310">Best Practices for HPE Synergy Firmware and Driver
-Updates</a></p>
-
-</div>
-
-<div class="section"><h2 class="title sectiontitle">VMware Components</h2>
-
-<p class="p">The solution in this deployment guide is built on VMware vSphere and leverages VMware
-ESXi and vCenter. For more information on upgrading vSphere, see the VMware
-documentation: <a class="xref" href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.upgrade.doc/GUID-EB29D42E-7174-467C-AB40-DB37236FEAF5.html">Introduction to vSphere Upgrade</a>.</p>
-
-</div>
-
-<div class="section"><h2 class="title sectiontitle">vSphere Docker Volume Service Plug-in</h2>
-
-<p class="p"> vSphere Docker Volume service plug-in is part of an open source project by VMware
-that enables running stateful containers by providing persistent Docker volumes
-leveraging existing storage technology from VMware. There are two parts to the
-plug-in, namely, client software and server software (see <a class="xref" href="#lifecycle__vdvs-components-table-conref">Table 17</a>).
-Every version of the plug-in that is released includes both pieces of software and
-it is imperative that the version number installed on the client side and server
-side are the same. </p>
-
-<p class="p">When updating the Docker Volume service plug-in, ensure the ESXi version you are
-running is supported and that the client software is compatible with the operating
-system.</p>
-
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 17. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7283">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7286">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7289">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7292">Download/Documentation</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7283 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7286 ">Server Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7289 "><ol class="ol"><li class="li">VMware ESXi</li>
-<li class="li">Docker EE</li>
-</ol>
-</td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e7292 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html">vSphere Docker Volume Service on GitHub</a></td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7283 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7286 ">Client Software</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7289 "><ol class="ol"><li class="li">VM Operating System</li>
-<li class="li">Docker EE</li>
-</ol>
-</td>
-</tr>
-</tbody></table>
-</div>
-
-</div>
-
-
-
-<div class="section"><h2 class="title sectiontitle">Red Hat Enterprise Linux operating system</h2>
-
-<p class="p">This solution is built using Red Hat Enterprise Linux (see <a class="xref" href="#lifecycle__rhel-components-table-content">Table 18</a>) as the base operating system. When upgrading the operating system on the 
-VMs, first verify that the OS version is compatible to run Docker EE by looking at the Docker OS compatibility metric.</p>
-
-
-
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__rhel-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 18. </span>Operating system</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7372">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7375">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7378">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7381">Download/Documentation</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7372 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7375 ">Red Hat Enterprise Linux</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7378 "><ul class="ul"><li class="li">Docker EE</li>
-<li class="li">vDVS client software plugin</li>
-</ul>
-</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7381 "><a class="xref" href="https://access.redhat.com/articles/11258">RHEL</a></td>
-</tr>
-</tbody></table>
-</div>
-
-    
-    
-
-</div>
-
-
-
-<div class="section"><h2 class="title sectiontitle">Docker EE Environment</h2>
-
-<p class="p">Each release of Docker Enterprise Edition contains three technology components – UCP,
-DTR and the Docker Daemon or Engine. It is imperative that the components belonging
-to the same version are deployed or upgraded together – see <a class="xref" href="#lifecycle__dockeree-components-table-content">Table 19</a>
-</p>
-
-<p class="p">A banner will be displayed on the UI, as shown in <a class="xref" href="#lifecycle__docker-update">Figure 17</a>, when an update is
-available for UCP or DTR. You can start the upgrade process by clicking on the
-banner.</p>
-
-<div class="fig fignone" id="lifecycle__docker-update"><span class="figcap"><span class="fig--title-label">Figure 17. </span>Docker update notification</span>
-
-<img class="image" src="media/dockerupdate.png" />
-</div>
-
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__dockeree-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 19. </span>Docker EE components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7461">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7464">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7467">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7470">Download/Documentation</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7461 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7464 ">Docker Daemon/Engine</td>
-<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e7467 "><ol class="ol">
-<li class="li">VM Operating System</li>
-
-<li class="li">vDVS plugin</li>
-
-<li class="li">Prometheus and Grafana</li>
-
-</ol>
-</td>
-<td class="entry nocellnorowborder" rowspan="3" style="text-align:left;vertical-align:middle;" headers="d29e7470 "><ul class="ul">
-<li class="li"><a class="xref" href="https://success.docker.com/Policies/Maintenance_Lifecycle">Docker Lifecycle Maintenance</a></li>
-
-<li class="li"><a class="xref" href="https://success.docker.com/Policies/Compatibility_Matrix">Docker Compatibility Matrix</a></li>
-
-</ul>
-
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7461 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7464 ">Universal Control Plane</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7461 ">3.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7464 ">Docker Trusted Registry</td>
-</tr>
-</tbody></table>
-</div>
-
-</div>
-
-
-<div class="section"><h2 class="title sectiontitle">Monitoring Tools</h2>
-
-    
-<p class="p">To learn more about upgrading Splunk, see the relevant documentation at <a class="xref" href="http://docs.splunk.com/Documentation/Splunk/7.0.3/Installation/HowtoupgradeSplunk">How to upgrade Splunk Enterprise</a></p>
-    
-
-<p class="p">The Sysdig agent runs as a container and the latest version is pulled from the Docker hub on first installation. Re-run the<code class="ph codeph">install_sysdig.yml</code> playbook
-to update to the newest version if required.</p>
-
-    
-    
-<p class="p">Prometheus and Grafana monitoring tools (see <a class="xref" href="#lifecycle__promgraf-table-content">Table 20</a>) run as containers within the
-Docker environment. Newer versions of these tools can be deployed by pulling the
-Docker images from Docker Hub. Verify that the version of Prometheus that is being
-used is compatible with the version of Docker EE.</p>
-
-    
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle__promgraf-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 20. </span>Monitoring tools: Prometheus and Grafana</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7580">Order</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7583">Component</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7586">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7589">Download/Documentation</th>
-</tr>
-</thead><tbody class="tbody">  
-<tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7580 ">1.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7583 ">Prometheus</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7586 "><ol class="ol"><li class="li">Grafana</li>
-<li class="li">Docker EE</li>
-</ol>
-</td>
-<td class="entry nocellnorowborder" rowspan="2" style="text-align:left;vertical-align:middle;" headers="d29e7589 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
-<li class="li"><a class="xref" href="http://docs.grafana.org/installation/upgrading/">Upgrading Grafana</a></li>
-
-</ol>
-</td>
-</tr>    
-<tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7580 ">2.</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7583 ">Grafana</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7586 "><ol class="ol"><li class="li">Prometheus</li>
-<li class="li">Docker EE</li>
-</ol>
-</td>   
-</tr>
-</tbody></table>
-</div>
-    
-    
-    
-</div>
-
-
-<div class="section"><h2 class="title sectiontitle">Windows operating system and Docker EE</h2>
-
-
-
-<p class="p">Docker Enterprise Edition for Windows Server (Docker EE) enables native Docker containers on Windows Server. 
-Windows Server 2016 and later versions are supported. This solution has been tested with Windows worker nodes running Windows Server 2016 
-and with Docker EE 17.06.</p>
-
-
-    
-<div class="note note"><span class="notetitle">Note:</span> 
-<p class="p">Docker Universal Control Plane is not currently supported on Windows Server 1709 due to image incompatibility issues. 
-For more information, see the Docker documentation <a class="xref" href="https://docs.docker.com/install/windows/docker-ee/">Install Docker Enterprise Edition for Windows Server</a></p>
-        
-
-<p class="p">This solution recommends that you only run Windows Server 2016 on your Windows worker nodes 
-and that you install any required updates to your Windows nodes in a timely manner.</p>
-
-</div>
-    
-
-  
-<p class="p">For information on how to update Docker EE on Windows Server 2016, see the Docker 
-documentation <a class="xref" href="https://docs.docker.com/install/windows/docker-ee/#update-docker-ee">Update Docker EE</a></p>
-
-
-
-
-</div>
-
-    
-
-</div>
-
 </div>
 </body>
 </html>

@@ -13,130 +13,133 @@
       <vrmlist>
         <vrm version="1.0"/>
       </vrmlist>
-    </prodinfo> 
+    </prodinfo>
   </topicmeta>
 
   <!--<mapref href="images.xml" format="ditamap"/>-->
   <!--<mapref href="images.xml" format="ditamap" processing-role="resource-only"/>-->
   <!--<topicref href="images.xml" format="ditamap"/>-->
-  
-  
+
+
   <topicref href="enterprise-caas.dita" navtitle="Enterprise CaaS"/>
-  
+
   <topicref href="introduction.dita" navtitle="Introduction">
-    
+
     <topicref href="about-ansible.dita" navtitle="About Ansible"/>
-    
+
     <topicref href="docker-ee.dita" navtitle="About Docker EE"/>
- 
+
     <topicref href="synergy.dita" navtitle="About Synergy"/>
-    
+
     <topicref href="audience-assumptions.dita" navtitle="Audience and assumptions"/>
-    
-    <topicref href="required-versions.dita" navtitle="Required versions"></topicref>
-    
+
+    <topicref href="required-versions.dita" navtitle="Required versions"/>
+
   </topicref>
-  
+
   <topicref href="architecture.dita" navtitle="Architecture">
-    
+
     <topicref href="server-reqs.dita" navtitle="Server Requirements"/>
-    
+
     <topicref href="storage-reqs.dita" navtitle="Storage Requirements"/>
-    
+
     <topicref href="ha.dita" navtitle="High Availability"/>
-    
+
     <topicref href="sizing.dita" navtitle="Sizing"/>
-    
+
     <topicref href="disaster-recovery.dita" navtitle="Disaster Recovery"/>
-    
+
     <topicref href="security.dita" navtitle="Security"/>
-    
+
     <!--<topicref href="monitoring.dita" navtitle="Monitoring">-->
-      <topicref href="splunk.dita" navtitle="Monitoring with Splunk"/> 
-    
-      <topicref href="sysdig.dita" navtitle="Monitoring with Sysdig"/> 
+    <topicref href="splunk.dita" navtitle="Monitoring with Splunk"/>
+
+    <topicref href="sysdig.dita" navtitle="Monitoring with Sysdig"/>
     <!--</topicref>-->
-    
+
   </topicref>
-  
- <topicref href="provisioning.dita" navtitle="Provisioning the environment">
-    
+
+  <topicref href="provisioning.dita" navtitle="Provisioning the environment">
+
     <!--<topicref href="esxi-hosts.dita" navtitle="Creating ESXi hosts"/>-->
-    
+
     <!--<topicref href="deploy-plugin.dita" navtitle="Deploying the storage plugin"/>-->
-    
+
     <topicref href="verify-prereqs.dita" navtitle="Verify prerequisites"/>
-    
+
     <topicref href="vsphere-ha.dita" navtitle="Enable vSphere High Availability"/>
-    
+
     <topicref href="install-vdvs.dita" navtitle="Install VDVS"/>
-    
+
     <topicref href="install-vdvs-win.dita" navtitle="Install VDVS on Windows"/>
-    
-     <topicref href="create-rhel-template.dita" navtitle="Create RHEL template"/>
-    
+
+    <topicref href="create-rhel-template.dita" navtitle="Create RHEL template"/>
+
     <topicref href="config-yum.dita" navtitle="Config yum"/>
-      
+
     <topicref href="create-template-win.dita" navtitle="Create Windows template"/>
-    
+
     <topicref href="create-ansible-node.dita" navtitle="Create Ansible node"/>
-    
+
     <topicref href="finalize-template.dita" navtitle="Finalize template"/>
-    
+
     <topicref href="ansible-config.dita" navtitle="Ansible configuration"/>
-    
+
     <topicref href="edit-inventory.dita" navtitle="Editing the inventory"/>
-   
-    
-     <topicref href="edit-group-var.dita" navtitle="Editing group variables">
-       
-       <topicref href="vmware-config.dita" navtitle="VMware configuration"/>
-       
-       <topicref href="network-config.dita" navtitle="Network configuration"/>
-       
-       <topicref href="environment-config.dita" navtitle="Environment configuration"/>
-       
-       <topicref href="docker-config.dita" navtitle="Docker configuration"/>
-       
-       <topicref href="windows-config.dita" navtitle="Windows configuration"/>
-       
-       <!--<topicref href="monitoring-config.dita" navtitle="Monitoring configuration">-->
-         <topicref href="monitoring-config-splunk.dita" navtitle="Splunk configuration">
-           <topicref href="splunk-options.dita" navtitle="Splunk options"/>
-           <topicref href="splunk-pre-deploy.dita" navtitle="Before you deploy"/>
-           <topicref href="splunk-ssl.dita" navtitle="Splunk and SSL"/>
-           <topicref href="splunk-ucp-syslog.dita" navtitle="Configuring syslog in UCP"/>
-           <topicref href="splunk-esx-syslog.dita" navtitle="Configuring syslog in ESX"/>
-           <topicref href="splunk-limitations.dita" navtitle="Limitations"/>
-         </topicref>          
-         
-         <topicref href="monitoring-config-sysdig.dita" navtitle="Sysdig configuration"/>
-       
-         <topicref href="monitoring-config-promgraf.dita" navtitle="Prometheus and Grafana configuration"/>
-       <!--</topicref>-->
-       
-     </topicref>
-    
+
     <topicref href="edit-vault.dita" navtitle="Editing the vault"/>
-    
-    <topicref href="customer-certs.dita" navtitle="Customer certificates"/>
-        
+
   </topicref>
-  
+
+
+  <topicref href="edit-group-var.dita" navtitle="Configuration of the solution components">
+
+    <topicref href="vmware-config.dita" navtitle="VMware configuration"/>
+
+    <topicref href="network-config.dita" navtitle="Network configuration"/>
+
+    <topicref href="environment-config.dita" navtitle="Environment configuration"/>
+
+    <topicref href="docker-config.dita" navtitle="Docker configuration">
+      <topicref href="customer-certs.dita" navtitle="Customer certificates"/>
+    </topicref>
+
+    <topicref href="windows-config.dita" navtitle="Windows configuration"/>
+
+    <!--<topicref href="monitoring-config.dita" navtitle="Monitoring configuration">-->
+    <topicref href="monitoring-config-splunk.dita" navtitle="Splunk configuration">
+      <topicref href="splunk-options.dita" navtitle="Splunk options"/>
+      <topicref href="splunk-pre-deploy.dita" navtitle="Before you deploy"/>
+      <topicref href="splunk-ssl.dita" navtitle="Splunk and SSL"/>
+      <topicref href="splunk-ucp-syslog.dita" navtitle="Configuring syslog in UCP"/>
+      <topicref href="splunk-esx-syslog.dita" navtitle="Configuring syslog in ESX"/>
+      <topicref href="splunk-limitations.dita" navtitle="Limitations"/>
+    </topicref>
+
+    <topicref href="monitoring-config-sysdig.dita" navtitle="Sysdig configuration"/>
+
+    <topicref href="monitoring-config-promgraf.dita" navtitle="Prometheus and Grafana configuration"/>
+    <!--</topicref>-->
+
+  </topicref>
+
+
   <topicref href="playbooks-overview.dita" navtitle="Overview of playbooks"/>
-  
+
   <topicref href="running-playbooks.dita" navtitle="Running the playbooks">
-    <topicref href="post-deployment.dita" navtitle="Post-deployment"/>    
+    <topicref href="post-deployment.dita" navtitle="Post-deployment"/>
   </topicref>
-  
+
+
+  <topicref href="lifecycle.dita" navtitle="Solution lifecycle"/>
+
+
   <topicref href="backup-restore.dita" navtitle="Backup and restore">
     <topicref href="backup-restore-docker-volumes.dita"/>
-    
+
     <topicref href="backup-restore-ucp-dtr.dita" navtitle="Backup and restore UCP and DTR"/>
-    
-    
+
+
   </topicref>
-  
-  <topicref href="lifecycle.dita" navtitle="Solution lifecycle"/>
- 
+
 </map>
