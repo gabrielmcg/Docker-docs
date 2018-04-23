@@ -83,9 +83,6 @@
 
     <topicref href="finalize-template.dita" navtitle="Finalize template"/>
 
-    <topicref href="ansible-config.dita" navtitle="Ansible configuration"/>
-
-    <topicref href="edit-inventory.dita" navtitle="Editing the inventory"/>
 
 
 
@@ -93,6 +90,10 @@
 
 
   <topicref href="edit-group-var.dita" navtitle="Configuration of the solution components">
+    
+    <topicref href="ansible-config.dita" navtitle="Ansible configuration"/>
+
+    <topicref href="edit-inventory.dita" navtitle="Editing the inventory"/>    
 
     <topicref href="vmware-config.dita" navtitle="VMware configuration"/>
 

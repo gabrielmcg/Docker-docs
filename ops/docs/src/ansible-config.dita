@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="ansible-config">
-<title>Prepare your Ansible configuration</title>
+<title>Ansible configuration</title>
 <body>
 <p>On the Ansible node, retrieve the latest version of the playbooks using Git.</p>
 
@@ -22,22 +22,32 @@
 
 
 <p>You now need to prepare the configuration to match your own environment, prior to
-deploying Docker EE and the rest of the nodes. To do so, you will need to create or
+deploying Docker EE and the rest of the nodes. To do so, you will need to
 modify a number of files including:</p>
 <ul>
-<li><codeph>site.yml</codeph> (the main entry point for the playbooks)</li>   
-<li><codeph>vm_hosts</codeph> (the inventory file)</li>
+<li><codeph>site.yml</codeph>, the main entry point for the playbooks.</li>   
+<li><codeph>vm_hosts</codeph>, the inventory file.</li>
 </ul>
 
-<p> and also: </p>
+<p> and also to create a number of files: </p>
 <ul>   
-<li><codeph>group_vars/vars</codeph> (the group variables file)</li>
-<li><codeph>group_vars/vault</codeph> (the encrypted group variable file)</li>
-<li><codeph>group_vars/win_worker.yml</codeph> (the windows remote
-management variable file)</li>
+<li><codeph>group_vars/vars</codeph>, the group variables file.</li>
+<li><codeph>group_vars/vault</codeph>, containing sensitive information that needs to be protected.</li>
+<li><codeph>group_vars/backup</codeph>, containing backup-related variables. </li>
 </ul>
 
-<p>You should work from the root account for the configuration steps and later when you run
+<p>For the latter group, a set of sample files has been provided to help you get started:</p>
+
+<ul>   
+<li><codeph>group_vars/vars.sample</codeph>, a sample group variables file.</li>
+<li><codeph>group_vars/vault.sample</codeph>, a sample vault file.</li>
+<li><codeph>group_vars/backup.sample</codeph>, a sample backup configuration file. </li>
+</ul>
+
+<p>The file <codeph>group_vars/win_worker.yml</codeph> supports  advanced configuration of Windows remote
+management and in general should not require modification.</p>
+
+<p>You should work from the <codeph>root</codeph> account for the configuration steps and later when you run
 the playbooks.</p>
 </body>
 </topic>
