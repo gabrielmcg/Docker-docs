@@ -8,13 +8,12 @@
 <title>Introduction</title>
 <p>The playbooks provided in this solution implement the backup and restore procedures as they
 are described in the Docker documentation at <xref
-href="https://docs.docker.com/enterprise/backup/" format="html"/></p>
-<ul>
-<li><codeph>playbooks/backup_swarm.yml</codeph> is used to backup the swarm data</li>
-<li><codeph>playbooks/backup_ucp.yml</codeph> is used to backup UCP</li>
-<li><codeph>playbooks/backup_dtr_meta.yml</codeph> is used to backup DTR metadata</li>
-<li><codeph>playbooks/backup_dtr_images.yml</codeph> is used to backup DTR images</li>
-</ul>
+href="https://docs.docker.com/enterprise/backup/" format="html"/>.
+
+The solution follows the recommendations in the Docker best practices document at 
+<xref href="https://success.docker.com/article/backup-restore-best-practices" format="html"/>.
+</p>
+
   
 <note type="note">It is important that you make copies of the backed up data and that you store the copies in a separate physical location. 
 You must also recognize that the backed up data contains sensitive information such as private keys and so it is important to restrict
@@ -24,7 +23,7 @@ sure to keep track of the credentials for the UCP Administrator. </note>
 </section>
 
 <section>
-<title>Backup variables</title>
+<title>Backup configuration variables</title>
 <p><xref href="backup-restore-ucp-dtr.dita#backup-restore-ucp-dtr/backup-ucp-table-content"/>
 shows the variables related to backing up UCP and DTR. All these variables are defined in
 the file <b>group_vars/backup</b>. All the data that is backed up is streamed over an SSH
@@ -594,6 +593,18 @@ For more information, see the Docker documentation  <xref href="https://docs.doc
     
 </ol>
 
+</section> 
+ 
+<section>
+<title>Related playbooks</title>    
+
+<ul>
+<li><codeph>playbooks/backup_swarm.yml</codeph> is used to backup the swarm data</li>
+<li><codeph>playbooks/backup_ucp.yml</codeph> is used to backup UCP</li>
+<li><codeph>playbooks/backup_dtr_meta.yml</codeph> is used to backup DTR metadata</li>
+<li><codeph>playbooks/backup_dtr_images.yml</codeph> is used to backup DTR images</li>
+</ul>
+    
 </section> 
  
 </body>   

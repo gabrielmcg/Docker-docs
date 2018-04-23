@@ -4266,18 +4266,12 @@ Applications can then access the restored docker volume.</p>
 <div class="section"><h3 class="title sectiontitle">Introduction</h3>
 
 <p class="p">The playbooks provided in this solution implement the backup and restore procedures as they
-are described in the Docker documentation at <a class="xref" href="https://docs.docker.com/enterprise/backup/">https://docs.docker.com/enterprise/backup/</a></p>
+are described in the Docker documentation at <a class="xref" href="https://docs.docker.com/enterprise/backup/">https://docs.docker.com/enterprise/backup/</a>.
 
-<ul class="ul">
-<li class="li"><code class="ph codeph">playbooks/backup_swarm.yml</code> is used to backup the swarm data</li>
+The solution follows the recommendations in the Docker best practices document at 
+<a class="xref" href="https://success.docker.com/article/backup-restore-best-practices">https://success.docker.com/article/backup-restore-best-practices</a>.
+</p>
 
-<li class="li"><code class="ph codeph">playbooks/backup_ucp.yml</code> is used to backup UCP</li>
-
-<li class="li"><code class="ph codeph">playbooks/backup_dtr_meta.yml</code> is used to backup DTR metadata</li>
-
-<li class="li"><code class="ph codeph">playbooks/backup_dtr_images.yml</code> is used to backup DTR images</li>
-
-</ul>
 
   
 <div class="note note"><span class="notetitle">Note:</span> It is important that you make copies of the backed up data and that you store the copies in a separate physical location. 
@@ -4289,7 +4283,7 @@ sure to keep track of the credentials for the UCP Administrator. </div>
 </div>
 
 
-<div class="section"><h3 class="title sectiontitle">Backup variables</h3>
+<div class="section"><h3 class="title sectiontitle">Backup configuration variables</h3>
 
 <p class="p"><a class="xref" href="#backup-restore-ucp-dtr__backup-ucp-table-content">Table 17</a>
 shows the variables related to backing up UCP and DTR. All these variables are defined in
@@ -4302,28 +4296,28 @@ Ansible box as the backup server.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-ucp-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 17. </span>Backup variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6789">Variable</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6792">File</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6795">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6771">Variable</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6774">File</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6777">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6789 ">backup_server</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6792 "><strong class="ph b">group_vars/backup</strong></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6795 ">Currently, the playbooks only support the use of the Ansible box as the backup
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6771 ">backup_server</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6774 "><strong class="ph b">group_vars/backup</strong></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6777 ">Currently, the playbooks only support the use of the Ansible box as the backup
 server. </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6789 ">backup_dest</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6792 "><strong class="ph b">group_vars/backup</strong></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6795 ">This variable should point to an existing folder on your ansible box where the
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6771 ">backup_dest</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6774 "><strong class="ph b">group_vars/backup</strong></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6777 ">This variable should point to an existing folder on your ansible box where the
 root use has write access. All the backups will be stored in this folder. For
 example, <code class="ph codeph">/root/backup</code></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6789 ">#swarm_offline_backup</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6792 "><strong class="ph b">group_vars/backup</strong></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6795 ">This variable is commented out by default. More information on the use of this variable is provided below. </td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6771 ">#swarm_offline_backup</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6774 "><strong class="ph b">group_vars/backup</strong></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6777 ">This variable is commented out by default. More information on the use of this variable is provided below. </td>
 </tr>    
 </tbody></table>
 </div>
@@ -4387,36 +4381,36 @@ documentation at <a class="xref" href="https://docs.docker.com/engine/swarm/admi
 
 <table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-ucp-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 18. </span>UCP data backed up</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6950">Data</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6953">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6932">Data</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e6935">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6950 ">Configurations</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6953 ">The UCP cluster configurations, as shown by <code class="ph codeph">docker config ls</code>,
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6932 ">Configurations</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6935 ">The UCP cluster configurations, as shown by <code class="ph codeph">docker config ls</code>,
 including Docker EE license and swarm and client CAs </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6950 ">Access control</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6953 ">Permissions for team access to swarm resources, including collections, grants, and
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6932 ">Access control</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6935 ">Permissions for team access to swarm resources, including collections, grants, and
 roles</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6950 ">Certificates and keys</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6953 ">The certificates, public keys, and private keys that are used for
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6932 ">Certificates and keys</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6935 ">The certificates, public keys, and private keys that are used for
 authentication and mutual TLS communication</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6950 ">Metrics data</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6953 ">Monitoring data gathered by UCP</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6932 ">Metrics data</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6935 ">Monitoring data gathered by UCP</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6950 ">Organizations</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6953 ">Your users, teams, and orgs</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6932 ">Organizations</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6935 ">Your users, teams, and orgs</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6950 ">Volumes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6953 ">All <a class="xref" href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp">UCP named volumes</a>, which include all UCP component certs and
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6932 ">Volumes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e6935 ">All <a class="xref" href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp">UCP named volumes</a>, which include all UCP component certs and
 data</td>
 </tr>
 </tbody></table>
@@ -4479,55 +4473,55 @@ affected manager node will be disconnected.</div>
 
 <table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-dtr-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 19. </span>UCP data backed up</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7136">Data</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7139">Backed up?</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7142">Description</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7118">Data</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7121">Backed up?</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7124">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7136 ">Configurations</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7139 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7142 ">DTR settings</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7118 ">Configurations</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7121 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7124 ">DTR settings</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7136 ">Repository metadata</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7139 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7142 ">Metadata like image architecture and size</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7118 ">Repository metadata</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7121 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7124 ">Metadata like image architecture and size</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7136 ">Access control to repos and images</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7139 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7142 ">Data about who has access to which images</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7118 ">Access control to repos and images</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7121 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7124 ">Data about who has access to which images</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7136 ">Notary data</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7139 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7142 ">Signatures and digests for images that are signed</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7118 ">Notary data</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7121 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7124 ">Signatures and digests for images that are signed</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7136 ">Scan results</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7139 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7142 ">Information about vulnerabilities in your images</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7118 ">Scan results</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7121 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7124 ">Information about vulnerabilities in your images</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7136 ">Certificates and keys</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7139 ">yes</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7142 ">TLS certificates and keys used by DTR</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7118 ">Certificates and keys</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7121 ">yes</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7124 ">TLS certificates and keys used by DTR</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7136 ">Image content</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7139 ">no</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7142 ">Needs to be backed up separately, depends on DTR configuration</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7118 ">Image content</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7121 ">no</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7124 ">Needs to be backed up separately, depends on DTR configuration</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7136 ">Users, orgs, teams</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7139 ">no</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7142 ">Create a UCP backup to backup this data</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7118 ">Users, orgs, teams</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7121 ">no</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7124 ">Create a UCP backup to backup this data</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7136 ">Vulnerability database</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7139 ">no</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7142 ">Can be re-downloaded after a restore</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7118 ">Vulnerability database</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7121 ">no</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7124 ">Can be re-downloaded after a restore</td>
 </tr>  
 </tbody></table>
 </div>
@@ -4660,29 +4654,29 @@ shows the file names produced by <code class="ph codeph">backup.sh</code> based 
 
 <table cellpadding="4" cellspacing="0" summary="" id="backup-restore-ucp-dtr__backup-utility-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 20. </span>Backup utility</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7477">Example</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7480">Command line</th>
-<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7483">Generated filenames</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7459">Example</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7462">Command line</th>
+<th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d29e7465">Generated filenames</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7477 ">Default</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7480 "><code class="ph codeph">./backup.sh</code></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7483 ">backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7459 ">Default</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7462 "><code class="ph codeph">./backup.sh</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7465 ">backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
 backup_ucp_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
 backup_dtr_meta_&lt;vmname&gt;_&lt;timestamp&gt;.tgz,
 backup_dtr_data_&lt;vmname&gt;_&lt;timestamp&gt;.tgz
 and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7477 ">Custom</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7480 "><code class="ph codeph">./backup.sh my_backup</code></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7483 ">my_backup_swarm.tgz, my_backup_ucp.tgz, my_backup_dtr_meta.tgz, my_backup_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7459 ">Custom</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7462 "><code class="ph codeph">./backup.sh my_backup</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7465 ">my_backup_swarm.tgz, my_backup_ucp.tgz, my_backup_dtr_meta.tgz, my_backup_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7477 ">Date</td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7480 "><code class="ph codeph">./backup.sh $(date '+%Y_%m_%d_%H%M%S')</code></td>
-<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7483 ">&lt;date&gt;_swarm.tgz, &lt;date&gt;_ucp.tgz, &lt;date&gt;_dtr_meta.tgz,  &lt;date&gt;_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7459 ">Date</td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7462 "><code class="ph codeph">./backup.sh $(date '+%Y_%m_%d_%H%M%S')</code></td>
+<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7465 ">&lt;date&gt;_swarm.tgz, &lt;date&gt;_ucp.tgz, &lt;date&gt;_dtr_meta.tgz,  &lt;date&gt;_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>    
 </tbody></table>
 </div>
@@ -4915,6 +4909,24 @@ For more information, see the Docker documentation  <a class="xref" href="https:
 </ol>
 
 
+</div>
+ 
+ 
+<div class="section"><h4 class="title sectiontitle">Related playbooks</h4>
+    
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">playbooks/backup_swarm.yml</code> is used to backup the swarm data</li>
+
+<li class="li"><code class="ph codeph">playbooks/backup_ucp.yml</code> is used to backup UCP</li>
+
+<li class="li"><code class="ph codeph">playbooks/backup_dtr_meta.yml</code> is used to backup DTR metadata</li>
+
+<li class="li"><code class="ph codeph">playbooks/backup_dtr_images.yml</code> is used to backup DTR images</li>
+
+</ul>
+
+    
 </div>
  
  
