@@ -42,7 +42,7 @@ Before it does so, the playbook will verify that enough managers are running in 
 maintain the quroum. If this is not the case, the playbook will exit with an error. For more information, see the Docker
 documentation at <xref
 href="https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv"
-format="html"/></note>
+format="html" scope="external"/></note>
 
 </body>
 </topic>

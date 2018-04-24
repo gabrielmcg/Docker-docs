@@ -86,7 +86,7 @@ traffic is over IP. </li>
 </fig>
 <p>Refer to <xref
 href="https://hpe.sharepoint.com/teams/StorageSolutions/Data%20Center%20Virtualization/RMC-V/Manuals/Manual_5.0/RMC_5.0_user_guide.pdf#search=RMC"
-format="html">RMC User guide</xref> TODO PUBLIC URL NEEDED for detailed instructions on
+format="html" scope="external">RMC User guide</xref> TODO PUBLIC URL NEEDED for detailed instructions on
 setup and configuration of RMC and StoreOnce. When RMC is installed, it can be configured
 with the Backup Appliance Persona. The Backup persona allows the RMC to manage snapshots
 and Express Protect Backups. During installation, RMC configuration should specify Data

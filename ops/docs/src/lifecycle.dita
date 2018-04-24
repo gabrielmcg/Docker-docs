@@ -35,7 +35,7 @@ downtime. Firmware updates of management appliances and shared infrastructure ar
 nondisruptive to the production workload. </p>
 <p>More information is available at <xref
 href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310"
-format="html">Best Practices for HPE Synergy Firmware and Driver
+format="html" scope="external">Best Practices for HPE Synergy Firmware and Driver
 Updates</xref></p>
 </section>
 <section>
@@ -44,7 +44,7 @@ Updates</xref></p>
 ESXi and vCenter. For more information on upgrading vSphere, see the VMware
 documentation: <xref
 href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.upgrade.doc/GUID-EB29D42E-7174-467C-AB40-DB37236FEAF5.html"
-format="html">Introduction to vSphere Upgrade</xref>.</p>
+format="html" scope="external">Introduction to vSphere Upgrade</xref>.</p>
 </section>
 <section>
 <title>vSphere Docker Volume Service Plug-in</title>
@@ -104,7 +104,7 @@ VMs, first verify that the OS version is compatible to run Docker EE by looking 
 <entry>1.</entry>
 <entry>Red Hat Enterprise Linux</entry>
 <entry><ul><li>Docker EE</li><li>vDVS client software plugin</li></ul></entry>
-<entry><xref href="https://access.redhat.com/articles/11258" format="html">RHEL</xref></entry>
+<entry><xref href="https://access.redhat.com/articles/11258" format="html" scope="external">RHEL</xref></entry>
 </row>
 </tbody>
 </tgroup>
@@ -162,10 +162,10 @@ banner.</p>
 <entry morerows="2" valign="middle"><ul>
 <li><xref
 href="https://success.docker.com/Policies/Maintenance_Lifecycle"
-format="html">Docker Lifecycle Maintenance</xref></li>
+format="html" scope="external">Docker Lifecycle Maintenance</xref></li>
 <li><xref
 href="https://success.docker.com/Policies/Compatibility_Matrix"
-format="html">Docker Compatibility Matrix</xref></li>
+format="html" scope="external">Docker Compatibility Matrix</xref></li>
 </ul>
 </entry>
 </row>
@@ -185,7 +185,7 @@ format="html">Docker Compatibility Matrix</xref></li>
 <section>
 <title>Monitoring Tools</title>
     
-<p>To learn more about upgrading Splunk, see the relevant documentation at <xref href="http://docs.splunk.com/Documentation/Splunk/7.0.3/Installation/HowtoupgradeSplunk" format="html">How to upgrade Splunk Enterprise</xref></p>    
+<p>To learn more about upgrading Splunk, see the relevant documentation at <xref href="http://docs.splunk.com/Documentation/Splunk/7.0.3/Installation/HowtoupgradeSplunk" format="html" scope="external">How to upgrade Splunk Enterprise</xref></p>    
 
 <p>The Sysdig agent runs as a container and the latest version is pulled from the Docker hub on first installation. Re-run the<codeph>install_sysdig.yml</codeph> playbook
 to update to the newest version if required.</p>
@@ -216,7 +216,7 @@ used is compatible with the version of Docker EE.</p>
 <entry>1.</entry>
 <entry>Prometheus</entry>
 <entry><ol><li>Grafana</li><li>Docker EE</li></ol></entry>
-<entry morerows="1" valign="middle"><ol><li>Prometheus Images on Docker Hub</li><li><xref href="http://docs.grafana.org/installation/upgrading/" format="html">Upgrading Grafana</xref></li>
+<entry morerows="1" valign="middle"><ol><li>Prometheus Images on Docker Hub</li><li><xref href="http://docs.grafana.org/installation/upgrading/" format="html" scope="external">Upgrading Grafana</xref></li>
 </ol></entry>
 </row>    
 <row>
@@ -242,7 +242,7 @@ and with Docker EE 17.06.</p>
     
 <note type="note">
 <p>Docker Universal Control Plane is not currently supported on Windows Server 1709 due to image incompatibility issues. 
-For more information, see the Docker documentation <xref href="https://docs.docker.com/install/windows/docker-ee/" format="html">Install Docker Enterprise Edition for Windows Server</xref></p>        
+For more information, see the Docker documentation <xref href="https://docs.docker.com/install/windows/docker-ee/" format="html" scope="external">Install Docker Enterprise Edition for Windows Server</xref></p>        
 
 <p>This solution recommends that you only run Windows Server 2016 on your Windows worker nodes 
 and that you install any required updates to your Windows nodes in a timely manner.</p>
@@ -250,7 +250,7 @@ and that you install any required updates to your Windows nodes in a timely mann
 
   
 <p>For information on how to update Docker EE on Windows Server 2016, see the Docker 
-documentation <xref href="https://docs.docker.com/install/windows/docker-ee/#update-docker-ee" format="html">Update Docker EE</xref></p>
+documentation <xref href="https://docs.docker.com/install/windows/docker-ee/#update-docker-ee" format="html" scope="external">Update Docker EE</xref></p>
 
 
 

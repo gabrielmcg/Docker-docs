@@ -9,7 +9,7 @@
 
 
 <ol>
-<li>Ensure that you have completed all the preliminary steps as outlined in the section <xref href="backup-restore-ucp-dtr.dita#restore-ucp-dtr/before-restore" type="section">Before you restore</xref>. 
+<li>Ensure that you have completed all the preliminary steps as outlined in the section <xref href="before-restore.dita#before-restore" type="section">Before you restore</xref>. 
 In this scenario, you need the archives for the DTR metadata and the DTR images.
 </li>
 <li>Ensure that all the DTR VMs listed in your inventory are destroyed, using the vSphere Web Client to delete them if required. If you want to restore the DTR images you should also delete the NFS VM.</li>
@@ -49,7 +49,7 @@ xqeq0sv3dhwgzbis0fx2x3h4a     clh-worker01.cloudra.local   Ready               A
 </li>
 
 <li>If you are using the image scanning fuctionality in DTR, you will need to re-download the vulnerability database. 
-For more information, see the Docker documentation  <xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license" format="html">here</xref>.</li>
+For more information, see the Docker documentation  <xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license" format="html" scope="external">here</xref>.</li>
 
 
 </ol>

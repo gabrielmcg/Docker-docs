@@ -49,7 +49,7 @@ authentication and mutual TLS communication</entry>
 <entry>Volumes</entry>
 <entry>All <xref
 href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp"
-format="html">UCP named volumes</xref>, which include all UCP component certs and
+format="html" scope="external">UCP named volumes</xref>, which include all UCP component certs and
 data</entry>
 </row>
 </tbody>
@@ -90,7 +90,7 @@ or <codeph>docker attach</codeph> operations on the
 affected manager node will be disconnected.</note>
 
 <p>For more information on UCP backup, see the Docker documentation at
-<xref href="https://docs.docker.com/datacenter/ucp/2.2/guides/admin/backups-and-disaster-recovery/" format="html"/></p>  
+<xref href="https://docs.docker.com/datacenter/ucp/2.2/guides/admin/backups-and-disaster-recovery/" format="html" scope="external"/></p>  
 
 
 </body>

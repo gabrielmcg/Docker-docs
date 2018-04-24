@@ -101,11 +101,13 @@ playbook.
 
 
 
-<li><codeph>playbooks/monitoring.yml</codeph> configures Splunk for monitoring. 
+<li><codeph>playbooks/monitoring.yml</codeph> installs and configures the Splunk Universal Forwarders.
 The variable <codeph>monitoring_stack</codeph> in <codeph>group_vars/vars</codeph> is used to specify the type of deployment you want.	
 A value of <codeph>splunk_demo</codeph> will result in this playbook deploying a splunk enterprise instance for demo purposes. A value of <codeph>splunk</codeph>
 is used to configure an external production Splunk deployment.
 </li>
+    
+<li><codeph>playbooks/splunk_demo.yml</codeph> installs a demo of Splunk Enterprise in the cluster (if the <codeph>splunk_demo</codeph> deployment option is selected)</li>    
 
 
 

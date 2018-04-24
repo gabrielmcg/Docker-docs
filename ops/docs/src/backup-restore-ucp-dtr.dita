@@ -7,10 +7,10 @@
 
 <p>The playbooks provided in this solution implement the backup and restore procedures as they
 are described in the Docker documentation at <xref
-href="https://docs.docker.com/enterprise/backup/" format="html"/>.
+href="https://docs.docker.com/enterprise/backup/" format="html" scope="external"/>.
 
 The solution follows the recommendations in the Docker best practices document at 
-<xref href="https://success.docker.com/article/backup-restore-best-practices" format="html"/>.
+<xref href="https://success.docker.com/article/backup-restore-best-practices" format="html" scope="external"/>.
 </p>
 
   

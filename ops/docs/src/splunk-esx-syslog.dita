@@ -13,7 +13,7 @@ the port <codeph>514</codeph> as shown in <xref href="splunk-esx-syslog.dita#spl
 </fig>
 
 <p>For more information, see the VMware documentation at
-<xref href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.security.doc/GUID-9F67DB52-F469-451F-B6C8-DAE8D95976E7.html" format="html"/>.</p>
+<xref href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.security.doc/GUID-9F67DB52-F469-451F-B6C8-DAE8D95976E7.html" format="html" scope="external"/>.</p>
 
 </body>
 </topic>

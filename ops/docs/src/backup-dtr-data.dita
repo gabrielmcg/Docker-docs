@@ -33,7 +33,7 @@ command line when running the playbook. In the example below: </p>
 </codeblock>  
 
 <p>For more information on DTR backups, see the Docker documentation at 
-<xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/backups-and-disaster-recovery/" format="html"/></p>
+<xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/backups-and-disaster-recovery/" format="html" scope="external"/></p>
 
 
 

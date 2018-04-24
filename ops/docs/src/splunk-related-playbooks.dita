@@ -4,8 +4,8 @@
 <title>Related playbooks</title>
 <body>
 <ul>
-<li><codeph>playbooks/monitoring.yml</codeph> installs and configures the universal forwarders</li>
-<li><codeph>playbooks/splunk_demo.yml</codeph> installs a demo of splunk_enterprise in the cluster (if the <codeph>splunk_demo</codeph> deployment option is seleced)</li>
+<li><codeph>playbooks/monitoring.yml</codeph> installs and configures the Splunk Universal Forwarders</li>
+<li><codeph>playbooks/splunk_demo.yml</codeph> installs a demo of Splunk Enterprise in the cluster (if the <codeph>splunk_demo</codeph> deployment option is selected)</li>
 </ul>
 </body>
 </topic>

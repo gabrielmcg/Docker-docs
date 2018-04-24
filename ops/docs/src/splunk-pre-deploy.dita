@@ -12,7 +12,7 @@ If you omit this variable, or if it has an invalid value, no Splunk deployment w
 </p>
   
 <p>For both types of deployment, you need to download the Splunk Universal forwarder images/packages from 
-<xref href="https://www.splunk.com/en_us/download/universal-forwarder.html" format="html"/>. 
+<xref href="https://www.splunk.com/en_us/download/universal-forwarder.html" format="html" scope="external"/>. 
  Packages are available for 64-bit Linux  and 64-bit Windows 8.1/Windows 10.  
  Download the RPM package for Linux 64-bit (2.6+ kernel Linux distributions) to <codeph>./files/splunk/linux</codeph>.
 If you are deploying Windows nodes, download the MSI package for Windows 64 bit to <codeph>./files/splunk/windows</codeph>.
@@ -46,7 +46,7 @@ and set the variable, for example:
 <p>By default, the indexers are configured in a single load balancing group. This can be
 changed by editing the file <codeph>outputs.conf.j2</codeph> in the folder <codeph>template/monitoring/splunk/</codeph>.
 For more information on  forwarding using Universal Forwader, see the Splunk documentation at
-<xref href="http://docs.splunk.com/Documentation/Forwarder/7.0.2/Forwarder/Configureforwardingwithoutputs.conf" format="html"/>.</p>
+<xref href="http://docs.splunk.com/Documentation/Forwarder/7.0.2/Forwarder/Configureforwardingwithoutputs.conf" format="html" scope="external"/>.</p>
 
 <p>If you want to use your own certificates 
   to secure the communications between the indexers and the universal forwaders,

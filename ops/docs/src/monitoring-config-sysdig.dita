@@ -43,7 +43,7 @@ href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-table
 to <codeph>collector.sysdigcloud.com</codeph></note>
 
 <p>Using the Sysdig software as a solution (SaaS) website <xref
-href="https://app.sysdigcloud.com" format="html"/>, you are able to view, analyze and
+href="https://app.sysdigcloud.com" format="html" scope="external"/>, you are able to view, analyze and
 inspect various different dashboards.</p>
 
 </body>
