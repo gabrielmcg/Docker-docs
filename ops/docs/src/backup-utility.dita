@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="backup-utility">
+<title>Backup Utility</title> 
+<body>
+
+<p>The script <codeph>backup.sh</codeph> can be used to take a backup of the swarm, UCP DTR and the DTR images in one go. 
+You can pass this script an argument to override the default naming of the backup files. The following table 
+shows the file names produced by <codeph>backup.sh</codeph> based on the argument passed in the command line.    
+</p>
+
+<table id="backup-utility-table-content" frame="none">
+<title>Backup utility</title>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Example</entry>
+<entry>Command line</entry>
+<entry>Generated filenames</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Default</entry>
+<entry><codeph>./backup.sh</codeph></entry>
+<entry>backup_swarm_&lt;vmname>_&lt;timestamp>.tgz, 
+backup_ucp_&lt;vmname>_&lt;timestamp>.tgz, 
+backup_dtr_meta_&lt;vmname>_&lt;timestamp>.tgz,
+backup_dtr_data_&lt;vmname>_&lt;timestamp>.tgz
+and the corresponding <codeph>.vars.tgz</codeph> files</entry>
+</row>
+<row>
+<entry>Custom</entry>
+<entry><codeph>./backup.sh my_backup</codeph></entry>
+<entry>my_backup_swarm.tgz, my_backup_ucp.tgz, my_backup_dtr_meta.tgz, my_backup_dtr_data.tgz, and the corresponding <codeph>.vars.tgz</codeph> files</entry>
+</row>
+<row>
+<entry>Date</entry>
+<entry><codeph>./backup.sh $(date '+%Y_%m_%d_%H%M%S')</codeph></entry>
+<entry>&lt;date>_swarm.tgz, &lt;date>_ucp.tgz, &lt;date>_dtr_meta.tgz,  &lt;date>_dtr_data.tgz, and the corresponding <codeph>.vars.tgz</codeph> files</entry>
+</row>    
+</tbody>
+</tgroup>
+</table>
+
+
+</body>
+</topic>

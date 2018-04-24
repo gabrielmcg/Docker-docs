@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="backup-dtr-meta">
+<title>Backing up the Docker Trusted Registry (DTR)</title>
+<body>
+
+<p>When you backup DTR, you save the following data/metadata: </p>
+<table id="backup-dtr-data-meta-table-content" frame="none">
+<title>UCP data backed up</title>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Data</entry>
+<entry>Backed up?</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Configurations</entry>
+<entry>yes</entry>
+<entry>DTR settings</entry>
+</row>
+<row>
+<entry>Repository metadata</entry>
+<entry>yes</entry>
+<entry>Metadata like image architecture and size</entry>
+</row>
+<row>
+<entry>Access control to repos and images</entry>
+<entry>yes</entry>
+<entry>Data about who has access to which images</entry>
+</row>
+<row>
+<entry>Notary data</entry>
+<entry>yes</entry>
+<entry>Signatures and digests for images that are signed</entry>
+</row>
+<row>
+<entry>Scan results</entry>
+<entry>yes</entry>
+<entry>Information about vulnerabilities in your images</entry>
+</row>
+<row>
+<entry>Certificates and keys</entry>
+<entry>yes</entry>
+<entry>TLS certificates and keys used by DTR</entry>
+</row>
+<row>
+<entry>Image content</entry>
+<entry>no</entry>
+<entry>Needs to be backed up separately, depends on DTR configuration</entry>
+</row>
+<row>
+<entry>Users, orgs, teams</entry>
+<entry>no</entry>
+<entry>Create a UCP backup to backup this data</entry>
+</row>
+<row>
+<entry>Vulnerability database</entry>
+<entry>no</entry>
+<entry>Can be re-downloaded after a restore</entry>
+</row>  
+</tbody>
+</tgroup>
+</table>
+
+
+<p>To make a backup of DTR metadata, use <codeph>playbook/backup_dtr_metadata.yml</codeph></p>
+<codeblock># ansible-playbook -i vm_host playbooks/backup_dtr_metadata.yml</codeblock>
+<p>This playbook creates two archives in the folder specified by the variable
+<codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the file
+is named using the following pattern:</p>
+
+<codeblock>&lt;backup_dest>/backup_dtr_meta_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.tgz
+&lt;backup_dest>/backup_dtr_meta_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.vars.tgz
+</codeblock>
+
+<p>where <codeph>&lt;replica_id></codeph> is the ID of the DTR replica that was backed up,
+<codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used to
+take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
+taken. The file with the extension <codeph>.vars.tgz</codeph> contains information regarding the system that was backed up.</p>
+
+<p>You can override the generated file name by defining the variable <b>backup_name</b> on the
+command line when running the playbook. In the example below: </p>
+<codeblock># ansible-playbook -i vm_hosts playbooks/backup_dtr_metadata.yml -e backup_name=<b>my_dtr_metadata_backup</b></codeblock>
+<p>the generated files won't have <codeph>&lt;vmname></codeph> or
+<codeph>&lt;timestamp></codeph> appended:</p>
+
+<codeblock>&lt;backup_dest>/my_dtr_metadata_backup.tgz
+&lt;backup_dest>/my_dtr_metadata_backup.vars.tgz
+</codeblock>
+
+<p>For more information on DTR backups, see the Docker documentation at 
+<xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/backups-and-disaster-recovery/" format="html"/></p>
+
+
+</body>
+</topic>

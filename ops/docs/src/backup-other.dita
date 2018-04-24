@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="backup-other">
+<title>Backing up other metadata, including passwords</title>
+<body>
+
+
+<p>The backup playbooks do not backup the sensitive data in your <codeph>group_vars/vault</codeph> file. 
+The information stored in the <codeph>.vars.tgz</codeph> files includes backups of the following files:</p>
+
+<ul>
+<li><b>vm_hosts</b>, a copy of the <codeph>vm_hosts</codeph> file at the time the backup was taken</li>
+<li><b>vars</b>, a copy of your <codeph>group_vars/vars</codeph> file at the time the backup was taken</li>
+<li><b>meta.yml</b>, a generated file containing information pertaining to the backup</li>    
+</ul>    
+
+<p>The <b>meta.yml</b> file contains the following information:</p>
+
+<codeblock>backup_node="&lt;node that took the backup>"
+replica_id="&lt;ID of DTR replica if DTR backup>"
+backup_source=""
+ucp_version="&lt;UCP version if UCP backup>"
+dtr_version="&lt;DTR version of DTR backup>"</codeblock>    
+
+
+
+</body>
+</topic>

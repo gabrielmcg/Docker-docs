@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="backup-dtr-data">
+<title>Backing up DTR data (images)</title>
+<body>
+
+
+<p>To make a backup of the images that are inventoried in DTR and stored on the NFS server, use <codeph>playbooks/backup_dtr_images.yml</codeph> </p>  
+
+<codeblock># ansible-playbook -i vm_host playbooks/backup_dtr_images.yml</codeblock>  
+
+<p>This playbook creates two archives in the folder specified by the variable
+<codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the file
+is named using the following pattern:</p>
+
+<codeblock>&lt;backup_dest>/backup_dtr_data_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.tgz
+&lt;backup_dest>/backup_dtr_data_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.vars.tgz
+</codeblock>
+
+<p>where <codeph>&lt;replica_id></codeph> is the ID of the DTR replica that was backed up,
+<codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used to
+take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
+taken.</p>  
+
+<p>You can override the generated file name by defining the variable <b>backup_name</b> on the
+command line when running the playbook. In the example below: </p>
+<codeblock># ansible-playbook -i vm_hosts playbooks/backup_dtr_images.yml -e backup_name=<b>my_dtr_data_backup</b></codeblock>
+<p>the generated file won't have <codeph>&lt;vmname></codeph> or
+<codeph>&lt;timestamp></codeph> appended:</p>
+
+<codeblock>&lt;backup_dest>/my_dtr_data_backup.tgz
+&lt;backup_dest>/my_dtr_data_backup.vars.tgz
+</codeblock>  
+
+<p>For more information on DTR backups, see the Docker documentation at 
+<xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/backups-and-disaster-recovery/" format="html"/></p>
+
+
+
+</body>
+</topic>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="backup-ucp">
+<title>Backing up the Universal Control Plane (UCP)</title>
+<body>
+
+<p>When you backup UCP, you save the following data/metadata: </p>
+<table id="backup-ucp-data-meta-table-content" frame="none">
+<title>UCP data backed up</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="2">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry>Data</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Configurations</entry>
+<entry>The UCP cluster configurations, as shown by <codeph>docker config ls</codeph>,
+including Docker EE license and swarm and client CAs </entry>
+</row>
+<row>
+<entry>Access control</entry>
+<entry>Permissions for team access to swarm resources, including collections, grants, and
+roles</entry>
+</row>
+<row>
+<entry>Certificates and keys</entry>
+<entry>The certificates, public keys, and private keys that are used for
+authentication and mutual TLS communication</entry>
+</row>
+<row>
+<entry>Metrics data</entry>
+<entry>Monitoring data gathered by UCP</entry>
+</row>
+<row>
+<entry>Organizations</entry>
+<entry>Your users, teams, and orgs</entry>
+</row>
+<row>
+<entry>Volumes</entry>
+<entry>All <xref
+href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp"
+format="html">UCP named volumes</xref>, which include all UCP component certs and
+data</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<p>To make a backup of UCP, use <codeph>playbook/backup_ucp.yml</codeph> as follows:</p>
+<codeblock># ansible-playbook -i vm_host playbooks/backup_ucp.yml</codeblock>
+
+<p>This playbook creates two archives in the folder specified by the variable
+<codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the files
+are named using the following pattern:</p>
+
+<codeblock>&lt;backup_dest>/backup_ucp_&lt;ucpid>_&lt;vmname>_&lt;timestamp>.tgz
+&lt;backup_dest>/backup_ucp_&lt;ucpid>_&lt;vmname>_&lt;timestamp>.vars.tgz
+</codeblock>
+
+<p>where <codeph>&lt;ucpid></codeph> is the ID of the UCP instance,
+<codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used to
+take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
+taken. The file with the extension <codeph>.vars.tgz</codeph> contains information regarding the system which was backed up.</p>
+
+<p>You can override the generated file name by defining the variable <b>backup_name</b> on the
+command line when running the playbook. In the example below: </p>
+<codeblock># ansible-playbook -i vm_hosts playbooks/backup_ucp.yml -e backup_name=<b>my_ucp_backup</b></codeblock>
+<p>the generated files won't have <codeph>&lt;vmname></codeph> or
+<codeph>&lt;timestamp></codeph> appended:</p>
+
+<codeblock>&lt;backup_dest>/my_ucp_backup.tgz
+&lt;backup_dest>/my_ucp_backup.vars.tgz
+</codeblock>
+
+<note type="warning">To create a consistent backup, the backup command <b>temporarily stops the
+UCP containers running on the node where the backup is being performed</b>. User resources, such
+as services, containers, and stacks are not affected by this operation and will continue
+to operate as expected. Any long-lasting <codeph>docker exec</codeph>, <codeph>docker logs</codeph>, <codeph>docker events</codeph>, 
+or <codeph>docker attach</codeph> operations on the
+affected manager node will be disconnected.</note>
+
+<p>For more information on UCP backup, see the Docker documentation at
+<xref href="https://docs.docker.com/datacenter/ucp/2.2/guides/admin/backups-and-disaster-recovery/" format="html"/></p>  
+
+
+</body>
+</topic>

@@ -140,7 +140,21 @@
   <topicref href="backup-restore.dita" navtitle="Backup and restore">
     <topicref href="backup-restore-docker-volumes.dita"/>
 
-    <topicref href="backup-restore-ucp-dtr.dita" navtitle="Backup and restore UCP and DTR"/>
+    <topicref href="backup-restore-ucp-dtr.dita" navtitle="Backup and restore UCP and DTR">
+      
+      <topicref href="backup-ucp-dtr.dita" navtitle="Backup UCP and DTR">
+        
+        <topicref href="backup-variables.dita" navtitle="Backup variables"/>
+        <topicref href="backup-swarm.dita" navtitle="Backup swarm"/>
+        <topicref href="backup-ucp.dita" navtitle="Backup UCP"/>
+        <topicref href="backup-dtr-meta.dita" navtitle="Backup DTR metadata"/>
+        <topicref href="backup-dtr-data.dita" navtitle="Backup DTR data"/>
+        <topicref href="backup-other.dita" navtitle="Backup other data"/>
+        <topicref href="backup-utility.dita" navtitle="Backup utility"/>
+        
+      </topicref>
+      <topicref href="restore-ucp-dtr.dita" navtitle="Restoring your cluster after a disaster"/>
+    </topicref>
 
 
   </topicref>

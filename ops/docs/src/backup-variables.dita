@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="backup-variables">
+<title>Backup configuration variables</title>
+<body>
+
+
+<p><xref href="backup-variables.dita#backup-variables/backup-ucp-table-content"/>
+shows the variables related to backing up UCP and DTR. All these variables are defined in
+the file <b>group_vars/backup</b>. All the data that is backed up is streamed over an SSH
+connection to the backup server. Currently, the playbooks only support the use of the
+Ansible box as the backup server.</p>
+
+<table id="backup-ucp-table-content" frame="none">
+<title>Backup variables</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Variable</entry>
+<entry>File</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>backup_server</entry>
+<entry><b>group_vars/backup</b></entry>
+<entry>Currently, the playbooks only support the use of the Ansible box as the backup
+server. </entry>
+</row>
+<row>
+<entry>backup_dest</entry>
+<entry><b>group_vars/backup</b></entry>
+<entry>This variable should point to an existing folder on your ansible box where the
+<codeph>root</codeph> user has write access. All the backups will be stored in this folder. For
+example, <codeph>/root/backup</codeph></entry>
+</row>
+<row>
+<entry>#swarm_offline_backup</entry>
+<entry><b>group_vars/backup</b></entry>
+<entry>This variable is commented out by default. More information on this variable is provided below. </entry>
+</row>    
+</tbody>
+</tgroup>
+</table>
+
+</body>
+</topic>
