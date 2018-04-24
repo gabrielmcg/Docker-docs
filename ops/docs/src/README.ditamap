@@ -138,7 +138,7 @@
 
 
   <topicref href="backup-restore.dita" navtitle="Backup and restore">
-    <topicref href="backup-restore-docker-volumes.dita"/>
+
 
     <topicref href="backup-restore-ucp-dtr.dita" navtitle="Backup and restore UCP and DTR">
       
@@ -151,6 +151,7 @@
         <topicref href="backup-dtr-data.dita" navtitle="Backup DTR data"/>
         <topicref href="backup-other.dita" navtitle="Backup other data"/>
         <topicref href="backup-utility.dita" navtitle="Backup utility"/>
+        <topicref href="backup-playbooks.dita" navtitle="Related playbooks"/>
         
       </topicref>
       
@@ -164,7 +165,8 @@
       
     </topicref>
 
-
+    <topicref href="backup-restore-docker-volumes.dita" navtitle="Backup and restore Docker volumes"/>
+    
   </topicref>
 
 </map>

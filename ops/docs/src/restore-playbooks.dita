@@ -6,10 +6,9 @@
 
 
 <ul>
-<li><codeph>playbooks/backup_swarm.yml</codeph> is used to backup the swarm data</li>
-<li><codeph>playbooks/backup_ucp.yml</codeph> is used to backup UCP</li>
-<li><codeph>playbooks/backup_dtr_meta.yml</codeph> is used to backup DTR metadata</li>
-<li><codeph>playbooks/backup_dtr_images.yml</codeph> is used to backup DTR images</li>
+<li><codeph>playbooks/restore_swarm.yml</codeph> is used to restore the swarm data</li>
+<li><codeph>playbooks/restore_dtr_meta.yml</codeph> is used to restore DTR metadata</li>
+<li><codeph>playbooks/restore_dtr_images.yml</codeph> is used to restore DTR images</li>
 </ul>
 
 
