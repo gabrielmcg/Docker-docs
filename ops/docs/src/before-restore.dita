@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="before-restore">
+<title>Before you restore</title> 
+<body>
+
+<p><b>Step 1.</b> Retrieve the backup files using your chosen backup solution and save them to a 
+folder on your ansible server. If you have used timestamps in the naming of your backup files, you can 
+use them to determine the chronologial order. If you used the <codeph>backup.sh</codeph> script specifiying a date prefix,
+you can use that to identify the matching set of backup files. You should 
+choose the files in the following reverse chronological order, from the most recent to the oldest file. 
+Make sure you restore both the *.tgz and the *.vars.tgz files.</p> 
+
+<ol>
+<li>DTR images backup</li>
+<li>DTR metadata backup</li>
+<li>UCP backup</li>
+<li>Swarm backup</li>
+</ol>
+
+<p>In this example, we will assume a set of backup files stored in <codeph>/root/restore</codeph> that were created specifying a date prefix. These will have names like
+<codeph>2018_04_17_151734_swarm.tgz</codeph>, <codeph>2018_04_17_151734_ucp.tgz</codeph>, etc and the corresponding 
+<codeph>.vars.tgz</codeph> files.</p>
+
+<p><b>Step 2:</b> Retrieve the DTR replica ID, the DTR version and the UCP version</p>
+<p>To retrieve the ID of the replica that was backed up, as well as the version of DTR, you need to extract the data from the <codeph>.vars.tgz</codeph> file 
+associated with the archive of the DTR metadata. You can retrieve this as follows:     
+</p>
+
+<codeblock>[root@clh2-ansible ops]# tar -Oxf /root/restore/2018_04_17_151734_dtr_meta.vars.tgz meta.yml
+backup_node="clh-dtr01"
+replica_id="<b>ad5204e8a4d0</b>"
+backup_source=""
+ucp_version=""
+dtr_version="<b>2.4.3</b>"
+</codeblock>
+
+<codeblock>[root@clh2-ansible ops]# tar -Oxf /root/restore/2018_04_17_151734_ucp.vars.tgz meta.yml
+backup_node="clh-ucp01"
+replica_id=""
+backup_source=""
+ucp_version="<b>2.2.7</b>"
+dtr_version=""</codeblock>
+
+<p>Take note of the replica ID (ad5204e8a4d0), the version of DTR (2.4.3) and the version of UCP (2.2.7).</p>
+
+<p><b>Step 3:</b> Populate the <codeph>group_vars/backups</codeph> file</p>   
+
+
+<codeblock>backup_swarm: "/root/restore/2018_04_17_151734_swarm.tgz"
+backup_ucp: "/root/restore/2018_04_17_151734_ucp.tgz"
+backup_dtr_meta: "/root/restore/2018_04_17_151734_dtr_meta.tgz"
+backup_dtr_data: "/root/restore/2018_04_17_151734_dtr_data.tgz"
+backup_dtr_id: "ad5204e8a4d0"
+backup_dest: "/root/backups"
+backup_server: &lt;IP of your ansible box></codeblock> 
+
+<p>You should populate your <codeph>group_vars/backups</codeph> file as above, with the <codeph>backup_dtr_id</codeph> variable
+containing the value you retrieved in the preceding step as <codeph>replica_id="<b>ad5204e8a4d0</b>"</codeph></p>    
+
+<p><b>Step 4:</b> Verify that your <codeph>group_vars/vars</codeph> file specifies the correct versions of DTR and UC</p>    
+
+<p>The playbooks use the versions of UCP and DTR as specified in your <codeph>group_vars/vars</codeph> file to restore your backups.
+You must ensure that the versions specified in your current <codeph>group_vars/vars</codeph> file correspond to the versions in the backups as determined above.
+</p>
+
+<codeblock>[root@clh2-ansible ops]# cat group_vars/vars | grep dtr_version
+dtr_version: '2.4.3'
+</codeblock>
+<codeblock>
+[root@clh2-ansible ops]# cat group_vars/vars | grep ucp_version
+ucp_version: '2.2.7'
+</codeblock>    
+
+<p><b>Step 5:</b> Restore UCP admin credentials if required</p>
+<p>You must ensure that the UCP admin credentials in your current <codeph>group_vars/vars</codeph> file are those
+that were in effect when you generated the backup files. If they have changed since then, you must restore the original 
+credentials for the duration of the restore procedure.</p>
+
+<p><b>Step 6:</b> Restore your inventory (<codeph>vm_hosts</codeph>)</p> 
+
+<p>Your inventory must reflect the enviroment that was present when the backup files were created. 
+You can find a copy of the inventory as it was when the backup was taken in the  <codeph>*.vars.tgz</codeph> files. </p> 
+
+</body>
+</topic>

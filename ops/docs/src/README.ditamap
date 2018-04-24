@@ -153,7 +153,15 @@
         <topicref href="backup-utility.dita" navtitle="Backup utility"/>
         
       </topicref>
-      <topicref href="restore-ucp-dtr.dita" navtitle="Restoring your cluster after a disaster"/>
+      
+      <topicref href="restore-ucp-dtr.dita" navtitle="Restoring your cluster after a disaster">
+        <topicref href="restore-intro.dita" navtitle="Introduction"/>
+        <topicref href="before-restore.dita" navtitle="Before you restore"/>
+        <topicref href="restore-ucp-dtr-details.dita" navtitle="Restoring UCP and DTR"/>
+        <topicref href="restore-dtr-meta-images.dita" navtitle="Restore DTR data"/>
+        <topicref href="restore-playbooks.dita" navtitle="Related playbooks"/>
+      </topicref>
+      
     </topicref>
 
 

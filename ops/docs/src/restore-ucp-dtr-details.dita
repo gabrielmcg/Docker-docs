@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="restore-ucp-dtr">
+<title>Restore UCP and DTR</title> 
+<body>
+
+
+
+<note type="warning">This procedure is aimed at restoring a cluster after a disaster. It assumes you have lost all 
+the VMs in your cluster and want to redeploy using data that you backed up earlier.
+
+The solution follows Docker best practice, which means the swarm artifacts are not restored. 
+You will need to restore your Docker volumes and you applications (stacks and services) when this procedure is complete.
+</note>
+
+<p></p>
+
+<ol>
+<li>Ensure that you have completed all the preliminary steps as outlined in the section <xref href="backup-restore-ucp-dtr.dita#restore-ucp-dtr/before-restore" type="section">Before you restore</xref> </li>
+<li>Run the restore playbook
+<codeblock>ansible-playbook -i vm_hosts restore.yml</codeblock>
+</li>
+<li>If you are using the image scanning fuctionality in DTR, you will need to re-download the vulnerability database. 
+For more information, see the Docker documentation  <xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license" format="html">here</xref>.</li>
+</ol>
+
+<p>You are now ready to restore your Docker volumes and your applications.</p>
+
+</body>
+</topic>

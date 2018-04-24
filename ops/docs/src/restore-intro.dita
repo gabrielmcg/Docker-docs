@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="restore-intro">
+<title>Introduction</title>
+<body>
+
+<p>The playbooks address a disaster recovery scenario where you have lost your entire cluster and all the VMs. 
+Other scenarios and how to handle them are described in the Docker documentation including the following scenarios:</p>
+
+<ul>
+<li>You have lost one UCP instance but your cluster still has the quorum. The easiest way is to recreate the missing UCP instance from scratch.</li> 
+<li>You have lost the quorum in your UCP cluster but there is still one UCP instance running</li> 
+<li>You have lost one instance of DTR but still have a quorum of replicas. The easiest way is to recreate the missing DTR instance from scratch.</li>
+<li>You have lost the quorum of your DTR cluster but still have one DTR instance running.</li>    
+</ul>    
+
+</body>
+</topic>
