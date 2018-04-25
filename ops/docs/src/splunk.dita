@@ -50,8 +50,9 @@ Splunk. </p>
 <li>and more</li>
 </ul>
 
-<p>For more information on the Splunk App for Windows Infrastructure, see 
-<xref href="https://splunkbase.splunk.com/app/1680/" format="html" scope="external">https://splunkbase.splunk.com/app/1680/</xref>. 
+<p>For more information on configuring standalone Splunk for Linux and Windows worker nodes, see the section on 
+    <xref href="splunk-pre-deploy.dita">Splunk prerequisites</xref>.
+ 
 </p>   
  
 

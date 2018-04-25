@@ -1365,8 +1365,9 @@ Splunk. </p>
 </ul>
 
 
-<p class="p">For more information on the Splunk App for Windows Infrastructure, see 
-<a class="xref" href="https://splunkbase.splunk.com/app/1680/" target="_blank">https://splunkbase.splunk.com/app/1680/</a>. 
+<p class="p">For more information on configuring standalone Splunk for Linux and Windows worker nodes, see the section on 
+    <a class="xref" href="#splunk-pre-deploy">Splunk prerequisites</a>.
+ 
 </p>
    
  
@@ -2855,7 +2856,7 @@ Windows so you must use a Linux node to access the UI.</p>
 
 </div>
 <div class="topic nested2" aria-labelledby="ariaid-title42" id="splunk-pre-deploy">
-<h3 class="title topictitle3" id="ariaid-title42">Before you deploy Splunk</h3>
+<h3 class="title topictitle3" id="ariaid-title42">Splunk prerequisites</h3>
 
 <div class="body">
 <div class="section">
@@ -2925,7 +2926,7 @@ More info on this docker app can be found at
     
     
 <p class="p">To monitor the <strong class="ph b">Windows worker nodes</strong>, install the <strong class="ph b">Splunk App for Windows Infrastructure</strong> on   
-  central splunk and its dependencies:</p>
+  central Splunk and its dependencies:</p>
 
   
 <ul class="ul">
@@ -2943,7 +2944,7 @@ the message <code class="ph codeph">eventtype wineventlog-ds does not exist or i
 
 
 
-<p class="p">If you want to use your own certificates 
+<p class="p">If you want to use your own certificates in your standalone Splunk deployment
   to secure the communications between the indexers and the universal forwaders,
   see the subsequent section <a class="xref" href="#splunk-ssl">Enabling SSL</a>.
 </p>
@@ -4801,7 +4802,7 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title76" id="unique_80475061">
+<div class="topic nested3" aria-labelledby="ariaid-title76" id="unique_1089247628">
 <h4 class="title topictitle4" id="ariaid-title76">Restore UCP and DTR</h4>
  
 <div class="body">

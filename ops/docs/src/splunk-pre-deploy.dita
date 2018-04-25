@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="splunk-pre-deploy">
-<title>Before you deploy Splunk</title>
+<title>Splunk prerequisites</title>
 <body>
 <section>
   
@@ -60,7 +60,7 @@ More info on this docker app can be found at
     
     
 <p>To monitor the <b>Windows worker nodes</b>, install the <b>Splunk App for Windows Infrastructure</b> on   
-  central splunk and its dependencies:</p>
+  central Splunk and its dependencies:</p>
   
 <ul>
 <li>Splunk App for Windows Infrastructure - see <xref href="https://splunkbase.splunk.com/app/1680/" format="html" scope="external"/></li>
@@ -72,7 +72,7 @@ the message <codeph>eventtype wineventlog-ds does not exist or is disabled</code
 </ul>
 
 
-<p>If you want to use your own certificates 
+<p>If you want to use your own certificates in your standalone Splunk deployment
   to secure the communications between the indexers and the universal forwaders,
   see the subsequent section <xref href="splunk-ssl.dita#splunk-ssl">Enabling SSL</xref>.
 </p>
