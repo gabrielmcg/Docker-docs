@@ -4,7 +4,25 @@
 <title>Architecture</title>
 <body>
 <section id="architecture-section">
-<p>By default, the Ansible Playbooks will set up a 3 node environment. HPE and Docker
+    
+
+
+<p>Uptime is paramount for any users implementing Docker containers in business critical environments. 
+HPE Enterprise Containers with Docker EE offers various levels of high availability (HA) to support 
+continuous availability. All containers including the Docker system containers are protected by Docker’s swarm mode. 
+Swarm mode can protect against individual hardware, network, and container failures based on the user’s declarative model.</p>
+
+<p>HPE Enterprise Containers with Docker EE also deploys load balancers in the system to help with container traffic management. 
+There are three load balancer VMs – UCP load balancer, DTR load balancer, and Docker worker node load balancer. 
+Since these load balancers exist in VMs, they have some degree of HA but may incur some downtime during the 
+restoration of these VMs due to a planned or unplanned outage. For optimal HA configuration, the user should consider 
+implementing a HA load balancer architecture using the Virtual Router Redundancy Protocol (VRRP). 
+For more information see <xref href="http://www.haproxy.com/solutions/high-availability/" format="html" scope="external"></xref>.   </p>
+    
+  
+    
+<p>The Ansible playbooks can be modified to fit your environment and your high availability (HA) needs. 
+By default, the Ansible Playbooks will set up a 3 node environment. HPE and Docker
 recommend a minimal starter configuration of 3 physical nodes for running Docker in
 production. This is the minimal configuration that Docker recommends for cluster HA.
 The distribution of the Docker and non-Docker modules over the 3 physical nodes via
@@ -24,20 +42,43 @@ failure </li>
 <li>1 NFS server VM for storage Docker DTR images </li>
 </ul>
 
-<p>In addition to the above, the playbooks also set up:</p>
+<p>In addition to the above, the playbooks also set up Docker persistent storage driver from VMware.  
+The vSphere Docker volume plug-in stores data in a
+shared datastore that can be accessed from any machine in the cluster.</p>
 
+<p>A number of different monitoring solutions are supported:</p>
+    
 <ul>
-<li>Docker persistent storage driver from VMware </li>
+<li>Splunk</li>
+<li>Sysdig</li>
 <li>Prometheus and Grafana monitoring tools </li>
 </ul>
 
-<p>These nodes can live in any of the hosts and they are not redundant. The Prometheus
+<p>Splunk and Sysdig: The load among the three hosts will be shared as per <xref href="architecture.dita#architecture/synergy-ops-architecture" type="fig"/></p>
+
+<fig id="synergy-ops-architecture">
+<title>Solution architecture with Splunk and Sysdig</title> 
+<image href="media/synergy-ops-architecture.png"/>
+</fig>
+
+
+
+<p>Prometheus and Grafana: The load among the three hosts will be shared as per <xref href="architecture.dita#architecture/synergy-ops-architecture" type="fig"/></p>
+
+<fig>
+<title>Solution architecture with Prometheus and Grafana</title> 
+<image href="media/synergy-ops-architecture-promgraf.png"/>
+</fig>
+<!--<p>These nodes can live in any of the hosts and they are not redundant. </p>-->
+    
+<p>The Prometheus
 and Grafana services are declared in a Docker stack as replicated services with one
 replica each, so if they fail, Docker EE will ensure that they are restarted on one
 of the UCP VMs. cAdvisor and node-exporter are declared in the same stack as global
 services, so Docker EE will ensure that there is always one copy of each running on
-every machine in the cluster. The vSphere Docker volume plug-in stores data in a
-shared datastore that can be accessed from any machine in the cluster.</p>
+every machine in the cluster.</p>
+    
+
 </section>
 </body>
 </topic>

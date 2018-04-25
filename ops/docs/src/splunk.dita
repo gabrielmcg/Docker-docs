@@ -63,8 +63,9 @@ log messages coming from the ESX machines into the <codeph>/var/log/messages</co
  
  
     
-<p>The "blue" universal forwarders are running natively on the host. They collect and forward the data 
-they find in the following files by use of a splunk 'monitor'
+<p><b>Non-Docker VMs:</b> Other VMs, for example, NFS, have universal forwarders running natively on the host. 
+ They use a Splunk <codeph>monitor</codeph> to collect and forward data from the following files:
+    
 <ul>
 <li>/var/log/messages</li>
 <li>/var/log/secure (Red Hat)</li>
@@ -73,24 +74,7 @@ they find in the following files by use of a splunk 'monitor'
 <note type="note">The list of files that the Universal Forwarder should monitor can be modified very easily</note>
 </p>
     
-    
-    
-    
-    
-    
-    
 <p>Other syslog senders can be configured to send their data to the logger VM or directly to central Splunk.</p>       
-
-    
-    
-
-
-
-
-
-
-
-
 
 </body>
 </topic>
