@@ -698,10 +698,10 @@ shared datastore that can be accessed from any machine in the cluster.</p>
 
 
 
-<p class="p">Prometheus and Grafana: The load among the three hosts will be shared as per <a class="xref" href="#architecture__synergy-ops-architecture">Figure 1</a></p>
+<p class="p">Prometheus and Grafana: The load among the three hosts will be shared as per <a class="xref" href="#architecture__synergy-ops-architecture-promgraf">Figure 2</a></p>
 
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 2. </span>Solution architecture with Prometheus and Grafana</span>
+<div class="fig fignone" id="architecture__synergy-ops-architecture-promgraf"><span class="figcap"><span class="fig--title-label">Figure 2. </span>Solution architecture with Prometheus and Grafana</span>
  
 <img class="image" src="media/synergy-ops-architecture-promgraf.png" />
 </div>
@@ -4835,7 +4835,7 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title76" id="unique_537370926">
+<div class="topic nested3" aria-labelledby="ariaid-title76" id="unique_690062173">
 <h4 class="title topictitle4" id="ariaid-title76">Restore UCP and DTR</h4>
  
 <div class="body">

@@ -63,9 +63,9 @@ shared datastore that can be accessed from any machine in the cluster.</p>
 
 
 
-<p>Prometheus and Grafana: The load among the three hosts will be shared as per <xref href="architecture.dita#architecture/synergy-ops-architecture" type="fig"/></p>
+<p>Prometheus and Grafana: The load among the three hosts will be shared as per <xref href="architecture.dita#architecture/synergy-ops-architecture-promgraf" type="fig"/></p>
 
-<fig>
+<fig id="synergy-ops-architecture-promgraf">
 <title>Solution architecture with Prometheus and Grafana</title> 
 <image href="media/synergy-ops-architecture-promgraf.png"/>
 </fig>
