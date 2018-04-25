@@ -47,21 +47,21 @@ href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/"
 <entry>rhel_version</entry>
 <entry>group_vars/vars</entry>  
 <entry>For the Docker installation, this sets the version of your RHEL OS, such as <codeph>7.4</codeph>. The
-playbooks were tested with RHEL 7.3. and RHEL 7.4.</entry>
+playbooks were tested with  RHEL 7.4.</entry>
 </row>
 <row>
 <entry>dtr_version</entry>
 <entry>group_vars/vars</entry>  
 <entry>Version of the Docker DTR you wish to install. You can use a
 numeric version or <codeph>latest</codeph> for the most recent one.
-The playbooks were tested with 2.3.3. and 2.4.0.</entry>
+The playbooks were tested with 2.4.3.</entry>
 </row>
 <row>
 <entry>ucp_version</entry>
 <entry>group_vars/vars</entry>      
 <entry>Version of the Docker UCP you wish to install. You can use a
 numeric version or <codeph>latest</codeph> for the most recent one.
-The playbooks were tested with UCP 2.2.3. and 2.2.4.</entry>
+The playbooks were tested with UCP 2.2.7.</entry>
 </row>
 <row>
 <entry>images_folder</entry>

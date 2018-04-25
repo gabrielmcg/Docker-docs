@@ -48,6 +48,30 @@ changed by editing the file <codeph>outputs.conf.j2</codeph> in the folder <code
 For more information on  forwarding using Universal Forwader, see the Splunk documentation at
 <xref href="http://docs.splunk.com/Documentation/Forwarder/7.0.2/Forwarder/Configureforwardingwithoutputs.conf" format="html" scope="external"/>.</p>
 
+
+<p>On your standalone Splunk installation, you need to install the following add-ons and apps.</p>
+
+<p>To monitor <b>Linux Worker nodes</b>, the <b>Docker app</b> should be installed on central splunk. 
+More info on this docker app can be found at 
+<xref href="https://github.com/splunk/docker-itmonitoring" format="html" scope="external"/>  and at
+<xref href="https://hub.docker.com/r/splunk/universalforwarder/" format="html" scope="external"/>.
+
+</p>
+    
+    
+<p>To monitor the <b>Windows worker nodes</b>, install the <b>Splunk App for Windows Infrastructure</b> on   
+  central splunk and its dependencies:</p>
+  
+<ul>
+<li>Splunk App for Windows Infrastructure - see <xref href="https://splunkbase.splunk.com/app/1680/" format="html" scope="external"/></li>
+<li>Splunk Add-on for Microsoft Windows - see <xref href="https://splunkbase.splunk.com/app/742/" format="html" scope="external"/></li>
+<li>Splunk Add-on for Microsoft Windows DNS (if this is not installed on central Splunk, you will see yellow icons on some dashboards with 
+the message <codeph>eventtype wineventlog-dns does not exist or is disabled</codeph>) -  see <xref href="https://splunkbase.splunk.com/app/3208/" format="html" scope="external"/></li>
+<li>Splunk Supporting Add-on for Active Directory (if this is not installed on central Splunk, you will see yellow icons on some dashboards with 
+the message <codeph>eventtype wineventlog-ds does not exist or is disabled</codeph>) - see <xref href="https://splunkbase.splunk.com/app/1151/" format="html" scope="external"/></li>
+</ul>
+
+
 <p>If you want to use your own certificates 
   to secure the communications between the indexers and the universal forwaders,
   see the subsequent section <xref href="splunk-ssl.dita#splunk-ssl">Enabling SSL</xref>.

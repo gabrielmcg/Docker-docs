@@ -82,27 +82,7 @@ they find in the following files by use of a splunk 'monitor'
 
     
     
-<p>On your central Splunk installation, you should install the following add-ons and apps</p>
 
-<p>To monitor Linux Worker nodes, the <b>Docker app</b> should be installed on central splunk. 
-More info on this docker app can be found at: 
-<xref href="https://github.com/splunk/docker-itmonitoring" format="html" scope="external"/>  and 
-<xref href="https://hub.docker.com/r/splunk/universalforwarder/" format="html" scope="external"/>.
-
-</p>
-    
-    
-<p>To monitor the Windows worker nodes, install the <b>Splunk App for Windows Infrastructure</b> on central splunk and its dependencies
-<ul>
-<li>Splunk App for Windows Infrastructure - see <xref href="https://splunkbase.splunk.com/app/1680/" format="html" scope="external"/></li>
-<li>Splunk Add-on for Microsoft Windows - see <xref href="https://splunkbase.splunk.com/app/742/" format="html" scope="external"/></li>
-<li>Splunk Add-on for Microsoft Windows DNS (if not installed on central splunk, you will see yellow icons on some dashboards with 
-the message 'eventtype wineventlog-dns does not exist or is disabled') -  see <xref href="https://splunkbase.splunk.com/app/3208/" format="html" scope="external"/></li>
-<li>Splunk Supporting Add-on for Active Directory (if not installed on central splunk, you will see yellow icons on some dashboards with 
-the message 'eventtype 'wineventlog-ds does not exist or is disabled') - see <xref href="https://splunkbase.splunk.com/app/1151/" format="html" scope="external"/></li>
-</ul>
-
-</p>
 
 
 
