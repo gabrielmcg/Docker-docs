@@ -80,7 +80,7 @@ would help verifying the validity of the certificates but it requires a version 
 PyOpenSSL which is not compatible with the version installed on Red Hat 7.4
 (PyOpenSSL is required by RH subscription manager).-->
 <p>The certificates should specify the names of the FQDNs of the load balancer and the FQDNs of the VMs themselves. 
-This must is true for the UCP server certificate and the DTR server certificate.</p>
+This applies to both the UCP server certificate and the DTR server certificate.</p>
 </note>
     
     
