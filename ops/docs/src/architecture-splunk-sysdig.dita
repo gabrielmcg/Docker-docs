@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="architecture-splunk-sysdig">
+<title>Monitoring with Splunk and Sysdig</title>
+<body>
+<p>The solution can be configured to enable the use of Splunk and / or  Sysdig. 
+The load among the three hosts will be shared as per <xref href="architecture-splunk-sysdig.dita#architecture-splunk-sysdig/synergy-ops-architecture" type="fig"/></p>
+
+<fig id="synergy-ops-architecture">
+<title>Solution architecture with Splunk and Sysdig</title> 
+<image href="media/synergy-ops-architecture.png"/>
+</fig>
+</body>
+</topic>

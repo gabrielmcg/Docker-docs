@@ -38,6 +38,15 @@
   </topicref>
 
   <topicref href="architecture.dita" navtitle="Architecture">
+    <topicref href="architecture-overview.dita" navtitle="Overview"/>
+    
+    <topicref href="architecture-monitoring.dita" navtitle="Monitoring Overview">
+      <topicref href="architecture-splunk-sysdig.dita" navtitle="Monitoring with Splunk and Sysdig">
+        <topicref href="splunk.dita" navtitle="Monitoring with Splunk"/>
+        <topicref href="sysdig.dita" navtitle="Monitoring with Sysdig"/>
+      </topicref>
+      <topicref href="architecture-promgraf.dita" navtitle="Monitoring with Prometheus and Grafana"/>
+    </topicref>
 
     <topicref href="server-reqs.dita" navtitle="Server Requirements"/>
 
@@ -50,12 +59,6 @@
     <topicref href="disaster-recovery.dita" navtitle="Disaster Recovery"/>
 
     <topicref href="security.dita" navtitle="Security"/>
-
-    <!--<topicref href="monitoring.dita" navtitle="Monitoring">-->
-    <topicref href="splunk.dita" navtitle="Monitoring with Splunk"/>
-
-    <topicref href="sysdig.dita" navtitle="Monitoring with Sysdig"/>
-    <!--</topicref>-->
 
   </topicref>
 
