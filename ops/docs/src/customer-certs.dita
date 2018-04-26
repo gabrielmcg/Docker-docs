@@ -37,12 +37,12 @@ certificates</li>
 </li>
 </ul>
 
-<note type="note">The installation will fail if the <codeph>ca.pem</codeph>, <codeph>cert.pem</codeph> and <codeph>key.pem</codeph> files
+<!--<note type="note">The installation will fail if the <codeph>ca.pem</codeph>, <codeph>cert.pem</codeph> and <codeph>key.pem</codeph> files
 cannot be found in the folders designated by <codeph>dtr_certs_dir</codeph> and <codeph>ucp_certs_dir</codeph> or if
 they don't constitute valid certificates. Note that there is an ansible module that
 would help verifying the validity of the certificates but it requires a version of
 PyOpenSSL which is not compatible with the version installed on Red Hat 7.4
-(PyOpenSSL is required by RH subscription manager).</note>
+(PyOpenSSL is required by RH subscription manager).</note>-->
 
 </body>
 </topic>

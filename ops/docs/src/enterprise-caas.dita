@@ -14,14 +14,19 @@
 </li>    
 <li><xref href="architecture.dita"/>
 <ul>
+<li><xref href="architecture-overview.dita"/></li>
+<li><xref href="architecture-monitoring.dita"/>
+<ul>
+<li><xref href="architecture-splunk-sysdig.dita"/></li>
+<li><xref href="architecture-promgraf.dita"/></li>    
+</ul>
+</li>
 <li><xref href="server-reqs.dita"/></li>    
 <li><xref href="storage-reqs.dita"/></li>
 <li><xref href="ha.dita"/></li>
 <li><xref href="sizing.dita"/></li>
 <li><xref href="disaster-recovery.dita"/></li>
 <li><xref href="security.dita"/></li>
-<li><xref href="splunk.dita"/></li>  
-<li><xref href="sysdig.dita"/></li>
 </ul>
 </li>  
 <li><xref href="provisioning.dita"/>
@@ -71,8 +76,8 @@
 <li><xref href="lifecycle.dita"/></li>     
 <li><xref href="backup-restore.dita"/>
 <ul>
+<li><xref href="backup-restore-ucp-dtr.dita"/></li>    
 <li><xref href="backup-restore-docker-volumes.dita"/></li>
-<li><xref href="backup-restore-ucp-dtr.dita"/></li>
 </ul>
   
 </li>  
