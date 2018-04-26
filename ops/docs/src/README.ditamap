@@ -105,7 +105,10 @@
     <topicref href="environment-config.dita" navtitle="Environment configuration"/>
 
     <topicref href="docker-config.dita" navtitle="Docker configuration">
-      <topicref href="customer-certs.dita" navtitle="Customer certificates"/>
+      <topicref href="customer-certs.dita" navtitle="Customer certificates">
+        <topicref href="customer-certs-generate-test.dita" navtitle="Generate and test certificates"/>
+        
+      </topicref>
     </topicref>
 
     <topicref href="windows-config.dita" navtitle="Windows configuration"/>
