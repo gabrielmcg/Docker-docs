@@ -4790,7 +4790,7 @@ and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 
 
 <p class="p">In addition, the <code class="ph codeph">backup.sh</code> script accepts an optional switch that will let you specify the location of the password file that will 
-    be passed to the <code class="ph codeph">ansible-playbook</code> commands in the script. This is required if you encrypted the  <code class="ph codeph">group_vars/vars</code> file. 
+    be passed to the <code class="ph codeph">ansible-playbook</code> commands in the script. This is required if you encrypted the  <code class="ph codeph">group_vars/vault</code> file. 
     The general syntax for this script is as follows:
 </p>
 
@@ -4959,7 +4959,7 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title80" id="unique_342516629">
+<div class="topic nested3" aria-labelledby="ariaid-title80" id="unique_923456892">
 <h4 class="title topictitle4" id="ariaid-title80">Restore UCP and DTR</h4>
  
 <div class="body">

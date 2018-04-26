@@ -48,7 +48,7 @@ and the corresponding <codeph>.vars.tgz</codeph> files</entry>
 
 
 <p>In addition, the <codeph>backup.sh</codeph> script accepts an optional switch that will let you specify the location of the password file that will 
-    be passed to the <codeph>ansible-playbook</codeph> commands in the script. This is required if you encrypted the  <codeph>group_vars/vars</codeph> file. 
+    be passed to the <codeph>ansible-playbook</codeph> commands in the script. This is required if you encrypted the  <codeph>group_vars/vault</codeph> file. 
     The general syntax for this script is as follows:
 </p>
 
