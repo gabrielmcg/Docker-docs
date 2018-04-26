@@ -27,9 +27,9 @@ shows the file names produced by <codeph>backup.sh</codeph> based on the argumen
 <entry>Default</entry>
 <entry><codeph>./backup.sh</codeph></entry>
 <entry>backup_swarm_&lt;vmname>_&lt;timestamp>.tgz, 
-backup_ucp_&lt;vmname>_&lt;timestamp>.tgz, 
-backup_dtr_meta_&lt;vmname>_&lt;timestamp>.tgz,
-backup_dtr_data_&lt;vmname>_&lt;timestamp>.tgz
+backup_ucp_&lt;ucpid>_&lt;vmname>_&lt;timestamp>.tgz, 
+backup_dtr_meta_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.tgz,
+backup_dtr_data_&lt;replica_id>_&lt;vmname>_&lt;timestamp>.tgz
 and the corresponding <codeph>.vars.tgz</codeph> files</entry>
 </row>
 <row>

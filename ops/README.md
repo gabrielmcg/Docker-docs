@@ -4672,9 +4672,9 @@ shows the file names produced by <code class="ph codeph">backup.sh</code> based 
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7779 ">Default</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7782 "><code class="ph codeph">./backup.sh</code></td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e7785 ">backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
-backup_ucp_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
-backup_dtr_meta_&lt;vmname&gt;_&lt;timestamp&gt;.tgz,
-backup_dtr_data_&lt;vmname&gt;_&lt;timestamp&gt;.tgz
+backup_ucp_&lt;ucpid&gt;_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
+backup_dtr_meta_&lt;replica_id&gt;_&lt;vmname&gt;_&lt;timestamp&gt;.tgz,
+backup_dtr_data_&lt;replica_id&gt;_&lt;vmname&gt;_&lt;timestamp&gt;.tgz
 and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>
 <tr class="row">
@@ -4854,7 +4854,7 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title80" id="unique_222738905">
+<div class="topic nested3" aria-labelledby="ariaid-title80" id="unique_1864243178">
 <h4 class="title topictitle4" id="ariaid-title80">Restore UCP and DTR</h4>
  
 <div class="body">
