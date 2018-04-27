@@ -722,7 +722,7 @@ shared datastore that can be accessed from any machine in the cluster.</p>
 The load among the three hosts will be shared as per <a class="xref" href="#architecture-splunk-sysdig__synergy-ops-architecture">Figure 1</a></p>
 
 
-<div class="fig fignone" id="architecture-splunk-sysdig__synergy-ops-architecture"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Solution architecture with Splunk and Sysdig</span>
+<div class="fig fignone" id="architecture-splunk-sysdig__synergy-ops-architecture"><span class="figcap"><span class="fig--title-label"><b>Figure 1. </b></span>Solution architecture with Splunk and Sysdig</span>
  
 <img class="image" src="media/synergy-ops-architecture.png" />
 </div>
@@ -746,7 +746,7 @@ in your cloud, as well as log data from the Docker platform itself and from the 
 </p>
 
     
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 2. </span>Splunk architecture</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label"><b>Figure 2. </b></span>Splunk architecture</span>
 
 <img class="image" src="media/splunk-architecture.png" />
 </div>
@@ -849,7 +849,7 @@ containers, and from your applications running inside them, are aggregated in re
 each service to provide meaningful monitoring dashboards and alerts for your application.</p>
 
   
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 3. </span>Sysdig architecture</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label"><b>Figure 3. </b></span>Sysdig architecture</span>
   
   <img class="image" src="media/sysdig-architecture.png" />
 </div>
@@ -889,7 +889,7 @@ the section on Configuration for more information on how to enable Sysdig.</div>
 The load among the three hosts will be shared as per <a class="xref" href="#architecture-promgraf__synergy-ops-architecture-promgraf">Figure 4</a></p>
 
 
-<div class="fig fignone" id="architecture-promgraf__synergy-ops-architecture-promgraf"><span class="figcap"><span class="fig--title-label">Figure 4. </span>Solution architecture with Prometheus and Grafana</span>
+<div class="fig fignone" id="architecture-promgraf__synergy-ops-architecture-promgraf"><span class="figcap"><span class="fig--title-label"><b>Figure 4. </b></span>Solution architecture with Prometheus and Grafana</span>
  
 <img class="image" src="media/synergy-ops-architecture-promgraf.png" />
 </div>
@@ -949,7 +949,7 @@ every machine in the cluster.</p>
 
 
     
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 5. </span>HPE Synergy Configuration</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label"><b>Figure 5. </b></span>HPE Synergy Configuration</span>
 
 <br /><img class="image" src="media/architecture2.png" /><br />
 </div>
@@ -993,7 +993,7 @@ information see <a class="xref" href="http://www.haproxy.com/solutions/high-avai
 
 
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 6. </span>Load balancer architecture</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label"><b>Figure 6. </b></span>Load balancer architecture</span>
 
 
 <img class="image" src="media/load-balancers.png" />
@@ -1538,7 +1538,7 @@ previously in the architecture section. The high level steps this guide will tak
 are shown in the figure:</p>
 
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 7. </span>Provisioning steps</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label"><b>Figure 7. </b></span>Provisioning steps</span>
 
 
 <img class="image" src="media/provisioning.png" />
@@ -3478,7 +3478,7 @@ clh-logger ip_addr='10.60.59.24/16' esxi_host='esxi-clh-2.cloudra.local'</code><
 need to select the TCP protocol as shown in <a class="xref" href="#splunk-ucp-syslog__ucp-config-syslog">Figure 8</a>.</p>
 
 
-<div class="fig fignone" id="splunk-ucp-syslog__ucp-config-syslog"><span class="figcap"><span class="fig--title-label">Figure 8. </span>Configure Remote Syslog Server in UCP</span>
+<div class="fig fignone" id="splunk-ucp-syslog__ucp-config-syslog"><span class="figcap"><span class="fig--title-label"><b>Figure 8. </b></span>Configure Remote Syslog Server in UCP</span>
 
 <img class="image" src="media/ucp-config-syslog.png" />
 </div>
@@ -3497,7 +3497,7 @@ server configured in the [logger] group in your <code class="ph codeph">vm_hosts
 the port <code class="ph codeph">514</code> as shown in <a class="xref" href="#splunk-esx-syslog__esx-config-syslog">Figure 9</a>.</p>
 
 
-<div class="fig fignone" id="splunk-esx-syslog__esx-config-syslog"><span class="figcap"><span class="fig--title-label">Figure 9. </span>Configure Syslog on ESXi Hosts</span>
+<div class="fig fignone" id="splunk-esx-syslog__esx-config-syslog"><span class="figcap"><span class="fig--title-label"><b>Figure 9. </b></span>Configure Syslog on ESXi Hosts</span>
 
 <img class="image" src="media/esx-config-syslog.png" />
 </div>
@@ -4131,7 +4131,7 @@ If you'd like to turn off curl's verification of the certificate, use
 <p class="p">Choose <code class="ph codeph">Manage computer certificates</code> in the control panel</p>
 
 	
-<div class="fig fignone" id="d1e4431__manage-computer-certificates"><span class="figcap"><span class="fig--title-label">Figure 10. </span>Manage computer certificates</span>
+<div class="fig fignone" id="d1e4431__manage-computer-certificates"><span class="figcap"><span class="fig--title-label"><b>Figure 10. </b></span>Manage computer certificates</span>
 
 <br /><img class="image" src="media/manage-computer-certificates.png" /><br />	
 </div>
@@ -4140,7 +4140,7 @@ If you'd like to turn off curl's verification of the certificate, use
 <p class="p">Import the <code class="ph codeph">ca.pem</code> for UCP into the Trusted Root Certification Authorities</p>
 
 
-<div class="fig fignone" id="d1e4431__import-ca-pem"><span class="figcap"><span class="fig--title-label">Figure 11. </span>Import the ca.pem</span>
+<div class="fig fignone" id="d1e4431__import-ca-pem"><span class="figcap"><span class="fig--title-label"><b>Figure 11. </b></span>Import the ca.pem</span>
 	
 <br /><img class="image" src="media/import-ca-pem.png" /><br />	
 </div>
@@ -4149,7 +4149,7 @@ If you'd like to turn off curl's verification of the certificate, use
 <p class="p">It should show up in the list of certificates:</p>
 
 	
-<div class="fig fignone" id="d1e4431__list-certs"><span class="figcap"><span class="fig--title-label">Figure 12. </span>List certificates</span>
+<div class="fig fignone" id="d1e4431__list-certs"><span class="figcap"><span class="fig--title-label"><b>Figure 12. </b></span>List certificates</span>
 	
 <br /><img class="image" src="media/list-certs.png" /><br />
 </div>
@@ -4158,7 +4158,7 @@ If you'd like to turn off curl's verification of the certificate, use
 <p class="p">You may need to restart your browser for this to take effect:</p>
 
 	
-<div class="fig fignone" id="d1e4431__green-https"><span class="figcap"><span class="fig--title-label">Figure 13. </span>Secure HTTPS</span>
+<div class="fig fignone" id="d1e4431__green-https"><span class="figcap"><span class="fig--title-label"><b>Figure 13. </b></span>Secure HTTPS</span>
 
 <br /><img class="image" src="media/green-https.png" /><br />	
 </div>
@@ -4326,7 +4326,7 @@ to the same version are deployed or upgraded together – see <a class="xref" hr
 available for UCP or DTR. You can start the upgrade process by clicking on the
 banner.</p>
 
-<div class="fig fignone" id="lifecycle__docker-update"><span class="figcap"><span class="fig--title-label">Figure 14. </span>Docker update notification</span>
+<div class="fig fignone" id="lifecycle__docker-update"><span class="figcap"><span class="fig--title-label"><b>Figure 14. </b></span>Docker update notification</span>
 
 <img class="image" src="media/dockerupdate.png" />
 </div>
@@ -5117,7 +5117,7 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title81" id="unique_1243105934">
+<div class="topic nested3" aria-labelledby="ariaid-title81" id="unique_195640843">
 <h4 class="title topictitle4" id="ariaid-title81">Restore UCP and DTR</h4>
  
 <div class="body">
@@ -5329,7 +5329,7 @@ be deployed to a VMware vCenter managed environment. For this solution, the stan
 "RMC only" is installed. If RMC is installed in the Synergy environment, iSCSI connection
 to the 3PAR StoreServ is required.</p>
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 15. </span>HPE Recovery Manger Central and StoreOnce</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label"><b>Figure 15. </b></span>HPE Recovery Manger Central and StoreOnce</span>
 
 <img class="image" src="media/rmc-storeonce.png" />
 </div>
@@ -5345,7 +5345,7 @@ traffic is over IP. </li>
 
 </ul>
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 16. </span>Connectivity</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label"><b>Figure 16. </b></span>Connectivity</span>
 
 <img class="image" src="media/3par-storeonce-networking.png" />
 
@@ -5364,7 +5364,7 @@ automatically configure the storage, define default backup policies and protecti
 policies and will schedule snapshots or express protect jobs with the created
 policies.</p>
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 17. </span>Recovery Set Overview</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label"><b>Figure 17. </b></span>Recovery Set Overview</span>
 
 <img class="image" src="media/recovery-set-overview.png" />
 </div>
@@ -5372,7 +5372,7 @@ policies.</p>
 <p class="p">RMC uses the Express Protect feature to enable the backup of the snapshot data from the
 3PAR array to the StoreOnce system for deduplication and long-term retention. </p>
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 18. </span>Express Protect</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label"><b>Figure 18. </b></span>Express Protect</span>
 
 <img class="image" src="media/express-protect.png" />
 </div>
@@ -5396,7 +5396,7 @@ the backup. The volume can be restored from a Recovery Set restore point. The Ex
 Protect restore point will restore the volume from the StoreOnce system. A Snapshot Set
 restore point will restore a 3PAR StoreServ snapshot.</p>
 
-<div class="fig fignone"><span class="figcap"><span class="fig--title-label">Figure 19. </span>Restore points</span>
+<div class="fig fignone"><span class="figcap"><span class="fig--title-label"><b>Figure 19. </b></span>Restore points</span>
 
 <img class="image" src="media/restore-points.png" />
 </div>
