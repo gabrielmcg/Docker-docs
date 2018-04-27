@@ -107,7 +107,7 @@
     <topicref href="docker-config.dita" navtitle="Docker configuration">
       <topicref href="customer-certs.dita" navtitle="Customer certificates">
         <topicref href="customer-certs-generate-test.dita" navtitle="Generate and test certificates"/>
-        
+        <topicref href="verify-certs.dita" navtitle="Verify certs"></topicref>
       </topicref>
     </topicref>
 

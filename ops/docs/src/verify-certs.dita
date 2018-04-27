@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="verify-certs">
+<title>Verify your certificates</title>
+<body>
+<p>The playbooks do not verify the validatity of the certificate files you suppl so  you should verify them manually 
+before you start your deployment.</p>
+
+<section>
+<title>Verify that the private and the server cert match</title> 
+<p>On the Ansible box, run the following commands:</p>  
+ 
+<codeblock>ckcert=$(openssl x509 -noout -modulus -in cert.pem | openssl md5)
+ckkey=$(openssl rsa -noout -modulus -in key.pem| openssl md5)
+if [ "$ckkey" == "$ckcert" ] ; then echo "Private key and Certificate match" ; else echo "STOP! Private Key and Certificate don't match" ; fi
+</codeblock>
+
+
+</section>
+  
+<section>
+<title>Verify that the server certificate was signed by the CA</title>
+
+<p>Extract all but the first certificate from <codeph>cert.pem</codeph> (
+  i.e. extract the certs for the intermediate CA authorities) into the file <codeph>int.pem</codeph></p>
+  
+<codeblock>sed -e '1,/-----END CERTIFICATE-----/d' cert.pem >intca.pem</codeblock>  
+  
+<p>Combine <codeph>intca.pem</codeph> and <codeph>ca.pem</codeph> to form <codeph>cachain.pem</codeph>:</p>  
+  
+<codeblock>cat intca.pem ca.pem > cachain.pem</codeblock>  
+  
+<p>Finally, verify that <codeph>cert.pem</codeph> was signed by the CA or by an intermediate CA:</p> 
+  
+<codeblock>openssl verify -verbose -CAfile cachain.pem  cert.pem</codeblock>  
+  
+<p>A successful check will generate output similar to:</p>
+  
+<codeblock>[root@ansible ucp_certs]# cat intca.pem ca.pem > cachain.pem
+[root@ansible ucp_certs]# openssl verify -verbose -CAfile cachain.pem  cert.pem
+cert.pem: OK</codeblock> 
+  
+<p>An unsuccessful check will generate output similar to:</p> 
+  
+<codeblock>[root@ansible ucp_certs]# openssl verify -verbose -CAfile cachain.pem  certsignedbyanotherca.pem
+certsignedbyanotherca.pem: O = HPE, OU = CloudRA Team, CN = clh-ucp.cloudra.local
+error 20 at 0 depth lookup:unable to get local issuer certificate</codeblock>  
+
+
+</section>  
+</body>
+</topic>
