@@ -481,7 +481,7 @@ provisioning of the environment using a set of Ansible playbooks. It also outlin
 set of manual steps to harden, secure and audit the overall status of the system. </p>
 
 
-<div class="note note"><span class="notetitle">Note:</span> 
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
 <p class="p">The Ansible playbooks described in this document are only intended for Day 0
 deployment automation of Docker EE on HPE Synergy.</p>
 
@@ -490,7 +490,7 @@ HPE and are intended as an example of deploying Docker EE on HPE Synergy. We
 welcome input from the user community via GitHub to help us prioritize all
 future bug fixes and feature enhancements. </p>
 
-</div>
+</div><hr width="2" />
 
 
 </div>
@@ -828,7 +828,7 @@ log messages coming from the ESX machines into the <code class="ph codeph">/var/
 </ul>
 
 
-<div class="note note"><span class="notetitle">Note:</span> The list of files that the Universal Forwarder should monitor can be modified very easily</div>
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> The list of files that the Universal Forwarder should monitor can be modified very easily</div><hr width="2" />
 
 </div>
 
@@ -874,8 +874,8 @@ A Sysdig Agent software is deployed on each UCP, DTR and Linux worker node and c
 is relayed back to your Sysdig SaaS Cloud portal. </p>
 
 
-<div class="note note"><span class="notetitle">Note:</span> The Sysdig functionality is not turned on by default in this solution - see
-the section on Configuration for more information on how to enable Sysdig.</div>
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> The Sysdig functionality is not turned on by default in this solution - see
+the section on Configuration for more information on how to enable Sysdig.</div><hr width="2" />
 
 </div>
 
@@ -1270,11 +1270,11 @@ Total vCPU per node
 
 
 
-<div class="note note"><span class="notetitle">Note:</span> 
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
 <p class="p">In the case of one ESX host failure, two nodes are enough to accommodate the amount
 of vCPU required</p>
 
-</div>
+</div><hr width="2" />
 
 
 <p class="p"></p>
@@ -1436,11 +1436,11 @@ of vCPU required</p>
 
 
 
-<div class="note note"><span class="notetitle">Note:</span> 
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
 <p class="p">In the case of one ESX host failure, the two surviving hosts can accommodate the
 amount of RAM required for all VMs.</p>
 
-</div>
+</div><hr width="2" />
 
 
 
@@ -1638,11 +1638,11 @@ available hosts in the system. You configure an Admission Control Policy (ACP) t
 specify the percentage CPU and memory to reserve on all the hosts in the cluster to
 support HA functionality.</p>
 
-<div class="note note"><span class="notetitle">Note:</span> 
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
 <p class="p">You should not use the default Admission Control Policy. Instead, you should
 calculate the memory and CPU requirements that are specific to your environment.</p>
 
-</div>
+</div><hr width="2" />
 
 <p class="p"></p>
 
@@ -1666,11 +1666,11 @@ download and install the latest release of vDVS driver.</p>
 <p class="p">More information on how to download and install the driver can be found at <a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/install.html" target="_blank">http://vmware.github.io/vsphere-storage-for-docker/documentation/install.html</a></p>
 
 
-<div class="note note"><span class="notetitle">Note:</span> 
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
 <p class="p">You cannot mount the same persistent volume created through vSphere Docker Volume
 Service (vDVS) on containers running on two different hosts at the same time.</p>
 
-</div>
+</div><hr width="2" />
 
 
 </div>
@@ -2139,10 +2139,10 @@ into sections.</p>
 
 <pre class="pre codeblock"><code># cd ops</code></pre>
 
-<div class="note note"><span class="notetitle">Note:</span> All subsequent file names are relative to the <code class="ph codeph">ops</code> directory. For example
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> All subsequent file names are relative to the <code class="ph codeph">ops</code> directory. For example
 <code class="ph codeph">vm_hosts</code> is located in <code class="ph codeph">~/Docker-Synergy/ops</code> and
 <code class="ph codeph">group_vars/vars</code> corresponds to
-<code class="ph codeph">~/Docker-Synergy/ops/groups_vars/vars</code>.</div>
+<code class="ph codeph">~/Docker-Synergy/ops/groups_vars/vars</code>.</div><hr width="2" />
 
 
 
@@ -2445,11 +2445,11 @@ servers.</td>
 <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d29e4043 ">Used by the playbook <code class="ph codeph">create_vms.yml</code>, this variable is used to
 specify the portgroup connected to the network that connects all the VMs. There is
 currently only one network. 
-<div class="note note"><span class="notetitle">Note:</span> It is recommended that the template which is used as the base
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> It is recommended that the template which is used as the base
 for all deployed VMs specifies a network adapter but it is not required. If 
 a network adapter is specified, you should not attach this adapter to a standard switch
 if the portgroup designated by <code class="ph codeph">vm_portgroup</code> is connected to a distributed vSwitch.
-In addition, you should make sure that the adapter specifies <code class="ph codeph">Connect At Power On</code>.</div>
+In addition, you should make sure that the adapter specifies <code class="ph codeph">Connect At Power On</code>.</div><hr width="2" />
 
 </td>
 </tr>
@@ -2723,7 +2723,7 @@ certificates</li>
 
 
 
-<div class="note note"><span class="notetitle">Note:</span> 
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
 <p class="p">The installation will fail if the <code class="ph codeph">ca.pem</code>, <code class="ph codeph">cert.pem</code> and <code class="ph codeph">key.pem</code> files
 cannot be found in the folders designated by <code class="ph codeph">dtr_certs_dir</code> and <code class="ph codeph">ucp_certs_dir</code> or if
 they don't constitute valid certificates.</p>
@@ -2732,7 +2732,7 @@ they don't constitute valid certificates.</p>
 <p class="p">The certificates should specify the names of the FQDNs of the load balancer and the FQDNs of the VMs themselves. 
 This applies to both the UCP server certificate and the DTR server certificate.</p>
 
-</div>
+</div><hr width="2" />
 
     
     
@@ -3368,10 +3368,10 @@ indexer(s). The following code block shows the relevant portion of this file whe
 <pre class="pre codeblock"><code>[sslConfig]
 sslRootCAPath = /opt/splunk/etc/mycerts/ca.pem</code></pre>
     
-<div class="note note"><span class="notetitle">Note:</span> In order to be able to download and install additional applications, you
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> In order to be able to download and install additional applications, you
 may want to append the file <code class="ph codeph">$SPLUNK_HOME/auth/appsCA.pem</code> to your <code class="ph codeph">ca.pem</code> file. If you
 don't do this, the Splunk UI will make this suggestion when you attempt to <code class="ph codeph">Find more
-apps</code>. </div>
+apps</code>. </div><hr width="2" />
 
  
     
@@ -3577,8 +3577,8 @@ in the <code class="ph codeph">group_vars/vault</code> file as detailed in <a cl
 
 
 
-<div class="note note"><span class="notetitle">Note:</span> You must have outgoing port 6666 open in your firewall, to allow data to flow
-to <code class="ph codeph">collector.sysdigcloud.com</code></div>
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> You must have outgoing port 6666 open in your firewall, to allow data to flow
+to <code class="ph codeph">collector.sysdigcloud.com</code></div><hr width="2" />
 
 
 <p class="p">Using the Sysdig software as a solution (SaaS) website <a class="xref" href="https://app.sysdigcloud.com" target="_blank">https://app.sysdigcloud.com</a>, you are able to view, analyze and
@@ -4444,7 +4444,7 @@ and with Docker EE 17.06.</p>
 
 
     
-<div class="note note"><span class="notetitle">Note:</span> 
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
 <p class="p">Docker Universal Control Plane is not currently supported on Windows Server 1709 due to image incompatibility issues. 
 For more information, see the Docker documentation <a class="xref" href="https://docs.docker.com/install/windows/docker-ee/" target="_blank">Install Docker Enterprise Edition for Windows Server</a></p>
         
@@ -4452,7 +4452,7 @@ For more information, see the Docker documentation <a class="xref" href="https:/
 <p class="p">This solution recommends that you only run Windows Server 2016 on your Windows worker nodes 
 and that you install any required updates to your Windows nodes in a timely manner.</p>
 
-</div>
+</div><hr width="2" />
     
 
   
@@ -4492,19 +4492,19 @@ The solution follows the recommendations in the Docker best practices document a
 
 
   
-<div class="note note"><span class="notetitle">Note:</span> It is important that you make copies of the backed up data and that you store the copies in a separate physical location. 
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> It is important that you make copies of the backed up data and that you store the copies in a separate physical location. 
 You must also recognize that the backed up data contains sensitive information such as private keys and so it is important to restrict
 access to the generated files. However, the playbooks do not backup the sensitive information in your <code class="ph codeph">group_vars/vault</code> file so you should make 
-sure to keep track of the credentials for the UCP Administrator. </div>
+sure to keep track of the credentials for the UCP Administrator. </div><hr width="2" />
   
   
-<div class="note warning"><span class="warningtitle">Warning:</span> The restore procedures do not restore swarm data. You should follow
+<hr width="2" /><div class="note warning"><span class="warningtitle"><b>Warning:</b></span> The restore procedures do not restore swarm data. You should follow
 infrastructure as code (IaC) guidelines and maintain your service, stack and network definitions using source code or configuration
 management tools.
 
 You must also ensure that you safely manage the credentials of your administration accounts as 
 existing UCP Client bundles will not work when you restore UCP on a new swarm. 
-</div>
+</div><hr width="2" />
   
 
 </div>
@@ -4610,12 +4610,12 @@ command line when running the playbook. In the example below: </p>
 &lt;backup_dest&gt;/my_swarm_backup.vars.tgz
 </code></pre>
 
-<div class="note warning"><span class="warningtitle">Warning:</span> <strong class="ph b">Online versus offline backups:</strong> By default, The playbook performs online backups.
+<hr width="2" /><div class="note warning"><span class="warningtitle"><b>Warning:</b></span> <strong class="ph b">Online versus offline backups:</strong> By default, The playbook performs online backups.
 You can take offline backups by setting the variable <code class="ph codeph">swarm_backup_offline</code> to <code class="ph codeph">"true"</code>.
 The playbook will then stop the Docker daemon on the machine used to take the backup (a manager/UCP node).
 Before it does so, the playbook will verify that enough managers are running in the cluster to
 maintain the quroum. If this is not the case, the playbook will exit with an error. For more information, see the Docker
-documentation at <a class="xref" href="https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv" target="_blank">https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv</a></div>
+documentation at <a class="xref" href="https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv" target="_blank">https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv</a></div><hr width="2" />
 
 
 </div>
@@ -4700,12 +4700,12 @@ command line when running the playbook. In the example below: </p>
 &lt;backup_dest&gt;/my_ucp_backup.vars.tgz
 </code></pre>
 
-<div class="note warning"><span class="warningtitle">Warning:</span> To create a consistent backup, the backup command <strong class="ph b">temporarily stops the
+<hr width="2" /><div class="note warning"><span class="warningtitle"><b>Warning:</b></span> To create a consistent backup, the backup command <strong class="ph b">temporarily stops the
 UCP containers running on the node where the backup is being performed</strong>. User resources, such
 as services, containers, and stacks are not affected by this operation and will continue
 to operate as expected. Any long-lasting <code class="ph codeph">docker exec</code>, <code class="ph codeph">docker logs</code>, <code class="ph codeph">docker events</code>, 
 or <code class="ph codeph">docker attach</code> operations on the
-affected manager node will be disconnected.</div>
+affected manager node will be disconnected.</div><hr width="2" />
 
 
 <p class="p">For more information on UCP backup, see the Docker documentation at
@@ -5117,19 +5117,19 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title81" id="unique_1494249464">
+<div class="topic nested3" aria-labelledby="ariaid-title81" id="unique_353364068">
 <h4 class="title topictitle4" id="ariaid-title81">Restore UCP and DTR</h4>
  
 <div class="body">
 
 
 
-<div class="note warning"><span class="warningtitle">Warning:</span> This procedure is aimed at restoring a cluster after a disaster. It assumes you have lost all 
+<hr width="2" /><div class="note warning"><span class="warningtitle"><b>Warning:</b></span> This procedure is aimed at restoring a cluster after a disaster. It assumes you have lost all 
 the VMs in your cluster and want to redeploy using data that you backed up earlier.
 
 The solution follows Docker best practice, which means the swarm artifacts are not restored. 
 You will need to restore your Docker volumes and you applications (stacks and services) when this procedure is complete.
-</div>
+</div><hr width="2" />
 
 
 <p class="p"></p>
@@ -5160,7 +5160,7 @@ For more information, see the Docker documentation  <a class="xref" href="https:
 <div class="body">
 
 
-<div class="note note"><span class="notetitle">Note:</span> This procedure restores DTR metadata and images and assumes you have lost all the DTR VMs in your cluster.  It will redeploy using the DTR data that you backed up earlier and will also restore the images if the folder exported by the NFS VM is empty.</div>
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> This procedure restores DTR metadata and images and assumes you have lost all the DTR VMs in your cluster.  It will redeploy using the DTR data that you backed up earlier and will also restore the images if the folder exported by the NFS VM is empty.</div><hr width="2" />
 
 
 
@@ -5294,8 +5294,8 @@ command:</p>
 
 <div class="section"><h4 class="title sectiontitle">Cloning the volume</h4>
 
-<div class="note note"><span class="notetitle">Note:</span> Prior to creating a clone of a volume, any containers accessing the volume
-should be paused or stopped.</div>
+<hr width="2" /><div class="note note"><span class="notetitle"><b>Note:</b></span> Prior to creating a clone of a volume, any containers accessing the volume
+should be paused or stopped.</div><hr width="2" />
 
 <p class="p">Docker volumes can be cloned to a new datastore:</p>
 
