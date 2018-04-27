@@ -725,7 +725,7 @@ The load among the three hosts will be shared as per <a class="xref" href="#arch
 <div class="fig fignone" id="architecture-splunk-sysdig__synergy-ops-architecture">
  
 <img class="image" src="media/synergy-ops-architecture.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 1. </b></span>Solution architecture with Splunk and Sysdig</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 1. </b></span>Solution architecture with Splunk and Sysdig</span><p> </p></div>
 
 </div>
 
@@ -749,7 +749,7 @@ in your cloud, as well as log data from the Docker platform itself and from the 
 <div class="fig fignone">
 
 <img class="image" src="media/splunk-architecture.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 2. </b></span>Splunk architecture</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 2. </b></span>Splunk architecture</span><p> </p></div>
 
 
 
@@ -852,7 +852,7 @@ each service to provide meaningful monitoring dashboards and alerts for your app
 <div class="fig fignone">
   
   <img class="image" src="media/sysdig-architecture.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 3. </b></span>Sysdig architecture</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 3. </b></span>Sysdig architecture</span><p> </p></div>
   
   
 <p class="p">
@@ -892,7 +892,7 @@ The load among the three hosts will be shared as per <a class="xref" href="#arch
 <div class="fig fignone" id="architecture-promgraf__synergy-ops-architecture-promgraf">
  
 <img class="image" src="media/synergy-ops-architecture-promgraf.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 4. </b></span>Solution architecture with Prometheus and Grafana</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 4. </b></span>Solution architecture with Prometheus and Grafana</span><p> </p></div>
 
 
 
@@ -952,7 +952,7 @@ every machine in the cluster.</p>
 <div class="fig fignone">
 
 <br /><img class="image" src="media/architecture2.png" /><br />
-<span class="figcap"><span class="fig--title-label"><b>Figure 5. </b></span>HPE Synergy Configuration</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 5. </b></span>HPE Synergy Configuration</span><p> </p></div>
 
 
 </div>
@@ -998,7 +998,7 @@ information see <a class="xref" href="http://www.haproxy.com/solutions/high-avai
 
 <img class="image" src="media/load-balancers.png" />
 
-<span class="figcap"><span class="fig--title-label"><b>Figure 6. </b></span>Load balancer architecture</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 6. </b></span>Load balancer architecture</span><p> </p></div>
 
 
 
@@ -1542,7 +1542,7 @@ are shown in the figure:</p>
 
 
 <img class="image" src="media/provisioning.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 7. </b></span>Provisioning steps</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 7. </b></span>Provisioning steps</span><p> </p></div>
 
 </div>
 
@@ -3481,7 +3481,7 @@ need to select the TCP protocol as shown in <a class="xref" href="#splunk-ucp-sy
 <div class="fig fignone" id="splunk-ucp-syslog__ucp-config-syslog">
 
 <img class="image" src="media/ucp-config-syslog.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 8. </b></span>Configure Remote Syslog Server in UCP</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 8. </b></span>Configure Remote Syslog Server in UCP</span><p> </p></div>
 
 
 
@@ -3500,7 +3500,7 @@ the port <code class="ph codeph">514</code> as shown in <a class="xref" href="#s
 <div class="fig fignone" id="splunk-esx-syslog__esx-config-syslog">
 
 <img class="image" src="media/esx-config-syslog.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 9. </b></span>Configure Syslog on ESXi Hosts</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 9. </b></span>Configure Syslog on ESXi Hosts</span><p> </p></div>
 
 
 <p class="p">For more information, see the VMware documentation at
@@ -4134,7 +4134,7 @@ If you'd like to turn off curl's verification of the certificate, use
 <div class="fig fignone" id="d1e4431__manage-computer-certificates">
 
 <br /><img class="image" src="media/manage-computer-certificates.png" /><br />	
-<span class="figcap"><span class="fig--title-label"><b>Figure 10. </b></span>Manage computer certificates</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 10. </b></span>Manage computer certificates</span><p> </p></div>
 	
 
 <p class="p">Import the <code class="ph codeph">ca.pem</code> for UCP into the Trusted Root Certification Authorities</p>
@@ -4143,7 +4143,7 @@ If you'd like to turn off curl's verification of the certificate, use
 <div class="fig fignone" id="d1e4431__import-ca-pem">
 	
 <br /><img class="image" src="media/import-ca-pem.png" /><br />	
-<span class="figcap"><span class="fig--title-label"><b>Figure 11. </b></span>Import the ca.pem</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 11. </b></span>Import the ca.pem</span><p> </p></div>
 
 	
 <p class="p">It should show up in the list of certificates:</p>
@@ -4152,7 +4152,7 @@ If you'd like to turn off curl's verification of the certificate, use
 <div class="fig fignone" id="d1e4431__list-certs">
 	
 <br /><img class="image" src="media/list-certs.png" /><br />
-<span class="figcap"><span class="fig--title-label"><b>Figure 12. </b></span>List certificates</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 12. </b></span>List certificates</span><p> </p></div>
 
 
 <p class="p">You may need to restart your browser for this to take effect:</p>
@@ -4161,7 +4161,7 @@ If you'd like to turn off curl's verification of the certificate, use
 <div class="fig fignone" id="d1e4431__green-https">
 
 <br /><img class="image" src="media/green-https.png" /><br />	
-<span class="figcap"><span class="fig--title-label"><b>Figure 13. </b></span>Secure HTTPS</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 13. </b></span>Secure HTTPS</span><p> </p></div>
 
 	
 	
@@ -4329,7 +4329,7 @@ banner.</p>
 <div class="fig fignone" id="lifecycle__docker-update">
 
 <img class="image" src="media/dockerupdate.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 14. </b></span>Docker update notification</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 14. </b></span>Docker update notification</span><p> </p></div>
 
 
 <div class="tablenoborder">
@@ -5117,7 +5117,7 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title81" id="unique_909397631">
+<div class="topic nested3" aria-labelledby="ariaid-title81" id="unique_1494249464">
 <h4 class="title topictitle4" id="ariaid-title81">Restore UCP and DTR</h4>
  
 <div class="body">
@@ -5332,7 +5332,7 @@ to the 3PAR StoreServ is required.</p>
 <div class="fig fignone">
 
 <img class="image" src="media/rmc-storeonce.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 15. </b></span>HPE Recovery Manger Central and StoreOnce</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 15. </b></span>HPE Recovery Manger Central and StoreOnce</span><p> </p></div>
 
 <ul class="ul">
 <li class="li">The connectivity between HPE 3PAR StoreServ and RMC for data traffic is over iSCSI. </li>
@@ -5349,7 +5349,7 @@ traffic is over IP. </li>
 
 <img class="image" src="media/3par-storeonce-networking.png" />
 
-<span class="figcap"><span class="fig--title-label"><b>Figure 16. </b></span>Connectivity</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 16. </b></span>Connectivity</span><p> </p></div>
 
 <p class="p">Refer to <a class="xref" href="https://hpe.sharepoint.com/teams/StorageSolutions/Data%20Center%20Virtualization/RMC-V/Manuals/Manual_5.0/RMC_5.0_user_guide.pdf#search=RMC" target="_blank">RMC User guide</a> TODO PUBLIC URL NEEDED for detailed instructions on
 setup and configuration of RMC and StoreOnce. When RMC is installed, it can be configured
@@ -5367,7 +5367,7 @@ policies.</p>
 <div class="fig fignone">
 
 <img class="image" src="media/recovery-set-overview.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 17. </b></span>Recovery Set Overview</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 17. </b></span>Recovery Set Overview</span><p> </p></div>
 
 <p class="p">RMC uses the Express Protect feature to enable the backup of the snapshot data from the
 3PAR array to the StoreOnce system for deduplication and long-term retention. </p>
@@ -5375,7 +5375,7 @@ policies.</p>
 <div class="fig fignone">
 
 <img class="image" src="media/express-protect.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 18. </b></span>Express Protect</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 18. </b></span>Express Protect</span><p> </p></div>
 
 <p class="p">The Express Restore feature restores either snapshots or base volumes.</p>
 
@@ -5399,7 +5399,7 @@ restore point will restore a 3PAR StoreServ snapshot.</p>
 <div class="fig fignone">
 
 <img class="image" src="media/restore-points.png" />
-<span class="figcap"><span class="fig--title-label"><b>Figure 19. </b></span>Restore points</span></div>
+<span class="figcap"><span class="fig--title-label"><b>Figure 19. </b></span>Restore points</span><p> </p></div>
 
 <p class="p">Once the 3PAR virtual volume is restored, the volume must be reattached to the vSphere
 cluster from RMC. After the volume is reattached, the datastore must be mounted.
