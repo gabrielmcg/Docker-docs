@@ -34,6 +34,17 @@ href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-table
 <entry><b>group_vars/vault</b></entry>
 <entry>This is your access key for the Sysdig portal</entry>
 </row>
+<row>
+<entry>sysdig_agent</entry>
+<entry>group_vars/vars</entry>
+<entry>Specifies the URL to the sysdig Linux native install agent, for example, https://s3.amazonaws.com/download.draios.com/stable/install-agent</entry>
+</row>    
+<row>
+<entry>sysdig_tags</entry>
+<entry>group_vars/vars</entry>
+<entry>Tagging your hosts is highly recommended. Tags allow you to sort nodes of your infrastructure 
+   into custom groups in Sysdig Monitor. Specify location, role, and owner in the format: <codeph>'location:City,role:Enterprise CaaS on Synergy,owner:Customer Name'</codeph></entry>
+</row>    
 </tbody>
 </tgroup>
 </table>
