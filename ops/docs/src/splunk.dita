@@ -63,15 +63,15 @@ log messages coming from the ESX machines into the <codeph>/var/log/messages</co
  
  
     
-<p><b>Non-Docker VMs:</b> Other VMs, for example, NFS, have universal forwarders running natively on the host. 
- They use a Splunk <codeph>monitor</codeph> to collect and forward data from the following files:
+<p><b>Non-Docker VMs:</b> Other VMs, for example, NFS, use a Splunk <codeph>monitor</codeph> to collect and 
+forward data from the following files:
     
 <ul>
 <li>/var/log/messages</li>
 <li>/var/log/secure (Red Hat)</li>
 </ul>
 
-<note type="note">The list of files that the Universal Forwarder should monitor can be modified very easily</note>
+<note type="note">You can configure the list of files monitored by the Universal Forwarder.</note>
 </p>
     
 <p>Other syslog senders can be configured to send their data to the logger VM or directly to central Splunk.</p>       

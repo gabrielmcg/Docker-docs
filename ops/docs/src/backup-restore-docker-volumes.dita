@@ -9,8 +9,8 @@
 <li>VSphere clusters should have access to a datastore specifically for backups. This is a
 separate Virtual Volume created on the 3PAR StoreServ and presented to all the hosts in
 the vSphere cluster. </li>
-<li>Backup software must be available. A recommendation for HPE Recovery Manager Central and
-HPE StoreServ is included but other customer backup/restore solutions are acceptable </li>
+<li>Backup software must be available. HPE Recovery Manager Central and
+HPE StoreServ is recommended but other customer backup/restore solutions are acceptable. </li>
 </ul>
 </section>
 
@@ -59,7 +59,7 @@ StoreOnce are block-level copies of volumes, de-duplicated to save space. Becaus
 snapshots are self-contained, fully independent volumes, they can be restored to any 3PAR
 array in the event of a disaster.</p>
 <p>RMC enables you to replicate data from the source storage system (HPE 3PAR StoreServ) to
-destination storage system (HPE StoreOnce). The replication is based on point-in-time
+the destination storage system (HPE StoreOnce). The replication is based on point-in-time
 snapshots.</p>
 <p>Recovery Manager Central is installed as a VM on VMware vSphere ESXi. It can be installed
 on the Synergy platform on a separate (from the Docker Solution) vSphere cluster or

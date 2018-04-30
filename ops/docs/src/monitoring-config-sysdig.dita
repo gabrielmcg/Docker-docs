@@ -32,17 +32,20 @@ href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-table
 <row>
 <entry>sysdig_access_key</entry>
 <entry><b>group_vars/vault</b></entry>
-<entry>This is your access key for the Sysdig portal</entry>
+<entry>After the activation of your account on the Sysdig portal, you will be 
+provided with your access key which will be used by the playbooks to install the agent on each UCP, DTR and Linux worker node, 
+as well as the NFS, logger and load balancer VMs.
+</entry>
 </row>
 <row>
 <entry>sysdig_agent</entry>
 <entry>group_vars/vars</entry>
-<entry>Specifies the URL to the sysdig Linux native install agent, for example, https://s3.amazonaws.com/download.draios.com/stable/install-agent</entry>
+<entry>Specifies the URL to the Sysdig Linux native install agent, for example, <codeph>https://s3.amazonaws.com/download.draios.com/stable/install-agent</codeph></entry>
 </row>    
 <row>
 <entry>sysdig_tags</entry>
 <entry>group_vars/vars</entry>
-<entry>Tagging your hosts is highly recommended. Tags allow you to sort nodes of your infrastructure 
+<entry>Tagging your hosts is highly recommended. Tags allow you to sort the nodes of your infrastructure 
    into custom groups in Sysdig Monitor. Specify location, role, and owner in the format: <codeph>'location:City,role:Enterprise CaaS on Synergy,owner:Customer Name'</codeph></entry>
 </row>    
 </tbody>
@@ -50,8 +53,14 @@ href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-table
 </table>
 
 
-<note type="note">You must have outgoing port 6666 open in your firewall, to allow data to flow
-to <codeph>collector.sysdigcloud.com</codeph></note>
+<note type="note"><p>By default, you must have outgoing port 6666 open in your firewall, to allow data to flow
+to <codeph>collector.sysdigcloud.com</codeph>. You can configure the agent to use a different port by setting the 
+<codeph>collector_port</codeph> parameter in the configuration file <codeph>/opt/draios/etc/dragent.yaml</codeph>. For more
+information, see the relevant Sydig documentation at 
+<xref href="https://support.sysdig.com/hc/en-us/articles/204205969" format="html" scope="external"/>.</p>
+   
+<p>If you are using a proxy, it must be configured to be "fully-transparent". Non-transparent proxies will not allow the agent to connect.</p>   
+</note>
 
 <p>Using the Sysdig software as a solution (SaaS) website <xref
 href="https://app.sysdigcloud.com" format="html" scope="external"/>, you are able to view, analyze and

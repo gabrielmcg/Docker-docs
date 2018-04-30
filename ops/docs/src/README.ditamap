@@ -74,7 +74,7 @@
 
     <topicref href="install-vdvs.dita" navtitle="Install VDVS"/>
 
-    <topicref href="install-vdvs-win.dita" navtitle="Install VDVS on Windows"/>
+    <!--<topicref href="install-vdvs-win.dita" navtitle="Install VDVS on Windows"/>-->
 
     <topicref href="create-rhel-template.dita" navtitle="Create RHEL template"/>
 

@@ -7,7 +7,7 @@
 The load among the three hosts will be shared as per <xref href="architecture-promgraf.dita#architecture-promgraf/synergy-ops-architecture-promgraf" type="fig"/></p>
 
 <fig id="synergy-ops-architecture-promgraf">
-<title>Solution architecture with Prometheus and Grafana</title> 
+<title>Solution architecture: Linux workers with Prometheus and Grafana</title> 
 <image href="media/synergy-ops-architecture-promgraf.png"/>
 </fig>
 <!--<p>These nodes can live in any of the hosts and they are not redundant. </p>-->
