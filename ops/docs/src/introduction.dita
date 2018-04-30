@@ -27,14 +27,7 @@ Containers as a Service with Docker EE. It describes how to automate the
 provisioning of the environment using a set of Ansible playbooks. It also outlines a
 set of manual steps to harden, secure and audit the overall status of the system. </p>
 
-<note type="note">
-<p>The Ansible playbooks described in this document are only intended for Day 0
-deployment automation of Docker EE on HPE Synergy.</p>
-<p>The Ansible playbooks described in this document are not directly supported by
-HPE and are intended as an example of deploying Docker EE on HPE Synergy. We
-welcome input from the user community via GitHub to help us prioritize all
-future bug fixes and feature enhancements. </p>
-</note>
+
 
 </section>
 </body>

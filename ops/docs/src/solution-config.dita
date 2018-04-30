@@ -6,9 +6,15 @@
 <p>By default, the Ansible Playbooks will set up a 3 node environment as this is the 
 minimal starter configuration as recommended by HPE and Docker for 
 production. However, the playbooks can be configured to fit your environment and your high availability (HA) needs.
-Two separate configurations are available out of the box, with one restricted to a Linux-only deployment while another
-supports hybrid deployment including Windows.
+Two separate configurations are available out of the box, with one restricted to a Linux-only deployment while the other
+supports hybrid deployment including Windows. The minimal deployment is depicted graphically in 
+<xref href="solution-config.dita#solution-config/architecture2" type="fig"/>.
 </p>
+  
+<fig id="architecture2">
+<title>HPE Synergy Configuration</title>
+<image href="media/architecture2.png" placement="break"/>
+</fig>  
 
 <p>The distribution of the Docker and non-Docker modules over the 3 physical nodes via
 virtual machines (VMs) is as follows:</p>
@@ -22,12 +28,12 @@ virtual machines (VMs) is as follows:</p>
 failure </li>
 <li>1 Docker DTR load balancer VM to ensure access to DTR in the event of a node
 failure </li>
-<li>1 Docker Swarm Worker node VM load balancer </li>
+<li>1 Docker swarm worker node VM load balancer </li>
 <li>1 Logging server VM for central logging </li>
 <li>1 NFS server VM for storage of Docker DTR images </li>
 </ul>
 
-<p>In addition to the above, the playbooks also set up the Docker persistent storage driver from VMware.  
+<p>In addition to the above, the playbooks also set up the Docker persistent storage plug-in from VMware.  
 The vSphere Docker volume plug-in stores facilitates the storage of data in a
 shared datastore that can be accessed from any machine in the cluster.</p>
 </body>

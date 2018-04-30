@@ -27,18 +27,14 @@
 <entry>Dictionary containing all environment variables. It contains
 three entries described below. Please leave empty the proxy related
 settings if not required:<ul>
-<li>http_proxy: HTTP proxy URL, such as '<xref format="html"
-scope="external" href="http://15.184.4.2:8080/"
->http://15.184.4.2:8080</xref>'. This variable defines
+<li><codeph>http_proxy</codeph>: HTTP proxy URL, such as <codeph>'http://15.184.4.2:8080'</codeph>. This variable defines
 the HTTP proxy url if your environment is behind a
 proxy.</li>
-<li>https_proxy: HTTPS proxy URL, such as '<xref format="html"
-scope="external" href="http://15.184.4.2:8080/"
->http://15.184.4.2:8080</xref>'. This variable defines
+<li><codeph>https_proxy</codeph>: HTTPS proxy URL, such as <codeph>'http://15.184.4.2:8080'</codeph>. This variable defines
 the HTTPS proxy url if your environment is behind a
 proxy.</li>
-<li>no_proxy: List of hostnames or IPs that don't require proxy,
-such as 'localhost,127.0.0.1,.cloudra.local,10.10.174.'</li>
+<li><codeph>no_proxy</codeph>: List of hostnames or IPs that don't require proxy,
+such as <codeph>'localhost,127.0.0.1,.cloudra.local,10.10.174.'</codeph></li>
 </ul></entry>
 </row>
 </tbody>

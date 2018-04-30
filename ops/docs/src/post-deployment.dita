@@ -19,7 +19,7 @@
 <p>The following commands should return the CA certificates used by
         UCP/DTR. This certificates is the same as the one pointed to
         by the <codeph>--cacert</codeph> switch. If the deployment was not
-        successfully, curl will output something like <b>output
+        successful, <codeph>curl</codeph> will output something like <b>Output
                 2.</b></p>
 
 <codeblock># curl --cacert &lt;ucp_certs_dir&gt;/ca.pem https://&lt;your ucp fqdn&gt;/ca 

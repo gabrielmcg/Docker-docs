@@ -4,40 +4,15 @@
 <title>Introduction</title>
 <body>
 
-<p>The HPE Enterprise Containers as a Service with Docker EE solution running on top of VMware in a Synergy 
-environment allows you to configure a flexible OS environment (with RHEL and Windows workers)  with built-in
+<p>The HPE Enterprise Containers as a Service with Docker EE solution consists of a set of Ansible playbooks that 
+run on top of a VMware virtualization platform on HPE Synergy 
+hardware. The solution allows you to configure a flexible OS environment (with both RHEL and Windows workers)  providing built-in
 high availability (HA), container monitoring and security, and backup and restore functionality. This solution assumes 
 that you  have already set up your HPE Synergy hardware, installed your VMware virtualization platform 
 and configured HPE 3Par for storage.
 </p>
-    
-    
-<p>By default, the Ansible Playbooks will set up a 3 node environment as this is the 
-minimal starter configuration as recommended by HPE and Docker for 
-production. However, the playbooks can be configured to fit your environment and your high availability (HA) needs.
-Two separate configurations are available out of the box, with one restricted to a Linux-only deployment while another
-supports hybrid deployment including Windows.
-</p>
-    
-<p>The distribution of the Docker and non-Docker modules over the 3 physical nodes via
-virtual machines (VMs) is as follows:</p>
 
-<ul>
-<li>3 Docker Universal Control Plane (UCP) VM nodes for HA and cluster management </li>
-<li>3 Docker Trusted Registry (DTR) VM nodes for HA of the container registry </li>
-<li>3 Docker Swarm Linux worker VM nodes for container workloads </li>
-<li>3 Docker Swarm Windows worker VM nodes for container workloads (optional) </li>
-<li>1 Docker UCP load balancer VM to ensure access to UCP in the event of a node
-failure </li>
-<li>1 Docker DTR load balancer VM to ensure access to DTR in the event of a node
-failure </li>
-<li>1 Docker Swarm Worker node VM load balancer </li>
-<li>1 Logging server VM for central logging </li>
-<li>1 NFS server VM for storage of Docker DTR images </li>
-</ul>
+ 
 
-<p>In addition to the above, the playbooks also set up the Docker persistent storage driver from VMware.  
-The vSphere Docker volume plug-in stores facilitates the storage of data in a
-shared datastore that can be accessed from any machine in the cluster.</p>
 </body>
 </topic>

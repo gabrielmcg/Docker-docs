@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="storage-reqs">
-<title>Storage requirements:</title>
+<title>Storage requirements</title>
 <body>
-<p>3PAR store required for ESXi datastore (block storage)</p>
-<p>Currently have 8x 480GB SSD used for datastore</p>
-<p>NFS storage - TBD, this needs file persona enabled</p>
-<p>will need additional storage for File Persona</p>
+<p>3PAR store is required for ESXi datastore (block storage).  TODO: Recommendations ? NFS? </p>
+<!--<p>Currently have 8x 480GB SSD used for datastore</p>-->
+<!--<p>NFS storage - TBD, this needs file persona enabled</p>-->
+<!--<p>will need additional storage for File Persona</p>-->
 
 
 <!--<fig>
@@ -15,10 +15,7 @@
 </fig>
 -->
     
-<fig>
-<title>HPE Synergy Configuration</title>
-<image href="media/architecture2.png" placement="break"/>
-</fig>
+
 
 </body>
 </topic>

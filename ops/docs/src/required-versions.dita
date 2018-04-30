@@ -13,7 +13,17 @@
 <li>VMWare ESXi 6.5.0 and vCenter 6.5.0</li>
 </ul>
 
-
+<note type="note">
+<p>The Ansible playbooks described in this document are primarily intended for Day 0
+deployment automation of Docker EE on HPE Synergy and do not fully address scaling and upgrading the enviroment.
+However, Linux and Windows worker nodes can be scaled using the playbooks.
+</p>
+    
+<p>The Ansible playbooks described in this document are not directly supported by
+HPE and are intended as an example of deploying Docker EE on HPE Synergy. We
+welcome input from the user community via GitHub to help us prioritize all
+future bug fixes and feature enhancements. </p>
+</note>
 
 
 </body>
