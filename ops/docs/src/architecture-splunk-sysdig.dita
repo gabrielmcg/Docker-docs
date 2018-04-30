@@ -3,8 +3,16 @@
 <topic id="architecture-splunk-sysdig">
 <title>Monitoring with Splunk and Sysdig</title>
 <body>
-<p>The solution can be configured to enable the use of Splunk and / or  Sysdig. 
-The load among the three hosts will be shared as per <xref href="architecture-splunk-sysdig.dita#architecture-splunk-sysdig/synergy-ops-architecture" type="fig"/></p>
+<p>The solution can be configured to  use of either Splunk or Sysdig or to enable both simultaneously. 
+While there is some overlap in the functionality provided by these tools, they ultimately are complimentary 
+in what they offer. Splunk  aggregates logging and tracing for a wide variety of sources and provides a clean, high-level dashboard 
+for all your enterprise systems. Sysdig, on the other hand, has been engineered from the ground up to focus on containerized
+environments and includes both monitoring and security features, with built-in understanding of the different workloads running
+on your cloud.
+</p>
+    
+<p>
+The load among the three hosts in a hybrid deployment will be shared as per <xref href="architecture-splunk-sysdig.dita#architecture-splunk-sysdig/synergy-ops-architecture" type="fig"/></p>
 
 <fig id="synergy-ops-architecture">
 <title>Solution architecture: Hybrid Linux and Windows workers with Splunk and Sysdig</title> 

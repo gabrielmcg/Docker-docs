@@ -20,7 +20,7 @@ newer Docker security features that were not covered in the reference configurat
 outlined below.</p>
 </body>
 
-<topic id="d1e1570">
+<!--<topic id="d1e1570">
 <title>Prevent tags from being overwritten</title>
 
 <body>
@@ -55,5 +55,5 @@ href="https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/isolate-v
 >https://docs.docker.com/datacenter/ucp/2.2/guides/access-control/isolate-volumes-between-teams/</xref>.</p>
 <p/>
 </body>
-</topic>
+</topic>-->
 </topic>
