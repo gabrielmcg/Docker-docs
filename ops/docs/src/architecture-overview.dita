@@ -7,20 +7,19 @@
 <p>The HPE Enterprise Containers as a Service with Docker EE solution running on top of VMware in a Synergy 
 environment allows you to configure a flexible OS environment (with RHEL and Windows workers)  with built-in
 high availability (HA), container monitoring and security, and backup and restore functionality. This solution assumes 
-that you  have already set up your HPE Synergy hardware, installed VMware vSphere and configured HPE 3Par for storage.
+that you  have already set up your HPE Synergy hardware, installed your VMware virtualization platform 
+and configured HPE 3Par for storage.
 </p>
     
     
-<p> 
-By default, the Ansible Playbooks will set up a 3 node environment as this is the 
+<p>By default, the Ansible Playbooks will set up a 3 node environment as this is the 
 minimal starter configuration as recommended by HPE and Docker for 
 production. However, the playbooks can be configured to fit your environment and your high availability (HA) needs.
 Two separate configurations are available out of the box, with one restricted to a Linux-only deployment while another
 supports hybrid deployment including Windows.
 </p>
     
-<p>
-The distribution of the Docker and non-Docker modules over the 3 physical nodes via
+<p>The distribution of the Docker and non-Docker modules over the 3 physical nodes via
 virtual machines (VMs) is as follows:</p>
 
 <ul>

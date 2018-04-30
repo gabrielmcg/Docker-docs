@@ -15,12 +15,7 @@
 <li><xref href="architecture.dita"/>
 <ul>
 <li><xref href="architecture-overview.dita"/></li>
-<li><xref href="architecture-monitoring.dita"/>
-<ul>
-<li><xref href="architecture-splunk-sysdig.dita"/></li>
-<li><xref href="architecture-promgraf.dita"/></li>    
-</ul>
-</li>
+
 <li><xref href="server-reqs.dita"/></li>    
 <li><xref href="storage-reqs.dita"/></li>
 <li><xref href="ha.dita"/></li>
@@ -29,6 +24,17 @@
 <li><xref href="security.dita"/></li>
 </ul>
 </li>  
+<li><xref href="solution-components.dita"/>
+<ul>
+<li><xref href="architecture-monitoring.dita"/>
+<ul>
+<li><xref href="architecture-splunk-sysdig.dita"/></li>
+<li><xref href="architecture-promgraf.dita"/></li>    
+</ul>
+</li>       
+</ul>
+</li>    
+    
 <li><xref href="provisioning.dita"/>
 <ul>
 <!--<li><xref href="esxi-hosts.dita"/></li>-->
