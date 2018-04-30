@@ -25,20 +25,22 @@
 
   <topicref href="introduction.dita" navtitle="Introduction">
 
-    <topicref href="about-ansible.dita" navtitle="About Ansible"/>
-
-    <topicref href="docker-ee.dita" navtitle="About Docker EE"/>
-
-    <topicref href="synergy.dita" navtitle="About Synergy"/>
-
     <topicref href="audience-assumptions.dita" navtitle="Audience and assumptions"/>
-
-    <topicref href="required-versions.dita" navtitle="Required versions"/>
 
   </topicref>
 
   <topicref href="architecture.dita" navtitle="Solution overview">
-    <topicref href="architecture-overview.dita" navtitle="Introduction"/>
+    <topicref href="architecture-overview.dita" navtitle="Introduction">
+      <topicref href="about-ansible.dita" navtitle="About Ansible"/>
+  
+      <topicref href="docker-ee.dita" navtitle="About Docker EE"/>
+  
+      <topicref href="synergy.dita" navtitle="About Synergy"/>  
+      
+      <topicref href="required-versions.dita" navtitle="Required versions"/>
+    </topicref>
+    
+    <topicref href="solution-config.dita" navtitle="Solution configuration"/>
     
 
 
