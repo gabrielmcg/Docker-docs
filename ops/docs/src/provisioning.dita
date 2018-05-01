@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="provisioning">
-<title>Provisioning the environment</title>
+<title>Preparing the environment</title>
 <body>
 <section id="provisioning-section">
-<p>This section describes in detail how to provision the environment described
-previously in the architecture section. The high level steps this guide will take
-are shown in the figure:</p>
+<p>This section describes in detail how to prepare the environment that was described
+in the architecture section. The following high level steps are required:</p>
+    
+<ul>
+<li>Verify prerequisites</li> 
+<li>Enable vSphere High Availability (HA)</li>
+<li>Install vSphere Docker Volume Service driver on all ESXi hosts</li>
+<li>Create the Ansible node</li>   
+<li>Create the Red Hat Linux Template and configure the <codeph>yum</codeph> repositories</li>
+<li>Create the Windows Template (optional)</li>
+<li>Finalize the template</li>
+</ul>
 
-<fig>
+<!--<fig>
 <title>Provisioning steps</title>
-<!--<image keyref="provisioning"/>-->
 <image href="media/provisioning.png"/>
-</fig>
+</fig>-->
+    
+    
 </section>
 </body>
 </topic>

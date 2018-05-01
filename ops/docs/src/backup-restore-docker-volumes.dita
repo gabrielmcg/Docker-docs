@@ -3,11 +3,12 @@
 <topic id="backup-restore-docker-volumes">
 <title>Backup and restore Docker persistent volumes</title>
 <body>
+    
 <section>
 <title>Prerequisites</title>
 <ul>
 <li>VSphere clusters should have access to a datastore specifically for backups. This is a
-separate Virtual Volume created on the 3PAR StoreServ and presented to all the hosts in
+separate Virtual Volume created on the HPE 3PAR StoreServ and presented to all the hosts in
 the vSphere cluster. </li>
 <li>Backup software must be available. HPE Recovery Manager Central and
 HPE StoreServ is recommended but other customer backup/restore solutions are acceptable. </li>
@@ -47,8 +48,9 @@ should be paused or stopped.</note>
 
 
 <section>
-<title>Snapshot and Backup 3PAR Virtual Volumes with Recovery Manager Central and
+<title>Snapshot and Backup 3PAR Virtual Volumes with HPE Recovery Manager Central and
 StoreOnce</title>
+    
 <p>HPE Recovery Manager Central (RMC) software integrates HPE 3PAR StoreServ All-Flash
 arrays with HPE StoreOnce Systems to leverage the performance of snapshots with the
 protection of backups. RMC uses a direct backup model to orchestrate data protection
@@ -58,10 +60,11 @@ than traditional backup methods, particularly for higher volumes of data. Backup
 StoreOnce are block-level copies of volumes, de-duplicated to save space. Because RMC
 snapshots are self-contained, fully independent volumes, they can be restored to any 3PAR
 array in the event of a disaster.</p>
-<p>RMC enables you to replicate data from the source storage system (HPE 3PAR StoreServ) to
+<p>HPE Recovery Manager Central enables you to replicate data from the source storage system (HPE 3PAR StoreServ) to
 the destination storage system (HPE StoreOnce). The replication is based on point-in-time
 snapshots.</p>
-<p>Recovery Manager Central is installed as a VM on VMware vSphere ESXi. It can be installed
+    
+<p>HPE Recovery Manager Central is installed as a VM on VMware vSphere ESXi. It can be installed
 on the Synergy platform on a separate (from the Docker Solution) vSphere cluster or
 external to the Synergy environment as long as the external server has connectivity to the
 HPE 3PAR StoreServ and HPE StoreOnce. RMC can be installed directly on an ESXi host or can

@@ -3,10 +3,10 @@
 <topic id="verify-prereqs">
 <title>Verify prerequisites</title>
 <body>
-<p>You must assemble the information required to assign values for each and every variable
-used by the playbooks, before you start deployment. The variables are fully documented
-in the following sections “Editing the group variables” and “Editing the vault”. A
-summary of the information required is presented in <xref href="verify-prereqs.dita#verify-prereqs/verify-prereqs-table-conref" type="table"/>.</p>
+<p>Before you start deployment, you must assemble the information required to assign values for each and every variable
+used by the playbooks. The variables are fully documented in the section <xref href="edit-group-var.dita"/>.
+A brief overview of the information required is presented in 
+<xref href="verify-prereqs.dita#verify-prereqs/verify-prereqs-table-conref" type="table"/>.</p>
 
 <table id="verify-prereqs-table-conref" conref="verify-prereqs-table.dita#verify-prereqs-table/verify-prereqs-table-content">
 <title>Summary of information required</title>

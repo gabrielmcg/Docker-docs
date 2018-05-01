@@ -43,5 +43,10 @@ Machine Console</b>
 <p>This completes the creation of the VM Template.
 </p>
 
+
+<note type="note">Please note that in both the Ansible node and the VM Template you might need to configure
+the network so one node can reach the other. Instructions for this step have been
+omitted since it is a basic step and could vary depending on the user’s environment.</note>
+
 </body>
 </topic>
