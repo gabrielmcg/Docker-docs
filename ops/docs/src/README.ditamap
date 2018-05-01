@@ -82,13 +82,15 @@
 
     <topicref href="install-vdvs.dita" navtitle="Install VDVS"/>
 
-    <topicref href="create-ansible-node.dita" navtitle="Create Ansible node"/>
+    <topicref href="create-ansible-node.dita" navtitle="Create Ansible node">
+      <topicref href="config-yum.dita" navtitle="Config yum"/>
+    </topicref>
     
     <!--<topicref href="install-vdvs-win.dita" navtitle="Install VDVS on Windows"/>-->
 
     <topicref href="create-rhel-template.dita" navtitle="Create RHEL template"/>
 
-    <topicref href="config-yum.dita" navtitle="Config yum"/>
+    
 
     <topicref href="create-template-win.dita" navtitle="Create Windows template"/>
 

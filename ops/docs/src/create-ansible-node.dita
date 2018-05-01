@@ -21,10 +21,11 @@ a passphrase (unless you want to use <codeph>ssh-agent</codeph>).
 <codeblock># ssh-keygen</codeblock> 
     
 <p>Configure the following yum repositories, <codeph>rhel-7-server-rpms</codeph> and
-<codeph>rhel-7-server-extras-rpms</codeph> as explained in TODO
+<codeph>rhel-7-server-extras-rpms</codeph> as explained in <xref href="config-yum.dita"/>.
     
-The "extras" repo can be enabled with:
+The "extras" repo can be enabled as follows:
 </p>
+    
 <codeblock># subscription-manager repos --enable=rhel-7-server-extras-rpms</codeblock>
 
 
@@ -33,20 +34,19 @@ The "extras" repo can be enabled with:
 scope="external" href="http://fedoraproject.org/wiki/EPEL"
 >http://fedoraproject.org/wiki/EPEL</xref>. Note that <codeph>yum-config-manager</codeph> comes
 with the Infrastructure Server base environment. If you did not select this
-environment, you will have to install the yum-utils package.
+environment, you will have to install the <codeph>yum-utils</codeph> package.
 </p>
     
 <codeblock># rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 
 # yum-config-manager --enable rhel-7-server-extras-rpms</codeblock>    
     
     
-<p>Install Ansible. The playbooks require Ansible 2.4.2 and above
-</p>
+<p>Install Ansible 2.4.2</p>
 
 <codeblock># yum install ansible</codeblock>    
     
-<p>Make a list of all the hostnames and IPs that will be in your system including UCP nodes, DTR
-nodes, worker nodes, NFS server, logger server and load balancers.</p>
+<!--<p>Make a list of all the hostnames and IPs that will be in your system including UCP nodes, DTR
+nodes, worker nodes, NFS server, logger server and load balancers.</p>-->
     
 <p>Install the following packages which are a mandatory requirement for the playbooks
 to function as expected. (Update pip if requested).

@@ -3,11 +3,12 @@
 <topic id="config-yum">
 <title>Configure the yum repositories</title>
 <body>
+    
 <p>The Red Hat packages required during the deployment of the solution come from two
 repositories: <codeph>rhel-7-server-rpms </codeph>and <codeph>rhel
-7-server-extras-rpms</codeph>. The first repository can be found on the Red Hat DVD
-but the second cannot. There are two options, with both options requiring a Red Hat
-Network account. Logon in your VM template using SSH using the credentials you
+7-server-extras-rpms</codeph>. The first repository is on the Red Hat DVD
+but the second is not. There are two options, with both options requiring a Red Hat
+Network account. Logon in your VM template using SSH with the credentials you
 configured for the root account and implement one of the two options below: </p>
 
 <p><b>Option 1:</b> Use Red Hat subscription manager to register your system. This is the
@@ -64,14 +65,14 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 </codeblock>
 
 
-<p>The following articles explain how you can create a local mirror of the Red Hat
-repositories and how to share them. <xref format="html" scope="external"
+<p>To see how you can create a local mirror of the Red Hat
+repositories and how to share them, check the Red Hat documentation at <xref format="html" scope="external"
 href="https://access.redhat.com/solutions/23016"
->https://access.redhat.com/solutions/23016</xref>
-<ph>
+>https://access.redhat.com/solutions/23016</xref> and at
+
 <xref format="html" scope="external" href="https://access.redhat.com/solutions/7227"
->https://access.redhat.com/solutions/7227</xref>
-</ph>
+>https://access.redhat.com/solutions/7227</xref>.
+
 </p>
 
 <p>Before converting the VM to a template, you will need to setup access for the
