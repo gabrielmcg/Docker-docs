@@ -3,7 +3,8 @@
 <topic id="required-versions">
 <title>Required Versions</title>
 <body>
-<p>The following software versions were used to implement the playbooks that are described in later sections. Other version may work but have not been tested.
+<p>The following software versions were used to implement the playbooks that are described in later sections. 
+Other version may work but have not been tested.
 </p>
 
 <ul>

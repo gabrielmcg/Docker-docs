@@ -3,7 +3,19 @@
 <topic id="storage-reqs">
 <title>Storage requirements</title>
 <body>
-<p>3PAR store is required for ESXi datastore (block storage).  TODO: Recommendations ? NFS? </p>
+<p>A HPE 3PAR store is required for ESXi datastore. This solution makes use of a HPE 3PAR StoreServ 8200 populated with:</p>
+<ul>
+<li>8x480GB SSD for the vSphere cluster datastore</li>
+<li>8x1.8TB HDD for Backup Datastore</li>    
+</ul>
+    
+<p>You should create a large virtual volume on the 3PAR StoreServ to host the virtual machines and another 
+large virtual volume for Docker backups.Create datastores on your vSphere cluster using these virtual volumes.   
+If desired, you can create separate StoreServ virtual volumes and attach them to all vSphere cluster hosts for 
+backing up Docker persistent volumes. It is recommended that you configure the volumes used for virtual machine deployments on SSD.  
+Storage for backups can be configured on HDD.</p>   
+
+
 <!--<p>Currently have 8x 480GB SSD used for datastore</p>-->
 <!--<p>NFS storage - TBD, this needs file persona enabled</p>-->
 <!--<p>will need additional storage for File Persona</p>-->

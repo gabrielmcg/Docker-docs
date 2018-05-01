@@ -181,6 +181,8 @@
 
     <topicref href="backup-restore-docker-volumes.dita" navtitle="Backup and restore Docker volumes"/>
     
+    <topicref href="integrate-backup.dita" navtitle="Integrate backup"/>
+    
   </topicref>
 
 </map>
