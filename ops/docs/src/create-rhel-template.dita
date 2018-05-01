@@ -13,7 +13,7 @@ software installs and/or system configuration performed subsequently using Ansib
     
 <p>As the creation of the template is
 a one-off task, this procedure has not been automated. The steps required to manually create a VM template
- are described below.</p>
+ are outlined below.</p>
 
 
 <p>Log in to vCenter and create a new Virtual Machine with the following

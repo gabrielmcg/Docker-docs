@@ -3,19 +3,21 @@
 <topic id="create-template-win">
 <title>Create the Windows Template</title>
 <body>
-<p>The section explains how to create the Windows VM Template that you will use as the
-base for all your Windows nodes. In order to create a VM Template you will first
+    
+<p>To create the Windows VM Template that you will use as the
+base for all your Windows worker nodes, you will first
 create a Virtual Machine with the OS installed and then convert the Virtual Machine
-to a VM Template. Since the goal of automation is to remove as many repetitive tasks
-as possible, the VM Template is created as lean as possible, with any additional
+to a VM Template. The VM Template is created as lean as possible, with any additional
 software installs and/or system configuration performed subsequently using Ansible.
-It would be possible to automate the creation of the template. However, as this is
-a one-off task, it is appropriate to do it manually. The steps to create a VM template
-manually are described below.</p>
+</p>
+    
+<p>As the creation of the template is
+a one-off task, this procedure has not been automated The steps to create a VM template
+manually are outlined below.</p>
 
-<ol>
-<li>Log in to vCenter and create a new Virtual Machine with the following
-characteristics:
+
+<p>Log in to vCenter and create a new Virtual Machine with the following
+characteristics:</p>
 
 <ul>
 <li>Guest OS Family: Windows, Guest OS Version: Microsoft Windows Server
@@ -24,39 +26,55 @@ characteristics:
 
 <li>Hard Disk size: 50GB (Thin provisioning), 1 vCPU and 4 GB of RAM. Both vCPU and memory can be altered later after you deploy from this template. 
 </li>
+    
 <li>A single network controller connected to the network or VLAN of your
 choice. All VMs will connect to this same network.
 </li>
-<li>You should change your network type to VMXNET3, and attach the windows
+    
+<li>Change the network type to VMXNET3, and attach the Windows
 2016 ISO image from a datastore ensuring you connect the CD/DVD drive on
 boot.
 </li>
-<li>Don’t forget to click on the VM Options tab, and in the Boot Options
-section, select Force BIOS setup(*) to ensure that the machine enters the
+    
+<li>Click on the VM Options tab, and in the Boot Options
+section, select <codeph>Force BIOS setup(*)</codeph> to ensure that the machine enters the
 BIOS setup screen on next boot of this VM. This will allow you to adjust the
 boot order, placing the virtual CDROM in front of your hard drive.</li>
+    
 <li>Optionally you can remove the floppy drive						
 </li>
 </ul>
-</li>
-<li>Install Windows 2016
+
+
+
+<p>Install Windows 2016:</p>
+    
 <ul>
-<li>Now we can power on the selected VM. Then Open Console.</li>
-<li>Once connected to the console you will be placed in the BIOS setup screen,
-tab over to the Boot tab, click on CD-ROM Drive and hit the + sign which
-will move up the CDROM drive above the Hard drive which allows your Windows
+<li>Power on the selected VM and then <codeph>Open Console</codeph>.</li>
+    
+<li>Once connected to the console, you will be placed in the BIOS setup screen.
+Select the <codeph>Boot</codeph> tab, click on CD-ROM Drive and 
+ move up the CDROM drive above the Hard drive. This allows your Windows
 2016 ISO image to be loaded first on boot. F10 Save and exit is next
 step.</li>
+    
 <li>Enter your choices for Language, Time/Currency Format, Keyboard and then
 Install Now</li>
+    
 <li>Select the OS you want to install, and then select Custom: Install Windows
 Only</li>
+    
 <li>Select drive 0, the 50 GB drive you specified earlier, as the location for
 installing windows</li>
 <li>Add a password for the Administrator user</li>
-<li> install VMware Tools and
+<li>Install VMware Tools and
 reboot</li>
-<li>Once rebooted add a temporary network IP address.</li>
+</ul>
+
+<p>Once the VM has re-booted:</p>
+    
+<ul>    
+<li>Add a temporary network IP address.</li>
 <li>Using sconfig utility from (Dos) command line: 
 <ul>
 <li>Install windows updates. </li>
@@ -79,7 +97,7 @@ longer going to be mounted.</li>
 	
 <li><codeph>Convert VM to Template</codeph>  will create a new template visible under VM Templates in Folders, ready for future use.</li>
 </ul>
-</li>
-</ol>
+
+
 </body>
 </topic>
