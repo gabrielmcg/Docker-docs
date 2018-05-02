@@ -10,10 +10,10 @@
 </ul>
     
 <p>You should create a large virtual volume on the 3PAR StoreServ to host the virtual machines and another 
-large virtual volume for Docker backups.Create datastores on your vSphere cluster using these virtual volumes.   
+large virtual volume for Docker backups. Create datastores on your vSphere cluster using these virtual volumes.   
 If desired, you can create separate StoreServ virtual volumes and attach them to all vSphere cluster hosts for 
-backing up Docker persistent volumes. It is recommended that you configure the volumes used for virtual machine deployments on SSD.  
-Storage for backups can be configured on HDD.</p>   
+backing up Docker persistent volumes. It is recommended that you configure the volumes that are used for virtual machine deployments on the SSD.  
+Storage for backups can be configured on the HDDs.</p>   
 
 
 <!--<p>Currently have 8x 480GB SSD used for datastore</p>-->

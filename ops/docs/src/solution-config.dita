@@ -6,18 +6,13 @@
 <p>By default, the Ansible playbooks are configured to set up a 3 node environment as this is the 
 minimal starter configuration as recommended by HPE and Docker for 
 production. However, the playbooks can be configured to fit your environment and your high availability (HA) needs
-and the solution has also been tested on a 6 node HPE Synergy environment, with 2 nodes in each frame. 
+and the solution has been tested on a 6 node HPE Synergy environment, with 2 nodes in each frame. 
 </p>
 
-<p>
-Two separate configurations are available out of the box, with one restricted to a Linux-only deployment while the other
+<p>Two separate configurations are available out of the box, with one restricted to a Linux-only deployment while the other
 supports a hybrid deployment including Windows workers as well as Linux ones. 
-</p>
-  
-
-
-<p>The Docker and non-Docker modules are distributed over the physical nodes via
-virtual machines (VMs), depending on the size of your environment.</p>
+The Docker and non-Docker modules are distributed over the physical nodes via
+virtual machines (VMs), depending on the size of your environment, as follows:</p>
 
 <ul>
 <li>3 Docker Universal Control Plane (UCP) VM nodes for HA and cluster management </li>

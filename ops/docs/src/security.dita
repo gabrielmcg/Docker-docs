@@ -13,11 +13,11 @@ feature enabled for the DTR nodes, there are other guidelines that should be fol
 order to keep your Docker environment as secure as possible. The HPE Reference
 Configuration paper for securing Docker on HPE Hardware places a special emphasis on
 securing Docker in DevOps environments and covers best practices in terms of Docker
-security. The document can be found at: <xref format="html" scope="external"
+security. The document can be found at <xref format="html" scope="external"
 href="http://h20195.www2.hpe.com/V2/GetDocument.aspx?docname=a00020437enw"
->http://h20195.www2.hpe.com/V2/GetDocument.aspx?docname=a00020437enw</xref>. Some
+>http://h20195.www2.hpe.com/V2/GetDocument.aspx?docname=a00020437enw</xref>.<!-- Some
 newer Docker security features that were not covered in the reference configuration are
-outlined below.</p>
+outlined below.--></p>
 </body>
 
 <!--<topic id="d1e1570">
