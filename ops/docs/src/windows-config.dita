@@ -100,7 +100,7 @@ used in the following playbooks:
 
 <row>
 <entry>windows_timezone</entry>
-<entry>g<b>roup_vars/win_worker.yml</b></entry>  
+<entry><b>group_vars/win_worker.yml</b></entry>  
 <entry>Defaults to <codeph>15</codeph></entry>
 </row>
 

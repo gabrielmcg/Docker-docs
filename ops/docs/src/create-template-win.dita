@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="create-template-win">
-<title>Create the Windows Template</title>
+<title>Create the Windows Template (optional)</title>
 <body>
     
 <p>To create the Windows VM Template that you will use as the
@@ -75,28 +75,27 @@ reboot</li>
     
 <ul>    
 <li>Add a temporary network IP address.</li>
-<li>Using sconfig utility from (Dos) command line: 
-<ul>
-<li>Install windows updates. </li>
-<li>Enable remote desktop.</li>
-</ul>
-</li>
+<li>Using sconfig utility from (Dos) command line to install windows updates and enable remote desktop.</li>
 <li>Perform any other customisations you require at this point.</li>
-<li>Prior to converting a VM to Template, just remember to use Sysprep: <codeph>C:\Windows\System32\Sysprep\Sysprep.exe</codeph>
+</ul>    
+    
+<p>Prior to converting the VM to Template, run Sysprep: <codeph>C:\Windows\System32\Sysprep\Sysprep.exe</codeph></p>
+    
 <ul>
 <li>Ensure ‘System Out-of-Box Experience (OOBE)’ is selected</li>
 <li>Select the ‘Generalise’ option</li>
 <li>Select ‘Shutdown’ from the Shutdown Options.</li>
 </ul>
-</li>
-<li>Shutdown VM, and untick the connect CD/DVD so that the Windows 2016 ISO no
-longer going to be mounted.</li>
-<li>Boot the windows VM one final time and enter, regional settings applicable to your location, and enter keyboard mapping, then Shutdown VM.</li>
-<li>vmware_guest module used by the playbooks will generate a new SID.</li>
-<li>Then we’re ready to turn our VM into a template. Right click on your VM and click on Template -&lt; Convert to Template.</li>	
-	
-<li><codeph>Convert VM to Template</codeph>  will create a new template visible under VM Templates in Folders, ready for future use.</li>
-</ul>
+
+<p>Shutdown VM, and untick  <codeph>Connect CD/DVD</codeph> so that the Windows 2016 ISO is no
+longer  mounted. Boot the Windows VM one final time and enter regional settings applicable to your location
+and keyboard mapping, then Shutdown VM.</p>
+
+<note type="note">The <codeph>vmware_guest</codeph> module used by the playbooks will generate a new SID.</note>
+    
+<p>Turn the VM into a template by right-clicking on your VM and selecting <codeph>Template -&lt; Convert to Template</codeph>.	
+This will create a new template visible under VM Templates in Folders, ready for future use.
+</p>
 
 
 </body>

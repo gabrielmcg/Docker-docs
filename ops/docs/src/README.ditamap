@@ -88,18 +88,11 @@
     
     <!--<topicref href="install-vdvs-win.dita" navtitle="Install VDVS on Windows"/>-->
 
-    <topicref href="create-rhel-template.dita" navtitle="Create RHEL template"/>
-
-    
+    <topicref href="create-rhel-template.dita" navtitle="Create RHEL template">
+      <topicref href="finalize-template.dita" navtitle="Finalize template"/>
+    </topicref>
 
     <topicref href="create-template-win.dita" navtitle="Create Windows template"/>
-
-
-
-    <topicref href="finalize-template.dita" navtitle="Finalize template"/>
-
-
-
 
   </topicref>
 

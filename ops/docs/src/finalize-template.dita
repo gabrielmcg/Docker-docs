@@ -3,18 +3,15 @@
 <topic id="finalize-template">
 <title>Finalize the template</title>
 <body>
-<p>From the root account in the ansible box:</p>
-<p>
-Copy the SSH public key you created on your ansible box to the VM Template so that,
-in the future, your Ansible node can SSH without the need of a password to all the
-Virtual Machines created from the VM Template.
+    
+<p>Log in to the <codeph>root</codeph> account on the Ansible box and
+copy the SSH public key to the VM Template. This will allow your Ansible node to SSH
+to all the Virtual Machines created from the VM Template without the need for a password.</p>
 
 <codeblock>ssh-copy-id root@&lt;IP of your VM_Template&gt;</codeblock>
 
-</p>
 
-<p>Now that the VM Template has the public key of the Ansible node, we’re ready to convert
-this VM to a VM Template. Perform the following steps in the VM Template to finalize its
+<p>Perform the following steps on the VM Template to finalize its
 creation:</p>
 
 <ol>
@@ -28,20 +25,17 @@ Machine Console</b>
 # history -c		
 </codeblock>
 
-
 </li>
+
 <li>Shutdown the VM
 <codeblock># shutdown -h now</codeblock>				
-
 </li>
 
-<li>Once the Virtual Machine is ready and turned off, convert it to a template						
+<li>Turn the VM into a template by right-clicking on your VM and selecting <codeph>Template -&lt; Convert to Template</codeph>.	
+This will create a new template visible under VM Templates in Folders, ready for future use.						
 </li>
 
 </ol>
-
-<p>This completes the creation of the VM Template.
-</p>
 
 
 <note type="note">Please note that in both the Ansible node and the VM Template you might need to configure
