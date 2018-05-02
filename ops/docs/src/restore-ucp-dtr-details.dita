@@ -10,7 +10,7 @@
 the VMs in your cluster and want to redeploy using data that you backed up earlier.
 
 The solution follows Docker best practice, which means the swarm artifacts are not restored. 
-You will need to restore your Docker volumes and you applications (stacks and services) when this procedure is complete.
+You will need to restore your Docker volumes and your applications (stacks and services) when this procedure is complete.
 </note>
 
 <p></p>

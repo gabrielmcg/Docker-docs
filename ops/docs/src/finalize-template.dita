@@ -16,7 +16,7 @@ creation:</p>
 
 <ol>
 <li>Clean up the template by running the following commands from the <b>Virtual
-Machine Console</b>
+Machine Console:</b>
 <codeblock>
 # rm /etc/ssh/ssh_host_*
 # nmcli con del ens192

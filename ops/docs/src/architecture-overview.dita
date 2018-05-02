@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="architecture-overview">
-<title>Introduction</title>
+<title>Components</title>
 <body>
-
-<p>The HPE Enterprise Containers as a Service with Docker EE solution consists of a set of Ansible playbooks that 
-run on top of a VMware virtualization platform on HPE Synergy 
-hardware. The solution allows you to configure a flexible OS environment (with both RHEL and Windows workers)  providing built-in
-high availability (HA), container monitoring and security, and backup and restore functionality. This solution assumes 
-that you  have already set up your HPE Synergy hardware, installed your VMware virtualization platform 
-and configured HPE 3Par for storage.
+<p>The solution is comprised of a number of required hardware and software components, including 
+HPE Synergy, HPE 3Par, VMware vSphere, Docker Enterprise Edition
+and Ansible playbooks as well as some optional components such as HPE Recovery Manager Central and HPE StoreOnce.
 </p>
-
  
-
 </body>
 </topic>

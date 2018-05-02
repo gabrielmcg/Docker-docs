@@ -3,38 +3,60 @@
 <topic id="solution-config">
 <title>Solution configuration</title>
 <body>
-<p>By default, the Ansible Playbooks will set up a 3 node environment as this is the 
+<p>By default, the Ansible playbooks are configured to set up a 3 node environment as this is the 
 minimal starter configuration as recommended by HPE and Docker for 
-production. However, the playbooks can be configured to fit your environment and your high availability (HA) needs.
+production. However, the playbooks can be configured to fit your environment and your high availability (HA) needs
+and the solution has also been tested on a 6 node HPE Synergy environment, with 2 nodes in each frame. 
+</p>
+
+<p>
 Two separate configurations are available out of the box, with one restricted to a Linux-only deployment while the other
-supports hybrid deployment including Windows. The minimal deployment is depicted graphically in 
-<xref href="solution-config.dita#solution-config/architecture2" type="fig"/>.
+supports a hybrid deployment including Windows workers as well as Linux ones. 
 </p>
   
-<fig id="architecture2">
-<title>HPE Synergy Configuration</title>
-<image href="media/architecture2.png" placement="break"/>
-</fig>  
 
-<p>The distribution of the Docker and non-Docker modules over the 3 physical nodes via
-virtual machines (VMs) is as follows:</p>
+
+<p>The Docker and non-Docker modules are distributed over the physical nodes via
+virtual machines (VMs), depending on the size of your environment.</p>
 
 <ul>
 <li>3 Docker Universal Control Plane (UCP) VM nodes for HA and cluster management </li>
 <li>3 Docker Trusted Registry (DTR) VM nodes for HA of the container registry </li>
+</ul>
+
+<p>The Docker UCP and DTR nodes are spread across 3 physical nodes, with one on each physical node. It is possible 
+to restrict the deployment to 1 UCP and 1 DTR, or even expand up to 5 or even 7 of each, but the recomended minimum for 
+an enterprise production deployment is 3 UCPs and 3 DTRs.
+</p>
+
+<ul>  
 <li>3 Docker Swarm Linux worker VM nodes for container workloads </li>
-<li>3 Docker Swarm Windows worker VM nodes for container workloads (optional) </li>
+<li>3 Docker Swarm Windows worker VM nodes for container workloads (optional) </li> 
+</ul>
+
+<p>The Docker worker nodes will be co-located with the UCP and DTR nodes in a 3 physical node deployment, 
+whereas in a 6 physical node set-up, the worker nodes will typically be separated onto the extra nodes. 
+It is possible to specify that more than one worker node will be deployed per physical node but 
+this decision will depend on the requirements of your applications.</p>
+
+<ul>  
 <li>1 Docker UCP load balancer VM to ensure access to UCP in the event of a node
 failure </li>
 <li>1 Docker DTR load balancer VM to ensure access to DTR in the event of a node
 failure </li>
 <li>1 Docker swarm worker node VM load balancer </li>
+</ul>
+
+<p>Three load balancers are provided to increase availability of the UCP, DTR and worker nodes and these are typically
+distributed evenly across 3 physical nodes.</p>
+
+<ul>  
 <li>1 Logging server VM for central logging </li>
 <li>1 NFS server VM for storage of Docker DTR images </li>
 </ul>
 
-<p>In addition to the above, the playbooks also set up the Docker persistent storage plug-in from VMware.  
-The vSphere Docker volume plug-in stores facilitates the storage of data in a
-shared datastore that can be accessed from any machine in the cluster.</p>
+<p>With the addition of the NFS and logging VMs, a total of 14 VMs are created for the default Linux-only deployment. The hybrid
+deployment will add 3 Windows worker nodes to this figure. In addition to these VMs, the playbooks also set up the Docker persistent storage plug-in from VMware.  
+The vSphere Docker volume plug-in  facilitates the storage of data in a shared datastore that can be accessed from any machine in the cluster.</p>
 </body>
 </topic>

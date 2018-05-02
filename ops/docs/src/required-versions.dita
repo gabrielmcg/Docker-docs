@@ -16,7 +16,7 @@ Other version may work but have not been tested.
 
 <note type="note">
 <p>The Ansible playbooks described in this document are primarily intended for Day 0
-deployment automation of Docker EE on HPE Synergy and do not fully address scaling and upgrading the enviroment.
+deployment automation of Docker EE on HPE Synergy and do not fully address scaling and upgrading the environment.
 However, Linux and Windows worker nodes can be scaled using the playbooks.
 </p>
     

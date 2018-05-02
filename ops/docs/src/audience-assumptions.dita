@@ -4,7 +4,7 @@
 <title/>
 <body>
 <p><b>Target Audience: </b>This document is primarily aimed at technical individuals working in the
-Operations side of the pipeline, such as system administrators and infrastructure engineers,
+Operations side of the software pipeline, such as system administrators and infrastructure engineers,
 but anybody with an interest in automating the provisioning of virtual servers and containers
 may find this document useful. 
 </p>
