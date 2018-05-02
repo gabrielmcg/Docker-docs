@@ -41,11 +41,6 @@
     <topicref href="solution-config.dita" navtitle="Solution configuration"/>
     
 
-
-    <topicref href="server-reqs.dita" navtitle="Server Requirements"/>
-
-    <topicref href="storage-reqs.dita" navtitle="Storage Requirements"/>
-
     <topicref href="ha.dita" navtitle="High Availability"/>
 
     <topicref href="sizing.dita" navtitle="Sizing"/>
@@ -69,6 +64,10 @@
        <topicref href="docker-ee.dita" navtitle="About Docker EE"/>     
       
     </topicref>
+    
+    <topicref href="server-reqs.dita" navtitle="Server Requirements"/>
+
+    <topicref href="storage-reqs.dita" navtitle="Storage Requirements"/>
     
     <topicref href="architecture-monitoring.dita" navtitle="Monitoring Overview">
       <topicref href="architecture-splunk-sysdig.dita" navtitle="Monitoring with Splunk and Sysdig">

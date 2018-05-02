@@ -37,9 +37,34 @@
 </row>   
 
 <row>
-<entry>VMWare</entry>
+<entry>Microsoft® Windows Server</entry>
+<entry>2016</entry>  
+</row> 
+
+<row>
+<entry>VMWare®</entry>
 <entry>ESXi 6.5.0 and vCenter 6.5.0</entry>  
 </row> 
+
+<row>
+<entry>Splunk®</entry>
+<entry>7.0.3</entry>  
+</row> 
+
+<row>
+<entry>Sysdig®</entry>
+<entry>latest</entry>  
+</row> 
+
+<row>
+<entry>Prometheus®</entry>
+<entry>latest</entry>  
+</row> 
+  
+<row>
+<entry>Grafana®</entry>
+<entry>latest</entry>  
+</row>   
 
 </tbody>
 </tgroup>
@@ -61,7 +86,7 @@
 
 <row>
 <entry>HPE Recovery Manager Central </entry>
-<entry><!--Integrates HPE 3PAR StoreServ All-Flash arrays with HPE StoreOnce Systems--></entry>  
+<entry>5.0.1<!--Integrates HPE 3PAR StoreServ All-Flash arrays with HPE StoreOnce Systems--></entry>  
 </row>
   
 
