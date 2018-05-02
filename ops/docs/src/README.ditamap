@@ -55,7 +55,10 @@
     
     <topicref href="hardware.dita" navtitle="Hardware">
       <topicref href="synergy.dita" navtitle="About Synergy"/>  
-      
+
+  
+      <topicref href="server-reqs.dita" navtitle="Server Requirements"/> 
+      <topicref href="storage-reqs.dita" navtitle="Storage Requirements"/>
     </topicref>
     
     <topicref href="software.dita" navtitle="Software">
@@ -65,9 +68,7 @@
       
     </topicref>
     
-    <topicref href="server-reqs.dita" navtitle="Server Requirements"/>
 
-    <topicref href="storage-reqs.dita" navtitle="Storage Requirements"/>
     
     <topicref href="architecture-monitoring.dita" navtitle="Monitoring Overview">
       <topicref href="architecture-splunk-sysdig.dita" navtitle="Monitoring with Splunk and Sysdig">

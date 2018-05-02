@@ -1242,9 +1242,79 @@ automates applications through infrastructure deployment. </li>
 </div>
 
 </div>
+<div class="topic nested2" aria-labelledby="ariaid-title15" id="server-reqs">
+<h3 class="title topictitle3" id="ariaid-title15">Server requirements</h3>
+
+<div class="body">
+<p class="p">The minimum platform requirement for this configuration is a 3 node HPE Synergy 480 Gen10 deployment with
+1 node in each Synergy frame and </p>
+
+
+<ul class="ul">
+<li class="li">384 GB DDR4-2133 RAM </li>
+
+<li class="li">2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core </li>
+
+<li class="li">Single ESXi cluster with control plane and Docker workers spread out on all 3 nodes
+</li>
+
+</ul>
+
+
+<p class="p">The solution has also been tested on a 6 node HPE Synergy environment, with 2 nodes in each frame. In this setup,
+the extra 3 nodes are dedicated to Docker worker nodes. The 6 node deployment is depicted graphically in 
+<a class="xref" href="#server-reqs__architecture2">Figure 2</a>.</p>
+
+
+<div class="fig fignone" id="server-reqs__architecture2">
+
+<br /><img class="image" src="media/architecture2.png" /><br />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 2. </b></span>HPE Synergy Configuration</span></div><p> </p></div>
+  
+    
+
+
+
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title15" id="software">
-<h2 class="title topictitle2" id="ariaid-title15">Software</h2>
+
+</div>
+<div class="topic nested2" aria-labelledby="ariaid-title16" id="storage-reqs">
+<h3 class="title topictitle3" id="ariaid-title16">Storage requirements</h3>
+
+<div class="body">
+<p class="p">A HPE 3PAR store is required for ESXi datastore. This solution makes use of a HPE 3PAR StoreServ 8200 populated with:</p>
+
+<ul class="ul">
+<li class="li">8x480GB SSD for the vSphere cluster datastore</li>
+
+<li class="li">8x1.8TB HDD for Backup Datastore</li>
+    
+</ul>
+
+    
+<p class="p">You should create a large virtual volume on the 3PAR StoreServ to host the virtual machines and another 
+large virtual volume for Docker backups. Create datastores on your vSphere cluster using these virtual volumes.   
+If desired, you can create separate StoreServ virtual volumes and attach them to all vSphere cluster hosts for 
+backing up Docker persistent volumes. It is recommended that you configure the volumes that are used for virtual machine deployments on the SSD.  
+Storage for backups can be configured on the HDDs.</p>
+   
+
+
+
+
+
+
+
+
+    
+
+
+</div>
+
+</div>
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title17" id="software">
+<h2 class="title topictitle2" id="ariaid-title17">Software</h2>
 
 <div class="body">
 <p class="p">The software components used in this Reference Configuration are listed in 
@@ -1258,54 +1328,54 @@ automates applications through infrastructure deployment. </li>
 
 <table cellpadding="4" cellspacing="0" summary="" id="software__software-3rd-party-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 4. </span>Third-party software</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2695">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2698">Version</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2765">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2768">Version</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2695 ">Ansible</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2698 ">2.4.2</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2765 ">Ansible</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2768 ">2.4.2</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2695 ">Docker EE</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2698 ">17.06 (tested with UCP 2.2.7 and DTR 2.4.3)</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2765 ">Docker EE</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2768 ">17.06 (tested with UCP 2.2.7 and DTR 2.4.3)</td>  
 </tr> 
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2695 ">Red Hat® Enterprise Linux</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2698 ">7.4</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2765 ">Red Hat® Enterprise Linux</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2768 ">7.4</td>  
 </tr>   
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2695 ">Microsoft® Windows Server</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2698 ">2016</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2765 ">Microsoft® Windows Server</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2768 ">2016</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2695 ">VMWare®</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2698 ">ESXi 6.5.0 and vCenter 6.5.0</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2765 ">VMWare®</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2768 ">ESXi 6.5.0 and vCenter 6.5.0</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2695 ">Splunk®</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2698 ">7.0.3</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2765 ">Splunk®</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2768 ">7.0.3</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2695 ">Sysdig®</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2698 ">latest</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2765 ">Sysdig®</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2768 ">latest</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2695 ">Prometheus®</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2698 ">latest</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2765 ">Prometheus®</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2768 ">latest</td>  
 </tr> 
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2695 ">Grafana®</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2698 ">latest</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2765 ">Grafana®</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2768 ">latest</td>  
 </tr>   
 
 </tbody></table>
@@ -1318,14 +1388,14 @@ automates applications through infrastructure deployment. </li>
 
 <table cellpadding="4" cellspacing="0" summary="" id="software__software-hpe-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 5. </span>HPE Software</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2805">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2808">Purpose</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2875">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2878">Purpose</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2805 ">HPE Recovery Manager Central </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2808 ">5.0.1</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2875 ">HPE Recovery Manager Central </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2878 ">5.0.1</td>  
 </tr>
   
 
@@ -1368,8 +1438,8 @@ machine.</p>
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title17" id="docker-ee">
-<h3 class="title topictitle3" id="ariaid-title17">About Docker Enterprise Edition</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title19" id="docker-ee">
+<h3 class="title topictitle3" id="ariaid-title19">About Docker Enterprise Edition</h3>
 
 <div class="body">
 <p class="p">Docker Enterprise Edition (EE) is a leading enterprise containers-as-a-service (CaaS)
@@ -1406,76 +1476,6 @@ security scanning.</li>
 </div>
 
 </div>
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title18" id="server-reqs">
-<h2 class="title topictitle2" id="ariaid-title18">Server requirements</h2>
-
-<div class="body">
-<p class="p">The minimum platform requirement for this configuration is a 3 node HPE Synergy 480 Gen10 deployment with
-1 node in each Synergy frame and </p>
-
-
-<ul class="ul">
-<li class="li">384 GB DDR4-2133 RAM </li>
-
-<li class="li">2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core </li>
-
-<li class="li">Single ESXi cluster with control plane and Docker workers spread out on all 3 nodes
-</li>
-
-</ul>
-
-
-<p class="p">The solution has also been tested on a 6 node HPE Synergy environment, with 2 nodes in each frame. In this setup,
-the extra 3 nodes are dedicated to Docker worker nodes. The 6 node deployment is depicted graphically in 
-<a class="xref" href="#server-reqs__architecture2">Figure 2</a>.</p>
-
-
-<div class="fig fignone" id="server-reqs__architecture2">
-
-<br /><img class="image" src="media/architecture2.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 2. </b></span>HPE Synergy Configuration</span></div><p> </p></div>
-  
-    
-
-
-
-</div>
-
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title19" id="storage-reqs">
-<h2 class="title topictitle2" id="ariaid-title19">Storage requirements</h2>
-
-<div class="body">
-<p class="p">A HPE 3PAR store is required for ESXi datastore. This solution makes use of a HPE 3PAR StoreServ 8200 populated with:</p>
-
-<ul class="ul">
-<li class="li">8x480GB SSD for the vSphere cluster datastore</li>
-
-<li class="li">8x1.8TB HDD for Backup Datastore</li>
-    
-</ul>
-
-    
-<p class="p">You should create a large virtual volume on the 3PAR StoreServ to host the virtual machines and another 
-large virtual volume for Docker backups. Create datastores on your vSphere cluster using these virtual volumes.   
-If desired, you can create separate StoreServ virtual volumes and attach them to all vSphere cluster hosts for 
-backing up Docker persistent volumes. It is recommended that you configure the volumes that are used for virtual machine deployments on the SSD.  
-Storage for backups can be configured on the HDDs.</p>
-   
-
-
-
-
-
-
-
-
-    
-
-
-</div>
-
 </div>
 <div class="topic nested1" aria-labelledby="ariaid-title20" id="architecture-monitoring">
 <h2 class="title topictitle2" id="ariaid-title20">Logging and monitoring</h2>
@@ -5329,7 +5329,7 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title81" id="unique_2100779758">
+<div class="topic nested3" aria-labelledby="ariaid-title81" id="unique_1618278370">
 <h4 class="title topictitle4" id="ariaid-title81">Restore UCP and DTR</h4>
  
 <div class="body">
