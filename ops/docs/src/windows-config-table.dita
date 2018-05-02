@@ -5,11 +5,6 @@
 <body>
 <table id="windows-config-table-content" frame="none">
 <title>Windows variables</title>
-<!--						<colgroup xmlns:ac="ac" xmlns:ri="ri">
-<col/>
-<col/>
-</colgroup>-->
-
 <tgroup cols="3">
 <colspec colnum="1" colname="c1" align="left"/>
 <colspec colnum="2" colname="c2" align="left"/>

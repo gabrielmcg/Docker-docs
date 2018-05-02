@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="hardware">
+<title>Hardware</title>
+<body>
+<p><xref href="hardware.dita#hardware/hardware-table-content"/> lists the hardware components that are utilized in this Reference Configuration</p>
+
+<table id="hardware-table-content" frame="none">
+<title>Hardware</title>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry>Component</entry>
+<entry>Purpose</entry>
+</row>
+</thead>
+<tbody>
+
+<row>
+<entry>HPE Synergy 12000 Frame</entry>
+<entry>Rack enclosure for compute, storage, and network hardware</entry>  
+</row> 
+
+<row>
+<entry>HPE Synergy 480 Gen10 Compute Modules</entry>
+<entry>Hosts for running ESX servers that support UCP, DTR, worker and other nodes in the solution</entry>
+</row>
+ 
+<row>
+<entry>HPE 3PAR StoreServ </entry>
+<entry>Provides the storage for the virtual machines and the Docker backups</entry>
+</row>
+
+<row>
+<entry>HPE StoreOnce</entry>
+<entry>High performance backup system</entry>
+</row>  
+
+</tbody>
+</tgroup>
+</table>
+  
+  
+</body>
+</topic>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="software">
+<title>Software</title>
+<body>
+<p>The software components used in this Reference Configuration are listed in 
+  <xref href="software.dita#software/software-3rd-party-table-content"/>  and 
+  <xref href="software.dita#software/software-hpe-table-content"/>. 
+</p>
+
+<table id="software-3rd-party-table-content" frame="none">
+<title>Third-party software</title>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry>Component</entry>
+<entry>Version</entry>
+</row>
+</thead>
+<tbody>
+
+<row>
+<entry>Ansible</entry>
+<entry>2.4.2</entry>  
+</row> 
+
+<row>
+<entry>Docker EE</entry>
+<entry>17.06 (tested with UCP 2.2.7 and DTR 2.4.3)</entry>  
+</row> 
+  
+<row>
+<entry>Red Hat® Enterprise Linux</entry>
+<entry>7.4</entry>  
+</row>   
+
+<row>
+<entry>VMWare</entry>
+<entry>ESXi 6.5.0 and vCenter 6.5.0</entry>  
+</row> 
+
+</tbody>
+</tgroup>
+</table>
+
+
+<table id="software-hpe-table-content" frame="none">
+<title>HPE Software</title>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry>Component</entry>
+<entry>Purpose</entry>
+</row>
+</thead>
+<tbody>
+
+<row>
+<entry>HPE Recovery Manager Central </entry>
+<entry><!--Integrates HPE 3PAR StoreServ All-Flash arrays with HPE StoreOnce Systems--></entry>  
+</row>
+  
+
+  
+</tbody>
+</tgroup>
+</table>
+
+</body>
+</topic>
