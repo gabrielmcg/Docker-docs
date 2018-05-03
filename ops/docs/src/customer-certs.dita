@@ -5,6 +5,9 @@
 
 <body>
     
+<p><xref href="customer-certs.dita#customer-certs/customer-certs-table-content"/> list the variables used when configuring 
+customer supplied certificates for UCP and DTR.
+</p>    
     
 <table id="customer-certs-table-content" frame="none">
 <title>Customer certs variables</title>

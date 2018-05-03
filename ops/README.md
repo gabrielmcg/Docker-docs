@@ -4856,7 +4856,7 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title75" id="unique_1527855243">
+<div class="topic nested3" aria-labelledby="ariaid-title75" id="unique_1203343838">
 <h4 class="title topictitle4" id="ariaid-title75">Restore UCP and DTR</h4>
  
 <div class="body">
@@ -5249,21 +5249,25 @@ Data backed up to HPE StoreOnce can be restored to the HPE 3PAR StoreServ and at
 
 <div class="body">
     
+<p class="p"><a class="xref" href="#customer-certs__customer-certs-table-content">Table 25</a> list the variables used when configuring 
+customer supplied certificates for UCP and DTR.
+</p>
+    
     
 
 <div class="tablenoborder">
 
 <table cellpadding="4" cellspacing="0" summary="" id="customer-certs__customer-certs-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 25. </span>Customer certs variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8650">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8653">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8656">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8656">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8659">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8662">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8650 ">ucp_certs_dir</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8653 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8656 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8656 ">ucp_certs_dir</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8659 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8662 ">
 <ul class="ul">
 <li class="li">If <strong class="ph b">ucp_certs_dir</strong> is not defined, UCP is installed with self-signed
 certificates and DTR is installed with the <code class="ph codeph">--ucp-insecure-tls</code>
@@ -5289,9 +5293,9 @@ certificates</li>
 </td> 
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8650 ">dtr_certs_dir</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8653 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8656 ">    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8656 ">dtr_certs_dir</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8659 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8662 ">    
 <ul class="ul">
 <li class="li">If <strong class="ph b">dtr_certs_dir</strong> is not defined, DTR is installed with self-signed
 certificates</li>
