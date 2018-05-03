@@ -4,28 +4,39 @@
 <title>HPE Enterprise Containers as a Service </title>
 <body>
 <ul>
+    
 <li><xref href="introduction.dita#introduction"/>
 <ul>
-<li><xref href="about-ansible.dita#about-ansible"/></li>
-<li><xref href="docker-ee.dita"/></li>  
-<li><xref href="synergy.dita"/></li>
-<li><xref href="required-versions.dita"/></li>
+<li><xref href="audience-assumptions.dita"/></li>
 </ul>
-</li>    
+</li> 
+    
 <li><xref href="architecture.dita"/>
 <ul>
-<li><xref href="architecture-overview.dita"/></li>
-
-<li><xref href="server-reqs.dita"/></li>    
-<li><xref href="storage-reqs.dita"/></li>
+<li><xref href="solution-config.dita"/></li>
 <li><xref href="ha.dita"/></li>
 <li><xref href="sizing.dita"/></li>
 <li><xref href="disaster-recovery.dita"/></li>
 <li><xref href="security.dita"/></li>
 </ul>
-</li>  
+</li> 
+    
 <li><xref href="solution-components.dita"/>
 <ul>
+<li><xref href="hardware.dita"></xref>
+<ul>
+<li><xref href="synergy.dita"/></li>    
+<li><xref href="server-reqs.dita"/></li>    
+<li><xref href="storage-reqs.dita"/></li>      
+</ul>
+</li>    
+<li><xref href="software.dita"/>
+<ul>
+<li><xref href="about-ansible.dita"/></li>
+<li><xref href="docker-ee.dita"/></li>      
+</ul>
+</li>
+    
 <li><xref href="application-software.dita"/>
 <ul>
 <li><xref href="architecture-splunk-sysdig.dita"/></li>
@@ -42,18 +53,16 @@
 <li><xref href="verify-prereqs.dita"/></li>
 <li><xref href="vsphere-ha.dita"/></li>
 <li><xref href="install-vdvs.dita"/></li>
-<li><xref href="install-vdvs-win.dita"/></li>
-<li><xref href="create-rhel-template.dita"/></li>
-<li><xref href="config-yum.dita"/></li>
-<li><xref href="create-template-win.dita"/></li>
 <li><xref href="create-ansible-node.dita"/></li>
-<li><xref href="finalize-template.dita"/></li>
- 
-
- 
-
+<li><xref href="create-rhel-template.dita"/></li>
+<li><xref href="create-template-win.dita"/></li>
+    
+<!--<li><xref href="install-vdvs-win.dita"/></li>-->
+<!--<li><xref href="config-yum.dita"/></li>-->
+<!--<li><xref href="finalize-template.dita"/></li>-->
 </ul>
 </li>
+    
 <li><xref href="edit-group-var.dita"/>
 <ul>
 <li><xref href="ansible-config.dita"/></li>
@@ -72,23 +81,29 @@
 <li><xref href="monitoring-config-promgraf.dita"/></li>   
 <li><xref href="edit-vault.dita"/></li>     
 </ul>
-</li>      
+</li>   
+    
 <li><xref href="playbooks-overview.dita"/></li>
+    
 <li><xref href="running-playbooks.dita"/>
 <ul>
 <li><xref href="post-deployment.dita"/></li>    
 </ul>
 </li>
-<li><xref href="lifecycle.dita"/></li>     
+    
+<li><xref href="lifecycle.dita"/></li>    
+    
 <li><xref href="backup-restore.dita"/>
 <ul>
 <li><xref href="backup-restore-ucp-dtr.dita"/></li>    
 <li><xref href="backup-restore-docker-volumes.dita"/></li>
 <li><xref href="integrate-backup.dita"/></li>
 </ul>
-  
-</li>  
-
+</li>
+    
+<li><xref href="summary.dita"/></li>     
+    
+<li><xref href="bom.dita"/></li>       
 </ul>   
   
 </body>
