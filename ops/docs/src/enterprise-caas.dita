@@ -6,9 +6,9 @@
 <ul>
     
 <li><xref href="introduction.dita#introduction"/>
-<ul>
+<!--<ul>
 <li><xref href="audience-assumptions.dita"/></li>
-</ul>
+</ul>-->
 </li> 
     
 <li><xref href="architecture.dita"/>
