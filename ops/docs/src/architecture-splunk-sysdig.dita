@@ -4,7 +4,7 @@
 <title>Monitoring with Splunk and Sysdig</title>
 <body>
 <p>The solution can be configured to  use of either Splunk or Sysdig or to enable both simultaneously. 
-While there is some overlap in the functionality provided by these tools, they ultimately are complimentary 
+While there is some overlap in the functionality provided by these tools, they are ultimately  complimentary 
 in what they offer. Splunk  aggregates logging and tracing for a wide variety of sources and provides a clean, high-level dashboard 
 for all your enterprise systems. Sysdig, on the other hand, has been engineered from the ground up to focus on containerized
 environments and includes both monitoring and security features, with built-in understanding of the different workloads running

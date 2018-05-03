@@ -138,21 +138,21 @@ from <codeph>group_vars/vars</codeph></p>
 <codeblock>monitoring_stack: splunk
 splunk_ssl: yes
 #splunk_architecture_forward_servers:
-#  - clh2-ansible.cloudra.local:9998</codeblock>
+#  - hpe2-ansible.cloudra.local:9998</codeblock>
 
 <p>Create a file named <codeph>vms.yml</codeph> in the folder <codeph>group_vars</codeph> and specify the list of forward
 servers to use by the Linux servers. This list is typically the same as the one used for
 Windows servers but specifies a TCP port that enables SSL.</p>
     
 <codeblock>splunk_architecture_forward_servers:
-- clh2-ansible.cloudra.local:9998</codeblock>
+- hpe2-ansible.cloudra.local:9998</codeblock>
 
     
 <p>Edit the <codeph>group_vars/win_worker.yml</codeph> file and specify the list of forward servers to be used by the Windows servers.
  This list is typically the same as the one used for Linux servers  but specifies a TCP port that does not enable SSL.
  
 <codeblock>splunk_architecture_forward_servers:
-- clh2-ansible.cloudra.local:9997</codeblock>
+- hpe2-ansible.cloudra.local:9997</codeblock>
 </p>
 
 

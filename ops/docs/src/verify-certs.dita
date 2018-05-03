@@ -43,7 +43,7 @@ cert.pem: OK</codeblock>
 <p>An unsuccessful check will generate output similar to:</p> 
   
 <codeblock>[root@ansible ucp_certs]# openssl verify -verbose -CAfile cachain.pem  certsignedbyanotherca.pem
-certsignedbyanotherca.pem: O = HPE, OU = CloudRA Team, CN = clh-ucp.cloudra.local
+certsignedbyanotherca.pem: O = HPE, OU = CloudRA Team, CN = hpe-ucp.cloudra.local
 error 20 at 0 depth lookup:unable to get local issuer certificate</codeblock>  
 
 

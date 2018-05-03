@@ -16,31 +16,31 @@ In this scenario, you need the archives for the DTR metadata and the DTR images.
 <li>Remove the DTR nodes from the swarm by running the <codeph>docker node rm &lt;DTR node></codeph> command on a UCP node for each DTR node in your cluster.
 The following example shows the sequence of commands to use to remove the DTR nodes:
 
-<codeblock>[root@clh2-ansible ops]# docker node ls
+<codeblock>[root@hpe2-ansible ops]# docker node ls
 ID                            HOSTNAME                     STATUS              AVAILABILITY        MANAGER STATUS
-aizd270nd7f0bsrxzu0vkdvfe *   clh-ucp02.cloudra.local      Ready               Active              Reachable
-gvf30phdia7xvdyomnms2li8t     clh-dtr01.cloudra.local      Down                Active
-ir4evcb4m84wtohuwmr6wuz11     clh-ucp03.cloudra.local      Ready               Active              Reachable
-mwfsg9bxnk2z5q9cg05tbcs2f     clh-dtr02.cloudra.local      Down                Active
-oqyulx95woy68w6ylcx111ug1     clh-ucp01.cloudra.local      Ready               Active              Leader
-xqeq0sv3dhwgzbis0fx2x3h4a     clh-worker01.cloudra.local   Ready               Active
-zdutvd4ajlh23zohd6xuf0p9e     clh-dtr03.cloudra.local      Down                Active
+aizd270nd7f0bsrxzu0vkdvfe *   hpe-ucp02.cloudra.local      Ready               Active              Reachable
+gvf30phdia7xvdyomnms2li8t     hpe-dtr01.cloudra.local      Down                Active
+ir4evcb4m84wtohuwmr6wuz11     hpe-ucp03.cloudra.local      Ready               Active              Reachable
+mwfsg9bxnk2z5q9cg05tbcs2f     hpe-dtr02.cloudra.local      Down                Active
+oqyulx95woy68w6ylcx111ug1     hpe-ucp01.cloudra.local      Ready               Active              Leader
+xqeq0sv3dhwgzbis0fx2x3h4a     hpe-worker01.cloudra.local   Ready               Active
+zdutvd4ajlh23zohd6xuf0p9e     hpe-dtr03.cloudra.local      Down                Active
 </codeblock>    
 
 
-<codeblock>[root@clh2-ansible ops]# docker node rm clh-dtr01.cloudra.local
-clh-dtr01.cloudra.local
-[root@clh2-ansible ops]# docker node rm clh-dtr02.cloudra.local
-clh-dtr02.cloudra.local
-[root@clh2-ansible ops]# docker node rm clh-dtr03.cloudra.local
-clh-dtr03.cloudra.local</codeblock>
+<codeblock>[root@hpe2-ansible ops]# docker node rm hpe-dtr01.cloudra.local
+hpe-dtr01.cloudra.local
+[root@hpe2-ansible ops]# docker node rm hpe-dtr02.cloudra.local
+hpe-dtr02.cloudra.local
+[root@hpe2-ansible ops]# docker node rm hpe-dtr03.cloudra.local
+hpe-dtr03.cloudra.local</codeblock>
 
-<codeblock>[root@clh2-ansible ops]# docker node ls
+<codeblock>[root@hpe2-ansible ops]# docker node ls
 ID                            HOSTNAME                     STATUS              AVAILABILITY        MANAGER STATUS
-aizd270nd7f0bsrxzu0vkdvfe     clh-ucp02.cloudra.local      Ready               Active              Reachable
-ir4evcb4m84wtohuwmr6wuz11     clh-ucp03.cloudra.local      Ready               Active              Reachable
-oqyulx95woy68w6ylcx111ug1 *   clh-ucp01.cloudra.local      Ready               Active              Leader
-xqeq0sv3dhwgzbis0fx2x3h4a     clh-worker01.cloudra.local   Ready               Active
+aizd270nd7f0bsrxzu0vkdvfe     hpe-ucp02.cloudra.local      Ready               Active              Reachable
+ir4evcb4m84wtohuwmr6wuz11     hpe-ucp03.cloudra.local      Ready               Active              Reachable
+oqyulx95woy68w6ylcx111ug1 *   hpe-ucp01.cloudra.local      Ready               Active              Leader
+xqeq0sv3dhwgzbis0fx2x3h4a     hpe-worker01.cloudra.local   Ready               Active
 </codeblock>
 </li>
 

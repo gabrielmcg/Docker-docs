@@ -24,7 +24,7 @@ characteristics:</p>
 2016 (64-bit)
 </li>
 
-<li>Hard Disk size: 50GB (Thin provisioning), 1 vCPU and 4 GB of RAM. Both vCPU and memory can be altered later after you deploy from this template. 
+<li>Hard Disk size: 100GB (Thin provisioning), 1 vCPU and 4 GB of RAM. Both vCPU and memory can be altered later after you deploy from this template. 
 </li>
     
 <li>A single network controller connected to the network or VLAN of your
@@ -64,7 +64,7 @@ Install Now</li>
 <li>Select the OS you want to install, and then select Custom: Install Windows
 Only</li>
     
-<li>Select drive 0, the 50 GB drive you specified earlier, as the location for
+<li>Select drive 0, the 100 GB drive you specified earlier, as the location for
 installing windows</li>
 <li>Add a password for the Administrator user</li>
 <li>Install VMware Tools and

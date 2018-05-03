@@ -27,16 +27,16 @@ Make sure you restore both the *.tgz and the *.vars.tgz files.</p>
 associated with the archive of the DTR metadata. You can retrieve this as follows:     
 </p>
 
-<codeblock>[root@clh2-ansible ops]# tar -Oxf /root/restore/2018_04_17_151734_dtr_meta.vars.tgz meta.yml
-backup_node="clh-dtr01"
+<codeblock>[root@hpe2-ansible ops]# tar -Oxf /root/restore/2018_04_17_151734_dtr_meta.vars.tgz meta.yml
+backup_node="hpe-dtr01"
 replica_id="<b>ad5204e8a4d0</b>"
 backup_source=""
 ucp_version=""
 dtr_version="<b>2.4.3</b>"
 </codeblock>
 
-<codeblock>[root@clh2-ansible ops]# tar -Oxf /root/restore/2018_04_17_151734_ucp.vars.tgz meta.yml
-backup_node="clh-ucp01"
+<codeblock>[root@hpe2-ansible ops]# tar -Oxf /root/restore/2018_04_17_151734_ucp.vars.tgz meta.yml
+backup_node="hpe-ucp01"
 replica_id=""
 backup_source=""
 ucp_version="<b>2.2.7</b>"
@@ -64,11 +64,11 @@ containing the value you retrieved in the preceding step as <codeph>replica_id="
 You must ensure that the versions specified in your current <codeph>group_vars/vars</codeph> file correspond to the versions in the backups as determined above.
 </p>
 
-<codeblock>[root@clh2-ansible ops]# cat group_vars/vars | grep dtr_version
+<codeblock>[root@hpe2-ansible ops]# cat group_vars/vars | grep dtr_version
 dtr_version: '2.4.3'
 </codeblock>
 <codeblock>
-[root@clh2-ansible ops]# cat group_vars/vars | grep ucp_version
+[root@hpe2-ansible ops]# cat group_vars/vars | grep ucp_version
 ucp_version: '2.2.7'
 </codeblock>    
 

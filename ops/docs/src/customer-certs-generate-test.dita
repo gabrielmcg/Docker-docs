@@ -75,9 +75,9 @@ Ni1JnZandVlyQdoOaB2M/1DNFfKvwW3JeArKvDA9j95n/BWFTjoZ+YOz9pYit6T7
   
 <p> The <codeph>openssl x509</codeph> utility will only decrypt the first certificate found in <codeph>cert.pem</codeph>,  
   so you don't need to extract the server certificate from <codeph>cert.pem</codeph>.
-In this example, the server certificate is signed by the intermediate CA above. Note the <codeph>Subject Alternate Names: clh-ucp.cloudra.local</codeph> 
+In this example, the server certificate is signed by the intermediate CA above. Note the <codeph>Subject Alternate Names: hpe-ucp.cloudra.local</codeph> 
   is the FQDN of the UCP load balancer, and the other names are those of the UCP instances 
-  (<codeph>clh-ucp01.cloudra.local</codeph>, <codeph>clh-ucp02.clodura.local</codeph>, <codeph>clh-ucp03.cloudra.local</codeph>).
+  (<codeph>hpe-ucp01.cloudra.local</codeph>, <codeph>hpe-ucp02.clodura.local</codeph>, <codeph>hpe-ucp03.cloudra.local</codeph>).
 </p>
   
 <codeblock>[root@ansible ucp_certs]# openssl x509 -text -noout -in server.pem
@@ -91,7 +91,7 @@ Certificate:
         Validity
             Not Before: Apr 24 20:17:30 2018 GMT
             Not After : Apr 24 20:18:00 2019 GMT
-        Subject: O=HPE, OU=CloudRA Team, CN=clh-ucp.cloudra.local
+        Subject: O=HPE, OU=CloudRA Team, CN=hpe-ucp.cloudra.local
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)
@@ -99,7 +99,7 @@ Certificate:
       ( portions removed )
  
             X509v3 Subject Alternative Name:
-                DNS:clh-ucp.cloudra.local, DNS:clh-ucp01.cloudra.local, DNS:clh-ucp02.cloudra.local, DNS:clh-ucp03.cloudra.local</codeblock>  
+                DNS:hpe-ucp.cloudra.local, DNS:hpe-ucp01.cloudra.local, DNS:hpe-ucp02.cloudra.local, DNS:hpe-ucp03.cloudra.local</codeblock>  
  
 
 <p> The following excerpts from <codeph>cert.pem</codeph> show the first certificate which is the server certificate itself

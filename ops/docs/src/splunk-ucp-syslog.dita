@@ -7,9 +7,9 @@
 logs to the VM configured in the [logger] group. For example, for the following <codeph>vm_host</codeph> file:</p>
 
 <codeblock>[logger]
-clh-logger ip_addr='10.60.59.24/16' esxi_host='esxi-clh-2.cloudra.local'</codeblock>
+hpe-logger ip_addr='10.60.59.24/16' esxi_host='esxi-hpe-2.cloudra.local'</codeblock>
 
-<p>you will configure UCP to send its logs to <codeph>clh-logger.cloudra.local:1514</codeph>. You
+<p>you will configure UCP to send its logs to <codeph>hpe-logger.cloudra.local:1514</codeph>. You
 need to select the TCP protocol as shown in <xref href="splunk-ucp-syslog.dita#splunk-ucp-syslog/ucp-config-syslog" type="fig"/>.</p>
 
 <fig id="ucp-config-syslog">
