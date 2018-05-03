@@ -3,15 +3,20 @@
 <topic id="disaster-recovery">
 <title>Disaster Recovery</title>
 <body>
-<p>In order to protect your installation from disasters, you need to take regular backups of
-the swarm, UCP and DTR. In the event where half or more manager nodes are lost and
-cannot be recovered to a healthy state, the system is considered to have lost quorum and
-can only be restored through the manual procedure described in the Docker
-documentation.</p>
+    
+<p>Recovery Time Objective (RTO) refers to the time that it takes to recover your data and applications
+while Recovery Point Objective (RPO) refers to the point in time you can recover to in the event of a disaster.
+In essence, RPO tells you how often you’ll need to make new backups. </p>
+    
+<p>
+In order to protect your installation from disasters, you need to take regular backups and 
+transfer the backups to a safe location. This solution provides
+a range of convenience scripts and Ansible playbooks to help automate the backup of UCP, DTR, your swarm and your Docker volumes.
+See the section <xref href="backup-restore.dita">Backup and restore</xref> for best practices, procedures and utilities for
+implementing disaster recovery.
+</p>
 
-<p>For more information, see <xref format="html" scope="external"
-href="https://docs.docker.com/datacenter/ucp/2.2/guides/admin/backups-and-disaster-recovery/"
->https://docs.docker.com/datacenter/ucp/2.2/guides/admin/backups-and-disaster-recovery/</xref>.</p>
+
 
 </body>
 </topic>

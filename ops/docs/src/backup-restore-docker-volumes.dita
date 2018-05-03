@@ -49,7 +49,7 @@ should be paused or stopped.</note>
 
 <section>
 <title>Snapshot and Backup 3PAR Virtual Volumes with HPE Recovery Manager Central and
-StoreOnce</title>
+HPE StoreOnce</title>
     
 <p>HPE Recovery Manager Central (RMC) software integrates HPE 3PAR StoreServ All-Flash
 arrays with HPE StoreOnce Systems to leverage the performance of snapshots with the
@@ -60,26 +60,28 @@ than traditional backup methods, particularly for higher volumes of data. Backup
 StoreOnce are block-level copies of volumes, de-duplicated to save space. Because RMC
 snapshots are self-contained, fully independent volumes, they can be restored to any 3PAR
 array in the event of a disaster.</p>
+    
 <p>HPE Recovery Manager Central enables you to replicate data from the source storage system (HPE 3PAR StoreServ) to
 the destination storage system (HPE StoreOnce). The replication is based on point-in-time
 snapshots.</p>
     
 <p>HPE Recovery Manager Central is installed as a VM on VMware vSphere ESXi. It can be installed
-on the Synergy platform on a separate (from the Docker Solution) vSphere cluster or
+on the HPE Synergy platform on a separate (from the Docker Solution) vSphere cluster or
 external to the Synergy environment as long as the external server has connectivity to the
-HPE 3PAR StoreServ and HPE StoreOnce. RMC can be installed directly on an ESXi host or can
+HPE 3PAR StoreServ and HPE StoreOnce. HPE RMC can be installed directly on an ESXi host or can
 be deployed to a VMware vCenter managed environment. For this solution, the standalone
-"RMC only" is installed. If RMC is installed in the Synergy environment, iSCSI connection
-to the 3PAR StoreServ is required.</p>
+"RMC only" is installed. If HPE RMC is installed in the HPE Synergy environment, iSCSI connection
+to the HPE 3PAR StoreServ is required.</p>
+    
 <fig>
 <title>HPE Recovery Manger Central and StoreOnce</title>
 <image href="media/rmc-storeonce.png"/>
 </fig>
 <ul>
-<li>The connectivity between HPE 3PAR StoreServ and RMC for data traffic is over iSCSI. </li>
-<li>The connectivity between StoreOnce and RMC is over CoEthernet (Catalyst
+<li>The connectivity between HPE 3PAR StoreServ and HPE RMC for data traffic is over iSCSI. </li>
+<li>The connectivity between HPE StoreOnce and HPE RMC is over CoEthernet (Catalyst
 OverEthernet)</li>
-<li>The connectivity between RMC, HPE 3PAR StoreServ, and HPEStoreOnce for management
+<li>The connectivity between HPE RMC, HPE 3PAR StoreServ, and HPE StoreOnce for management
 traffic is over IP. </li>
 </ul>
 <fig>
@@ -88,8 +90,8 @@ traffic is over IP. </li>
 
 </fig>
 <p>Refer to <xref
-href="https://hpe.sharepoint.com/teams/StorageSolutions/Data%20Center%20Virtualization/RMC-V/Manuals/Manual_5.0/RMC_5.0_user_guide.pdf#search=RMC"
-format="html" scope="external">RMC User guide</xref> TODO PUBLIC URL NEEDED for detailed instructions on
+href="https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00042435en_us"
+format="html" scope="external">HPE RMC User guide</xref> for detailed instructions on
 setup and configuration of RMC and StoreOnce. When RMC is installed, it can be configured
 with the Backup Appliance Persona. The Backup persona allows the RMC to manage snapshots
 and Express Protect Backups. During installation, RMC configuration should specify Data

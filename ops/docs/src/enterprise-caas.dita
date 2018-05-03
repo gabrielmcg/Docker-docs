@@ -70,11 +70,7 @@
 <li><xref href="vmware-config.dita"/></li>
 <li><xref href="network-config.dita"/></li>   
 <li><xref href="environment-config.dita"/></li>   
-<li><xref href="docker-config.dita"/>
-<ul>
-<li><xref href="customer-certs.dita"/></li>      
-</ul>
-</li>   
+<li><xref href="docker-config.dita"/></li>   
 <li><xref href="windows-config.dita"/></li> 
 <li><xref href="monitoring-config-splunk.dita"/></li> 
 <li><xref href="monitoring-config-sysdig.dita"/></li>
@@ -104,8 +100,9 @@
 <li><xref href="summary.dita"/></li>     
     
 <li><xref href="bom.dita"/></li>     
-    
 <li><xref href="customer-certs.dita"/></li>    
+<li><xref href="splunk-ssl.dita"/></li>
+    
 </ul>   
   
 </body>
