@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="application-software">
+<title>Application software</title>
+<body>
+<p>A number of different logging and monitoring solutions are supported by this solution:</p>
+
+<ul>
+<li>Splunk</li>
+<li>Sysdig</li>
+<li>Prometheus and Grafana</li>
+</ul>
+    
+<p>The application software components used in this Reference Configuration are listed in 
+  <xref href="application-software.dita#application-software/application-software-table-content"/>.
+</p>
+
+<table id="application-software-table-content" frame="none">
+<title>Application software</title>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry>Component</entry>
+<entry>Version</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Splunk®</entry>
+<entry>7.0.3</entry>  
+</row> 
+
+<row>
+<entry>Sysdig®</entry>
+<entry>latest</entry>  
+</row> 
+
+<row>
+<entry>Prometheus®</entry>
+<entry>v1.7.1</entry>  
+</row> 
+  
+<row>
+<entry>Grafana®</entry>
+<entry>4.4.3</entry>  
+</row>   
+
+
+</tbody>
+</tgroup>
+</table>
+    
+    
+</body>
+</topic>

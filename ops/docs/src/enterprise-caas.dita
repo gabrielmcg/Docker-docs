@@ -26,7 +26,7 @@
 </li>  
 <li><xref href="solution-components.dita"/>
 <ul>
-<li><xref href="architecture-monitoring.dita"/>
+<li><xref href="application-software.dita"/>
 <ul>
 <li><xref href="architecture-splunk-sysdig.dita"/></li>
 <li><xref href="architecture-promgraf.dita"/></li>    
