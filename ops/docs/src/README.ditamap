@@ -120,10 +120,7 @@
     <topicref href="environment-config.dita" navtitle="Environment configuration"/>
 
     <topicref href="docker-config.dita" navtitle="Docker configuration">
-      <topicref href="customer-certs.dita" navtitle="Customer certificates">
-        <topicref href="customer-certs-generate-test.dita" navtitle="Generate and test certificates"/>
-        <topicref href="verify-certs.dita" navtitle="Verify certs"></topicref>
-      </topicref>
+
     </topicref>
 
     <topicref href="windows-config.dita" navtitle="Windows configuration"/>
@@ -132,7 +129,7 @@
     <topicref href="monitoring-config-splunk.dita" navtitle="Splunk configuration">
       <!--<topicref href="splunk-options.dita" navtitle="Splunk options"/>-->
       <topicref href="splunk-pre-deploy.dita" navtitle="Before you deploy"/>
-      <topicref href="splunk-ssl.dita" navtitle="Splunk and SSL"/>
+      
       <topicref href="splunk-ucp-syslog.dita" navtitle="Configuring syslog in UCP"/>
       <topicref href="splunk-esx-syslog.dita" navtitle="Configuring syslog in ESX"/>
       <topicref href="splunk-related-playbooks.dita" navtitle="Related playbooks"/>
@@ -197,4 +194,11 @@
   
   <topicref href="bom.dita" navtitle="Appendix A: Bill of Materials"/>
 
+  <topicref href="customer-certs.dita" navtitle="Appendix B: Customer certificates">
+    <topicref href="customer-certs-generate-test.dita" navtitle="Generate and test certificates"/>
+    <topicref href="verify-certs.dita" navtitle="Verify certs"></topicref>
+  </topicref>
+  
+  <topicref href="splunk-ssl.dita" navtitle="Appendix C: Splunk and SSL"/>
+  
 </map>

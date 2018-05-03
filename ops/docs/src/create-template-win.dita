@@ -93,7 +93,7 @@ and keyboard mapping, then Shutdown VM.</p>
 
 <note type="note">The <codeph>vmware_guest</codeph> module used by the playbooks will generate a new SID.</note>
     
-<p>Turn the VM into a template by right-clicking on your VM and selecting <codeph>Template -&lt; Convert to Template</codeph>.	
+<p>Turn the VM into a template by right-clicking on your VM and selecting <codeph>Template -&gt; Convert to Template</codeph>.	
 This will create a new template visible under VM Templates in Folders, ready for future use.
 </p>
 
