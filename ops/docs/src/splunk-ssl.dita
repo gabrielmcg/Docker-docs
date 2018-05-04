@@ -70,7 +70,7 @@ created under <codeph>/opt/splunk/etc</codeph> and the file <codeph>indexer.pem<
     
     
     
-<p>Indexers are configured with the Root CA cert used to signed all certificates. This can
+<p>Indexers are configured with the Root CA cert used to sign all certificates. This can
 be achieved by editing the file <codeph>server.conf</codeph> in <codeph>$SPLUNK_HOME/etc/system/local</codeph> on your
 indexer(s). The following code block shows the relevant portion of this file where
 <codeph>sssRootCaPath</codeph> is pointing to the root CA certificate. 

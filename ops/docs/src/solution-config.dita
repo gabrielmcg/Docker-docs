@@ -20,7 +20,7 @@ virtual machines (VMs), depending on the size of your environment, as follows:</
 </ul>
 
 <p>The Docker UCP and DTR nodes are spread across 3 physical nodes, with one on each physical node. An odd number of manager nodes is
-recommended to avoid split-brain issues. It is possible to restrict the deployment to 1 UCP and 1 DTR, or to expand to more than 3, but the recomended minimum for 
+recommended to avoid split-brain issues. It is possible to restrict the deployment to 1 UCP and 1 DTR, or to expand to more than 3, but the recommended minimum for 
 an enterprise production deployment is 3 UCPs and 3 DTRs.
 </p>
 

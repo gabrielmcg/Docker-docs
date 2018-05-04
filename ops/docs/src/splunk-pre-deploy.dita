@@ -36,12 +36,11 @@ and set the variable, for example:
 
 
 <p>If you are using a standalone Splunk deployment, you must specify the list of indexers using the variable
-<codeph>splunk_architecture_forward_servers</codeph>in <codeph>group_vars/vars</codeph>, for example: </p>
+<codeph>splunk_architecture_forward_servers</codeph> in <codeph>group_vars/vars</codeph>, for example: </p>
   
 <codeblock>splunk_architecture_forward_servers:
 - splunk-indexer1.cloudra.local:9997
-- splunk-indexer2.cloudra.local:9997
-</codeblock>  
+- splunk-indexer2.cloudra.local:9997</codeblock>  
  
 <p>By default, the indexers are configured in a single load balancing group. This can be
 changed by editing the file <codeph>outputs.conf.j2</codeph> in the folder <codeph>template/monitoring/splunk/</codeph>.
@@ -51,8 +50,8 @@ For more information on  forwarding using Universal Forwader, see the Splunk doc
 
 <p>On your standalone Splunk installation, you need to install the following add-ons and apps.</p>
 
-<p>To monitor <b>Linux Worker nodes</b>, the <b>Docker app</b> should be installed on central splunk. 
-More info on this docker app can be found at 
+<p>To monitor <b>Linux Worker nodes</b>, the <b>Docker app</b> should be installed on central Splunk. 
+More information on this Docker app can be found at 
 <xref href="https://github.com/splunk/docker-itmonitoring" format="html" scope="external"/>  and at
 <xref href="https://hub.docker.com/r/splunk/universalforwarder/" format="html" scope="external"/>.
 
@@ -73,7 +72,7 @@ the message <codeph>eventtype wineventlog-ds does not exist or is disabled</code
 
 
 <p>If you want to use your own certificates in your standalone Splunk deployment
-  to secure the communications between the indexers and the universal forwaders,
+  to secure the communications between the indexers and the universal forwarders,
   see the subsequent section <xref href="splunk-ssl.dita#splunk-ssl">Enabling SSL</xref>.
 </p>
   

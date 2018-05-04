@@ -23,7 +23,7 @@
 <section>
 <title>group_vars/win_worker.yml</title>
 
-<p>There is a separate file in the <codeph>group_vars</codeph> directory named <codeph>win_worker.yml</codeph> for advanced Windows-specific congiguration. These variables are
+<p>There is a separate file in the <codeph>group_vars</codeph> directory named <codeph>win_worker.yml</codeph> for advanced Windows-specific configuration. These variables are
 used in the following playbooks:  
 </p>
 
@@ -33,7 +33,7 @@ used in the following playbooks:
 <li>playbooks/scale_workers_windows.yml</li>
 </ul>
 
-<p>In general, it should not be necessary to modify this file, but the variables are doucmented here for the sake of completeness.</p>
+<p>In general, it should not be necessary to modify this file, but the variables are documented here for the sake of completeness.</p>
 
 <table id="windows-advanced-config-table-content" frame="none">
 <title>Advanced windows variables</title>

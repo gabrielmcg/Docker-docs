@@ -88,7 +88,7 @@ on the target nodes defined by the group <codeph>worker</codeph> in the <codeph>
 	
 
 <li><codeph>playbooks/install_logspout.yml</codeph> installs and configures <b>Logspout</b> on all Docker nodes. 
-Logspout is repsonsible for sending logs produced by containers running on the Docker nodes to the central logger VM.
+Logspout is responsible for sending logs produced by containers running on the Docker nodes to the central logger VM.
 By default, this playbook is commented out in <codeph>site.yml</codeph>.
 </li>
 
@@ -103,7 +103,7 @@ playbook.
 
 <li><codeph>playbooks/monitoring.yml</codeph> installs and configures the Splunk Universal Forwarders.
 The variable <codeph>monitoring_stack</codeph> in <codeph>group_vars/vars</codeph> is used to specify the type of deployment you want.	
-A value of <codeph>splunk_demo</codeph> will result in this playbook deploying a splunk enterprise instance for demo purposes. A value of <codeph>splunk</codeph>
+A value of <codeph>splunk_demo</codeph> will result in this playbook deploying a Splunk enterprise instance for demo purposes. A value of <codeph>splunk</codeph>
 is used to configure an external production Splunk deployment.
 </li>
     
@@ -166,10 +166,10 @@ on your Windows VMs</li>
 <title>Backup playbooks</title>
     
 <ul>
-<li><codeph>playbooks/backup_swarm.yml</codeph> is used to backup the swarm data</li>
-<li><codeph>playbooks/backup_ucp.yml</codeph> is used to backup UCP</li>
-<li><codeph>playbooks/backup_dtr_meta.yml</codeph> is used to backup DTR metadata</li>
-<li><codeph>playbooks/backup_dtr_images.yml</codeph> is used to backup DTR images</li>
+<li><codeph>playbooks/backup_swarm.yml</codeph> is used to back up the swarm data</li>
+<li><codeph>playbooks/backup_ucp.yml</codeph> is used to back up UCP</li>
+<li><codeph>playbooks/backup_dtr_meta.yml</codeph> is used to back up DTR metadata</li>
+<li><codeph>playbooks/backup_dtr_images.yml</codeph> is used to back up DTR images</li>
 </ul>
 
 
@@ -219,7 +219,7 @@ password-less log in to every other node. As this is not essential and can be re
 
 <ul>
 <li><codeph>backup.sh</codeph> can be used to take a backup of the swarm, UCP DTR and the DTR images in one go.</li>
-<li><codeph>restore_dtr.sh</codeph> can be used to restore DTR metadat and DTR images.</li>
+<li><codeph>restore_dtr.sh</codeph> can be used to restore DTR metadata and DTR images.</li>
 <li><codeph>scale_worker.sh</codeph> can be used to scale the worker nodes.</li>
 </ul>
 

@@ -6,8 +6,8 @@
 <p>A number of different logging and monitoring solutions are supported by this solution:</p>
 
 <ul>
-<li>Splunk</li>
-<li>Sysdig</li>
+<li>Splunk®</li>
+<li>Sysdig®</li>
 <li>Prometheus and Grafana</li>
 </ul>
     
@@ -28,22 +28,22 @@
 </thead>
 <tbody>
 <row>
-<entry>Splunk®</entry>
+<entry>Splunk</entry>
 <entry>7.0.3</entry>  
 </row> 
 
 <row>
-<entry>Sysdig®</entry>
+<entry>Sysdig</entry>
 <entry>latest</entry>  
 </row> 
 
 <row>
-<entry>Prometheus®</entry>
+<entry>Prometheus</entry>
 <entry>v1.7.1</entry>  
 </row> 
   
 <row>
-<entry>Grafana®</entry>
+<entry>Grafana</entry>
 <entry>4.4.3</entry>  
 </row>   
 

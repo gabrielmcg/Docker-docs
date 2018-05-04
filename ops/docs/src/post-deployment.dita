@@ -9,10 +9,10 @@
 <ph>The playbooks are intended to be used to deploy a new environment. You should only use them for Day 0 deployment purposes.</ph>
 </p>
 <p>
-<ph>The ansible log is stored in the <codeph>ops</codeph> folder of the repo (<codeph>/root/Docker-Synergy/ops</codeph>). If the deployment fails, you may find useful hints in this log</ph>
+<ph>The Ansible log is stored in the <codeph>ops</codeph> folder of the repo (<codeph>/root/Docker-Synergy/ops</codeph>). If the deployment fails, you may find useful hints in this log</ph>
 </p>
 
-<p>To see how to check is the certs have been deployed correctly, see Appendix D.</p>
+<p>To see how to check if the certs have been deployed correctly, see Appendix D.</p>
 </body>
 
 	

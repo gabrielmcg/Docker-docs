@@ -12,7 +12,7 @@ software installs and/or system configuration performed subsequently using Ansib
 </p>
     
 <p>As the creation of the template is
-a one-off task, this procedure has not been automated The steps to create a VM template
+a one-off task, this procedure has not been automated. The steps to create a VM template
 manually are outlined below.</p>
 
 
@@ -21,7 +21,7 @@ characteristics:</p>
 
 <ul>
 <li>Guest OS Family: Windows, Guest OS Version: Microsoft Windows Server
-2016 (64-bit)
+2016 (64-bit).
 </li>
 
 <li>Hard Disk size: 100GB (Thin provisioning), 1 vCPU and 4 GB of RAM. Both vCPU and memory can be altered later after you deploy from this template. 
@@ -39,9 +39,9 @@ boot.
 <li>Click on the VM Options tab, and in the Boot Options
 section, select <codeph>Force BIOS setup(*)</codeph> to ensure that the machine enters the
 BIOS setup screen on next boot of this VM. This will allow you to adjust the
-boot order, placing the virtual CDROM in front of your hard drive.</li>
+boot order, placing the virtual CD-ROM in front of your hard drive.</li>
     
-<li>Optionally you can remove the floppy drive						
+<li>Optionally you can remove the floppy drive.						
 </li>
 </ul>
 
@@ -54,36 +54,36 @@ boot order, placing the virtual CDROM in front of your hard drive.</li>
     
 <li>Once connected to the console, you will be placed in the BIOS setup screen.
 Select the <codeph>Boot</codeph> tab, click on CD-ROM Drive and 
- move up the CDROM drive above the Hard drive. This allows your Windows
+ move up the CD-ROM drive above the hard drive. This allows your Windows
 2016 ISO image to be loaded first on boot. F10 Save and exit is next
 step.</li>
     
 <li>Enter your choices for Language, Time/Currency Format, Keyboard and then
-Install Now</li>
+Install Now.</li>
     
 <li>Select the OS you want to install, and then select Custom: Install Windows
-Only</li>
+Only.</li>
     
 <li>Select drive 0, the 100 GB drive you specified earlier, as the location for
-installing windows</li>
-<li>Add a password for the Administrator user</li>
+installing windows.</li>
+<li>Add a password for the Administrator user.</li>
 <li>Install VMware Tools and
-reboot</li>
+reboot.</li>
 </ul>
 
 <p>Once the VM has re-booted:</p>
     
 <ul>    
 <li>Add a temporary network IP address.</li>
-<li>Using sconfig utility from (Dos) command line to install windows updates and enable remote desktop.</li>
-<li>Perform any other customisations you require at this point.</li>
+<li>Use the sconfig utility from (MS-DOS) command line to install windows updates and enable remote desktop.</li>
+<li>Perform any other customizations you require at this point.</li>
 </ul>    
     
-<p>Prior to converting the VM to Template, run Sysprep: <codeph>C:\Windows\System32\Sysprep\Sysprep.exe</codeph></p>
+<p>Prior to converting the VM to Template, run Sysprep: <codeph>C:\Windows\System32\Sysprep\Sysprep.exe</codeph>.</p>
     
 <ul>
-<li>Ensure ‘System Out-of-Box Experience (OOBE)’ is selected</li>
-<li>Select the ‘Generalise’ option</li>
+<li>Ensure ‘System Out-of-Box Experience (OOBE)’ is selected.</li>
+<li>Select the ‘Generalize’ option.</li>
 <li>Select ‘Shutdown’ from the Shutdown Options.</li>
 </ul>
 

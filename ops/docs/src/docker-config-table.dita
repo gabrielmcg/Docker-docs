@@ -31,8 +31,8 @@ href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/"
 <entry>group_vars/vars</entry>    
 <entry>
 <ul>
-<li>If this variable is ommited, <codeph>install_docker.yml</codeph> will install the latest stable version of docker-ee available in the repo specified with <codeph>docker_ee_url</codeph></li>
-<li>If you want to install a specific version of Docker EE, enter the full speficication of the packages, for example:
+<li>If this variable is omitted, <codeph>install_docker.yml</codeph> will install the latest stable version of docker-ee available in the repo specified with <codeph>docker_ee_url</codeph></li>
+<li>If you want to install a specific version of Docker EE, enter the full specification of the packages, for example:
 <codeblock>docker_ee_version: 'docker-ee-17.06.2.ee.6-3.el7.rhel.x86_64'</codeblock>
 </li>
 </ul>

@@ -59,8 +59,8 @@ vCenter perspective, not the hostname.</entry>
 <entry>windows_vdvs_path</entry>
 <entry>group_vars/vars</entry>     
 <entry>Variable used to download vSphere Docker Volume Service software. This variable is combined 
-with <codeph>windows_vdvs_version</codeph> (below) to generate a URL of the form {{ windows_vdvs_path }}_{{ windows_vdvs_version }}.zip to download the software. 
-For example, to download version 0.21, set <codeph>windows_vdvs_path</codeph> equal to https://vmware.bintray.com/vDVS/vsphere-storage-for-docker_windows 
+with <codeph>windows_vdvs_version</codeph> (below) to generate a URL of the form <codeph>&lt;windows_vdvs_path&gt;_&lt;windows_vdvs_version&gt;.zip</codeph> to download the software. 
+For example, to download version 0.21, set <codeph>windows_vdvs_path</codeph> equal to <codeph>https://vmware.bintray.com/vDVS/vsphere-storage-for-docker_windows</codeph> 
 and <codeph>windows_vdvs_version</codeph> equal to <codeph>0.21</codeph>
 </entry>
 </row>

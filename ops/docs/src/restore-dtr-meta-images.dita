@@ -37,11 +37,11 @@ hpe-dtr03.cloudra.local
 </codeblock>
 
 <codeblock>[root@hpe2-ansible ops]# docker node ls
-ID                            HOSTNAME                     STATUS              AVAILABILITY        MANAGER STATUS
-aizd270nd7f0bsrxzu0vkdvfe     hpe-ucp02.cloudra.local      Ready               Active              Reachable
-ir4evcb4m84wtohuwmr6wuz11     hpe-ucp03.cloudra.local      Ready               Active              Reachable
-oqyulx95woy68w6ylcx111ug1 *   hpe-ucp01.cloudra.local      Ready               Active              Leader
-xqeq0sv3dhwgzbis0fx2x3h4a     hpe-worker01.cloudra.local   Ready               Active</codeblock>
+ID         HOSTNAME                     STATUS              AVAILABILITY        
+aiz...     hpe-ucp02.cloudra.local      Ready               Active     
+ir4...     hpe-ucp03.cloudra.local      Ready               Active    
+oqy... *   hpe-ucp01.cloudra.local      Ready               Active    
+xqe...     hpe-worker01.cloudra.local   Ready               Active</codeblock>
 
 </li>
 

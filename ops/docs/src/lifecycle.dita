@@ -32,7 +32,7 @@ adhering to the interdependencies of each component that is being updated.</p>
 firmware and driver management across many HPE Synergy components. HPE OneView
 manages firmware to reduce manual interactions and errors, in addition to minimizing
 downtime. Firmware updates of management appliances and shared infrastructure are
-nondisruptive to the production workload. </p>
+non-disruptive to the production workload. </p>
 <p>More information is available at <xref
 href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310"
 format="html" scope="external">Best Practices for HPE Synergy Firmware and Driver
@@ -187,7 +187,7 @@ format="html" scope="external">Docker Compatibility Matrix</xref></li>
     
 <p>To learn more about upgrading Splunk, see the relevant documentation at <xref href="http://docs.splunk.com/Documentation/Splunk/7.0.3/Installation/HowtoupgradeSplunk" format="html" scope="external">How to upgrade Splunk Enterprise</xref></p>    
 
-<p>The Sysdig agent runs as a container and the latest version is pulled from the Docker hub on first installation. Re-run the<codeph>install_sysdig.yml</codeph> playbook
+<p>The Sysdig agent runs as a container and the latest version is pulled from the Docker hub on first installation. Re-run the <codeph>install_sysdig.yml</codeph> playbook
 to update to the newest version if required.</p>
     
     

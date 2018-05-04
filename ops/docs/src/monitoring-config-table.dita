@@ -47,7 +47,7 @@
 <row>
 <entry>prom_persistent_vol_name</entry>
 <entry>The name of the volume which will be used to store the monitoring
-data. The volume is created using the vsphere docker volume
+data. The volume is created using the vSphere docker volume
 plugin.</entry>
 </row>
 <row>

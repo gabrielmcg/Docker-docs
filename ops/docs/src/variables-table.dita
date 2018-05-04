@@ -27,7 +27,7 @@
 <row>
 <entry>esxi_host</entry>
 <entry>Node</entry>
-<entry>ESXi host where the node will be deployed. If the cluster is configured with DRS, this option will be overriden</entry>
+<entry>ESXi host where the node will be deployed. If the cluster is configured with DRS, this option will be overridden</entry>
 </row>
 <row>
 <entry>cpus</entry>
