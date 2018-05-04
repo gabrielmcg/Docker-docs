@@ -62,7 +62,7 @@ Certificate:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (4096 bit)</codeblock>
   
-<p>Here is an exceprt from the <codeph>incta.pem</codeph> file showing the example Intermediate CA certificate:</p>
+<p>Here is an excerpt from the <codeph>incta.pem</codeph> file showing the example Intermediate CA certificate:</p>
 
 <codeblock>-----BEGIN CERTIFICATE-----
 MIIFcjCCA1qgAwIBAgIUax4MhiDP8IjSUg1duVb6kYegSRgwDQYJKoZIhvcNAQEL
@@ -73,7 +73,7 @@ Ni1JnZandVlyQdoOaB2M/1DNFfKvwW3JeArKvDA9j95n/BWFTjoZ+YOz9pYit6T7
 1GCGu3be
 -----END CERTIFICATE-----</codeblock>
   
-<p> The <codeph>openssl x509</codeph> utility will only decrypt the first certificate found in <codeph>cert.pem</codeph>,  
+<p>The <codeph>openssl x509</codeph> utility will only decrypt the first certificate found in <codeph>cert.pem</codeph>,  
   so you don't need to extract the server certificate from <codeph>cert.pem</codeph>.
 In this example, the server certificate is signed by the intermediate CA above. Note the <codeph>Subject Alternate Names: hpe-ucp.cloudra.local</codeph> 
   is the FQDN of the UCP load balancer, and the other names are those of the UCP instances 
@@ -102,7 +102,7 @@ Certificate:
                 DNS:hpe-ucp.cloudra.local, DNS:hpe-ucp01.cloudra.local, DNS:hpe-ucp02.cloudra.local, DNS:hpe-ucp03.cloudra.local</codeblock>  
  
 
-<p> The following excerpts from <codeph>cert.pem</codeph> show the first certificate which is the server certificate itself
+<p>The following excerpts from <codeph>cert.pem</codeph> show the first certificate which is the server certificate itself
   and the second certificate which is the intermediate CA's certificate. </p>
   
 <codeblock>-----BEGIN CERTIFICATE-----

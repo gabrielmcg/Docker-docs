@@ -75,10 +75,10 @@ href="https://access.redhat.com/solutions/23016"
 
 </p>
 
-<p>Before converting the VM to a template, you will need to setup access for the
+<!--<p>Before converting the VM to a template, you will need to setup access for the
 Ansible host to configure the individual VMs. This is explained in the next
 section.
-</p>
+</p>-->
 
 </body>
 </topic>

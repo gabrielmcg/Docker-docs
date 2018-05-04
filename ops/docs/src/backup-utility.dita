@@ -5,7 +5,7 @@
 <body>
 
 <p>The script <codeph>backup.sh</codeph> can be used to take a backup of the swarm, UCP DTR and the DTR images in one go. 
-You can pass this script an argument (tag) that wil be used to prefix the backup filenames, thereby overriding the default naming. The following table 
+You can pass this script an argument (tag) that will be used to prefix the backup filenames, thereby overriding the default naming. The following table 
 shows the file names produced by <codeph>backup.sh</codeph> based on the argument passed in the command line.    
 </p>
 

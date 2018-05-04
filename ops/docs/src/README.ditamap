@@ -174,7 +174,7 @@
       </topicref>
       
       <topicref href="restore-ucp-dtr.dita" navtitle="Restoring your cluster after a disaster">
-        <topicref href="restore-intro.dita" navtitle="Introduction"/>
+        <!--<topicref href="restore-intro.dita" navtitle="Introduction"/>-->
         <topicref href="before-restore.dita" navtitle="Before you restore"/>
         <topicref href="restore-ucp-dtr-details.dita" navtitle="Restoring UCP and DTR"/>
         <topicref href="restore-dtr-meta-images.dita" navtitle="Restore DTR data"/>
@@ -200,5 +200,7 @@
   </topicref>
   
   <topicref href="splunk-ssl.dita" navtitle="Appendix C: Splunk and SSL"/>
+  
+  <topicref href="post-deployment-check-certs.dita" navtitle="Appendix D: How to check that certs were deployed correctly"></topicref>
   
 </map>

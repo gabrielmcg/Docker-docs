@@ -57,6 +57,7 @@ data</entry>
 </table>
 
 <p>To make a backup of UCP, use <codeph>playbook/backup_ucp.yml</codeph> as follows:</p>
+    
 <codeblock># ansible-playbook -i vm_host playbooks/backup_ucp.yml</codeblock>
 
 <p>This playbook creates two archives in the folder specified by the variable
@@ -64,23 +65,23 @@ data</entry>
 are named using the following pattern:</p>
 
 <codeblock>&lt;backup_dest>/backup_ucp_&lt;ucpid>_&lt;vmname>_&lt;timestamp>.tgz
-&lt;backup_dest>/backup_ucp_&lt;ucpid>_&lt;vmname>_&lt;timestamp>.vars.tgz
-</codeblock>
+&lt;backup_dest>/backup_ucp_&lt;ucpid>_&lt;vmname>_&lt;timestamp>.vars.tgz</codeblock>
 
-<p>where <codeph>&lt;ucpid></codeph> is the ID of the UCP instance,
+<p><codeph>&lt;ucpid></codeph> is the ID of the UCP instance,
 <codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used to
 take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
 taken. The file with the extension <codeph>.vars.tgz</codeph> contains information regarding the system which was backed up.</p>
 
 <p>You can override the generated file name by defining the variable <b>backup_name</b> on the
 command line when running the playbook. In the example below: </p>
+    
 <codeblock># ansible-playbook -i vm_hosts playbooks/backup_ucp.yml -e backup_name=<b>my_ucp_backup</b></codeblock>
-<p>the generated files won't have <codeph>&lt;vmname></codeph> or
+    
+<p>The generated files won't have <codeph>&lt;vmname></codeph> or
 <codeph>&lt;timestamp></codeph> appended:</p>
 
 <codeblock>&lt;backup_dest>/my_ucp_backup.tgz
-&lt;backup_dest>/my_ucp_backup.vars.tgz
-</codeblock>
+&lt;backup_dest>/my_ucp_backup.vars.tgz</codeblock>
 
 <note type="warning">To create a consistent backup, the backup command <b>temporarily stops the
 UCP containers running on the node where the backup is being performed</b>. User resources, such

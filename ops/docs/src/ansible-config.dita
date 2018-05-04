@@ -29,7 +29,7 @@ modify a number of files including:</p>
 <li><codeph>vm_hosts</codeph>, the inventory file.</li>
 </ul>
 
-<p> and also to create a number of files: </p>
+<p>You also need to create and populate a number of files: </p>
 <ul>   
 <li><codeph>group_vars/vars</codeph>, the group variables file.</li>
 <li><codeph>group_vars/vault</codeph>, containing sensitive information that needs to be protected.</li>

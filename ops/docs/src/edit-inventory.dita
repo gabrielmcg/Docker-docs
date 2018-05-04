@@ -21,10 +21,8 @@ first DTR node to be installed. Do not add more than one node under this group.<
 <li><codeph>[dtr]</codeph>: A group containing all the DTR nodes, including the main DTR
 node. Typically you should have either 3 or 5 nodes under this group.</li>
     
-<li><codeph>[worker]</codeph>: A group containing all the worker nodes. Typically you
-should have either 3 or 5 nodes under this group.</li>
-<li><codeph>[win_worker]</codeph>: A group containing all the windows worker nodes.
-Typically you should have either 3 or 5 nodes under this group.</li>
+<li><codeph>[worker]</codeph>: A group containing all the Linux worker nodes.</li>
+<li><codeph>[win_worker]</codeph>: A group containing all the Windows worker nodes.</li>
     
 <li><codeph>[ucp_lb]</codeph>: A group containing one single node which will be the load
 balancer for the UCP nodes. Do not add more than one node under this group.</li>
@@ -35,7 +33,7 @@ load balancer for the worker nodes. Do not add more than one node under this
 group.</li>
     
 <li><codeph>[lbs]</codeph>: A group containing all the load balancers. This group will
-have 3 nodes, also defined in the three groups above.</li>
+have 3 nodes, also defined individually in the three groups above.</li>
 <li><codeph>[nfs]</codeph>: A group containing one single node which will be the NFS
 node. Do not add more than one node under this group.</li>
 <li><codeph>[logger]</codeph>: A group containing one single node which will be the
@@ -48,8 +46,7 @@ entry that should not be modified.</li>
 <ul>
 <li>[docker:children]: A group of groups including all the nodes where Docker will be
 installed.</li>
-<li>[vms:children]: A group of groups including all the Virtual Machines involved apart
-from the local host.</li>
+<li>[vms:children]: A group of groups including all the Virtual Machines involved, with the exception of the local host.</li>
 </ul>
 
 <p>Finally, you will find some variables defined for each group:</p>
@@ -87,11 +84,12 @@ cpus='4' ram='16384' disk2_size='200'</codeblock>
 
 <p>In the example above, the <codeph>worker03</codeph> node would have 4 times more CPU and
 double the RAM compared to the rest of the worker nodes.</p>
-<p>The different variables you can use are as described in Table 4 below. They are all
-mandatory unless if specified otherwise.</p>
+<p>The different variables you can use are as described in 
+<xref href="edit-inventory.dita#edit-inventory/variables-local-table-content"></xref> below. They are all
+mandatory unless otherwise specified.</p>
 
 
-<table conref="variables-table.dita#variables-table/variables-table-content">
+<table id="variables-local-table-content" conref="variables-table.dita#variables-table/variables-table-content">
 <title>Variables</title>
 <tgroup cols="3">
 <tbody>

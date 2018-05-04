@@ -17,14 +17,14 @@ In this scenario, you need the archives for the DTR metadata and the DTR images.
 The following example shows the sequence of commands to use to remove the DTR nodes:
 
 <codeblock>[root@hpe2-ansible ops]# docker node ls
-ID                            HOSTNAME                     STATUS              AVAILABILITY        MANAGER STATUS
-aizd270nd7f0bsrxzu0vkdvfe *   hpe-ucp02.cloudra.local      Ready               Active              Reachable
-gvf30phdia7xvdyomnms2li8t     hpe-dtr01.cloudra.local      Down                Active
-ir4evcb4m84wtohuwmr6wuz11     hpe-ucp03.cloudra.local      Ready               Active              Reachable
-mwfsg9bxnk2z5q9cg05tbcs2f     hpe-dtr02.cloudra.local      Down                Active
-oqyulx95woy68w6ylcx111ug1     hpe-ucp01.cloudra.local      Ready               Active              Leader
-xqeq0sv3dhwgzbis0fx2x3h4a     hpe-worker01.cloudra.local   Ready               Active
-zdutvd4ajlh23zohd6xuf0p9e     hpe-dtr03.cloudra.local      Down                Active
+ID         HOSTNAME                     STATUS              AVAILABILITY
+aiz... *   hpe-ucp02.cloudra.local      Ready               Active
+gvf...     hpe-dtr01.cloudra.local      Down                Active
+ir4...     hpe-ucp03.cloudra.local      Ready               Active
+mwf...     hpe-dtr02.cloudra.local      Down                Active
+oqy...     hpe-ucp01.cloudra.local      Ready               Active
+xqe...     hpe-worker01.cloudra.local   Ready               Active
+zdu...     hpe-dtr03.cloudra.local      Down                Active
 </codeblock>    
 
 
@@ -33,22 +33,23 @@ hpe-dtr01.cloudra.local
 [root@hpe2-ansible ops]# docker node rm hpe-dtr02.cloudra.local
 hpe-dtr02.cloudra.local
 [root@hpe2-ansible ops]# docker node rm hpe-dtr03.cloudra.local
-hpe-dtr03.cloudra.local</codeblock>
+hpe-dtr03.cloudra.local
+</codeblock>
 
 <codeblock>[root@hpe2-ansible ops]# docker node ls
 ID                            HOSTNAME                     STATUS              AVAILABILITY        MANAGER STATUS
 aizd270nd7f0bsrxzu0vkdvfe     hpe-ucp02.cloudra.local      Ready               Active              Reachable
 ir4evcb4m84wtohuwmr6wuz11     hpe-ucp03.cloudra.local      Ready               Active              Reachable
 oqyulx95woy68w6ylcx111ug1 *   hpe-ucp01.cloudra.local      Ready               Active              Leader
-xqeq0sv3dhwgzbis0fx2x3h4a     hpe-worker01.cloudra.local   Ready               Active
-</codeblock>
+xqeq0sv3dhwgzbis0fx2x3h4a     hpe-worker01.cloudra.local   Ready               Active</codeblock>
+
 </li>
 
 <li>Run the restore script:
 <codeblock>./restore_dtr.sh</codeblock>        
 </li>
 
-<li>If you are using the image scanning fuctionality in DTR, you will need to re-download the vulnerability database. 
+<li>If you are using the image scanning functionality in DTR, you will need to re-download the vulnerability database. 
 For more information, see the Docker documentation  <xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license" format="html" scope="external">here</xref>.</li>
 
 

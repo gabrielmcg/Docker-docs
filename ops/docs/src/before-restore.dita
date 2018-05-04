@@ -5,8 +5,8 @@
 <body>
 
 <p><b>Step 1.</b> Retrieve the backup files using your chosen backup solution and save them to a 
-folder on your ansible server. If you have used timestamps in the naming of your backup files, you can 
-use them to determine the chronologial order. If you used the <codeph>backup.sh</codeph> script specifiying a date prefix,
+folder on your Ansible server. If you have used timestamps in the naming of your backup files, you can 
+use them to determine the chronological order. If you used the <codeph>backup.sh</codeph> script specifying a date prefix,
 you can use that to identify the matching set of backup files. You should 
 choose the files in the following reverse chronological order, from the most recent to the oldest file. 
 Make sure you restore both the *.tgz and the *.vars.tgz files.</p> 
@@ -56,21 +56,19 @@ backup_dest: "/root/backups"
 backup_server: &lt;IP of your ansible box></codeblock> 
 
 <p>You should populate your <codeph>group_vars/backups</codeph> file as above, with the <codeph>backup_dtr_id</codeph> variable
-containing the value you retrieved in the preceding step as <codeph>replica_id="<b>ad5204e8a4d0</b>"</codeph></p>    
+containing the value you retrieved in the preceding step as <codeph>replica_id="<b>ad5204e8a4d0</b>"</codeph>.</p>    
 
-<p><b>Step 4:</b> Verify that your <codeph>group_vars/vars</codeph> file specifies the correct versions of DTR and UC</p>    
+<p><b>Step 4:</b> Verify that your <codeph>group_vars/vars</codeph> file specifies the correct versions of DTR and UCP.</p>    
 
 <p>The playbooks use the versions of UCP and DTR as specified in your <codeph>group_vars/vars</codeph> file to restore your backups.
 You must ensure that the versions specified in your current <codeph>group_vars/vars</codeph> file correspond to the versions in the backups as determined above.
 </p>
 
 <codeblock>[root@hpe2-ansible ops]# cat group_vars/vars | grep dtr_version
-dtr_version: '2.4.3'
-</codeblock>
+dtr_version: '2.4.3'</codeblock>
 <codeblock>
 [root@hpe2-ansible ops]# cat group_vars/vars | grep ucp_version
-ucp_version: '2.2.7'
-</codeblock>    
+ucp_version: '2.2.7'</codeblock>    
 
 <p><b>Step 5:</b> Restore UCP admin credentials if required</p>
 <p>You must ensure that the UCP admin credentials in your current <codeph>group_vars/vars</codeph> file are those
@@ -79,7 +77,7 @@ credentials for the duration of the restore procedure.</p>
 
 <p><b>Step 6:</b> Restore your inventory (<codeph>vm_hosts</codeph>)</p> 
 
-<p>Your inventory must reflect the enviroment that was present when the backup files were created. 
+<p>Your inventory must reflect the environment that was present when the backup files were created. 
 You can find a copy of the inventory as it was when the backup was taken in the  <codeph>*.vars.tgz</codeph> files. </p> 
 
 </body>

@@ -13,8 +13,7 @@ each service to provide meaningful monitoring dashboards and alerts for your app
   <image href="media/sysdig-architecture.png"/>
 </fig>  
   
-<p>
-<b>Sysdig Monitor</b> allows you to analyze response times, application performance metrics,
+<p><b>Sysdig Monitor</b> allows you to analyze response times, application performance metrics,
 container and server utilization metrics, and network metrics. You can build dashboards across
 applications, micro-services, container and networks, and explore metadata from Docker,
 Kubernetes, Mesos and AWS. </p>
@@ -22,10 +21,10 @@ Kubernetes, Mesos and AWS. </p>
 <p><b>Sysdig Secure</b> provides security at the orchestrator as well as the container level.
 You create service-aware policies that allow you to take actions (like killing a container) or
 send alerts (to Slack, Splunk, etc) whenever a policy violation occurs. All commands are
-audited to help you identigy anomolous actions, along with taking snapshots of all activities
+audited to help you identify anomalous actions, along with taking snapshots of all activities
 pre-and-post a policy violation. </p>
 
-<p> The implementation in this solution uses the Software as a Service (SaaS) version of Sysdig.
+<p>The implementation in this solution uses the Software as a Service (SaaS) version of Sysdig.
 The playbooks deploy a Sysdig Agent software on each UCP, DTR and Linux worker node, as well as the NFS, logger and load balancer VMs
 and captured data is relayed back to your Sysdig SaaS Cloud portal. </p>
 

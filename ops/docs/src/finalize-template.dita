@@ -31,14 +31,14 @@ Machine Console:</b>
 <codeblock># shutdown -h now</codeblock>				
 </li>
 
-<li>Turn the VM into a template by right-clicking on your VM and selecting <codeph>Template -&lt; Convert to Template</codeph>.	
+<li>Turn the VM into a template by right-clicking on your VM and selecting <codeph>Template -&gt; Convert to Template</codeph>.	
 This will create a new template visible under VM Templates in Folders, ready for future use.						
 </li>
 
 </ol>
 
 
-<note type="note">Please note that in both the Ansible node and the VM Template you might need to configure
+<note type="note">Please note that, in both the Ansible node and the VM Template, you might need to configure
 the network so one node can reach the other. Instructions for this step have been
 omitted since it is a basic step and could vary depending on the user’s environment.</note>
 

@@ -14,7 +14,7 @@ if you use a different OS, you understand the possible differences in syntax for
 provided commands. If you use RHEL 7, select <codeph>Infrastructure Server</codeph> as the base
 environment and the <codeph>Guests Agents</codeph> add-on during the installation.</p>
     
-<p> Log in to the <codeph>root</codeph> account and create an SSH key pair. Do not protect the key with
+<p>Log in to the <codeph>root</codeph> account and create an SSH key pair. Do not protect the key with
 a passphrase (unless you want to use <codeph>ssh-agent</codeph>). 
 </p>
     

@@ -4,8 +4,9 @@
 <title>Backup and restore Docker persistent volumes</title>
 <body>
     
-<section>
-<title>Prerequisites</title>
+
+<p>There are a number of prerequisites that must be fulfilled before you backup and restore your Docker persistent volumes. </p>
+    
 <ul>
 <li>VSphere clusters should have access to a datastore specifically for backups. This is a
 separate Virtual Volume created on the HPE 3PAR StoreServ and presented to all the hosts in
@@ -13,10 +14,11 @@ the vSphere cluster. </li>
 <li>Backup software must be available. HPE Recovery Manager Central and
 HPE StoreServ is recommended but other customer backup/restore solutions are acceptable. </li>
 </ul>
-</section>
 
-<section>
-<title>Restrictions</title>
+
+
+<p>A number of restrictions also apply:</p>
+    
 <ul>
 <li>Volumes may not be in use when a volume is cloned. Any container that has the volume
 attached must be paused prior to creating the clone. The container can be resumed once the
@@ -24,7 +26,7 @@ clone is complete.</li>
 <li>When docker volumes need to be restored from backup, the backup datastore needs to be
 detached from all vSphere cluster servers prior to restoration.</li>
 </ul>
-</section>
+
 
 </body>
 <topic id="backup-solution">
@@ -77,6 +79,7 @@ to the HPE 3PAR StoreServ is required.</p>
 <title>HPE Recovery Manger Central and StoreOnce</title>
 <image href="media/rmc-storeonce.png"/>
 </fig>
+    
 <ul>
 <li>The connectivity between HPE 3PAR StoreServ and HPE RMC for data traffic is over iSCSI. </li>
 <li>The connectivity between HPE StoreOnce and HPE RMC is over CoEthernet (Catalyst
@@ -84,6 +87,7 @@ OverEthernet)</li>
 <li>The connectivity between HPE RMC, HPE 3PAR StoreServ, and HPE StoreOnce for management
 traffic is over IP. </li>
 </ul>
+    
 <fig>
 <title>Connectivity</title>
 <image href="media/3par-storeonce-networking.png"/>
@@ -123,7 +127,7 @@ traffic and saves disk space on the backup system. </p>
 <title>Restoring the volume</title>
 <p>If a docker persistent storage volume needs to be restored from backup, the 3PAR volume
 can be restored either from a snapshot saved on the 3PAR or from a backup on StoreOnce.
-Stop any applications using the docker volume. Use vSphere Web UI to Unmount the datastore
+Stop any applications using the docker volume. Use vSphere Web UI to unmount the datastore
 from the vSphere cluster. Use RMC to detach the 3PAR virtual volumes prior to restoring
 the backup. The volume can be restored from a Recovery Set restore point. The Express
 Protect restore point will restore the volume from the StoreOnce system. A Snapshot Set

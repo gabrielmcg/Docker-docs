@@ -3,7 +3,7 @@
 <topic id="verify-certs">
 <title>Verify your certificates</title>
 <body>
-<p>The playbooks do not verify the validatity of the certificate files you suppl so  you should verify them manually 
+<p>The playbooks do not verify the validity of the certificate files you supply so  you should verify them manually 
 before you start your deployment.</p>
 
 <section>

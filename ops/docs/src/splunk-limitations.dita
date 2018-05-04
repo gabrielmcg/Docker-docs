@@ -6,8 +6,8 @@
 <ul>
 <li>The Docker App has a number of open issues
 <ul>
-<li>https://github.com/splunk/docker-itmonitoring/issues/19</li>
-<li>https://github.com/splunk/docker-itmonitoring/issues/20</li>
+<li><xref href="https://github.com/splunk/docker-itmonitoring/issues/19" format="html" scope="external"/></li>
+<li><xref href="https://github.com/splunk/docker-itmonitoring/issues/20" format="html" scope="external"/></li>
 </ul>
 </li>
 <li>The Docker events tab is not working</li>

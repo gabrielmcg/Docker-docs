@@ -11,12 +11,13 @@ environments and includes both monitoring and security features, with built-in u
 on your cloud.
 </p>
     
-<p>
-The load among the three hosts in a hybrid deployment will be shared as per <xref href="architecture-splunk-sysdig.dita#architecture-splunk-sysdig/synergy-ops-architecture" type="fig"/></p>
+<p>The load among the three hosts in a hybrid deployment will be shared as per 
+    <xref href="architecture-splunk-sysdig.dita#architecture-splunk-sysdig/synergy-ops-architecture" type="fig"/>:</p>
 
 <fig id="synergy-ops-architecture">
 <title>Solution architecture: Hybrid Linux and Windows workers with Splunk and Sysdig</title> 
 <image href="media/synergy-ops-architecture.png"/>
 </fig>
+    
 </body>
 </topic>

@@ -4,7 +4,7 @@
 <title>Backing up the Swarm</title>
 <body>
 
-<p> When you backup the swarm, your services and stack definitions are backed up together with the
+<p>When you backup the swarm, your services and stack definitions are backed up together with the
 networks definitions. However, Docker volumes or their contents will not be backed up. (If
 Docker volumes are defined in stacks, they will be re-created when you restore the stacks,
 but their content will be lost). You can backup the swarm using the playbook named
@@ -12,34 +12,35 @@ but their content will be lost). You can backup the swarm using the playbook nam
 folder on your Ansible server. The playbook is invoked as follows: </p>
 
 <codeblock># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml</codeblock>
+    
 <p>This playbook creates two archives in the folder specified by the variable
 <codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the file
 is named using the following pattern:</p>
 
 <codeblock>&lt;backup_dest>/backup_swarm_&lt;vmname>_&lt;timestamp>.tgz
-&lt;backup_dest>/backup_swarm_&lt;vmname>_&lt;timestamp>.vars.tgz
-</codeblock>
+&lt;backup_dest>/backup_swarm_&lt;vmname>_&lt;timestamp>.vars.tgz</codeblock>
 
-<p>where <codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used
+<p><codeph>&lt;vmname></codeph> is the name of the host (in the inventory) that was used
 to take the backup, and <codeph>&lt;timestamp></codeph> is the time at which the backup was
 taken. The file with the extension <codeph>.vars.tgz</codeph> contains information 
 regarding the system that was backed up.</p>
 
 <p>You can override the generated file name by defining the variable <b>backup_name</b> on the
 command line when running the playbook. In the example below: </p>
+    
 <codeblock># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml -e backup_name=<b>my_swarm_backup</b></codeblock>
-<p>the generated files won't have <codeph>&lt;vmname></codeph> or
+    
+<p>The generated files won't have <codeph>&lt;vmname></codeph> or
 <codeph>&lt;timestamp></codeph> appended:</p>
 
 <codeblock>&lt;backup_dest>/my_swarm_backup.tgz
-&lt;backup_dest>/my_swarm_backup.vars.tgz
-</codeblock>
+&lt;backup_dest>/my_swarm_backup.vars.tgz</codeblock>
 
-<note type="warning"><b>Online versus offline backups:</b> By default, The playbook performs online backups.
+<note type="warning"><b>Online versus offline backups:</b> By default, the playbook performs online backups.
 You can take offline backups by setting the variable <codeph>swarm_backup_offline</codeph> to <codeph>"true"</codeph>.
 The playbook will then stop the Docker daemon on the machine used to take the backup (a manager/UCP node).
 Before it does so, the playbook will verify that enough managers are running in the cluster to
-maintain the quroum. If this is not the case, the playbook will exit with an error. For more information, see the Docker
+maintain the quorum. If this is not the case, the playbook will exit with an error. For more information, see the Docker
 documentation at <xref
 href="https://docs.docker.com/engine/swarm/admin_guide/#recover-from-disasterv"
 format="html" scope="external"/></note>
