@@ -40,7 +40,7 @@ More details here: http://curl.haxx.se/docs/sslcerts.html
 <p/>
 </body>
 
-<topic id="d1e4431">
+<topic id="enable-certs">
 <title>Enable certs for browser (Windows 2016 example)</title>
 <body>
 <p>Choose <codeph>Manage computer certificates</codeph> in the control panel</p>
@@ -57,14 +57,15 @@ More details here: http://curl.haxx.se/docs/sslcerts.html
 <image href="media/import-ca-pem.png"  placement="break"/>	
 </fig>
 	
-<p>It should show up in the list of certificates:</p>
+<!--<p>It should show up in the list of certificates:</p>-->
 	
-<fig id="list-certs">
+<!--<fig id="list-certs">
 <title>List certificates</title>	
 <image href="media/list-certs.png"  placement="break"/>
-</fig>
+</fig>-->
 
-<p>You may need to restart your browser for this to take effect:</p>
+<p>It should now show up in the list of certificates. You may need to restart your browser to see the green, 
+ secure lock symbol as shown in <xref href="post-deployment-check-certs.dita#enable-certs/green-https"/></p>
 	
 <fig id="green-https">
 <title>Secure HTTPS</title>

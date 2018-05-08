@@ -7,37 +7,44 @@
 <title>Network variables</title>
 
 
-<tgroup cols="2">
+<tgroup cols="3">
 <colspec colnum="1" colname="c1" align="left"/>
 <colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
 <thead>
 <row>
 <entry>Variable</entry>
+<entry>File</entry>    
 <entry>Description</entry>
 </row>
 </thead>
 <tbody>
 <row>
 <entry>nic_name</entry>
+<entry>group_vars/vars</entry>    
 <entry>Name of the device, for RHEL this is typically
 <codeph>ens192</codeph> and it is recommended to leave it as
 is.</entry>
 </row>
 <row>
 <entry>gateway</entry>
+<entry>group_vars/vars</entry>    
 <entry>IP address of the gateway to be used</entry>
 </row>
 <row>
 <entry>dns</entry>
+<entry>group_vars/vars</entry>    
 <entry>List of DNS servers to be used, in list format, i.e.
 ['<codeph>10.10.173.1</codeph>','<codeph>10.10.173.2</codeph>'...]</entry>
 </row>
 <row>
 <entry>domain_name</entry>
+<entry>group_vars/vars</entry>    
 <entry>Domain name for your Virtual Machines</entry>
 </row>
 <row>
 <entry>ntp_server</entry>
+<entry>group_vars/vars</entry>    
 <entry>List of NTP servers to be used, in list format, i.e.
 ['<codeph>1.2.3.4</codeph>','<codeph><xref format="html"
 scope="external" href="http://0.us.pool.net.org/"

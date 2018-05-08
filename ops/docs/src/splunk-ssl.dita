@@ -6,7 +6,7 @@ certificates</title>
 <body>
     
 <section>
-<title>Overview of enabling SSL</title>
+<!--<title>Overview of enabling SSL</title>-->
  
 <p>The procedure for enabling SSL between the universal forwarders and the Splunk indexers using your
 certificates is described below. In summary, the following steps are required:</p>

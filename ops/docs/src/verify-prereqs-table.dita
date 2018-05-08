@@ -38,8 +38,8 @@ L3 gateway for this subnet. </entry>
 <row>
 <entry>DNS </entry>
 <entry>You will need to know the IP addresses of your DNS server. In
-addition, all the VMs you configure in the inventory should have their
-names registered in DNS. In addition, you will need to know the domain name to
+addition, all the VMs you configure in the inventory must have their
+names registered in DNS prior to deployment. In addition, you will need to know the domain name to
 use for configuring the virtual machines (such as <codeph>example.com</codeph>)
 </entry>
 </row>

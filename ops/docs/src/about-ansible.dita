@@ -8,7 +8,7 @@ configuration management and application deployment.</p>
 
 <p>As with most configuration management software, Ansible has two types of servers: the
 controlling machine and the nodes. A single controlling machine orchestrates the nodes
-by deploying modules to the nodes over SSH. The modules are temporarily stored on the
+by deploying modules to the Linux nodes over SSH. The modules are temporarily stored on the
 nodes and communicate with the controlling machine through a JSON protocol over the
 standard output. When Ansible is not managing nodes, it does not consume resources
 because no daemons or programs are executing for Ansible in the background. Ansible uses

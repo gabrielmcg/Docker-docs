@@ -6,7 +6,7 @@
 
 <p>When you backup DTR, you save the following data/metadata: </p>
 <table id="backup-dtr-data-meta-table-content" frame="none">
-<title>UCP data backed up</title>
+<title>DTR data backed up</title>
 <tgroup cols="3">
 <colspec colnum="1" colname="c1" align="left"/>
 <colspec colnum="2" colname="c2" align="left"/>

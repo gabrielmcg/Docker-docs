@@ -3,7 +3,8 @@
 <topic id="hardware">
 <title>Hardware</title>
 <body>
-<p><xref href="hardware.dita#hardware/hardware-table-content"/> lists the hardware components that are utilized in this Reference Configuration</p>
+<p><xref href="hardware.dita#hardware/hardware-table-content"/> lists the hardware components that are utilized in 
+    this Reference Configuration.</p>
 
 <table id="hardware-table-content" frame="none">
 <title>Hardware</title>
@@ -29,7 +30,7 @@
 </row>
  
 <row>
-<entry>HPE 3PAR StoreServ </entry>
+<entry>HPE 3PAR StoreServ 8200 </entry>
 <entry>Provides the storage for the virtual machines and the Docker backups</entry>
 </row>
 

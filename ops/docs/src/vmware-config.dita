@@ -8,7 +8,7 @@
 
 <table id="vmware-variables-table-conref" conref="vmware-variables-table.dita#vmware-variables-table/vmware-variables-table-content">
 <title>VMware variables</title>
-<tgroup cols="2">
+<tgroup cols="3">
 <tbody>
 <row>
 <entry/>

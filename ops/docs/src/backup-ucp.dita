@@ -4,7 +4,7 @@
 <title>Backing up the Universal Control Plane (UCP)</title>
 <body>
 
-<p>When you backup UCP, you save the following data/metadata: </p>
+<p>When you backup UCP, you save the data/metadata outlined in <xref href="backup-ucp.dita#backup-ucp/backup-ucp-data-meta-table-content" type="table"/>: </p>
 <table id="backup-ucp-data-meta-table-content" frame="none">
 <title>UCP data backed up</title>
 <!--<colgroup xmlns:ac="ac" xmlns:ri="ri">

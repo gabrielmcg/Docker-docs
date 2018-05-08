@@ -16,7 +16,9 @@ download and install the latest release of vDVS driver.</p>
 <p>More information on how to download and install the driver can be found at <xref
 format="html" scope="external"
 href="http://vmware.github.io/vsphere-storage-for-docker/documentation/install.html"
->http://vmware.github.io/vsphere-storage-for-docker/documentation/install.html</xref></p>
+>http://vmware.github.io/vsphere-storage-for-docker/documentation/install.html</xref>.
+The version of the driver tested in this configuration is 0.21.2.
+</p>
 
 <note type="note">
 <p>You cannot mount the same persistent volume created through vSphere Docker Volume

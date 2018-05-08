@@ -3,6 +3,10 @@
 <topic id="backup-restore">
 <title>Backup and restore</title>
 <body>
-<p></p>
+<p>This reference configuration provides playbooks and scripts to help you back up and restore:</p>
+<ul>
+<li>Docker UCP and DTR</li>
+<li>Docker volumes</li>
+</ul>
 </body>
 </topic>

@@ -10,13 +10,14 @@
 <title>Environment variables</title>
 
 
-<tgroup cols="2">
+<tgroup cols="3">
 <colspec colnum="1" colname="c1"/>
 <colspec colnum="2" colname="c2"/>
-
+<colspec colnum="3" colname="c3" align="left"/>
 <thead>
 <row>
 <entry>Variable</entry>
+<entry>File</entry>    
 <entry>Description</entry>
 </row>
 </thead>
@@ -24,6 +25,7 @@
 <tbody>
 <row>
 <entry>env</entry>
+<entry>group_vars/vars</entry>    
 <entry>Dictionary containing all environment variables. It contains
 three entries described below. Please leave empty the proxy related
 settings if not required:<ul>

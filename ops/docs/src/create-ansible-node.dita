@@ -41,7 +41,7 @@ environment, you will have to install the <codeph>yum-utils</codeph> package.
 # yum-config-manager --enable rhel-7-server-extras-rpms</codeblock>    
     
     
-<p>Install Ansible 2.4.2</p>
+<p>Install Ansible 2.4.2 or higher. The playbooks have been tested with 2.4.2 and 2.5.0</p>
 
 <codeblock># yum install ansible</codeblock>    
     
@@ -56,7 +56,7 @@ to function as expected. (Update pip if requested).
 # pip install --upgrade pip 
 # pip install cryptography 
 # pip install pysphere 
-# pip install "pywinrm&gt;=0.2.2"</codeblock>
+# pip install --ignore-installed "pywinrm&gt;=0.2.2"</codeblock>
     
 
 </body>

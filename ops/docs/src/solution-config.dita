@@ -26,7 +26,6 @@ an enterprise production deployment is 3 UCPs and 3 DTRs.
 
 <ul>  
 <li>3 Docker Swarm Linux worker VM nodes for container workloads </li>
-<li>3 Docker Swarm Windows worker VM nodes for container workloads (optional) </li> 
 </ul>
 
 <p>The Docker worker nodes will be co-located with the UCP and DTR nodes in a 3 physical node deployment, 
@@ -50,8 +49,16 @@ distributed evenly across 3 physical nodes.</p>
 <li>1 NFS server VM for storage of Docker DTR images </li>
 </ul>
 
-<p>With the addition of the NFS and logging VMs, a total of 14 VMs are created for the default Linux-only deployment. The hybrid
-deployment will add 3 Windows worker nodes to this figure. In addition to these VMs, the playbooks also set up the Docker persistent storage plug-in from VMware.  
+<p>With the addition of the NFS and logging VMs, a total of 14 VMs are created for the default Linux-only deployment.  In addition to these VMs, the playbooks also set up the Docker persistent storage plug-in from VMware.  
 The vSphere Docker volume plug-in  facilitates the storage of data in a shared datastore that can be accessed from any machine in the cluster.</p>
+
+
+<ul>
+<li>3 Docker Swarm Windows worker VM nodes for container workloads (optional) </li>     
+</ul>
+   
+<p>The hybrid deployment will typically add 3 Windows worker nodes to this figure, co-located with the Linux workers. Note that some of the application 
+    software supported by this configuration does not currently run on Windows, for example, the Sysdig Software Agent. </p>   
+
 </body>
 </topic>

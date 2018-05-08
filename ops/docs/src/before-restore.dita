@@ -9,7 +9,7 @@ folder on your Ansible server. If you have used timestamps in the naming of your
 use them to determine the chronological order. If you used the <codeph>backup.sh</codeph> script specifying a date prefix,
 you can use that to identify the matching set of backup files. You should 
 choose the files in the following reverse chronological order, from the most recent to the oldest file. 
-Make sure you restore both the *.tgz and the *.vars.tgz files.</p> 
+Make sure you restore both the <codeph>*.tgz</codeph> and the <codeph>*.vars.tgz</codeph> files.</p> 
 
 <ol>
 <li>DTR images backup</li>

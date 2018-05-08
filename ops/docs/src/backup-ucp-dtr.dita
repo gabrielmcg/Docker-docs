@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="backup-ucp-dtr">
-    <title>Backup UCP and DTR</title>
+<title>Backup UCP and DTR</title>
 
 <body>   
+<p>The playbooks support backing up the swarm, UCP, DTR metadata and DTR images.</p>
 </body>
 </topic>

@@ -25,7 +25,7 @@ audited to help you identify anomalous actions, along with taking snapshots of a
 pre-and-post a policy violation. </p>
 
 <p>The implementation in this solution uses the Software as a Service (SaaS) version of Sysdig.
-The playbooks deploy a Sysdig Agent software on each UCP, DTR and Linux worker node, as well as the NFS, logger and load balancer VMs
+The playbooks deploy Sysdig Agent software on each UCP, DTR and Linux worker node, as well as the NFS, logger and load balancer VMs
 and captured data is relayed back to your Sysdig SaaS Cloud portal. </p>
 
 <note type="note">The Sysdig functionality is not turned on by default in this solution - see

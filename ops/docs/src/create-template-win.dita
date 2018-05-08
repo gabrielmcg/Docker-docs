@@ -89,7 +89,7 @@ reboot.</li>
 
 <p>Shutdown VM, and untick  <codeph>Connect CD/DVD</codeph> so that the Windows 2016 ISO is no
 longer  mounted. Boot the Windows VM one final time and enter regional settings applicable to your location
-and keyboard mapping, then Shutdown VM.</p>
+and keyboard mapping, enter a password then Shutdown VM.</p>
 
 <note type="note">The <codeph>vmware_guest</codeph> module used by the playbooks will generate a new SID.</note>
     

@@ -101,7 +101,7 @@ with the Backup Appliance Persona. The Backup persona allows the RMC to manage s
 and Express Protect Backups. During installation, RMC configuration should specify Data
 Protection of RMC Core. The initial configuration of backups can be set up using the
 Protection Wizard. The Protection Wizard assists with creation of a Recovery Set. Create a
-Recovery Set and select to protect your DockerBackup volume. Once you have created your
+Recovery Set and select to protect your <codeph>DockerBackup</codeph> volume. Once you have created your
 Recovery Set, the next step is to create Protection Jobs. The Auto Protection Job
 simplifies the initial configuration of policies. The Auto Protection Job will
 automatically configure the storage, define default backup policies and protection

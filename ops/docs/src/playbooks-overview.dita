@@ -7,10 +7,16 @@
 <topic id="site">
 <title>site.yml and related playbooks</title>
 <body>  
+
+<p>There are two main entry points for the playbooks:</p>
+    
+<ul>
+<li><codeph>site.yml</codeph> deploys a Linux-only environment</li>
+<li><codeph>hybrid.yml</codeph> deploys a mixed environment with Linux and Windows worker nodes</li>    
+</ul>
  
- 
-<p>The playbook <codeph>./site.yml</codeph> is the day 0 playbook you use to deploy the solution. It is the main entry point and invokes the 
-playbooks described in this section.</p>
+<p>The playbook <codeph>./site.yml</codeph> is the day 0 playbook you use to deploy the solution and it invokes the 
+following playbooks:</p>
     
 <ul>
 	
@@ -139,8 +145,9 @@ automatically configure Sysdig, you must uncomment this line.
 <title>Windows playbooks</title>
     
 <body>
-    
+ 
 <ul>  
+<li><codeph>hybrid.yml</codeph> invokes the following  Windows-specific playbooks, together with the preceding ones for Linux</li>       
 <li><codeph>playbooks/create_windows_vms.yml</codeph> will create all the necessary Windows 2016 VMs 
 for the environment based on the Windows VM Template defined in the <codeph>win_vm_template</codeph> variable.</li>   
     
@@ -163,7 +170,7 @@ on your Windows VMs</li>
 <body>
     
 <section>
-<title>Backup playbooks</title>
+<p>The following playbooks are used to perform backups:</p>
     
 <ul>
 <li><codeph>playbooks/backup_swarm.yml</codeph> is used to back up the swarm data</li>
@@ -176,7 +183,7 @@ on your Windows VMs</li>
 </section>
     
 <section>
-<title>Restore playbooks</title>
+<p>The following playbooks are used to restore the system:</p>
     
 <ul>
 <li><codeph>playbooks/restore_dtr_images.yml</codeph> is used to restore DTR images</li>
@@ -218,7 +225,7 @@ password-less log in to every other node. As this is not essential and can be re
 <section>
 
 <ul>
-<li><codeph>backup.sh</codeph> can be used to take a backup of the swarm, UCP DTR and the DTR images in one go.</li>
+<li><codeph>backup.sh</codeph> can be used to take a backup of the swarm, UCP, DTR metadata and the DTR images in one go.</li>
 <li><codeph>restore_dtr.sh</codeph> can be used to restore DTR metadata and DTR images.</li>
 <li><codeph>scale_worker.sh</codeph> can be used to scale the worker nodes.</li>
 </ul>

@@ -12,7 +12,7 @@
 <ph>The Ansible log is stored in the <codeph>ops</codeph> folder of the repo (<codeph>/root/Docker-Synergy/ops</codeph>). If the deployment fails, you may find useful hints in this log</ph>
 </p>
 
-<p>To see how to check if the certs have been deployed correctly, see Appendix D.</p>
+<p>To see how to check if your certs have been deployed correctly, see Appendix D.</p>
 </body>
 
 	

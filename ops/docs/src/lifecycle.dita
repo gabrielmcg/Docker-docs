@@ -4,15 +4,14 @@
 <title>Solution lifecycle management</title>
 <body>
 <section>
-<title>Introduction</title>
+
 <p>Lifecycle management with respect to this solution refers to the maintenance and
 management of software and hardware of various components that make up the solution
 stack. Lifecycle management is required to keep the solution up-to-date and ensure
 that the latest versions of the software are running to provide optimal performance,
-security and fix any existing defects within the product.</p>
+security and to fix any existing defects within the product.</p>
 <p>In this section, we will cover life cycle management of the different components that
-are used in this solution. </p>
-<p>The lifecycle of the following stacks need to be maintained and managed. </p>
+are used in this solution. The lifecycle of the following stacks need to be maintained and managed: </p>
 <ol>
 <li>Monitoring Tools (Splunk or Prometheus and Grafana)</li>
 <li>Docker Enterprise Edition Environment</li>
@@ -36,7 +35,7 @@ non-disruptive to the production workload. </p>
 <p>More information is available at <xref
 href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310"
 format="html" scope="external">Best Practices for HPE Synergy Firmware and Driver
-Updates</xref></p>
+Updates</xref>.</p>
 </section>
 <section>
 <title>VMware Components</title>

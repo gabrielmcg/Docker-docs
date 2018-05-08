@@ -7,7 +7,7 @@
 
 <table id="network-config-table-conref" conref="network-config-table.dita#network-config-table/network-config-table-content">
 <title>Network variables</title>
-<tgroup cols="2">
+<tgroup cols="3">
 <tbody>
 <row>
 <entry/>

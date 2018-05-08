@@ -145,15 +145,15 @@
 
 <row>
 <entry>Total RAM required (per node)</entry>
-<entry>92</entry>
-<entry>96</entry>
-<entry>96</entry>
+<entry>156</entry>
+<entry>160</entry>
+<entry>160</entry>
 </row>
 
 <row>
 <entry>Total RAM required</entry>
 <entry/>
-<entry>284</entry>
+<entry>476</entry>
 <entry/>
 </row>
 
