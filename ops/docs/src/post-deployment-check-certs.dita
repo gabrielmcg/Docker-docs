@@ -43,14 +43,18 @@ More details here: http://curl.haxx.se/docs/sslcerts.html
 <topic id="enable-certs">
 <title>Enable certs for browser (Windows 2016 example)</title>
 <body>
-<p>Choose <codeph>Manage computer certificates</codeph> in the control panel</p>
+<p>Choose <codeph>Manage computer certificates</codeph> in the control panel as shown in
+<xref href="post-deployment-check-certs.dita#enable-certs/manage-computer-certificates" type="fig"/>
+</p>
 	
 <fig id="manage-computer-certificates">
 <title>Manage computer certificates</title>
 <image href="media/manage-computer-certificates.png" placement="break"/>	
 </fig>	
 
-<p>Import the <codeph>ca.pem</codeph> for UCP into the Trusted Root Certification Authorities</p>
+<p>Import the <codeph>ca.pem</codeph> for UCP into the Trusted Root Certification Authorities, as shown in
+<xref href="post-deployment-check-certs.dita#enable-certs/import-ca-pem" type="fig"/>
+</p>
 
 <fig id="import-ca-pem">
 <title>Import the ca.pem</title>	

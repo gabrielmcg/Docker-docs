@@ -61,7 +61,9 @@ backup is complete, each subsequent backup is incremental, making it significant
 than traditional backup methods, particularly for higher volumes of data. Backups to HPE
 StoreOnce are block-level copies of volumes, de-duplicated to save space. Because RMC
 snapshots are self-contained, fully independent volumes, they can be restored to any 3PAR
-array in the event of a disaster.</p>
+array in the event of a disaster. See 
+    <xref href="backup-restore-docker-volumes.dita#backup-solution/rmc-storeonce" type="fig"/> 
+    for an overview of the architecture.</p>
     
 <p>HPE Recovery Manager Central enables you to replicate data from the source storage system (HPE 3PAR StoreServ) to
 the destination storage system (HPE StoreOnce). The replication is based on point-in-time
@@ -75,7 +77,7 @@ be deployed to a VMware vCenter managed environment. For this solution, the stan
 "RMC only" is installed. If HPE RMC is installed in the HPE Synergy environment, iSCSI connection
 to the HPE 3PAR StoreServ is required.</p>
     
-<fig>
+<fig id="rmc-storeonce">
 <title>HPE Recovery Manger Central and StoreOnce</title>
 <image href="media/rmc-storeonce.png"/>
 </fig>
@@ -87,8 +89,12 @@ OverEthernet)</li>
 <li>The connectivity between HPE RMC, HPE 3PAR StoreServ, and HPE StoreOnce for management
 traffic is over IP. </li>
 </ul>
-    
-<fig>
+
+<p><xref href="backup-restore-docker-volumes.dita#backup-solution/3par-storeonce-networking"></xref>
+    illustrates the connectivity between various components.
+</p>
+
+<fig id="3par-storeonce-networking">
 <title>Connectivity</title>
 <image href="media/3par-storeonce-networking.png"/>
 
@@ -101,19 +107,23 @@ with the Backup Appliance Persona. The Backup persona allows the RMC to manage s
 and Express Protect Backups. During installation, RMC configuration should specify Data
 Protection of RMC Core. The initial configuration of backups can be set up using the
 Protection Wizard. The Protection Wizard assists with creation of a Recovery Set. Create a
-Recovery Set and select to protect your <codeph>DockerBackup</codeph> volume. Once you have created your
+Recovery Set as shown in <xref href="backup-restore-docker-volumes.dita#backup-solution/recovery-set-overview" type="fig"/>
+and select to protect your <codeph>DockerBackup</codeph> volume. Once you have created your
 Recovery Set, the next step is to create Protection Jobs. The Auto Protection Job
 simplifies the initial configuration of policies. The Auto Protection Job will
 automatically configure the storage, define default backup policies and protection
 policies and will schedule snapshots or express protect jobs with the created
 policies.</p>
-<fig>
+    
+<fig id="recovery-set-overview">
 <title>Recovery Set Overview</title>
 <image href="media/recovery-set-overview.png"/>
 </fig>
-<p>RMC uses the Express Protect feature to enable the backup of the snapshot data from the
+<p>RMC uses the Express Protect feature, as shown in <xref href="backup-restore-docker-volumes.dita#backup-solution/express-protect" type="fig"/>
+    to enable the backup of the snapshot data from the
 3PAR array to the StoreOnce system for deduplication and long-term retention. </p>
-<fig>
+    
+<fig id="express-protect">
 <title>Express Protect</title>
 <image href="media/express-protect.png"/>
 </fig>
@@ -129,10 +139,12 @@ traffic and saves disk space on the backup system. </p>
 can be restored either from a snapshot saved on the 3PAR or from a backup on StoreOnce.
 Stop any applications using the docker volume. Use vSphere Web UI to unmount the datastore
 from the vSphere cluster. Use RMC to detach the 3PAR virtual volumes prior to restoring
-the backup. The volume can be restored from a Recovery Set restore point. The Express
+the backup. The volume can be restored from a Recovery Set restore point as shown in
+<xref href="backup-restore-docker-volumes.dita#backup-solution/restore-points" type="fig"/>. The Express
 Protect restore point will restore the volume from the StoreOnce system. A Snapshot Set
 restore point will restore a 3PAR StoreServ snapshot.</p>
-<fig>
+    
+<fig id="restore-points">
 <title>Restore points</title>
 <image href="media/restore-points.png"/>
 </fig>

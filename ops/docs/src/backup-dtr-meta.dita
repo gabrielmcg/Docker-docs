@@ -4,7 +4,9 @@
 <title>Backing up the Docker Trusted Registry (DTR)</title>
 <body>
 
-<p>When you backup DTR, you save the following data/metadata: </p>
+<p>When you backup DTR, you save the data/metadata outlined in 
+   <xref href="backup-dtr-meta.dita#backup-dtr-meta/backup-dtr-data-meta-table-content" type="table"/>:</p>
+    
 <table id="backup-dtr-data-meta-table-content" frame="none">
 <title>DTR data backed up</title>
 <tgroup cols="3">

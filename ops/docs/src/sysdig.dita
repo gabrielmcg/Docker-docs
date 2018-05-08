@@ -6,9 +6,11 @@
 <p>Sysdig's approach to Docker monitoring uses transparent instrumentation to see inside
 containers from the outside, with no need for agents in each container. Metrics from Docker
 containers, and from your applications running inside them, are aggregated in real-time across
-each service to provide meaningful monitoring dashboards and alerts for your application.</p>
+each service to provide meaningful monitoring dashboards and alerts for your application.
+<xref href="sysdig.dita#sysdig/sysdig-arch" type="fig"/> provides an overview of the Sysdig architecture.
+</p>
   
-<fig>
+<fig id="sysdig-arch">
   <title>Sysdig architecture</title>
   <image href="media/sysdig-architecture.png"/>
 </fig>  

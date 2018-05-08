@@ -19,7 +19,8 @@ your high availability (HA) needs.</p>
 <body>
 <p>HPE Enterprise Containers with Docker EE also deploys load balancers in the system to help with
                 container traffic management. There are three load balancer VMs – UCP load balancer,
-                DTR load balancer, and Docker worker node load balancer. Since these load balancers
+                DTR load balancer, and Docker worker node load balancer 
+                as shown in <xref href="ha.dita#load-balancers/lbs" type="fig"/>. Since these load balancers
                 exist in VMs, they have some degree of HA but may incur some downtime during the
                 restoration of these VMs due to a planned or unplanned outage. For optimal HA
                 configuration, the user should consider implementing a HA load balancer architecture
@@ -30,7 +31,7 @@ your high availability (HA) needs.</p>
 <p/>
 
 
-<fig>
+<fig id="lbs">
 <title>Load balancer architecture</title>
 <!--<image keyref="load-balancers"/>-->
 <image href="media/load-balancers.png"/>
