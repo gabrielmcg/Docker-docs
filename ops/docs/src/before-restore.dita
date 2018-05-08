@@ -42,7 +42,7 @@ backup_source=""
 ucp_version="<b>2.2.7</b>"
 dtr_version=""</codeblock>
 
-<p>Take note of the replica ID (ad5204e8a4d0), the version of DTR (2.4.3) and the version of UCP (2.2.7).</p>
+<p>Take note of the replica ID (<codeph>ad5204e8a4d0</codeph>), the version of DTR (<codeph>2.4.3</codeph>) and the version of UCP (<codeph>2.2.7</codeph>).</p>
 
 <p><b>Step 3:</b> Populate the <codeph>group_vars/backups</codeph> file</p>   
 

@@ -39,7 +39,7 @@ server. </entry>
 <row>
 <entry>backup_dest</entry>
 <entry><b>group_vars/backup</b></entry>
-<entry>This variable should point to an existing folder on your ansible box where the
+<entry>This variable should point to an existing folder on your Ansible box where the
 <codeph>root</codeph> user has write access. All the backups will be stored in this folder. For
 example, <codeph>/root/backup</codeph></entry>
 </row>

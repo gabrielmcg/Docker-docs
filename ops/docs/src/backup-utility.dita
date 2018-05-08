@@ -4,7 +4,7 @@
 <title>Backup Utility</title> 
 <body>
 
-<p>The script <codeph>backup.sh</codeph> can be used to take a backup of the swarm, UCP DTR and the DTR images in one go. 
+<p>The script <codeph>backup.sh</codeph> can be used to take a backup of the swarm, UCP, DTR metadata and the DTR images in one go. 
 You can pass this script an argument (tag) that will be used to prefix the backup filenames, thereby overriding the default naming. 
 <xref href="backup-utility.dita#backup-utility/backup-utility-table-content" type="table"/> 
 shows the file names produced by <codeph>backup.sh</codeph> based on the argument passed in the command line.    
@@ -49,7 +49,7 @@ and the corresponding <codeph>.vars.tgz</codeph> files</entry>
 
 
 <p>In addition, the <codeph>backup.sh</codeph> script accepts an optional switch that will let you specify the location of the password file that will 
-    be passed to the <codeph>ansible-playbook</codeph> commands in the script. This is required if you encrypted the  <codeph>group_vars/vault</codeph> file. 
+    be passed to the <codeph>ansible-playbook</codeph> commands in the script. This is required if you have encrypted the  <codeph>group_vars/vault</codeph> file. 
     The general syntax for this script is as follows:
 </p>
 

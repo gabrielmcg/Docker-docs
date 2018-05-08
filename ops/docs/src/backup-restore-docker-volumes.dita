@@ -12,7 +12,7 @@
 separate Virtual Volume created on the HPE 3PAR StoreServ and presented to all the hosts in
 the vSphere cluster. </li>
 <li>Backup software must be available. HPE Recovery Manager Central and
-HPE StoreServ is recommended but other customer backup/restore solutions are acceptable. </li>
+HPE StoreServ is recommended but other customer backup and restore solutions are acceptable. </li>
 </ul>
 
 
@@ -23,7 +23,7 @@ HPE StoreServ is recommended but other customer backup/restore solutions are acc
 <li>Volumes may not be in use when a volume is cloned. Any container that has the volume
 attached must be paused prior to creating the clone. The container can be resumed once the
 clone is complete.</li>
-<li>When docker volumes need to be restored from backup, the backup datastore needs to be
+<li>When Docker volumes need to be restored from backup, the backup datastore needs to be
 detached from all vSphere cluster servers prior to restoration.</li>
 </ul>
 
@@ -106,7 +106,9 @@ setup and configuration of RMC and StoreOnce. When RMC is installed, it can be c
 with the Backup Appliance Persona. The Backup persona allows the RMC to manage snapshots
 and Express Protect Backups. During installation, RMC configuration should specify Data
 Protection of RMC Core. The initial configuration of backups can be set up using the
-Protection Wizard. The Protection Wizard assists with creation of a Recovery Set. Create a
+Protection Wizard. The Protection Wizard assists with creation of a Recovery Set. 
+</p>
+<p>Create a
 Recovery Set as shown in <xref href="backup-restore-docker-volumes.dita#backup-solution/recovery-set-overview" type="fig"/>
 and select to protect your <codeph>DockerBackup</codeph> volume. Once you have created your
 Recovery Set, the next step is to create Protection Jobs. The Auto Protection Job
@@ -119,7 +121,7 @@ policies.</p>
 <title>Recovery Set Overview</title>
 <image href="media/recovery-set-overview.png"/>
 </fig>
-<p>RMC uses the Express Protect feature, as shown in <xref href="backup-restore-docker-volumes.dita#backup-solution/express-protect" type="fig"/>
+<p>RMC uses the Express Protect feature, as shown in <xref href="backup-restore-docker-volumes.dita#backup-solution/express-protect" type="fig"/>,
     to enable the backup of the snapshot data from the
 3PAR array to the StoreOnce system for deduplication and long-term retention. </p>
     
@@ -135,9 +137,9 @@ traffic and saves disk space on the backup system. </p>
 
 <section>
 <title>Restoring the volume</title>
-<p>If a docker persistent storage volume needs to be restored from backup, the 3PAR volume
+<p>If a Docker persistent storage volume needs to be restored from backup, the 3PAR volume
 can be restored either from a snapshot saved on the 3PAR or from a backup on StoreOnce.
-Stop any applications using the docker volume. Use vSphere Web UI to unmount the datastore
+Stop any applications using the Docker volume. Use vSphere Web UI to unmount the datastore
 from the vSphere cluster. Use RMC to detach the 3PAR virtual volumes prior to restoring
 the backup. The volume can be restored from a Recovery Set restore point as shown in
 <xref href="backup-restore-docker-volumes.dita#backup-solution/restore-points" type="fig"/>. The Express

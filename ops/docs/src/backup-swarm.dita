@@ -38,7 +38,7 @@ command line when running the playbook. In the example below: </p>
 
 <note type="warning"><b>Online versus offline backups:</b> By default, the playbook performs online backups.
 You can take offline backups by setting the variable <codeph>swarm_backup_offline</codeph> to <codeph>"true"</codeph>.
-The playbook will then stop the Docker daemon on the machine used to take the backup (a manager/UCP node).
+The playbook will then stop the Docker daemon on the machine used to take the backup (a manager or UCP node).
 Before it does so, the playbook will verify that enough managers are running in the cluster to
 maintain the quorum. If this is not the case, the playbook will exit with an error. For more information, see the Docker
 documentation at <xref

@@ -30,9 +30,10 @@ certificates is described below. In summary, the following steps are required:</
     
 <title>Limitations</title>
 
-SSL only works with Linux worker nodes. The Universal Forwarders verify that the indexers they connect to have a certificate signed
+<p>SSL only works with Linux worker nodes. The Universal Forwarders verify that the indexers they connect to have a certificate signed
 by the configured root CA and that the Common Name in the certificate presented by the
-indexer matches its FQDN as listed by the variable
+indexer matches its FQDN as listed by the variable</p>
+ 
 <codeph>splunk_architecture_forward_servers</codeph>.
 
 </section>
@@ -127,7 +128,7 @@ splunk_architecture_forward_servers:
 
 
 <section>
-<title>Hybrid environment Linux/ Windows</title>
+<title>Hybrid environment Linux / Windows</title>
 <p>Currently, you cannot deploy your own certificates for use by the Universal Forwarders
 deployed on Windows machines. If you want to have your Linux machines in a hybrid deployment to use SSL, proceed as
 follows.</p>

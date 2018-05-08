@@ -69,10 +69,10 @@ group.</li>
 [<codeph>logger</codeph>] group.</li>
 </ul>
 
-<p>If you wish to configure your nodes with different specifications rather than the ones
+<p>If you wish to configure your nodes with different specifications to the ones
 defined by the group, it is possible to declare the same variables at the node level,
 overriding the group value. For instance, you could have one of your workers with higher
-specifications by doing:</p>
+specifications by setting:</p>
 
 <codeblock>[worker] 
 worker01 ip_addr='10.0.0.10/16' esxi_host='esxi1.domain.local' 
@@ -84,7 +84,7 @@ cpus='4' ram='16384' disk2_size='200'</codeblock>
 
 <p>In the example above, the <codeph>worker03</codeph> node would have 4 times more CPU and
 double the RAM compared to the rest of the worker nodes.</p>
-<p>The different variables you can use are as described in 
+<p>The different variables you can use are described in 
 <xref href="edit-inventory.dita#edit-inventory/variables-local-table-content"></xref> below. They are all
 mandatory unless otherwise specified.</p>
 

@@ -62,7 +62,7 @@ used in the following playbooks:
 <row>
 <entry>ansible_user</entry>
 <entry><b>group_vars/win_worker.yml</b></entry>  
-<entry>Defaults to the Windows user account <codeph>win_username</codeph> as specified in <codeph>groupr_vars/vars</codeph> </entry>
+<entry>Defaults to the Windows user account <codeph>win_username</codeph> as specified in <codeph>group_vars/vars</codeph> </entry>
 </row>   
 
 <row>

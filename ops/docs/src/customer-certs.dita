@@ -34,10 +34,10 @@ switch</li>
 <li>If <b>ucp_certs_dir</b> is defined, this is a folder on the Ansible
 machine that must contain 3 files:
 <ul>
-<li><codeph>ca.pem</codeph>, this is the root CA certificate in PEM format</li>
-<li><codeph>cert.pem</codeph>, this is the server certificate optionally followed by
+<li><codeph>ca.pem</codeph>, the root CA certificate in PEM format</li>
+<li><codeph>cert.pem</codeph>, the server certificate optionally followed by
 intermediate CAs</li>
-<li><codeph>key.pem</codeph>, this is the private key that comes with the <codeph>cert.pem</codeph>
+<li><codeph>key.pem</codeph>,  the private key that comes with the <codeph>cert.pem</codeph>
 certificates</li>
 </ul>    
 </li>
@@ -54,10 +54,10 @@ certificates</li>
 <li>If <b>dtr_certs_dir</b> is defined, this is a folder on the
 Ansible machine that must contain 3 files: 
 <ul>
-<li><codeph>ca.pem</codeph>, this is the root CA certificate in PEM format</li>
-<li><codeph>cert.pem</codeph>, this is the server certificate optionally followed by
+<li><codeph>ca.pem</codeph>,  the root CA certificate in PEM format</li>
+<li><codeph>cert.pem</codeph>, the server certificate optionally followed by
 intermediate CAs</li>
-<li><codeph>key.pem</codeph>, this is the private key that comes with the <codeph>cert.pem</codeph>
+<li><codeph>key.pem</codeph>, the private key that comes with the <codeph>cert.pem</codeph>
 certificates</li>
 </ul>
 </li>

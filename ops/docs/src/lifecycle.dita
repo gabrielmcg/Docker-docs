@@ -75,7 +75,7 @@ conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-c
 <section>
 <title>Red Hat Enterprise Linux operating system</title>
 <p>This solution is built using Red Hat Enterprise Linux (see <xref href="lifecycle.dita#lifecycle/rhel-components-table-content" type="table"/>) as the base operating system. When upgrading the operating system on the 
-VMs, first verify that the OS version is compatible to run Docker EE by looking at the Docker OS compatibility metric.</p>
+VMs, first verify that the OS version is compatible with Docker EE by looking at the Docker OS compatibility matrix.</p>
 
 
 <table id="rhel-components-table-content" frame="none">
@@ -184,7 +184,7 @@ format="html" scope="external">Docker Compatibility Matrix</xref></li>
 <section>
 <title>Monitoring Tools</title>
     
-<p>To learn more about upgrading Splunk, see the relevant documentation at <xref href="http://docs.splunk.com/Documentation/Splunk/7.0.3/Installation/HowtoupgradeSplunk" format="html" scope="external">How to upgrade Splunk Enterprise</xref></p>    
+<p>To learn more about upgrading Splunk, see the relevant documentation at <xref href="http://docs.splunk.com/Documentation/Splunk/7.0.3/Installation/HowtoupgradeSplunk" format="html" scope="external">How to upgrade Splunk Enterprise</xref>.</p>    
 
 <p>The Sysdig agent runs as a container and the latest version is pulled from the Docker hub on first installation. Re-run the <codeph>install_sysdig.yml</codeph> playbook
 to update to the newest version if required.</p>

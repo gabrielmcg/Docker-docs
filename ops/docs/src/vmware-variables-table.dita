@@ -90,7 +90,7 @@ datastore(s) must exist before you run the playbooks.</entry>
 <row>
 <entry>vsphere_plugin_version</entry>
 <entry>group_vars/vars</entry>    
-<entry>Version of the vSphere plugin for Docker. The default is 0.20 which is the latest
+<entry>Version of the vSphere plugin for Docker. The default is 0.21.2 which is the latest
 version at the time of writing this document. The version of the plugin should match
 the version of the vSphere Installation Bundle (VIB) that you installed on the ESXi
 servers.</entry>

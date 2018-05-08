@@ -46,9 +46,7 @@ is.</entry>
 <entry>ntp_server</entry>
 <entry>group_vars/vars</entry>    
 <entry>List of NTP servers to be used, in list format, i.e.
-['<codeph>1.2.3.4</codeph>','<codeph><xref format="html"
-scope="external" href="http://0.us.pool.net.org/"
->0.us.pool.net.org</xref></codeph>'...]</entry>
+['<codeph>1.2.3.4</codeph>','<codeph>0.us.pool.net.org</codeph>'...]</entry>
 </row>
 </tbody>
 </tgroup>

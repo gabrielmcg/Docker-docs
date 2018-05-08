@@ -7,7 +7,7 @@
 
 <codeblock># git clone &lt;repository&gt;</codeblock>
 
-<p>Change to the directory which you just cloned:</p>
+<p>Change to the directory that you just cloned:</p>
 
 <codeblock># cd ~/Docker-Synergy</codeblock>
 

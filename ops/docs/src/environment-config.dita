@@ -3,7 +3,7 @@
 <topic id="environment-config">
 <title>Environment configuration</title>
 <body>
-<p>All Environment-related variables should be here. All of them are described in
+<p>All Environment-related variables are described in
 <xref href="environment-config.dita#environment-config/env-variables-table"/> below.</p>
 
 <table id="env-variables-table" frame="none">
@@ -27,13 +27,13 @@
 <entry>env</entry>
 <entry>group_vars/vars</entry>    
 <entry>Dictionary containing all environment variables. It contains
-three entries described below. Please leave empty the proxy related
-settings if not required:<ul>
+three entries described below. Please leave  the proxy related
+settings empty if not required:<ul>
 <li><codeph>http_proxy</codeph>: HTTP proxy URL, such as <codeph>'http://15.184.4.2:8080'</codeph>. This variable defines
-the HTTP proxy url if your environment is behind a
+the HTTP proxy URL if your environment is behind a
 proxy.</li>
 <li><codeph>https_proxy</codeph>: HTTPS proxy URL, such as <codeph>'http://15.184.4.2:8080'</codeph>. This variable defines
-the HTTPS proxy url if your environment is behind a
+the HTTPS proxy URL if your environment is behind a
 proxy.</li>
 <li><codeph>no_proxy</codeph>: List of hostnames or IPs that don't require proxy,
 such as <codeph>'localhost,127.0.0.1,.cloudra.local,10.10.174.'</codeph></li>

@@ -22,8 +22,8 @@ rhn_orgid: "YourOrgId"
 rhn_key: "YourActivationKey"</codeblock>
 
 <p><codeph>rhn_orgid</codeph> and <codeph>rhn_key</codeph> are the credentials needed to
-subscribe the virtual machines with Red Hat Customer Portal. For more info regarding
-activation keys see the following URL: <xref format="html" scope="external"
+subscribe the virtual machines with Red Hat Customer Portal. For more information regarding
+activation keys, see the following URL: <xref format="html" scope="external"
 href="https://access.redhat.com/articles/1378093"
 >https://access.redhat.com/articles/1378093</xref></p>
     
@@ -37,7 +37,7 @@ update the values in your vault by running:</p>
 <codeblock># ansible-vault edit group_vars/vault</codeblock>
 
 <p>For Ansible to be able to read the vault, you need to specify a file where the password
-is stored, for instance in a file called <codeph>.vault_pass</codeph>. Once the file is
+is stored, for instance, in a file called <codeph>.vault_pass</codeph>. Once the file is
 created, take the following precautions to avoid illegitimate access to this file:</p>
 <ol>
 <li> Change the permissions so only <codeph>root</codeph> can read it using <codeph>#

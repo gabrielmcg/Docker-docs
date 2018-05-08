@@ -4,10 +4,8 @@
 <title>Appendix D: How to check that certs were deployed correctly</title>
 <body>
 <p>The following commands should return the CA certificates used by
-        UCP/DTR. This certificate is the same as the one pointed to
-        by the <codeph>--cacert</codeph> switch. If the deployment was not
-        successful, <codeph>curl</codeph> will output something like <b>Output
-                2.</b></p>
+        UCP / DTR. This certificate is the same as the one pointed to
+        by the <codeph>--cacert</codeph> switch. </p>
 
 <codeblock># curl --cacert &lt;ucp_certs_dir&gt;/ca.pem https://&lt;your ucp fqdn&gt;/ca 
 # curl --cacert &lt;dtr_certs_dir&gt;/ca.pem https://&lt;your dtr fqdn&gt;/ca
@@ -27,7 +25,10 @@ j9BAYERjkGqu7v9tfOem99oVGUal20pu4r73eWUm1mL948xuw6PgiRSLZrXhn/RS
 uvFVnS/vPYJozOXIZA==
 -----END CERTIFICATE-----</codeblock>
 
-<p/>
+<p>If the deployment was not
+        successful, <codeph>curl</codeph> will output something like <b>Output
+                2.</b></p>
+        
 <p><b>Output 2</b>: certificates were not successfully
         deployed</p>
 
