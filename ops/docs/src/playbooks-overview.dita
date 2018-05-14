@@ -145,9 +145,10 @@ automatically configure Sysdig, you must uncomment this line.
 <title>Windows playbooks</title>
     
 <body>
- 
+<p><codeph>hybrid.yml</codeph> invokes the following  Windows-specific playbooks, together with the preceding ones for Linux.</p>  
+    
 <ul>  
-<li><codeph>hybrid.yml</codeph> invokes the following  Windows-specific playbooks, together with the preceding ones for Linux</li>       
+     
 <li><codeph>playbooks/create_windows_vms.yml</codeph> will create all the necessary Windows 2016 VMs 
 for the environment based on the Windows VM Template defined in the <codeph>win_vm_template</codeph> variable.</li>   
     
@@ -170,7 +171,7 @@ on your Windows VMs</li>
 <body>
     
 <section>
-<p>The following playbooks are used to perform backups:</p>
+<p>Best practices and procedures are described in the section <xref href="backup-restore.dita"/>. The following playbooks are used to perform backups:</p>
     
 <ul>
 <li><codeph>playbooks/backup_swarm.yml</codeph> is used to back up the swarm data</li>

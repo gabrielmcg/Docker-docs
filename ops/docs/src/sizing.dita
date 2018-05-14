@@ -10,7 +10,7 @@ so that it is protected from running application workloads.</p>
 consider the following:</p>
 <ol>
 <li>All nodes should at least fulfil the minimal requirements, for UCP 2.0, 2GB of RAM
-and 3GB of storage. More detailed requirements are in the UCP documentation. </li>
+and 3GB of storage. More detailed requirements are in the Docker EE UCP documentation. </li>
 <li>UCP Controller nodes should be provided with more than the minimal requirements, but
 won’t need much more if nothing else runs on them. </li>
 <li>Ideally, worker node size will vary based on your workloads so it is impossible to

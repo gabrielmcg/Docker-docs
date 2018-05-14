@@ -5,14 +5,14 @@
 <body>
 <p>By default, the Ansible playbooks are configured to set up a 3 node environment as this is the 
 minimal starter configuration as recommended by HPE and Docker for 
-production. However, the playbooks can be configured to fit your environment and your high availability (HA) needs
-and the solution has been tested on a 6 node HPE Synergy environment, with 2 nodes in each frame. 
+production. The playbooks can also for larger container environments, with a 3 frame, 6 node HPE Synergy system, 
+with 2 nodes in each frame. 
 </p>
 
 <p>Two separate configurations are available out of the box, with one restricted to a Linux-only deployment while the other
 supports a hybrid deployment including Windows workers as well as Linux ones. 
 The Docker and non-Docker modules are distributed over the physical nodes via
-virtual machines (VMs), depending on the size of your environment, as follows:</p>
+VMware virtual machines (VMs), depending on the size of your environment, as follows:</p>
 
 <ul>
 <li>3 Docker Universal Control Plane (UCP) VM nodes for HA and cluster management </li>
@@ -58,7 +58,8 @@ The vSphere Docker volume plug-in  facilitates the storage of data in a shared d
 </ul>
    
 <p>The hybrid deployment will typically add 3 Windows worker nodes to this figure, co-located with the Linux workers. Note that some of the application 
-    software supported by this configuration does not currently run on Windows, for example, the Sysdig Software Agent. </p>   
+    software supported by this configuration does not currently run on Windows, for example, the Sysdig Software Agent (see the 
+    section <xref href="sysdig.dita"/>. </p>   
 
 </body>
 </topic>

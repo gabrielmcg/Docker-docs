@@ -31,7 +31,7 @@ characteristics:</p>
 choice. All VMs will connect to this same network.
 </li>
     
-<li>Change the network type to VMXNET3, and attach the Windows
+<li>Change the network type to VMXNET3, and attach the Windows Server
 2016 ISO image from a datastore ensuring you connect the CD/DVD drive on
 boot.
 </li>
@@ -47,7 +47,7 @@ boot order, placing the virtual CD-ROM in front of your hard drive.</li>
 
 
 
-<p>Install Windows 2016:</p>
+<p>Install Windows Server 2016:</p>
     
 <ul>
 <li>Power on the selected VM and then <codeph>Open Console</codeph>.</li>
@@ -55,7 +55,7 @@ boot order, placing the virtual CD-ROM in front of your hard drive.</li>
 <li>Once connected to the console, you will be placed in the BIOS setup screen.
 Select the <codeph>Boot</codeph> tab, click on CD-ROM Drive and 
  move up the CD-ROM drive above the hard drive. This allows your Windows
-2016 ISO image to be loaded first on boot. F10 Save and exit is next
+Server 2016 ISO image to be loaded first on boot. F10 Save and exit is next
 step.</li>
     
 <li>Enter your choices for Language, Time/Currency Format, Keyboard and then
@@ -87,7 +87,7 @@ reboot.</li>
 <li>Select ‘Shutdown’ from the Shutdown Options.</li>
 </ul>
 
-<p>Shutdown VM, and untick  <codeph>Connect CD/DVD</codeph> so that the Windows 2016 ISO is no
+<p>Shutdown VM, and untick  <codeph>Connect CD/DVD</codeph> so that the Windows Server 2016 ISO is no
 longer  mounted. Boot the Windows VM one final time and enter regional settings applicable to your location
 and keyboard mapping, enter a password then Shutdown VM.</p>
 
