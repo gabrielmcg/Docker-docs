@@ -4,7 +4,7 @@
 <title>Limitations</title>
 <body>
 <ul>
-<li>The Docker App has a number of open issues
+<li>The Dockerized Splunk App has a number of open issues
 <ul>
 <li><xref href="https://github.com/splunk/docker-itmonitoring/issues/19" format="html" scope="external"/></li>
 <li><xref href="https://github.com/splunk/docker-itmonitoring/issues/20" format="html" scope="external"/></li>

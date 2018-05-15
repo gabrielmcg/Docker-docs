@@ -5,10 +5,12 @@
 <body>
 <p>Uptime is paramount for any users implementing Docker containers in business critical
 environments. HPE Enterprise Containers with Docker EE offers various levels of high
-availability (HA) to support continuous availability. All containers including the
-Docker system containers are protected by Docker’s swarm mode. Swarm mode can protect
-against individual hardware, network, and container failures based on the user’s
-declarative model. The Ansible playbooks can be modified to fit your environment and
+availability (HA) to support continuous availability. The Docker EE system components 
+run on multiple manager nodes in the cluster. The management plane continues to 
+operate even in the event of a manager node failure. Application containers can be 
+protected through the use of Services running on top of Swarm. The Swarm orchestrator 
+works to maintain the number of containers declared as part of the service. 
+The Ansible playbooks can be modified to fit your environment and
 your high availability (HA) needs.</p>
 <p/>
 </body>

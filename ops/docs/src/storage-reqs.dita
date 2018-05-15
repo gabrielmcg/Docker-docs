@@ -3,7 +3,7 @@
 <topic id="storage-reqs">
 <title>Storage requirements</title>
 <body>
-<p>A HPE 3PAR store is required for ESXi datastore. This solution makes use of a HPE 3PAR StoreServ 8200 populated with:</p>
+<p>A HPE 3PAR array is required for ESXi datastore. This solution makes use of a HPE 3PAR StoreServ 8200 populated with:</p>
 <ul>
 <li>8x480GB SSD for the vSphere cluster datastore</li>
 <li>8x1.8TB HDD for Backup Datastore</li>    

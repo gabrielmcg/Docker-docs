@@ -11,8 +11,8 @@ with 2 nodes in each frame.
 
 <p>Two separate configurations are available out of the box, with one restricted to a Linux-only deployment while the other
 supports a hybrid deployment including Windows workers as well as Linux ones. 
-The Docker and non-Docker modules are distributed over the physical nodes via
-VMware virtual machines (VMs), depending on the size of your environment, as follows:</p>
+All the software is distributed over the physical nodes via VMware virtual machines (VMs), 
+depending on the size of your environment, as follows:</p>
 
 <ul>
 <li>3 Docker Universal Control Plane (UCP) VM nodes for HA and cluster management </li>
