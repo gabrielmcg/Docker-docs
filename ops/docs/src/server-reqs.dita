@@ -3,9 +3,8 @@
 <topic id="server-reqs">
 <title>Server requirements</title>
 <body>
-<p>The minimum platform requirement for this configuration, shown in 
-    
-    <xref href="server-reqs.dita#server-reqs/architecture-3node" type="fig"/>, is a 3 node HPE Synergy 480 Gen10 deployment with
+<p>The minimum platform requirement for this configuration, 
+shown in <xref href="server-reqs.dita#server-reqs/architecture-3node" type="fig"/>, is a 3 node HPE Synergy 480 Gen10 deployment with
 1 node in each Synergy frame and </p>
 
 <ul>

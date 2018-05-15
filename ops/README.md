@@ -1235,9 +1235,8 @@ automates applications through infrastructure deployment. </li>
 <h3 class="title topictitle3" id="ariaid-title14">Server requirements</h3>
 
 <div class="body">
-<p class="p">The minimum platform requirement for this configuration, shown in 
-    
-    <a class="xref" href="#server-reqs__architecture-3node">Figure 2</a>, is a 3 node HPE Synergy 480 Gen10 deployment with
+<p class="p">The minimum platform requirement for this configuration, 
+shown in <a class="xref" href="#server-reqs__architecture-3node">Figure 2</a>, is a 3 node HPE Synergy 480 Gen10 deployment with
 1 node in each Synergy frame and </p>
 
 
@@ -4781,7 +4780,7 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title72" id="unique_870469648">
+<div class="topic nested3" aria-labelledby="ariaid-title72" id="unique_1166575035">
 <h4 class="title topictitle4" id="ariaid-title72">Restore UCP and DTR</h4>
  
 <div class="body">
