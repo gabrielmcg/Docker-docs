@@ -4,7 +4,7 @@
 <title>Server requirements</title>
 <body>
 <p>The minimum platform requirement for this configuration, 
-shown in <xref href="server-reqs.dita#server-reqs/architecture-3node" type="fig"/>, is a 3 node HPE Synergy 480 Gen10 deployment with
+shown in <xref href="solution-config.dita#solution-config/architecture-3node" type="fig"/>, is a 3 node HPE Synergy 480 Gen10 deployment with
 1 node in each Synergy frame and </p>
 
 <ul>
@@ -14,19 +14,13 @@ shown in <xref href="server-reqs.dita#server-reqs/architecture-3node" type="fig"
 </li>
 </ul>
 
-<fig id="architecture-3node">
-<title>Three node HPE Synergy Configuration</title>
-<image href="media/architecture2.png" placement="break"/>
-</fig>  
+
 
 <p>The solution has also been tested on a 6 node HPE Synergy environment, with 2 nodes in each frame. In this setup,
 the extra 3 nodes are dedicated to Docker worker nodes. The 6 node deployment is depicted graphically in 
-<xref href="server-reqs.dita#server-reqs/architecture-6node" type="fig"/>.</p>
+<xref href="solution-config.dita#solution-config/architecture-6node" type="fig"/>.</p>
 
-<fig id="architecture-6node">
-<title>Six node HPE Synergy Configuration</title>
-<image href="media/architecture-6node.png" placement="break"/>
-</fig>  
+
     
 <!--<p>Two platforms will be described / tested:</p>
 <ol>

@@ -11,7 +11,8 @@ application containers on them. </p>
 consider the following:</p>
 <ol>
 <li>All nodes should at least fulfil the minimal requirements, for UCP 2.0, 8GB of RAM
-and 3GB of storage. More detailed requirements are in the Docker EE UCP documentation. </li>
+and 3GB of storage. More detailed requirements are in the Docker EE UCP documentation
+ at <xref href="https://docs.docker.com/ee/ucp/admin/install/system-requirements/" format="html" scope="external"/>. </li>
 <li>UCP Controller nodes should be provided with more than the minimal requirements, but
 won’t need much more if nothing else runs on them. </li>
 <li>Ideally, worker node size will vary based on your workloads so it is impossible to
@@ -24,12 +25,12 @@ considerations might also influence sizing. </li>
 <p>If possible, node size should be determined by experimentation and testing actual
 workloads; and they should be refined iteratively. A good starting point is to select a
 standard or default machine type in your environment and use this size only. If your
-standard machine type provides more resources than the UCP Controllers need, it makes
+standard machine type provides more resources than the UCP Controller nodes need, it makes
 sense to have a smaller node size for these. Whatever the starting choice, it is
 important to monitor resource usage and cost to improve the model.</p>
 
 
-<p>For HPE Enterprise Containers with Docker EE: Ops Edition, the following tables describe
+<p>For this solution, the following tables describe
 sizing configurations, assuming 3 Linux workers and 3 Windows workers. The vCPU allocations are described in <xref href="sizing.dita#sizing/vcpu-table-conref"/> while the memory
 allocation is described in <xref href="sizing.dita#sizing/memory-alloc-table-conref"/>.</p>
 

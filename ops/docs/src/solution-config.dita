@@ -3,16 +3,35 @@
 <topic id="solution-config">
 <title>Solution configuration</title>
 <body>
-<p>By default, the Ansible playbooks are configured to set up a 3 node environment as this is the 
-minimal starter configuration as recommended by HPE and Docker for 
-production. The playbooks can also for larger container environments, with a 3 frame, 6 node HPE Synergy system, 
-with 2 nodes in each frame. 
+<p>The Ansible playbooks are available to download at 
+<xref href="https://github.com/HewlettPackard/Docker-Synergy" format="html" scope="external"/>. 
+By default, the  playbooks  are configured as shown in <xref href="solution-config.dita#solution-config/architecture-3node" type="fig"/> to set up a 3 node environment. This is the 
+minimal starter configuration recommended by HPE and Docker for 
+production. 
 </p>
+    
+<fig id="architecture-3node">
+<title>Three node HPE Synergy Configuration</title>
+<image href="media/architecture2.png" placement="break"/>
+</fig>  
+    
+<p>
+The playbooks can also be used for larger container environments, with a 3 frame, 6 node HPE Synergy system, 
+with 2 nodes in each frame  as shown in <xref href="solution-config.dita#solution-config/architecture-6node" type="fig"/>. 
+</p>
+
+<fig id="architecture-6node">
+<title>Six node HPE Synergy Configuration</title>
+<image href="media/architecture-6node.png" placement="break"/>
+</fig>  
 
 <p>Two separate configurations are available out of the box, with one restricted to a Linux-only deployment while the other
 supports a hybrid deployment including Windows workers as well as Linux ones. 
 All the software is distributed over the physical nodes via VMware virtual machines (VMs), 
 depending on the size of your environment, as follows:</p>
+    
+<section>
+<title>Linux-only VM configuration</title>    
 
 <ul>
 <li>3 Docker Universal Control Plane (UCP) VM nodes for HA and cluster management </li>
@@ -25,7 +44,7 @@ an enterprise production deployment is 3 UCPs and 3 DTRs.
 </p>
 
 <ul>  
-<li>3 Docker Swarm Linux worker VM nodes for container workloads </li>
+<li>3 Docker swarm Linux worker VM nodes for container workloads </li>
 </ul>
 
 <p>The Docker worker nodes will be co-located with the UCP and DTR nodes in a 3 physical node deployment, 
@@ -52,14 +71,23 @@ distributed evenly across 3 physical nodes.</p>
 <p>With the addition of the NFS and logging VMs, a total of 14 VMs are created for the default Linux-only deployment.  In addition to these VMs, the playbooks also set up the Docker persistent storage plug-in from VMware.  
 The vSphere Docker volume plug-in  facilitates the storage of data in a shared datastore that can be accessed from any machine in the cluster.</p>
 
+</section>
 
+<section>
+<title>Hybrid VM configuration (Windows and Linux)</title>    
+    
 <ul>
-<li>3 Docker Swarm Windows worker VM nodes for container workloads (optional) </li>     
+<li>3 Docker swarm Windows worker VM nodes for container workloads (optional) </li>     
 </ul>
    
-<p>The hybrid deployment will typically add 3 Windows worker nodes to this figure, co-located with the Linux workers. Note that some of the application 
-    software supported by this configuration does not currently run on Windows, for example, the Sysdig Software Agent (see the 
-    section <xref href="sysdig.dita"/>. </p>   
+<p>The hybrid deployment will typically add 3 Windows worker nodes to thie above configuration, co-located with the Linux workers.  </p>   
 
+<note type="note">
+Some of the application 
+    software supported by this configuration does not currently run on Windows, for example, the Sysdig Software Agent (see the 
+    section <xref href="sysdig.dita"/>.    
+</note>
+    
+</section>
 </body>
 </topic>

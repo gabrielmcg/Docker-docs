@@ -4,7 +4,7 @@
 <title>Solution overview</title>
 <body>
 
-<p>The HPE Enterprise Containers as a Service with Docker EE solution consists of a set of Ansible playbooks that 
+<p>The HPE Reference Configuration for Docker Containers as a Service on HPE Synergy Composable Infrastructure consists of a set of Ansible playbooks that 
 run on top of a VMware virtualization platform on HPE Synergy  and HPE 3PAR storage
 hardware. The solution allows you to configure a flexible OS environment (with both RHEL and Windows workers)  providing built-in
 high availability (HA), container monitoring and security, and backup and restore functionality. This solution assumes 
