@@ -3,15 +3,15 @@
 <topic id="storage-reqs">
 <title>Storage requirements</title>
 <body>
-<p>A HPE 3PAR array is required for ESXi datastore. This solution makes use of a HPE 3PAR StoreServ 8200 populated with:</p>
+<p>An HPE 3PAR array is required for ESXi datastore. This solution makes use of an HPE 3PAR StoreServ 8200 populated with:</p>
 <ul>
-<li>8x480GB SSD for the vSphere cluster datastore</li>
-<li>8x1.8TB HDD for Backup Datastore</li>    
+<li>8x 480GB SSD for the vSphere cluster datastore</li>
+<li>8x 1.8TB HDD for the backup datastore</li>    
 </ul>
     
-<p>You should create a large virtual volume on the 3PAR StoreServ to host the virtual machines and another 
+<p>You should create a large virtual volume on the HPE 3PAR StoreServ to host the virtual machines and another 
 large virtual volume for Docker backups. Create datastores on your vSphere cluster using these virtual volumes.   
-If desired, you can create separate StoreServ virtual volumes and attach them to all vSphere cluster hosts for 
+If desired, you can create separate HPE 3PAR StoreServ virtual volumes and attach them to all vSphere cluster hosts for 
 backing up Docker persistent volumes. It is recommended that you configure the volumes that are used for virtual machine deployments on the SSD.  
 Storage for backups can be configured on the HDDs.</p>   
 

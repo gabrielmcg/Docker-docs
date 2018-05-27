@@ -144,24 +144,24 @@
 </row>
 
 <row>
-<entry>Total RAM required (per node)</entry>
-<entry>156</entry>
-<entry>160</entry>
-<entry>160</entry>
+<entry><b>Total RAM required (per node)</b></entry>
+<entry><b>156</b></entry>
+<entry><b>160</b></entry>
+<entry><b>160</b></entry>
 </row>
 
 <row>
-<entry>Total RAM required</entry>
+<entry><b>Total RAM required</b></entry>
 <entry/>
-<entry>476</entry>
+<entry><b>476</b></entry>
 <entry/>
 </row>
 
 <row>
-<entry>Available RAM</entry>
-<entry>384</entry>
-<entry>384</entry>
-<entry>384</entry>
+<entry><b>Available RAM</b></entry>
+<entry><b>384</b></entry>
+<entry><b>384</b></entry>
+<entry><b>384</b></entry>
 </row>
 </tbody>
 </tgroup>

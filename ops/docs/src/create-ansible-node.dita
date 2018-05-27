@@ -3,52 +3,56 @@
 <topic id="create-ansible-node">
 <title>Create the Ansible node</title>
 <body>
-    
+
 <p>The Ansible node will act as the driver to automate the provisioning of the
 environment and it is essential that it is properly installed.</p>
 
 
+<ol>
+<li>
 <p>Create a Virtual Machine and install your preferred OS (in this example, and for the
 sake of simplicity, RHEL7 will be used). The rest of the instructions assume that,
 if you use a different OS, you understand the possible differences in syntax for the
 provided commands. If you use RHEL 7, select <codeph>Infrastructure Server</codeph> as the base
 environment and the <codeph>Guests Agents</codeph> add-on during the installation.</p>
-    
+</li>   
+<li>
 <p>Log in to the <codeph>root</codeph> account and create an SSH key pair. Do not protect the key with
 a passphrase (unless you want to use <codeph>ssh-agent</codeph>). 
 </p>
-    
+
 <codeblock># ssh-keygen</codeblock> 
-    
-<p>Configure the following yum repositories, <codeph>rhel-7-server-rpms</codeph> and
+</li> 
+
+<li><p>Configure the following yum repositories, <codeph>rhel-7-server-rpms</codeph> and
 <codeph>rhel-7-server-extras-rpms</codeph> as explained in <xref href="config-yum.dita"/>.
-    
+
 The "extras" repo can be enabled as follows:
 </p>
-    
+
 <codeblock># subscription-manager repos --enable=rhel-7-server-extras-rpms</codeblock>
+</li>
 
 
-
-<p>Configure the EPEL repository. For more information, see: <xref format="html"
+<li><p>Configure the EPEL repository. For more information, see: <xref format="html"
 scope="external" href="http://fedoraproject.org/wiki/EPEL"
 >http://fedoraproject.org/wiki/EPEL</xref>. Note that <codeph>yum-config-manager</codeph> comes
 with the Infrastructure Server base environment. If you did not select this
 environment, you will have to install the <codeph>yum-utils</codeph> package.
 </p>
-    
+
 <codeblock># rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 
 # yum-config-manager --enable rhel-7-server-extras-rpms</codeblock>    
-    
-    
-<p>Install Ansible 2.4.2 or higher. The playbooks have been tested with 2.4.2 and 2.5.0</p>
+</li> 
+
+<li><p>Install Ansible 2.4.2 or higher. The playbooks have been tested with 2.4.2 and 2.5.0</p>
 
 <codeblock># yum install ansible</codeblock>    
-    
+</li> 
 <!--<p>Make a list of all the hostnames and IPs that will be in your system including UCP nodes, DTR
 nodes, worker nodes, NFS server, logger server and load balancers.</p>-->
-    
-<p>Install the following packages which are a mandatory requirement for the playbooks
+
+<li><p>Install the following packages which are a mandatory requirement for the playbooks
 to function as expected. (Update pip if requested).
 </p>
 
@@ -57,7 +61,9 @@ to function as expected. (Update pip if requested).
 # pip install cryptography 
 # pip install pysphere 
 # pip install --ignore-installed "pywinrm&gt;=0.2.2"</codeblock>
-    
+</li>
+
+</ol>
 
 </body>
 </topic>

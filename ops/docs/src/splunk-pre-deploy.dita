@@ -50,7 +50,7 @@ For more information on  forwarding using Universal Forwader, see the Splunk doc
 
 <p>On your standalone Splunk installation, you need to install the following add-ons and apps.</p>
 
-<p>To monitor <b>Linux Worker nodes</b>, the <b>Docker app</b> should be installed on central Splunk. 
+<p>To monitor <b>Linux worker nodes</b>, the <b>Docker app</b> should be installed on central Splunk. 
 More information on this Docker app can be found at 
 <xref href="https://github.com/splunk/docker-itmonitoring" format="html" scope="external"/>  and at
 <xref href="https://hub.docker.com/r/splunk/universalforwarder/" format="html" scope="external"/>.

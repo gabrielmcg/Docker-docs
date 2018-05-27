@@ -7,7 +7,7 @@
 
 <p><xref href="backup-variables.dita#backup-variables/backup-ucp-table-content"/>
 shows the variables related to backing up UCP and DTR. All these variables are defined in
-the file <b>group_vars/backup</b>. All the data that is backed up is streamed over an SSH
+the file <b>group_vars/backups</b>. All the data that is backed up is streamed over an SSH
 connection to the backup server. Currently, the playbooks only support the use of the
 Ansible box as the backup server.</p>
 
@@ -32,19 +32,19 @@ Ansible box as the backup server.</p>
 <tbody>
 <row>
 <entry>backup_server</entry>
-<entry><b>group_vars/backup</b></entry>
+<entry><b>group_vars/backups</b></entry>
 <entry>Currently, the playbooks only support the use of the Ansible box as the backup
 server. </entry>
 </row>
 <row>
 <entry>backup_dest</entry>
-<entry><b>group_vars/backup</b></entry>
+<entry><b>group_vars/backups</b></entry>
 <entry>This variable should point to an existing folder on your Ansible box where the
 <codeph>root</codeph> user has write access. All the backups will be stored in this folder. For
 example, <codeph>/root/backup</codeph></entry>
 </row>
 <row>
-<entry>#swarm_offline_backup</entry>
+<entry>#swarm_offline_backups</entry>
 <entry><b>group_vars/backup</b></entry>
 <entry>This variable is commented out by default. More information on this variable is provided below. </entry>
 </row>    

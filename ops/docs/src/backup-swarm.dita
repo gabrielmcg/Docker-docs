@@ -14,7 +14,7 @@ folder on your Ansible server. The playbook is invoked as follows: </p>
 <codeblock># ansible-playbook -i vm_hosts playbooks/backup_swarm.yml</codeblock>
     
 <p>This playbook creates two archives in the folder specified by the variable
-<codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the file
+<codeph>backup_dest</codeph> in <codeph>group_vars/backups</codeph>. By default, the file
 is named using the following pattern:</p>
 
 <codeblock>&lt;backup_dest>/backup_swarm_&lt;vmname>_&lt;timestamp>.tgz

@@ -6,8 +6,8 @@
 <p>A number of different logging and monitoring solutions are supported by this solution:</p>
 
 <ul>
-<li>Splunk®</li>
-<li>Sysdig®</li>
+<li>Splunk</li>
+<li>Sysdig</li>
 <li>Prometheus and Grafana</li>
 </ul>
     

@@ -12,12 +12,12 @@ that the latest versions of the software are running to provide optimal performa
 security and to fix any existing defects within the product.</p>
 <p>In this section, we will cover life cycle management of the different components that
 are used in this solution. The lifecycle of the following stacks need to be maintained and managed: </p>
-<ol>
+<ul>
 <li>Monitoring Tools (Splunk or Prometheus and Grafana)</li>
 <li>Docker Enterprise Edition Environment</li>
 <li>Virtual Machine Operating systems</li>
 <li>Synergy environment</li>
-</ol>
+</ul>
 <p>The general practice and recommendation is to follow a bottom-up approach for
 updating all components of the environment and making sure the dependencies are met.
 In our solution, we would start with Synergy and end with the monitoring
@@ -32,18 +32,17 @@ firmware and driver management across many HPE Synergy components. HPE OneView
 manages firmware to reduce manual interactions and errors, in addition to minimizing
 downtime. Firmware updates of management appliances and shared infrastructure are
 non-disruptive to the production workload. </p>
-<p>More information is available at <xref
+<p>More information is available in the Best Practices for HPE Synergy Firmware and Driver Updates guide at <xref
 href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310"
-format="html" scope="external">Best Practices for HPE Synergy Firmware and Driver
-Updates</xref>.</p>
+format="html" scope="external"/>.</p>
 </section>
 <section>
 <title>VMware Components</title>
 <p>The solution in this deployment guide is built on VMware vSphere and leverages VMware
 ESXi and vCenter. For more information on upgrading vSphere, see the VMware
-documentation: <xref
+documentation, Introduction to vSphere Upgrade, at <xref
 href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.upgrade.doc/GUID-EB29D42E-7174-467C-AB40-DB37236FEAF5.html"
-format="html" scope="external">Introduction to vSphere Upgrade</xref>.</p>
+format="html" scope="external"/>.</p>
 </section>
 <section>
 <title>vSphere Docker Volume Service Plug-in</title>

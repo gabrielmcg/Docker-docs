@@ -3,17 +3,22 @@
 <topic id="ansible-config">
 <title>Ansible configuration</title>
 <body>
-<p>On the Ansible node, retrieve the latest version of the playbooks using Git.</p>
+<ol>    
+<li><p>On the Ansible node, retrieve the latest version of the playbooks using Git.</p>
 
-<codeblock># git clone &lt;repository&gt;</codeblock>
-
-<p>Change to the directory that you just cloned:</p>
+<codeblock># git clone https://github.com/HewlettPackard/Docker-Synergy.git</codeblock>
+</li>
+    
+<li><p>Change to the directory that you just cloned:</p>
 
 <codeblock># cd ~/Docker-Synergy</codeblock>
-
-<p>Change to the <codeph>ops</codeph> directory: </p>
+</li>
+    
+<li><p>Change to the <codeph>ops</codeph> directory: </p>
 
 <codeblock># cd ops</codeblock>
+</li>    
+</ol>
 
 <note type="note">All subsequent file names are relative to the <codeph>ops</codeph> directory. For example
 <codeph>vm_hosts</codeph> is located in <codeph>~/Docker-Synergy/ops</codeph> and
@@ -33,7 +38,7 @@ modify a number of files including:</p>
 <ul>   
 <li><codeph>group_vars/vars</codeph>, the group variables file.</li>
 <li><codeph>group_vars/vault</codeph>, containing sensitive information that needs to be protected.</li>
-<li><codeph>group_vars/backup</codeph>, containing backup-related variables. </li>
+<li><codeph>group_vars/backups</codeph>, containing backup-related variables. </li>
 </ul>
 
 <p>For the latter group, a set of sample files has been provided to help you get started:</p>
@@ -41,7 +46,7 @@ modify a number of files including:</p>
 <ul>   
 <li><codeph>group_vars/vars.sample</codeph>, a sample group variables file.</li>
 <li><codeph>group_vars/vault.sample</codeph>, a sample vault file.</li>
-<li><codeph>group_vars/backup.sample</codeph>, a sample backup configuration file. </li>
+<li><codeph>group_vars/backups.sample</codeph>, a sample backup configuration file. </li>
 </ul>
 
 <p>The file <codeph>group_vars/win_worker.yml</codeph> supports  advanced configuration of Windows remote

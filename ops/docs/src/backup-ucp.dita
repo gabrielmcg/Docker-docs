@@ -61,7 +61,7 @@ data</entry>
 <codeblock># ansible-playbook -i vm_host playbooks/backup_ucp.yml</codeblock>
 
 <p>This playbook creates two archives in the folder specified by the variable
-<codeph>backup_dest</codeph> in <codeph>group_vars/backup</codeph>. By default, the files
+<codeph>backup_dest</codeph> in <codeph>group_vars/backups</codeph>. By default, the files
 are named using the following pattern:</p>
 
 <codeblock>&lt;backup_dest>/backup_ucp_&lt;ucpid>_&lt;vmname>_&lt;timestamp>.tgz

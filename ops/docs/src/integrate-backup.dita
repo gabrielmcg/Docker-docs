@@ -43,7 +43,7 @@ shown in <xref href="integrate-backup.dita#integrate-backup/new-hard-disk" type=
   
   
 <p>Each time you  backup Docker UCP and DTR using the <codeph>backup.sh</codeph> script, 
-you should copy the generated files from the <codeph>/root/backup</codeph> folder to <codeph>/dockerbackup</codeph>.  
+you should copy the generated files from the <codeph>/root/backups</codeph> folder to <codeph>/dockerbackup</codeph>.  
 You may wish to add a command to the backup script to automate this process.</p>
  
 <p>The virtual volume used to host the <codeph>DockerBackup</codeph> datastore can be scheduled for snapshot and backup protection 

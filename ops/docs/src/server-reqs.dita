@@ -9,7 +9,7 @@ shown in <xref href="solution-config.dita#solution-config/architecture-3node" ty
 
 <ul>
 <li>384 GB DDR4-2133 RAM </li>
-<li>2 Intel Xeon CPU Gold 6130 2.10GHz x 16 core </li>
+<li>2 Intel® Xeon® CPU Gold 6130 2.10GHz x 16 core </li>
 <li>Single ESXi cluster with control plane and Docker workers spread out on all 3 nodes
 </li>
 </ul>

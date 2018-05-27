@@ -21,7 +21,14 @@
         
 <p>The playbooks should run for 70-80 minutes depending on your server specifications and the size of your environment. The increase in 
 running time is primarily due to the need to update Windows after creating the VMs.</p>
-    
+ 
+<note type="note">As well as configuring your <codeph>vars</codeph> and <codeph>vault</codeph> files, you must also provide a <codeph>backups</codeph> configuration 
+    file in the <codeph>group_vars</codeph> folder when running <codeph>site.yml</codeph> or <codeph>hybrid.yml</codeph>. 
+    An example file is provided in the repository named <codeph>backups.sample</codeph>. Rename it to backups before 
+    running the playbooks. Details on how to configure this file are available in the section 
+    <xref href="backup-restore.dita"/>. </note> 
+ 
+ 
 </section>
 </body>
 </topic>

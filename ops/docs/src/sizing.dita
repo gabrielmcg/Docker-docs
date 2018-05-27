@@ -48,7 +48,7 @@ allocation is described in <xref href="sizing.dita#sizing/memory-alloc-table-con
 
 
 <note type="note">
-<p>In the case of one ESX host failure, two nodes are enough to accommodate the amount
+<p>In the case of one ESX host failure, 2 nodes are enough to accommodate the amount
 of vCPU required</p>
 </note>
 
