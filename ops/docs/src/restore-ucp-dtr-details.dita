@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="restore-ucp-dtr">
+<topic id="restore-ucp-dtr-details">
 <title>Restore UCP and DTR</title> 
 <body>
-
 
 
 <note type="warning">This procedure is aimed at restoring a cluster after a disaster. It assumes you have lost all 

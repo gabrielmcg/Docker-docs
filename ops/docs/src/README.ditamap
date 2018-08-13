@@ -122,6 +122,8 @@
     <topicref href="docker-config.dita" navtitle="Docker configuration">
 
     </topicref>
+    
+    <topicref href="k8s-persistent-volume-config.dita" navtitle="Kubernetes Persistent Volume configuration"/>
 
     <topicref href="windows-config.dita" navtitle="Windows configuration"/>
 

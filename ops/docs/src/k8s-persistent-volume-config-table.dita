@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="k8s-persistent-volume-config-table">
+<title/>
+<body>
+  
+<table id="k8s-persistent-volume-config-table-content" frame="none">
+<title>Windows variables</title>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Variable</entry>
+<entry>File</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+
+<row>
+<entry>nfs_provisioner_role</entry>
+<entry>group_vars/vars</entry>  
+<entry>Name of the role to create for example, <codeph>nfs-provisioner-runner</codeph>.</entry>
+</row>   
+  
+<row>
+<entry>nfs_provisioner_name</entry>
+<entry>group_vars/vars</entry>    
+<entry>Name of the provisioner, for example, 	<codeph>hpe.com/nfs</codeph></entry>
+</row>
+ 
+<row>
+<entry>nfs_provisioner_storage_class_name</entry>
+<entry>group_vars/vars</entry>    
+<entry>Name of the storage class to create, for example, 	<codeph>nfs</codeph></entry>
+</row>
+
+<row>
+<entry>nfs_provisioner_server_ip</entry>
+<entry>group_vars/vars</entry>    
+<entry>IP address (or FQDN) of your external NFS server, for example, 	<codeph>hpe-nfs.cloudra.local</codeph></entry>
+</row>
+
+<row>
+<entry>nfs_provisioner_server_share</entry>
+<entry>group_vars/vars</entry>    
+<entry>name of the NFS share where all the persistent volume data will be stored, for example, 	<codeph>/k8s </codeph></entry>
+</row>
+
+
+</tbody>
+</tgroup>
+</table>
+</body>
+</topic>
