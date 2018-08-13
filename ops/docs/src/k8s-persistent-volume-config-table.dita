@@ -46,7 +46,7 @@
 <row>
 <entry>nfs_provisioner_server_share</entry>
 <entry>group_vars/vars</entry>    
-<entry>name of the NFS share where all the persistent volume data will be stored, for example, 	<codeph>/k8s </codeph></entry>
+<entry>Name of the NFS share where all the persistent volume data will be stored, for example, 	<codeph>/k8s</codeph></entry>
 </row>
 
 

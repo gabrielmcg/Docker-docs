@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="orchestrator-config">
+<title>Orchestrator Configuration</title>
+<body>
+
+<section>
+<p>The variable <codeph>orchestrator</codeph> in the <codeph>[worker]</codeph> group is used to 
+  specify if a worker node should be assigned to the Kubernetes orchestrator (<codeph>orchestrator: 'kubernetes'</codeph>) 
+  or to the Swarm orchestrator (<codeph>orchestrator: 'swarm'</codeph>). In general, you should only change the orchestrator 
+  for worker nodes.
+
+</p>
+  
+<p>The following example shows how to set Kubernetes as the default orchestrator for worker nodes, and then how to over-ride this
+default on one specific node to use Swarm instead.
+</p>
+  
+<codeblock>
+## WORKER
+[worker]
+hpe-worker01 ip_addr='10.60.59.21/16' esxi_host='esxi-hpe-1.cloudra.local'
+hpe-worker02 ip_addr='10.60.59.22/16' esxi_host='esxi-hpe-2.cloudra.local'
+hpe-worker03 ip_addr='10.60.59.23/16' esxi_host='esxi-hpe-3.cloudra.local' <b>orchestrator=swarm</b>
+ 
+[worker:vars]
+cpus='4'
+ram='65536'
+disk2_size='500'
+<b>orchestrator=kubernetes</b>
+</codeblock>  
+  
+  
+</section>
+</body>
+</topic>
