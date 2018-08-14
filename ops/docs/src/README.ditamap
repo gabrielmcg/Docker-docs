@@ -28,6 +28,12 @@
     <topicref href="audience-assumptions.dita" navtitle="Audience and assumptions"/>
 
   </topicref>
+  
+  <topicref href="release-notes-mvi2.dita" navtitle="Release notes MVI-2">
+    <topicref href="new-features-mvi2.dita" navtitle="New features in MVI-2"/>
+    <topicref href="changes-mvi2.dita" navtitle="Changes in MVI-2"/>
+    
+  </topicref>
 
   <topicref href="architecture.dita" navtitle="Solution overview">
     <!--<topicref href="architecture-overview.dita" navtitle="Introduction">-->

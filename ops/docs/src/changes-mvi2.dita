@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="changes-mvi2">
+<title>Changes from previous release</title>
+<body>
+
+<section>
+<title>Playbooks</title>  
+  
+<ul>
+<li>Renamed <codeph>playbooks/monitoring.yml</codeph> to <codeph>playbooks/splunk_uf.yml</codeph></li>  
+<li>Renamed folder <codeph>templates/monitoring</codeph> to <codeph>templates/splunk</codeph></li>  
+</ul>  
+  
+</section>
+  
+<section>
+<title>Variables</title>  
+
+<ul>
+<li>Added <codeph>splunk_uf_password</codeph> in <codeph>group_vars/vault</codeph></li>  
+  
+</ul>
+
+</section>
+  
+</body>
+</topic>

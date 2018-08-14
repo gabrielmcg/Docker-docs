@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="new-features-mvi2">
+<title>New features</title>
+<body>
+
+<section>
+<title>Docker EE 2.0</title>  
+  
+</section>
+  
+<section>
+<title>Splunk 7.1.2</title>  
+ 
+<ul>
+<li>New versions of Splunk software components - see <xref href="splunk-pre-deploy.dita#splunk-pre-deploy/splunk-mvi2-versions">Splunk versions</xref></li>
+<li>Kubernetes Monitoring (logs and metrics). Kubernetes metadata is collected by 
+  a universal forwarder implemented as a "Deployment" (one replica). Logs are collected are collected by a 
+  universal forwarder running on each Kubernetes nodes (DaemonSet). This integration is 
+  leveraging  <xref href="https://github.com/splunk/docker-itmonitoring" format="html" scope="external"/>. These universal forwarders are deployed using a 
+  new playbook, <codeph>playbooks/splunk_k8s.yml</codeph></li>
+<li>Kubernetes App in the Splunk demo.</li>
+</ul> 
+</section>  
+
+  
+</body>
+</topic>

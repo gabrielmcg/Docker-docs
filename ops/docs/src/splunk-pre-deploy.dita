@@ -20,8 +20,8 @@ For a dual Linux/Windows deployment, the images and packages must have same name
 </p>  
 
 <ul>
-<li>files/splunk/windows/splunkforwarder-7.0.2.msi</li>
-<li>files/splunk/linux/splunkforwarder-7.0.2.rpm</li>
+<li>files/splunk/windows/splunkforwarder-7.1.2.msi</li>
+<li>files/splunk/linux/splunkforwarder-7.1.2.rpm</li>
 </ul>
 
 <p>You need to set the variable <codeph>splunk_architecture_universal_forwarder_package</codeph> to
@@ -30,7 +30,7 @@ edit the file <codeph>templates/monitoring/<b>splunk</b>/vars.yml</codeph> or th
 and set the variable, for example:   
 </p>
   
-<codeblock>splunk_architecture_universal_forwarder_package: 'splunkforwarder-7.0.2'
+<codeblock>splunk_architecture_universal_forwarder_package: 'splunkforwarder-7.1.2'
 </codeblock>  
 
 
@@ -44,8 +44,8 @@ and set the variable, for example:
  
 <p>By default, the indexers are configured in a single load balancing group. This can be
 changed by editing the file <codeph>outputs.conf.j2</codeph> in the folder <codeph>template/monitoring/splunk/</codeph>.
-For more information on  forwarding using Universal Forwader, see the Splunk documentation at
-<xref href="http://docs.splunk.com/Documentation/Forwarder/7.0.2/Forwarder/Configureforwardingwithoutputs.conf" format="html" scope="external"/>.</p>
+For more information on  forwarding using Universal Forwarder, see the Splunk documentation at
+<xref href="http://docs.splunk.com/Documentation/Forwarder/7.1.2/Forwarder/Configureforwardingwithoutputs.conf" format="html" scope="external"/>.</p>
 
 
 <p>On your standalone Splunk installation, you need to install the following add-ons and apps.</p>
@@ -62,11 +62,12 @@ More information on this Docker app can be found at
   central Splunk and its dependencies:</p>
   
 <ul>
-<li>Splunk App for Windows Infrastructure - see <xref href="https://splunkbase.splunk.com/app/1680/" format="html" scope="external"/></li>
-<li>Splunk Add-on for Microsoft Windows - see <xref href="https://splunkbase.splunk.com/app/742/" format="html" scope="external"/></li>
-<li>Splunk Add-on for Microsoft Windows DNS (if this is not installed on central Splunk, you will see yellow icons on some dashboards with 
+<li>Splunk App for Windows Infrastructure version 1.4.4. The Splunk App for Windows Infrastructure is not compatible with The Splunk Add-on for Windows 5.0 at this time. See <xref href="https://splunkbase.splunk.com/app/1680/" format="html" scope="external"/></li>
+<li>Splunk Add-on for Microsoft Windows version 4.8.4 - see <xref href="https://splunkbase.splunk.com/app/742/" format="html" scope="external"/></li>
+<li>Splunk Add-On for Microsoft Active Directory version 1.0.0 - see <xref href="https://splunkbase.splunk.com/app/3207/" format="html" scope="external"/></li>
+<li>Splunk Add-on for Microsoft Windows DNS version 1.0.1 (if this is not installed on central Splunk, you will see yellow icons on some dashboards with 
 the message <codeph>eventtype wineventlog-dns does not exist or is disabled</codeph>) -  see <xref href="https://splunkbase.splunk.com/app/3208/" format="html" scope="external"/></li>
-<li>Splunk Supporting Add-on for Active Directory (if this is not installed on central Splunk, you will see yellow icons on some dashboards with 
+<li>Splunk Supporting Add-on for Active Directory version 2.1.7 (if this is not installed on central Splunk, you will see yellow icons on some dashboards with 
 the message <codeph>eventtype wineventlog-ds does not exist or is disabled</codeph>) - see <xref href="https://splunkbase.splunk.com/app/1151/" format="html" scope="external"/></li>
 </ul>
 

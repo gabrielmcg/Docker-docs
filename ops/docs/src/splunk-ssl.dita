@@ -61,10 +61,10 @@ sourcetype = ucp
 
 
 <p>For more information, see the documentation at 
-<xref href="https://docs.splunk.com/Documentation/Splunk/7.0.2/Security/ConfigureSplunkforwardingtousesignedcertificates" format="html" scope="external"/>.
+<xref href="https://docs.splunk.com/Documentation/Splunk/7.1.2/Security/ConfigureSplunkforwardingtousesignedcertificates" format="html" scope="external"/>.
 In addition, you can see how to create your own certificates and
 the content of the file designated with <codeph>serverCert</codeph> at 
-<xref href="http://docs.splunk.com/Documentation/Splunk/7.0.2/Security/Howtoself-signcertificates" format="html" scope="external"/>. 
+<xref href="http://docs.splunk.com/Documentation/Splunk/7.1.2/Security/Howtoself-signcertificates" format="html" scope="external"/>. 
 </p>
 <p>In this instance, the folder <codeph>mycerts</codeph> was
 created under <codeph>/opt/splunk/etc</codeph> and the file <codeph>indexer.pem</codeph>  was copied to this folder.</p>
