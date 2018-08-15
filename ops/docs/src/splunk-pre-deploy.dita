@@ -33,6 +33,8 @@ and set the variable, for example:
 <codeblock>splunk_architecture_universal_forwarder_package: 'splunkforwarder-7.1.2'
 </codeblock>  
 
+<p>As of Splunk version 7.1, the Splunk universal forwarder must be deployed with a password. 
+  This password is specified using the variable <codeph>splunk_uf_password</codeph> which is configured in <codeph>group_vars/vault</codeph>. </p>
 
 
 <p>If you are using a standalone Splunk deployment, you must specify the list of indexers using the variable
