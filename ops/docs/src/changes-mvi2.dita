@@ -9,8 +9,8 @@
 <title>Software</title>  
     
 <ul>
-<li>Docker EE changed to version 2. UCP version 3.0.2 </li>
-<li>Splunk version changed from 7.0.2 to 7.1.2. Download new versions of Splunk Universal Forwarders.</li>    
+<li>Docker EE changed to version 2.0 (UCP version 3.0.2, DTR version 2.5.3) </li>
+<li>Splunk Enterprise version changed from 7.0.2 to 7.1.2. Splunk Universal Forwarders 7.1.2.</li>    
 </ul>
     
 </section>
@@ -31,7 +31,7 @@
 <ul>
 <li>Added <codeph>splunk_uf_password</codeph> in <codeph>group_vars/vault</codeph> - see <xref href="splunk-pre-deploy.dita"/></li>  
 <li>Added <codeph>orchestrator</codeph> variable in <codeph>vm_hosts</codeph> - see <xref href="orchestrator-config.dita" format="dita"/></li>  
-<li>Added <codeph>k8s_pod_cidr</codeph> variable in <codeph>group_vars/vars</codeph> - see </li> 
+<li>Added <codeph>k8s_pod_cidr</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="k8s-config.dita"/></li> 
 </ul>
 
 </section>
