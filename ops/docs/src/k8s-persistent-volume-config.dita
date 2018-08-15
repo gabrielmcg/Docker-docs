@@ -20,5 +20,19 @@
 
 </table>  
 
+
+<section>
+<title id="k8s-nfs-playbooks">Related playbooks</title>   
+    
+<ul>
+<li><codeph>playbooks/k8s-nfs-provisioner.yml</codeph>	is used to enable a dynamic NFS provisioner which can be used 
+    to automatically create and allocate Kubernetes persistent volumes. The backend storage is provided by an NFS backend. 
+    This playbook is run from the Ansible box after downloading a UCP client bundle for the <codeph>admin</codeph> account 
+    and sourcing the downloaded <codeph>env.sh</codeph> file.</li>    
+    
+</ul>    
+    
+</section>
+
 </body>
 </topic>

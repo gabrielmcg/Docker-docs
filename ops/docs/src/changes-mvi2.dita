@@ -17,11 +17,30 @@
     
 <section>
 <title>Playbooks</title>  
-  
+ 
+<p>New playbooks:</p> 
 <ul>
-<li>Renamed <codeph>playbooks/monitoring.yml</codeph> to <codeph>playbooks/splunk_uf.yml</codeph></li>  
-<li>Renamed folder <codeph>templates/monitoring</codeph> to <codeph>templates/splunk</codeph></li>  
+<li><codeph>playbooks/k8s-nfs-provisioner.yml</codeph> - see <xref href="k8s-persistent-volume-config.dita"/></li>
+<li><codeph>playbooks/resize_syspart.yml</codeph> </li>
+
+
+</ul>
+
+<p>Modified playbooks:</p>
+<ul>
+<li><codeph>playbooks/create_vms.yml</codeph></li>
+<li><codeph>playbooks/install_nfs_server.yml</codeph></li>    
+</ul>    
+    
+<p>Renamed/Removed playbooks</p>    
+        
+<ul>
+<li><codeph>playbooks/monitoring.yml</codeph> replaced by <codeph>playbooks/splunk_uf.yml</codeph></li>  
+<li><codeph>playbooks/monitoring_win.yml</codeph> replaced by <codeph>playbooks/splunk_uf_win.yml</codeph></li>    
+<li><codeph>templates/monitoring</codeph> folder renamed to <codeph>templates/splunk</codeph></li>  
 </ul>  
+    
+    
   
 </section>
   
