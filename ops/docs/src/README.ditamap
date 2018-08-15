@@ -131,7 +131,9 @@
     
     <topicref href="orchestrator-config.dita" navtitle="Orchestrator configuration"/>
     
-    <topicref href="k8s-persistent-volume-config.dita" navtitle="Kubernetes Persistent Volume configuration"/>
+    <topicref href="k8s-config.dita" navtitle="Kubernetes configuration">
+      <topicref href="k8s-persistent-volume-config.dita" navtitle="Kubernetes Persistent Volume configuration"/>
+    </topicref>
 
     <topicref href="windows-config.dita" navtitle="Windows configuration"/>
 

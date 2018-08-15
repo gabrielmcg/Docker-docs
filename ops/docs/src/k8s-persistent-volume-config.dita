@@ -3,8 +3,7 @@
 <topic id="k8s-persistent-volume-config">
 <title>Kubernetes Persistent Volume configuration</title>
 <body>
-
-<section>
+    
 
 <p>Variables releated to the configuration of Kubernetes Persistent Volumes are shown in 
 <xref href="k8s-persistent-volume-config.dita#k8s-persistent-volume-config/k8s-persistent-volume-config-table-conref" type="table"/>.</p>
@@ -20,7 +19,6 @@
 </tgroup>
 
 </table>  
-</section>
 
 </body>
 </topic>

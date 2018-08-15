@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="k8s-config">
+<title>Kubernetes configuration</title>
+<body>
+  
+<section>
+<p>The preceding section <xref href="orchestrator-config.dita"/> explains how to assign a worker node to the Kubernetes 
+orchestrator. This sections covers specific Kubernetes configuration, including how to set the pod CIDR and
+how to configure Kubernetes Persistent Volumes.</p>  
+  
+</section>  
+    
+    
+<section>
+<title>Pod CIDR</title> 
+  
+<p></p>
+    
+</section> 
+  
+  
+  </body>
+</topic>
