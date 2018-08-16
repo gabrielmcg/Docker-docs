@@ -35,7 +35,7 @@ This playbook also has the potential to configure additional network adapters.
 
 <li><codeph>playbooks/config_networking.yml</codeph> will configure the network settings in all the virtual machines.</li>
 
-<li id="resize_syspart"><codeph>playbooks/resize_syspart.yml</codeph> resizes the logical volume that holds the <codeph>/</codeph> partition 
+<li><codeph id="resize_syspart">playbooks/resize_syspart.yml</codeph> resizes the logical volume that holds the <codeph>/</codeph> partition 
     of the Linux VMs to use all the space available on the drive. As of now, there is no equivalent for the Windows machines.</li>
 
 <li><codeph>playbooks/config_subscription.yml</codeph> registers and subscribes all virtual machines to the Red Hat Customer Portal. 

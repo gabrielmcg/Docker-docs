@@ -3870,7 +3870,7 @@ This playbook also has the potential to configure additional network adapters.
 <li class="li"><code class="ph codeph">playbooks/config_networking.yml</code> will configure the network settings in all the virtual machines.</li>
 
 
-<li class="li" id="site__resize_syspart"><code class="ph codeph">playbooks/resize_syspart.yml</code> resizes the logical volume that holds the <code class="ph codeph">/</code> partition 
+<li class="li"><code class="ph codeph" id="site__resize_syspart">playbooks/resize_syspart.yml</code> resizes the logical volume that holds the <code class="ph codeph">/</code> partition 
     of the Linux VMs to use all the space available on the drive. As of now, there is no equivalent for the Windows machines.</li>
 
 
