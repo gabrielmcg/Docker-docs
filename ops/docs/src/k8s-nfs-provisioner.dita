@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="k8s-nfs-provisioner">
+<title>NFS provisioner for Kubernetes</title>
+<body>
+<section>
+<title>Prerequisites</title>
+  
+<ul>
+<li>Install the <codeph>kubectl</codeph> binary on your Ansible box -  
+  see <xref href="https://docs.docker.com/ee/ucp/user-access/kubectl/" format="html" scope="external"/></li>  
+<li>Install the UCP Client bundle for the <codeph>admin</codeph> user- 
+  see <xref href="https://docs.docker.com/ee/ucp/user-access/cli/#download-client-certificates-by-using-the-rest-api" format="html" scope="external"/></li>  
+  
+</ul>  
+</section>
+
+<section>
+<title>Running the playbook</title>
+</section>
+ 
+<section>
+<title>Post-deployment verification</title>
+</section>
+  
+</body>
+</topic>
