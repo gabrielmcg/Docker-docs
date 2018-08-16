@@ -5,11 +5,11 @@
 <body>
     
 
-<p>Variables releated to the configuration of Kubernetes Persistent Volumes are shown in 
+<p>Variables related to the configuration of Kubernetes Persistent Volumes are shown in 
 <xref href="k8s-persistent-volume-config.dita#k8s-persistent-volume-config/k8s-persistent-volume-config-table-conref" type="table"/>.</p>
 
 <table id="k8s-persistent-volume-config-table-conref" conref="k8s-persistent-volume-config-table.dita#k8s-persistent-volume-config-table/k8s-persistent-volume-config-table-content">
-<title>Kubernetes Persistent Volumes variables</title>
+<title>Kubernetes Persistent Volume variables</title>
 <tgroup cols="3"> 
 <tbody>
 <row>

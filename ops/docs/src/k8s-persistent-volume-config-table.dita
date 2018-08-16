@@ -5,7 +5,7 @@
 <body>
   
 <table id="k8s-persistent-volume-config-table-content" frame="none">
-<title>Windows variables</title>
+<title>Kubernetes Persistent Volume variables</title>
 <tgroup cols="3">
 <colspec colnum="1" colname="c1" align="left"/>
 <colspec colnum="2" colname="c2" align="left"/>
