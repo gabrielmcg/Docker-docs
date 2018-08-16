@@ -10,7 +10,8 @@
     
 <ul>
 <li>Docker EE changed to version 2.0 (UCP version 3.0.2, DTR version 2.5.3) </li>
-<li>Splunk Enterprise version changed from 7.0.2 to 7.1.2. Splunk Universal Forwarders 7.1.2.</li>    
+<li>Splunk Enterprise version changed from 7.0.2 to 7.1.2. You must download and install version 7.1.2 of the relevant Splunk Universal Forwarder(s)  
+    as described in <xref href="splunk-pre-deploy.dita"/>.</li>    
 </ul>
     
 </section>
@@ -19,14 +20,13 @@
 <title>Playbooks</title>  
  
 <p>An overview of all the playbooks is available <xref href="playbooks-overview.dita">here</xref>. This section outlines the changes 
-    from the previous version.</p>
+    from the previous release of the playbooks.</p>
     
 <p>New playbooks:</p> 
+    
 <ul>
 <li><codeph>playbooks/k8s-nfs-provisioner.yml</codeph> - see <xref href="k8s-persistent-volume-config.dita"/></li>
 <li><codeph>playbooks/resize_syspart.yml</codeph><!-- - see <xref href="playbooks-overview.dita#playbooks-overview/resize_syspart">here</xref>--> </li>
-
-
 </ul>
 
 <p>Modified playbooks:</p>
@@ -35,7 +35,7 @@
 <li><codeph>playbooks/install_nfs_server.yml</codeph></li>    
 </ul>    
     
-<p>Renamed/Removed playbooks</p>    
+<p>Renamed/Removed playbooks:</p>    
         
 <ul>
 <li><codeph>playbooks/monitoring.yml</codeph> replaced by <codeph>playbooks/splunk_uf.yml</codeph></li>  
@@ -43,8 +43,6 @@
 <li><codeph>templates/monitoring</codeph> folder renamed to <codeph>templates/splunk</codeph></li>  
 </ul>  
     
-    
-  
 </section>
   
 <section>

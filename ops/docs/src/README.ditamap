@@ -160,6 +160,8 @@
   <topicref href="playbooks-overview.dita" navtitle="Overview of playbooks"/>
 
   <topicref href="running-playbooks.dita" navtitle="Running the playbooks">
+    <topicref href="running-playbooks-linux.dita" navtitle="Linux-only deployment"/>
+    <topicref href="running-playbooks-hybrid.dita" navtitle="Hybrid Windows and Linux Deployment"/>
     <topicref href="post-deployment.dita" navtitle="Post-deployment"/>
   </topicref>
 
