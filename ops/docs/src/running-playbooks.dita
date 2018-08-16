@@ -6,29 +6,12 @@
 <section id="running-playbooks-section">
 <p>At this point, the system is ready to be deployed. Make sure you are logged on as <codeph>root</codeph> in your ansible box and that your current directory is <codeph>/root/Docker-Synergy/ops</codeph></p>
 
-<p>To start a Linux-only deployment, use the following command:</p>
-
-<codeph># ansible-playbook -i vm_hosts site.yml --vault-password-file .vault_pass</codeph>
-
-    
-<p>The playbooks should run for 35-40 minutes depending on your server specifications and the size of your environment.</p>
-
-    
-<p>To start a hybrid, Windows and Linux deployment, use the following command:</p>
-
-<codeph># ansible-playbook -i vm_hosts hybrid.yml --vault-password-file .vault_pass</codeph>
-
-        
-<p>The playbooks should run for 70-80 minutes depending on your server specifications and the size of your environment. The increase in 
-running time is primarily due to the need to update Windows after creating the VMs.</p>
- 
 <note type="note">As well as configuring your <codeph>vars</codeph> and <codeph>vault</codeph> files, you must also provide a <codeph>backups</codeph> configuration 
     file in the <codeph>group_vars</codeph> folder when running <codeph>site.yml</codeph> or <codeph>hybrid.yml</codeph>. 
     An example file is provided in the repository named <codeph>backups.sample</codeph>. Rename it to backups before 
     running the playbooks. Details on how to configure this file are available in the section 
     <xref href="backup-restore.dita"/>. </note> 
- 
- 
+    
 </section>
 </body>
 </topic>
