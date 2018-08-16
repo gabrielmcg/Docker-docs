@@ -31,7 +31,8 @@
 <section>
 <title>Post-deployment verification</title>
  
-<p>In the example that follows, it is assumed that the relevant variables are configured as follows:</p> 
+<p>In this example, it is assumed that the relevant variables are configured as follows:</p> 
+  
 <table id="k8s-persistent-volume-verify" frame="none">
 <title>Configuration values</title>
 <tgroup cols="2">
@@ -58,7 +59,7 @@
  
 <row>
 <entry>nfs_provisioner_storage_class_name</entry> 
-<entry><codeph>nfs</codeph></entry>
+<entry><codeph><b>nfs</b></codeph></entry>
 </row>
 
 <row>
@@ -75,6 +76,44 @@
 </tbody>
 </tgroup>
 </table>  
+  
+<p>In this instance, the server IP is set to the NFS VM that has been deployed.</p>
+
+
+<p>Running the command <codeph>kubectl get sc</codeph> will show the storage class named <codeph>nfs</codeph>:</p>
+
+<codeblock>
+# kubectl get sc
+NAME      PROVISIONER   AGE
+nfs       hpe.com/nfs   5m
+</codeblock>
+
+
+<p>Create a temporary file <codeph>/tmp/pvc.yml</codeph> for a persistent volume clain named <codeph>dynnfs-testpvc</codeph>
+with a storage class of <codeph>nfs</codeph>
+</p>
+<codeblock># cat /tmp/pvc.yml &lt;&lt;EOF
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+name: <b>dynnfs-testpvc</b>
+annotations:
+volume.beta.kubernetes.io/storage-class: "<b>nfs</b>"
+spec:
+accessModes:
+- ReadWriteMany
+resources:
+requests:
+storage: 100Mi
+EOF  </codeblock>
+
+  
+<p>Create the resource by running <codeph>kubectl apply</codeph> on the file</p>
+
+<codeblock># kubectl apply -f /tmp/pvc.yml
+persistentvolumeclaim "dynnfs-testpvc" created</codeblock>
+  
   
 </section>
   
