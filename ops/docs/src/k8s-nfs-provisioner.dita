@@ -89,7 +89,7 @@ nfs       hpe.com/nfs   5m
 </codeblock>
 
 
-<p>Create a temporary file <codeph>/tmp/pvc.yml</codeph> for a persistent volume clain named <codeph>dynnfs-testpvc</codeph>
+<p>Create a temporary file <codeph>/tmp/pvc.yml</codeph> for a persistent volume claim (PVC) named <codeph>dynnfs-testpvc</codeph>
 with a storage class of <codeph>nfs</codeph>
 </p>
 <codeblock># cat /tmp/pvc.yml &lt;&lt;EOF
@@ -109,10 +109,54 @@ storage: 100Mi
 EOF  </codeblock>
 
   
-<p>Create the resource by running <codeph>kubectl apply</codeph> on the file</p>
+<p>Create the resource by running <codeph>kubectl apply</codeph> on the file.</p>
 
 <codeblock># kubectl apply -f /tmp/pvc.yml
 persistentvolumeclaim "dynnfs-testpvc" created</codeblock>
+  
+<p>Verify that the corresponding persistent volume (PV) was created at the same time.</p>  
+  
+ <codeblock># kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS    CLAIM                    STORAGECLASS   REASON    AGE
+pvc-e685a9d2-8a6f-11e8-9025-0242ac110010   100Mi      RWX            Delete           Bound     default/dynnfs-testpvc   nfs                      4s
+</codeblock> 
+  
+<p></p> 
+
+
+<p>Define a pod that will mount the persistent volume by using the persistent volume claim. The persistent volume
+  is mounted under <codeph>/tmp/foo</codeph>.</p>
+  
+<codeblock>cat /tmp/pod.yml &lt;&lt;EOF
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: <b>dynnfs-testpod</b>
+spec:
+  selector:
+    matchLabels:
+      app: dynnfs-testpod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dynnfs-testpod
+    spec:
+      volumes:
+      - name: pod-data
+        persistentVolumeClaim:
+          claimName: <b>dynnfs-testpvc</b>
+      containers:
+      - name: dynnfs-testpod
+        command:
+        - sh
+        - -c
+        - while true; do sleep 1; done
+        image: radial/busyboxplus:curl
+        volumeMounts:
+        - mountPath: <b>/tmp/foo</b>
+          name: pod-data
+EOF</codeblock>  
   
   
 </section>
