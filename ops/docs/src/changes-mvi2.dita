@@ -18,10 +18,13 @@
 <section>
 <title>Playbooks</title>  
  
+<p>An overview of all the playbooks is available <xref href="playbooks-overview.dita">here</xref>. This section outlines the changes 
+    from the previous version.</p>
+    
 <p>New playbooks:</p> 
 <ul>
 <li><codeph>playbooks/k8s-nfs-provisioner.yml</codeph> - see <xref href="k8s-persistent-volume-config.dita"/></li>
-<li><codeph>playbooks/resize_syspart.yml</codeph> - see <xref href="playbooks-overview.dita#playbooks-overview/resize_syspart">here</xref> </li>
+<li><codeph>playbooks/resize_syspart.yml</codeph><!-- - see <xref href="playbooks-overview.dita#playbooks-overview/resize_syspart">here</xref>--> </li>
 
 
 </ul>
