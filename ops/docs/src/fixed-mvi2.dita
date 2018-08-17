@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="fixed-mvi2">
+<title>Fixed in this release</title>
+<body>
+<section>
+<title>Partition occupies all free space on boot drive</title>  
+  
+<p>In the previous release, when a disk size of 100GB was requested for the boot drive, the drive was configured accordingly in the VM but the size of the <codeph>/</codeph> partition was determined by the template. 
+  The <codeph>/</codeph> partition is now resized to occupy all the free space of the boot drive. This fix has only been implemented for Linux VMs.
+</p>
+
+</section>
+  
+</body>
+</topic>
