@@ -109,7 +109,7 @@ storage: 100Mi
 EOF  </codeblock>
 
   
-<p>Create the resource by running <codeph>kubectl apply</codeph> on the file.</p>
+<p>Create the PVC resource by running <codeph>kubectl apply</codeph> on this file.</p>
 
 <codeblock># kubectl apply -f /tmp/pvc.yml
 persistentvolumeclaim "dynnfs-testpvc" created</codeblock>
@@ -121,10 +121,8 @@ NAME                                       CAPACITY   ACCESS MODES   RECLAIM POL
 pvc-e685a9d2-8a6f-11e8-9025-0242ac110010   100Mi      RWX            Delete           Bound     default/dynnfs-testpvc   nfs                      4s
 </codeblock> 
   
-<p></p> 
 
-
-<p>Define a pod that will mount the persistent volume by using the persistent volume claim. The persistent volume
+<p>Define a pod that will mount the persistent volume through using the persistent volume claim. The persistent volume
   is mounted under <codeph>/tmp/foo</codeph>.</p>
   
 <codeblock>cat /tmp/pod.yml &lt;&lt;EOF
@@ -158,7 +156,38 @@ spec:
           name: pod-data
 EOF</codeblock>  
   
+<p>Create the pod resource by running <codeph>kubectl apply</codeph> on the file.</p>  
   
+  
+<codeblock># kubectl apply -f /tmp/pod.yml
+deployment.apps "dynnfs-testpod" created
+</codeblock>  
+
+<p>Retrieve the pod ID  and then execute a command in the pod to create a test file <codeph>/tmp/foo/bar.txt</codeph> 
+  containing the string <codeph>hello</codeph>on the persistent volume.</p>
+
+<codeblock># pod=$(kubectl get pod | awk '/dynnfs-testpod-/ {print $1}')
+# kubectl exec -it $pod -- sh -c "<b>echo hello >/tmp/foo/bar.txt</b>"</codeblock>
+  
+  
+<p>In this example, where the NFS VM is being used as the storage back-end, you can examine the content of the folder containing the 
+persistent volumes. Given the values specified above, where the NFS VM is named <codeph>hpe-nfs</codeph> and 
+  the <codeph>nfs_provisioner_server_share</codeph> is <codeph>k8s</codeph>, you can connect to the VM and explore the folder. </p>  
+
+<codeblock>
+# ssh hpe-nfs ls -R /k8s
+/k8s:
+default-dynnfs-testpvc-pvc-e685a9d2-8a6f-11e8-9025-0242ac110010
+ 
+/k8s/default-dynnfs-testpvc-pvc-e685a9d2-8a6f-11e8-9025-0242ac110010:
+<b>bar.txt</b></codeblock>
+  
+<p>Examine the contents of the file to ensure that the string <codeph>hello</codeph> has been persisted in the file <codeph>bar.txt</codeph>.</p>  
+
+
+<codeblock>
+# ssh hpe-nfs cat /k8s/default-dynnfs-testpvc-pvc-e685a9d2-8a6f-11e8-9025-0242ac110010/bar.txt
+<b>hello</b></codeblock>
 </section>
   
 </body>
