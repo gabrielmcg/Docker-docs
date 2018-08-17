@@ -740,7 +740,7 @@ around Linux®, Microsoft Windows® and VMware® technologies.</p>
 
 </div>
 <div class="topic nested1" aria-labelledby="ariaid-title8" id="known-issues-mvi2">
-<h2 class="title topictitle2" id="ariaid-title8">Know issues</h2>
+<h2 class="title topictitle2" id="ariaid-title8">Known issues</h2>
 
 <div class="body">
 <p class="p">There are no known issues in this release.</p>
