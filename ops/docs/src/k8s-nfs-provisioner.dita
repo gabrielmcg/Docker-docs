@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="k8s-nfs-provisioner">
-<title>NFS provisioner for Kubernetes</title>
+<title>Deploying the NFS provisioner for Kubernetes</title>
 <body>
 <section>
 <title>Prerequisites</title>
@@ -163,8 +163,8 @@ EOF</codeblock>
 deployment.apps "dynnfs-testpod" created
 </codeblock>  
 
-<p>Retrieve the pod ID  and then execute a command in the pod to create a test file <codeph>/tmp/foo/bar.txt</codeph> 
-  containing the string <codeph>hello</codeph>on the persistent volume.</p>
+<p>Retrieve the pod ID  and then execute a command in the pod to create a test file on the persistent volume named <codeph>/tmp/foo/bar.txt</codeph> 
+ and containing the string <codeph>hello</codeph>.</p>
 
 <codeblock># pod=$(kubectl get pod | awk '/dynnfs-testpod-/ {print $1}')
 # kubectl exec -it $pod -- sh -c "<b>echo hello >/tmp/foo/bar.txt</b>"</codeblock>
@@ -172,7 +172,7 @@ deployment.apps "dynnfs-testpod" created
   
 <p>In this example, where the NFS VM is being used as the storage back-end, you can examine the content of the folder containing the 
 persistent volumes. Given the values specified above, where the NFS VM is named <codeph>hpe-nfs</codeph> and 
-  the <codeph>nfs_provisioner_server_share</codeph> is <codeph>k8s</codeph>, you can connect to the VM and explore the folder. </p>  
+  the <codeph>nfs_provisioner_server_share</codeph> is <codeph>k8s</codeph>, you can connect to the VM and explore the folder as follows. </p>  
 
 <codeblock>
 # ssh hpe-nfs ls -R /k8s
@@ -188,6 +188,10 @@ default-dynnfs-testpvc-pvc-e685a9d2-8a6f-11e8-9025-0242ac110010
 <codeblock>
 # ssh hpe-nfs cat /k8s/default-dynnfs-testpvc-pvc-e685a9d2-8a6f-11e8-9025-0242ac110010/bar.txt
 <b>hello</b></codeblock>
+  
+  
+  
+  
 </section>
   
 </body>

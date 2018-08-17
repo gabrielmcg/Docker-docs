@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="inventory-group-variables">
+<title>Inventory group variables</title>
+<body>
+  
+<p>Additional configuration files for each group in the inventory are available, including <codeph>group_vars/vms.yml</codeph>,
+<codeph>group_vars/ucp.yml</codeph>, <codeph>group_vars/dtr.yml</codeph>, <codeph>group_vars/worker.yml</codeph> 
+  and <codeph>group_vars/nfs.yml</codeph>.
+  
+</p>
+  
+<p>These group files facilitate more sophisticated settings, such as additional drives and additional network interfaces. Fore example, here
+  is the <codeph>group_vars/nfs.yml</codeph> file.
+</p>   
+
+<codeblock>networks:
+  - name:  '{{ vm_portgroup }}'
+    ip:  "{{ ip_addr | ipaddr('address') }}"
+    netmask: "{{ ip_addr | ipaddr('netmask') }}"
+    gateway: "{{ gateway }}"
+ 
+disks_specs:
+  - size_gb:  '{{ disk1_size }}'
+    type: thin
+    datastore: "{{ datastores | random }}"
+  - size_gb: '{{ disk2_size }}'
+    type: thin
+    datastore: "{{ datastores | random }}"
+  - size_gb: 10
+    type: thin
+    datastore: "{{ datastores | random }}"</codeblock>
+
+
+<p>In this example, the size of the first two drives is specified using the values of the variables <codeph>disk1_size</codeph> and <codeph>disk2_size</codeph>  
+  that are declared in the <codeph>group_vars/vars</codeph> file. This maintains compatability with <codeph>vm_hosts</codeph> inventories 
+  from the previous release of the playbooks. However, it is possible to provide explicit values, depending on your requirements for the
+individual UCP, DTR, worker or NFS VMs. For example, you may want to increase the size of the second disk for the NFS VM as this is used
+to store the DTR images, so the default value of 500GB may not be sufficient to meet your needs. </p>
+ 
+<p>In this release, support has been added for configuring a third drive that can be used to hold Kubernetes persistent volume data.
+The default size (10GB) is quite small as it is considered that the use of the NFS VM for storing persistent volume data is only suitable 
+for demo purposes and should not be used in a production environment.
+</p>
+  
+<p>In the following example, the <codeph>group_vars/nfs.yml</codeph> has been modified to 
+configure the NFS VM  with a 50GB boot disk, a 500GB drive for DTR images and a 800GB drive for Kubernetes persistent volumes data. 
+</p>  
+  
+<codeblock>
+networks:
+  - name:  '{{ vm_portgroup }}'
+    ip:  "{{ ip_addr | ipaddr('address') }}"
+    netmask: "{{ ip_addr | ipaddr('netmask') }}"
+    gateway: "{{ gateway }}"
+ 
+disks_specs:
+  - size_gb:  <b>50</b>
+    type: thin
+    datastore: "{{ datastores | random }}"
+  - size_gb: <b>500</b>
+    type: thin
+    datastore: "{{ datastores | random }}"
+  - size_gb: <b>800</b>
+    type: thin
+    datastore: "{{ datastores | random }}"</codeblock>
+  
+  
+</body>
+</topic>

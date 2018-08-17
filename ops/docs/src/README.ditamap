@@ -154,6 +154,8 @@
     <!--</topicref>-->
 
     <topicref href="edit-vault.dita" navtitle="Protecting sensitive information"/>
+    
+    <topicref href="inventory-group-variables.dita" navtitle="Inventory group variables"/>
   </topicref>
 
 

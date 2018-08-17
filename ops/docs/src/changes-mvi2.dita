@@ -25,7 +25,7 @@
 <p>New playbooks:</p> 
     
 <ul>
-<li><codeph>playbooks/k8s-nfs-provisioner.yml</codeph> - see <xref href="k8s-persistent-volume-config.dita"/></li>
+<li><codeph>playbooks/k8s-nfs-provisioner.yml</codeph> - see <xref href="k8s-persistent-volume-config.dita"/> and <xref href="k8s-nfs-provisioner.dita"/></li>
 <li><codeph>playbooks/resize_syspart.yml</codeph><!-- - see <xref href="playbooks-overview.dita#playbooks-overview/resize_syspart">here</xref>--> </li>
 </ul>
 
@@ -46,12 +46,17 @@
 </section>
   
 <section>
-<title>Variables</title>  
+<title>Configuration</title>  
 
+<p>New variables and configuration files have been introduced in this release.</p>
 <ul>
 <li>Added <codeph>splunk_uf_password</codeph> in <codeph>group_vars/vault</codeph> - see <xref href="splunk-pre-deploy.dita"/></li>  
 <li>Added <codeph>orchestrator</codeph> variable in <codeph>vm_hosts</codeph> - see <xref href="orchestrator-config.dita" format="dita"/></li>  
 <li>Added <codeph>k8s_pod_cidr</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="k8s-config.dita"/></li> 
+<li>Additional configuration files for each group in the inventory including <codeph>group_vars/vms.yml</codeph>,
+<codeph>group_vars/ucp.yml</codeph>, <codeph>group_vars/dtr.yml</codeph>, <codeph>group_vars/worker.yml</codeph> 
+    and <codeph>group_vars/nfs.yml</codeph> - see <xref href="inventory-group-variables.dita"/>.
+</li>
 </ul>
 
 </section>
