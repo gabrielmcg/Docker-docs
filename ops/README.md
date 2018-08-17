@@ -588,7 +588,7 @@ around Linux®, Microsoft Windows® and VMware® technologies.</p>
 </div>
 </div>
 <div class="topic nested0" aria-labelledby="ariaid-title4" id="release-notes-mvi2">
-<h1 class="title topictitle1" id="ariaid-title4">Release Notes September 2018</h1>
+<h1 class="title topictitle1" id="ariaid-title4">Release Notes</h1>
 
 <div class="body">
  
