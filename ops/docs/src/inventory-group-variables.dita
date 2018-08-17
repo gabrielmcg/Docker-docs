@@ -10,7 +10,7 @@
   
 </p>
   
-<p>These group files facilitate more sophisticated settings, such as additional drives and additional network interfaces. Fore example, here
+<p>These group files facilitate more sophisticated settings, such as additional drives and additional network interfaces. For example, here
   is the <codeph>group_vars/nfs.yml</codeph> file.
 </p>   
 
@@ -64,7 +64,10 @@ disks_specs:
   - size_gb: <b>800</b>
     type: thin
     datastore: "{{ datastores | random }}"</codeblock>
-  
+
+<note type="note">The number of drives and the purpose of each drive is determined by the role of the VM and the specific playbooks
+  that uses the information. The first disk is always used as the boot disk, irrespective of VM role, while the purpose of the 
+  second or third disk is specific to the role.</note>
   
 </body>
 </topic>
