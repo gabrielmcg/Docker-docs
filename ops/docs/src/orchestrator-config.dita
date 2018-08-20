@@ -12,9 +12,8 @@
 
 </p>
   
-<p>The following example shows how to set Kubernetes as the default orchestrator for worker nodes, and then how to over-ride this
-default on one specific node to use Swarm instead.
-</p>
+<p>The following example shows how to set Kubernetes as the default orchestrator for worker nodes,
+        and how to over-ride the default to use Swarm on one specific node instead. </p>
   
 <codeblock>
 ## WORKER

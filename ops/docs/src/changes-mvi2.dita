@@ -50,7 +50,7 @@
 
 <p>New variables and configuration files have been introduced in this release.</p>
 <ul>
-<li><codeph>splunk_uf_password</codeph> in <codeph>group_vars/vault</codeph> - see <xref href="splunk-pre-deploy.dita"/></li>  
+<li><codeph>splunk_uf_password</codeph> variable in <codeph>group_vars/vault</codeph> - see <xref href="splunk-pre-deploy.dita"/></li>  
 <li><codeph>orchestrator</codeph> variable in <codeph>vm_hosts</codeph> - see <xref href="orchestrator-config.dita" format="dita"/></li>  
 <li><codeph>k8s_pod_cidr</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="k8s-config.dita"/></li> 
 <li>Additional configuration files for each group in the inventory including <codeph>group_vars/vms.yml</codeph>,

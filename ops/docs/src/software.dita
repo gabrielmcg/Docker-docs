@@ -28,12 +28,12 @@
 
 <row>
 <entry>Docker EE</entry>
-<entry>17.06 (tested with UCP 2.2.7 and DTR 2.4.3)</entry>  
+<entry>2.0 with Docker EE Engine 17.06 <p>(tested with UCP 3.0.2 and DTR 2.5.3)</p></entry>  
 </row> 
   
 <row>
 <entry>Red Hat® Enterprise Linux</entry>
-<entry>7.4</entry>  
+<entry>7.4, 7.5</entry>  
 </row>   
 
 <row>
