@@ -6,18 +6,19 @@
 
 
 <section>
-<title>Software</title>  
+<title id="changes-mvi2-software">Software</title>  
     
 <ul>
 <li>Docker EE changed to version 2.0 (UCP version 3.0.2, DTR version 2.5.3) </li>
 <li>Splunk Enterprise version changed from 7.0.2 to 7.1.2. You must download and install version 7.1.2 of the relevant Splunk Universal Forwarder(s)  
-    as described in <xref href="splunk-pre-deploy.dita"/>.</li>    
+    as described in <xref href="splunk-pre-deploy.dita"/>.</li>  
+<li>RHEL 7.5</li>
 </ul>
     
 </section>
     
 <section>
-<title>Playbooks</title>  
+<title id="changes-mvi2-playbooks">Playbooks</title>  
  
 <p>An overview of all the playbooks is available <xref href="playbooks-overview.dita">here</xref>. This section outlines the changes 
     from the previous release of the playbooks.</p>
@@ -46,7 +47,7 @@
 </section>
   
 <section>
-<title>Configuration</title>  
+<title id="changes-mvi2-configuiration">Configuration</title>  
 
 <p>New variables and configuration files have been introduced in this release.</p>
 <ul>
