@@ -5,22 +5,46 @@
 <body>
 
 <section>
-<title>Docker EE 2.0</title>  
-  
+<title>Docker EE 2.0 and Kubernetes</title> 
+
+<p>Docker Enterprise Edition (EE) 2.0 is the only platform that manages and secures applications on Kubernetes 
+  in multi-Linux, multi-OS and multi-cloud customer environments. With Docker EE 2.0, you get simplified workflows for the day-to-day management of a Kubernetes environment 
+  while still having access to native Kubernetes APIs, CLIs, and interfaces.</p>  
+ 
+
+
+<note type="note">Docker EE 2.0 installs Kubernetes version 1.8. In this release, UCP uses its own RBAC system which is not compatible with Kubernetes RBAC.</note>  
+
+<p>For more information on Docker EE 2.0, see 
+  <xref href="https://blog.docker.com/2018/04/announcing-docker-enterprise-edition-2-0/" format="html" scope="external"/>
+  and <xref href="https://www.docker.com/products/docker-enterprise" format="html" scope="external"/>.
+
+</p>
 </section>
   
 <section>
-<title>Splunk 7.1.2</title>  
- 
-<ul>
-<li>New versions of Splunk software components - see <xref href="splunk-pre-deploy.dita#splunk-pre-deploy/splunk-mvi2-versions">Splunk versions</xref></li>
-<li>Kubernetes Monitoring (logs and metrics). Kubernetes metadata is collected by 
-  a universal forwarder implemented as a "Deployment" (one replica). Logs are collected are collected by a 
-  universal forwarder running on each Kubernetes nodes (DaemonSet). This integration is 
-  leveraging  <xref href="https://github.com/splunk/docker-itmonitoring" format="html" scope="external"/>. These universal forwarders are deployed using a 
-  new playbook, <codeph>playbooks/splunk_k8s.yml</codeph></li>
-<li>Kubernetes App in the Splunk demo.</li>
-</ul> 
+<title>Splunk 7.1.2 and Kubernetes</title>  
+
+
+<p>This minor update to Splunk Enterprise supports monitoring of Kubernetes logs and metrics. Kubernetes metadata is collected by 
+  a universal forwarder implemented as a "Deployment" (one replica), while logs are collected by a 
+  universal forwarder running on each Kubernetes nodes (DaemonSet). The integration 
+  leverages the open-source Splunk IT Monitoring and Troubleshooting project at
+  <xref href="https://github.com/splunk/docker-itmonitoring" format="html" scope="external"/>.  
+
+</p>
+
+<p>The update also includes new versions of Splunk software components - see the section on installing
+  the <b>Splunk App for Windows Infrastructure</b> and its dependencies 
+  <xref href="splunk-pre-deploy.dita#splunk-pre-deploy/splunk-mvi2-versions">here</xref>.</p>  
+  
+</section>  
+  
+<section>
+<title>Sysdig and Kubernetes</title>  
+  
+<p>TODO</p>  
+  
 </section>  
 
   
