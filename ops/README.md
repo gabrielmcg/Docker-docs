@@ -655,7 +655,7 @@ around Linux®, Microsoft Windows® and VMware® technologies.</p>
 <div class="body">
 
 
-<div class="section"><h3 class="title sectiontitle">Software</h3>
+<div class="section"><h3 class="title sectiontitle">Software updates</h3>
   
     
 <ul class="ul">
@@ -672,7 +672,7 @@ around Linux®, Microsoft Windows® and VMware® technologies.</p>
 </div>
 
     
-<div class="section"><h3 class="title sectiontitle">Playbooks</h3>
+<div class="section"><h3 class="title sectiontitle">Playbook updates</h3>
   
  
 <p class="p">An overview of all the playbooks is available <a class="xref" href="#playbooks-overview">here</a>. This section outlines the changes 
@@ -716,7 +716,7 @@ around Linux®, Microsoft Windows® and VMware® technologies.</p>
 </div>
 
   
-<div class="section"><h3 class="title sectiontitle">Configuration</h3>
+<div class="section"><h3 class="title sectiontitle">Configuration updates</h3>
   
 
 <p class="p">New variables and configuration files have been introduced in this release.</p>

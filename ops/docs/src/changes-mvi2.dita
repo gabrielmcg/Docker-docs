@@ -6,7 +6,7 @@
 
 
 <section>
-<title id="changes-mvi2-software">Software</title>  
+<title id="changes-mvi2-software">Software updates</title>  
     
 <ul>
 <li>Docker EE changed to version 2.0 (UCP version 3.0.2, DTR version 2.5.3) </li>
@@ -18,7 +18,7 @@
 </section>
     
 <section>
-<title id="changes-mvi2-playbooks">Playbooks</title>  
+<title id="changes-mvi2-playbooks">Playbook updates</title>  
  
 <p>An overview of all the playbooks is available <xref href="playbooks-overview.dita">here</xref>. This section outlines the changes 
     from the previous release of the playbooks.</p>
@@ -47,7 +47,7 @@
 </section>
   
 <section>
-<title id="changes-mvi2-configuiration">Configuration</title>  
+<title id="changes-mvi2-configuiration">Configuration updates</title>  
 
 <p>New variables and configuration files have been introduced in this release.</p>
 <ul>
