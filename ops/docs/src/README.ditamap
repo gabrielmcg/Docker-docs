@@ -166,7 +166,11 @@
   <topicref href="running-playbooks.dita" navtitle="Running the playbooks">
     <topicref href="running-playbooks-linux.dita" navtitle="Linux-only deployment"/>
     <topicref href="running-playbooks-hybrid.dita" navtitle="Hybrid Windows and Linux Deployment"/>
-    <topicref href="k8s-nfs-provisioner.dita" navtitle="NFS provisioner for Kubernetes"/>
+    <topicref href="k8s-nfs-provisioner.dita" navtitle="NFS provisioner for Kubernetes">
+      <topicref href="k8s-nfs-provisioner-vm.dita" navtitle="Using NFS VM for post-deployment verification"/>
+      <topicref href="k8s-nfs-provisioner-3par.dita" navtitle="Using 3PAR for post-deployment verification"></topicref>
+      
+    </topicref>
     <topicref href="post-deployment.dita" navtitle="Post-deployment"/>
   </topicref>
 

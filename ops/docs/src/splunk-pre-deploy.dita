@@ -26,7 +26,7 @@ For a dual Linux/Windows deployment, the images and packages must have same name
 
 <p>You need to set the variable <codeph>splunk_architecture_universal_forwarder_package</codeph> to
 the name you selected for the package(s), not including the file extension. Depending on the Splunk deployment you have chosen,
-edit the file <codeph>templates/monitoring/<b>splunk</b>/vars.yml</codeph> or the file <codeph>templates/monitoring/<b>splunk_demo</b>/vars.yml</codeph>
+edit the file <codeph>templates/splunk/<b>splunk</b>/vars.yml</codeph> or the file <codeph>templates/splunk/<b>splunk_demo</b>/vars.yml</codeph>
 and set the variable, for example:   
 </p>
   
@@ -45,7 +45,7 @@ and set the variable, for example:
 - splunk-indexer2.cloudra.local:9997</codeblock>  
  
 <p>By default, the indexers are configured in a single load balancing group. This can be
-changed by editing the file <codeph>outputs.conf.j2</codeph> in the folder <codeph>template/monitoring/splunk/</codeph>.
+changed by editing the file <codeph>outputs.conf.j2</codeph> in the folder <codeph>templates/splunk/splunk/</codeph>.
 For more information on  forwarding using Universal Forwarder, see the Splunk documentation at
 <xref href="http://docs.splunk.com/Documentation/Forwarder/7.1.2/Forwarder/Configureforwardingwithoutputs.conf" format="html" scope="external"/>.</p>
 
