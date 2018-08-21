@@ -45,7 +45,7 @@ Add a virtual IP address as shown in  <xref href="k8s-nfs-provisioner-3par.dita#
   
 </ol>
   
-This will create a Virtual File Server as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs" type="fig"/>.
+Following these steps will result in a Virtual File Server as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs" type="fig"/>.
   
 <fig id="vfs">
 <title>Virtual File Server</title>
@@ -53,7 +53,42 @@ This will create a Virtual File Server as shown in <xref href="k8s-nfs-provision
 </fig> 
 
 </li>
+ 
+<li>
+Create a File Store as shown in , <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/create-filestore" type="fig"/>, 
+  specifying a name, in this instance <codeph>gab_vfs3par</codeph>, and selecting the Virtual File Server that you just created.
+
+<ol>
+<li>
+
   
+<fig id="create-filestore">
+<title>Create File Store - General</title>
+<image href="media/3par-create-filestore.png" placement="break"/>
+</fig>   
+  
+</li>  
+<li>
+Use the default Security settings, as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/create-filestore-security" type="fig"/>.
+  
+<fig id="create-filestore-security">
+<title>Create File Store - Security</title>
+<image href="media/3par-create-filestore-security.png" placement="break"/>
+</fig>     
+
+
+Following these steps will result in the File Store shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/filestore" type="fig"/>.
+
+
+<fig id="filestore">
+<title>File Store</title>
+<image href="media/3par-create-filestore-complete.png" placement="break"/>
+</fig>  
+</li>  
+
+</ol>
+  
+</li> 
   
   
 </ol>
