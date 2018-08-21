@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="k8s-nfs-provisioner-par">
+<topic id="k8s-nfs-provisioner-3par">
 <title>Using 3PAR for post-deployment verification</title>
 <body>
     
@@ -13,22 +13,22 @@
 <ol>
 <li>Create a virtual file server (VFS)
 <ol>
-<li>In the General section, specify a name, in this instance <codeph>gab_vfs3par</codeph>
+<li>In the General section, as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs-general" type="fig"/>, specify a name, in this instance <codeph>gab_vfs3par</codeph>
 
 
 <fig id="vfs-general">
-<title>Create Virtual File Server General</title>
+<title>Create Virtual File Server - General</title>
 <image href="media/3par-create-vfs.png" placement="break"/>
 </fig>  
   
 </li> 
   
-<li>In the Storage Allocation Settings section, set the Provisioning to <codeph>Thin Provisioned</codeph>, 
+<li>In the Storage Allocation Settings section, as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs-general-storage" type="fig"/>, set the Provisioning to <codeph>Thin Provisioned</codeph>, 
 select an appropriate CPG, in this instance <codeph>FC_r1</codeph>, and set the size, for example, 1 terabyte.
 
   
 <fig id="vfs-general-storage">
-<title>Create Virtual File Server Storage Allocation Settings</title>
+<title>Create Virtual File Server - Storage Allocation Settings</title>
 <image href="media/3par-create-vfs-storage.png" placement="break"/>
 </fig>    
 </li>  
