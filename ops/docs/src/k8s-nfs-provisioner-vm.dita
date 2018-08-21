@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="k8s-nfs-provisioner-vm">
-  <title>Using NFS VM for post-deployment verification</title>
-  <body>
+<title>Using NFS VM for post-deployment verification</title>
+<body>
 <section>
 
  
@@ -72,16 +72,17 @@ with a storage class of <codeph>nfs</codeph>
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-name: <b>dynnfs-testpvc</b>
-annotations:
-volume.beta.kubernetes.io/storage-class: "<b>nfs</b>"
+  name: <b>dynnfs-testpvc</b>
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "<b>nfs</b>"
 spec:
-accessModes:
-- ReadWriteMany
-resources:
-requests:
-storage: 100Mi
-EOF  </codeblock>
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Mi
+EOF  
+</codeblock>
 
   
 <p>Create the PVC resource by running <codeph>kubectl apply</codeph> on this file.</p>

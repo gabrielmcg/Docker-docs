@@ -1,9 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="k8s-nfs-provisioner-par">
-  <title>Using 3PAR for post-deployment verification</title>
-  <body>
+<title>Using 3PAR for post-deployment verification</title>
+<body>
+    
+<section>
+<title>Setting up 3PAR</title>  
+
+<p>The following section outlines the steps you need to follow in order to configure a Virtual File Server 
+  and a share for use by the Kubernetes NFS provisioner.</p>
+
+<ol>
+<li>Create a virtual file server (VFS)
+<ol>
+<li>In the General section, specify a name, in this instance <codeph>gab_vfs3par</codeph>
+
+
+<fig id="vfs-general">
+<title>Create Virtual File Server General</title>
+<image href="media/3par-create-vfs.png" placement="break"/>
+</fig>  
+  
+</li> 
+  
+<li>In the Storage Allocation Settings section, set the Provisioning to <codeph>Thin Provisioned</codeph>, 
+select an appropriate CPG, in this instance <codeph>FC_r1</codeph>, and set the size, for example, 1 terabyte.
+
+  
+<fig id="vfs-general-storage">
+<title>Create Virtual File Server Storage Allocation Settings</title>
+<image href="media/3par-create-vfs-storage.png" placement="break"/>
+</fig>    
+</li>  
+
+<li>
+  
+</li>
+  
+  
+</ol>
+
+</li>
+  
+  
+  
+</ol>
+
+</section>
+
+
+
+<p>In this example, it is assumed that the relevant variables are configured as follows:</p> 
+  
+<table id="k8s-persistent-volume-verify" frame="none">
+<title>Configuration values</title>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry>Variable</entry>
+<entry>Value</entry>
+</row>
+</thead>
+<tbody>
+
+<row>
+<entry>nfs_provisioner_role</entry>
+<entry><codeph>nfs-provisioner-runner-3par</codeph></entry>
+</row>     
+
+ 
+<row>
+<entry>nfs_provisioner_name</entry> 
+<entry><codeph>hpe.com/nfs-3par</codeph></entry>
+</row>
+ 
+<row>
+<entry>nfs_provisioner_storage_class_name</entry> 
+<entry><codeph><b>nfs-3par</b></codeph></entry>
+</row>
+
+<row>
+<entry>nfs_provisioner_server_ip</entry> 
+<entry><codeph>10.60.59.102</codeph></entry>
+</row>
+
+<row>
+<entry>nfs_provisioner_server_share</entry> 
+<entry><codeph>/gab_vfs3par/gab_vfs3par/gab_filestore3par/gab_fileshare3par</codeph></entry>
+</row>
+
+  
+</tbody>
+</tgroup>
+</table>  
     
     
-  </body>
+
+
+</body>
 </topic>
