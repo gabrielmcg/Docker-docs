@@ -23,22 +23,34 @@
   
 </li> 
   
-<li>In the Storage Allocation Settings section, as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs-general-storage" type="fig"/>, set the Provisioning to <codeph>Thin Provisioned</codeph>, 
+<li>In the Storage Allocation Settings section, as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs-storage" type="fig"/>, set the Provisioning to <codeph>Thin Provisioned</codeph>, 
 select an appropriate CPG, in this instance <codeph>FC_r1</codeph>, and set the size, for example, 1 terabyte.
 
   
-<fig id="vfs-general-storage">
+<fig id="vfs-storage">
 <title>Create Virtual File Server - Storage Allocation Settings</title>
 <image href="media/3par-create-vfs-storage.png" placement="break"/>
 </fig>    
 </li>  
 
 <li>
-  
+Add a virtual IP address as shown in  <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs-vip" type="fig"/>.
+
+<fig id="vfs-vip">
+<title>Create Virtual File Server - Add Virtual IP Address </title>
+<image href="media/3par-create-vfs-vip.png" placement="break"/>
+</fig>  
 </li>
   
   
 </ol>
+  
+This will create a Virtual File Server as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs" type="fig"/>.
+  
+<fig id="vfs">
+<title>Virtual File Server</title>
+<image href="media/3par-vfs.png" placement="break"/>
+</fig> 
 
 </li>
   
