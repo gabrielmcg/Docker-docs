@@ -10,11 +10,10 @@
 <p>The following section outlines the steps you need to follow in order to configure a Virtual File Server 
   and a share for use by the Kubernetes NFS provisioner.</p>
 
-<ol>
-<li>Create a virtual file server (VFS)
+
+<p>Create a virtual file server (VFS):</p>
 <ol>
 <li>In the General section, as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs-general" type="fig"/>, specify a name, in this instance <codeph>gab_vfs3par</codeph>
-
 
 <fig id="vfs-general">
 <title>Create Virtual File Server - General</title>
@@ -26,7 +25,6 @@
 <li>In the Storage Allocation Settings section, as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs-storage" type="fig"/>, set the Provisioning to <codeph>Thin Provisioned</codeph>, 
 select an appropriate CPG, in this instance <codeph>FC_r1</codeph>, and set the size, for example, 1 terabyte.
 
-  
 <fig id="vfs-storage">
 <title>Create Virtual File Server - Storage Allocation Settings</title>
 <image href="media/3par-create-vfs-storage.png" placement="break"/>
@@ -44,18 +42,20 @@ Add a virtual IP address as shown in  <xref href="k8s-nfs-provisioner-3par.dita#
   
   
 </ol>
-  
+
+
+<p>
 Following these steps will result in a Virtual File Server as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs" type="fig"/>.
-  
+</p>  
 <fig id="vfs">
 <title>Virtual File Server</title>
 <image href="media/3par-vfs.png" placement="break"/>
 </fig> 
 
-</li>
+
  
-<li>
-Create a File Store.
+
+<p>Create a File Store:</p>
 
 <ol>
 <li>
@@ -75,23 +75,25 @@ Use the default Security settings, as shown in <xref href="k8s-nfs-provisioner-3
 <title>Create File Store - Security</title>
 <image href="media/3par-create-filestore-security.png" placement="break"/>
 </fig>     
+</li>  
 
-
+</ol>
+  
+  
+<p>
 Following these steps will result in the File Store shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/filestore" type="fig"/>.
-
+</p>
 
 <fig id="filestore">
 <title>File Store</title>
 <image href="media/3par-create-filestore-complete.png" placement="break"/>
 </fig>  
-</li>  
 
-</ol>
   
-</li> 
+ 
 
 
-<li>Create a File Share
+<p>Create a File Share:</p>
   
 <ol>
 <li>
@@ -107,12 +109,12 @@ In the General section of the Create File Share dialog as shown <xref href="k8s-
 
 
 <li>
-Select the Virtual File Server that you created earlier, as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/create-fileshare-vfs" type="fig"/>  
+In the Share Path section, select the virtual file server and file store that you created earlier, as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/create-fileshare-sharepath" type="fig"/>  
   
   
-<fig id="create-fileshare-vfs">
-<title>Create File Share - General</title>
-<image href="media/3par-create-fileshare-vfs.png" placement="break"/>
+<fig id="create-fileshare-sharepath">
+<title>Create File Share - Share Path</title>
+<image href="media/3par-create-fileshare-sharepath.png" placement="break"/>
 </fig>     
 </li>
   
@@ -123,9 +125,9 @@ Select the Virtual File Server that you created earlier, as shown in <xref href=
 </ol>  
   
   
-</li>
+
   
-</ol>
+
 
 </section>
 
