@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="deploying-sysdig-swarm">
+<title>Deploying Sysdig monitoring on Docker Swarm</title>
+<body>
+  
+<p>The playbook <codeph>playbooks/install_sysdig.yml</codeph> is used to automate the
+configuration of the SaaS setup. By default, this playbook is commented out in
+<codeph>site.yml</codeph> and must be explicitly enabled. An access key variable must be set
+in the <codeph>group_vars/vault</codeph> file as detailed in <xref
+href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-table-content"
+/>.</p>  
+  
+<p></p>
+</body>
+</topic>

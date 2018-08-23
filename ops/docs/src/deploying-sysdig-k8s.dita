@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="deploying-sysdig-k8s">
+<title>Deploying Sysdig monitoring on Kubernetes</title>
+<body>
+
+<section>
+<title>Prerequisites</title>
+  
+<ul>
+<li>Configure the variables described in the section <xref href="k8s-persistent-volume-config.dita"/></li>
+<li>Install the <codeph>kubectl</codeph> binary on your Ansible box -  
+  see <xref href="https://docs.docker.com/ee/ucp/user-access/kubectl/" format="html" scope="external"/></li>  
+<li>Install the UCP Client bundle for the <codeph>admin</codeph> user- 
+  see <xref href="https://docs.docker.com/ee/ucp/user-access/cli/#download-client-certificates-by-using-the-rest-api" format="html" scope="external"/></li>  
+<li>Confirm that you can connect to the cluster by running a test command, for example, <codeph>kubectl get nodes</codeph></li>  
+</ul>  
+  
+</section>
+  
+  
+<p></p>
+</body>
+</topic>

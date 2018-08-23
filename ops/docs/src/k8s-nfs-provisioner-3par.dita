@@ -291,8 +291,8 @@ deployment.apps "nfs-3par-pod" created
 </codeblock>  
 
 
-<p>Retrieve the pod ID  and then execute a command in the pod to create a test file on the persistent volume named <codeph>/tmp/foo/bar.txt</codeph> 
- and containing the string <codeph>hello</codeph>.</p>
+<p>Retrieve the pod ID  and then execute a command in the pod to create a test file on the persistent volume. The file is named <codeph>/tmp/foo/bar.txt</codeph> 
+ and contains the string <codeph>hello</codeph>.</p>
 
 <codeblock># pod=$(kubectl get pod | awk '/nfs-3par-pod-/ {print $1}')
 # kubectl exec -it $pod -- sh -c "<b>echo hello >/tmp/foo/bar.txt</b>"</codeblock>

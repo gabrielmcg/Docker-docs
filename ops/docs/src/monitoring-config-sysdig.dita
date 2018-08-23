@@ -3,12 +3,7 @@
 <topic id="monitoring-config-sysdig">
 <title>Sysdig configuration</title>
 <body>
-<p>The playbook <codeph>playbooks/install_sysdig.yml</codeph> is used to automate the
-configuration of the SaaS setup. By default, this playbook is commented out in
-<codeph>site.yml</codeph> and must be explicitly enabled. An access key variable must be set
-in the <codeph>group_vars/vault</codeph> file as detailed in <xref
-href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-table-content"
-/>.</p>
+
 
 <table id="sysdig-config-table-content" frame="none">
 <title>Sysdig variables</title>
@@ -53,18 +48,16 @@ as well as the NFS, logger and load balancer VMs.
 </table>
 
 
-<note type="note"><p>By default, you must have outgoing port 6666 open in your firewall, to allow data to flow
-to <codeph>collector.sysdigcloud.com</codeph>. You can configure the agent to use a different port by setting the 
-<codeph>collector_port</codeph> parameter in the configuration file <codeph>/opt/draios/etc/dragent.yaml</codeph>. For more
-information, see the relevant Sysdig documentation at 
-<xref href="https://support.sysdig.com/hc/en-us/articles/204205969" format="html" scope="external"/>.</p>
-   
-<p>If you are using a proxy, it must be configured to be "fully-transparent". Non-transparent proxies will not allow the agent to connect.</p>   
-</note>
 
-<p>Using the Sysdig software as a solution (SaaS) website <xref
-href="https://app.sysdigcloud.com" format="html" scope="external"/>, you are able to view, analyze and
-inspect various different dashboards.</p>
+
+
+
+
+
+
+   
+   
+   
 
 </body>
 </topic>

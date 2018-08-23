@@ -171,6 +171,11 @@
       <topicref href="k8s-nfs-provisioner-3par.dita" navtitle="Using 3PAR for post-deployment verification"></topicref>
       
     </topicref>
+    <topicref href="deploying-sysdig.dita" navtitle="Deploying Sysdig">
+      <topicref href="deploying-sysdig-swarm.dita" navtitle="Deploying Sysdig on Docker swarm"/>
+      <topicref href="deploying-sysdig-k8s.dita" navtitle="Deploying Sysdig on Kubernetes"/>
+    </topicref>
+    
     <topicref href="post-deployment.dita" navtitle="Post-deployment"/>
   </topicref>
 
