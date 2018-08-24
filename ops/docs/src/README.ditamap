@@ -176,7 +176,10 @@
       <topicref href="deploying-sysdig-swarm.dita" navtitle="Deploying Sysdig on Docker swarm"/>
     </topicref>
     
-    <topicref href="post-deployment.dita" navtitle="Post-deployment"/>
+    <topicref href="post-deployment.dita" navtitle="Post-deployment">
+      <topicref href="k8s-example-guestbook.dita" navtitle="Kubernetes guestbook example with Redis"/>
+      
+    </topicref>
   </topicref>
 
 

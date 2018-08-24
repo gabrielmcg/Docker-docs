@@ -244,7 +244,7 @@ persistentvolumeclaim "nfs-3par-test" created</codeblock>
   
 <p>Verify that the corresponding persistent volume (PV) was created at the same time.</p>  
   
- <codeblock># kubectl get pv
+<codeblock># kubectl get pv
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS    CLAIM                   STORAGECLASS   REASON    AGE
 pvc-5dd91d9b-a520-11e8-975d-0242ac110010   100Mi      RWX            Delete           Bound     default/nfs-3par-test   nfs-3par                 58s
 </codeblock>   

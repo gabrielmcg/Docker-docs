@@ -18,13 +18,13 @@
 <li>Ensure that you have configured the required variables, as described in the section 
   <xref href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-k8s"/>.
   
-For example, the relevant variables in <codeph>group_vars/vars</codeph> could be
+For example, you add the the relevant variables in the <codeph>group_vars/vars</codeph> file.
 
 <codeblock>sysdig_restricted_control_role: 'Restricted Control'
 k8s_cluster: ucp_gab-ucp.cloudra.local
 </codeblock>
   
-The access key should be added to the encrypted <codeph>group_vars/vault</codeph> using the command <codeph>ansible-vault edit group_vars/vault</codeph>.
+You should add the access key  to the encrypted <codeph>group_vars/vault</codeph> using the command <codeph>ansible-vault edit group_vars/vault</codeph>.
   
 <codeblock>sysdig_access_key: '10****97-9160-****-9061-84bfd0f****0'
 </codeblock>
