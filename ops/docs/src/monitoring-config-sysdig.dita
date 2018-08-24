@@ -5,8 +5,11 @@
 <body>
 
 
+<section id="sysdig-config-docker-swarm">
+<title>Sysdig configuration for Docker swarm</title>   
+   
 <table id="sysdig-config-table-content" frame="none">
-<title>Sysdig variables</title>
+<title>Sysdig variables for Docker swarm</title>
 <!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
 <col/>
 <col/>
@@ -48,8 +51,59 @@ as well as the NFS, logger and load balancer VMs.
 </table>
 
 
+</section>
 
 
+
+<section id="sysdig-config-k8s">
+<title>Sysdig configuration for Kubernetes</title>   
+   
+<table id="sysdig-config-k8s-table-content" frame="none">
+<title>Sysdig variables for Kubernetes</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Variable</entry>
+<entry>File</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>sysdig_access_key</entry>
+<entry><b>group_vars/vault</b></entry>
+<entry>After the activation of your account on the Sysdig portal, you will be 
+provided with your access key which will be used by the playbooks to install the agent on each UCP, DTR and Linux Kubernetes worker node.
+</entry>
+</row>
+<row>
+<entry>sysdig_restricted_control_role</entry>
+<entry>group_vars/vars</entry>
+<entry>The Sysdig service account requires the 'Restricted Control' grant. So this value will typically be set as follows:
+<codeblock><b>sysdig_restricted_control_role: 'Restricted Control'</b></codeblock>
+</entry>  
+</row>    
+<row>
+<entry>k8s_cluster</entry>
+<entry>group_vars/vars</entry>
+<entry>This should match the cluster name returned by <codeph>kubectl cluster-info</codeph>, for example, 
+<codeblock></codeblock>
+</entry>
+</row>    
+</tbody>
+</tgroup>
+</table>
+
+
+</section>
 
 
 

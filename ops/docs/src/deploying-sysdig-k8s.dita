@@ -8,16 +8,47 @@
 <title>Prerequisites</title>
   
 <ul>
-<li>Configure the variables described in the section <xref href="k8s-persistent-volume-config.dita"/></li>
 <li>Install the <codeph>kubectl</codeph> binary on your Ansible box -  
-  see <xref href="https://docs.docker.com/ee/ucp/user-access/kubectl/" format="html" scope="external"/></li>  
+  see <xref href="https://docs.docker.com/ee/ucp/user-access/kubectl/" format="html" scope="external"/>.
+
+</li>  
 <li>Install the UCP Client bundle for the <codeph>admin</codeph> user- 
   see <xref href="https://docs.docker.com/ee/ucp/user-access/cli/#download-client-certificates-by-using-the-rest-api" format="html" scope="external"/></li>  
-<li>Confirm that you can connect to the cluster by running a test command, for example, <codeph>kubectl get nodes</codeph></li>  
-</ul>  
+<li>Confirm that you can connect to the cluster by running a test command, for example, <codeph>kubectl get nodes</codeph></li>
+<li>Ensure that you have configured the required variables, as described in the section 
+  <xref href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-k8s"/>.
   
+For example, the relevant variables in <codeph>group_vars/vars</codeph> could be
+
+<codeblock>sysdig_restricted_control_role: 'Restricted Control'
+k8s_cluster: ucp_gab-ucp.cloudra.local
+</codeblock>
+  
+The access key should be added to the encrypted <codeph>group_vars/vault</codeph> using the command <codeph>ansible-vault edit group_vars/vault</codeph>.
+  
+<codeblock>sysdig_access_key: '10****97-9160-****-9061-84bfd0f****0'
+</codeblock>
+  
+</li>  
+</ul>  
 </section>
   
+<section>
+<title>Running the playbook</title>  
+  
+<codeblock># cd Docker-Synergy/ops
+# ansible-playbook -i vm_hosts playbooks/k8s-install-sysdig.yml --vault-password-file .vault_pass
+</codeblock> 
+ 
+</section>
+
+<section>
+<p>Using the Sysdig software as a solution (SaaS) website <xref
+href="https://app.sysdigcloud.com" format="html" scope="external"/>, you are able to view, analyze and
+inspect various different dashboards.</p>  
+  
+</section>
+
   
 <p></p>
 </body>

@@ -11,6 +11,14 @@ in the <codeph>group_vars/vault</codeph> file as detailed in <xref
 href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-table-content"
 />.</p>  
   
-<p></p>
+<codeblock># cd Docker-Synergy/ops
+# ansible-playbook -i vm_hosts playbooks/install-sysdig.yml --vault-password-file .vault_pass
+</codeblock> 
+  
+<p>Using the Sysdig software as a solution (SaaS) website <xref
+href="https://app.sysdigcloud.com" format="html" scope="external"/>, you are able to view, analyze and
+inspect various different dashboards.</p>
+
+
 </body>
 </topic>
