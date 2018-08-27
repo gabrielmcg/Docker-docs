@@ -12,6 +12,12 @@
 
 </p>
   
+<note type="note">Docker supports a third type, <codeph>mixed</codeph>, that enables workloads to be scheduled 
+  by Kubernetes and Swarm both on the same node. Mixing orchestrator types on the same node is not recommended 
+  for production deployments because of the likelihood of resource contention and so, these playbooks do not support
+the <codeph>mixed</codeph> type.</note>  
+  
+  
 <p>The following example shows how to set Kubernetes as the default orchestrator for worker nodes,
         and how to over-ride the default to use Swarm on one specific node instead. </p>
   
@@ -29,7 +35,28 @@ disk2_size='500'
 <b>orchestrator=kubernetes</b>
 </codeblock>  
   
+
+<note type="note">
+
+The playbooks do not change Docker's default orchestrator type which is <codeph>swarm</codeph>. Instead, the inventory is used 
+to configure worker nodes for Kubernetes workloads or swarm workloads as explained above. 
   
+If you want to change the default orchestrator type, use the method explained in the Docker documentation at
+<xref href="https://docs.docker.com/ee/ucp/admin/configure/set-orchestrator-type/#set-the-default-orchestrator-type-for-new-nodes" format="html" scope="external"/>.
+
+</note>
+
+
+<note type="note">
+It is possible to manually change the orchestrator type for a node. When you do this, existing workloads are evicted
+and they are not migrated automatically to the new orchestrator. If you want the workloads to be scheduled by the new orchestrator, 
+you must migrate them manually. More information is available in the Docker documentation at 
+<xref href="https://docs.docker.com/ee/ucp/admin/configure/set-orchestrator-type/#what-happens-when-you-change-a-nodes-orchestrator" scope="external" format="html"/>.
+   
+</note>
+
+
+
 </section>
 </body>
 </topic>

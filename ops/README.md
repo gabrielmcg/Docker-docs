@@ -761,7 +761,8 @@ used in conjunction with Docker swarm deployments.</div><hr />
 <ul class="ul">
 <li class="li"><code class="ph codeph">playbooks/k8s-nfs-provisioner.yml</code> - see <a class="xref" href="#k8s-persistent-volume-config">Kubernetes Persistent Volume configuration</a> and <a class="xref" href="#k8s-nfs-provisioner">Deploying the NFS provisioner for Kubernetes</a></li>
 
-<li class="li"><code class="ph codeph">playbooks/resize_syspart.yml</code> </li>
+<li class="li"><code class="ph codeph">playbooks/resize_syspart.yml</code> resizes the logical volume that holds the <code class="ph codeph">/</code> partition of the Linux VMs to use all the space available on the drive.
+     </li>
 
 </ul>
 
@@ -1082,179 +1083,179 @@ allocation is described in <a class="xref" href="#sizing__memory-alloc-table-con
 
 <table cellpadding="4" cellspacing="0" summary="" id="sizing__vcpu-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>vCPU</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2646">vCPUs</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2649">node01</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2652">node02</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2655">node03</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2649">vCPUs</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2652">node01</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2655">node02</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2658">node03</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">ucp1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 "> </td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">ucp2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">ucp1</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">4</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">ucp3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">ucp2</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">dtr1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">2</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">ucp3</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">4</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">dtr2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">
-
-</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">dtr1</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">
-
-</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 "> </td>
 </tr>
 
-
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">dtr3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">
-
-</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">dtr2</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">
 
 </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">
+
+</td>
+</tr>
+
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">dtr3</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">2</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">worker1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">worker1</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">4</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 "> </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">worker2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">
-
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">
-
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">worker3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">
-
-</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">worker2</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">
+
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">worker3</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">
 <p class="p"></p>
 
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">4</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">win-worker1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 "> </td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">win-worker2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">win-worker1</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">4</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 "> </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">win-worker3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">win-worker2</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 "> </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">ucb_lb
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">2
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">
-
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">
-
-</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">win-worker3</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">4</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">dtr_lb
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">ucb_lb
 </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">2
 </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">
 
 </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">
+
+</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">worker_lb
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">
-
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">dtr_lb
 </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">
-
 </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">2
 </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">
+
+</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">nfs
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">
-
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">worker_lb
 </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">
 
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">2
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">logger
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">
-
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">2
 </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">2
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">nfs
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">2
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">logger
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">2
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">
 <p class="p"></p>
 
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2646 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2649 ">
 Total vCPU per node
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2649 ">
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">
 16
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2652 ">
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">
 18
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2655 ">
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2658 ">
 18
 </td>
 </tr>
@@ -1278,151 +1279,151 @@ of vCPU required</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="sizing__memory-alloc-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>Memory allocation</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2956">RAM (GB)</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2959">node01</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2962">node02</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2965">node03</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2959">RAM (GB)</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2962">node01</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2965">node02</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2968">node03</th>
 </tr>
 </thead><tbody class="tbody">		
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">ucp1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 ">8</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">ucp2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>							
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">ucp1</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 ">8</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">ucp3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">ucp2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>							
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 ">8</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">dtr1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 ">16</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">ucp3</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 ">8</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">dtr2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">dtr1</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 ">16</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">dtr3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">dtr2</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 ">16</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">worker1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 ">64</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">dtr3</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 ">16</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">worker2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">worker1</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 ">64</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">worker3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">worker2</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 ">64</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">win-worker1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 ">64</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">worker3</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 ">64</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">win-worker2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">win-worker1</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 ">64</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">win-worker3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">win-worker2</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 ">64</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">ucb_lb</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 ">4</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">win-worker3</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 ">64</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">dtr_lb</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">ucb_lb</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 ">4</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">worker_lb</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">dtr_lb</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">nfs</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">worker_lb</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 ">4</td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 ">logger</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 ">4</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 ">4</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 "><strong class="ph b">Total RAM required (per node)</strong></td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "><strong class="ph b">156</strong></td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "><strong class="ph b">160</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">nfs</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 ">4</td>
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 ">logger</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 "><strong class="ph b">Total RAM required (per node)</strong></td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "><strong class="ph b">156</strong></td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "><strong class="ph b">160</strong></td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "><strong class="ph b">160</strong></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 "><strong class="ph b">Total RAM required</strong></td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "><strong class="ph b">476</strong></td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 "><strong class="ph b">Total RAM required</strong></td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "><strong class="ph b">476</strong></td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2956 "><strong class="ph b">Available RAM</strong></td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2959 "><strong class="ph b">384</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2959 "><strong class="ph b">Available RAM</strong></td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2962 "><strong class="ph b">384</strong></td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2965 "><strong class="ph b">384</strong></td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2968 "><strong class="ph b">384</strong></td>
 </tr>
 </tbody></table>
 </div>
@@ -1508,29 +1509,29 @@ security. The document can be found at <a class="xref" href="http://h20195.www2.
 
 <table cellpadding="4" cellspacing="0" summary="" id="hardware__hardware-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 3. </span>Hardware</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3362">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3365">Purpose</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3365">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3368">Purpose</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3362 ">HPE Synergy 12000 Frame</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3365 ">Rack enclosure for compute, storage, and network hardware</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3365 ">HPE Synergy 12000 Frame</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3368 ">Rack enclosure for compute, storage, and network hardware</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3362 ">HPE Synergy 480 Gen10 Compute Modules</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3365 ">Hosts for running ESX servers that support UCP, DTR, worker and other nodes in the solution</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3365 ">HPE Synergy 480 Gen10 Compute Modules</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3368 ">Hosts for running ESX servers that support UCP, DTR, worker and other nodes in the solution</td>
 </tr>
  
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3362 ">HPE 3PAR StoreServ 8200 </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3365 ">Provides the storage for the virtual machines and the Docker backups</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3365 ">HPE 3PAR StoreServ 8200 </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3368 ">Provides the storage for the virtual machines and the Docker backups</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3362 ">HPE StoreOnce</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3365 ">High performance backup system</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3365 ">HPE StoreOnce</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3368 ">High performance backup system</td>
 </tr>  
 
 </tbody></table>
@@ -1659,35 +1660,35 @@ Storage for backups can be configured on the HDDs.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="software__software-3rd-party-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 4. </span>Third-party software</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3546">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3549">Version</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3549">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3552">Version</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3546 ">Ansible</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">2.4.2</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">Ansible</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3552 ">2.4.2</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3546 ">Docker EE</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">2.0 with Docker EE Engine 17.06 <p class="p">(tested with UCP 3.0.4 and DTR 2.5.3)</p>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">Docker EE</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3552 ">2.0 with Docker EE Engine 17.06 <p class="p">(tested with UCP 3.0.4 and DTR 2.5.3)</p>
 </td>  
 </tr> 
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3546 ">Red Hat® Enterprise Linux</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">7.4, 7.5</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">Red Hat® Enterprise Linux</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3552 ">7.4, 7.5</td>  
 </tr>   
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3546 ">Microsoft® Windows</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">Server 2016</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">Microsoft® Windows</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3552 ">Server 2016</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3546 ">VMware®</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">ESXi 6.5.0 and vCenter 6.5.0</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">VMware®</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3552 ">ESXi 6.5.0 and vCenter 6.5.0</td>  
 </tr> 
 
 
@@ -1701,14 +1702,14 @@ Storage for backups can be configured on the HDDs.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="software__software-hpe-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 5. </span>HPE Software</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3621">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3624">Version</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3624">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3627">Version</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3621 ">HPE Recovery Manager Central </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3624 ">5.0.1</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3624 ">HPE Recovery Manager Central </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3627 ">5.0.1</td>  
 </tr>
   
 
@@ -1814,28 +1815,28 @@ security scanning.</li>
 
 <table cellpadding="4" cellspacing="0" summary="" id="application-software__application-software-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 6. </span>Application software</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3765">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3768">Version</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3768">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3771">Version</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3765 ">Splunk</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">7.1.2</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">Splunk</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3771 ">7.1.2</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3765 ">Sysdig</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">latest</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">Sysdig</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3771 ">latest</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3765 ">Prometheus</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">v2.3.2</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">Prometheus</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3771 ">v2.3.2</td>  
 </tr> 
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3765 ">Grafana</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">5.2.3</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">Grafana</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3771 ">5.2.3</td>  
 </tr>   
 
 
@@ -2117,19 +2118,19 @@ A brief overview of the information required is presented in
 
 <table cellpadding="4" cellspacing="0" summary="" id="verify-prereqs__verify-prereqs-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 7. </span>Summary of information required</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4172">Component </th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4175">Details </th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4175">Component </th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4178">Details </th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4172 ">Virtual Infrastructure </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">The FQDN of your vCenter server and the name of the Datacenter. You
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">Virtual Infrastructure </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4178 ">The FQDN of your vCenter server and the name of the Datacenter. You
 will also need administrator credentials in order to create templates
 and spin up virtual machines. </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4172 ">L3 Network requirements </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">You will need one IP address for each and every VM configured in the
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">L3 Network requirements </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4178 ">You will need one IP address for each and every VM configured in the
 Ansible inventory (see the section <a class="xref" href="#edit-group-var">Configuring the solution components</a>). The recommended
 minimal deployment (Linux-only) configures 14 virtual machines so you
 would need to allocate 14 IP addresses to use this example inventory.
@@ -2141,8 +2142,8 @@ L3 gateway for this subnet. </td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4172 ">DNS </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">You will need to know the IP addresses of your DNS server. In
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">DNS </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4178 ">You will need to know the IP addresses of your DNS server. In
 addition, all the VMs you configure in the inventory must have their
 names registered in DNS prior to deployment. In addition, you will need to know the domain name to
 use for configuring the virtual machines (such as <code class="ph codeph">example.com</code>)
@@ -2150,29 +2151,29 @@ use for configuring the virtual machines (such as <code class="ph codeph">exampl
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4172 ">NTP Services </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">You need time services configured in your environment. The deployed solution
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">NTP Services </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4178 ">You need time services configured in your environment. The deployed solution
 uses certificates that are time-sensitive. You will need to specify the IP addresses of your time servers
 (NTP). </td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4172 ">RHEL Subscription </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">A RHEL subscription is required to pull extra packages that are not
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">RHEL Subscription </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4178 ">A RHEL subscription is required to pull extra packages that are not
 on the DVD. </td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4172 ">Docker Prerequisites </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">You will need a URL for the official Docker EE software download and
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">Docker Prerequisites </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4178 ">You will need a URL for the official Docker EE software download and
 a license file. Refer to the Docker documentation to learn more about
 this URL and the licensing requirements at: <a class="xref" href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/" target="_blank">https://docs.docker.com/engine/installation/linux/docker-ee/rhel/</a>
 in the section entitled “Docker EE repository URL” </td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4172 ">Proxy </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">The playbooks pull the Docker packages from the Internet. If your
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4175 ">Proxy </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4178 ">The playbooks pull the Docker packages from the Internet. If your
 environment accesses the Internet through a proxy, you will need the
 details of the proxy including the fully qualified domain name and the
 port number. </td>
@@ -2887,35 +2888,35 @@ mandatory unless otherwise specified.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="edit-inventory__variables-local-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 8. </span>Variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5095">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5098">Scope</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5101">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5098">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5101">Scope</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5104">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5095 ">ip_addr</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5098 ">Node</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5101 ">IP address in CIDR format to be given to a node</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5098 ">ip_addr</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5101 ">Node</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5104 ">IP address in CIDR format to be given to a node</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5095 ">esxi_host</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5098 ">Node</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5101 ">ESXi host where the node will be deployed. If the cluster is configured with DRS, this option will be overridden</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5098 ">esxi_host</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5101 ">Node</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5104 ">ESXi host where the node will be deployed. If the cluster is configured with DRS, this option will be overridden</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5095 ">cpus</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5098 ">Node/Group</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5101 ">Number of CPUs to assign to a VM or a group of VMs</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5098 ">cpus</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5101 ">Node/Group</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5104 ">Number of CPUs to assign to a VM or a group of VMs</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5095 ">ram</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5098 ">Node/Group</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5101 ">Amount of RAM in MB to assign to a VM or a group of VMs</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5098 ">ram</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5101 ">Node/Group</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5104 ">Amount of RAM in MB to assign to a VM or a group of VMs</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5095 ">disk2_usage</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5098 ">Node/Group</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5101 ">Size of the second disk in GB to attach to a VM or a group of VMs. This variable is only mandatory on Docker nodes (UCP, DTR, worker) and NFS node. It is not required for the logger node or the load balancers.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5098 ">disk2_usage</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5101 ">Node/Group</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5104 ">Size of the second disk in GB to attach to a VM or a group of VMs. This variable is only mandatory on Docker nodes (UCP, DTR, worker) and NFS node. It is not required for the logger node or the load balancers.</td>
 </tr>
 </tbody></table>
 </div>
@@ -2938,88 +2939,88 @@ mandatory unless otherwise specified.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="vmware-config__vmware-variables-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 9. </span>VMware variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5207">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5210">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5213">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5210">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5213">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5216">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">vcenter_hostname</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">IP or hostname of the vCenter appliance</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">vcenter_hostname</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 ">IP or hostname of the vCenter appliance</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">vcenter_username</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">Username to log in to the vCenter appliance. It might include a domain, for
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">vcenter_username</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 ">Username to log in to the vCenter appliance. It might include a domain, for
 example, '<code class="ph codeph">administrator@vsphere.local</code>'. Note: The corresponding
 password is stored in a separate file (<code class="ph codeph">group_vars/vault</code>) with the
 variable named <code class="ph codeph">vcenter_password</code>.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">vcenter_validate_certs</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">‘no’</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">vcenter_validate_certs</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 ">‘no’</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">datacenter</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">Name of the datacenter where the environment will be provisioned</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">datacenter</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 ">Name of the datacenter where the environment will be provisioned</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">vm_username</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">Username to log into the VMs. It needs to match the one from the VM Template, so
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">vm_username</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 ">Username to log into the VMs. It needs to match the one from the VM Template, so
 unless you have created a user, you must use 'root'. Note: The corresponding password
 is stored in a separate file (<code class="ph codeph">group_vars/vault</code>) with the variable
 named <code class="ph codeph">vm_password</code>.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">vm_template</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">Name of the RHEL VM Template to be use. Note that this is the name from a vCenter
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">vm_template</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 ">Name of the RHEL VM Template to be use. Note that this is the name from a vCenter
 perspective, not the hostname.</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">folder_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">vCenter folder to deploy the VMs. If you do not wish to deploy in a particular
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">folder_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 ">vCenter folder to deploy the VMs. If you do not wish to deploy in a particular
 folder, the value should be <code class="ph codeph">/</code>. Note: If you want to deploy in a
 specific folder, you need to create this folder in the inventory of the selected
 datacenter before starting the deployment.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">datastores</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">List of datastores to be used, in list format, i.e.
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">datastores</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 ">List of datastores to be used, in list format, i.e.
 ['<code class="ph codeph">Datastore1</code>','<code class="ph codeph">Datastore2</code>'...]. This or these
 datastore(s) must exist before you run the playbooks.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">disk2</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">UNIX® name of the second disk for the Docker VMs. Typically
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">disk2</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 ">UNIX® name of the second disk for the Docker VMs. Typically
 <code class="ph codeph">/dev/sdb</code></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">disk2_part</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">UNIX name of the partition of the second disk for the Docker VMs. Typically
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">disk2_part</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 ">UNIX name of the partition of the second disk for the Docker VMs. Typically
 <code class="ph codeph">/dev/sdb1</code></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">vsphere_plugin_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">Version of the vSphere plugin for Docker. The default is 0.21.2 which is the latest
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">vsphere_plugin_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 ">Version of the vSphere plugin for Docker. The default is 0.21.2 which is the latest
 version at the time of writing this document. The version of the plugin should match
 the version of the vSphere Installation Bundle (VIB) that you installed on the ESXi
 servers.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5207 ">vm_portgroup</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 "><p class="p">Used by the playbook <code class="ph codeph">create_vms.yml</code>, this variable is used to
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5210 ">vm_portgroup</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5213 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5216 "><p class="p">Used by the playbook <code class="ph codeph">create_vms.yml</code>, this variable is used to
 specify the portgroup connected to the network that connects all the VMs. There is
 currently only one network. </p>
 
@@ -3051,38 +3052,38 @@ In addition, you should make sure that the adapter specifies <code class="ph cod
 
 <table cellpadding="4" cellspacing="0" summary="" id="network-config__network-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 10. </span>Network variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5447">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5450">File</th>    
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5453">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5450">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5453">File</th>    
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5456">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5447 ">nic_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5450 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5453 ">Name of the device, for RHEL this is typically
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5450 ">nic_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5453 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5456 ">Name of the device, for RHEL this is typically
 <code class="ph codeph">ens192</code> and it is recommended to leave it as
 is.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5447 ">gateway</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5450 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5453 ">IP address of the gateway to be used</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5450 ">gateway</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5453 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5456 ">IP address of the gateway to be used</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5447 ">dns</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5450 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5453 ">List of DNS servers to be used, in list format, i.e.
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5450 ">dns</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5453 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5456 ">List of DNS servers to be used, in list format, i.e.
 ['<code class="ph codeph">10.10.173.1</code>','<code class="ph codeph">10.10.173.2</code>'...]</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5447 ">domain_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5450 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5453 ">Domain name for your Virtual Machines</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5450 ">domain_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5453 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5456 ">Domain name for your Virtual Machines</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5447 ">ntp_server</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5450 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5453 ">List of NTP servers to be used, in list format, i.e.
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5450 ">ntp_server</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5453 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5456 ">List of NTP servers to be used, in list format, i.e.
 ['<code class="ph codeph">1.2.3.4</code>','<code class="ph codeph">0.us.pool.net.org</code>'...]</td>
 </tr>
 </tbody></table>
@@ -3106,15 +3107,15 @@ is.</td>
 
 <table cellpadding="4" cellspacing="0" summary="" id="environment-config__env-variables-table" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 11. </span>Environment variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="" valign="top" id="d29e5575">Variable</th>
-<th class="entry nocellnorowborder" align="" valign="top" id="d29e5578">File</th>    
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5581">Description</th>
+<th class="entry nocellnorowborder" align="" valign="top" id="d29e5578">Variable</th>
+<th class="entry nocellnorowborder" align="" valign="top" id="d29e5581">File</th>    
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5584">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="" valign="top" headers="d29e5575 ">env</td>
-<td class="entry nocellnorowborder" align="" valign="top" headers="d29e5578 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5581 ">Dictionary containing all environment variables. It contains
+<td class="entry nocellnorowborder" align="" valign="top" headers="d29e5578 ">env</td>
+<td class="entry nocellnorowborder" align="" valign="top" headers="d29e5581 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5584 ">Dictionary containing all environment variables. It contains
 three entries described below. Please leave  the proxy related
 settings empty if not required:<ul class="ul">
 <li class="li"><code class="ph codeph">http_proxy</code>: HTTP proxy URL, such as <code class="ph codeph">'http://15.184.4.2:8080'</code>. This variable defines
@@ -3150,22 +3151,22 @@ such as <code class="ph codeph">'localhost,127.0.0.1,.cloudra.local,10.10.174.'<
 
 <table cellpadding="4" cellspacing="0" summary="" id="docker-config__docker-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 12. </span>Docker variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5664">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5667">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5670">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5667">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5670">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5673">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5664 ">docker_ee_url</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 "><strong class="ph b">group_vars/vault</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">Note: This is a private link to your Docker EE subscription.  The value for
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">docker_ee_url</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 "><strong class="ph b">group_vars/vault</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5673 ">Note: This is a private link to your Docker EE subscription.  The value for
 <code class="ph codeph">docker_ee_url</code> is the URL documented at the
 following address: <a class="xref" href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/" target="_blank">https://docs.docker.com/engine/installation/linux/docker-ee/rhel/</a>.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5664 ">docker_ee_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">docker_ee_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5673 ">
 <ul class="ul">
 <li class="li">If this variable is omitted, <code class="ph codeph">install_docker.yml</code> will install the latest stable version of docker-ee available in the repo specified with <code class="ph codeph">docker_ee_url</code></li>
 
@@ -3178,47 +3179,47 @@ following address: <a class="xref" href="https://docs.docker.com/engine/installa
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5664 ">rhel_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">For the Docker installation, this sets the version of your RHEL OS, such as <code class="ph codeph">7.4</code>. The
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">rhel_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5673 ">For the Docker installation, this sets the version of your RHEL OS, such as <code class="ph codeph">7.4</code>. The
 playbooks were tested with  RHEL 7.4.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5664 ">dtr_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">Version of the Docker DTR you wish to install. You can use a
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">dtr_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5673 ">Version of the Docker DTR you wish to install. You can use a
 numeric version or <code class="ph codeph">latest</code> for the most recent one.
 The playbooks were tested with 2.4.3.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5664 ">ucp_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">group_vars/vars</td>      
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">Version of the Docker UCP you wish to install. You can use a
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">ucp_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">group_vars/vars</td>      
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5673 ">Version of the Docker UCP you wish to install. You can use a
 numeric version or <code class="ph codeph">latest</code> for the most recent one.
 The playbooks were tested with UCP 2.2.7.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5664 ">images_folder</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">Directory in the NFS server that will be mounted in the DTR nodes
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">images_folder</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5673 ">Directory in the NFS server that will be mounted in the DTR nodes
 and that will host your Docker images.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5664 ">license_file</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">Full path to your Docker EE license file on your Ansible host. The license file is available from the Docker
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">license_file</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5673 ">Full path to your Docker EE license file on your Ansible host. The license file is available from the Docker
 Store</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5664 ">ucp_username</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">Username of the administrator user for UCP and DTR, typically
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">ucp_username</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5673 ">Username of the administrator user for UCP and DTR, typically
 <code class="ph codeph">admin</code>.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5664 ">ucp_password</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 "><strong class="ph b">group_vars/vault</strong></td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 ">The password for the <code class="ph codeph">ucp_username</code> account.</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5667 ">ucp_password</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5670 "><strong class="ph b">group_vars/vault</strong></td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5673 ">The password for the <code class="ph codeph">ucp_username</code> account.</td> 
 </tr>
 
 </tbody></table>
@@ -3245,6 +3246,13 @@ Store</td>
 </p>
 
   
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> Docker supports a third type, <code class="ph codeph">mixed</code>, that enables workloads to be scheduled 
+  by Kubernetes and Swarm both on the same node. Mixing orchestrator types on the same node is not recommended 
+  for production deployments because of the likelihood of resource contention and so, these playbooks do not support
+the <code class="ph codeph">mixed</code> type.</div><hr />
+  
+  
+  
 <p class="p">The following example shows how to set Kubernetes as the default orchestrator for worker nodes,
         and how to over-ride the default to use Swarm on one specific node instead. </p>
 
@@ -3263,7 +3271,30 @@ disk2_size='500'
 <strong class="ph b">orchestrator=kubernetes</strong>
 </code></pre>  
   
+
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
+
+The playbooks do not change Docker's default orchestrator type which is <code class="ph codeph">swarm</code>. Instead, the inventory is used 
+to configure worker nodes for Kubernetes workloads or swarm workloads as explained above. 
   
+If you want to change the default orchestrator type, use the method explained in the Docker documentation at
+<a class="xref" href="https://docs.docker.com/ee/ucp/admin/configure/set-orchestrator-type/#set-the-default-orchestrator-type-for-new-nodes" target="_blank">https://docs.docker.com/ee/ucp/admin/configure/set-orchestrator-type/#set-the-default-orchestrator-type-for-new-nodes</a>.
+
+</div><hr />
+
+
+
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
+It is possible to manually change the orchestrator type for a node. When you do this, existing workloads are evicted
+and they are not migrated automatically to the new orchestrator. If you want the workloads to be scheduled by the new orchestrator, 
+you must migrate them manually. More information is available in the Docker documentation at 
+<a class="xref" href="https://docs.docker.com/ee/ucp/admin/configure/set-orchestrator-type/#what-happens-when-you-change-a-nodes-orchestrator" target="_blank">https://docs.docker.com/ee/ucp/admin/configure/set-orchestrator-type/#what-happens-when-you-change-a-nodes-orchestrator</a>.
+   
+</div><hr />
+
+
+
+
 </div>
 
 </div>
@@ -3319,40 +3350,40 @@ how to configure Kubernetes Persistent Volumes.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="k8s-persistent-volume-config__k8s-persistent-volume-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 13. </span>Kubernetes Persistent Volume variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5962">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5965">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5968">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5992">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5995">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5998">Description</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5962 ">nfs_provisioner_role</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5965 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5968 ">Name of the role to create for example, <code class="ph codeph">nfs-provisioner-runner</code>.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5992 ">nfs_provisioner_role</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5995 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5998 ">Name of the role to create for example, <code class="ph codeph">nfs-provisioner-runner</code>.</td>
 </tr>   
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5962 ">nfs_provisioner_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5965 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5968 ">Name of the provisioner, for example, 	<code class="ph codeph">hpe.com/nfs</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5992 ">nfs_provisioner_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5995 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5998 ">Name of the provisioner, for example, 	<code class="ph codeph">hpe.com/nfs</code></td>
 </tr>
  
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5962 ">nfs_provisioner_storage_class_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5965 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5968 ">Name of the storage class to create, for example, 	<code class="ph codeph">nfs</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5992 ">nfs_provisioner_storage_class_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5995 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5998 ">Name of the storage class to create, for example, 	<code class="ph codeph">nfs</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5962 ">nfs_provisioner_server_ip</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5965 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5968 ">IP address (or FQDN) of your external NFS server, for example, 	<code class="ph codeph">hpe-nfs.cloudra.local</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5992 ">nfs_provisioner_server_ip</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5995 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5998 ">IP address (or FQDN) of your external NFS server, for example, 	<code class="ph codeph">hpe-nfs.cloudra.local</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5962 ">nfs_provisioner_server_share</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5965 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5968 ">Name of the NFS share where all the persistent volume data will be stored, for example, 	<code class="ph codeph">/k8s</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5992 ">nfs_provisioner_server_share</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5995 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5998 ">Name of the NFS share where all the persistent volume data will be stored, for example, 	<code class="ph codeph">/k8s</code></td>
 </tr>
 
 
@@ -3396,53 +3427,53 @@ how to configure Kubernetes Persistent Volumes.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="windows-config__windows-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 14. </span>Windows variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6111">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6114">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6117">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6141">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6144">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6147">Description</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6111 ">enable_windows</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6114 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6117 ">If <code class="ph codeph">true</code>, the creation of Windows 2016 worker
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6141 ">enable_windows</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6144 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6147 ">If <code class="ph codeph">true</code>, the creation of Windows 2016 worker
 nodes will be actioned. The default value is
 <code class="ph codeph">false</code>.</td>
 </tr>   
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6111 ">win_vm_template</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6114 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6117 ">Name of the Windows 2016 VM Template to use. Note that this is the name from a
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6141 ">win_vm_template</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6144 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6147 ">Name of the Windows 2016 VM Template to use. Note that this is the name from a
 vCenter perspective, not the hostname.</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6111 ">win_username</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6114 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6117 ">Windows user name. The default is <code class="ph codeph">Administrator</code>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6141 ">win_username</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6144 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6147 ">Windows user name. The default is <code class="ph codeph">Administrator</code>
 </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6111 ">win_password</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6114 "><strong class="ph b">group_vars/vault</strong></td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6117 ">The password for the Windows account.
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6141 ">win_password</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6144 "><strong class="ph b">group_vars/vault</strong></td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6147 ">The password for the Windows account.
 </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6111 ">windows_vdvs_ps</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6114 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6117 ">Variable used to download the PowerShell script that is used to install vDVS for Windows. For example,
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6141 ">windows_vdvs_ps</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6144 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6147 ">Variable used to download the PowerShell script that is used to install vDVS for Windows. For example,
 <code class="ph codeph">https://raw.githubusercontent.com/vmware/vsphere-storage-for-docker/master/install-vdvs.ps1</code>
 </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6111 ">windows_vdvs_path</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6114 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6117 ">Variable used to download vSphere Docker Volume Service software. This variable is combined 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6141 ">windows_vdvs_path</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6144 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6147 ">Variable used to download vSphere Docker Volume Service software. This variable is combined 
 with <code class="ph codeph">windows_vdvs_version</code> (below) to generate a URL of the form <code class="ph codeph">&lt;windows_vdvs_path&gt;_&lt;windows_vdvs_version&gt;.zip</code> to download the software. 
 For example, to download version 0.21, set <code class="ph codeph">windows_vdvs_path</code> equal to <code class="ph codeph">https://vmware.bintray.com/vDVS/vsphere-storage-for-docker_windows</code> 
 and <code class="ph codeph">windows_vdvs_version</code> equal to <code class="ph codeph">0.21</code>
@@ -3450,15 +3481,15 @@ and <code class="ph codeph">windows_vdvs_version</code> equal to <code class="ph
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6111 ">windows_vdvs_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6114 ">group_vars/vars</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6117 ">Combined with <code class="ph codeph">windows_vdvs_path</code>, this variable is used to generate the URL for downloading the software.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6141 ">windows_vdvs_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6144 ">group_vars/vars</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6147 ">Combined with <code class="ph codeph">windows_vdvs_path</code>, this variable is used to generate the URL for downloading the software.</td>
 </tr>  
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6111 ">windows_vdvs_directory</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6114 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6117 ">Variable used to determine where vDVS software will be unzipped and installed from. The default is <code class="ph codeph">C:\Users\Administrator\Downloads</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6141 ">windows_vdvs_directory</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6144 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6147 ">Variable used to determine where vDVS software will be unzipped and installed from. The default is <code class="ph codeph">C:\Users\Administrator\Downloads</code></td>
 </tr>
 </tbody></table>
 </div>
@@ -3494,58 +3525,58 @@ used in the following playbooks:
 
 <table cellpadding="4" cellspacing="0" summary="" id="windows-config__windows-advanced-config-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 15. </span>Advanced windows variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6312">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6315">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6318">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6342">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6345">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6348">Description</th>
 </tr>
 </thead><tbody class="tbody"> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6312 ">ansible_user</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6315 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6318 ">Defaults to the Windows user account <code class="ph codeph">win_username</code> as specified in <code class="ph codeph">group_vars/vars</code> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6342 ">ansible_user</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6345 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6348 ">Defaults to the Windows user account <code class="ph codeph">win_username</code> as specified in <code class="ph codeph">group_vars/vars</code> </td>
 </tr>   
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6312 ">ansible_password</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6315 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6318 ">Defaults to the Windows user password <code class="ph codeph">win_password</code> as specified in <code class="ph codeph">group_vars/vault</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6342 ">ansible_password</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6345 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6348 ">Defaults to the Windows user password <code class="ph codeph">win_password</code> as specified in <code class="ph codeph">group_vars/vault</code></td>
 </tr>   
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6312 ">ansible_port</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6315 "><strong class="ph b">group_vars/win_worker.yml</strong></td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6318 ">5986</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6342 ">ansible_port</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6345 "><strong class="ph b">group_vars/win_worker.yml</strong></td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6348 ">5986</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6312 ">ansible_connection</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6315 "><strong class="ph b">group_vars/win_worker.yml</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6318 ">winrm</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6342 ">ansible_connection</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6345 "><strong class="ph b">group_vars/win_worker.yml</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6348 ">winrm</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6312 ">ansible_winrm_server_cert_validation</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6315 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6318 ">Defaults to <code class="ph codeph">ignore</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6342 ">ansible_winrm_server_cert_validation</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6345 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6348 ">Defaults to <code class="ph codeph">ignore</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6312 ">ansible_winrm_operation_timeout_sec</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6315 "><strong class="ph b">group_vars/win_worker.yml</strong></td>   
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6318 ">Defaults to <code class="ph codeph">250</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6342 ">ansible_winrm_operation_timeout_sec</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6345 "><strong class="ph b">group_vars/win_worker.yml</strong></td>   
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6348 ">Defaults to <code class="ph codeph">250</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6312 ">ansible_winrm_read_timeout_sec</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6315 "><strong class="ph b">group_vars/win_worker.yml</strong></td>   
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6318 ">Defaults to <code class="ph codeph">300</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6342 ">ansible_winrm_read_timeout_sec</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6345 "><strong class="ph b">group_vars/win_worker.yml</strong></td>   
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6348 ">Defaults to <code class="ph codeph">300</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6312 ">windows_timezone</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6315 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6318 ">Defaults to <code class="ph codeph">15</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6342 ">windows_timezone</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6345 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6348 ">Defaults to <code class="ph codeph">15</code></td>
 </tr>
 
 </tbody></table>
@@ -3806,28 +3837,28 @@ the port <code class="ph codeph">514</code> as shown in <a class="xref" href="#s
 
 <table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-sysdig__sysdig-config-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 16. </span>Sysdig variables for Docker swarm</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6879">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6882">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6885">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6909">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6912">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6915">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6879 ">sysdig_access_key</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6882 "><strong class="ph b">group_vars/vault</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6885 ">After the activation of your account on the Sysdig portal, you will be 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6909 ">sysdig_access_key</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6912 "><strong class="ph b">group_vars/vault</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6915 ">After the activation of your account on the Sysdig portal, you will be 
 provided with your access key which will be used by the playbooks to install the agent on each UCP, DTR and Linux worker node, 
 as well as the NFS, logger and load balancer VMs.
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6879 ">sysdig_agent</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6882 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6885 ">Specifies the URL to the Sysdig Linux native install agent, for example, <code class="ph codeph">https://s3.amazonaws.com/download.draios.com/stable/install-agent</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6909 ">sysdig_agent</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6912 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6915 ">Specifies the URL to the Sysdig Linux native install agent, for example, <code class="ph codeph">https://s3.amazonaws.com/download.draios.com/stable/install-agent</code></td>
 </tr>    
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6879 ">sysdig_tags</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6882 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6885 ">Tagging your hosts is highly recommended. Tags allow you to sort the nodes of your infrastructure 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6909 ">sysdig_tags</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6912 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6915 ">Tagging your hosts is highly recommended. Tags allow you to sort the nodes of your infrastructure 
    into custom groups in Sysdig Monitor. Specify location, role, and owner in the format: <code class="ph codeph">'location:City,role:Enterprise CaaS on Synergy,owner:Customer Name'</code></td>
 </tr>    
 </tbody></table>
@@ -3848,29 +3879,29 @@ as well as the NFS, logger and load balancer VMs.
 
 <table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-sysdig__sysdig-config-k8s-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 17. </span>Sysdig variables for Kubernetes</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6959">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6962">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6965">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6989">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6992">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6995">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6959 ">sysdig_access_key</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6962 "><strong class="ph b">group_vars/vault</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6965 ">After the activation of your account on the Sysdig portal, you will be 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6989 ">sysdig_access_key</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6992 "><strong class="ph b">group_vars/vault</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6995 ">After the activation of your account on the Sysdig portal, you will be 
 provided with your access key which will be used by the playbooks to install the agent on each UCP, DTR and Linux Kubernetes worker node.
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6959 ">sysdig_restricted_control_role</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6962 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6965 ">The Sysdig service account requires the 'Restricted Control' grant. So this value will typically be set as follows:
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6989 ">sysdig_restricted_control_role</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6992 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6995 ">The Sysdig service account requires the 'Restricted Control' grant. So this value will typically be set as follows:
 <pre class="pre codeblock"><code><strong class="ph b">sysdig_restricted_control_role: 'Restricted Control'</strong></code></pre>
 </td>  
 </tr>    
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6959 ">k8s_cluster</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6962 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6965 ">This should match the cluster name returned by <code class="ph codeph">kubectl cluster-info</code>, for example, 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6989 ">k8s_cluster</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6992 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6995 ">This should match the cluster name returned by <code class="ph codeph">kubectl cluster-info</code>, for example, 
 <pre class="pre codeblock"><code></code></pre>
 </td>
 </tr>    
@@ -3908,43 +3939,43 @@ recommended that the values given below are used.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-promgraf__monitoring-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 18. </span>Monitoring variables</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7056">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7059">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7086">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7089">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7056 ">cadvisor_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7059 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7086 ">cadvisor_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7089 ">
 <code class="ph codeph">v0.25.0</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7056 ">node_exporter_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7059 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7086 ">node_exporter_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7089 ">
 <code class="ph codeph">v1.14.0</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7056 ">prometheus_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7059 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7086 ">prometheus_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7089 ">
 <code class="ph codeph">v1.7.1</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7056 ">grafana_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7059 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7086 ">grafana_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7089 ">
 <code class="ph codeph">4.4.3</code>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7056 ">prom_persistent_vol_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7059 ">The name of the volume which will be used to store the monitoring
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7086 ">prom_persistent_vol_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7089 ">The name of the volume which will be used to store the monitoring
 data. The volume is created using the vSphere Docker Volume
 plugin.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7056 ">prom_persistent_vol_size</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7059 ">The size of the volume which will hold the monitoring data. The
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7086 ">prom_persistent_vol_size</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7089 ">The size of the volume which will hold the monitoring data. The
 exact syntax is dictated by the vSphere Docker Volume plugin. The
 default value is 10GB.</td>
 </tr>
@@ -4543,35 +4574,35 @@ running time is primarily due to the need to update Windows after creating the V
 
 <table cellpadding="4" cellspacing="0" summary="" id="k8s-nfs-provisioner-vm__k8s-persistent-volume-verify" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 19. </span>Configuration values</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7917">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7920">Value</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7947">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7950">Value</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7917 ">nfs_provisioner_role</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7920 "><code class="ph codeph">nfs-provisioner-runner</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7947 ">nfs_provisioner_role</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7950 "><code class="ph codeph">nfs-provisioner-runner</code></td>
 </tr>     
 
  
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7917 ">nfs_provisioner_name</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7920 "><code class="ph codeph">hpe.com/nfs</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7947 ">nfs_provisioner_name</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7950 "><code class="ph codeph">hpe.com/nfs</code></td>
 </tr>
  
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7917 ">nfs_provisioner_storage_class_name</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7920 "><code class="ph codeph"><strong class="ph b">nfs</strong></code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7947 ">nfs_provisioner_storage_class_name</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7950 "><code class="ph codeph"><strong class="ph b">nfs</strong></code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7917 ">nfs_provisioner_server_ip</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7920 "><code class="ph codeph">hpe-nfs.cloudra.local</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7947 ">nfs_provisioner_server_ip</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7950 "><code class="ph codeph">hpe-nfs.cloudra.local</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7917 ">nfs_provisioner_server_share</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7920 "><code class="ph codeph">/k8s</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7947 ">nfs_provisioner_server_share</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7950 "><code class="ph codeph">/k8s</code></td>
 </tr>
 
   
@@ -4905,35 +4936,35 @@ In the Additional Settings section, set the Permission to <code class="ph codeph
 
 <table cellpadding="4" cellspacing="0" summary="" id="k8s-nfs-provisioner-3par__k8s-persistent-volume-verify" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 20. </span>Configuration values</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8370">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8373">Value</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8400">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8403">Value</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8370 ">nfs_provisioner_role</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8373 "><code class="ph codeph">nfs-provisioner-runner-3par</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8400 ">nfs_provisioner_role</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8403 "><code class="ph codeph">nfs-provisioner-runner-3par</code></td>
 </tr>     
 
  
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8370 ">nfs_provisioner_name</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8373 "><code class="ph codeph">hpe.com/nfs-3par</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8400 ">nfs_provisioner_name</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8403 "><code class="ph codeph">hpe.com/nfs-3par</code></td>
 </tr>
  
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8370 ">nfs_provisioner_storage_class_name</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8373 "><code class="ph codeph"><strong class="ph b">nfs-3par</strong></code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8400 ">nfs_provisioner_storage_class_name</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8403 "><code class="ph codeph"><strong class="ph b">nfs-3par</strong></code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8370 ">nfs_provisioner_server_ip</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8373 "><code class="ph codeph">10.60.59.102</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8400 ">nfs_provisioner_server_ip</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8403 "><code class="ph codeph">10.60.59.102</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8370 ">nfs_provisioner_server_share</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8373 "><code class="ph codeph">/gab_vfs3par/gab_vfs3par/gab_filestore3par/gab_fileshare3par</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8400 ">nfs_provisioner_server_share</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8403 "><code class="ph codeph">/gab_vfs3par/gab_vfs3par/gab_filestore3par/gab_fileshare3par</code></td>
 </tr>
 
   
@@ -5680,25 +5711,25 @@ system.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 21. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9104">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9107">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9110">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9113">Download/Documentation</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9134">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9137">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9140">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9143">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9104 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9107 ">Server Software</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9110 "><ol class="ol"><li class="li">VMware ESXi</li>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9134 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9137 ">Server Software</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9140 "><ol class="ol"><li class="li">VMware ESXi</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e9113 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html" target="_blank">vSphere Docker Volume Service on GitHub</a></td>
+<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e9143 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html" target="_blank">vSphere Docker Volume Service on GitHub</a></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9104 ">2.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9107 ">Client Software</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9110 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9134 ">2.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9137 ">Client Software</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9140 "><ol class="ol"><li class="li">VM Operating System</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
@@ -5722,20 +5753,20 @@ VMs, first verify that the OS version is compatible with Docker EE by looking at
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__rhel-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 22. </span>Operating system</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9193">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9196">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9199">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9202">Download/Documentation</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9223">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9226">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9229">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9232">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9193 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9196 ">Red Hat Enterprise Linux</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9199 "><ul class="ul"><li class="li">Docker EE</li>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9223 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9226 ">Red Hat Enterprise Linux</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9229 "><ul class="ul"><li class="li">Docker EE</li>
 <li class="li">vDVS client software plugin</li>
 </ul>
 </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9202 "><a class="xref" href="https://access.redhat.com/articles/11258" target="_blank">RHEL</a></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9232 "><a class="xref" href="https://access.redhat.com/articles/11258" target="_blank">RHEL</a></td>
 </tr>
 </tbody></table>
 </div>
@@ -5768,16 +5799,16 @@ banner.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__dockeree-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 23. </span>Docker EE components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9282">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9285">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9288">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9291">Download/Documentation</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9312">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9315">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9318">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9321">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9282 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9285 ">Docker Daemon/Engine</td>
-<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e9288 "><ol class="ol">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9312 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9315 ">Docker Daemon/Engine</td>
+<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e9318 "><ol class="ol">
 <li class="li">VM Operating System</li>
 
 <li class="li">vDVS plugin</li>
@@ -5786,7 +5817,7 @@ banner.</p>
 
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e9291 "><ul class="ul">
+<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e9321 "><ul class="ul">
 <li class="li"><a class="xref" href="https://success.docker.com/Policies/Maintenance_Lifecycle" target="_blank">Docker Lifecycle Maintenance</a></li>
 
 <li class="li"><a class="xref" href="https://success.docker.com/Policies/Compatibility_Matrix" target="_blank">Docker Compatibility Matrix</a></li>
@@ -5796,12 +5827,12 @@ banner.</p>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9282 ">2.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9285 ">Universal Control Plane</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9312 ">2.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9315 ">Universal Control Plane</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9282 ">3.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9285 ">Docker Trusted Registry</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9312 ">3.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9315 ">Docker Trusted Registry</td>
 </tr>
 </tbody></table>
 </div>
@@ -5831,29 +5862,29 @@ used is compatible with the version of Docker EE.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle__promgraf-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 24. </span>Monitoring tools: Prometheus and Grafana</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9402">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9405">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9408">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9411">Download/Documentation</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9432">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9435">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9438">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9441">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">  
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9402 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9405 ">Prometheus</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9408 "><ol class="ol"><li class="li">Grafana</li>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9432 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9435 ">Prometheus</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9438 "><ol class="ol"><li class="li">Grafana</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e9411 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
+<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e9441 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
 <li class="li"><a class="xref" href="http://docs.grafana.org/installation/upgrading/" target="_blank">Upgrading Grafana</a></li>
 
 </ol>
 </td>
 </tr>    
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9402 ">2.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9405 ">Grafana</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9408 "><ol class="ol"><li class="li">Prometheus</li>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9432 ">2.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9435 ">Grafana</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9438 "><ol class="ol"><li class="li">Prometheus</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>   
@@ -5980,28 +6011,28 @@ Ansible box as the backup server.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="backup-variables__backup-ucp-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 25. </span>Backup variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9601">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9604">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9607">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9631">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9634">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9637">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9601 ">backup_server</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9604 "><strong class="ph b">group_vars/backups</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9607 ">Currently, the playbooks only support the use of the Ansible box as the backup
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9631 ">backup_server</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9634 "><strong class="ph b">group_vars/backups</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9637 ">Currently, the playbooks only support the use of the Ansible box as the backup
 server. </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9601 ">backup_dest</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9604 "><strong class="ph b">group_vars/backups</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9607 ">This variable should point to an existing folder on your Ansible box where the
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9631 ">backup_dest</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9634 "><strong class="ph b">group_vars/backups</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9637 ">This variable should point to an existing folder on your Ansible box where the
 <code class="ph codeph">root</code> user has write access. All the backups will be stored in this folder. For
 example, <code class="ph codeph">/root/backup</code></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9601 ">#swarm_offline_backups</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9604 "><strong class="ph b">group_vars/backup</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9607 ">This variable is commented out by default. More information on this variable is provided below. </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9631 ">#swarm_offline_backups</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9634 "><strong class="ph b">group_vars/backup</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9637 ">This variable is commented out by default. More information on this variable is provided below. </td>
 </tr>    
 </tbody></table>
 </div>
@@ -6075,36 +6106,36 @@ documentation at <a class="xref" href="https://docs.docker.com/engine/swarm/admi
 
 <table cellpadding="4" cellspacing="0" summary="" id="backup-ucp__backup-ucp-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 26. </span>UCP data backed up</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9781">Data</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9784">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9811">Data</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9814">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9781 ">Configurations</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9784 ">The UCP cluster configurations, as shown by <code class="ph codeph">docker config ls</code>,
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9811 ">Configurations</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9814 ">The UCP cluster configurations, as shown by <code class="ph codeph">docker config ls</code>,
 including Docker EE license and swarm and client CAs </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9781 ">Access control</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9784 ">Permissions for team access to swarm resources, including collections, grants, and
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9811 ">Access control</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9814 ">Permissions for team access to swarm resources, including collections, grants, and
 roles</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9781 ">Certificates and keys</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9784 ">The certificates, public keys, and private keys that are used for
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9811 ">Certificates and keys</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9814 ">The certificates, public keys, and private keys that are used for
 authentication and mutual TLS communication</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9781 ">Metrics data</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9784 ">Monitoring data gathered by UCP</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9811 ">Metrics data</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9814 ">Monitoring data gathered by UCP</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9781 ">Organizations</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9784 ">Your users, teams, and orgs</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9811 ">Organizations</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9814 ">Your users, teams, and orgs</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9781 ">Volumes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9784 ">All <a class="xref" href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp" target="_blank">UCP named volumes</a>, which include all UCP component certs and
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9811 ">Volumes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9814 ">All <a class="xref" href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp" target="_blank">UCP named volumes</a>, which include all UCP component certs and
 data</td>
 </tr>
 </tbody></table>
@@ -6173,55 +6204,55 @@ affected manager node will be disconnected.</div><hr />
 
 <table cellpadding="4" cellspacing="0" summary="" id="backup-dtr-meta__backup-dtr-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 27. </span>DTR data backed up</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9976">Data</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9979">Backed up?</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9982">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10006">Data</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10009">Backed up?</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10012">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9976 ">Configurations</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9979 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9982 ">DTR settings</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10006 ">Configurations</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10009 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10012 ">DTR settings</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9976 ">Repository metadata</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9979 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9982 ">Metadata like image architecture and size</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10006 ">Repository metadata</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10009 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10012 ">Metadata like image architecture and size</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9976 ">Access control to repos and images</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9979 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9982 ">Data about who has access to which images</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10006 ">Access control to repos and images</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10009 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10012 ">Data about who has access to which images</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9976 ">Notary data</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9979 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9982 ">Signatures and digests for images that are signed</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10006 ">Notary data</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10009 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10012 ">Signatures and digests for images that are signed</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9976 ">Scan results</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9979 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9982 ">Information about vulnerabilities in your images</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10006 ">Scan results</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10009 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10012 ">Information about vulnerabilities in your images</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9976 ">Certificates and keys</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9979 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9982 ">TLS certificates and keys used by DTR</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10006 ">Certificates and keys</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10009 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10012 ">TLS certificates and keys used by DTR</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9976 ">Image content</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9979 ">no</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9982 ">Needs to be backed up separately, depends on DTR configuration</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10006 ">Image content</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10009 ">no</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10012 ">Needs to be backed up separately, depends on DTR configuration</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9976 ">Users, orgs, teams</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9979 ">no</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9982 ">Create a UCP backup to backup this data</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10006 ">Users, orgs, teams</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10009 ">no</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10012 ">Create a UCP backup to backup this data</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9976 ">Vulnerability database</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9979 ">no</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9982 ">Can be re-downloaded after a restore</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10006 ">Vulnerability database</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10009 ">no</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10012 ">Can be re-downloaded after a restore</td>
 </tr>  
 </tbody></table>
 </div>
@@ -6366,29 +6397,29 @@ shows the file names produced by <code class="ph codeph">backup.sh</code> based 
 
 <table cellpadding="4" cellspacing="0" summary="" id="backup-utility__backup-utility-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 28. </span>Backup utility</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10337">Example</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10340">Command line</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10343">Generated filenames</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10367">Example</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10370">Command line</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10373">Generated filenames</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10337 ">Default</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10340 "><code class="ph codeph">./backup.sh</code></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10343 ">backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10367 ">Default</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10370 "><code class="ph codeph">./backup.sh</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10373 ">backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
 backup_ucp_&lt;ucpid&gt;_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
 backup_dtr_meta_&lt;replica_id&gt;_&lt;vmname&gt;_&lt;timestamp&gt;.tgz,
 backup_dtr_data_&lt;replica_id&gt;_&lt;vmname&gt;_&lt;timestamp&gt;.tgz
 and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10337 ">Custom</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10340 "><code class="ph codeph">./backup.sh my_backup</code></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10343 ">my_backup_swarm.tgz, my_backup_ucp.tgz, my_backup_dtr_meta.tgz, my_backup_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10367 ">Custom</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10370 "><code class="ph codeph">./backup.sh my_backup</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10373 ">my_backup_swarm.tgz, my_backup_ucp.tgz, my_backup_dtr_meta.tgz, my_backup_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10337 ">Date</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10340 "><code class="ph codeph">./backup.sh $(date '+%Y_%m_%d_%H%M%S')</code></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10343 ">&lt;date&gt;_swarm.tgz, &lt;date&gt;_ucp.tgz, &lt;date&gt;_dtr_meta.tgz,  &lt;date&gt;_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10367 ">Date</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10370 "><code class="ph codeph">./backup.sh $(date '+%Y_%m_%d_%H%M%S')</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10373 ">&lt;date&gt;_swarm.tgz, &lt;date&gt;_ucp.tgz, &lt;date&gt;_dtr_meta.tgz,  &lt;date&gt;_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>    
 </tbody></table>
 </div>
@@ -6983,56 +7014,56 @@ Windows, should consider Synergy as the deployment infrastructure. </p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="bom__bom-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 29. </span>Bill of materials</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11136">Quantity</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11139">Part number</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11142">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11166">Quantity</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11169">Part number</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11172">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 "><strong class="ph b">Rack and network infrastructure</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 "><strong class="ph b">Rack and network infrastructure</strong></td>
 </tr>
   
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">1</td>	<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">BW908A</td>	<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE 42U 600x1200mm Enterprise Shock Rack</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">4</td>	<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">AF522A</td>	<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Intelligent 8.6kVA/L15-30P/NA/J PDU</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">1	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">HC790A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Integration Center Routg Service FIO</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">1	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">BW932A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE 600mm Rack Stabilizer Kit</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">1	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">BW909A</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE 42U 1200mm Side Panel Kit</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">1	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">JG505A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE 59xx CTO Switch Solution</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">JG510A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE 5900AF 48G 4XG 2QSFP+ Switch</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">4	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">JD096C	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE X240 10G SFP+ SFP+ 1.2m DAC Cable</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">JC680A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE 58x0AF 650W AC Power Supply</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">JC682A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE 58x0AF Bck(pwr) Frt(prt) Fan Tray</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">1</td>	<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">BW908A</td>	<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE 42U 600x1200mm Enterprise Shock Rack</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">4</td>	<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">AF522A</td>	<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Intelligent 8.6kVA/L15-30P/NA/J PDU</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">1	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">HC790A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Integration Center Routg Service FIO</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">1	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">BW932A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE 600mm Rack Stabilizer Kit</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">1	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">BW909A</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE 42U 1200mm Side Panel Kit</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">1	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">JG505A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE 59xx CTO Switch Solution</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">JG510A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE 5900AF 48G 4XG 2QSFP+ Switch</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">4	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">JD096C	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE X240 10G SFP+ SFP+ 1.2m DAC Cable</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">JC680A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE 58x0AF 650W AC Power Supply</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">JC682A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE 58x0AF Bck(pwr) Frt(prt) Fan Tray</td></tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 "><strong class="ph b">HPE Synergy 12000 3 Frame components</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 "><strong class="ph b">HPE Synergy 12000 3 Frame components</strong></td>
 </tr>  
 
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">3</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">797740-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Synergy12000 CTO Frame 1xFLM 10x Fan</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">3</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">798096-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Synergy 12000F 6x 2650W AC Ti FIO PS</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">2</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">804353-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Synergy Composer</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">3</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">804942-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Synergy Frame Link Module</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">804938-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Synergy 12000 Frame Rack Rail Option</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">804943-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Synergy 12000 Frame 4x Lift Handle</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">18</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">TK738A</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE 2.0m 250V 16A C19-C20 Sgl IPD Jpr Crd</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">2</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">804937-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Synergy Image Streamer</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">3</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">797740-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Synergy12000 CTO Frame 1xFLM 10x Fan</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">3</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">798096-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Synergy 12000F 6x 2650W AC Ti FIO PS</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">2</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">804353-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Synergy Composer</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">3</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">804942-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Synergy Frame Link Module</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">804938-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Synergy 12000 Frame Rack Rail Option</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">804943-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Synergy 12000 Frame 4x Lift Handle</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">18</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">TK738A</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE 2.0m 250V 16A C19-C20 Sgl IPD Jpr Crd</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">2</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">804937-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Synergy Image Streamer</td></tr>
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 "><strong class="ph b">HPE Synergy 480 Gen10 compute components</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 "><strong class="ph b">HPE Synergy 480 Gen10 compute components</strong></td>
 </tr>   
  	 	
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">15</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">871942-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE SY 480 Gen10 CTO Premium Cmpt Mdl (64Gb Memory)</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">30</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">873388-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Synergy 480 Gen10 6130 Kit</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">30</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">873388-L21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Synergy 480 Gen10 6130 Kit</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">30</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">815100-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE 32GB QUAD PC4-2166P-R Kit</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">15</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">871573-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Smart Array P416ie-m</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">15</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">875242-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Smart Array P416ie-m SAS Cable Kit</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">15</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">777430-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE Synergy 3820C 10/20Gb CAN</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11136 ">15</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11139 ">875242-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11142 ">HPE 96W Smart Stor Battery 260mm Cbl Kit</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">15</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">871942-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE SY 480 Gen10 CTO Premium Cmpt Mdl (64Gb Memory)</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">30</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">873388-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Synergy 480 Gen10 6130 Kit</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">30</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">873388-L21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Synergy 480 Gen10 6130 Kit</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">30</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">815100-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE 32GB QUAD PC4-2166P-R Kit</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">15</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">871573-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Smart Array P416ie-m</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">15</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">875242-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Smart Array P416ie-m SAS Cable Kit</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">15</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">777430-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE Synergy 3820C 10/20Gb CAN</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11166 ">15</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11169 ">875242-B21</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11172 ">HPE 96W Smart Stor Battery 260mm Cbl Kit</td></tr>
 
   
   
@@ -7046,44 +7077,44 @@ Windows, should consider Synergy as the deployment infrastructure. </p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="bom__bom-contd-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 30. </span>Bill of materials continued</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11418">Quantity</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11421">Part number</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11424">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11448">Quantity</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11451">Part number</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11454">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 "><strong class="ph b">HPE Synergy Fabric Components</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 "><strong class="ph b">HPE Synergy Fabric Components</strong></td>
 </tr>
   
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">794502-B23	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE VC SE 40Gb F8 Module</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">4	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">779218-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE Synergy 20Gb Interconnect Link Mod</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">6	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">755985-B21 	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE Synergy 12Gb SAS Connection Module </td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">794502-B23	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE VC SE 40Gb F8 Module</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">4	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">779218-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE Synergy 20Gb Interconnect Link Mod</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">6	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">755985-B21 	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE Synergy 12Gb SAS Connection Module </td></tr>
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 "><strong class="ph b">HPE Synergy Composable Storage Components (not used in this solution)</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 "><strong class="ph b">HPE Synergy Composable Storage Components (not used in this solution)</strong></td>
 </tr>  
  	 	
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">3	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">835386-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE Synergy D3940 CTO Storage Module</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">3	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">757323-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE Synergy D3940 IO Adapter</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">30	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">785067-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE 300GB 12G SAS 10K 2.5in SC ENT HDD</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">3	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">835386-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE Synergy D3940 CTO Storage Module</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">3	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">757323-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE Synergy D3940 IO Adapter</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">30	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">785067-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE 300GB 12G SAS 10K 2.5in SC ENT HDD</td></tr>
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 "><strong class="ph b">Cables and Transceivers</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 "><strong class="ph b">Cables and Transceivers</strong></td>
 </tr>  
 		
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">8	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">804101-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE Synergy Interconnect Link 3m AOC</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">720199-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE BLc 40G QSFP+ QSFP+ 3m DAC Cable</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">8	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">720193-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE BLc QSFP+ to SFP+ Adapter</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">8	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">455883-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE BLc 10G SFP+ SR Transceiver</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">8	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">AJ837A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE 15m Multi-mode OM3 LC/LC FC Cable</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">9	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">861412-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE CAT6A 4ft Cbl</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11418 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11421 ">838327-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11424 ">HPE Synergy Dual 10GBASE-T QSFP+ 30m RJ45 Transceiver</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">8	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">804101-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE Synergy Interconnect Link 3m AOC</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">720199-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE BLc 40G QSFP+ QSFP+ 3m DAC Cable</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">8	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">720193-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE BLc QSFP+ to SFP+ Adapter</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">8	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">455883-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE BLc 10G SFP+ SR Transceiver</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">8	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">AJ837A	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE 15m Multi-mode OM3 LC/LC FC Cable</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">9	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">861412-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE CAT6A 4ft Cbl</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11448 ">2	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11451 ">838327-B21	</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11454 ">HPE Synergy Dual 10GBASE-T QSFP+ 30m RJ45 Transceiver</td></tr>
   
   
   
@@ -7099,35 +7130,35 @@ Windows, should consider Synergy as the deployment infrastructure. </p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="bom__bom-3PAR-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 31. </span>Bill of materials  HPE 3PAR</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11590">Quantity</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11593">Part number</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11596">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11620">Quantity</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11623">Part number</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11626">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 "> </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 "><strong class="ph b">HPE 3PAR StoreServ 8200 with iSCSI adapters and accessories</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 "><strong class="ph b">HPE 3PAR StoreServ 8200 with iSCSI adapters and accessories</strong></td>
 </tr>
 
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">K2Q36B</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3PAR 8200 2N+SW Storage Field Base</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">2</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">H6Z10A</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3PAR 8000 2-pt 10Gb iSCSI/FCoE Adptr</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">8</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">K2P88B</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3PAR 8000 480GB+SW Non-AFC SFF SSD</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">HA114A1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE Installation and Startup Service</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">HA114A1 5XU</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">	HPE Startup 3PAR 8200 2N Fld Int Bas SVC</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">K2R29A</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3PAR StoreServ RPS Service Processor</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">H1K92A3</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3Y Proactive Care 24x7 Service</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">H1K92A3 W3G</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3PAR 8200 2N+SW Storage Base Support</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">8</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">H1K92A3 X8G</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3PAR 8000 480GB+SW LFF SSD Supp</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">H1K92A3 YNW</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3PAR StoreServ RPS Service Proc Supp</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">2</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">H1K92A3 YTN</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3PAR 8000 2-pt 10Gb FCoE Adptr Supp</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">L7F20AAE</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3PAR All-in S-sys SW Current E-Media</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">L7F22AAE</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3PAR All-in M-sys SW Current E-Media</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">C7535A</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE RJ45 to RJ45 Cat5e Black M/M 7.6ft 1-pack Data Cable</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">8</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">H0JD6A1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE 3PAR SSD Extended Replacement SVC</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">HA124A1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE Technical Installation Startup SVC</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">HA124A1 5QW</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE Startup 3PAR Vrt Cpy Lvl1 Tier 1 SVC</td></tr>
-<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11590 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11593 ">HA124A1 56X</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11596 ">HPE Startup 3PAR 8K Mlt Sys PM PP RC SVC</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">K2Q36B</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3PAR 8200 2N+SW Storage Field Base</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">2</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">H6Z10A</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3PAR 8000 2-pt 10Gb iSCSI/FCoE Adptr</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">8</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">K2P88B</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3PAR 8000 480GB+SW Non-AFC SFF SSD</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">HA114A1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE Installation and Startup Service</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">HA114A1 5XU</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">	HPE Startup 3PAR 8200 2N Fld Int Bas SVC</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">K2R29A</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3PAR StoreServ RPS Service Processor</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">H1K92A3</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3Y Proactive Care 24x7 Service</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">H1K92A3 W3G</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3PAR 8200 2N+SW Storage Base Support</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">8</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">H1K92A3 X8G</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3PAR 8000 480GB+SW LFF SSD Supp</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">H1K92A3 YNW</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3PAR StoreServ RPS Service Proc Supp</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">2</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">H1K92A3 YTN</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3PAR 8000 2-pt 10Gb FCoE Adptr Supp</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">L7F20AAE</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3PAR All-in S-sys SW Current E-Media</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">L7F22AAE</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3PAR All-in M-sys SW Current E-Media</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">C7535A</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE RJ45 to RJ45 Cat5e Black M/M 7.6ft 1-pack Data Cable</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">8</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">H0JD6A1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE 3PAR SSD Extended Replacement SVC</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">HA124A1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE Technical Installation Startup SVC</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">HA124A1 5QW</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE Startup 3PAR Vrt Cpy Lvl1 Tier 1 SVC</td></tr>
+<tr class="row"><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11620 ">1</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11623 ">HA124A1 56X</td><td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11626 ">HPE Startup 3PAR 8K Mlt Sys PM PP RC SVC</td></tr>
 
 
 </tbody></table>
@@ -7178,15 +7209,15 @@ customer supplied certificates for UCP and DTR.
 
 <table cellpadding="4" cellspacing="0" summary="" id="customer-certs__customer-certs-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 32. </span>Customer certs variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11831">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11834">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11837">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11861">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11864">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11867">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11831 ">ucp_certs_dir</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11834 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11837 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11861 ">ucp_certs_dir</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11864 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11867 ">
 <ul class="ul">
 <li class="li">If <strong class="ph b">ucp_certs_dir</strong> is not defined, UCP is installed with self-signed
 certificates and DTR is installed with the <code class="ph codeph">--ucp-insecure-tls</code>
@@ -7212,9 +7243,9 @@ certificates</li>
 </td> 
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11831 ">dtr_certs_dir</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11834 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11837 ">    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11861 ">dtr_certs_dir</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11864 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11867 ">    
 <ul class="ul">
 <li class="li">If <strong class="ph b">dtr_certs_dir</strong> is not defined, DTR is installed with self-signed
 certificates</li>

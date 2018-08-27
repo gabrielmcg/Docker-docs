@@ -29,7 +29,8 @@
     
 <ul>
 <li><codeph>playbooks/k8s-nfs-provisioner.yml</codeph> - see <xref href="k8s-persistent-volume-config.dita"/> and <xref href="k8s-nfs-provisioner.dita"/></li>
-<li><codeph>playbooks/resize_syspart.yml</codeph><!-- - see <xref href="playbooks-overview.dita#playbooks-overview/resize_syspart">here</xref>--> </li>
+<li><codeph>playbooks/resize_syspart.yml</codeph> resizes the logical volume that holds the <codeph>/</codeph> partition of the Linux VMs to use all the space available on the drive.
+    <!-- - see <xref href="playbooks-overview.dita#playbooks-overview/resize_syspart">here</xref>--> </li>
 </ul>
 
 <p>Modified playbooks:</p>
