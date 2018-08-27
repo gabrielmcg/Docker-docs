@@ -9,7 +9,7 @@
 <title id="changes-mvi2-software">Software updates</title>  
     
 <ul>
-<li>Docker EE changed to version 2.0 (UCP version 3.0.2, DTR version 2.5.3) </li>
+<li>Docker EE changed to version 2.0 (UCP version 3.0.4, DTR version 2.5.3) </li>
 <li>Splunk Enterprise version changed from 7.0.2 to 7.1.2. You must download and install version 7.1.2 of the relevant Splunk Universal Forwarder(s)  
     as described in <xref href="splunk-pre-deploy.dita"/>.</li>  
 <li>RHEL 7.5</li>

@@ -699,7 +699,7 @@ of <code class="ph codeph">kubectl</code> is not compatible with the version of 
 <div class="section"><h3 class="title sectiontitle">Sysdig and Kubernetes</h3>
   
   
-<p class="p">Sysdig now supports the monitoring of Kubernetes and the playbooks have been updated to make use of this new functionality.
+<p class="p">Sysdig now supports the monitoring of Kubernetes clusters and the playbooks have been updated to make use of this new functionality.
 See the section <a class="xref" href="#deploying-sysdig-k8s"> for more information.</a>
 </p>
   
@@ -713,7 +713,7 @@ See the section <a class="xref" href="#deploying-sysdig-k8s"> for more informati
 <p class="p">Prometheus has been updated to version <code class="ph codeph">v2.3.2</code> while Grafana is now at version <code class="ph codeph">5.2.3</code></p>
   
   
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> These tools do not currently support monitoring Kubernetes worker nodes in this solution and so can only be
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> Prometheus and Grafana do not currently support monitoring Kubernetes worker nodes in this solution and so can only be
 used in conjunction with Docker swarm deployments.</div><hr />
   
 </div>
@@ -731,7 +731,7 @@ used in conjunction with Docker swarm deployments.</div><hr />
   
     
 <ul class="ul">
-<li class="li">Docker EE changed to version 2.0 (UCP version 3.0.2, DTR version 2.5.3) </li>
+<li class="li">Docker EE changed to version 2.0 (UCP version 3.0.4, DTR version 2.5.3) </li>
 
 <li class="li">Splunk Enterprise version changed from 7.0.2 to 7.1.2. You must download and install version 7.1.2 of the relevant Splunk Universal Forwarder(s)  
     as described in <a class="xref" href="#splunk-pre-deploy">Splunk prerequisites</a>.</li>
@@ -1671,7 +1671,7 @@ Storage for backups can be configured on the HDDs.</p>
 
 <tr class="row">
 <td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3546 ">Docker EE</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">2.0 with Docker EE Engine 17.06 <p class="p">(tested with UCP 3.0.2 and DTR 2.5.3)</p>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3549 ">2.0 with Docker EE Engine 17.06 <p class="p">(tested with UCP 3.0.4 and DTR 2.5.3)</p>
 </td>  
 </tr> 
   
@@ -1830,12 +1830,12 @@ security scanning.</li>
 
 <tr class="row">
 <td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3765 ">Prometheus</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">v1.7.1</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">v2.3.2</td>  
 </tr> 
   
 <tr class="row">
 <td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3765 ">Grafana</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">4.4.3</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3768 ">5.2.3</td>  
 </tr>   
 
 
@@ -5221,7 +5221,7 @@ in the <code class="ph codeph">group_vars/vault</code> file as detailed in <a cl
 <pre class="pre codeblock"><code># cd Docker-Synergy/ops
 # ansible-playbook -i vm_hosts playbooks/install-sysdig.yml --vault-password-file .vault_pass
 </code></pre> 
-  
+
 <p class="p">Using the Sysdig software as a solution (SaaS) website <a class="xref" href="https://app.sysdigcloud.com" target="_blank">https://app.sysdigcloud.com</a>, you are able to view, analyze and
 inspect various different dashboards.</p>
 

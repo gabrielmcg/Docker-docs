@@ -50,7 +50,7 @@ of <codeph>kubectl</codeph> is not compatible with the version of Kubernetes (1.
 <section>
 <title>Sysdig and Kubernetes</title>  
   
-<p>Sysdig now supports the monitoring of Kubernetes and the playbooks have been updated to make use of this new functionality.
+<p>Sysdig now supports the monitoring of Kubernetes clusters and the playbooks have been updated to make use of this new functionality.
 See the section <xref href="deploying-sysdig-k8s.dita"> for more information.</xref>
 </p>  
   
@@ -61,7 +61,7 @@ See the section <xref href="deploying-sysdig-k8s.dita"> for more information.</x
   
 <p>Prometheus has been updated to version <codeph>v2.3.2</codeph> while Grafana is now at version <codeph>5.2.3</codeph></p>  
   
-<note type="note">These tools do not currently support monitoring Kubernetes worker nodes in this solution and so can only be
+<note type="note">Prometheus and Grafana do not currently support monitoring Kubernetes worker nodes in this solution and so can only be
 used in conjunction with Docker swarm deployments.</note>  
 </section>
 </body>

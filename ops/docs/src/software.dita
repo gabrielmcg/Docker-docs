@@ -28,7 +28,7 @@
 
 <row>
 <entry>Docker EE</entry>
-<entry>2.0 with Docker EE Engine 17.06 <p>(tested with UCP 3.0.2 and DTR 2.5.3)</p></entry>  
+<entry>2.0 with Docker EE Engine 17.06 <p>(tested with UCP 3.0.4 and DTR 2.5.3)</p></entry>  
 </row> 
   
 <row>
