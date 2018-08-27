@@ -5446,7 +5446,7 @@ service "redis-slave" created
  
   
   
-<pre class="pre codeblock"><code>]# kubectl get services
+<pre class="pre codeblock"><code># kubectl get services
 NAME           TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
 kubernetes     ClusterIP   10.96.0.1       &lt;none&gt;        443/TCP    2d
 redis-master   ClusterIP   10.96.174.129   &lt;none&gt;        6379/TCP   30m

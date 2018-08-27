@@ -205,7 +205,7 @@ service "redis-slave" created
 <p>Query the list of Services to verify that the Redis slave service is running.</p> 
   
   
-<codeblock>]# kubectl get services
+<codeblock># kubectl get services
 NAME           TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
 kubernetes     ClusterIP   10.96.0.1       &lt;none>        443/TCP    2d
 redis-master   ClusterIP   10.96.174.129   &lt;none>        6379/TCP   30m
