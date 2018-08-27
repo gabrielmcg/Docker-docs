@@ -267,7 +267,7 @@ deployment.apps "frontend" created
 
 <p>Query the list of Pods to verify that the three frontend replicas are running.</p>
   
-<codeblock>]# kubectl get pods -l app=guestbook -l tier=frontend
+<codeblock># kubectl get pods -l app=guestbook -l tier=frontend
 NAME                        READY     STATUS    RESTARTS   AGE
 frontend-574b66f649-2qh6h   1/1       Running   0          7m
 frontend-574b66f649-782mr   1/1       Running   0          7m

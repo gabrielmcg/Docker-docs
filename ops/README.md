@@ -5511,7 +5511,7 @@ deployment.apps "frontend" created
 <p class="p">Query the list of Pods to verify that the three frontend replicas are running.</p>
 
   
-<pre class="pre codeblock"><code>]# kubectl get pods -l app=guestbook -l tier=frontend
+<pre class="pre codeblock"><code># kubectl get pods -l app=guestbook -l tier=frontend
 NAME                        READY     STATUS    RESTARTS   AGE
 frontend-574b66f649-2qh6h   1/1       Running   0          7m
 frontend-574b66f649-782mr   1/1       Running   0          7m
