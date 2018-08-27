@@ -6,8 +6,11 @@
   
 <section>
   
-<p>The playbooks support the deployment of UCP 3.0.* which deploys Kubernetes version 1.8.*. 
-  The playbooks will not work with a version of UCP lower than version 3.</p>  
+<p>The current playbooks support the deployment of UCP 3.0.* which deploys Kubernetes version 1.8.*. 
+  This version of the playbooks will not work with a version of UCP lower than version 3. If you 
+  wish to deploy using UCP 2.*, you will ned to download the previous release of the playbooks, which
+  is available on the GitHub site.
+</p>  
   
 <p>The preceding section <xref href="orchestrator-config.dita"/> explains how to assign a worker node to the Kubernetes 
 orchestrator. This sections covers specific Kubernetes configuration, including how to set the pod CIDR and
