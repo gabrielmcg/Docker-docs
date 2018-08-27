@@ -13,6 +13,8 @@
 <li>Splunk Enterprise version changed from 7.0.2 to 7.1.2. You must download and install version 7.1.2 of the relevant Splunk Universal Forwarder(s)  
     as described in <xref href="splunk-pre-deploy.dita"/>.</li>  
 <li>RHEL 7.5</li>
+<li>Prometheus v2.3.2</li>
+<li>Grafana 5.2.3</li>
 </ul>
     
 </section>
