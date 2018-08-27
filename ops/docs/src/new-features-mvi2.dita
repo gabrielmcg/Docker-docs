@@ -51,7 +51,7 @@ of <codeph>kubectl</codeph> is not compatible with the version of Kubernetes (1.
 <title>Sysdig and Kubernetes</title>  
   
 <p>Sysdig now supports the monitoring of Kubernetes clusters and the playbooks have been updated to make use of this new functionality.
-See the section <xref href="deploying-sysdig-k8s.dita"> for more information.</xref>
+See the section <xref href="deploying-sysdig-k8s.dita"/> for more information. 
 </p>  
   
 </section>  

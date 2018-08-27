@@ -13,7 +13,7 @@
 </p>
   
 <note type="note">Docker supports a third type, <codeph>mixed</codeph>, that enables workloads to be scheduled 
-  by Kubernetes and Swarm both on the same node. Mixing orchestrator types on the same node is not recommended 
+  by both Kubernetes and Swarm on the same node. Mixing orchestrator types on the same node is not recommended 
   for production deployments because of the likelihood of resource contention and so, these playbooks do not support
 the <codeph>mixed</codeph> type.</note>  
   

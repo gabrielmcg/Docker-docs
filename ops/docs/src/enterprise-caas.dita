@@ -11,7 +11,15 @@
 </ul>-->
 </li> 
 
-<li><xref href="release-notes-mvi2.dita"/></li>
+<li><xref href="release-notes-mvi2.dita"/>
+<ul>
+<li><xref href="new-features-mvi2.dita"/></li> 
+<li><xref href="changes-mvi2.dita"/></li>
+<li><xref href="fixed-mvi2.dita"/></li>
+<li><xref href="known-issues-mvi2.dita"/></li>    
+</ul>
+
+</li>
     
 <li><xref href="architecture.dita"/>
 <ul>
@@ -92,8 +100,23 @@
 <ul>
 <li><xref href="running-playbooks-linux.dita"/></li>
 <li><xref href="running-playbooks-hybrid.dita"/></li>
-<li><xref href="k8s-nfs-provisioner.dita"/></li>
-<li><xref href="post-deployment.dita"/></li>    
+<li><xref href="k8s-nfs-provisioner.dita"/>
+<ul>
+<li><xref href="k8s-nfs-provisioner-vm.dita"/></li>
+<li><xref href="k8s-nfs-provisioner-3par.dita"/></li>    
+</ul>
+</li>
+<li><xref href="deploying-sysdig.dita"/>
+<ul>
+<li><xref href="deploying-sysdig-k8s.dita"/></li>
+<li><xref href="deploying-sysdig-swarm.dita"/></li>    
+</ul>
+</li>
+<li><xref href="post-deployment.dita"/>
+<ul>
+<li><xref href="k8s-example-guestbook.dita"/></li>    
+</ul>
+</li>    
 </ul>
 </li>
     
