@@ -42,12 +42,14 @@ You should add the access key  to the encrypted <codeph>group_vars/vault</codeph
  
 </section>
 
+
+
 <section>
 <p>Using the Sysdig software as a solution (SaaS) website <xref
 href="https://app.sysdigcloud.com" format="html" scope="external"/>, you are able to view, analyze and
 inspect various different dashboards. Initially, you will just see the monitoring information for the 
 infrastructure itself. Deploy a sample application, as detailed in the section <xref href="k8s-example-guestbook.dita"/>,
-  and use the Sysdig solution to analyze the different facets of the application deployment. 
+  and use the Sysdig solution to analyze the different facets of the deployed application. 
 
 </p>  
   

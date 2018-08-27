@@ -11,8 +11,6 @@
   in multi-Linux, multi-OS and multi-cloud customer environments. With Docker EE 2.0, you get simplified workflows for the day-to-day management of a Kubernetes environment 
   while still having access to native Kubernetes APIs, CLIs, and interfaces.</p>  
  
-
-
 <note type="note">Docker EE 2.0 installs Kubernetes version 1.8. In this release, UCP uses its own RBAC system which is not compatible with Kubernetes RBAC.</note>  
 
 <p>For more information on Docker EE 2.0, see 
@@ -20,6 +18,15 @@
   and <xref href="https://www.docker.com/products/docker-enterprise" format="html" scope="external"/>.
 
 </p>
+
+<p>A sample Kubernetes application has been documented in the section <xref href="k8s-example-guestbook.dita"/> to facilitate verification of 
+  the deployed playbooks and configuration. This example is also useful for exploring the new Kubernetes-specific features in Splunk and Sysidg
+  offerings.
+
+</p>
+  
+<note type="note">The verion of <codeph>kubectl</codeph> used to access the Kubernetes cluster needs to be 1.10 or below. The current release
+is not compatible with the version of Kubernetes (1.8) shipped with Docker EE 2.0.</note>  
 </section>
   
 <section>
@@ -43,7 +50,9 @@
 <section>
 <title>Sysdig and Kubernetes</title>  
   
-<p>TODO</p>  
+<p>Sysdig now supports the monitoring of Kubernetes and the playbooks have been updated to make use of this new functionality.
+See the section <xref href="deploying-sysdig-k8s.dita"> for more information.</xref>
+</p>  
   
 </section>  
 
