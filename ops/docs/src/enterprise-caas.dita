@@ -103,7 +103,8 @@
 <li><xref href="post-deployment.dita"/>
 <ul>
 <li><xref href="install-kubectl.dita"/></li>
-<li><xref href="k8s-example-guestbook.dita"/></li>    
+<li><xref href="k8s-example-guestbook.dita"/></li>   
+<li><xref href="redeploying-splunk-demo.dita"/></li>
 </ul>
 </li>     
     
