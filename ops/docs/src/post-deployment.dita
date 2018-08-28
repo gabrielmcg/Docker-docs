@@ -14,8 +14,11 @@ The Ansible log is stored in the <codeph>ops</codeph> folder (<codeph>/root/Dock
 </p>
 
 <p>To see how to check if your certs have been deployed correctly, see Appendix D.</p>
+    
+<p>If you have installed Grafana, you will be asked to reset the default admin password the first time you access the user interface. </p>	    
+    
 </body>
 
-	
+
 
 </topic>

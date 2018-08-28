@@ -170,7 +170,7 @@
     <topicref href="post-deployment.dita" navtitle="Post-deployment">
       <topicref href="install-kubectl.dita" navtitle="Installing kubectl"/>
       <topicref href="k8s-example-guestbook.dita" navtitle="Kubernetes guestbook example with Redis"/>
-      
+      <topicref href="redeploying-splunk-demo.dita" navtitle="Redeploying Splunk demo"/>
     </topicref>
     
     <topicref href="k8s-nfs-provisioner.dita" navtitle="NFS provisioner for Kubernetes">

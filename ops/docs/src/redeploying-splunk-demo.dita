@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="redeploying-splunk-demo">
+<title>Redeploying Splunk demo</title>
+<body>
+<p>The Splunk demo deployment, whilst fully featured, is serverely restricted in the amount of data it can process. Once this limit has been
+reached, often after running for just one or two days, it is necessary to re-deploy the application if you want to continue 
+experimenting with the demo.</p>
+  
+<p>Before you redeploy, it is necessary to remove the corresponing Docker stack and delete the associated volumes.</p>  
+  
+<codeblock># ssh gab-ucp02
+
+[root@gab-ucp02 ~]# docker stack rm splunk_demo
+Removing service splunk_demo_splunkenterprise
+Removing network splunk_demo_default
+
+[root@gab-ucp02 ~]# docker volume ls | grep splunk
+vsphere:latest      splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
+vsphere:latest      splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
+
+[root@gab-ucp02 ~]# docker volume rm splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
+splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
+
+[root@gab-ucp02 ~]# docker volume rm splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
+splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
+
+</codeblock>  
+ 
+<p>Then re-run the playbook on your ansible node.</p>
+  
+<codeblock>ansible-playbook -i vm_hosts playbooks/splunk_demo.yml --vault-password-file .vault_pass</codeblock>
+ 
+
+</body>
+</topic>
