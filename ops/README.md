@@ -908,7 +908,7 @@ fatal: [&lt;hostname&gt;]: UNREACHABLE! =&gt; {"changed": false, "msg": "Failed 
     
 <p class="p">This error was seen with the VM running version <code class="ph codeph">10.1.5.59732</code> (build-5055683) of the VMware tools and Red Hat 7.4.
 It was not reproduced  with version <code class="ph codeph">10.1.10.63510</code> (build-6082533) of the VMware tools plus Red Hat 7.5.
-As a result, we recommend that you update your Linux RG template to Red Hat 7.5 which will also upgrade the VMware tools if they were installed.</p>
+As a result, we recommend that you update your Linux template to Red Hat 7.5 which will also upgrade the VMware tools if they were installed.</p>
     
     
 </div>
