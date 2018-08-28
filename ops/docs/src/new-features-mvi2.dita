@@ -11,7 +11,7 @@
   in multi-Linux, multi-OS and multi-cloud customer environments. With Docker EE 2.0, you get simplified workflows for the day-to-day management of a Kubernetes environment 
   while still having access to native Kubernetes APIs, CLIs, and interfaces.</p>  
  
-<note type="note">Docker EE 2.0 installs Kubernetes version 1.8. In this release, UCP uses its own RBAC system which is not compatible with Kubernetes RBAC.</note>  
+<note type="note">Docker EE 2.0 installs Kubernetes version 1.8. In this release, Docker Universal Control Plane (UCP) uses its own role-based acccess control (RBAC) system which is not compatible with Kubernetes RBAC.</note>  
 
 <p>For more information on Docker EE 2.0, see 
   <xref href="https://blog.docker.com/2018/04/announcing-docker-enterprise-edition-2-0/" format="html" scope="external"/>
@@ -26,7 +26,9 @@
 </p>
   
 <note type="note">The verion of <codeph>kubectl</codeph> used to access the Kubernetes cluster needs to be 1.10 or below. The current release
-of <codeph>kubectl</codeph> is not compatible with the version of Kubernetes (1.8) shipped with Docker EE 2.0.</note>  
+of <codeph>kubectl</codeph> is not compatible with the version of Kubernetes (1.8) shipped with Docker EE 2.0.
+See the section <xref href="install-kubectl.dita"/>.
+</note>  
 </section>
   
 <section>

@@ -10,11 +10,11 @@ application containers on them. </p>
 <p>To decide what size the node should be in terms of CPU, RAM, and storage resources,
 consider the following:</p>
 <ol>
-<li>All nodes should at least fulfil the minimal requirements, for UCP 2.0, 8GB of RAM
-and 3GB of storage. More detailed requirements are in the Docker EE UCP documentation
+<li>All nodes should at least fulfil the minimal requirements, for UCP 3.0, 8GB of RAM
+and 3GB of storage. For production systems, 16GB of RAM is recommended for manager nodes. 
+More detailed requirements are in the Docker EE UCP documentation
  at <xref href="https://docs.docker.com/ee/ucp/admin/install/system-requirements/" format="html" scope="external"/>. </li>
-<li>UCP Controller nodes should be provided with more than the minimal requirements, but
-won’t need much more if nothing else runs on them. </li>
+<li>UCP Controller nodes should be provided with more than the minimal requirements if other workloads run on them. </li>
 <li>Ideally, worker node size will vary based on your workloads so it is impossible to
 define a universal standard size. </li>
 <li>Other considerations like target density (average number of containers per node),

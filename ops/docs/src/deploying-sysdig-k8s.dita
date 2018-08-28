@@ -12,8 +12,8 @@
   see <xref href="https://docs.docker.com/ee/ucp/user-access/kubectl/" format="html" scope="external"/>.
 
 </li>  
-<li>Install the UCP Client bundle for the <codeph>admin</codeph> user- 
-  see <xref href="https://docs.docker.com/ee/ucp/user-access/cli/#download-client-certificates-by-using-the-rest-api" format="html" scope="external"/></li>  
+<li>Install the UCP Client bundle for the <codeph>admin</codeph> user - 
+  see <xref href="https://docs.docker.com/ee/ucp/user-access/cli/" format="html" scope="external"/></li>  
 <li>Confirm that you can connect to the cluster by running a test command, for example, <codeph>kubectl get nodes</codeph></li>
 <li>Ensure that you have configured the required variables, as described in the section 
   <xref href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-k8s"/>.

@@ -8,7 +8,7 @@
   
 <p>The current playbooks support the deployment of UCP 3.0.* which deploys Kubernetes version 1.8.*. 
   This version of the playbooks will not work with a version of UCP lower than version 3. If you 
-  wish to deploy using UCP 2.*, you will ned to download the previous release of the playbooks, which
+  wish to deploy using UCP 2.*, you will need to download the previous release of the playbooks, which
   is available on the GitHub site.
 </p>  
   
@@ -22,7 +22,7 @@ how to configure Kubernetes Persistent Volumes.</p>
 <section>
 <title>Pod CIDR</title> 
   
-<p>The variable <codeph>k8s_pod_cidr</codeph> is specified in <codeph>group_vars/vars</codeph> and is used to specify a custom range of IP addresses to be uses by pods. 
+<p>The variable <codeph>k8s_pod_cidr</codeph> is specified in <codeph>group_vars/vars</codeph> and configures a custom range of IP addresses to be used by pods. 
   The default is <codeph>192.168.0.0/16</codeph>. To set an alternative value, use the variable as shown in the example:</p>
   
 <codeblock>    k8s_pod_cidr: 192.168.128.0/17</codeblock>

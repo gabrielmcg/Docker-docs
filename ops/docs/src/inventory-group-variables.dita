@@ -34,7 +34,7 @@ disks_specs:
 
 <p>In this example, the size of the first two drives is specified using the values of the variables <codeph>disk1_size</codeph> and <codeph>disk2_size</codeph>  
   that are declared in the <codeph>group_vars/vars</codeph> file. This maintains compatability with <codeph>vm_hosts</codeph> inventories 
-  from the previous release of the playbooks. However, it is possible to provide explicit values, depending on your requirements for the
+  from the previous release of the playbooks. However, it is possible to provide explicit values, depending on your requirements, for the
 individual UCP, DTR, worker or NFS VMs. For example, you may want to increase the size of the second disk for the NFS VM as this is used
 to store the DTR images, so the default value of 500GB may not be sufficient to meet your needs. </p>
  

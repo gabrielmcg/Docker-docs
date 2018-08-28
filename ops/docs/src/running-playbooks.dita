@@ -4,7 +4,7 @@
 <title>Running the playbooks</title>
 <body>
 <section id="running-playbooks-section">
-<p>At this point, the system is ready to be deployed. Make sure you are logged on as <codeph>root</codeph> in your ansible box and that your current directory is <codeph>/root/Docker-Synergy/ops</codeph></p>
+<p>At this point, the system is ready to be deployed. Make sure you are logged on as <codeph>root</codeph> on your ansible box and that your current directory is <codeph>/root/Docker-Synergy/ops</codeph></p>
 
 <note type="note">As well as configuring your <codeph>vars</codeph> and <codeph>vault</codeph> files, you must also provide a <codeph>backups</codeph> configuration 
     file in the <codeph>group_vars</codeph> folder when running <codeph>site.yml</codeph> or <codeph>hybrid.yml</codeph>. 

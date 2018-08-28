@@ -8,10 +8,9 @@
   
 <ul>
 <li>Configure the variables described in the section <xref href="k8s-persistent-volume-config.dita"/></li>
-<li>Install the <codeph>kubectl</codeph> binary on your Ansible box -  
-  see <xref href="https://docs.docker.com/ee/ucp/user-access/kubectl/" format="html" scope="external"/></li>  
-<li>Install the UCP Client bundle for the <codeph>admin</codeph> user- 
-  see <xref href="https://docs.docker.com/ee/ucp/user-access/cli/#download-client-certificates-by-using-the-rest-api" format="html" scope="external"/></li>  
+<li>Install the <codeph>kubectl</codeph> binary on your Ansible box as documented at
+  <xref href="https://docs.docker.com/ee/ucp/user-access/kubectl/" format="html" scope="external"/></li>  
+<li>Install the UCP Client bundle for the <codeph>admin</codeph> user as described at  <xref href="https://docs.docker.com/ee/ucp/user-access/cli/#download-client-certificates-by-using-the-rest-api" format="html" scope="external"/></li>  
 <li>Confirm that you can connect to the cluster by running a test command, for example, <codeph>kubectl get nodes</codeph></li>  
 </ul>  
   
@@ -23,7 +22,7 @@
 <p>Once the prerequisites are satisfied, run the appropriate playbook on your Ansible node:</p>  
   
 <codeblock># cd Docker-Synergy/ops
-# ansible-playbook -i vm_hosts playbooks/k8s-nfs-provisioner.yml
+# ansible-playbook -i vm_hosts playbooks/k8s-nfs-provisioner.yml --vault-password-file .vault_pass
 </codeblock>  
   
 </section>

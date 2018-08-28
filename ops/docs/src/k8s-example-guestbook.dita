@@ -4,9 +4,15 @@
 <title>Kubernetes guestbook example with Redis </title>
 <body>
 
+<p>Many sample Kubernetes applications are available at <xref href="https://kubernetes.io/docs/tutorials/" format="html" scope="external"></xref>.
+This section details how to deploy the stateless guestbook application with Redis as documented at
+<xref href="https://kubernetes.io/docs/tutorials/stateless-application/guestbook/" scope="external" format="html"/>. When deploying 
+applications, you must be aware that Kubernetes version 1.8 shipped with Docker 2.0 and, as a result, you may have to make
+changes in some places to the configuration files, particularly with the <codeph>apiVersion</codeph> field.
 
+</p>
   
-<p>The manifest file, included below, specifies a Deployment controller that runs a single replica Redis master Pod.</p>  
+<p>The manifest file, included below, specifies a deployment controller that runs a single replica Redis master pod.</p>  
 <codeblock># cat redis-master-deployment.yaml
 apiVersion: apps/<b>v1beta2</b>  # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
@@ -39,18 +45,18 @@ spec:
         - containerPort: 6379
 </codeblock>
 
-<p>Apply the Redis Master Deployment from the <codeph>redis-master-deployment.yaml</codeph> file:
+<p>Apply the Redis master deployment from the <codeph>redis-master-deployment.yaml</codeph> file:
 </p>
   
 <codeblock>kubectl apply -f redis-master-deployment.yaml</codeblock>  
 
-<p>Query the list of Pods to verify that the Redis Master Pod is running.</p>
+<p>Query the list of Pods to verify that the Redis master pod is running.</p>
 <codeblock># kubectl get pods
 NAME                            READY     STATUS    RESTARTS   AGE
 <b>redis-master-5f8d48b75f-8ztt4</b>   1/1       Running   0          33s
 </codeblock>
 
-<p>Use the <codeph>kubectl logs</codeph> command to view the logs from the Redis Master Pod:</p>
+<p>Use the <codeph>kubectl logs</codeph> command to view the logs from the Redis master pod:</p>
 <codeblock>[root@gab-ansible guestbook]#  kubectl logs -f  <b>redis-master-5f8d48b75f-8ztt4</b>
                 _._
            _.-``__ ''-._
@@ -76,7 +82,7 @@ NAME                            READY     STATUS    RESTARTS   AGE
 [1] 24 Aug 15:24:06.576 * The server is now ready to accept connections on port 6379
 </codeblock>
 
-<p>The guestbook application needs to communicate with the Redis master to write its data. You need to apply a Service to proxy the traffic to the Redis master Pod. A Service defines a policy to access the Pods.</p>
+<p>The guestbook application needs to communicate with the Redis master to write its data. You need to apply a service to proxy the traffic to the Redis master pod. A service defines a policy to access the pods.</p>
 
 <codeblock># cat redis-master-service.yaml
 apiVersion: v1
@@ -98,13 +104,13 @@ spec:
 </codeblock>
 
 
-<p>Apply the Redis Master Service from the <codeph>redis-master-service.yaml</codeph> file:</p>
+<p>Apply the Redis master service from the <codeph>redis-master-service.yaml</codeph> file:</p>
   
 <codeblock>#  kubectl apply -f redis-master-service.yaml
 service "redis-master" created
 </codeblock>
 
-<p>Query the list of Services to verify that the Redis Master Service is running.</p>
+<p>Query the list of services to verify that the Redis master service is running.</p>
   
 <codeblock>#  kubectl get service
 NAME           TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
@@ -166,7 +172,7 @@ deployment.apps "redis-slave" created
 </codeblock>  
   
   
-<p>Query the list of Pods to verify that the Redis Slave Pods are running.</p>  
+<p>Query the list of Pods to verify that the Redis slave pods are running.</p>  
   
 <codeblock>[root@gab-ansible guestbook]# kubectl get pods
 NAME                            READY     STATUS    RESTARTS   AGE
@@ -176,7 +182,7 @@ redis-slave-58fb7bb9b5-q8zn9    1/1       Running   0          1m
 </codeblock> 
   
 <p>The guestbook application needs to communicate to Redis slaves to read data. To make the Redis slaves discoverable, 
-  you need to set up a Service that provides transparent load balancing to the set of Pods.</p> 
+  you need to set up a service that provides transparent load balancing to the set of pods.</p> 
   
 <codeblock># cat redis-slave-service.yaml
 apiVersion: v1
@@ -197,12 +203,12 @@ spec:
 </codeblock>
 
 
-<p>Deploy the Redis Slave Service from the <codeph>redis-slave-service.yaml</codeph> file</p>
+<p>Deploy the Redis slave service from the <codeph>redis-slave-service.yaml</codeph> file</p>
 <codeblock># kubectl apply -f redis-slave-service.yaml
 service "redis-slave" created
 </codeblock>  
   
-<p>Query the list of Services to verify that the Redis slave service is running.</p> 
+<p>Query the list of services to verify that the Redis slave service is running.</p> 
   
   
 <codeblock># kubectl get services
@@ -214,12 +220,12 @@ redis-slave    ClusterIP   10.96.82.175    &lt;none>        6379/TCP   3m
 
 
 <p>The guestbook application has a web frontend  written in PHP serving the HTTP requests. 
-  It is configured to connect to the <codeph>redis-master</codeph> Service for write requests 
-  and the <codeph>redis-slave</codeph> service for Read requests.</p>
+  It is configured to connect to the <codeph>redis-master</codeph> service for write requests 
+  and the <codeph>redis-slave</codeph> service for read requests.</p>
 
 
 <codeblock># cat frontend-deployment.yaml
-apiVersion: apps/v1beta2 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: <b>apps/v1beta2</b> # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
   name: frontend
@@ -259,13 +265,13 @@ spec:
         - containerPort: 80
 </codeblock>
 
-<p>Create the frontend Deployment using the  <codeph>frontend-deployment.yaml</codeph> file.</p>
+<p>Create the frontend deployment using the  <codeph>frontend-deployment.yaml</codeph> file.</p>
   
 <codeblock># kubectl apply -f frontend-deployment.yaml
 deployment.apps "frontend" created
 </codeblock>  
 
-<p>Query the list of Pods to verify that the three frontend replicas are running.</p>
+<p>Query the list of pods to verify that the three frontend replicas are running.</p>
   
 <codeblock># kubectl get pods -l app=guestbook -l tier=frontend
 NAME                        READY     STATUS    RESTARTS   AGE
@@ -274,8 +280,8 @@ frontend-574b66f649-782mr   1/1       Running   0          7m
 frontend-574b66f649-mnbc9   1/1       Running   0          7m
 </codeblock>
 
-<p>If you want guests to be able to access your guestbook, you must configure the frontend Service
-  to be externally visible, so a client can request the Service from outside the container cluster.</p>
+<p>If you want guests to be able to access your guestbook, you must configure the frontend service
+  to be externally visible, so a client can request the service from outside the container cluster.</p>
   
 <codeblock># cat frontend-service.yaml
 apiVersion: v1
@@ -298,13 +304,13 @@ spec:
     tier: frontend
 </codeblock>
 
-<p>Deploy the <codeph>frontend</codeph> Service using the <codeph>frontend-service.yaml</codeph> file</p>
+<p>Deploy the <codeph>frontend</codeph> service using the <codeph>frontend-service.yaml</codeph> file</p>
 
 <codeblock># kubectl apply -f frontend-service.yaml
 service "frontend" created
 </codeblock>
 
-<p>Query the list of Services to verify that the <codeph>frontend</codeph> Service is running.</p>
+<p>Query the list of services to verify that the <codeph>frontend</codeph> service is running.</p>
 
 <codeblock># kubectl get services
 NAME           TYPE        CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE

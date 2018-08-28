@@ -22,7 +22,7 @@
 <row>
 <entry>nfs_provisioner_role</entry>
 <entry>group_vars/vars</entry>  
-<entry>Name of the role to create for example, <codeph>nfs-provisioner-runner</codeph>.</entry>
+<entry>Name of the role to create, for example, <codeph>nfs-provisioner-runner</codeph>.</entry>
 </row>   
   
 <row>

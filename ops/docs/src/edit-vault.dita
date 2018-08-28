@@ -19,7 +19,10 @@ ucp_password: 'zzzz'
 win_password: 'yourpass'
 sysdig_access_key: 'enter_sysdig_access_key'
 rhn_orgid: "YourOrgId"
-rhn_key: "YourActivationKey"</codeblock>
+rhn_key: "YourActivationKey"
+#password for the splunk universal forwarder. Must meet password complexiy requirement (see splunk doc)
+splunk_uf_password: 'YourPa$$word12'
+</codeblock>
 
 <p><codeph>rhn_orgid</codeph> and <codeph>rhn_key</codeph> are the credentials needed to
 subscribe the virtual machines with Red Hat Customer Portal. For more information regarding
@@ -46,6 +49,13 @@ chmod 600 .vault_pass</codeph>
 <li> Add the file to your <codeph>.gitignore</codeph> file if you are using a Git repository to manage your playbooks. </li>
 </ol>
 <p/>
+    
+<p>When you use a vault, you must specify the password file every time on the command line, for example,</p>   
+    
+<codeblock>
+# ansible-playbook -i vm_hosts site.yml <b>--vault-password-file .vault_pass</b>
+</codeblock>    
+    
 </body>
 
 <!--<topic id="d1e3984">

@@ -61,7 +61,7 @@ More information on this Docker app can be found at
     
     
 <p>To monitor the <b>Windows worker nodes</b>, install the <b>Splunk App for Windows Infrastructure</b> on   
-  central Splunk and its dependencies:</p>
+  central Splunk along with its dependencies:</p>
   
 <ul id="splunk-mvi2-versions">
 <li>Splunk App for Windows Infrastructure version 1.4.4. The Splunk App for Windows Infrastructure is not compatible with The Splunk Add-on for Windows 5.0 at this time. See <xref href="https://splunkbase.splunk.com/app/1680/" format="html" scope="external"/></li>

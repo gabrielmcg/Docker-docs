@@ -85,7 +85,7 @@ The vSphere Docker volume plug-in  facilitates the storage of data in a shared d
 <note type="note">
 Some of the application 
     software supported by this configuration does not currently run on Windows, for example, the Sysdig Software Agent (see the 
-    section <xref href="sysdig.dita"/>.    
+    section <xref href="sysdig.dita"/>).    
 </note>
     
 </section>
