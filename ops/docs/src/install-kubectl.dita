@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="install-kubectl">
+<title>Installing kubectl</title>
+<body>
+
+<p>You can find the version number for the current stable version of <codeph>kubectl</codeph> at 
+  <xref href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" format="html" scope="external"/>.
+  At the time of writing, the stable version is <codeph>1.11.2</codeph>.</p>
+  
+  
+<p>However, this version of <codeph>kubectl</codeph> is not compatible with UCP 3.0.*. Instead, you need to install
+an earlier version, for example, <codeph>v1.10.4</codeph>. To download this specific version, follow the instructions below.</p>  
+  
+<codeblock># version=v1.10.4
+# wget -O kubectl https://storage.googleapis.com/kubernetes-release/release/${version}/bin/linux/amd64/kubectl
+# chmod +x ./kubectl
+# sudo mv ./kubectl /usr/local/bin/kubectl
+
+# kubectl version
+Client Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.4", GitCommit:"5ca598b4ba5abb89bb773071ce452e33fb66339d", GitTreeState:"clean", BuildDate:"2018-06-06T08:13:03Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"8+", GitVersion:"v1.8.11-docker-8d637ae", GitCommit:"8d637aedf46b9c21dde723e29c645b9f27106fa5", GitTreeState:"clean", BuildDate:"2018-04-26T16:51:21Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
+</codeblock>  
+    
+<p>More details on installing <codeph>kubectl</codeph> are available at 
+<xref href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" scope="external" format="html"/>
+</p>
+  
+</body>
+</topic>
