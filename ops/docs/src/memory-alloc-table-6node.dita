@@ -200,9 +200,12 @@
 
 <row>
 <entry><b>Available RAM</b></entry>
-<entry><b>384</b></entry>
-<entry><b>384</b></entry>
-<entry><b>384</b></entry>
+<entry><b>128</b></entry>
+<entry><b>128</b></entry>
+<entry><b>128</b></entry>
+<entry><b>128</b></entry>
+<entry><b>128</b></entry>
+<entry><b>128</b></entry>  
 </row>
 </tbody>
 </tgroup>
