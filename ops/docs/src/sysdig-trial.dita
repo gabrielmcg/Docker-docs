@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="sysdig-trial">
+<title>Registering for Sysdig trial</title>
+<body>
+  
+<p>Browse to the registration page at <xref href="https://sysdig.com/partner-hpe/" format="html" scope="external"/>
+    as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-hpe" type="fig"/>. 
+</p>
+ 
+<fig id="sysdig-hpe">
+<title>Sysdig and HPE</title>
+<image href="media/sysdig-hpe.png" placement="break"/>
+</fig>
+
+<p>Scroll to the registration form on the pase, as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-registration" type="fig"/>. </p>
+  
+<fig id="sysdig-registration">
+<title>Sysdig trial registration</title>
+<image href="media/sysdig-registration.png" placement="break"/>
+</fig>  
+
+<p>After completing and submitting the form, you will receive an email containing an activation link, 
+as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-email" type="fig"/>. </p>
+
+
+<fig id="sysdig-email">
+<title>Sysdig email</title>
+<image href="media/sysdig-email.png" placement="break"/>
+</fig>  
+ 
+<p>Clicking on the activation link will bring you to the Sysdig Monitor welcome page,
+as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-monitor-welcome" type="fig"/>. </p>
+
+<fig id="sysdig-monitor-welcome">
+<title>Sysdig Monitor welcome page</title>
+<image href="media/sysdig-monitor-welcome.png" placement="break"/>
+</fig>  
+
+
+<p>Click  the <codeph>Next</codeph> button to set up you environment,
+as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-setup-env" type="fig"/>.</p>
+
+<fig id="sysdig-setup-env">
+<title>Sysdig Monitor set up environment</title>
+<image href="media/sysdig-setup-env.png" placement="break"/>
+</fig> 
+  
+  
+<section>
+<title>Sysdig Monitoring for Kubernetes</title>
+<p>If you are deploying Sysdig monitoring on Kubernetes, select the <codeph>Kubernetes | GKE | OpenShift</codeph> option. 
+You will be presented with an access code, as shown in 
+<xref href="sysdig-trial.dita#sysdig-trial/sysdig-k8s" type="fig"/>.
+</p>
+  
+<fig id="sysdig-k8s">
+<title>Sysdig Monitor access code for Kubernetes</title>
+<image href="media/sysdig-k8s.png" placement="break"/>
+</fig> 
+
+<p>You use the <codeph>sysdig_access_key</codeph> field in your <codeph>group_vars/vault</codeph>,
+as described in the section <xref href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-k8s"/>. 
+Once you deploy your environment and your Kubernetes nodes connect to the Sysdig SaaS platform, 
+Sysdig will display information regarding your setup,
+as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-k8s-spotlight" type="fig"/>.
+</p>
+
+<fig id="sysdig-k8s-spotlight">
+<title>Sysdig Monitor Spotlight for Kubernetes</title>
+<image href="media/sysdig-k8s-spotlight.png" placement="break"/>
+</fig> 
+
+<p>Select <codeph>View Dashboard</codeph> for an entry point to accessing all your monitoring data.
+</p>
+  
+</section>
+  
+<section>
+<title>Sysdig Monitor for Docker swarm</title>
+<p>If you are deploying Sysdig monitoring on Docker swarm, select the <codeph>Non-Orchestrated: <b>Native Linux</b></codeph> option.
+You will be presented with a screen containing your access code.
+</p>
+
+
+</section>
+  
+</body>
+</topic>
