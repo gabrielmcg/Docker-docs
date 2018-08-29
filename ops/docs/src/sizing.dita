@@ -73,5 +73,20 @@ amount of RAM required for all VMs.</p>
 </note>
 
 
+
+<table id="memory-alloc-table-6node-conref" conref="memory-alloc-table-6node.dita#memory-alloc-table-6node/memory-alloc-table-6node-content">
+<title>Sample memory allocation for 6 nodes</title>
+<tgroup cols="7">
+<tbody>
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+
+</table>
+
+
+
 </body>
 </topic>
