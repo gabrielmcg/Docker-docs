@@ -116,6 +116,7 @@
 </li>
 <li><xref href="deploying-sysdig.dita"/>
 <ul>
+<li><xref href="sysdig-trial.dita"/></li>
 <li><xref href="deploying-sysdig-k8s.dita"/></li>
 <li><xref href="deploying-sysdig-swarm.dita"/></li>    
 </ul>
