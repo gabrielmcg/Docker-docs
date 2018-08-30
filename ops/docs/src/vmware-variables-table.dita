@@ -53,6 +53,13 @@ unless you have created a user, you must use 'root'. Note: The corresponding pas
 is stored in a separate file (<codeph>group_vars/vault</codeph>) with the variable
 named <codeph>vm_password</codeph>.</entry>
 </row>
+    
+<row>
+<entry>vm_password</entry>
+<entry><b>group_vars/vault</b></entry>    
+<entry>The password for the <codeph>vm_username</codeph> user above.</entry>
+</row>
+    
 <row>
 <entry>vm_template</entry>
 <entry>group_vars/vars</entry>    

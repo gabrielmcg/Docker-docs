@@ -32,7 +32,7 @@ used in the following playbooks:
 <ul id="windows-playbooks">
 <li>playbooks/create_windows_vms.yml</li>
 <li>playbooks/install_docker_window.yml</li>
-<li>playbooks/scale_workers_windows.yml</li>
+<li>playbooks/scale_workers_win.yml</li>
 </ul>
 
 <p>In general, it should not be necessary to modify this file, but the variables are documented in 
