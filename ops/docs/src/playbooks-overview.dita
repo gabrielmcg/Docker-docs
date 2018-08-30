@@ -2,12 +2,8 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="playbooks-overview">
 <title>Overview of the playbooks</title>
-<body/>
-
-<topic id="site">
-<title>site.yml and related playbooks</title>
-<body>  
-
+<body>
+    
 <p>The Ansible playbooks are available to download at 
     <xref href="https://github.com/HewlettPackard/Docker-Synergy" format="html" scope="external"/>. 
     Once you have cloned the repository, change directory to <codeph>/root/Docker-Synergy/ops</codeph>.</p>
@@ -17,7 +13,15 @@
 <ul>
 <li><codeph>site.yml</codeph> deploys a Linux-only environment</li>
 <li><codeph>hybrid.yml</codeph> deploys a mixed environment with Linux and Windows worker nodes</li>    
-</ul>
+</ul>    
+</body>
+    
+
+<topic id="site">
+<title>site.yml and related playbooks</title>
+<body>  
+
+
  
 <p>The playbook <codeph>./site.yml</codeph> is the day 0 playbook you use to deploy the solution and it invokes the 
 following playbooks:</p>
