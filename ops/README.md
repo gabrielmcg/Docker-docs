@@ -8331,7 +8331,7 @@ More details here: http://curl.haxx.se/docs/sslcerts.html
 
 <p class="p">HPE Synergy, <a class="xref" href="http://hpe.com/info/synergy" target="_blank">hpe.com/info/synergy</a></p>
 
-<p class="p">HPE Servers, <a class="xref" href="http://hpe.com/servers" target="_blank">http://hpe.com/servers</a>hpe.com/servers</p>
+<p class="p">HPE Servers, <a class="xref" href="http://hpe.com/servers" target="_blank">hpe.com/servers</a></p>
 
 <p class="p">HPE Storage, <a class="xref" href="http://hpe.com/storage" target="_blank">hpe.com/storage</a></p>
 
