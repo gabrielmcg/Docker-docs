@@ -44,12 +44,12 @@ an enterprise production deployment is 3 UCPs and 3 DTRs.
 </p>
 
 <ul>  
-<li>3 Docker swarm Linux worker VM nodes for container workloads </li>
+<li>3 Docker Linux worker VM nodes for container workloads - Kubernetes or Docker swarm or a mix</li>
 </ul>
 
 <p>The Docker worker nodes will be co-located with the UCP and DTR nodes in a 3 physical node deployment, 
 whereas in a 6 physical node set-up, the worker nodes will typically be separated onto the extra nodes. 
-It is possible to specify that more than one worker node will be deployed per physical node but 
+It is possible to specify that more than one worker node is deployed per physical node but 
 this decision will depend on the requirements of your applications.</p>
 
 <ul>  
@@ -57,7 +57,7 @@ this decision will depend on the requirements of your applications.</p>
 failure </li>
 <li>1 Docker DTR load balancer VM to ensure access to DTR in the event of a node
 failure </li>
-<li>1 Docker swarm worker node VM load balancer </li>
+<li>1 Docker worker node VM load balancer </li>
 </ul>
 
 <p>Three load balancers are provided to increase availability of the UCP, DTR and worker nodes and these are typically
@@ -77,7 +77,7 @@ The vSphere Docker volume plug-in  facilitates the storage of data in a shared d
 <title>Hybrid VM configuration (Windows and Linux)</title>    
     
 <ul>
-<li>3 Docker swarm Windows worker VM nodes for container workloads (optional) </li>     
+<li>3 Docker swarm Windows worker VM nodes for container workloads (optional). Kubernetes is not yet supported for Windows workers. </li>     
 </ul>
    
 <p>The hybrid deployment will typically add 3 Windows worker nodes to thie above configuration, co-located with the Linux workers.  </p>   
