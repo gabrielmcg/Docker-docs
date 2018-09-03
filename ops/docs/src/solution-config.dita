@@ -16,8 +16,8 @@ production.
 </fig>  
     
 <p>
-The playbooks can also be used for larger container environments, with a 3 frame, 6 node HPE Synergy system, 
-with 2 nodes in each frame  as shown in <xref href="solution-config.dita#solution-config/architecture-6node" type="fig"/>. 
+The playbooks can also be used for larger container environments, for example, with a 3 frame, 6 node HPE Synergy system, 
+as shown in <xref href="solution-config.dita#solution-config/architecture-6node" type="fig"/> with 2 nodes in each frame. 
 </p>
 
 <fig id="architecture-6node">

@@ -991,8 +991,8 @@ production.
   
     
 <p class="p">
-The playbooks can also be used for larger container environments, with a 3 frame, 6 node HPE Synergy system, 
-with 2 nodes in each frame  as shown in <a class="xref" href="#solution-config__architecture-6node">Figure 3</a>. 
+The playbooks can also be used for larger container environments, for example, with a 3 frame, 6 node HPE Synergy system, 
+as shown in <a class="xref" href="#solution-config__architecture-6node">Figure 3</a> with 2 nodes in each frame. 
 </p>
 
 
@@ -2370,7 +2370,9 @@ the section on Configuration for more information on how to enable Sysdig.
 
 <div class="body">
 <p class="p">The solution can be configured to enable the use of Prometheus and Grafana for monitoring.
-The load among the three hosts will be shared as per <a class="xref" href="#architecture-promgraf__synergy-ops-architecture-promgraf">Figure 8</a></p>
+In this setup, there is no need for native installs and all the required monitoring software runs in containers,
+deployed as either services or stacks. The load among the three hosts will be shared as 
+per <a class="xref" href="#architecture-promgraf__synergy-ops-architecture-promgraf">Figure 8</a></p>
 
 
 <div class="fig fignone" id="architecture-promgraf__synergy-ops-architecture-promgraf">
