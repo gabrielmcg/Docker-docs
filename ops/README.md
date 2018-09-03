@@ -5567,7 +5567,7 @@ default-dynnfs-testpvc-pvc-e685a9d2-8a6f-11e8-9025-0242ac110010
 
 
 
-<p class="p">Create a virtual file server (VFS):</p>
+<p class="p">Log in to the 3PAR StoreServ Management console and create a virtual file server (VFS):</p>
 
 <ol class="ol">
 <li class="li">In the General section, as shown in <a class="xref" href="#k8s-nfs-provisioner-3par__vfs-general">Figure 12</a>, specify a name, in this instance <code class="ph codeph">gab_vfs3par</code>

@@ -11,7 +11,7 @@
   and a share for use by the Kubernetes NFS provisioner.</p>
 
 
-<p>Create a virtual file server (VFS):</p>
+<p>Log in to the 3PAR StoreServ Management console and create a virtual file server (VFS):</p>
 <ol>
 <li>In the General section, as shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/vfs-general" type="fig"/>, specify a name, in this instance <codeph>gab_vfs3par</codeph>
 
