@@ -14,13 +14,13 @@ and have configured HPE 3Par for storage.
 
 
 <fig id="overview-graphic">
-<title>Solution</title>
+<title>Solution overview</title>
 <image href="media/overview-graphic.png" placement="break"/>
 </fig>  
     
 <p><xref href="architecture.dita#architecture/overview-graphic"/> provides an overview of the steps used to deploy the solution. 
-   Deploying your hardware and installing vSphere is specific to your environment and is not covered in this document.
-   Next, you:    
+   Deploying your hardware and installing vSphere is specific to your environment and is not covered here.
+   This document shows you how to:    
 </p>
     
 <ul>

@@ -945,12 +945,12 @@ and have configured HPE 3Par for storage.
 <div class="fig fignone" id="architecture__overview-graphic">
 
 <br /><img class="image" src="media/overview-graphic.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 1. </b></span>Solution</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 1. </b></span>Solution overview</span></div><p> </p></div>
   
     
 <p class="p"><a class="xref" href="#architecture__overview-graphic">Figure 1</a> provides an overview of the steps used to deploy the solution. 
-   Deploying your hardware and installing vSphere is specific to your environment and is not covered in this document.
-   Next, you:    
+   Deploying your hardware and installing vSphere is specific to your environment and is not covered here.
+   This document shows you how to:    
 </p>
 
     
