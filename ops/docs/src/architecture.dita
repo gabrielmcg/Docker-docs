@@ -11,6 +11,26 @@ high availability (HA), container monitoring and security, and backup and restor
 that you  have already set up your HPE Synergy hardware, that you have installed your VMware virtualization platform 
 and have configured HPE 3Par for storage.
 </p>
+
+
+<fig id="overview-graphic">
+<title>Solution</title>
+<image href="media/overview-graphic.png" placement="break"/>
+</fig>  
+    
+<p><xref href="architecture.dita#architecture/overview-graphic"/> provides an overview of the steps used to deploy the solution. 
+   Deploying your hardware and installing vSphere is specific to your environment and is not covered in this document.
+   Next, you:    
+</p>
+    
+<ul>
+<li>Prepare the VM templates</li>
+<li>Create the Ansible host</li>
+<li>Configure the Ansible parameters</li>
+<li>Run the Ansible playbooks</li>        
+</ul>    
+ 
+<p>Once you are up and running, you should regularly backup the system using the scripts provided as part of this solution.</p> 
  
 </body>
 </topic>
