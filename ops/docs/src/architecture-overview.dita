@@ -4,7 +4,7 @@
 <title>Components</title>
 <body>
 <p>The solution is comprised of a number of required hardware and software components, including 
-HPE Synergy, HPE 3Par, VMware vSphere, Docker Enterprise Edition
+HPE Synergy, HPE 3PAR, VMware vSphere, Docker Enterprise Edition
 and Ansible playbooks as well as some optional components such as HPE Recovery Manager Central and HPE StoreOnce.
 </p>
  

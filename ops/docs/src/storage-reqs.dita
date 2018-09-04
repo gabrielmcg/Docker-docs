@@ -28,6 +28,75 @@ Storage for backups can be configured on the HDDs.</p>
 -->
     
 
+<table id="storage-overview-table-content" frame="none">
+<title>Storage overview</title>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Storage requirement</entry>
+<entry>Provided by</entry>
+<entry>Storage resource</entry>
+</row>
+</thead>
+<tbody>
+
+<row>
+<entry>VMs</entry>
+<entry>vSphere</entry>  
+<entry>HPE 3PAR</entry>
+</row> 
+
+<row>
+<entry>Persistent storage for stateful containers</entry>
+<entry>vSphere Docker Volume plugin</entry>  
+<entry>HPE 3PAR</entry>
+</row> 
+    
+<row>
+<entry>Persistent storage for K8S - production</entry>
+<entry>K8s NFS provisioner configured for 3PAR</entry>  
+<entry>HPE 3PAR Virtual File Server</entry>
+</row> 
+
+<row>
+<entry>Storage for K8S - demo</entry>
+<entry>K8s NFS provisioner configured for NFS VM</entry>  
+<entry>NFS VM</entry>
+</row> 
+
+<row>
+<entry>Persistent storage backup</entry>
+<entry>Clone using vSphere Docker Volume plugin</entry>  
+<entry>HPE 3PAR</entry>
+</row> 
+
+<row>
+<entry>UCP, DTR backup</entry>
+<entry><codeph>backup.sh</codeph> utility script or individual backup playbooks</entry>  
+<entry>HPE 3PAR</entry>
+</row> 
+
+<row>
+<entry>Backup to HPE StoreOnce</entry>
+<entry>HPE RMC</entry>  
+<entry>HPE StoreOnce</entry>
+</row> 
+
+<row>
+<entry>Restore from HPE StoreOnce</entry>
+<entry>HPE RMC</entry>  
+<entry>HPE 3PAR</entry>
+</row> 
+    
+
+
+</tbody>
+</tgroup>
+</table>
+    
 
 </body>
 </topic>
