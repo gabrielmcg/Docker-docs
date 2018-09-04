@@ -26,7 +26,9 @@ Storage for backups can be configured on the HDDs.</p>
 <image href="media/architecture1.png" placement="break"/>
 </fig>
 -->
-    
+
+<p><xref href="storage-reqs.dita#storage-reqs/storage-overview-table-content"/> provides an overview of how the 
+storage requirements for various components are addressed in this solution.</p>
 
 <table id="storage-overview-table-content" frame="none">
 <title>Storage overview</title>
