@@ -22,8 +22,11 @@ how to configure Kubernetes Persistent Volumes.</p>
 <section>
 <title>Pod CIDR</title> 
   
-<p>The variable <codeph>k8s_pod_cidr</codeph> is specified in <codeph>group_vars/vars</codeph> and configures a custom range of IP addresses to be used by pods. 
-  The default is <codeph>192.168.0.0/16</codeph>. To set an alternative value, use the variable as shown in the example:</p>
+<p>The variable <codeph>k8s_pod_cidr</codeph> is specified in <codeph>group_vars/vars</codeph> and configures a custom range of IP 
+  addresses to be used by pods. The specific range you use should be dedicated to the cluster. 
+</p>
+  
+<p>The default value is <codeph>192.168.0.0/16</codeph>. To set an alternative value, use the variable as shown in the example:</p>
   
 <codeblock>    k8s_pod_cidr: 192.168.128.0/17</codeblock>
     
