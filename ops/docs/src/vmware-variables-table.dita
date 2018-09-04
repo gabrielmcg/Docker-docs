@@ -31,10 +31,15 @@
 <entry>vcenter_username</entry>
 <entry>group_vars/vars</entry>    
 <entry>Username to log in to the vCenter appliance. It might include a domain, for
-example, '<codeph>administrator@vsphere.local</codeph>'. Note: The corresponding
-password is stored in a separate file (<codeph>group_vars/vault</codeph>) with the
-variable named <codeph>vcenter_password</codeph>.</entry>
+example, '<codeph>administrator@vsphere.local</codeph>'.</entry>
 </row>
+
+<row>
+<entry>vcenter_password</entry>
+<entry><b>group_vars/vault</b></entry>    
+<entry>The password for the <codeph>vcenter_username</codeph> user above.</entry>
+</row>
+    
 <row>
 <entry>vcenter_validate_certs</entry>
 <entry>group_vars/vars</entry>    
@@ -49,9 +54,7 @@ variable named <codeph>vcenter_password</codeph>.</entry>
 <entry>vm_username</entry>
 <entry>group_vars/vars</entry>    
 <entry>Username to log into the VMs. It needs to match the one from the VM Template, so
-unless you have created a user, you must use 'root'. Note: The corresponding password
-is stored in a separate file (<codeph>group_vars/vault</codeph>) with the variable
-named <codeph>vm_password</codeph>.</entry>
+unless you have created a user, you must use 'root'.</entry>
 </row>
     
 <row>

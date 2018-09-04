@@ -64,7 +64,7 @@ More information on this Docker app can be found at
   central Splunk along with its dependencies:</p>
   
 <ul id="splunk-mvi2-versions">
-<li>Splunk App for Windows Infrastructure version 1.4.4. The Splunk App for Windows Infrastructure is not compatible with The Splunk Add-on for Windows 5.0 at this time. See <xref href="https://splunkbase.splunk.com/app/1680/" format="html" scope="external"/></li>
+<li>Splunk App for Windows Infrastructure version 1.4.4. The Splunk App for Windows Infrastructure is not compatible with the Splunk Add-on for Windows 5.0 at this time. See <xref href="https://splunkbase.splunk.com/app/1680/" format="html" scope="external"/></li>
 <li>Splunk Add-on for Microsoft Windows version 4.8.4 - see <xref href="https://splunkbase.splunk.com/app/742/" format="html" scope="external"/></li>
 <li>Splunk Add-On for Microsoft Active Directory version 1.0.0 - see <xref href="https://splunkbase.splunk.com/app/3207/" format="html" scope="external"/></li>
 <li>Splunk Add-on for Microsoft Windows DNS version 1.0.1 (if this is not installed on central Splunk, you will see yellow icons on some dashboards with 

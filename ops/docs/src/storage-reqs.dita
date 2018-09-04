@@ -64,7 +64,7 @@ storage requirements for various components are addressed in this solution.</p>
 </row> 
 
 <row>
-<entry>Storage for K8S - demo</entry>
+<entry>Storage for K8S - non-production</entry>
 <entry>K8s NFS provisioner configured for NFS VM</entry>  
 <entry>NFS VM</entry>
 </row> 
