@@ -78,7 +78,7 @@ storage requirements for various components are addressed in this solution.</p>
 <row>
 <entry>UCP, DTR backup</entry>
 <entry><codeph>backup.sh</codeph> utility script or individual backup playbooks</entry>  
-<entry>HPE 3PAR</entry>
+<entry>Ansible VM</entry>
 </row> 
 
 <row>

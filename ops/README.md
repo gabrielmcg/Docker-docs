@@ -2018,7 +2018,7 @@ storage requirements for various components are addressed in this solution.</p>
 <tr class="row">
 <td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4158 ">UCP, DTR backup</td>
 <td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4161 "><code class="ph codeph">backup.sh</code> utility script or individual backup playbooks</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4164 ">HPE 3PAR</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4164 ">Ansible VM</td>
 </tr> 
 
 <tr class="row">
