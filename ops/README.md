@@ -1992,7 +1992,7 @@ storage requirements for various components are addressed in this solution.</p>
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4158 ">Persistent storage for stateful containers</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4158 ">Persistent storage for stateful containers running under Docker swarm orchestrator</td>
 <td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4161 ">vSphere Docker Volume plugin</td>  
 <td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4164 ">HPE 3PAR</td>
 </tr> 

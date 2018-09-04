@@ -52,7 +52,7 @@ storage requirements for various components are addressed in this solution.</p>
 </row> 
 
 <row>
-<entry>Persistent storage for stateful containers</entry>
+<entry>Persistent storage for stateful containers running under Docker swarm orchestrator</entry>
 <entry>vSphere Docker Volume plugin</entry>  
 <entry>HPE 3PAR</entry>
 </row> 
