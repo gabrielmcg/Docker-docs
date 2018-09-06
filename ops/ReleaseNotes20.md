@@ -54,7 +54,7 @@
   
 <hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> The verion of <code class="ph codeph">kubectl</code> used to access the Kubernetes cluster needs to be 1.10 or below. The current release
 of <code class="ph codeph">kubectl</code> is not compatible with the version of Kubernetes (1.8) shipped with Docker EE 2.0.
-See the section <a class="xref" href="install-kubectl.html">Installing kubectl</a>.
+See the section <a class="xref" href="README.md#install-kubectl">Installing kubectl</a>.
 </div><hr />
   
 </div>
@@ -75,7 +75,7 @@ See the section <a class="xref" href="install-kubectl.html">Installing kubectl</
 
 <p class="p">This update also includes new versions of Splunk software components - see the section on installing
   the <strong class="ph b">Splunk App for Windows Infrastructure</strong> and its dependencies 
-  <a class="xref" href="splunk-pre-deploy.html#splunk-pre-deploy__splunk-mvi2-versions">here</a>.</p>
+  <a class="xref" href="README.md#splunk-pre-deploy__splunk-mvi2-versions">here</a>.</p>
   
   
 </div>
@@ -85,7 +85,7 @@ See the section <a class="xref" href="install-kubectl.html">Installing kubectl</
   
   
 <p class="p">Sysdig now supports the monitoring of Kubernetes clusters and the playbooks have been updated to make use of this new functionality.
-See the section <a class="xref" href="deploying-sysdig-k8s.html">Deploying Sysdig monitoring on Kubernetes</a> for more information. 
+See the section <a class="xref" href="README.md#deploying-sysdig-k8s">Deploying Sysdig monitoring on Kubernetes</a> for more information. 
 </p>
   
   
@@ -119,7 +119,7 @@ used in conjunction with Docker swarm deployments.</div><hr />
 <li class="li">Docker EE changed to version 2.0 (UCP version 3.0.4, DTR version 2.5.3). The recommended  RAM requirement for UCP has been increased to 16GB for production systems.  </li>
 
 <li class="li">Splunk Enterprise version changed from 7.0.2 to 7.1.2. You must download and install version 7.1.2 of the relevant Splunk Universal Forwarder(s)  
-    as described in <a class="xref" href="splunk-pre-deploy.html">Splunk prerequisites</a>.</li>
+    as described in <a class="xref" href="README.md#splunk-pre-deploy">Splunk prerequisites</a>.</li>
   
 <li class="li">RHEL 7.5</li>
 
@@ -136,7 +136,7 @@ used in conjunction with Docker swarm deployments.</div><hr />
 <div class="section"><h3 class="title sectiontitle">Playbook updates</h3>
   
  
-<p class="p">An overview of all the playbooks is available <a class="xref" href="playbooks-overview.html">here</a>. This section outlines the changes 
+<p class="p">An overview of all the playbooks is available <a class="xref" href="README.md#playbooks-overview">here</a>. This section outlines the changes 
     from the previous release of the playbooks.</p>
 
     
@@ -144,7 +144,7 @@ used in conjunction with Docker swarm deployments.</div><hr />
  
     
 <ul class="ul">
-<li class="li"><code class="ph codeph">playbooks/k8s-nfs-provisioner.yml</code> - see <a class="xref" href="k8s-persistent-volume-config.html">Kubernetes Persistent Volume configuration</a> and <a class="xref" href="k8s-nfs-provisioner.html">Deploying the NFS provisioner for Kubernetes</a></li>
+<li class="li"><code class="ph codeph">playbooks/k8s-nfs-provisioner.yml</code> - see <a class="xref" href="README.md#k8s-persistent-volume-config">Kubernetes Persistent Volume configuration</a> and <a class="xref" href="README.md#k8s-nfs-provisioner">Deploying the NFS provisioner for Kubernetes</a></li>
 
 <li class="li"><code class="ph codeph">playbooks/resize_syspart.yml</code> resizes the logical volume that holds the <code class="ph codeph">/</code> partition of the Linux VMs to use all the space available on the drive.
      </li>
@@ -184,15 +184,15 @@ used in conjunction with Docker swarm deployments.</div><hr />
 <p class="p">New variables and configuration files have been introduced in this release.</p>
 
 <ul class="ul">
-<li class="li"><code class="ph codeph">splunk_uf_password</code> variable in <code class="ph codeph">group_vars/vault</code> - see <a class="xref" href="splunk-pre-deploy.html">Splunk prerequisites</a></li>
+<li class="li"><code class="ph codeph">splunk_uf_password</code> variable in <code class="ph codeph">group_vars/vault</code> - see <a class="xref" href="README.md#splunk-pre-deploy">Splunk prerequisites</a></li>
   
-<li class="li"><code class="ph codeph">orchestrator</code> variable in <code class="ph codeph">vm_hosts</code> - see <a class="xref" href="orchestrator-config.html">Orchestrator configuration</a></li>
+<li class="li"><code class="ph codeph">orchestrator</code> variable in <code class="ph codeph">vm_hosts</code> - see <a class="xref" href="README.md#orchestrator-config">Orchestrator configuration</a></li>
   
-<li class="li"><code class="ph codeph">k8s_pod_cidr</code> variable in <code class="ph codeph">group_vars/vars</code> - see <a class="xref" href="k8s-config.html">Kubernetes configuration</a></li>
+<li class="li"><code class="ph codeph">k8s_pod_cidr</code> variable in <code class="ph codeph">group_vars/vars</code> - see <a class="xref" href="README.md#k8s-config">Kubernetes configuration</a></li>
  
 <li class="li">Additional configuration files for each group in the inventory including <code class="ph codeph">group_vars/vms.yml</code>,
 <code class="ph codeph">group_vars/ucp.yml</code>, <code class="ph codeph">group_vars/dtr.yml</code>, <code class="ph codeph">group_vars/worker.yml</code> 
-    and <code class="ph codeph">group_vars/nfs.yml</code> - see <a class="xref" href="inventory-group-variables.html">Inventory group variables</a>.
+    and <code class="ph codeph">group_vars/nfs.yml</code> - see <a class="xref" href="README.md#inventory-group-variables">Inventory group variables</a>.
 </li>
 
 </ul>
