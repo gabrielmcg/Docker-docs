@@ -45,7 +45,7 @@
 </p>
 
 
-<p class="p">A sample Kubernetes application has been documented in the section <a class="xref" href="k8s-example-guestbook.html">Kubernetes guestbook example with Redis</a> to facilitate verification of 
+<p class="p">A sample Kubernetes application has been documented in the section <a class="xref" href="README.md#k8s-example-guestbook">Kubernetes guestbook example with Redis</a> to facilitate verification of 
   the deployed playbooks and configuration. This example is also useful for exploring the new Kubernetes-specific features in 
   the latest Splunk and Sysidg offerings.
 
