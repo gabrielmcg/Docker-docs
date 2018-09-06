@@ -4315,7 +4315,7 @@ provided with your access key which will be used by the playbooks to install the
 <td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7774 ">group_vars/vars</td>
 <td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7777 ">This should match the cluster name displayed when you source the environment setup script, for example, 
 <pre class="pre codeblock"><code># source env.sh
-Cluster "<code class="ph codeph">ucp_gab-ucp.cloudra.local</code>:6443_admin" set.
+Cluster "<strong class="ph b">ucp_gab-ucp.cloudra.local</strong>:6443_admin" set.
 User "ucp_gab-ucp.cloudra.local:6443_admin" set.
 </code></pre>
 For more information, see the section on installing the UCP client bundle in <a class="xref" href="#deploying-sysdig-k8s">Deploying Sysdig monitoring on Kubernetes</a>,   
@@ -5059,7 +5059,7 @@ spec:
 </p>
 
   
-<pre class="pre codeblock"><code>kubectl apply -f redis-master-deployment.yaml</code></pre>  
+<pre class="pre codeblock"><code># kubectl apply -f redis-master-deployment.yaml</code></pre>  
 
 <p class="p">Query the list of Pods to verify that the Redis master pod is running.</p>
 
@@ -5138,7 +5138,7 @@ redis-master   ClusterIP   10.96.174.129   &lt;none&gt;        6379/TCP   1m
 
 
 
-<pre class="pre codeblock"><code>[root@gab-ansible guestbook]# cat redis-slave-deployment.yaml
+<pre class="pre codeblock"><code># cat redis-slave-deployment.yaml
 apiVersion: apps/<strong class="ph b">v1beta2</strong> # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
@@ -5179,7 +5179,6 @@ spec:
           # value: env
         ports:
         - containerPort: 6379
-[root@gab-ansible guestbook]#
 </code></pre>  
 
 <p class="p">Create the Redis slaves from the <code class="ph codeph">redis-slave-deployment.yaml</code> file.</p>
@@ -5193,7 +5192,7 @@ deployment.apps "redis-slave" created
 <p class="p">Query the list of Pods to verify that the Redis slave pods are running.</p>
   
   
-<pre class="pre codeblock"><code>[root@gab-ansible guestbook]# kubectl get pods
+<pre class="pre codeblock"><code># kubectl get pods
 NAME                            READY     STATUS    RESTARTS   AGE
 redis-master-5f8d48b75f-8ztt4   1/1       Running   0          39m
 redis-slave-58fb7bb9b5-25z4m    1/1       Running   0          1m
@@ -5752,7 +5751,7 @@ These steps result in the File Store shown in <a class="xref" href="#k8s-nfs-pro
 <li class="li">
   
 In the General section of the Create File Share dialog, 
-shown <a class="xref" href="#k8s-nfs-provisioner-3par__create-fileshare">Figure 19</a>, 
+shown in <a class="xref" href="#k8s-nfs-provisioner-3par__create-fileshare">Figure 19</a>, 
   set the share type to NFS Share and set a share name, for example, <code class="ph codeph">gab_fileshare3par</code>  
   
 <div class="fig fignone" id="k8s-nfs-provisioner-3par__create-fileshare">
@@ -5786,7 +5785,7 @@ In the Additional Settings section, set the Permission to <code class="ph codeph
 <div class="fig fignone" id="k8s-nfs-provisioner-3par__create-fileshare-additional">
 
 <br /><img class="image" src="media/3par-create-fileshare-additional.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 21. </b></span>Create File Share - Share Path</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 21. </b></span>Create File Share - Additional Settings</span></div><p> </p></div>
    
 
 </li>
@@ -5803,7 +5802,7 @@ In the Additional Settings section, set the Permission to <code class="ph codeph
 <div class="fig fignone" id="k8s-nfs-provisioner-3par__create-fileshare-complete">
 
 <br /><img class="image" src="media/3par-create-fileshare-complete.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 22. </b></span>Create File Share - Share Path</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 22. </b></span>File Share</span></div><p> </p></div>
      
 
 
@@ -5988,7 +5987,7 @@ deployment.extensions "nfs-3par-pod" deleted
 <p class="p">Wait until the status is no longer <code class="ph codeph">Terminating</code> and the pod is deleted.</p>
 
   
-<pre class="pre codeblock"><code>kubectl get pod
+<pre class="pre codeblock"><code># kubectl get pod
 NAME                               READY     STATUS        RESTARTS   AGE
 nfs-3par-pod-5c4896699d-zfq9n      1/1       <strong class="ph b">Terminating</strong>   0          28m
 </code></pre>  
@@ -6262,7 +6261,7 @@ in the <code class="ph codeph">group_vars/vault</code> file as detailed in <a cl
   
   
 <pre class="pre codeblock"><code># cd Docker-Synergy/ops
-# ansible-playbook -i vm_hosts playbooks/install-sysdig.yml --vault-password-file .vault_pass
+# ansible-playbook -i vm_hosts playbooks/install_sysdig.yml --vault-password-file .vault_pass
 </code></pre> 
 
 <p class="p">Using the Sysdig software as a solution (SaaS) website <a class="xref" href="https://app.sysdigcloud.com" target="_blank">https://app.sysdigcloud.com</a>, you are able to view, analyze and

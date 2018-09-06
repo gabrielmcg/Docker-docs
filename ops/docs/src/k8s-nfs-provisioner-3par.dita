@@ -99,7 +99,7 @@ These steps result in the File Store shown in <xref href="k8s-nfs-provisioner-3p
 <li>
   
 In the General section of the Create File Share dialog, 
-shown <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/create-fileshare" type="fig"/>, 
+shown in <xref href="k8s-nfs-provisioner-3par.dita#k8s-nfs-provisioner-3par/create-fileshare" type="fig"/>, 
   set the share type to NFS Share and set a share name, for example, <codeph>gab_fileshare3par</codeph>  
   
 <fig id="create-fileshare">
@@ -127,7 +127,7 @@ In the Additional Settings section, set the Permission to <codeph>Read/Write all
 
 
 <fig id="create-fileshare-additional">
-<title>Create File Share - Share Path</title>
+<title>Create File Share - Additional Settings</title>
 <image href="media/3par-create-fileshare-additional.png" placement="break"/>
 </fig>   
 
@@ -140,7 +140,7 @@ In the Additional Settings section, set the Permission to <codeph>Read/Write all
 </p>  
 
 <fig id="create-fileshare-complete">
-<title>Create File Share - Share Path</title>
+<title>File Share</title>
 <image href="media/3par-create-fileshare-complete.png" placement="break"/>
 </fig>     
 
@@ -315,7 +315,7 @@ deployment.extensions "nfs-3par-pod" deleted
 
 <p>Wait until the status is no longer <codeph>Terminating</codeph> and the pod is deleted.</p>
   
-<codeblock>kubectl get pod
+<codeblock># kubectl get pod
 NAME                               READY     STATUS        RESTARTS   AGE
 nfs-3par-pod-5c4896699d-zfq9n      1/1       <b>Terminating</b>   0          28m
 </codeblock>  

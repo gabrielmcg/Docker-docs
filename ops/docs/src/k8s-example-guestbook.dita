@@ -48,7 +48,7 @@ spec:
 <p>Apply the Redis master deployment from the <codeph>redis-master-deployment.yaml</codeph> file:
 </p>
   
-<codeblock>kubectl apply -f redis-master-deployment.yaml</codeblock>  
+<codeblock># kubectl apply -f redis-master-deployment.yaml</codeblock>  
 
 <p>Query the list of Pods to verify that the Redis master pod is running.</p>
 <codeblock># kubectl get pods
@@ -121,7 +121,7 @@ redis-master   ClusterIP   10.96.174.129   &lt;none>        6379/TCP   1m
 <p>Although the Redis master is a single pod, you can make it highly available to meet traffic demands by adding replica Redis slaves.</p>
 
 
-<codeblock>[root@gab-ansible guestbook]# cat redis-slave-deployment.yaml
+<codeblock># cat redis-slave-deployment.yaml
 apiVersion: apps/<b>v1beta2</b> # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
@@ -162,7 +162,6 @@ spec:
           # value: env
         ports:
         - containerPort: 6379
-[root@gab-ansible guestbook]#
 </codeblock>  
 
 <p>Create the Redis slaves from the <codeph>redis-slave-deployment.yaml</codeph> file.</p>
@@ -174,7 +173,7 @@ deployment.apps "redis-slave" created
   
 <p>Query the list of Pods to verify that the Redis slave pods are running.</p>  
   
-<codeblock>[root@gab-ansible guestbook]# kubectl get pods
+<codeblock># kubectl get pods
 NAME                            READY     STATUS    RESTARTS   AGE
 redis-master-5f8d48b75f-8ztt4   1/1       Running   0          39m
 redis-slave-58fb7bb9b5-25z4m    1/1       Running   0          1m

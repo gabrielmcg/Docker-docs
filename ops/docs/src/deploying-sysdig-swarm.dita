@@ -12,7 +12,7 @@ href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-table
 />.</p>  
   
 <codeblock># cd Docker-Synergy/ops
-# ansible-playbook -i vm_hosts playbooks/install-sysdig.yml --vault-password-file .vault_pass
+# ansible-playbook -i vm_hosts playbooks/install_sysdig.yml --vault-password-file .vault_pass
 </codeblock> 
 
 <p>Using the Sysdig software as a solution (SaaS) website <xref

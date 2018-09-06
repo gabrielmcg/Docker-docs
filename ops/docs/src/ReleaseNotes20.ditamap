@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map chunk="to-content">
+  <title>Release notes - HPE Enterprise Containers as a Service with Docker Enterprise Edition </title>
+
+
+  <topicref href="release-notes-mvi2.dita" navtitle="Release notes MVI-2">
+    <topicref href="new-features-mvi2.dita" navtitle="New features in MVI-2"/>
+    <topicref href="changes-mvi2.dita" navtitle="Changes in MVI-2"/>
+    <topicref href="fixed-mvi2.dita" navtitle="Fixed in this release"/>
+    <topicref href="known-issues-mvi2.dita" navtitle="Known issues"></topicref>
+    
+  </topicref>
+    
+</map>
