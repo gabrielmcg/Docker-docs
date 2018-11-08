@@ -7325,7 +7325,7 @@ backup services and persistent data support. This solution is ideal for customer
 run containers on VMs to take advantage of the resource efficient usage of virtual machines
 for Docker containers, and having the ability to run legacy and new container applications
 side-by-side. Customers deploying Docker containers on a large scale, on Linux and Microsoft
-Windows, should consider Synergy as the deployment infrastructure. </p>
+Windows, should consider <span class="ph"><span class="keyword">HPE Simplivity</span></span> as the deployment infrastructure. </p>
 
 </div>
 
@@ -7405,15 +7405,15 @@ customer supplied certificates for UCP and DTR.
 
 <table cellpadding="4" cellspacing="0" summary="" id="customer-certs__customer-certs-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 31. </span>Customer certs variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12129">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12132">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12135">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12133">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12136">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12139">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12129 ">ucp_certs_dir</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12132 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12135 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12133 ">ucp_certs_dir</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12136 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12139 ">
 <ul class="ul">
 <li class="li">If <strong class="ph b">ucp_certs_dir</strong> is not defined, UCP is installed with self-signed
 certificates and DTR is installed with the <code class="ph codeph">--ucp-insecure-tls</code>
@@ -7439,9 +7439,9 @@ certificates</li>
 </td> 
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12129 ">dtr_certs_dir</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12132 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12135 ">    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12133 ">dtr_certs_dir</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12136 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12139 ">    
 <ul class="ul">
 <li class="li">If <strong class="ph b">dtr_certs_dir</strong> is not defined, DTR is installed with self-signed
 certificates</li>
@@ -7720,7 +7720,7 @@ certificates is described below. In summary, the following steps are required:</
 
   
 <li class="li">Put your root CA certificate and your server certificate files in
-<code class="ph codeph">/root/Docker-Synergy/ops/files/splunk/linux/SPLUNK_HOME/etc/mycerts</code></li>
+<pre class="pre codeblock"><code>/root/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/ops/files/splunk/linux/SPLUNK_HOME/etc/mycerts</code></pre></li>
 
   
 <li class="li">Uncomment the <code class="ph codeph">[sslConfig]</code> stanza in the file 
@@ -7993,8 +7993,10 @@ More details here: http://curl.haxx.se/docs/sslcerts.html
 <div class="body">
 <p class="p">HPE Reference Architectures, <a class="xref" href="http://hpe.com/info/ra" target="_blank">hpe.com/info/ra</a></p>
 
-<p class="p">HPE Synergy, <a class="xref" href="http://hpe.com/info/synergy" target="_blank">hpe.com/info/synergy</a></p>
 
+
+<p class="p">HPE SimpliVity, <a class="xref" href="http://hpe.com/info/simplivity" target="_blank">hpe.com/info/simplivity</a></p>
+    
 <p class="p">HPE Servers, <a class="xref" href="http://hpe.com/servers" target="_blank">hpe.com/servers</a></p>
 
 <p class="p">HPE Storage, <a class="xref" href="http://hpe.com/storage" target="_blank">hpe.com/storage</a></p>

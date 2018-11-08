@@ -5,7 +5,9 @@
   
 <body>
 <p>HPE Reference Architectures, <xref href="http://hpe.com/info/ra" format="html" scope="external">hpe.com/info/ra</xref></p>
-<p>HPE Synergy, <xref href="http://hpe.com/info/synergy" scope="external" format="html">hpe.com/info/synergy</xref></p>
+<!-- TODO confditional content -->
+<!--<p>HPE Synergy, <xref href="http://hpe.com/info/synergy" scope="external" format="html">hpe.com/info/synergy</xref></p>-->
+<p>HPE SimpliVity, <xref href="http://hpe.com/info/simplivity" scope="external" format="html">hpe.com/info/simplivity</xref></p>    
 <p>HPE Servers, <xref href="http://hpe.com/servers" format="html" scope="external">hpe.com/servers</xref></p>
 <p>HPE Storage, <xref href="http://hpe.com/storage" format="html" scope="external">hpe.com/storage</xref></p>
 <p>HPE Networking, <xref href="http://hpe.com/networking" format="html" scope="external">hpe.com/networking</xref></p>

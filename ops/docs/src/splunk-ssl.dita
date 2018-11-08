@@ -15,7 +15,7 @@ certificates is described below. In summary, the following steps are required:</
 <li>Set the variable <codeph>splunk_ssl</codeph> to <codeph>yes</codeph> in <codeph>group_vars/vars</codeph></li>
   
 <li>Put your root CA certificate and your server certificate files in
-<codeph>/root/Docker-Synergy/ops/files/splunk/linux/SPLUNK_HOME/etc/mycerts</codeph></li>
+<codeblock>/root/<ph conkeyref="conrefs/gitrepo-string"/>/ops/files/splunk/linux/SPLUNK_HOME/etc/mycerts</codeblock></li>
   
 <li>Uncomment the <codeph>[sslConfig]</codeph> stanza in the file 
 <codeph>/files/splunk/linux/SPLUNK_HOME/etc/system/local/server.conf</codeph>
