@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="architecture-syn">
+<title>Synergy architecture</title>
+<body>
+<section id="architecture-syn-overview">
+<p>  
+This solution assumes 
+that you  have already set up your <ph conkeyref="conrefs/synergy-string"/> hardware, that you have installed your VMware virtualization platform 
+and have configured HPE 3PAR for storage.
+</p>
+
+<!-- TODO -->
+<fig id="overview-graphic">
+<title>Solution overview</title>
+<image href="../media/overview-graphic.png" placement="break"/>
+</fig>  
+    
+<p><xref href="architecture-syn.dita#architecture-syn/overview-graphic"/> provides an overview of the steps used to deploy the solution. 
+   Deploying your hardware and installing vSphere is specific to your environment and is not covered here.
+   This document shows you how to:    
+</p>  
+</section>  
+</body>
+</topic>

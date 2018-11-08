@@ -47,7 +47,7 @@ you should copy the generated files from the <codeph>/root/backups</codeph> fold
 You may wish to add a command to the backup script to automate this process.</p>
  
 <p>The virtual volume used to host the <codeph>DockerBackup</codeph> datastore can be scheduled for snapshot and backup protection 
-with HPE Recovery Manager Central and HPE StoreOnce as described in the section <xref href="backup-restore-docker-volumes.dita"/>.
+with HPE Recovery Manager Central and HPE StoreOnce as described in the section <xref href="synergy/backup-restore-docker-volumes.dita"/>.
 Data backed up to HPE StoreOnce can be restored to the HPE 3PAR StoreServ and attached to the Ansible host for recovery.
 </p> 
   

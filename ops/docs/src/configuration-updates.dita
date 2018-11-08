@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="configuration-updates">
+<title id="changes-mvi2-configuiration">Configuration updates</title>  
+<body>
+
+
+<p>New variables and configuration files have been introduced:</p>
+<ul>
+<li><codeph>splunk_uf_password</codeph> variable in <codeph>group_vars/vault</codeph> - see <xref href="splunk-pre-deploy.dita"/></li>  
+<li><codeph>orchestrator</codeph> variable in <codeph>vm_hosts</codeph> - see <xref href="orchestrator-config.dita" format="dita"/></li>  
+<li><codeph>k8s_pod_cidr</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="k8s-config.dita"/></li> 
+<li>Additional configuration files for each group in the inventory including <codeph>group_vars/vms.yml</codeph>,
+<codeph>group_vars/ucp.yml</codeph>, <codeph>group_vars/dtr.yml</codeph>, <codeph>group_vars/worker.yml</codeph> 
+    and <codeph>group_vars/nfs.yml</codeph> - see <xref href="inventory-group-variables.dita"/>.
+</li>
+</ul>
+
+
+</body>
+</topic>

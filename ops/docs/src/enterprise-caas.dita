@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="enterprise-caas">
-<title>HPE Reference Configuration for Docker Containers as a Service on HPE Synergy Composable Infrastructure</title>
+<title><ph conkeyref="conrefs/product-title-full-string"/></title>
 <body>
 <ul>
     
@@ -11,12 +11,12 @@
 </ul>-->
 </li> 
 
-<li><xref href="release-notes-mvi2.dita"/>
+<li><xref href="release-notes.dita"/>
 <ul>
-<li><xref href="new-features-mvi2.dita"/></li> 
-<li><xref href="changes-mvi2.dita"/></li>
-<li><xref href="fixed-mvi2.dita"/></li>
-<li><xref href="known-issues-mvi2.dita"/></li>    
+<li><xref href="new-features.dita"/></li> 
+<li><xref href="changes-from-previous.dita"/></li>
+<!--<li><xref href="synergy/fixed-syn.dita"/></li>
+<li><xref href="synergy/known-issues-syn.dita"/></li>  -->  
 </ul>
 
 </li>
@@ -33,11 +33,11 @@
     
 <li><xref href="solution-components.dita"/>
 <ul>
-<li><xref href="hardware.dita"></xref>
+<li><xref href="synergy/hardware.dita"></xref>
 <ul>
-<li><xref href="synergy.dita"/></li>    
-<li><xref href="server-reqs.dita"/></li>    
-<li><xref href="storage-reqs.dita"/></li>      
+<li><xref href="synergy/synergy.dita"/></li>    
+<li><xref href="synergy/server-reqs.dita"/></li>    
+<li><xref href="synergy/storage-reqs.dita"/></li>      
 </ul>
 </li>    
 <li><xref href="software.dita"/>
@@ -111,7 +111,7 @@
 <li><xref href="k8s-nfs-provisioner.dita"/>
 <ul>
 <li><xref href="k8s-nfs-provisioner-vm.dita"/></li>
-<li><xref href="k8s-nfs-provisioner-3par.dita"/></li>    
+<!--<li><xref href="k8s-nfs-provisioner-3par.dita"/></li>-->    
 </ul>
 </li>
 <li><xref href="deploying-sysdig.dita"/>
@@ -130,7 +130,7 @@
 <li><xref href="backup-restore.dita"/>
 <ul>
 <li><xref href="backup-restore-ucp-dtr.dita"/></li>    
-<li><xref href="backup-restore-docker-volumes.dita"/></li>
+<li><xref href="synergy/backup-restore-docker-volumes.dita"/></li>
 <li><xref href="integrate-backup.dita"/></li>
 </ul>
 </li>

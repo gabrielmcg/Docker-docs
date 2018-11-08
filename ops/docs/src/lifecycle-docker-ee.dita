@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="lifecycle-docker-ee">
+<title>Docker EE Environment</title>
+<body>
+<section>
+
+<p>Each release of Docker Enterprise Edition contains three technology components – UCP,
+DTR and the Docker Daemon or Engine. It is imperative that the components belonging
+to the same version are deployed or upgraded together – see <xref
+href="lifecycle-docker-ee.dita#lifecycle-docker-ee/dockeree-components-table-content" type="table"/>
+</p>
+<p>A banner will be displayed on the UI, as shown in <xref
+href="lifecycle-docker-ee.dita#lifecycle-docker-ee/docker-update" type="fig"/>, when an update is
+available for UCP or DTR. You can start the upgrade process by clicking on the
+banner.</p>
+<fig id="docker-update">
+<title>Docker update notification</title>
+<image href="media/dockerupdate.png"/>
+</fig>
+<table id="dockeree-components-table-content" frame="none">
+<title>Docker EE components</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="4">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<colspec colnum="4" colname="c4" align="left"/>
+<thead>
+<row>
+<entry>Order</entry>
+<entry>Component</entry>
+<entry>Dependency (compatibility)</entry>
+<entry>Download/Documentation</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1.</entry>
+<entry>Docker Daemon/Engine</entry>
+<entry morerows="2" valign="middle"><ol>
+<li>VM Operating System</li>
+<li>vDVS plugin</li>
+<li>Prometheus and Grafana</li>
+</ol></entry>
+<entry morerows="2" valign="middle"><ul>
+<li><xref
+href="https://success.docker.com/Policies/Maintenance_Lifecycle"
+format="html" scope="external">Docker Lifecycle Maintenance</xref></li>
+<li><xref
+href="https://success.docker.com/Policies/Compatibility_Matrix"
+format="html" scope="external">Docker Compatibility Matrix</xref></li>
+</ul>
+</entry>
+</row>
+<row>
+<entry>2.</entry>
+<entry>Universal Control Plane</entry>
+</row>
+<row>
+<entry>3.</entry>
+<entry>Docker Trusted Registry</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

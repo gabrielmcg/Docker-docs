@@ -10,249 +10,25 @@ management of software and hardware of various components that make up the solut
 stack. Lifecycle management is required to keep the solution up-to-date and ensure
 that the latest versions of the software are running to provide optimal performance,
 security and to fix any existing defects within the product.</p>
+    
 <p>In this section, we will cover life cycle management of the different components that
 are used in this solution. The lifecycle of the following stacks need to be maintained and managed: </p>
+    
 <ul>
 <li>Monitoring Tools (Splunk or Prometheus and Grafana)</li>
 <li>Docker Enterprise Edition Environment</li>
 <li>Virtual Machine Operating systems</li>
-<li>Synergy environment</li>
+<li><ph conkeyref="conrefs/hardware-string"/> environment</li>
 </ul>
+    
 <p>The general practice and recommendation is to follow a bottom-up approach for
 updating all components of the environment and making sure the dependencies are met.
-In our solution, we would start with Synergy and end with the monitoring
+In our solution, we would start with <ph conkeyref="conrefs/hardware-string"/> and end with the monitoring
 environment. If all components are not being updated at the same time, the same
 approach can be followed – updating only the components that require updates while
-adhering to the interdependencies of each component that is being updated.</p>
-</section>
-<section>
-<title>Synergy environment</title>
-<p>HPE Synergy Composer powered by HPE OneView provides fast, reliable, and simplified
-firmware and driver management across many HPE Synergy components. HPE OneView
-manages firmware to reduce manual interactions and errors, in addition to minimizing
-downtime. Firmware updates of management appliances and shared infrastructure are
-non-disruptive to the production workload. </p>
-<p>More information is available in the Best Practices for HPE Synergy Firmware and Driver Updates guide at <xref
-href="https://support.hpe.com/hpsc/doc/public/display?docId=c05212310"
-format="html" scope="external"/>.</p>
-</section>
-<section>
-<title>VMware Components</title>
-<p>The solution in this deployment guide is built on VMware vSphere and leverages VMware
-ESXi and vCenter. For more information on upgrading vSphere, see the VMware
-documentation, Introduction to vSphere Upgrade, at <xref
-href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.upgrade.doc/GUID-EB29D42E-7174-467C-AB40-DB37236FEAF5.html"
-format="html" scope="external"/>.</p>
-</section>
-<section>
-<title>vSphere Docker Volume Service Plug-in</title>
-<p> vSphere Docker Volume service plug-in is part of an open source project by VMware
-that enables running stateful containers by providing persistent Docker volumes
-leveraging existing storage technology from VMware. There are two parts to the
-plug-in, namely, client software and server software (see <xref
-href="lifecycle.dita#lifecycle/vdvs-components-table-conref" type="table"/>).
-Every version of the plug-in that is released includes both pieces of software and
-it is imperative that the version number installed on the client side and server
-side are the same. </p>
-<p>When updating the Docker Volume service plug-in, ensure the ESXi version you are
-running is supported and that the client software is compatible with the operating
-system.</p>
-<table id="vdvs-components-table-conref"
-conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-content">
-<title>vSphere Docker Volume service components</title>
-<tgroup cols="2">
-<tbody>
-<row>
-<entry/>
-</row>
-</tbody>
-</tgroup>
-</table>
+adhering to the interdependencies for each component that is being updated.</p>
 </section>
 
-
-<section>
-<title>Red Hat Enterprise Linux operating system</title>
-<p>This solution is built using Red Hat Enterprise Linux (see <xref href="lifecycle.dita#lifecycle/rhel-components-table-content" type="table"/>) as the base operating system. When upgrading the operating system on the 
-VMs, first verify that the OS version is compatible with Docker EE by looking at the Docker OS compatibility matrix.</p>
-
-
-<table id="rhel-components-table-content" frame="none">
-<title>Operating system</title>
-<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
-<col/>
-<col/>
-</colgroup>-->
-
-<tgroup cols="4">
-<colspec colnum="1" colname="c1" align="left"/>
-<colspec colnum="2" colname="c2" align="left"/>
-<colspec colnum="3" colname="c3" align="left"/>
-<colspec colnum="4" colname="c4" align="left"/>
-<thead>
-<row>
-<entry>Order</entry>
-<entry>Component</entry>
-<entry>Dependency (compatibility)</entry>
-<entry>Download/Documentation</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>1.</entry>
-<entry>Red Hat Enterprise Linux</entry>
-<entry><ul><li>Docker EE</li><li>vDVS client software plugin</li></ul></entry>
-<entry><xref href="https://access.redhat.com/articles/11258" format="html" scope="external">RHEL</xref></entry>
-</row>
-</tbody>
-</tgroup>
-</table>
-    
-    
-
-</section>
-
-
-<section>
-<title>Docker EE Environment</title>
-<p>Each release of Docker Enterprise Edition contains three technology components – UCP,
-DTR and the Docker Daemon or Engine. It is imperative that the components belonging
-to the same version are deployed or upgraded together – see <xref
-href="lifecycle.dita#lifecycle/dockeree-components-table-content" type="table"/>
-</p>
-<p>A banner will be displayed on the UI, as shown in <xref
-href="lifecycle.dita#lifecycle/docker-update" type="fig"/>, when an update is
-available for UCP or DTR. You can start the upgrade process by clicking on the
-banner.</p>
-<fig id="docker-update">
-<title>Docker update notification</title>
-<image href="media/dockerupdate.png"/>
-</fig>
-<table id="dockeree-components-table-content" frame="none">
-<title>Docker EE components</title>
-<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
-<col/>
-<col/>
-</colgroup>-->
-
-<tgroup cols="4">
-<colspec colnum="1" colname="c1" align="left"/>
-<colspec colnum="2" colname="c2" align="left"/>
-<colspec colnum="3" colname="c3" align="left"/>
-<colspec colnum="4" colname="c4" align="left"/>
-<thead>
-<row>
-<entry>Order</entry>
-<entry>Component</entry>
-<entry>Dependency (compatibility)</entry>
-<entry>Download/Documentation</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>1.</entry>
-<entry>Docker Daemon/Engine</entry>
-<entry morerows="2" valign="middle"><ol>
-<li>VM Operating System</li>
-<li>vDVS plugin</li>
-<li>Prometheus and Grafana</li>
-</ol></entry>
-<entry morerows="2" valign="middle"><ul>
-<li><xref
-href="https://success.docker.com/Policies/Maintenance_Lifecycle"
-format="html" scope="external">Docker Lifecycle Maintenance</xref></li>
-<li><xref
-href="https://success.docker.com/Policies/Compatibility_Matrix"
-format="html" scope="external">Docker Compatibility Matrix</xref></li>
-</ul>
-</entry>
-</row>
-<row>
-<entry>2.</entry>
-<entry>Universal Control Plane</entry>
-</row>
-<row>
-<entry>3.</entry>
-<entry>Docker Trusted Registry</entry>
-</row>
-</tbody>
-</tgroup>
-</table>
-</section>
-
-<section>
-<title>Monitoring Tools</title>
-    
-<p>To learn more about upgrading Splunk, see the relevant documentation at <xref href="http://docs.splunk.com/Documentation/Splunk/7.1.2/Installation/HowtoupgradeSplunk" format="html" scope="external">How to upgrade Splunk Enterprise</xref>.</p>    
-
-<p>The Sysdig agent runs as a container and the latest version is pulled from the Docker hub on first installation. Re-run the <codeph>install_sysdig.yml</codeph> playbook
-to update to the newest version if required.</p>
-    
-    
-<p>Prometheus and Grafana monitoring tools (see <xref href="lifecycle.dita#lifecycle/promgraf-table-content" type="table"/>) run as containers within the
-Docker environment. Newer versions of these tools can be deployed by pulling the
-Docker images from Docker Hub. Verify that the version of Prometheus that is being
-used is compatible with the version of Docker EE.</p>
-    
-<table id="promgraf-table-content" frame="none">
-<title>Monitoring tools: Prometheus and Grafana</title>
-<tgroup cols="4">
-<colspec colnum="1" colname="c1" align="left"/>
-<colspec colnum="2" colname="c2" align="left"/>
-<colspec colnum="3" colname="c3" align="left"/>
-<colspec colnum="4" colname="c4" align="left"/>
-<thead>
-<row>
-<entry>Order</entry>
-<entry>Component</entry>
-<entry>Dependency (compatibility)</entry>
-<entry>Download/Documentation</entry>
-</row>
-</thead>
-<tbody>  
-<row>
-<entry>1.</entry>
-<entry>Prometheus</entry>
-<entry><ol><li>Grafana</li><li>Docker EE</li></ol></entry>
-<entry morerows="1" valign="middle"><ol><li>Prometheus Images on Docker Hub</li><li><xref href="http://docs.grafana.org/installation/upgrading/" format="html" scope="external">Upgrading Grafana</xref></li>
-</ol></entry>
-</row>    
-<row>
-<entry>2.</entry>
-<entry>Grafana</entry>
-<entry><ol><li>Prometheus</li><li>Docker EE</li></ol></entry>   
-</row>
-</tbody>
-</tgroup>
-</table>    
-    
-    
-</section>
-
-<section>
-<title>Windows operating system and Docker EE</title>
-
-
-<p>Docker Enterprise Edition for Windows Server (Docker EE) enables native Docker containers on Windows Server. 
-Windows Server 2016 and later versions are supported. This solution has been tested with Windows worker nodes running Windows Server 2016 
-and with Docker EE 17.06.</p>
-
-    
-<note type="note">
-<p>Docker Universal Control Plane is not currently supported on Windows Server 1709 due to image incompatibility issues. 
-For more information, see the Docker documentation <xref href="https://docs.docker.com/install/windows/docker-ee/" format="html" scope="external">Install Docker Enterprise Edition for Windows Server</xref></p>        
-
-<p>This solution recommends that you only run Windows Server 2016 on your Windows worker nodes 
-and that you install any required updates to your Windows nodes in a timely manner.</p>
-</note>    
-
-  
-<p>For information on how to update Docker EE on Windows Server 2016, see the Docker 
-documentation <xref href="https://docs.docker.com/install/windows/docker-ee/#update-docker-ee" format="html" scope="external">Update Docker EE</xref></p>
-
-
-
-</section>
     
 
 </body>

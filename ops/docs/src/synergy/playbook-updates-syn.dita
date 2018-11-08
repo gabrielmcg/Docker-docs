@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="playbook_updates_syn">
+<title id="changes-mvi2-playbooks">Playbook updates</title>  
+<body>
+ 
+<p>An overview of all the playbooks is available <xref href="../playbooks-overview.dita">here</xref>. This section outlines the changes 
+    from the previous release of the playbooks.</p>
+    
+<p>New playbooks:</p> 
+    
+<ul>
+<li><codeph>playbooks/k8s-nfs-provisioner.yml</codeph> - see <xref href="../k8s-persistent-volume-config.dita"/> and <xref href="../k8s-nfs-provisioner.dita"/></li>
+<li><codeph>playbooks/resize_syspart.yml</codeph> resizes the logical volume that holds the <codeph>/</codeph> partition of the Linux VMs to use all the space available on the drive.
+    <!-- - see <xref href="playbooks-overview.dita#playbooks-overview/resize_syspart">here</xref>--> </li>
+</ul>
+
+<p>Modified playbooks:</p>
+<ul>
+<li><codeph>playbooks/create_vms.yml</codeph></li>
+<li><codeph>playbooks/install_nfs_server.yml</codeph></li>    
+</ul>    
+    
+<p>Renamed/Removed playbooks:</p>    
+        
+<ul>
+<li><codeph>playbooks/monitoring.yml</codeph> replaced by <codeph>playbooks/splunk_uf.yml</codeph></li>  
+<li><codeph>playbooks/monitoring_win.yml</codeph> replaced by <codeph>playbooks/splunk_uf_win.yml</codeph></li>    
+<li><codeph>templates/monitoring</codeph> folder renamed to <codeph>templates/splunk</codeph></li>  
+</ul>  
+    
+
+</body>
+</topic>

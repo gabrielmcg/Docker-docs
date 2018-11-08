@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="svt-variables-config">
+<title>HPE SimpliVity configuration</title>
+<body>
+<p>All HPE SimpliVity-related variables are mandatory and are described in <xref href="svt-variables-config.dita#svt-variables-config/svt-variables-table-conref"/>.</p>
+
+
+<table id="svt-variables-table-conref" conref="svt-variables-table.dita#svt-variables-table/svt-variables-table-content">
+<title>HPE SimpliVity variables</title>
+<tgroup cols="3">
+<tbody>
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+
+<section>
+<title>Configure dummy VMs to backup Docker volumes</title>
+<p>The playbook <codeph>config_dummy_vms_for_docker_volumes_backup.yml</codeph> ensures that you can back up Docker volumes 
+  that have been created using the vSphere plugin (vDVS) in HPE SimpliVity. There is not a straight forward way to do this, 
+  so you need to use a workaround. Since all Docker volumes are going to be stored in the <codeph>dockvols</codeph> folder 
+  in the datastore(s), you need to create a ‘dummy’ VM per datastore. The <codeph>vmx</codeph>, <codeph>vmsd</codeph> 
+  and <codeph>vmkd</codeph> files from this VMs will have to be inside the dockvols folder, 
+  so when these VMs are backed up, the volumes are backed up as well. Obviously these VMs don’t need 
+  to take any resources and you can keep them powered off.</p>
+   
+</section>
+<section>
+<title>Configure SimpliVity backups</title>  
+<p>The playbook <codeph>config_simplivity_backups.yml</codeph> configures the defined backup policies in the 
+  group variables file in HPE SimpliVity and will include all Docker nodes plus the ‘dummy’ VMs created before, 
+  so the existing Docker volumes are also taken into account. The playbook will mainly use the HPE SimpliVity REST API 
+  to perform these tasks. A reference to the REST API can be found at: 
+  <xref href="https://api.simplivity.com/rest-api_getting-started_overview/rest-api_getting-started_overview_rest-api-overview.html"
+    scope="external" format="html"/> </p>  
+</section>
+
+<section>
+<title>VM placement and number of HPE SimpliVity servers in the cluster</title>  
+
+<p>The placement of the various VMs deployed by the playbooks depends on whether DRS is enabled or not:</p>
+
+<ol>
+<li>If DRS is not enabled, the placement of the VMs is specified in the the ansible inventory file vm_hosts</li>
+<li>If DRS is enabled, the placement of the VMs is outside the control of the playbooks</li>
+</ol>
+  
+The playbooks have only been tested with three nodes in the ESX cluster, but the following sections provide guidance on how to use more than three nodes.  
+</section>
+  
+<section>
+<title>Using more than three nodes when DRS is not enabled</title>  
+
+<p>The default <codeph>vm_hosts</codeph> file in the solution GitHub repository corresponds to a deployment 
+  on a 3-node HPE SimpliVity cluster. For each Ansible host in the inventory, you use the <codeph>esxi_hosts</codeph> 
+  variable to specify on which ESX hosts the VM should be placed. 
+  The following code extract shows 3 UCP VMs distributed across the three members of the cluster. 
+  This is the recommended placement as you don’t want to one node to host two UCP VMs as a failure of 
+  that node would result in the cluster losing quorum.</p>  
+  
+<codeblock>
+[ucp]
+clh-ucp01 ip_addr='10.10.174.112/22' esxi_host='simply01.am2.cloudra.local'
+clh-ucp02 ip_addr='10.10.174.113/22' esxi_host='simply02.am2.cloudra.local'
+clh-ucp03 ip_addr='10.10.174.114/22' esxi_host='simply03.am2.cloudra.local'
+</codeblock>  
+
+<p>In the above example, the first UCP VM will be placed on the ESX host named <codeph>simply01.am2.cloudra.local</codeph>. 
+  Note that the value for <codeph>esxi_host</codeph> is the name of the ESX host in the vCenter inventory.</p>
+
+<p>The default <codeph>vm_hosts</codeph> inventory configures three Docker worker nodes and distributes them across the three ESX hosts:</p>
+
+<codeblock>
+[worker]
+clh-worker01 ip_addr='10.10.174.122/22' esxi_host='simply01.am2.cloudra.local'
+clh-worker02 ip_addr='10.10.174.123/22' esxi_host='simply02.am2.cloudra.local'
+clh-worker03 ip_addr='10.10.174.124/22' esxi_host='simply03.am2.cloudra.local'
+</codeblock>
+
+<p>If you have more than three ESX hosts in your cluster, you can add an additional worker node as follows:</p>
+  
+<codeblock>
+[worker]
+clh-worker01 ip_addr='10.10.174.122/22' esxi_host='simply01.am2.cloudra.local'
+clh-worker02 ip_addr='10.10.174.123/22' esxi_host='simply02.am2.cloudra.local'
+clh-worker03 ip_addr='10.10.174.124/22' esxi_host='simply03.am2.cloudra.local'
+clh-worker04 ip_addr='10.10.174.1xx/22' esxi_host='simply04.am2.cloudra.local'
+</codeblock>  
+
+<p>You can also distribute the infrastructure VMs across fours nodes rather than across the default nodes. 
+  For example, the default placement for the NFS server VM is as follows:</p>
+
+<codeblock>
+[nfs]
+clh-nfs ip_addr='10.10.174.121/22'    esxi_host='simply03.am2.cloudra.local'
+</codeblock>
+
+<p>Instead, you can change the placement NFS server VM, leveraging a fourth ESX node:</p>
+  
+<codeblock>
+[nfs]
+clh-nfs ip_addr='10.10.174.1xx/22'    esxi_host='simply04.am2.cloudra.local'
+</codeblock>  
+
+<p>When you specify the placement of the VM, you should ensure that you follow these placement guidelines:</p>
+  
+<ul>
+<li>Do not place two UCP VMs on the same node. If the node fails, the UCP cluster will lose quorum and the service will go down.</li>
+<li>Do not place two DTR replicas (VMs) on the same node. Once again, the cluster will lose quorum if that node fails.</li>  
+</ul>  
+
+<note type="note">
+The OmniStack software maintains two replicas on two different hosts for each VM. As a result, when a VM is scheduled 
+on an ESX server that does not have local access to one of the replicas, the VM will report 
+the warning “SimpliVity VM Data Access Not Optimized”. You can safely ignore this warning.  
+</note>
+  
+</section>  
+  
+<section>
+<title>Using more than three nodes when DRS is enabled</title>
+
+<p>When DRS is enabled, it controls the placement of the VMs and as a result, the placement you have specified 
+  in the <codeph>vm_hosts</codeph> inventory is ignored. Instead, you use DRS rules to make sure that 
+  the UCP and DTR VMs are distributed across three nodes for the reasons explained earlier.</p>
+  
+<note type="warning">
+If you do not specify DRS rules to determine the placement, DRS will automatically move the VMs that 
+report the “SimpliVity VM Data Access Not Optimized” warning to a node with a replica of the VM 
+which may break the earlier placement guideline.  
+</note>  
+
+</section>
+
+
+</body>
+</topic>

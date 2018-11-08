@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="backup-restore-docker-volumes-svt">
+<title>Backup and restore Docker persistent volumes</title>
+<body>
+<p>In order to restore a Docker volume, you need to restore a special VM that has been deployed for the sole 
+  purpose of backing up Docker volumes. There is one such VM for each datastore defined in the datastores array 
+  in the <codeph>group_vars/vars</codeph> file. By default, a single datastore is specified in the playbooks:
+</p>
+<codeblock>datastores: ['Docker_CLH']</codeblock>
+  
+<note type="note">The use of a single datastore is recommended. If you have configured multiple datastores, you need to 
+  understand and keep track of how your Docker volumes are distributed across the datastores.</note>
+
+<p>The name of the special VM follows the pattern &lt;prefix>-in-dockervols-&lt;Datastore> where:</p>
+
+<ul>
+<li>&lt;prefix> is the value of the variable dummy_vm_prefix from the file group_vars/vars</li>
+<li>&lt;Datastore> is the name of the datastore</li>
+</ul>
+
+
+<p>For example, based on the default values in the scripts, the VM name would be <codeph>hpe-VM-in-dockervols-Docker_HPE</codeph></p>
+
+<section>
+<title>Create a Docker volume</title>  
+  
+<p>To see any existing Docker volumes created using the vSphere driver, use the <codeph>docker volume ls</codeph> command and limit the results to 
+  those volumes created using the vSphere driver. If you have already used the playbooks to install Prometheus for example, you may see 
+a listing as follows:</p>
+  
+<codeblock>
+# docker volume ls | grep vsphere
+vsphere:latest      prom_hpe-db-data@Docker_HPE
+</codeblock>  
+  
+<p>To create a Docker volume named <codeph>test_01</codeph>, you can use the <codeph>docker volume create</codeph> command 
+  specifying the vSphere driver:</p>  
+  
+<codeblock>
+# docker volume create -d vsphere test_01
+test_01
+</codeblock>  
+  
+<p>You can check that the volume exists using the <codeph>docker volume ls</codeph> command:</p>  
+  
+<codeblock>
+# docker volume ls | grep vsphere
+vsphere:latest      prom_clh-db-data@Docker_CLH
+vsphere:latest      test_01@Docker_CLH
+</codeblock>  
+
+<p>You can attach a container to the volume and then add data to it by creating a text file with some arbitrary content:</p>
+  
+<codeblock>
+# docker run -it --rm -v test_01:/tmp alpine sh -c "echo some test data here > /tmp/foo.txt"
+</codeblock>  
+
+<p>If this is the first time you have used the <codeph>alpine</codeph> image, you may see additional output relating to download of image layers:</p>
+  
+<codeblock>
+Unable to find image 'alpine:latest' locally
+latest: Pulling from library/alpine
+88286f41530e: Already exists
+Digest: sha256:f006ecbb824d87947d0b51ab8488634bf69fe4094959d935c0c103f4820a417d
+Status: Downloaded newer image for alpine:latest
+</codeblock>  
+
+<p>The container will exit once the shell command has run and any unnamed volumes will be removed. 
+  However, the named volume <codeph>test_01:/tmp</codeph> will persist. 
+  To check that the data is still available after the container exited, spin up a new container and try to retrieve the data:</p>
+
+<codeblock>
+# docker run -it --rm -v test_01:/tmp alpine sh -c "cat /tmp/foo.txt"	
+<b>some test data here</b>
+</codeblock>
+  
+</section>
+  
+<section>
+<title>Automated backup</title>  
+  
+<p>By default, the special VM and any Docker volume in the <codeph>dockvols</codeph> folder are backed up every hour. 
+  This is controlled by the following settings in the <codeph>group_vars/vars</codeph> file.</p>  
+
+<codeblock>
+backup_policies:
+ - name: 'clh-gold'
+   days: 'All'
+   start_time: '00:00'
+   frequency: '60'
+   retention: '43200'
+
+dummy_vm_prefix: 'clh-VM'
+
+docker_volumes_policy: 'clh-gold'
+</codeblock>
+
+<p>The backup policy <codeph>clh-gold</codeph> is assigned to the special VM that is used to back up the Docker volumes. 
+  This policy specifies that a backup is taken every hour (<codeph>frequency: '60'</codeph> means sixty minutes) 
+  while the backup is retained for one month (<codeph>retention: '43200'</codeph> means 43200 minutes or thirty days).</p>  
+</section>  
+
+<section>
+<title>Manual backup</title>
+
+<p>Rather than waiting for an automated backup to take place, you can create a backup immediately. 
+  Right-click on the special VM, in this case <codeph>hpe-VM-in-dockervols-Docker_HPE</codeph>, 
+  select <codeph>All HPE SimpliVity Actions</codeph> and choose <codeph>Backup Virtual Machine</codeph> as shown in 
+  <xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/backup-virtual-machine" type="fig"/>.</p>
+
+<fig id="backup-virtual-machine">
+<title>Backup virtual machine</title> 
+<image href="../media/backup-virtual-machine.png"/>
+</fig>
+ 
+<p>You can specify a backup name, in this case <codeph>manual_backup_test_01</codeph>, as shown in 
+ <xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/backup-vm-details" type="fig"/>.</p>
+
+
+<fig id="backup-vm-details">
+<title>Backup virtual machine details</title> 
+<image href="../media/backup-vm-details.png"/>
+</fig>
+
+</section>
+
+<section>
+<title>Restore</title>  
+  
+<p>Right-click on the special VM, in this case hpe-VM-in-dockervols-Docker_HPE. 
+  On the <codeph>Configure</codeph> tab, select <codeph>HPE SimpliVity Search Backups</codeph> as shown in 
+<xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/search-backups" type="fig"/>.
+</p>  
+  
+<fig id="search-backups">
+<title>Search backups</title> 
+<image href="../media/search-backups.png"/>
+</fig>
+
+<p>You can narrow the search based on the time of the backup. If you are restoring from an automatic backup, 
+  the name will be the timestamp of the backup. If you are restoring from a manual backup, the name will be the 
+  one you specified earlier when creating the backup, in this case <codeph>manual_backup_test_01</codeph>.</p>
+  
+<p>Right-click on the backup you wish to restore, as shown in 
+  <xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/restore-vm" type="fig"/>, 
+  and select <codeph>Restore Virtual Machine</codeph>.</p>  
+  
+<fig id="restore-vm">
+<title>Restore virtual machine</title> 
+<image href="../media/restore-vm.png"/>
+</fig>
+
+<p>In the details screen, shown in 
+  <xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/restore-vm-details" type="fig"/>, 
+  you can choose a name for the new virtual machine and specify the datastore.</p>
+
+<fig id="restore-vm-details">
+<title>Restore virtual machine details</title> 
+<image href="../media/restore-vm-details.png"/>
+</fig>
+
+<p>The name of the new virtual machine will default to a combination of the special VM name and a timestamp, 
+  in this instance <codeph>hpe-VM-in-dockervols-Docker_SVT-2017-10-26-09h47m00s</codeph>. 
+  The datastore should be the one specified in the datastores array from the <codeph>group_vars/vars</codeph> file. 
+  Click OK to restore the virtual machine.</p>
+
+<p>Once the virtual machine has been restored, navigate to the datastore and locate the new VM in the file browser, as shown in 
+<xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/browse-restored-vm" type="fig"/>.
+</p>
+
+<fig id="browse-restored-vm">
+<title>Restore virtual machine details</title> 
+<image href="../media/browse-restored-vm.png"/>
+</fig>
+
+<p>Navigate to the folder named <codeph>1111111-1111-1111-1111-...</codeph> as shown in 
+  <xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/vmdk-files" type="fig"/>. 
+  You will see files with names based on the Docker volume name that you used at the start, 
+  in this instance <codeph>test_01.vmdk</codeph> and <codeph>test_01-478...f1f.vmfd</codeph></p>
+  
+<fig id="vmdk-files">
+<title>Locate vmdk and vmfd files</title> 
+<image href="../media/vmdk-files.png"/>
+</fig>
+
+<p>You need to move these two files to the <codeph>dockvols</codeph> sub-directory named <codeph>1111111-1111-1111-1111-...</codeph> 
+  in the same datastore. Right click on the <codeph>.vmdk</codeph> file and choose <codeph>Move to...</codeph> as shown in 
+  <xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/move-to" type="fig"/>.</p>
+
+
+<fig id="move-to">
+<title>Move files</title> 
+<image href="../media/move-to.png"/>
+</fig>
+  
+<p>Set the destination folder to the <codeph>dockvols</codeph> sub-directory named <codeph>1111111-1111-1111-1111-...</codeph> 
+  as shown in <xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/destination" type="fig"/>.</p>  
+  
+<fig id="destination">
+<title>Move to destination</title> 
+<image href="../media/destination.png"/>
+</fig>
+ 
+<p>It is only necessary to move the <codeph>.vmdk</codeph> file as the <codeph>.vmfd</codeph> file will automatically follow. 
+  The dockvols sub-directory named <codeph>1111111-1111-1111-1111-...</codeph> should now contain both files as shown in 
+  <xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/moved" type="fig"/>.</p> 
+  
+<fig id="moved">
+<title>Files moved to destination</title> 
+<image href="../media/moved.png"/>
+</fig>  
+  
+  
+</section>
+
+<section>
+<title>Test the restore</title>  
+  
+<p>You can check that the volume <codeph>test_01</codeph> has been restored by using the <codeph>docker volume ls</codeph> command again.</p>  
+
+<codeblock>
+# docker volume ls | grep vsphere
+vsphere:latest      prom_clh-db-data@Docker_CLH
+vsphere:latest      <b>test_01@Docker_CLH</b>
+</codeblock>
+
+<p>You can verify that the volume contains the correct data by spinning up a container and running a shell command:</p>
+  
+<codeblock>
+# docker run -it --rm -v test_01:/tmp alpine sh -c "cat /tmp/foo.txt"
+<b>some test data here</b>
+</codeblock>  
+
+<p>The data you entered in the text file before performing the backup and 
+  deleting the volume is available once again after restoring the volume.</p>
+
+</section>
+
+
+
+  </body>
+</topic>

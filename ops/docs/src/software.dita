@@ -65,11 +65,19 @@
 </thead>
 <tbody>
 
+<!-- TODO conditional content SimpliVity -->  
 <row>
-<entry>HPE Recovery Manager Central </entry>
-<entry>5.0.1<!--Integrates HPE 3PAR StoreServ All-Flash arrays with HPE StoreOnce Systems--></entry>  
+<entry>HPE SimpliVity OmniStack</entry>
+<!-- TODO Check SimpliVity version -->
+<entry>3.7.1.60</entry>
 </row>
   
+<!-- TODO conditional content Synergy -->  
+<!--<row>
+<entry>HPE Recovery Manager Central </entry>
+<entry>5.0.1</entry>  
+</row>-->
+<!--Integrates HPE 3PAR StoreServ All-Flash arrays with HPE StoreOnce Systems-->  
 
   
 </tbody>

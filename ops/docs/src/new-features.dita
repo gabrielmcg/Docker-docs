@@ -25,7 +25,7 @@
 
 </p>
   
-<note type="note">The verion of <codeph>kubectl</codeph> used to access the Kubernetes cluster needs to be 1.10 or below. The current release
+<note type="note">The version of <codeph>kubectl</codeph> used to access the Kubernetes cluster needs to be 1.10 or below. The current release
 of <codeph>kubectl</codeph> is not compatible with the version of Kubernetes (1.8) shipped with Docker EE 2.0.
 See the section <xref href="install-kubectl.dita"/>.
 </note>  
@@ -35,7 +35,7 @@ See the section <xref href="install-kubectl.dita"/>.
 <title>Splunk 7.1.2 and Kubernetes</title>  
 
 
-<p>This minor update to Splunk Enterprise supports monitoring of Kubernetes logs and metrics. Kubernetes metadata is collected by 
+<p>Splunk Enterprise supports monitoring of Kubernetes logs and metrics. Kubernetes metadata is collected by 
   a universal forwarder implemented as a <codeph>Deployment</codeph> (with just one replica), while logs are collected by a 
   universal forwarder running on each Kubernetes node using a <codeph>DaemonSet</codeph>. The integration 
   leverages the open-source Splunk IT Monitoring and Troubleshooting project at
@@ -43,7 +43,7 @@ See the section <xref href="install-kubectl.dita"/>.
 
 </p>
 
-<p>This update also includes new versions of Splunk software components - see the section on installing
+<p>See the section for installing Splunk prequisites including how to install
   the <b>Splunk App for Windows Infrastructure</b> and its dependencies 
   <xref href="splunk-pre-deploy.dita#splunk-pre-deploy/splunk-mvi2-versions">here</xref>.</p>  
   
@@ -52,7 +52,7 @@ See the section <xref href="install-kubectl.dita"/>.
 <section>
 <title>Sysdig and Kubernetes</title>  
   
-<p>Sysdig now supports the monitoring of Kubernetes clusters and the playbooks have been updated to make use of this new functionality.
+<p>Sysdig supports the monitoring of Kubernetes clusters and the playbooks have been updated to make use of this new functionality.
 See the section <xref href="deploying-sysdig-k8s.dita"/> for more information. 
 </p>  
   

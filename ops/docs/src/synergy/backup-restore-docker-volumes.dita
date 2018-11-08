@@ -79,7 +79,7 @@ to the HPE 3PAR StoreServ is required.</p>
     
 <fig id="rmc-storeonce">
 <title>HPE Recovery Manger Central and StoreOnce</title>
-<image href="media/rmc-storeonce.png"/>
+<image href="../media/rmc-storeonce.png"/>
 </fig>
     
 <ul>
@@ -96,7 +96,7 @@ traffic is over IP. </li>
 
 <fig id="3par-storeonce-networking">
 <title>Connectivity</title>
-<image href="media/3par-storeonce-networking.png"/>
+<image href="../media/3par-storeonce-networking.png"/>
 
 </fig>
 <p>Refer to <xref
@@ -119,7 +119,7 @@ policies.</p>
     
 <fig id="recovery-set-overview">
 <title>Recovery Set Overview</title>
-<image href="media/recovery-set-overview.png"/>
+<image href="../media/recovery-set-overview.png"/>
 </fig>
 <p>RMC uses the Express Protect feature, as shown in <xref href="backup-restore-docker-volumes.dita#backup-solution/express-protect" type="fig"/>,
     to enable the backup of the snapshot data from the
@@ -127,7 +127,7 @@ policies.</p>
     
 <fig id="express-protect">
 <title>Express Protect</title>
-<image href="media/express-protect.png"/>
+<image href="../media/express-protect.png"/>
 </fig>
 <p>The Express Restore feature restores either snapshots or base volumes.</p>
 <p>RMC leverages 3PAR StoreServ SnapDiff technology to create an application-consistent
@@ -148,7 +148,7 @@ restore point will restore a 3PAR StoreServ snapshot.</p>
     
 <fig id="restore-points">
 <title>Restore points</title>
-<image href="media/restore-points.png"/>
+<image href="../media/restore-points.png"/>
 </fig>
 <p>Once the 3PAR virtual volume is restored, the volume must be reattached to the vSphere
 cluster from RMC. After the volume is reattached, the datastore must be mounted.

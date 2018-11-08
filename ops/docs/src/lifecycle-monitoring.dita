@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="lifecycle-monitoring">
+<title>Monitoring Tools</title>
+<body>
+<section>
+
+    
+<p>To learn more about upgrading Splunk, see the relevant documentation at <xref href="http://docs.splunk.com/Documentation/Splunk/7.1.2/Installation/HowtoupgradeSplunk" format="html" scope="external">How to upgrade Splunk Enterprise</xref>.</p>    
+
+<p>The Sysdig agent runs as a container and the latest version is pulled from the Docker hub on first installation. Re-run the <codeph>install_sysdig.yml</codeph> playbook
+to update to the newest version if required.</p>
+    
+    
+<p>Prometheus and Grafana monitoring tools (see <xref href="lifecycle-monitoring.dita#lifecycle-monitoring/promgraf-table-content" type="table"/>) run as containers within the
+Docker environment. Newer versions of these tools can be deployed by pulling the
+Docker images from Docker Hub. Verify that the version of Prometheus that is being
+used is compatible with the version of Docker EE.</p>
+    
+<table id="promgraf-table-content" frame="none">
+<title>Monitoring tools: Prometheus and Grafana</title>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<colspec colnum="4" colname="c4" align="left"/>
+<thead>
+<row>
+<entry>Order</entry>
+<entry>Component</entry>
+<entry>Dependency (compatibility)</entry>
+<entry>Download/Documentation</entry>
+</row>
+</thead>
+<tbody>  
+<row>
+<entry>1.</entry>
+<entry>Prometheus</entry>
+<entry><ol><li>Grafana</li><li>Docker EE</li></ol></entry>
+<entry morerows="1" valign="middle"><ol><li>Prometheus Images on Docker Hub</li><li><xref href="http://docs.grafana.org/installation/upgrading/" format="html" scope="external">Upgrading Grafana</xref></li>
+</ol></entry>
+</row>    
+<row>
+<entry>2.</entry>
+<entry>Grafana</entry>
+<entry><ol><li>Prometheus</li><li>Docker EE</li></ol></entry>   
+</row>
+</tbody>
+</tgroup>
+</table>    
+    
+    
+</section>
+</body>
+</topic>

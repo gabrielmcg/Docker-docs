@@ -4,25 +4,15 @@
 <title>Solution overview</title>
 <body>
 
-<p>The HPE Reference Configuration for Docker Containers as a Service on HPE Synergy Composable Infrastructure consists of a set of Ansible playbooks that 
-run on top of a VMware virtualization platform on HPE Synergy  and HPE 3PAR storage
+<p>The <ph conkeyref="conrefs/product-title-full-string"/> consists of a set of Ansible playbooks that 
+run on top of a VMware virtualization platform on <ph conkeyref="conrefs/hardware-string"/>
 hardware. The solution allows you to configure a flexible OS environment (with both RHEL and Windows workers)  providing built-in
-high availability (HA), container monitoring and security, and backup and restore functionality. This solution assumes 
-that you  have already set up your HPE Synergy hardware, that you have installed your VMware virtualization platform 
-and have configured HPE 3PAR for storage.
-</p>
+high availability (HA), container monitoring and security, and backup and restore functionality. </p>
 
 
-<fig id="overview-graphic">
-<title>Solution overview</title>
-<image href="media/overview-graphic.png" placement="break"/>
-</fig>  
-    
-<p><xref href="architecture.dita#architecture/overview-graphic"/> provides an overview of the steps used to deploy the solution. 
-   Deploying your hardware and installing vSphere is specific to your environment and is not covered here.
-   This document shows you how to:    
-</p>
-    
+<!--<section conref="synergy/architecture-syn.dita#architecture-syn-overview"/>-->
+<section conref="svt/architecture-svt.dita#architecture-svt-overview"/>
+   
 <ul>
 <li>Prepare the VM templates</li>
 <li>Create the Ansible host</li>

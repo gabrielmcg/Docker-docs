@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="architecture-svt">
+<title>SimpliVity architecture</title>
+<body>
+<section id="architecture-svt-overview">
+<!--<p>  
+This solution assumes 
+that you  have already set up your <ph conkeyref="conrefs/hardware-string"/> hardware and that you have installed your VMware virtualization platform 
+and have configured HPE 3PAR for storage.
+</p>-->
+
+
+<fig id="overview-graphic">
+<title>Solution overview</title>
+<image href="../media/overview-graphic-svt.png" placement="break"/>
+</fig>  
+    
+<p><xref href="architecture-svt.dita#architecture-svt/overview-graphic"/> provides an overview of the steps used to deploy the solution. 
+   Deploying your hardware and <ph conkeyref="conrefs/svt-string"/> is specific to your environment and is not covered here.
+   This document shows you how to:    
+</p>  
+</section>  
+</body>
+</topic>

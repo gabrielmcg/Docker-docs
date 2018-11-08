@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="syn-config">
+<title>Synergy configuration</title>
+<body>
+<p>The Ansible playbooks are available to download at 
+<xref href="https://github.com/HewlettPackard/Docker-Synergy" format="html" scope="external"/>. 
+By default, the  playbooks  are configured as shown in <xref href="../solution-config.dita#solution-config/architecture-3node" type="fig"/> to set up a 3 node environment. This is the 
+minimal starter configuration recommended by HPE and Docker for 
+production. 
+</p>
+    
+<fig id="architecture-3node">
+<title>Three node HPE Synergy Configuration</title>
+<image href="../media/architecture-3node.png" placement="break"/>
+</fig>  
+    
+<p>
+The playbooks can also be used for larger container environments, for example, with a 3 frame, 6 node HPE Synergy system, 
+as shown in <xref href="../solution-config.dita#solution-config/architecture-6node" type="fig"/> with 2 nodes in each frame. 
+</p>
+
+<fig id="architecture-6node">
+<title>Six node HPE Synergy Configuration</title>
+<image href="../media/architecture-6node.png" placement="break"/>
+</fig>  
+
+<p>Two separate configurations are available out of the box, with one restricted to a Linux-only deployment while the other
+supports a hybrid deployment including Windows workers as well as Linux ones. 
+All the software is distributed over the physical nodes via VMware virtual machines (VMs), 
+depending on the size of your environment, as follows:</p>  
+
+</body>
+</topic>

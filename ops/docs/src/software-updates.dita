@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="software-updates">
+<title id="changes-mvi2-software">Software updates</title>  
+<body>
+   
+<ul>
+<li>Docker EE version 2.0 (UCP version 3.0.4, DTR version 2.5.3). The recommended  RAM requirement for UCP has been increased to 16GB for production systems.  </li>
+<li>Splunk Enterprise version 7.1.2. You must download and install version 7.1.2 of the relevant Splunk Universal Forwarder(s)  
+    as described in <xref href="splunk-pre-deploy.dita"/>.</li>  
+<li>RHEL 7.5</li>
+<li>Prometheus v2.3.2</li>
+<li>Grafana 5.2.3</li>
+</ul>
+    
+
+</body>
+</topic>

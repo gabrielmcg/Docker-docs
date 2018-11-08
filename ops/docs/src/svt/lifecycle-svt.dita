@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="lifecycle-svt">
+<title>HPE SimpliVity environment</title>
+<body>
+
+<section>
+<p>The HPE SimpliVity environment is made up of proprietary HPE SimpliVity software, VMware software and HPE firmware. 
+  There are interdependencies between the various components that need to be accounted for and are provided in the table below. 
+  The components in <xref href="lifecycle-svt.dita#lifecycle-svt/svt-components-table-content" type="table"/> are part of the HPE SimpliVity environment that require lifecycle management.</p>
+
+<p>In general, ensure that the software bits for the Arbiter and vSphere extension corresponding to an OmniStack release are used.</p>
+  
+<table id="svt-components-table-content" frame="none">
+<title>SimpliVity components</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="4">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<colspec colnum="4" colname="c4" align="left"/>
+<thead>
+<row>
+<entry>Order</entry>
+<entry>Component</entry>
+<entry>Dependency (compatibility)</entry>
+<entry>Download/Documentation</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1.</entry>
+<entry>HPE SimpliVity Arbiter</entry>
+<entry>1. HPE OmniStack</entry>
+<entry morerows="3">SimpliVity OmniStack for vSphere Upgrade Guide
+
+<p>Download software bits from HPE’s support website.</p>
+  
+<p><xref href="http://www.hpe.com/support" scope="external" format="html"/></p>  
+</entry>
+</row>
+<row>
+<entry>2.</entry>
+<entry>HPE SimpliVity VMware Plug-in</entry>
+<entry>1. HPE SimpliVity Arbiter 
+<p>2. HPE OmniStack</p>
+</entry>
+</row>
+<row>
+<entry>3.</entry>
+<entry>HPE Omnistack</entry>
+<entry>1. HPE SimpliVity VMware Plug-in  
+<p>2. HPE SimpliVity Arbiter</p>
+</entry>
+  
+  
+</row>
+</tbody>
+</tgroup>
+</table>
+      
+</section>
+  
+<section>
+<title>VMware components</title>  
+  
+<p>The HPE SimpliVity solution used in this deployment guide is built on VMware vSphere. VMware ESXi and vCenter 
+  (see <xref href="lifecycle-svt.dita#lifecycle-svt/vmware-components-table-content" type="table"/>) 
+  are the two components from VMware that are leveraged by the HPE SimpliVity software.</p>  
+
+
+<table id="vmware-components-table-content" frame="none">
+<title>VMware components</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="4">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<colspec colnum="4" colname="c4" align="left"/>
+<thead>
+<row>
+<entry>Order</entry>
+<entry>Component</entry>
+<entry>Dependency (compatibility)</entry>
+<entry>Download/Documentation</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1.</entry>
+<entry>VMware vCenter</entry>
+<entry>1. HPE OmniStack
+<p>2. VMware ESXi</p>
+</entry>
+<entry morerows="2"><xref href="https://support.hpe.com/hpsc/doc/public/display?sp4ts.oid=1010292248&amp;docLocale=en_US&amp;docId=emr_na-a00028056en_us" scope="external" format="html">VMware Upgrade for SimpliVity</xref>
+</entry>
+</row>
+  
+<row>
+<entry>1.</entry>
+<entry>VMware ESXi</entry>
+<entry>1. HPE OmniStack
+<p>2. VMware vCenter</p>
+</entry>  
+</row>
+  
+</tbody>
+</tgroup>
+</table>
+  
+
+</section>  
+  
+<section>
+<title>HPE server software</title>
+
+<p>HPE SimpliVity servers are based on HPE server platforms and require a compatible firmware version to 
+  function with HPE OmniStack Software, as shown in
+  <xref href="lifecycle-svt.dita#lifecycle-svt/hpe-components-table-content" type="table"/>.</p>
+
+
+<table id="hpe-components-table-content" frame="none">
+<title>HPE server components</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="4">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<colspec colnum="4" colname="c4" align="left"/>
+<thead>
+<row>
+<entry>Order</entry>
+<entry>Component</entry>
+<entry>Dependency (compatibility)</entry>
+<entry>Download/Documentation</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1.</entry>
+<entry>HPE Firmware</entry>
+<entry>1. HPE OmniStack
+</entry>
+<entry><xref href="https://support.hpe.com/hpesc/public/home/result?qt=HPE+SimpliVity+380" scope="external" format="html">Firmware Upgrade for SimpliVity</xref>
+</entry>  
+</row>
+</tbody>
+</tgroup>
+</table>
+  
+</section>  
+  
+  
+  </body>
+</topic>

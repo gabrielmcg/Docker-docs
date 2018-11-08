@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="sizing-6node">
+<title>Memory allocation for 6 node solution</title> 
+<body>
+
+<section>
+
+<p>For a 6 node solution,  <xref href="sizing-6node.dita#sizing/memory-alloc-table-6node-conref"/> outlines the 
+ memory requirements where the control plane is on 3 nodes and the worker nodes are on the other 3 nodes.
+In this example, it is assumed that there are 2 Linux worker nodes and 1 Windows worker node, but the actual number of
+worker nodes is not limited to 3 and depends entirely on the workload requirements.
+</p>
+
+
+<table id="memory-alloc-table-6node-conref" conref="memory-alloc-table-6node.dita#memory-alloc-table-6node/memory-alloc-table-6node-content">
+<title>Sample memory allocation for 6 nodes</title>
+<tgroup cols="7">
+<tbody>
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+
+</table>
+
+
+<note type="note">
+<p>In the case of one ESX host failure, the surviving hosts can accommodate the
+amount of RAM required for all VMs.</p>
+</note></section>
+</body>
+</topic>

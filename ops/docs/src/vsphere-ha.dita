@@ -9,7 +9,14 @@ across the system so that all VMs on the affected host(s) can fail over to remai
 available hosts in the system. You configure an Admission Control Policy (ACP) to
 specify the percentage CPU and memory to reserve on all the hosts in the cluster to
 support HA functionality.</p>
-    
+
+<!-- TODO conditional content -->
+<p>More information on enabling vSphere HA and configuring Admission Control Policy is available in 
+    the HPE SimpliVity documentation. Log in to the HPE Support Center at 
+    <xref href="https://www.hpe.com/us/en/support.html" scope="external" format="html"/> 
+    and search for “HPE SimpliVity 380”. The administration guide is listed when you select the User document type.    
+</p>
+
 <note type="note">
 <p>You should not use the default Admission Control Policy. Instead, you should
 calculate the memory and CPU requirements that are specific to your environment.</p>

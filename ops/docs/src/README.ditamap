@@ -3,6 +3,7 @@
 <map chunk="to-content">
   <title>HPE Enterprise Containers as a Service with Docker Enterprise Edition </title>
 
+
   <topicmeta>
     <copyright>
       <copyryear year="2018"/>
@@ -20,7 +21,10 @@
   <!--<mapref href="images.xml" format="ditamap" processing-role="resource-only"/>-->
   <!--<topicref href="images.xml" format="ditamap"/>-->
 
+    
+    <mapref href="keywords.dita" format="ditamap" processing-role="resource-only"/>
 
+  
   <topicref href="enterprise-caas.dita" navtitle="Enterprise CaaS"/>
 
   <topicref href="introduction.dita" navtitle="Introduction">
@@ -29,29 +33,35 @@
 
   </topicref>
   
-  <topicref href="release-notes-mvi2.dita" navtitle="Release notes MVI-2">
-    <topicref href="new-features-mvi2.dita" navtitle="New features in MVI-2"/>
-    <topicref href="changes-mvi2.dita" navtitle="Changes in MVI-2"/>
-    <topicref href="fixed-mvi2.dita" navtitle="Fixed in this release"/>
-    <topicref href="known-issues-mvi2.dita" navtitle="Known issues"></topicref>
+  <topicref href="release-notes.dita" navtitle="Release notes MVI-2">
+    <topicref href="new-features.dita" navtitle="New features in MVI-2"/>
+    <topicref href="changes-from-previous.dita" navtitle="Changes in MVI-2">
+      <topicref href="software-updates.dita" navtitle="Software updates"/>
+      <!--<topicref href="synergy/playbook-updates-syn.dita" navtitle="Playbook updates Synergy"/>-->
+      <topicref href="svt/playbook-updates-svt.dita" navtitle="Playbook updates SimpliVity"/>
+      <topicref href="configuration-updates.dita" navtitle="Configuration updates"/>
+    </topicref>
+      
+    <!--<topicref href="synergy/fixed-syn.dita" navtitle="Fixed in this release"/>
+    <topicref href="synergy/known-issues-syn.dita" navtitle="Known issues"></topicref>-->
     
   </topicref>
 
   <topicref href="architecture.dita" navtitle="Solution overview">
-    <!--<topicref href="architecture-overview.dita" navtitle="Introduction">-->
-
   
-      
-      
-      <!--<topicref href="required-versions.dita" navtitle="Required versions"/>-->
-    <!--</topicref>-->
-    
-    <topicref href="solution-config.dita" navtitle="Solution configuration"/>
+    <topicref href="solution-config.dita" navtitle="Solution configuration">
+      <!--<topicref href="synergy/syn-config.dita" navtitle="Synergy configuration"/>-->
+      <topicref href="svt/svt-config.dita" navtitle="SimpliVity configuration"/>
+      <topicref href="linux-config.dita" navtitle="Linux configuration"/>
+      <topicref href="hybrid-config.dita" navtitle="Hybrid configuration"/>
+    </topicref>
     
 
     <topicref href="ha.dita" navtitle="High Availability"/>
 
-    <topicref href="sizing.dita" navtitle="Sizing"/>
+    <topicref href="sizing.dita" navtitle="Sizing">
+      <!--<topicref href="synergy/sizing-6node.dita" navtitle="Sizing 6 nodes"/>-->
+    </topicref>
 
     <topicref href="disaster-recovery.dita" navtitle="Disaster Recovery"/>
 
@@ -61,13 +71,16 @@
   
   <topicref href="solution-components.dita" navtitle="Solution components">
     
-    <topicref href="hardware.dita" navtitle="Hardware">
-      <topicref href="synergy.dita" navtitle="About Synergy"/>  
-
-  
-      <topicref href="server-reqs.dita" navtitle="Server Requirements"/> 
-      <topicref href="storage-reqs.dita" navtitle="Storage Requirements"/>
-    </topicref>
+    <!--<topicref href="synergy/hardware.dita" navtitle="Hardware">
+      <topicref href="synergy/synergy.dita" navtitle="About Synergy"/>  
+      <topicref href="synergy/server-reqs.dita" navtitle="Server Requirements"/> 
+      <topicref href="synergy/storage-reqs.dita" navtitle="Storage Requirements"/>
+    </topicref>-->
+ 
+     <topicref href="svt/hardware-svt.dita" navtitle="Hardware">
+       <topicref href="svt/simplivity.dita" navtitle="About SimpliVity"></topicref>
+     </topicref>
+    
     
     <topicref href="software.dita" navtitle="Software">
        <topicref href="about-ansible.dita" navtitle="About Ansible"/>
@@ -122,6 +135,9 @@
     <topicref href="edit-inventory.dita" navtitle="Editing the inventory"/>    
 
     <topicref href="vmware-config.dita" navtitle="VMware configuration"/>
+    
+    <!--  TODO conditional content  SVT -->
+    <topicref href="svt/svt-variables-config.dita" navtitle="HPE Simplivity configuration"/>
 
     <topicref href="network-config.dita" navtitle="Network configuration"/>
 
@@ -175,7 +191,7 @@
     
     <topicref href="k8s-nfs-provisioner.dita" navtitle="NFS provisioner for Kubernetes">
       <topicref href="k8s-nfs-provisioner-vm.dita" navtitle="Using NFS VM for post-deployment verification"/>
-      <topicref href="k8s-nfs-provisioner-3par.dita" navtitle="Using 3PAR for post-deployment verification"></topicref>
+      <!--<topicref href="k8s-nfs-provisioner-3par.dita" navtitle="Using 3PAR for post-deployment verification"></topicref>-->
       
     </topicref>
     <topicref href="deploying-sysdig.dita" navtitle="Deploying Sysdig">
@@ -188,7 +204,16 @@
   </topicref>
 
 
-  <topicref href="lifecycle.dita" navtitle="Solution lifecycle"/>
+  <topicref href="lifecycle.dita" navtitle="Solution lifecycle">
+    <topicref href="svt/lifecycle-svt.dita"/>
+    <!--<topicref href="lifecycle-vmware.dita"/>-->
+    <topicref href="lifecycle-vdvs.dita"/>
+    <topicref href="lifecycle-rhel.dita"/>
+    <topicref href="lifecycle-docker-ee.dita"/>
+    <topicref href="lifecycle-monitoring.dita"/>
+    <topicref href="lifecycle-windows.dita"/>
+   
+  </topicref>
 
 
   <topicref href="backup-restore.dita" navtitle="Backup and restore">
@@ -219,7 +244,9 @@
       
     </topicref>
 
-    <topicref href="backup-restore-docker-volumes.dita" navtitle="Backup and restore Docker volumes"/>
+    <!--<topicref href="synergy/backup-restore-docker-volumes.dita" navtitle="Backup and restore Docker volumes"/>-->
+    
+    <topicref href="svt/backup-restore-docker-volumes-svt.dita" navtitle="Backup and restore Docker volumes"/>
     
     <topicref href="integrate-backup.dita" navtitle="Integrate backup"/>
     

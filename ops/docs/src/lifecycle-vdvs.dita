@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="lifecycle-vdvs">
+<title>vSphere Docker Volume Service Plug-in</title>
+<body>
+<section>
+
+<p> vSphere Docker Volume service plug-in is part of an open source project by VMware
+that enables running stateful containers by providing persistent Docker volumes
+leveraging existing storage technology from VMware. There are two parts to the
+plug-in, namely, client software and server software (see <xref
+href="lifecycle-vdvs.dita#lifecycle-vdvs/vdvs-components-table-conref" type="table"/>).
+Every version of the plug-in that is released includes both pieces of software and
+it is imperative that the version number installed on the client side and server
+side are the same. </p>
+<p>When updating the Docker Volume service plug-in, ensure the ESXi version you are
+running is supported and that the client software is compatible with the operating
+system.</p>
+<table id="vdvs-components-table-conref"
+conref="vdvs-components-table.dita#vdvs-components-table/vdvs-components-table-content">
+<title>vSphere Docker Volume service components</title>
+<tgroup cols="4">
+<tbody>
+<row>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</body>
+</topic>

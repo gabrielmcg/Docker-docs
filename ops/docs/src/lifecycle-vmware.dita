@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="lifecycle-vmware">
+<title>VMware Components</title>
+<body>
+<section>
+
+<p>The solution in this deployment guide is built on VMware vSphere and leverages VMware
+ESXi and vCenter. For more information on upgrading vSphere, see the VMware
+documentation, Introduction to vSphere Upgrade, at <xref
+href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.upgrade.doc/GUID-EB29D42E-7174-467C-AB40-DB37236FEAF5.html"
+format="html" scope="external"/>.</p>
+</section>
+</body>
+</topic>

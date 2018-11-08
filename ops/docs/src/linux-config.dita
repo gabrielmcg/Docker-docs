@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="linux-config">
+<title>Linux-only VM configuration</title>    
+<body>  
+
+<ul>
+<li>3 Docker Universal Control Plane (UCP) VM nodes for HA and cluster management </li>
+<li>3 Docker Trusted Registry (DTR) VM nodes for HA of the container registry </li>
+</ul>
+
+<p>The Docker UCP and DTR nodes are spread across 3 physical nodes, with one on each physical node. An odd number of manager nodes is
+recommended to avoid split-brain issues. It is possible to restrict the deployment to 1 UCP and 1 DTR, or to expand to more than 3, but the recommended minimum for 
+an enterprise production deployment is 3 UCPs and 3 DTRs.
+</p>
+
+<ul>  
+<li>3 Docker Linux worker VM nodes for container workloads - Kubernetes or Docker swarm or a mix</li>
+</ul>
+
+<p>The Docker worker nodes will be co-located with the UCP and DTR nodes in a 3 physical node deployment. 
+Where more than 3 physical nodes are available, the worker nodes will typically be separated onto the extra nodes. 
+It is possible to specify that more than one worker node is deployed per physical node but 
+this decision will depend on the requirements of your applications.</p>
+
+<ul>  
+<li>1 Docker UCP load balancer VM to ensure access to UCP in the event of a node
+failure </li>
+<li>1 Docker DTR load balancer VM to ensure access to DTR in the event of a node
+failure </li>
+<li>1 Docker worker node VM load balancer </li>
+</ul>
+
+<p>Three load balancers are provided to increase availability of the UCP, DTR and worker nodes and these are typically
+distributed evenly across 3 physical nodes.</p>
+
+<ul>  
+<li>1 Logging server VM for central logging </li>
+<li>1 NFS server VM for storage of Docker DTR images </li>
+</ul>
+
+<p>With the addition of the NFS and logging VMs, a total of 14 VMs are created for the default Linux-only deployment.  In addition to these VMs, the playbooks also set up the Docker persistent storage plug-in from VMware.  
+The vSphere Docker volume plug-in  facilitates the storage of data in a shared datastore that can be accessed from any machine in the cluster.</p>
+
+
+
+
+</body>
+</topic>

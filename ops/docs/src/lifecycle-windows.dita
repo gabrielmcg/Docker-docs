@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="lifecycle-windows">
+<title>Windows operating system and Docker EE</title>
+<body>
+<section>
+
+
+
+<p>Docker Enterprise Edition for Windows Server (Docker EE) enables native Docker containers on Windows Server. 
+Windows Server 2016 and later versions are supported. This solution has been tested with Windows worker nodes running Windows Server 2016 
+and with Docker EE 17.06.</p>
+
+    
+<note type="note">
+<p>Docker Universal Control Plane is not currently supported on Windows Server 1709 due to image incompatibility issues. 
+For more information, see the Docker documentation <xref href="https://docs.docker.com/install/windows/docker-ee/" format="html" scope="external">Install Docker Enterprise Edition for Windows Server</xref></p>        
+
+<p>This solution recommends that you only run Windows Server 2016 on your Windows worker nodes 
+and that you install any required updates to your Windows nodes in a timely manner.</p>
+</note>    
+
+  
+<p>For information on how to update Docker EE on Windows Server 2016, see the Docker 
+documentation <xref href="https://docs.docker.com/install/windows/docker-ee/#update-docker-ee" format="html" scope="external">Update Docker EE</xref></p>
+
+
+
+</section>
+</body>
+</topic>

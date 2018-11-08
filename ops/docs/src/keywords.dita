@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+  <title>CloudRA Keywords</title>
+    
+  <keydef keys="kw-synergy-caas-full"><topicmeta><keywords><keyword>HPE Reference Configuration for Docker Containers as a Service on HPE Synergy Composable Infrastructure</keyword></keywords></topicmeta></keydef>   
+  <keydef keys="kw-svt-caas-full"><topicmeta><keywords><keyword>HPE Express Containers with Docker Enterprise Edition on HPE SimpliVity</keyword></keywords></topicmeta></keydef>   
+ 
+  <keydef keys="kw-svt"><topicmeta><keywords><keyword>HPE Simplivity</keyword></keywords></topicmeta></keydef>
+  <keydef keys="kw-synergy"><topicmeta><keywords><keyword>HPE Synergy</keyword></keywords></topicmeta></keydef>
+   
+   <keydef keys="kw-svt-gitrepo"><topicmeta><keywords><keyword>Docker-SimpliVity</keyword></keywords></topicmeta></keydef>
+  <keydef keys="kw-synergy-gitrepo"><topicmeta><keywords><keyword>Docker-Synergy</keyword></keywords></topicmeta></keydef>
+  
+  <keydef keys="kw-synergy-caas-version"><topicmeta><keywords><keyword>2.0</keyword></keywords></topicmeta></keydef> 
+  <keydef keys="kw-svt-caas-version"><topicmeta><keywords><keyword>2.0</keyword></keywords></topicmeta></keydef>  
+  
+  <keydef keys="conrefs" href="svt/conrefs.dita" type="concept" format="dita"/>  
+  <!--<keydef keys="conrefs" href="synergy/conrefs.dita" type="concept" format="dita"/>  -->
+</map> 
