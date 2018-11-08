@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="software-licences-syn">
+<title>Software Licenses</title>
+<body>
+<section>
+
+<p>Licenses are required for the following software components:</p>
+
+<ul>
+<li>VMware</li>
+<li>Red Hat Linux</li>
+<li>Docker EE</li>
+<li>HPE Recovery Manager Central and HPE StoreOnce </li>
+<li>Splunk (optional software)</li>
+<li>Sysdig (optional software)</li>
+</ul>  
+  
+</section>  
+</body>
+</topic>

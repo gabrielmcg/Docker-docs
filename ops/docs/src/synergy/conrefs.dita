@@ -10,9 +10,11 @@
  
     <ph id="product-title-full-string"><keyword keyref="kw-synergy-caas-full"/></ph>
     <ph id="hardware-string"><keyword keyref="kw-synergy"/></ph>    
-    
-
     <ph id="synergy-string"><keyword keyref="kw-synergy"/></ph>    
+
+    <ph id="gitrepo-string"><keyword keyref="kw-synergy-gitrepo"/></ph>
+    <ph id="gitrepo-url"><keyword keyref="kw-synergy-gitrepo-url"/></ph>   
+    <ph id="gitrepo-link"><xref href="https://github.com/HewlettPackard/Docker-Synergy" scope="external" format="html"><keyword keyref="kw-synergy-gitrepo-url"/></xref></ph>
    
   </p>
  </conbody>

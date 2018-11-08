@@ -11,7 +11,7 @@ in the <codeph>group_vars/vault</codeph> file as detailed in <xref
 href="monitoring-config-sysdig.dita#monitoring-config-sysdig/sysdig-config-table-content"
 />.</p>  
   
-<codeblock># cd Docker-Synergy/ops
+<codeblock># cd <ph conkeyref="conrefs/gitrepo-string"/>/ops
 # ansible-playbook -i vm_hosts playbooks/install_sysdig.yml --vault-password-file .vault_pass
 </codeblock> 
 

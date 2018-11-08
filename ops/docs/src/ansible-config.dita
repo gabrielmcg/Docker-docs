@@ -7,7 +7,7 @@
 <li><p>On the Ansible node, retrieve the latest version of the playbooks using Git.</p>
 
 
-<codeblock># git clone https://github.com/HewlettPackard/<ph conkeyref="conrefs/gitrepo-string"/>.git</codeblock>
+<codeblock># git clone <ph conkeyref="conrefs/gitrepo-url"/>.git</codeblock>
 </li>
     
 <li><p>Change to the directory that you just cloned:</p>

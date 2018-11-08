@@ -255,7 +255,13 @@
 
   <topicref href="summary.dita" navtitle="Summary"/>
   
-  <topicref href="bom.dita" navtitle="Appendix A: Bill of Materials"/>
+  <topicref href="bom.dita" navtitle="Appendix A: Bill of Materials">
+    <!--<topicref href="synergy/bom-synergy.dita"/>
+    <topicref href="synergy/software-licences-synergy.dita"/>
+    -->
+    <topicref href="svt/bom-svt.dita"/>
+    <topicref href="svt/software-licences-svt.dita"/>
+  </topicref>
 
   <topicref href="customer-certs.dita" navtitle="Appendix B: Customer certificates">
     <topicref href="customer-certs-generate-test.dita" navtitle="Generate and test certificates"/>

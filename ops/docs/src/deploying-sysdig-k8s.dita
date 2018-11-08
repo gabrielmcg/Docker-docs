@@ -36,7 +36,7 @@ You should add the access key  to the encrypted <codeph>group_vars/vault</codeph
 <section>
 <title>Running the playbook</title>  
   
-<codeblock># cd Docker-Synergy/ops
+<codeblock># cd <ph conkeyref="conrefs/gitrepo-string"/>/ops
 # ansible-playbook -i vm_hosts playbooks/k8s-install-sysdig.yml --vault-password-file .vault_pass
 </codeblock> 
  

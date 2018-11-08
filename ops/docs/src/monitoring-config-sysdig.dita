@@ -44,7 +44,7 @@ as well as the NFS, logger and load balancer VMs.
 <entry>sysdig_tags</entry>
 <entry>group_vars/vars</entry>
 <entry>Tagging your hosts is highly recommended. Tags allow you to sort the nodes of your infrastructure 
-   into custom groups in Sysdig Monitor. Specify location, role, and owner in the format: <codeph>'location:City,role:Enterprise CaaS on Synergy,owner:Customer Name'</codeph></entry>
+   into custom groups in Sysdig Monitor. Specify location, role, and owner in the format: <codeph>'location:City,role:Enterprise CaaS,owner:Customer Name'</codeph></entry>
 </row>    
 </tbody>
 </tgroup>

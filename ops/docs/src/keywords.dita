@@ -11,7 +11,11 @@
    
    <keydef keys="kw-svt-gitrepo"><topicmeta><keywords><keyword>Docker-SimpliVity</keyword></keywords></topicmeta></keydef>
   <keydef keys="kw-synergy-gitrepo"><topicmeta><keywords><keyword>Docker-Synergy</keyword></keywords></topicmeta></keydef>
-  
+
+
+  <keydef keys="kw-svt-gitrepo-url"><topicmeta><keywords><keyword>https://github.com/HewlettPackard/Docker-SimpliVity</keyword></keywords></topicmeta></keydef>
+  <keydef keys="kw-synergy-gitrepo-url"><topicmeta><keywords><keyword>https://github.com/HewlettPackard/Docker-Synergy</keyword></keywords></topicmeta></keydef>
+
   <keydef keys="kw-synergy-caas-version"><topicmeta><keywords><keyword>2.0</keyword></keywords></topicmeta></keydef> 
   <keydef keys="kw-svt-caas-version"><topicmeta><keywords><keyword>2.0</keyword></keywords></topicmeta></keydef>  
   

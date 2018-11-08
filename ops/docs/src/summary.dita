@@ -3,8 +3,8 @@
 <topic id="summary">
 <title>Summary</title>
 <body>
-<p>This document has described how to architect and deploy a Docker CaaS platform on HPE Synergy
-and HPE 3PAR storage, using Ansible playbooks to quickly install and deploy a production ready
+<p>This document has described how to architect and deploy a Docker CaaS platform on <ph conkeyref="conrefs/hardware-string"/>,
+using Ansible playbooks to quickly install and deploy a production ready
 container environment. This deployment includes a highly available container cluster with
 backup services and persistent data support. This solution is ideal for customers looking to
 run containers on VMs to take advantage of the resource efficient usage of virtual machines

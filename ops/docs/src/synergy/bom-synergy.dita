@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="bom-synergy">
+<title></title>
+<body>
+
+<table id="bom-table-content" frame="none">
+<title>Bill of materials</title>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Quantity</entry>
+<entry>Part number</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry></entry>
+<entry></entry>
+<entry><b>Rack and network infrastructure</b></entry>
+</row>
+  
+<row><entry>1</entry>	<entry>BW908A</entry>	<entry>HPE 42U 600x1200mm Enterprise Shock Rack</entry></row>
+<row><entry>4</entry>	<entry>AF522A</entry>	<entry>HPE Intelligent 8.6kVA/L15-30P/NA/J PDU</entry></row>
+<row><entry>1	</entry><entry>HC790A	</entry><entry>HPE Integration Center Routg Service FIO</entry></row>
+<row><entry>1	</entry><entry>BW932A	</entry><entry>HPE 600mm Rack Stabilizer Kit</entry></row>
+<row><entry>1	</entry><entry>BW909A</entry><entry>HPE 42U 1200mm Side Panel Kit</entry></row>
+<row><entry>1	</entry><entry>JG505A	</entry><entry>HPE 59xx CTO Switch Solution</entry></row>
+<row><entry>2	</entry><entry>JG510A	</entry><entry>HPE 5900AF 48G 4XG 2QSFP+ Switch</entry></row>
+<row><entry>4	</entry><entry>JD096C	</entry><entry>HPE X240 10G SFP+ SFP+ 1.2m DAC Cable</entry></row>
+<row><entry>2	</entry><entry>JC680A	</entry><entry>HPE 58x0AF 650W AC Power Supply</entry></row>
+<row><entry>2	</entry><entry>JC682A	</entry><entry>HPE 58x0AF Bck(pwr) Frt(prt) Fan Tray</entry></row>
+<row>
+<entry></entry>
+<entry></entry>
+<entry><b>HPE Synergy 12000 3 Frame components</b></entry>
+</row>  
+
+<row><entry>3</entry><entry>797740-B21</entry><entry>HPE Synergy12000 CTO Frame 1xFLM 10x Fan</entry></row>
+<row><entry>3</entry><entry>798096-B21</entry><entry>HPE Synergy 12000F 6x 2650W AC Ti FIO PS</entry></row>
+<row><entry>2</entry><entry>804353-B21</entry><entry>HPE Synergy Composer</entry></row>
+<row><entry>3</entry><entry>804942-B21</entry><entry>HPE Synergy Frame Link Module</entry></row>
+<row><entry>1</entry><entry>804938-B21</entry><entry>HPE Synergy 12000 Frame Rack Rail Option</entry></row>
+<row><entry>1</entry><entry>804943-B21</entry><entry>HPE Synergy 12000 Frame 4x Lift Handle</entry></row>
+<row><entry>18</entry><entry>TK738A</entry><entry>HPE 2.0m 250V 16A C19-C20 Sgl IPD Jpr Crd</entry></row>
+<row><entry>2</entry><entry>804937-B21</entry><entry>HPE Synergy Image Streamer</entry></row>
+  
+<row>
+<entry></entry>
+<entry></entry>
+<entry><b>HPE Synergy 480 Gen10 compute components</b></entry>
+</row>   
+ 	 	
+<row><entry>15</entry><entry>871942-B21</entry><entry>HPE SY 480 Gen10 CTO Premium Cmpt Mdl (64Gb Memory)</entry></row>
+<row><entry>30</entry><entry>873388-B21</entry><entry>HPE Synergy 480 Gen10 6130 Kit</entry></row>
+<row><entry>30</entry><entry>873388-L21</entry><entry>HPE Synergy 480 Gen10 6130 Kit</entry></row>
+<row><entry>30</entry><entry>815100-B21</entry><entry>HPE 32GB QUAD PC4-2166P-R Kit</entry></row>
+<row><entry>15</entry><entry>871573-B21</entry><entry>HPE Smart Array P416ie-m</entry></row>
+<row><entry>15</entry><entry>875242-B21</entry><entry>HPE Smart Array P416ie-m SAS Cable Kit</entry></row>
+<row><entry>15</entry><entry>777430-B21</entry><entry>HPE Synergy 3820C 10/20Gb CAN</entry></row>
+<row><entry>15</entry><entry>875242-B21</entry><entry>HPE 96W Smart Stor Battery 260mm Cbl Kit</entry></row>
+
+  
+  
+</tbody>
+</tgroup>
+</table>
+
+
+<table id="bom-contd-table-content" frame="none">
+<title>Bill of materials continued</title>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Quantity</entry>
+<entry>Part number</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry></entry>
+<entry></entry>
+<entry><b>HPE Synergy Fabric Components</b></entry>
+</row>
+  
+<row><entry>2	</entry><entry>794502-B23	</entry><entry>HPE VC SE 40Gb F8 Module</entry></row>
+<row><entry>4	</entry><entry>779218-B21	</entry><entry>HPE Synergy 20Gb Interconnect Link Mod</entry></row>
+<row><entry>6	</entry><entry>755985-B21 	</entry><entry>HPE Synergy 12Gb SAS Connection Module </entry></row>
+  
+<row>
+<entry></entry>
+<entry></entry>
+<entry><b>HPE Synergy Composable Storage Components (not used in this solution)</b></entry>
+</row>  
+ 	 	
+<row><entry>3	</entry><entry>835386-B21	</entry><entry>HPE Synergy D3940 CTO Storage Module</entry></row>
+<row><entry>3	</entry><entry>757323-B21	</entry><entry>HPE Synergy D3940 IO Adapter</entry></row>
+<row><entry>30	</entry><entry>785067-B21	</entry><entry>HPE 300GB 12G SAS 10K 2.5in SC ENT HDD</entry></row>
+  
+<row>
+<entry></entry>
+<entry></entry>
+<entry><b>Cables and Transceivers</b></entry>
+</row>  
+		
+<row><entry>8	</entry><entry>804101-B21	</entry><entry>HPE Synergy Interconnect Link 3m AOC</entry></row>
+<row><entry>2	</entry><entry>720199-B21	</entry><entry>HPE BLc 40G QSFP+ QSFP+ 3m DAC Cable</entry></row>
+<row><entry>8	</entry><entry>720193-B21	</entry><entry>HPE BLc QSFP+ to SFP+ Adapter</entry></row>
+<row><entry>8	</entry><entry>455883-B21	</entry><entry>HPE BLc 10G SFP+ SR Transceiver</entry></row>
+<row><entry>8	</entry><entry>AJ837A	</entry><entry>HPE 15m Multi-mode OM3 LC/LC FC Cable</entry></row>
+<row><entry>9	</entry><entry>861412-B21	</entry><entry>HPE CAT6A 4ft Cbl</entry></row>
+<row><entry>2	</entry><entry>838327-B21	</entry><entry>HPE Synergy Dual 10GBASE-T QSFP+ 30m RJ45 Transceiver</entry></row>
+  
+  
+  
+</tbody>
+</tgroup>
+</table>
+
+
+
+
+<table id="bom-3PAR-table-content" frame="none">
+<title>Bill of materials  HPE 3PAR</title>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Quantity</entry>
+<entry>Part number</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry></entry>
+<entry></entry>
+<entry><b>HPE 3PAR StoreServ 8200 with iSCSI adapters and accessories</b></entry>
+</row>
+
+<row><entry>1</entry><entry>K2Q36B</entry><entry>HPE 3PAR 8200 2N+SW Storage Field Base</entry></row>
+<row><entry>2</entry><entry>H6Z10A</entry><entry>HPE 3PAR 8000 2-pt 10Gb iSCSI/FCoE Adptr</entry></row>
+<row><entry>8</entry><entry>K2P88B</entry><entry>HPE 3PAR 8000 480GB+SW Non-AFC SFF SSD</entry></row>
+<row><entry>1</entry><entry>HA114A1</entry><entry>HPE Installation and Startup Service</entry></row>
+<row><entry>1</entry><entry>HA114A1 5XU</entry><entry>	HPE Startup 3PAR 8200 2N Fld Int Bas SVC</entry></row>
+<row><entry>1</entry><entry>K2R29A</entry><entry>HPE 3PAR StoreServ RPS Service Processor</entry></row>
+<row><entry>1</entry><entry>H1K92A3</entry><entry>HPE 3Y Proactive Care 24x7 Service</entry></row>
+<row><entry>1</entry><entry>H1K92A3 W3G</entry><entry>HPE 3PAR 8200 2N+SW Storage Base Support</entry></row>
+<row><entry>8</entry><entry>H1K92A3 X8G</entry><entry>HPE 3PAR 8000 480GB+SW LFF SSD Supp</entry></row>
+<row><entry>1</entry><entry>H1K92A3 YNW</entry><entry>HPE 3PAR StoreServ RPS Service Proc Supp</entry></row>
+<row><entry>2</entry><entry>H1K92A3 YTN</entry><entry>HPE 3PAR 8000 2-pt 10Gb FCoE Adptr Supp</entry></row>
+<row><entry>1</entry><entry>L7F20AAE</entry><entry>HPE 3PAR All-in S-sys SW Current E-Media</entry></row>
+<row><entry>1</entry><entry>L7F22AAE</entry><entry>HPE 3PAR All-in M-sys SW Current E-Media</entry></row>
+<row><entry>1</entry><entry>C7535A</entry><entry>HPE RJ45 to RJ45 Cat5e Black M/M 7.6ft 1-pack Data Cable</entry></row>
+<row><entry>8</entry><entry>H0JD6A1</entry><entry>HPE 3PAR SSD Extended Replacement SVC</entry></row>
+<row><entry>1</entry><entry>HA124A1</entry><entry>HPE Technical Installation Startup SVC</entry></row>
+<row><entry>1</entry><entry>HA124A1 5QW</entry><entry>HPE Startup 3PAR Vrt Cpy Lvl1 Tier 1 SVC</entry></row>
+<row><entry>1</entry><entry>HA124A1 56X</entry><entry>HPE Startup 3PAR 8K Mlt Sys PM PP RC SVC</entry></row>
+
+
+</tbody>
+</tgroup>
+</table>
+  
+  
+</body>
+</topic>

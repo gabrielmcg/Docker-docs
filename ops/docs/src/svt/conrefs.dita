@@ -10,8 +10,12 @@
  
     <ph id="product-title-full-string"><keyword keyref="kw-svt-caas-full"/></ph>
     <ph id="hardware-string"><keyword keyref="kw-svt"/></ph>
-    <ph id="gitrepo-string"><keyword keyref="kw-svt-gitrepo"/></ph>
     <ph id="svt-string"><keyword keyref="kw-svt"/></ph>
+   
+    <ph id="gitrepo-string"><keyword keyref="kw-svt-gitrepo"/></ph>
+    <ph id="gitrepo-url"><keyword keyref="kw-svt-gitrepo-url"/></ph>     
+    <ph id="gitrepo-link"><xref href="https://github.com/HewlettPackard/Docker-SimpliVity" scope="external" format="html"><keyword keyref="kw-svt-gitrepo-url"/></xref></ph>
+
    
   </p>
  </conbody>

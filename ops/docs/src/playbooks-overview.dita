@@ -5,8 +5,8 @@
 <body>
     
 <p>The Ansible playbooks are available to download at 
-    <xref href="https://github.com/HewlettPackard/Docker-Synergy" format="html" scope="external"/>. 
-    Once you have cloned the repository, change directory to <codeph>/root/Docker-Synergy/ops</codeph>.</p>
+    <ph conkeyref="conrefs/gitrepo-link"/>. 
+    Once you have cloned the repository, change directory to <codeph>/root/<ph conkeyref="conrefs/gitrepo-string"/>/ops</codeph>.</p>
 
 <p>There are two main entry points for the playbooks:</p>
     
