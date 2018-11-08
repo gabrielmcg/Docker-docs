@@ -32,14 +32,20 @@
 </li> 
     
 <li><xref href="solution-components.dita"/>
-<ul>
+<!--<ul>
 <li><xref href="synergy/hardware.dita"></xref>
 <ul>
 <li><xref href="synergy/synergy.dita"/></li>    
 <li><xref href="synergy/server-reqs.dita"/></li>    
 <li><xref href="synergy/storage-reqs.dita"/></li>      
+</ul>-->
+    
+<ul>
+<li><xref href="svt/hardware-svt.dita"></xref>
+<ul>
+<li><xref href="svt/simplivity.dita"/></li>      
 </ul>
-</li>    
+</li>
 <li><xref href="software.dita"/>
 <ul>
 <li><xref href="about-ansible.dita"/></li>
