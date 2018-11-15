@@ -38,13 +38,13 @@ All VMs will connect to this same network. </li>
 <li>For the software selection, choose <b>Infrastructure Server</b> as the base
 environment and add the <b>Guest Agents</b> from the lists of add-ons
 available for this environment. The Infrastructure Server environment is
-selected here versus the Minimal Install because Customization of Linux
+selected here versus the Minimal Install because customization of Linux
 guest operating systems requires that Perl is installed in the Linux guest
 operating system. </li>
     
 <li>Configure the network settings so that you can later access the VM using
 SSH. Specify an IP address for the network interface, a default gateway,
-DNS settings and possibly any HTTP/HTTS proxies that apply in your environment. </li>
+DNS settings and possibly any HTTP/HTTPS proxies that apply in your environment. </li>
     
 <li>Specify a password for the root account and optionally created an admin user. </li>
     

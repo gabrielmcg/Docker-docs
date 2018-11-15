@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="simplivity">
-<title>About SimpliVity</title>
+<title>About HPE SimpliVity</title>
 <body>
-<p>HPE Simplivity is an enterprise-grade hyper-converged platform uniting best-in-class data services 
+<p>HPE SimpliVity is an enterprise-grade hyper-converged platform uniting best-in-class data services 
   with the world's best-selling server.</p>
 
 <p>Rapid proliferation of applications and the increasing cost of maintaining legacy infrastructure causes 
@@ -13,7 +13,7 @@
   that joins best-in-class data services with the world’s best-selling server and offers the industry’s most complete guarantee.
 </p>
   
-<p>More information about HPE Simplivity can be found at: <xref href="https://www.hpe.com/us/en/integrated-systems/simplivity.html" scope="external" format="html"/></p>
+<p>More information about HPE SimpliVity can be found at: <xref href="https://www.hpe.com/us/en/integrated-systems/simplivity.html" scope="external" format="html"/></p>
 
 </body>
 </topic>

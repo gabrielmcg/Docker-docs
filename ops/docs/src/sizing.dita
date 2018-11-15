@@ -14,7 +14,7 @@ consider the following:</p>
 and 3GB of storage. For production systems, 16GB of RAM is recommended for manager nodes. 
 More detailed requirements are in the Docker EE UCP documentation
  at <xref href="https://docs.docker.com/ee/ucp/admin/install/system-requirements/" format="html" scope="external"/>. </li>
-<li>UCP Controller nodes should be provided with more than the minimal requirements if other workloads run on them. </li>
+<li>UCP Controller nodes should be provisioned with more than the minimal requirements if other workloads run on them. </li>
 <li>Ideally, worker node size will vary based on your workloads so it is impossible to
 define a universal standard size. </li>
 <li>Other considerations like target density (average number of containers per node),
@@ -49,7 +49,7 @@ allocation is described in <xref href="sizing.dita#sizing/memory-alloc-table-con
 
 <note type="note">
 <p>In the case of one ESX host failure, 2 nodes are enough to accommodate the amount
-of vCPU required</p>
+of vCPU required.</p>
 </note>
 
 <p/>

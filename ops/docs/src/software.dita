@@ -23,17 +23,17 @@
 
 <row>
 <entry>Ansible</entry>
-<entry>2.4.2</entry>  
+<entry>2.7</entry>  
 </row> 
 
 <row>
 <entry>Docker EE</entry>
-<entry>2.0 with Docker EE Engine 17.06 <p>(tested with UCP 3.0.4 and DTR 2.5.3)</p></entry>  
+<entry>2.0 with Docker EE Engine 17.06 <p>(tested with UCP 3.0.6 and DTR 2.5.6)</p></entry>  
 </row> 
   
 <row>
 <entry>Red Hat® Enterprise Linux</entry>
-<entry>7.4, 7.5</entry>  
+<entry>7.5, 7.6</entry>  
 </row>   
 
 <row>
@@ -69,7 +69,7 @@
 <row>
 <entry>HPE SimpliVity OmniStack</entry>
 <!-- TODO Check SimpliVity version -->
-<entry>3.7.1.60</entry>
+<entry>TODO 3.7.1.60</entry>
 </row>
   
 <!-- TODO conditional content Synergy -->  

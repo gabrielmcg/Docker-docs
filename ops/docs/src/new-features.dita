@@ -21,12 +21,12 @@
 
 <p>A sample Kubernetes application has been documented in the section <xref href="k8s-example-guestbook.dita"/> to facilitate verification of 
   the deployed playbooks and configuration. This example is also useful for exploring the new Kubernetes-specific features in 
-  the latest Splunk and Sysidg offerings.
+  the latest Splunk and Sysdig offerings.
 
 </p>
   
 <note type="note">The version of <codeph>kubectl</codeph> used to access the Kubernetes cluster needs to be 1.10 or below. The current release
-of <codeph>kubectl</codeph> is not compatible with the version of Kubernetes (1.8) shipped with Docker EE 2.0.
+of <codeph>kubectl</codeph> is not compatible with the version of Kubernetes (1.8) shipping with Docker EE 2.0.
 See the section <xref href="install-kubectl.dita"/>.
 </note>  
 </section>
@@ -43,7 +43,7 @@ See the section <xref href="install-kubectl.dita"/>.
 
 </p>
 
-<p>See the section for installing Splunk prequisites including how to install
+<p>See the section for installing Splunk prerequisites including how to install
   the <b>Splunk App for Windows Infrastructure</b> and its dependencies 
   <xref href="splunk-pre-deploy.dita#splunk-pre-deploy/splunk-mvi2-versions">here</xref>.</p>  
   

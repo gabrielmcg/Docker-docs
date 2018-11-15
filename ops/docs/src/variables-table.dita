@@ -49,7 +49,7 @@
 <row>
 <entry>node_policy</entry>
 <entry>Node/Group</entry>
-<entry>HPE Simplivity backup policy to assign to a VM or a group of VMs. The name has to match 
+<entry>HPE SimpliVity backup policy to assign to a VM or a group of VMs. The name has to match 
     one of the backup policies defined in the <codeph>group_vars/vars</codeph> file described in the next section.</entry>
 </row>    
 		    

@@ -82,7 +82,7 @@ datacenter before starting the deployment.</entry>
 datastore(s) must exist before you run the playbooks. Note that all the datastores should be mounted on all the ESXi hosts.
 
 <!-- TODO conditional content -->
-<p>Please note that from a HPE Simplivity perspective, it is a best practice to use only one Datastore. 
+<p>Please note that from a HPE SimpliVity perspective, it is a best practice to use only one Datastore. 
     Using more than one will not provide any advantages in terms of reliability and will add additional complexity. </p>
 
 </entry>

@@ -6,7 +6,7 @@
   <keydef keys="kw-synergy-caas-full"><topicmeta><keywords><keyword>HPE Reference Configuration for Docker Containers as a Service on HPE Synergy Composable Infrastructure</keyword></keywords></topicmeta></keydef>   
   <keydef keys="kw-svt-caas-full"><topicmeta><keywords><keyword>HPE Express Containers with Docker Enterprise Edition on HPE SimpliVity</keyword></keywords></topicmeta></keydef>   
  
-  <keydef keys="kw-svt"><topicmeta><keywords><keyword>HPE Simplivity</keyword></keywords></topicmeta></keydef>
+  <keydef keys="kw-svt"><topicmeta><keywords><keyword>HPE SimpliVity</keyword></keywords></topicmeta></keydef>
   <keydef keys="kw-synergy"><topicmeta><keywords><keyword>HPE Synergy</keyword></keywords></topicmeta></keydef>
    
    <keydef keys="kw-svt-gitrepo"><topicmeta><keywords><keyword>Docker-SimpliVity</keyword></keywords></topicmeta></keydef>

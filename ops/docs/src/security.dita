@@ -6,7 +6,7 @@
 <p>The Docker Reference architecture for Securing Docker EE and Security Best Practices is
 available at <xref format="html" scope="external"
 href="https://success.docker.com/article/Docker_Reference_Architecture-_Securing_Docker_EE_and_Security_Best_Practices"
->https://success.docker.com/article/Docker_Reference_Architecture-_Securing_Docker_EE_and_Security_Best_Practices</xref></p>
+>https://success.docker.com/article/Docker_Reference_Architecture-_Securing_Docker_EE_and_Security_Best_Practices</xref>.</p>
 
 <p>In addition to having all logs centralized in a single place and the image scanning
 feature enabled for the DTR nodes, there are other guidelines that should be followed in

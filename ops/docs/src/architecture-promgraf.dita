@@ -6,7 +6,7 @@
 <p>The solution can be configured to enable the use of Prometheus and Grafana for monitoring.
 In this setup, there is no need for native installs and all the required monitoring software runs in containers,
 deployed as either services or stacks. The load among the three hosts will be shared as 
-per <xref href="architecture-promgraf.dita#architecture-promgraf/synergy-ops-architecture-promgraf" type="fig"/></p>
+per <xref href="architecture-promgraf.dita#architecture-promgraf/synergy-ops-architecture-promgraf" type="fig"/>.</p>
 
 <fig id="synergy-ops-architecture-promgraf">
 <title>Solution architecture: Linux workers with Prometheus and Grafana</title> 

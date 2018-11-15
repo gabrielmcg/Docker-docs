@@ -74,8 +74,8 @@ reboot.</li>
 <p>Once the VM has re-booted,</p>
     
 <ul>    
-<li>Add a temporary network IP address.</li>
-<li>Use the sconfig utility from (MS-DOS) command line to install windows updates and enable remote desktop.</li>
+<li>Add a temporary network IP address and configure any proxy settings required to download Windows Updates.</li>
+<li>Use the <codeph>sconfig</codeph> utility from (MS-DOS) command line to install Windows Updates and enable Remote Desktop.</li>
 <li>Perform any other customizations you require at this point.</li>
 </ul>    
     
@@ -89,7 +89,7 @@ reboot.</li>
 
 <p>Shutdown VM, and untick  <codeph>Connect CD/DVD</codeph> so that the Windows Server 2016 ISO is no
 longer  mounted. Boot the Windows VM one final time and enter regional settings applicable to your location
-and keyboard mapping, enter a password then Shutdown VM.</p>
+and keyboard mapping, enter an Administrator user password then Shutdown VM.</p>
 
 <note type="note">The <codeph>vmware_guest</codeph> module used by the playbooks will generate a new SID.</note>
     
