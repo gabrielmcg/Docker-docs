@@ -61,7 +61,7 @@ See the section <xref href="deploying-sysdig-k8s.dita"/> for more information.
 <section>
 <title>Prometheus and Grafana</title>
   
-<p>Prometheus has been updated to version <codeph>v2.3.2</codeph> while Grafana is now at version <codeph>5.2.3</codeph></p>  
+<p>Prometheus has been updated to version <codeph>v2.3.2</codeph> while Grafana is now at version <codeph>5.2.3</codeph>.</p>  
   
 <note type="note">Prometheus and Grafana do not currently support monitoring Kubernetes worker nodes in this solution and so can only be
 used in conjunction with Docker swarm deployments.</note>  
