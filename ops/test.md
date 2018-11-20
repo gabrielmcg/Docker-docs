@@ -1340,7 +1340,7 @@ allocation is described in <a class="xref" href="#sizing__memory-alloc-table-con
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3230 ">4</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3221 ">hpe-lb1</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3221 ">lb1</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3224 ">2
 </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3227 ">
@@ -1351,7 +1351,7 @@ allocation is described in <a class="xref" href="#sizing__memory-alloc-table-con
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3221 ">hpe-lb2</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3221 ">lb2</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3224 ">
 </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3227 ">2
@@ -1471,14 +1471,14 @@ of vCPU required.</p>
 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3513 ">hpe-lb1</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3513 ">lb1</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3516 ">4</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3519 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3522 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3513 ">hpe-lb2</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3513 ">lb2</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3516 "> </td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3519 ">4</td>
 <td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3522 "> </td>
@@ -1882,12 +1882,12 @@ on your cloud.
 
     
 <p class="p">The load among the three hosts in a hybrid deployment will be shared as per 
-    <a class="xref" href="#architecture-splunk-sysdig__synergy-ops-architecture">Figure 3</a>.</p>
+    <a class="xref" href="#architecture-splunk-sysdig__simplivity-ops-architecture">Figure 3</a>.</p>
 
 
-<div class="fig fignone" id="architecture-splunk-sysdig__synergy-ops-architecture">
+<div class="fig fignone" id="architecture-splunk-sysdig__simplivity-ops-architecture">
  
-<img class="image" src="media/synergy-ops-architecture.png" />
+<img class="image" src="media/simplivity-ops-architecture.png" />
 <div><span class="figcap"><span class="fig--title-label"><b>Figure 3. </b></span>Solution architecture: Hybrid Linux and Windows workers with Splunk and Sysdig</span></div><p> </p></div>
 
     
@@ -1901,12 +1901,12 @@ on your cloud.
 <p class="p">The solution can be configured to enable the use of Prometheus and Grafana for monitoring.
 In this setup, there is no need for native installs and all the required monitoring software runs in containers,
 deployed as either services or stacks. The load among the three hosts will be shared as 
-per <a class="xref" href="#architecture-promgraf__synergy-ops-architecture-promgraf">Figure 4</a>.</p>
+per <a class="xref" href="#architecture-promgraf__simplivity-ops-architecture-promgraf">Figure 4</a>.</p>
 
 
-<div class="fig fignone" id="architecture-promgraf__synergy-ops-architecture-promgraf">
+<div class="fig fignone" id="architecture-promgraf__simplivity-ops-architecture-promgraf">
  
-<img class="image" src="media/synergy-ops-architecture-promgraf.png" />
+<img class="image" src="media/simplivity-ops-architecture-promgraf.png" />
 <div><span class="figcap"><span class="fig--title-label"><b>Figure 4. </b></span>Solution architecture: Linux workers with Prometheus and Grafana</span></div><p> </p></div>
 
 
@@ -3615,7 +3615,7 @@ the deployment to your needs.
 <ul class="ul">
 <li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
 
-<li class="li"><a class="xref" href="#unique_114230854">Provisioning load balancers</a></li>
+<li class="li"><a class="xref" href="#unique_933473091">Provisioning load balancers</a></li>
 
 <li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
 
@@ -3811,7 +3811,7 @@ order to have a synchronized clock across the environment. It will use the list 
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title58" id="unique_114230854">
+<div class="topic nested1" aria-labelledby="ariaid-title58" id="unique_933473091">
 <h2 class="title topictitle2" id="ariaid-title58">Provisioning load balancers</h2>
 
 <div class="body">
