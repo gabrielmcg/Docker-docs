@@ -31,15 +31,17 @@ failure </li>
 <li>1 Docker worker node VM load balancer </li>
 </ul>
 
-<p>Three load balancers are provided to increase availability of the UCP, DTR and worker nodes and these are typically
-distributed evenly across 3 physical nodes.</p>
+<p>By default, two load balancers are deployed to increase availability of UCP and DTR and these are placed on separate physical nodes.
+    Load balancing for applications running on worker nodes can achieved by using the playbooks to deploy
+additional load balancers, or by manually configuring the existing two to support your applications in addition to supporting UCP and DTR. 
+</p>
 
 <ul>  
 <li>1 Logging server VM for central logging </li>
 <li>1 NFS server VM for storage of Docker DTR images </li>
 </ul>
 
-<p>With the addition of the NFS and logging VMs, a total of 14 VMs are created for the default Linux-only deployment.  In addition to these VMs, the playbooks also set up the Docker persistent storage plug-in from VMware.  
+<p>With the addition of the NFS and logging VMs, a total of 13 VMs are created for the default Linux-only deployment.  In addition to these VMs, the playbooks also set up the Docker persistent storage plug-in from VMware.  
 The vSphere Docker volume plug-in  facilitates the storage of data in a shared datastore that can be accessed from any machine in the cluster.</p>
 
 

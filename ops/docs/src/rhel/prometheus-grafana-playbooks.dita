@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="prometheus-grafana-playbooks">
+<title>Playbooks for installing Prometheus and Grafana</title>
+<body>
+<p>The following playbooks are used to deploy Prometheus and Grafana on Docker RHEL nodes.</p>  
+<ul>
+
+<li><codeph>playbooks/install_logspout.yml</codeph> installs and configures <b>Logspout</b> on all Docker nodes. 
+Logspout is responsible for sending logs produced by containers running on the Docker nodes to the central logger VM.
+By default, this playbook is commented out in <codeph>site.yml</codeph>.
+</li>
+
+
+<li><codeph>playbooks/config_monitoring.yml</codeph> configures a monitoring system for the Docker environment 
+based on Grafana, Prometheus, cAdvisor and node-exporter Docker containers. By default, this playbook is commented out in <codeph>site.yml</codeph>, so if you want to use the solution to automatically
+deploy a Prometheus/Grafana monitoring system, you must explicitly uncomment both this and the <codeph>playbooks/install_logspout.yml</codeph>
+playbook in <codeph>site.yml</codeph> or run these playbooks post-deployment.
+</li>  
+  
+</ul>
+</body>
+</topic>

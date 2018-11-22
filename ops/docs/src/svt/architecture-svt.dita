@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="architecture-svt">
-<title>SimpliVity architecture</title>
+<title><ph conkeyref="conrefs/hardware-string"/>architecture</title>
 <body>
 <section id="architecture-svt-overview">
 <!--<p>  

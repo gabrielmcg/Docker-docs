@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="splunk-overview">
+<title>Monitoring with Splunk</title>
+<body>
+  
+<p>Splunk  aggregates logging and tracing for a wide variety of sources and provides a clean, high-level dashboard 
+for all your enterprise systems.</p>
+
+
+<p>The Splunk Universal Forwarders are deployed as shown in 
+    <xref href="splunk-overview.dita#splunk-overview/simplivity-ops-architecture-splunk" type="fig"/>.</p>
+
+<fig id="simplivity-ops-architecture-splunk">
+<title>Solution architecture: Hybrid Linux and Windows workers with Splunk</title> 
+<image href="../media/simplivity-ops-architecture.png"/>
+</fig>
+    
+</body>
+</topic>

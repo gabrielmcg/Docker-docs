@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="create-template-win">
-<title>Create the Windows Template (optional)</title>
+<title>Create the Windows Template</title>
 <body>
     
 <p>To create the Windows VM Template that you will use as the

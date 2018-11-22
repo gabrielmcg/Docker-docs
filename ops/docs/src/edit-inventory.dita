@@ -4,7 +4,7 @@
 <title>Editing the inventory</title>
 <body>
 <p>The inventory is the file named <codeph>vm_hosts</codeph> in the
-<codeph>~<ph conkeyref="conrefs/gitrepo-string"/>/ops</codeph> directory. You need to edit this file to
+<codeph>~/<ph conkeyref="conrefs/gitrepo-string"/></codeph> directory. You need to edit this file to
 describe the configuration you want to deploy.</p>
 
 <p>The nodes inside the inventory are organized in groups. The groups are defined by

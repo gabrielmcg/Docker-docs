@@ -16,7 +16,7 @@ In this scenario, you need the archives for the DTR metadata and the DTR images.
 <li>Remove the DTR nodes from the swarm by running the <codeph>docker node rm &lt;DTR node></codeph> command on a UCP node for each DTR node in your cluster.
 The following example shows the sequence of commands to use to remove the DTR nodes:
 
-<codeblock>[root@hpe2-ansible ops]# docker node ls
+<codeblock># docker node ls
 ID         HOSTNAME                     STATUS              AVAILABILITY
 aiz... *   hpe-ucp02.cloudra.local      Ready               Active
 gvf...     hpe-dtr01.cloudra.local      Down                Active
@@ -28,15 +28,15 @@ zdu...     hpe-dtr03.cloudra.local      Down                Active
 </codeblock>    
 
 
-<codeblock>[root@hpe2-ansible ops]# docker node rm hpe-dtr01.cloudra.local
+<codeblock># docker node rm hpe-dtr01.cloudra.local
 hpe-dtr01.cloudra.local
-[root@hpe2-ansible ops]# docker node rm hpe-dtr02.cloudra.local
+# docker node rm hpe-dtr02.cloudra.local
 hpe-dtr02.cloudra.local
-[root@hpe2-ansible ops]# docker node rm hpe-dtr03.cloudra.local
+# docker node rm hpe-dtr03.cloudra.local
 hpe-dtr03.cloudra.local
 </codeblock>
 
-<codeblock>[root@hpe2-ansible ops]# docker node ls
+<codeblock># docker node ls
 ID         HOSTNAME                     STATUS              AVAILABILITY        
 aiz...     hpe-ucp02.cloudra.local      Ready               Active     
 ir4...     hpe-ucp03.cloudra.local      Ready               Active    

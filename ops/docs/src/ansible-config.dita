@@ -15,16 +15,13 @@
 <codeblock># cd ~/<ph conkeyref="conrefs/gitrepo-string"/></codeblock>
 </li>
     
-<li><p>Change to the <codeph>ops</codeph> directory: </p>
-
-<codeblock># cd ops</codeblock>
-</li>    
+ 
 </ol>
 
-<note type="note">All subsequent file names are relative to the <codeph>ops</codeph> directory. For example
-<codeph>vm_hosts</codeph> is located in <codeph>~/<ph conkeyref="conrefs/gitrepo-string"/>/ops</codeph> and
+<note type="note">All subsequent file names are relative to the <codeph><ph conkeyref="conrefs/gitrepo-string"/></codeph> directory. For example
+<codeph>vm_hosts</codeph> is located in the top-level <codeph>~/<ph conkeyref="conrefs/gitrepo-string"/></codeph> while
 <codeph>group_vars/vars</codeph> corresponds to
-<codeph>~/<ph conkeyref="conrefs/gitrepo-string"/>/ops/groups_vars/vars</codeph>.</note>
+<codeph>~/<ph conkeyref="conrefs/gitrepo-string"/>/groups_vars/vars</codeph>.</note>
 
 
 <p>You now need to prepare the configuration to match your own environment, prior to

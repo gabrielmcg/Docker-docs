@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="running-playbooks">
-<title>Running the playbooks</title>
+<title>Deploying the core components</title>
 <body>
 <section id="running-playbooks-section">
 <p>At this point, the system is ready to be deployed. Make sure you are logged on as 
-    <codeph>root</codeph> on your ansible box and that your current directory is <codeph>/root/<ph conkeyref="conrefs/gitrepo-string"/>/ops</codeph></p>
+    <codeph>root</codeph> on your ansible box and that your current directory is <codeph>/root/<ph conkeyref="conrefs/gitrepo-string"/></codeph></p>
 
+
+    
+<!-- TODO Remove this - fix playbook instead -->
 <note type="note">As well as configuring your <codeph>vars</codeph> and <codeph>vault</codeph> files, you must also provide a <codeph>backups</codeph> configuration 
-    file in the <codeph>group_vars</codeph> folder when running <codeph>site.yml</codeph> or <codeph>hybrid.yml</codeph>. 
+    file in the <codeph>group_vars</codeph> folder when running <codeph>site.yml</codeph>. 
     An example file is provided in the repository named <codeph>backups.sample</codeph>. Rename it to backups before 
     running the playbooks. Details on how to configure this file are available in the section 
     <xref href="backup-restore.dita"/>. </note> 

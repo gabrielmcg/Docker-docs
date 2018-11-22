@@ -116,8 +116,7 @@
 <entry>4</entry>
 </row>
 <row>
-<entry>ucb_lb
-</entry>
+<entry>lb1</entry>
 <entry>2
 </entry>
 <entry>
@@ -128,8 +127,7 @@
 </entry>
 </row>
 <row>
-<entry>dtr_lb
-</entry>
+<entry>lb2</entry>
 <entry>
 </entry>
 <entry>2
@@ -138,7 +136,7 @@
 
 </entry>
 </row>
-<row>
+<!--<row>
 <entry>worker_lb
 </entry>
 <entry>
@@ -149,7 +147,7 @@
 </entry>
 <entry>2
 </entry>
-</row>
+</row>-->
 <row>
 <entry>nfs
 </entry>
@@ -171,7 +169,7 @@
 <entry>2
 </entry>
 <entry>
-<p/>
+ 
 </entry>
 </row>
 <row>
@@ -185,7 +183,7 @@ Total vCPU per node
 18
 </entry>
 <entry>
-18
+16
 </entry>
 </row>
 </tbody>

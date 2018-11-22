@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="optional-playbooks">
+<title>Optional components</title>
+<body>
+
+<p>The playbooks for deploying optional components are described in the following sections:</p>   
+<ul>
+<li><xref href="windows/add-windows-workers.dita"></xref></li>
+<li><xref href="sysdig/install-sysdig.dita"/></li>
+<li><xref href="splunk/install-splunk.dita"/></li>   
+<li><xref href="rhel/prometheus-grafana.dita"/></li>
+</ul>
+
+</body>
+</topic>

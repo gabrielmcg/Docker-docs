@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="windows-proxy">
+<title>Deploying Windows workers behind a proxy</title>
+<body>
+
+
+<section>
+<title>Configuring the <codeph>winrm</codeph> remoting script</title>  
+
+
+
+<p>The playbooks for deploying Windows workers rely on a Powershell script for remote access from the Ansible machine. The script
+<codeph>ConfigureRemotingForAnsible.ps1</codeph> is available online on GitHub and you can configure the playbooks to use
+  the script directly as follows:</p>
+  
+<codeblock>windows_winrm_script: 'https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1'</codeblock>
+
+<p>
+However, if the deployment is running behind a proxy, you may need to make this script available locally.
+</p>  
+
+<ol>
+<li>Download the script:    
+<codeblock>
+wget https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
+</codeblock>      
+</li>
+  
+<li>Deploy a local HTTP server, enabling port 80, for example:
+<codeblock>
+yum install httpd
+systemctl enable httpd
+systemctl start httpd
+firewall-cmd --permanent --add-port 80/tcp --zone=pubpic
+firewall-cmd --reload
+</codeblock>    
+</li>
+
+<li>Copy the downloaded script to the web server:
+<codeblock>
+cp ConfigureRemotingForAnsible.ps1 /var/www/html
+</codeblock>
+</li>
+
+</ol>
+
+
+</section>
+
+</body>
+</topic>
+

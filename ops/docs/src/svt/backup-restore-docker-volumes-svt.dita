@@ -106,7 +106,7 @@ docker_volumes_policy: 'clh-gold'
 
 <p>Rather than waiting for an automated backup to take place, you can create a backup immediately. 
   Right-click on the special VM, in this case <codeph>hpe-VM-in-dockervols-Docker_HPE</codeph>, 
-  select <codeph>All HPE SimpliVity Actions</codeph> and choose <codeph>Backup Virtual Machine</codeph> as shown in 
+  select <codeph>All <ph conkeyref="conrefs/hardware-string"/> Actions</codeph> and choose <codeph>Backup Virtual Machine</codeph> as shown in 
   <xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/backup-virtual-machine" type="fig"/>.</p>
 
 <fig id="backup-virtual-machine">
@@ -129,7 +129,7 @@ docker_volumes_policy: 'clh-gold'
 <title>Restore</title>  
   
 <p>Right-click on the special VM, in this case hpe-VM-in-dockervols-Docker_HPE. 
-  On the <codeph>Configure</codeph> tab, select <codeph>HPE SimpliVity Search Backups</codeph> as shown in 
+  On the <codeph>Configure</codeph> tab, select <codeph><ph conkeyref="conrefs/hardware-string"/> Search Backups</codeph> as shown in 
 <xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/search-backups" type="fig"/>.
 </p>  
   

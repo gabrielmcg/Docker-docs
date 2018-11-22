@@ -4,12 +4,6 @@
 <title>Linux-only deployment</title>
 <body>
 
-<p>To start a Linux-only deployment, use the following command:</p>
-
-<codeblock># ansible-playbook -i vm_hosts site.yml --vault-password-file .vault_pass</codeblock>
-
-    
-<p>The playbooks should run for 35-40 minutes depending on your server specifications and the size of your environment.</p>
 
 
 </body>  

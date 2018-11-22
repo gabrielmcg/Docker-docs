@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="svt-config">
-<title>SimpliVity configuration</title>
+<title><ph conkeyref="conrefs/hardware-string"/> configuration</title>
 <body>
 <p>The Ansible playbooks are available to download at 
 <ph conkeyref="conrefs/gitrepo-link"/>. 
@@ -10,9 +10,9 @@ minimal starter configuration recommended by HPE and Docker for
 production. 
 </p>
 
-<p>The Operations environment is comprised of three HPE SimpliVity 380 Gen10 servers. 
-    HPE recommends dual socket HPE SimpliVity systems with at least 14 CPU cores per socket (28 total cores per system) 
-    for optimal performance and support during HA failover scenarios. Since the HPE SimpliVity technology 
+<p>The Operations environment is comprised of three <ph conkeyref="conrefs/hardware-string"/> 380 Gen10 servers. 
+    HPE recommends dual socket <ph conkeyref="conrefs/hardware-string"/> systems with at least 14 CPU cores per socket (28 total cores per system) 
+    for optimal performance and support during HA failover scenarios. Since the <ph conkeyref="conrefs/hardware-string"/> technology 
     relies on VMware virtualization, the servers are managed using vCenter. The load among the three hosts will 
     be shared as per Figure TODO.
 <!-- TODO Add link to figure for load across hosts -->

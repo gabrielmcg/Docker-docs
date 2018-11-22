@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="core-infrastructure">
+<title>Core components</title>
+<body>
+    
+<p>The playbooks for deploying th core components  are described in the following sections:</p>
+
+<ul>
+<li><xref href="rhel/create-rhel-vms.dita"/></li>
+<li><xref href="rhel/load-balancers.dita"/></li>
+<li><xref href="rhel/install-docker-ucp-dtr.dita"/></li>
+<li><xref href="rhel/add-rhel-workers.dita"/></li>
+</ul>
+
+</body>
+</topic>

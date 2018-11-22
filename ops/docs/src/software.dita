@@ -67,7 +67,7 @@
 
 <!-- TODO conditional content SimpliVity -->  
 <row>
-<entry>HPE SimpliVity OmniStack</entry>
+<entry><ph conkeyref="conrefs/hardware-string"/> OmniStack</entry>
 <!-- TODO Check SimpliVity version -->
 <entry>TODO 3.7.1.60</entry>
 </row>

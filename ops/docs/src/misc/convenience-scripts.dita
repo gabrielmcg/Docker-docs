@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="convenience-scripts">
+<title>Convenience scripts</title>
+    
+<body>
+ 
+<section>
+
+<ul>
+<li><codeph>backup.sh</codeph> can be used to take a backup of the swarm, UCP, DTR metadata and the DTR images in one go.</li>
+<li><codeph>restore_dtr.sh</codeph> can be used to restore DTR metadata and DTR images.</li>
+<li><codeph>scale_worker.sh</codeph> can be used to scale the worker nodes.</li>
+</ul>
+
+ 
+</section>
+</body>
+</topic>

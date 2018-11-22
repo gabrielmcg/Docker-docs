@@ -12,7 +12,7 @@ each service to provide meaningful monitoring dashboards and alerts for your app
   
 <fig id="sysdig-arch">
   <title>Sysdig architecture</title>
-  <image href="media/sysdig-architecture.png"/>
+  <image href="../media/sysdig-architecture.png"/>
 </fig>  
   
 <p><b>Sysdig Monitor</b> allows you to analyze response times, application performance metrics,

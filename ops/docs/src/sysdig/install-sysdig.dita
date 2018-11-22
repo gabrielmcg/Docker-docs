@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="install-sysdig">
+<title>Playbooks for installing Sysdig on RHEL</title>
+<body>
+<ul>
+<li><codeph>playbooks/install_sysdig.yml</codeph> is used to configure Sysdig. It opens the required port in the firewall, 
+and installs the latest version of the Sysdig agent image on the nodes. By default, this playbook is commented out in <codeph>site.yml</codeph>, so if you want to use the solution to 
+automatically configure Sysdig, you must uncomment this line or run this playbook post-deployment.
+</li>	  
+</ul>
+</body>
+</topic>

@@ -21,7 +21,7 @@
   
 <p>Once the prerequisites are satisfied, run the appropriate playbook on your Ansible node:</p>  
   
-<codeblock># cd <ph conkeyref="conrefs/gitrepo-string"/>/ops
+<codeblock># cd <ph conkeyref="conrefs/gitrepo-string"/>
 # ansible-playbook -i vm_hosts playbooks/k8s-nfs-provisioner.yml --vault-password-file .vault_pass
 </codeblock>  
   

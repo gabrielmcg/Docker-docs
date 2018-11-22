@@ -4,14 +4,7 @@
 <title>Hybrid Windows and Linux deployment</title>
 <body>
 
-<p>To start a hybrid, Windows and Linux deployment, use the following command:</p>
 
-<codeblock># ansible-playbook -i vm_hosts hybrid.yml --vault-password-file .vault_pass</codeblock>
-
-        
-<p>The playbooks should run for 70-80 minutes depending on your server specifications and the size of your environment. The increase in 
-running time is primarily due to the need to update Windows after creating the VMs.</p>
- 
 
   
   

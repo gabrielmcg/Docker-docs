@@ -12,9 +12,9 @@ support HA functionality.</p>
 
 <!-- TODO conditional content -->
 <p>More information on enabling vSphere HA and configuring Admission Control Policy is available in 
-    the HPE SimpliVity documentation. Log in to the HPE Support Center at 
+    the <ph conkeyref="conrefs/hardware-string"/> documentation. Log in to the HPE Support Center at 
     <xref href="https://www.hpe.com/us/en/support.html" scope="external" format="html"/> 
-    and search for “HPE SimpliVity 380”. The administration guide is listed when you select the User document type.    
+    and search for “<ph conkeyref="conrefs/hardware-string"/> 380”. The administration guide is listed when you select the User document type.    
 </p>
 
 <note type="note">

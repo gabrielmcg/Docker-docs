@@ -21,10 +21,10 @@
   <!--<mapref href="images.xml" format="ditamap" processing-role="resource-only"/>-->
   <!--<topicref href="images.xml" format="ditamap"/>-->
 
-    
-    <mapref href="keywords.dita" format="ditamap" processing-role="resource-only"/>
 
-  
+  <mapref href="keywords.dita" format="ditamap" processing-role="resource-only"/>
+
+
   <topicref href="enterprise-caas.dita" navtitle="Enterprise CaaS"/>
 
   <topicref href="introduction.dita" navtitle="Introduction">
@@ -32,174 +32,262 @@
     <topicref href="audience-assumptions.dita" navtitle="Audience and assumptions"/>
 
   </topicref>
-  
-  <topicref href="release-notes.dita" navtitle="Release notes MVI-2">
-    <topicref href="new-features.dita" navtitle="New features in MVI-2"/>
-    <topicref href="changes-from-previous.dita" navtitle="Changes in MVI-2">
-      <topicref href="software-updates.dita" navtitle="Software updates"/>
+
+  <topicref href="release-notes.dita">
+    <!--<topicref href="new-features.dita"/>
+    <topicref href="changes-from-previous.dita" >
+      <topicref href="software-updates.dita"/>-->
       <!--<topicref href="synergy/playbook-updates-syn.dita" navtitle="Playbook updates Synergy"/>-->
-      <topicref href="svt/playbook-updates-svt.dita" navtitle="Playbook updates SimpliVity"/>
-      <topicref href="configuration-updates.dita" navtitle="Configuration updates"/>
-    </topicref>
-      
-    <!--<topicref href="synergy/fixed-syn.dita" navtitle="Fixed in this release"/>
-    <topicref href="synergy/known-issues-syn.dita" navtitle="Known issues"></topicref>-->
-    
-  </topicref>
+      <topicref href="svt/playbook-updates-svt.dita"/>
+      <topicref href="configuration-updates.dita"/>
+    <!--</topicref>-->
 
-  <topicref href="architecture.dita" navtitle="Solution overview">
-  
-    <topicref href="solution-config.dita" navtitle="Solution configuration">
-      <!--<topicref href="synergy/syn-config.dita" navtitle="Synergy configuration"/>-->
-      <topicref href="svt/svt-config.dita" navtitle="SimpliVity configuration"/>
-      <topicref href="linux-config.dita" navtitle="Linux configuration"/>
-      <topicref href="hybrid-config.dita" navtitle="Hybrid configuration"/>
-    </topicref>
-    
-
-    <topicref href="ha.dita" navtitle="High Availability"/>
-
-    <topicref href="sizing.dita" navtitle="Sizing">
-      <!--<topicref href="synergy/sizing-6node.dita" navtitle="Sizing 6 nodes"/>-->
-    </topicref>
-
-    <topicref href="disaster-recovery.dita" navtitle="Disaster Recovery"/>
-
-    <topicref href="security.dita" navtitle="Security"/>
+    <!--<topicref href="synergy/fixed-syn.dita" />
+    <topicref href="synergy/known-issues-syn.dita"></topicref>-->
 
   </topicref>
-  
-  <topicref href="solution-components.dita" navtitle="Solution components">
-    
-    <!--<topicref href="synergy/hardware.dita" navtitle="Hardware">
-      <topicref href="synergy/synergy.dita" navtitle="About Synergy"/>  
-      <topicref href="synergy/server-reqs.dita" navtitle="Server Requirements"/> 
-      <topicref href="synergy/storage-reqs.dita" navtitle="Storage Requirements"/>
+
+  <topicref href="architecture.dita">
+
+    <topicref href="solution-config.dita">
+      <!--<topicref href="synergy/syn-config.dita"/>-->
+      <topicref href="svt/svt-config.dita"/>
+      <topicref href="linux-config.dita"/>
+      <topicref href="hybrid-config.dita"/>
+    </topicref>
+
+
+    <topicref href="ha.dita"/>
+
+    <topicref href="sizing.dita">
+      <!--<topicref href="synergy/sizing-6node.dita"/>-->
+    </topicref>
+
+    <topicref href="disaster-recovery.dita"/>
+
+    <topicref href="security.dita"/>
+
+  </topicref>
+
+  <topicref href="solution-components.dita">
+
+    <!--<topicref href="synergy/hardware.dita">
+      <topicref href="synergy/synergy.dita"/>  
+      <topicref href="synergy/server-reqs.dita"/> 
+      <topicref href="synergy/storage-reqs.dita"/>
     </topicref>-->
- 
-     <topicref href="svt/hardware-svt.dita" navtitle="Hardware">
-       <topicref href="svt/simplivity.dita" navtitle="About SimpliVity"></topicref>
-     </topicref>
-    
-    
-    <topicref href="software.dita" navtitle="Software">
-       <topicref href="about-ansible.dita" navtitle="About Ansible"/>
-  
-       <topicref href="docker-ee.dita" navtitle="About Docker EE"/>     
-      
-    </topicref>
-    
 
-    
-    <topicref href="application-software.dita" navtitle="Monitoring Overview">
-      <topicref href="architecture-splunk-sysdig.dita" navtitle="Monitoring with Splunk and Sysdig">
-        <topicref href="splunk.dita" navtitle="Monitoring with Splunk"/>
-        <topicref href="sysdig.dita" navtitle="Monitoring with Sysdig"/>
-      </topicref>
-      <topicref href="architecture-promgraf.dita" navtitle="Monitoring with Prometheus and Grafana"/>
-    </topicref>    
-    
+    <topicref href="svt/hardware-svt.dita">
+      <topicref href="svt/simplivity.dita"/>
+    </topicref>
+
+
+    <topicref href="software.dita">
+      <topicref href="about-ansible.dita"/>
+
+      <topicref href="docker-ee.dita"/>
+
+    </topicref>
+
+
+
+    <topicref href="application-software.dita">
+      <topicref href="architecture-splunk-sysdig.dita"/> 
+      <topicref href="architecture-promgraf.dita"/>
+    </topicref>
+
   </topicref>
 
-  <topicref href="provisioning.dita" navtitle="Provisioning the environment">
+  <topicref href="provisioning.dita">
 
-    <!--<topicref href="esxi-hosts.dita" navtitle="Creating ESXi hosts"/>-->
+    <!--<topicref href="esxi-hosts.dita"/>-->
 
-    <!--<topicref href="deploy-plugin.dita" navtitle="Deploying the storage plugin"/>-->
+    <!--<topicref href="deploy-plugin.dita"/>-->
 
-    <topicref href="verify-prereqs.dita" navtitle="Verify prerequisites"/>
+    <topicref href="verify-prereqs.dita"/>
 
-    <topicref href="vsphere-ha.dita" navtitle="Enable vSphere High Availability"/>
+    <topicref href="vsphere-ha.dita"/>
 
-    <topicref href="install-vdvs.dita" navtitle="Install VDVS"/>
+    <topicref href="install-vdvs.dita"/>
 
-    <topicref href="create-ansible-node.dita" navtitle="Create Ansible node">
-      <topicref href="config-yum.dita" navtitle="Config yum"/>
-    </topicref>
-    
-    <!--<topicref href="install-vdvs-win.dita" navtitle="Install VDVS on Windows"/>-->
-
-    <topicref href="create-rhel-template.dita" navtitle="Create RHEL template">
-      <topicref href="finalize-template.dita" navtitle="Finalize template"/>
+    <topicref href="create-ansible-node.dita">
+      <topicref href="config-yum.dita"/>
     </topicref>
 
-    <topicref href="create-template-win.dita" navtitle="Create Windows template"/>
+    <!--<topicref href="install-vdvs-win.dita"/>-->
+
+    <topicref href="create-rhel-template.dita">
+      <topicref href="finalize-template.dita"/>
+    </topicref>
+
+
 
   </topicref>
 
 
   <topicref href="edit-group-var.dita" navtitle="Configuration of the solution components">
-    
+
     <topicref href="ansible-config.dita" navtitle="Ansible configuration"/>
 
-    <topicref href="edit-inventory.dita" navtitle="Editing the inventory"/>    
+    <topicref href="edit-inventory.dita" navtitle="Editing the inventory"/>
 
     <topicref href="vmware-config.dita" navtitle="VMware configuration"/>
-    
+
     <!--  TODO conditional content  SVT -->
-    <topicref href="svt/svt-variables-config.dita" navtitle="HPE Simplivity configuration"/>
+    <topicref href="svt/svt-variables-config.dita"/>
 
     <topicref href="network-config.dita" navtitle="Network configuration"/>
 
     <topicref href="environment-config.dita" navtitle="Environment configuration"/>
 
-    <topicref href="docker-config.dita" navtitle="Docker configuration">
+    <topicref href="docker-config.dita" navtitle="Docker configuration"> </topicref>
 
-    </topicref>
-    
     <topicref href="orchestrator-config.dita" navtitle="Orchestrator configuration"/>
-    
+
     <topicref href="k8s-config.dita" navtitle="Kubernetes configuration">
-      <topicref href="k8s-persistent-volume-config.dita" navtitle="Kubernetes Persistent Volume configuration"/>
+      <topicref href="k8s-persistent-volume-config.dita"
+        navtitle="Kubernetes Persistent Volume configuration"/>
     </topicref>
 
-    <topicref href="windows-config.dita" navtitle="Windows configuration"/>
+
 
     <!--<topicref href="monitoring-config.dita" navtitle="Monitoring configuration">-->
+
+
+
+
+
+    <!--</topicref>-->
+
+    <topicref href="edit-vault.dita" navtitle="Protecting sensitive information"/>
+
+    <topicref href="inventory-group-variables.dita" navtitle="Inventory group variables"/>
+  </topicref>
+
+
+  <topicref href="playbooks-overview.dita" navtitle="Overview of playbooks">
+
+    <topicref href="core-infrastructure.dita"> </topicref>
+
+    <topicref href="optional-playbooks.dita"> </topicref>
+
+    <topicref href="misc/backup-restore-playbooks.dita"/>
+    <!--  TODO SimpliVity backup/restore playbooks overview -->
+
+    <topicref href="misc/convenience-playbooks.dita"/>
+    <topicref href="misc/convenience-scripts.dita"/>
+
+
+
+  </topicref>
+
+  <!--  <topicref href="running-playbooks.dita" navtitle="Running the playbooks">
+    <topicref href="running-playbooks-linux.dita" navtitle="Linux-only deployment"/>
+    <topicref href="running-playbooks-hybrid.dita" navtitle="Hybrid Windows and Linux Deployment"/>
+
+  </topicref>-->
+
+  <topicref href="running-playbooks.dita">
+    <topicref href="rhel/create-rhel-vms.dita"/>
+    <topicref href="rhel/load-balancers.dita"/>
+    <topicref href="rhel/install-docker-ucp-dtr.dita"/>
+    <topicref href="rhel/add-rhel-workers.dita"/>
+
+  </topicref>
+
+
+
+
+
+
+
+
+  <topicref href="windows/deploying-windows-workers.dita">
+    <topicref href="create-template-win.dita"/>
+    <topicref href="windows/add-windows-workers.dita"/>
+    <topicref href="windows-config.dita"/>
+    <topicref href="windows/windows-proxy.dita"/>
+    <topicref href="lifecycle-windows.dita"/>
+  </topicref>
+
+  <topicref href="sysdig/deploying-sysdig.dita" >
+    <topicref href="sysdig/sysdig.dita"/>
+    <topicref href="sysdig/install-sysdig.dita"/>
+    <topicref href="sysdig/monitoring-config-sysdig.dita"/>
+    <topicref href="sysdig/sysdig-trial.dita"/>
+    <topicref href="sysdig/deploying-sysdig-k8s.dita"/>
+    <topicref href="sysdig/deploying-sysdig-swarm.dita"/>
+  </topicref>
+
+
+  <topicref href="splunk/deploying-splunk.dita" navtitle="Deploying Splunk">
+    <topicref href="splunk.dita" navtitle="Monitoring with Splunk"/>
+    <topicref href="splunk/install-splunk.dita"/>
     <topicref href="monitoring-config-splunk.dita" navtitle="Splunk configuration">
       <!--<topicref href="splunk-options.dita" navtitle="Splunk options"/>-->
       <topicref href="splunk-pre-deploy.dita" navtitle="Before you deploy"/>
-      
+
       <topicref href="splunk-ucp-syslog.dita" navtitle="Configuring syslog in UCP"/>
       <topicref href="splunk-esx-syslog.dita" navtitle="Configuring syslog in ESX"/>
       <topicref href="splunk-related-playbooks.dita" navtitle="Related playbooks"/>
       <topicref href="splunk-limitations.dita" navtitle="Limitations"/>
     </topicref>
+    <topicref href="redeploying-splunk-demo.dita" navtitle="Redeploying Splunk demo"/>
+  </topicref>
 
-    <topicref href="monitoring-config-sysdig.dita" navtitle="Sysdig configuration"/>
-
+  <topicref href="rhel/prometheus-grafana.dita">
+    <topicref href="rhel/promgraf-overview.dita"/>
+    <topicref href="rhel/prometheus-grafana-playbooks.dita"/>    
     <topicref href="monitoring-config-promgraf.dita" navtitle="Prometheus and Grafana configuration"/>
-    <!--</topicref>-->
+  </topicref>
 
-    <topicref href="edit-vault.dita" navtitle="Protecting sensitive information"/>
-    
-    <topicref href="inventory-group-variables.dita" navtitle="Inventory group variables"/>
+  <topicref href="post-deployment.dita" navtitle="Post-deployment">
+    <topicref href="install-kubectl.dita" navtitle="Installing kubectl"/>
+    <topicref href="k8s-example-guestbook.dita" navtitle="Kubernetes guestbook example with Redis"/>
+    <topicref href="k8s-nfs-provisioner.dita" navtitle="NFS provisioner for Kubernetes">
+      <topicref href="k8s-nfs-provisioner-vm.dita"
+        navtitle="Using NFS VM for post-deployment verification"/>
+      <!--<topicref href="k8s-nfs-provisioner-3par.dita" navtitle="Using 3PAR for post-deployment verification"></topicref>-->
+
+    </topicref>
   </topicref>
 
 
-  <topicref href="playbooks-overview.dita" navtitle="Overview of playbooks"/>
 
-  <topicref href="running-playbooks.dita" navtitle="Running the playbooks">
-    <topicref href="running-playbooks-linux.dita" navtitle="Linux-only deployment"/>
-    <topicref href="running-playbooks-hybrid.dita" navtitle="Hybrid Windows and Linux Deployment"/>
-    
-    <topicref href="post-deployment.dita" navtitle="Post-deployment">
-      <topicref href="install-kubectl.dita" navtitle="Installing kubectl"/>
-      <topicref href="k8s-example-guestbook.dita" navtitle="Kubernetes guestbook example with Redis"/>
-      <topicref href="redeploying-splunk-demo.dita" navtitle="Redeploying Splunk demo"/>
+  <topicref href="backup-restore.dita" navtitle="Backup and restore">
+
+
+    <topicref href="backup-restore-ucp-dtr.dita" navtitle="Backup and restore UCP and DTR">
+
+      <topicref href="backup-ucp-dtr.dita" navtitle="Backup UCP and DTR">
+
+        <topicref href="backup-variables.dita" navtitle="Backup variables"/>
+        <topicref href="backup-swarm.dita" navtitle="Backup swarm"/>
+        <topicref href="backup-ucp.dita" navtitle="Backup UCP"/>
+        <topicref href="backup-dtr-meta.dita" navtitle="Backup DTR metadata"/>
+        <topicref href="backup-dtr-data.dita" navtitle="Backup DTR data"/>
+        <topicref href="backup-other.dita" navtitle="Backup other data"/>
+        <topicref href="backup-utility.dita" navtitle="Backup utility"/>
+        <topicref href="backup-playbooks.dita" navtitle="Related playbooks"/>
+
+      </topicref>
+
+      <topicref href="restore-ucp-dtr.dita" navtitle="Restoring your cluster after a disaster">
+        <!--<topicref href="restore-intro.dita" navtitle="Introduction"/>-->
+        <topicref href="before-restore.dita" navtitle="Before you restore"/>
+        <topicref href="restore-ucp-dtr-details.dita" navtitle="Restoring UCP and DTR"/>
+        <topicref href="restore-dtr-meta-images.dita" navtitle="Restore DTR data"/>
+        <topicref href="restore-playbooks.dita" navtitle="Related playbooks"/>
+      </topicref>
+
     </topicref>
-    
-    <topicref href="k8s-nfs-provisioner.dita" navtitle="NFS provisioner for Kubernetes">
-      <topicref href="k8s-nfs-provisioner-vm.dita" navtitle="Using NFS VM for post-deployment verification"/>
-      <!--<topicref href="k8s-nfs-provisioner-3par.dita" navtitle="Using 3PAR for post-deployment verification"></topicref>-->
-      
-    </topicref>
-    <topicref href="deploying-sysdig.dita" navtitle="Deploying Sysdig">
-      <topicref href="sysdig-trial.dita" navtitle="Registering for Sysdig trial"/>
-      <topicref href="deploying-sysdig-k8s.dita" navtitle="Deploying Sysdig on Kubernetes"/>      
-      <topicref href="deploying-sysdig-swarm.dita" navtitle="Deploying Sysdig on Docker swarm"/>
-    </topicref>
-    
+
+    <!--<topicref href="synergy/backup-restore-docker-volumes.dita" navtitle="Backup and restore Docker volumes"/>-->
+
+    <topicref href="svt/backup-restore-docker-volumes-svt.dita"
+      navtitle="Backup and restore Docker volumes"/>
+
+    <!--<topicref href="integrate-backup.dita" navtitle="Integrate backup"/>-->
 
   </topicref>
 
@@ -211,50 +299,12 @@
     <topicref href="lifecycle-rhel.dita"/>
     <topicref href="lifecycle-docker-ee.dita"/>
     <topicref href="lifecycle-monitoring.dita"/>
-    <topicref href="lifecycle-windows.dita"/>
-   
+
+
   </topicref>
-
-
-  <topicref href="backup-restore.dita" navtitle="Backup and restore">
-
-
-    <topicref href="backup-restore-ucp-dtr.dita" navtitle="Backup and restore UCP and DTR">
-      
-      <topicref href="backup-ucp-dtr.dita" navtitle="Backup UCP and DTR">
-        
-        <topicref href="backup-variables.dita" navtitle="Backup variables"/>
-        <topicref href="backup-swarm.dita" navtitle="Backup swarm"/>
-        <topicref href="backup-ucp.dita" navtitle="Backup UCP"/>
-        <topicref href="backup-dtr-meta.dita" navtitle="Backup DTR metadata"/>
-        <topicref href="backup-dtr-data.dita" navtitle="Backup DTR data"/>
-        <topicref href="backup-other.dita" navtitle="Backup other data"/>
-        <topicref href="backup-utility.dita" navtitle="Backup utility"/>
-        <topicref href="backup-playbooks.dita" navtitle="Related playbooks"/>
-        
-      </topicref>
-      
-      <topicref href="restore-ucp-dtr.dita" navtitle="Restoring your cluster after a disaster">
-        <!--<topicref href="restore-intro.dita" navtitle="Introduction"/>-->
-        <topicref href="before-restore.dita" navtitle="Before you restore"/>
-        <topicref href="restore-ucp-dtr-details.dita" navtitle="Restoring UCP and DTR"/>
-        <topicref href="restore-dtr-meta-images.dita" navtitle="Restore DTR data"/>
-        <topicref href="restore-playbooks.dita" navtitle="Related playbooks"/>
-      </topicref>
-      
-    </topicref>
-
-    <!--<topicref href="synergy/backup-restore-docker-volumes.dita" navtitle="Backup and restore Docker volumes"/>-->
-    
-    <topicref href="svt/backup-restore-docker-volumes-svt.dita" navtitle="Backup and restore Docker volumes"/>
-    
-    <topicref href="integrate-backup.dita" navtitle="Integrate backup"/>
-    
-  </topicref>
-
 
   <topicref href="summary.dita" navtitle="Summary"/>
-  
+
   <topicref href="bom.dita" navtitle="Appendix A: Bill of Materials">
     <!--<topicref href="synergy/bom-synergy.dita"/>
     <topicref href="synergy/software-licences-synergy.dita"/>
@@ -265,12 +315,13 @@
 
   <topicref href="customer-certs.dita" navtitle="Appendix B: Customer certificates">
     <topicref href="customer-certs-generate-test.dita" navtitle="Generate and test certificates"/>
-    <topicref href="verify-certs.dita" navtitle="Verify certs"></topicref>
+    <topicref href="verify-certs.dita" navtitle="Verify certs"/>
   </topicref>
-  
+
   <topicref href="splunk-ssl.dita" navtitle="Appendix C: Splunk and SSL"/>
-  
-  <topicref href="post-deployment-check-certs.dita" navtitle="Appendix D: How to check that certs were deployed correctly"></topicref>
-  
+
+  <topicref href="post-deployment-check-certs.dita"
+    navtitle="Appendix D: How to check that certs were deployed correctly"/>
+
   <topicref href="resources-links.dita" navtitle="Resources and additional links"/>
 </map>

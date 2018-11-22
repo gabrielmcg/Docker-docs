@@ -82,8 +82,15 @@ Store</entry>
 <entry>The password for the <codeph>ucp_username</codeph> account.</entry> 
 </row>
 
+<row>
+<entry>docker_storage_driver</entry>
+<entry>group_vars/vars</entry>     
+<entry>Storage driver for Docker nodes. Accepted values are <codeph>overlay2</codeph> (the default) and <codeph>devicemapper</codeph>.</entry> 
+</row>
+
 </tbody>
 </tgroup>
 </table>
+    
 </body>
 </topic>

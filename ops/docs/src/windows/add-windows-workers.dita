@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="add-windows-workers">
+<title>Playbooks for adding Windows workers</title>
+<body>
+<ul>  
+     
+<li><codeph>playbooks/create_windows.yml</codeph> will create all the necessary Windows 2016 VMs 
+for the environment based on the Windows VM Template defined in the <codeph>win_vm_template</codeph> variable.</li>   
+    
+
+<li><codeph>playbooks/install_docker_windows.yml</codeph> installs Docker along with all its dependencies 
+on your Windows VMs</li>
+
+
+<li><codeph>playbooks/scale_workers.yml</codeph> installs and configures additional Windows workers on the target nodes 
+    defined by the group <codeph>win_worker</codeph> in the <codeph>vm_hosts</codeph> inventory.</li>
+ 
+<li><codeph>playbooks/splunk_uf_win.yml</codeph> installs and configures the Splunk Universal Forwarder on each Windows machine in the inventory.</li>
+ 
+</ul> 
+</body>
+</topic>

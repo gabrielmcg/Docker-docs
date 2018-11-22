@@ -6,7 +6,16 @@
  
 <p>An overview of all the playbooks is available <xref href="../playbooks-overview.dita">here</xref>. This section outlines the changes 
     from the previous release of the playbooks.</p>
-  
+ 
+<p>The playbooks that were available previously as part of the <codeph>Dev Edition</codeph> have been removed in this release, leaving a 
+single codebase that currently focuses on operations functionality. Some of the development-specific stacks may be reinstated in a future release.</p> 
+    
+    
+    
+<p>
+    
+    
+</p>    
   
 </body>
 </topic>

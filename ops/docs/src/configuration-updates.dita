@@ -3,9 +3,18 @@
 <topic id="configuration-updates">
 <title id="changes-mvi2-configuration">Configuration updates</title>  
 <body>
+<p>New variables and configuration files introduced in this release of  <ph conkeyref="conrefs/gitrepo-string"/>:</p>
 
+<ul>
+<li><codeph>docker_ee_version_windows</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="windows-config.dita"/></li> 
+<li><codeph>windows_update</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="windows-config.dita"/></li> 
+<li><codeph>windows_winrm_script</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="windows-config.dita"/></li>
+<li><codeph>docker_storage_driver</codeph> variable in <codeph>group_vars/vars</codeph> - see TODO </li>
+</ul>
+    
+    
 
-<p>New variables and configuration files have been introduced:</p>
+<p>Recently added variables and configuration files inherited from the underlying <ph conkeyref="conrefs/gitrepo-synergy-string"/> release:</p>
 <ul>
 <li><codeph>splunk_uf_password</codeph> variable in <codeph>group_vars/vault</codeph> - see <xref href="splunk-pre-deploy.dita"/></li>  
 <li><codeph>orchestrator</codeph> variable in <codeph>vm_hosts</codeph> - see <xref href="orchestrator-config.dita" format="dita"/></li>  

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="backup-restore-playbooks">
+<title>Backup and restore playbooks</title>
+    
+<body>
+    
+<section>
+<p>Best practices and procedures are described in the section <xref href="../backup-restore.dita"/>. The following playbooks are used to perform backups:</p>
+    
+<ul>
+<li><codeph>playbooks/backup_swarm.yml</codeph> is used to back up the swarm data</li>
+<li><codeph>playbooks/backup_ucp.yml</codeph> is used to back up UCP</li>
+<li><codeph>playbooks/backup_dtr_meta.yml</codeph> is used to back up DTR metadata</li>
+<li><codeph>playbooks/backup_dtr_images.yml</codeph> is used to back up DTR images</li>
+</ul>
+
+
+</section>
+    
+<section>
+<p>The following playbooks are used to restore the system:</p>
+    
+<ul>
+<li><codeph>playbooks/restore_dtr_images.yml</codeph> is used to restore DTR images</li>
+<li><codeph>playbooks/restore_dtr_metadata.yml</codeph> is used to restore DTR metadata</li>
+<li><codeph>playbooks/restore_ucp.yml</codeph> is used to restore UCP</li>
+</ul>
+    
+    
+</section>    
+    
+
+</body>
+</topic>

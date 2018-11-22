@@ -37,9 +37,10 @@ and spin up virtual machines. </entry>
 <entry>L3 Network requirements </entry>
 <entry>You will need one IP address for each and every VM configured in the
 Ansible inventory (see the section <xref href="edit-group-var.dita"/>). The recommended
-minimal deployment (Linux-only) configures 14 virtual machines so you
-would need to allocate 14 IP addresses to use this example inventory.
-If you have a hybrid environment with Windows workers, you will need to increase the allocation.
+minimal deployment (Linux-only) configures 13 virtual machines so you
+would need to allocate 13 IP addresses to use this example inventory.
+You will also need to allocate at least 2 additional addresses for the virtual IPs used by the UCP and DTR loadbalancers.
+If you have a hybrid environment with Windows workers, you will need to increase the allocation based on the number of workers.
 Note that <b>the Ansible playbooks do not support DHCP</b> so you need static
 IP addresses. All the IPs should be in the same subnet. You will also
 have to specify the size of the subnet (for example /22 or /24) and the

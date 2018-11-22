@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="load-balancers">
+<title>Provisioning load balancers for UCP and DTR</title>
+<body>
+    
+<section>
+<title></title>    
+<p>The playbook <codeph>playbooks/loadbalancer.yml</codeph> is used to deploy load balancers in an <codeph>active-active</codeph>
+configuration to provide highly-available access to UCP and DTR.</p>
+
+<p>At least two nodes are specified in the <codeph>[loadbalancer]</codeph> group in the inventory, 
+    along with group variables defining CPU and RAM requirements. These nodes  run
+<codeph>keepalived</codeph> and <codeph>HAproxy</codeph>.</p>
+
+<codeblock>
+[loadbalancer]
+hpe-lb1 ip_addr='10.10.174.248/22' esxi_host='simply04.am2.cloudra.local' ucp=true
+hpe-lb2 ip_addr='10.10.174.249/22' esxi_host='simply05.am2.cloudra.local' dtr=true
+
+[loadbalancer:vars]
+cpus='2'
+ram='4096'
+node_policy='hpe-bronze'
+</codeblock>
+    
+<p>The virtual IP for UCP will be handled by <codeph>hpe-lb1</codeph> by default, which will split the traffic across
+the three UCP VMs <codeph>hpe-ucp01</codeph>, <codeph>hpe-ucp02</codeph> and <codeph>hpe-ucp03</codeph>.
+In the case of a failure of <codeph>hpe-lb1</codeph>, the virtual IP for UCP will automatically move
+to the second load balancer node <codeph>hpe-lb2</codeph> which will again distribute the traffic to the UCP VMs.</p>
+    
+<p>Similarly, the virtual IP for DTR will be handled by default by the load balancer <codeph>hpe-lb2</codeph>,
+splitting the traffic across
+the three DTR VMs <codeph>hpe-dtr01</codeph>, <codeph>hpe-dtr02</codeph> and <codeph>hpe-dtr03</codeph>.    
+In the case of a failure of <codeph>hpe-lb2</codeph>, the virtual IP for DTR will automatically move
+to the first load balancer node <codeph>hpe-lb1</codeph> which will again distribute the traffic to the DTR VMs.</p>    
+
+
+<p>To configure the virtual IPs for UCP and DTR, you need to add a <codeph>loadbalancers</codeph> dictionary to your
+<codeph>group_vars/vars</codeph> file as shown in the excerpt below:</p>
+    
+<codeblock>
+loadbalancers:
+  ucp:
+    public_interface: 'ens192'
+    public_vip: '10.60.59.251'
+    public_fqdn: hpe-ucpvip.cloudra.local
+    virtual_router_id: 54
+  dtr:
+    public_interface: 'ens192'
+    public_vip: '10.60.59.252'
+    public_fqdn: hpe-dtrvip.cloudra.local
+    virtual_router_id: 55
+<!--  worker:
+    public_interface: 'ens192'
+    public_vip: '10.60.59.253'
+    public_fqdn: hpe-wkrvip.cloudra.local
+    virtual_router_id: 56-->
+</codeblock>
+ 
+<note type="warning">If you re-run <codeph>playbooks/loadbalancer.yml</codeph> after a configuration change, you may need to 
+subsequently run <codeph>playbooks/reconfigure_dtr.yml</codeph> as the latter playbook configures the virtual IP address for accessing
+the UCP Single-Sign-On (SSO) page. If there is no virtual IP or FQDN defined for UCP in the variables file, the playbook will choose
+the address of the first UCP node in the <codeph>[ucp]</codeph> group. This scenario introduces a single point of failure and should be avoided.
+</note>
+
+
+<note type="note">By default, the playbook supports ports 
+<codeph>433</codeph> and <codeph>6443</codeph> for UCP and port <codeph>433</codeph> for DTR. 
+If you deploy Prometheus and Grafana on Docker Swarm, the Grafana port <codeph>3000</codeph>
+will be handled as well.</note>
+
+<note type="note">The playbook <codeph>playbooks/loadbalancer.yml</codeph> can be used to create one or more load balancers 
+for applications running on your worker nodes. However, it is impossible for the playbooks to know what ports to support, so
+manual configuration of HAproxy and keepalived may be required. By default, the playbooks supports ports <codeph>80</codeph> and 
+<codeph>443</codeph> for worker nodes.</note>
+
+</section>    
+    
+    
+
+
+<section>
+<title>Legacy stand-alone load balancers</title>   
+    
+<p>The playbook <codeph>playbooks/install_haproxy.yml</codeph> is used to deploy three separate load balancers, for the UCP,
+DTR and worker nodes. It is recommended that you use the HAproxy/keepalived solution documented above instead of this option.
+</p>    
+    
+</section>
+
+
+<section>
+<title>Deploying without load balancers</title> 
+<p>If you do not want to deploy load balancers when running <codeph>site.yml</codeph>, you should comment out any declarations in the inventory and variables files. This
+includes any legacy stand-alone load balancers.</p>    
+</section>    
+    
+    
+<section>
+<title>Deploying with your own load balancers</title> 
+<p>If you are using external load balancers for UCP and DTR, you can configure DTR to use these external load balancers 
+by specifying FQDNs in the <codeph>loadbalancers</codeph> dictionary in <codeph>group_vars/vars</codeph>:</p> 
+    
+<codeblock>
+loadbalancers:
+  ucp:
+    public_fqdn: external-ucpvip.am2.cloudra.local
+  dtr:
+    public_fqdn: external-dtrvip.am2.cloudra.local
+</codeblock>    
+    
+    
+    
+</section>    
+
+</body>
+</topic>

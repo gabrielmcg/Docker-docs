@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="install-splunk">
+<title>Playbooks for installing Splunk</title>
+<body>
+  
+<p>The following playbooks are used to deploy Splunk.</p>  
+  
+<ul>
+<li><codeph>playbooks/splunk_demo.yml</codeph> installs a demo of Splunk Enterprise in the cluster (if the <codeph>splunk_demo</codeph> deployment option is selected. A value of <codeph>splunk</codeph>
+is used to configure an external production Splunk deployment.)</li>    
+
+<li><codeph>playbooks/splunk_uf.yml</codeph> installs and configures the Splunk Universal Forwarder on each Linux and Windows machine in the inventory</li>
+
+<!--<li><codeph>playbooks/splunk_uf_win.yml</codeph> installs and configures the Splunk Universal Forwarder on each Windows machine in the inventory.</li>
+ -->
+</ul>
+</body>
+</topic>

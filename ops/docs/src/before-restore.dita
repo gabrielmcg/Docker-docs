@@ -27,7 +27,7 @@ Make sure you restore both the <codeph>*.tgz</codeph> and the <codeph>*.vars.tgz
 associated with the archive of the DTR metadata. You can retrieve this as follows:     
 </p>
 
-<codeblock>[root@hpe2-ansible ops]# tar -Oxf /root/restore/2018_04_17_151734_dtr_meta.vars.tgz meta.yml
+<codeblock># tar -Oxf /root/restore/2018_04_17_151734_dtr_meta.vars.tgz meta.yml
 backup_node="hpe-dtr01"
 replica_id="<b>ad5204e8a4d0</b>"
 backup_source=""
@@ -35,7 +35,7 @@ ucp_version=""
 dtr_version="<b>2.4.3</b>"
 </codeblock>
 
-<codeblock>[root@hpe2-ansible ops]# tar -Oxf /root/restore/2018_04_17_151734_ucp.vars.tgz meta.yml
+<codeblock># tar -Oxf /root/restore/2018_04_17_151734_ucp.vars.tgz meta.yml
 backup_node="hpe-ucp01"
 replica_id=""
 backup_source=""
@@ -64,10 +64,10 @@ containing the value you retrieved in the preceding step as <codeph>replica_id="
 You must ensure that the versions specified in your current <codeph>group_vars/vars</codeph> file correspond to the versions in the backups as determined above.
 </p>
 
-<codeblock>[root@hpe2-ansible ops]# cat group_vars/vars | grep dtr_version
+<codeblock># cat group_vars/vars | grep dtr_version
 dtr_version: '2.4.3'</codeblock>
 <codeblock>
-[root@hpe2-ansible ops]# cat group_vars/vars | grep ucp_version
+# cat group_vars/vars | grep ucp_version
 ucp_version: '2.2.7'</codeblock>    
 
 <p><b>Step 5:</b> Restore UCP admin credentials if required</p>

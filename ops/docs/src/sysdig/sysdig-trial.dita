@@ -10,14 +10,14 @@
  
 <fig id="sysdig-hpe">
 <title>Sysdig and HPE</title>
-<image href="media/sysdig-hpe.png" placement="break"/>
+<image href="../media/sysdig-hpe.png" placement="break"/>
 </fig>
 
 <p>Scroll to the registration form at the bottom of the page, as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-registration" type="fig"/>. </p>
   
 <fig id="sysdig-registration">
 <title>Sysdig trial registration</title>
-<image href="media/sysdig-registration.png" placement="break"/>
+<image href="../media/sysdig-registration.png" placement="break"/>
 </fig>  
 
 <p>After completing and submitting the form, you will receive an email containing an activation link, 
@@ -26,7 +26,7 @@ as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-email" type="fig"/
 
 <fig id="sysdig-email">
 <title>Sysdig email</title>
-<image href="media/sysdig-email.png" placement="break"/>
+<image href="../media/sysdig-email.png" placement="break"/>
 </fig>  
  
 <p>Clicking on the activation link will bring you to the Sysdig Monitor welcome page,
@@ -34,7 +34,7 @@ as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-monitor-welcome" t
 
 <fig id="sysdig-monitor-welcome">
 <title>Sysdig Monitor welcome page</title>
-<image href="media/sysdig-monitor-welcome.png" placement="break"/>
+<image href="../media/sysdig-monitor-welcome.png" placement="break"/>
 </fig>  
 
 
@@ -43,7 +43,7 @@ as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-setup-env" type="f
 
 <fig id="sysdig-setup-env">
 <title>Sysdig Monitor set up environment</title>
-<image href="media/sysdig-setup-env.png" placement="break"/>
+<image href="../media/sysdig-setup-env.png" placement="break"/>
 </fig> 
   
   
@@ -56,7 +56,7 @@ You will be presented with an access code, as shown in
   
 <fig id="sysdig-k8s">
 <title>Sysdig Monitor access code for Kubernetes</title>
-<image href="media/sysdig-k8s.png" placement="break"/>
+<image href="../media/sysdig-k8s.png" placement="break"/>
 </fig> 
 
 <p>Use the <codeph>sysdig_access_key</codeph> field in your <codeph>group_vars/vault</codeph>,
@@ -68,7 +68,7 @@ as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-k8s-spotlight" typ
 
 <fig id="sysdig-k8s-spotlight">
 <title>Sysdig Monitor Spotlight for Kubernetes</title>
-<image href="media/sysdig-k8s-spotlight.png" placement="break"/>
+<image href="../media/sysdig-k8s-spotlight.png" placement="break"/>
 </fig> 
 
 <p>Select <codeph>View Dashboard</codeph> for an entry point to accessing all your monitoring data.
@@ -87,7 +87,7 @@ embedded in the command, as shown in <xref href="sysdig-trial.dita#sysdig-trial/
   
 <fig id="sysdig-docker">
 <title>Sysdig Monitor download location and access code for Docker</title>
-<image href="media/sysdig-docker.png" placement="break"/>
+<image href="../media/sysdig-docker.png" placement="break"/>
 </fig> 
   
 <p>The download URL is used in the <codeph>sysdig_agent</codeph> field in <codeph>group_vars/vars</codeph> while the access code is 

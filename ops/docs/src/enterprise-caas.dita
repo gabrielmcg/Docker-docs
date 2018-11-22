@@ -4,33 +4,38 @@
 <title><ph conkeyref="conrefs/product-title-full-string"/></title>
 <body>
 <ul>
-    
+
 <li><xref href="introduction.dita#introduction"/>
 <!--<ul>
 <li><xref href="audience-assumptions.dita"/></li>
 </ul>-->
-</li> 
+</li>
 
 <li><xref href="release-notes.dita"/>
 <ul>
-<li><xref href="new-features.dita"/></li> 
+<li><xref href="new-features.dita"/></li>
 <li><xref href="changes-from-previous.dita"/></li>
 <!--<li><xref href="synergy/fixed-syn.dita"/></li>
-<li><xref href="synergy/known-issues-syn.dita"/></li>  -->  
+<li><xref href="synergy/known-issues-syn.dita"/></li>  -->
 </ul>
-
 </li>
-    
+
 <li><xref href="architecture.dita"/>
 <ul>
-<li><xref href="solution-config.dita"/></li>
+<li><xref href="solution-config.dita"/>
+<ul>
+<li><xref href="svt/svt-config.dita"/></li>
+<li><xref href="linux-config.dita"/></li>
+<li><xref href="hybrid-config.dita"/></li>
+</ul>
+</li>
 <li><xref href="ha.dita"/></li>
 <li><xref href="sizing.dita"/></li>
 <li><xref href="disaster-recovery.dita"/></li>
 <li><xref href="security.dita"/></li>
 </ul>
-</li> 
-    
+</li>
+
 <li><xref href="solution-components.dita"/>
 <!--<ul>
 <li><xref href="synergy/hardware.dita"></xref>
@@ -39,29 +44,28 @@
 <li><xref href="synergy/server-reqs.dita"/></li>    
 <li><xref href="synergy/storage-reqs.dita"/></li>      
 </ul>-->
-    
 <ul>
-<li><xref href="svt/hardware-svt.dita"></xref>
+<li><xref href="svt/hardware-svt.dita"/>
 <ul>
-<li><xref href="svt/simplivity.dita"/></li>      
+<li><xref href="svt/simplivity.dita"/></li>
 </ul>
 </li>
 <li><xref href="software.dita"/>
 <ul>
 <li><xref href="about-ansible.dita"/></li>
-<li><xref href="docker-ee.dita"/></li>      
+<li><xref href="docker-ee.dita"/></li>
 </ul>
 </li>
-    
+
 <li><xref href="application-software.dita"/>
 <ul>
 <li><xref href="architecture-splunk-sysdig.dita"/></li>
-<li><xref href="architecture-promgraf.dita"/></li>    
+<li><xref href="architecture-promgraf.dita"/></li>
 </ul>
-</li>       
+</li>
 </ul>
-</li>    
-    
+</li>
+
 <li><xref href="provisioning.dita"/>
 <ul>
 <!--<li><xref href="esxi-hosts.dita"/></li>-->
@@ -71,84 +75,137 @@
 <li><xref href="install-vdvs.dita"/></li>
 <li><xref href="create-ansible-node.dita"/></li>
 <li><xref href="create-rhel-template.dita"/></li>
-<li><xref href="create-template-win.dita"/></li>
-    
+
+
 <!--<li><xref href="install-vdvs-win.dita"/></li>-->
 <!--<li><xref href="config-yum.dita"/></li>-->
 <!--<li><xref href="finalize-template.dita"/></li>-->
 </ul>
 </li>
-    
+
 <li><xref href="edit-group-var.dita"/>
 <ul>
 <li><xref href="ansible-config.dita"/></li>
-<li><xref href="edit-inventory.dita"/></li>     
+<li><xref href="edit-inventory.dita"/></li>
 <li><xref href="vmware-config.dita"/></li>
-<li><xref href="network-config.dita"/></li>   
-<li><xref href="environment-config.dita"/></li>   
-<li><xref href="docker-config.dita"/></li>   
+<li><xref href="svt/svt-variables-config.dita"/></li>
+<li><xref href="network-config.dita"/></li>
+<li><xref href="environment-config.dita"/></li>
+<li><xref href="docker-config.dita"/></li>
 <li><xref href="orchestrator-config.dita"/></li>
 <li><xref href="k8s-config.dita"/>
-<ul><li><xref href="k8s-persistent-volume-config.dita"/></li></ul>
-</li>    
-<li><xref href="windows-config.dita"/></li> 
-<li><xref href="monitoring-config-splunk.dita"/></li> 
-<li><xref href="monitoring-config-sysdig.dita"/></li>
-<li><xref href="monitoring-config-promgraf.dita"/></li>   
+<ul>
+<li><xref href="k8s-persistent-volume-config.dita"/></li>
+</ul>
+</li>
 <li><xref href="edit-vault.dita"/></li>
 <li><xref href="inventory-group-variables.dita"/></li>
 </ul>
-</li>   
-    
-<li><xref href="playbooks-overview.dita"/></li>
-    
+</li>
+
+<li><xref href="playbooks-overview.dita"/>
+<ul>
+<li><xref href="core-infrastructure.dita"/></li>
+<li><xref href="optional-playbooks.dita"/></li>
+<li><xref href="misc/backup-restore-playbooks.dita"/></li>
+<li><xref href="misc/convenience-playbooks.dita"/></li>
+<li><xref href="misc/convenience-scripts.dita"/></li>
+</ul>
+</li>
+
 <li><xref href="running-playbooks.dita"/>
 <ul>
-<li><xref href="running-playbooks-linux.dita"/></li>
-<li><xref href="running-playbooks-hybrid.dita"/></li>
+<li><xref href="rhel/create-rhel-vms.dita"/></li>
+<li><xref href="rhel/load-balancers.dita"/></li>
+<li><xref href="rhel/install-docker-ucp-dtr.dita"/></li>
+<li><xref href="rhel/add-rhel-workers.dita"/>
+</li>
+</ul>
+</li>
+
+<li><xref href="windows/deploying-windows-workers.dita"/>
+<ul>
+<li><xref href="create-template-win.dita"/></li>
+<li><xref href="windows/add-windows-workers.dita"/></li>
+<li><xref href="windows-config.dita"/></li>
+<li><xref href="windows/windows-proxy.dita"/></li>
+<li><xref href="lifecycle-windows.dita"/></li>
+</ul>
+</li>
+
+<li><xref href="sysdig/deploying-sysdig.dita"/>
+<ul>
+<li><xref href="sysdig/sysdig.dita"/></li>
+<li><xref href="sysdig/install-sysdig.dita"/></li>
+<li><xref href="sysdig/monitoring-config-sysdig.dita"/></li>
+<li><xref href="sysdig/sysdig-trial.dita"/></li>
+<li><xref href="sysdig/deploying-sysdig-k8s.dita"/></li>
+<li><xref href="sysdig/deploying-sysdig-swarm.dita"/></li>
+</ul>
+</li>
+
+<li><xref href="splunk/deploying-splunk.dita"/>
+<ul>
+<li><xref href="splunk.dita"/></li>
+<li><xref href="splunk/install-splunk.dita"/></li>
+<li><xref href="monitoring-config-splunk.dita"/></li>
+<li><xref href="redeploying-splunk-demo.dita"/></li>
+</ul>
+</li>
+
+<li><xref href="rhel/prometheus-grafana.dita"/>
+<ul>
+<li><xref href="rhel/promgraf-overview.dita"/></li>
+<li><xref href="rhel/prometheus-grafana-playbooks.dita"/></li>
+<li><xref href="monitoring-config-promgraf.dita"/></li>
+</ul>
+</li>
+
 <li><xref href="post-deployment.dita"/>
 <ul>
 <li><xref href="install-kubectl.dita"/></li>
-<li><xref href="k8s-example-guestbook.dita"/></li>   
-<li><xref href="redeploying-splunk-demo.dita"/></li>
-</ul>
-</li>     
-    
+<li><xref href="k8s-example-guestbook.dita"/></li>
 <li><xref href="k8s-nfs-provisioner.dita"/>
 <ul>
 <li><xref href="k8s-nfs-provisioner-vm.dita"/></li>
-<!--<li><xref href="k8s-nfs-provisioner-3par.dita"/></li>-->    
+<!--<li><xref href="k8s-nfs-provisioner-3par.dita"/></li>-->
 </ul>
 </li>
-<li><xref href="deploying-sysdig.dita"/>
-<ul>
-<li><xref href="sysdig-trial.dita"/></li>
-<li><xref href="deploying-sysdig-k8s.dita"/></li>
-<li><xref href="deploying-sysdig-swarm.dita"/></li>    
 </ul>
 </li>
-   
-</ul>
-</li>
-    
-<li><xref href="lifecycle.dita"/></li>    
-    
+
+
+
+
+
+
 <li><xref href="backup-restore.dita"/>
 <ul>
-<li><xref href="backup-restore-ucp-dtr.dita"/></li>    
-<li><xref href="synergy/backup-restore-docker-volumes.dita"/></li>
+<li><xref href="backup-restore-ucp-dtr.dita"/></li>
+<!--<li><xref href="synergy/backup-restore-docker-volumes.dita"/></li>-->
+<li><xref href="svt/backup-restore-docker-volumes-svt.dita"/></li>
 <li><xref href="integrate-backup.dita"/></li>
 </ul>
 </li>
-    
-<li><xref href="summary.dita"/></li>     
-    
-<li><xref href="bom.dita"/></li>     
-<li><xref href="customer-certs.dita"/></li>    
+
+<li><xref href="lifecycle.dita"/>
+<ul>
+<li><xref href="svt/lifecycle-svt.dita"/></li>
+<li><xref href="lifecycle-vdvs.dita"/></li>
+<li><xref href="lifecycle-rhel.dita"/></li>
+<li><xref href="lifecycle-rhel.dita"/></li>
+<li><xref href="lifecycle-monitoring.dita"/></li>
+</ul>
+</li>
+
+<li><xref href="summary.dita"/></li>
+
+<li><xref href="bom.dita"/></li>
+<li><xref href="customer-certs.dita"/></li>
 <li><xref href="splunk-ssl.dita"/></li>
-<li><xref href="post-deployment-check-certs.dita"/></li>    
-<li><xref href="resources-links.dita"/></li>    
-</ul>   
-  
+<li><xref href="post-deployment-check-certs.dita"/></li>
+<li><xref href="resources-links.dita"/></li>
+</ul>
+
 </body>
 </topic>

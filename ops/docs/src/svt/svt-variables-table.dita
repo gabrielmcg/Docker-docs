@@ -4,7 +4,7 @@
 <title/>
 <body>
 <table id="svt-variables-table-content" frame="none">
-<title>HPE SimpliVity variables</title>
+<title><ph conkeyref="conrefs/hardware-string"/> variables</title>
 <!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
 <col/>
 <col/>
@@ -25,7 +25,7 @@
 <row>
 <entry>simplivity_username</entry>
 <entry>group_vars/vars</entry>    
-<entry>Username to log in to the HPE SimpliVity Omnistack appliances. It might include a domain, for example, <codeph>administrator@vsphere.local</codeph>. 
+<entry>Username to log in to the <ph conkeyref="conrefs/hardware-string"/> Omnistack appliances. It might include a domain, for example, <codeph>administrator@vsphere.local</codeph>. 
 The corresponding password is stored in the variable named <codeph>simplivity_password</codeph>.</entry>
 </row>
 <row>
