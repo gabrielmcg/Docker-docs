@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="fixed-release-svt">
+<title>Fixed in this release</title>
+<body>
+<p>Port 12388 is now opened on UCP nodes to facilitate access to the Kubernetes API from withing the cluster.</p>
+  
+<p>When deploying the Splunk Universal Forwarder on Windows worker nodes, port 1514 is now opened on logger VM, as opposed to
+previously where the playbook incorrectly opened it on the Ansible box.</p>
+  
+  
+</body>
+</topic>

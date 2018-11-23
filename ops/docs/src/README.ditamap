@@ -37,9 +37,10 @@
     <!--<topicref href="new-features.dita"/>
     <topicref href="changes-from-previous.dita" >
       <topicref href="software-updates.dita"/>-->
-      <!--<topicref href="synergy/playbook-updates-syn.dita" navtitle="Playbook updates Synergy"/>-->
-      <topicref href="svt/playbook-updates-svt.dita"/>
-      <topicref href="configuration-updates.dita"/>
+    <!--<topicref href="synergy/playbook-updates-syn.dita" navtitle="Playbook updates Synergy"/>-->
+    <topicref href="svt/playbook-updates-svt.dita"/>
+    <topicref href="configuration-updates.dita"/>
+    <topicref href="svt/fixed-release-svt.dita"/>
     <!--</topicref>-->
 
     <!--<topicref href="synergy/fixed-syn.dita" />
@@ -92,7 +93,7 @@
 
 
     <topicref href="application-software.dita">
-      <topicref href="architecture-splunk-sysdig.dita"/> 
+      <topicref href="architecture-splunk-sysdig.dita"/>
       <topicref href="architecture-promgraf.dita"/>
     </topicref>
 
@@ -210,7 +211,7 @@
     <topicref href="lifecycle-windows.dita"/>
   </topicref>
 
-  <topicref href="sysdig/deploying-sysdig.dita" >
+  <topicref href="sysdig/deploying-sysdig.dita">
     <topicref href="sysdig/sysdig.dita"/>
     <topicref href="sysdig/install-sysdig.dita"/>
     <topicref href="sysdig/monitoring-config-sysdig.dita"/>
@@ -237,8 +238,9 @@
 
   <topicref href="rhel/prometheus-grafana.dita">
     <topicref href="rhel/promgraf-overview.dita"/>
-    <topicref href="rhel/prometheus-grafana-playbooks.dita"/>    
-    <topicref href="monitoring-config-promgraf.dita" navtitle="Prometheus and Grafana configuration"/>
+    <topicref href="rhel/prometheus-grafana-playbooks.dita"/>
+    <topicref href="monitoring-config-promgraf.dita" navtitle="Prometheus and Grafana configuration"
+    />
   </topicref>
 
   <topicref href="post-deployment.dita" navtitle="Post-deployment">
