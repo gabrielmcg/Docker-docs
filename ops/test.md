@@ -670,7 +670,7 @@
 <ul class="ul">
 <li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
 
-<li class="li"><a class="xref" href="#unique_1734056882">Provisioning load balancers for UCP and DTR</a></li>
+<li class="li"><a class="xref" href="#unique_1576949280">Provisioning load balancers for UCP and DTR</a></li>
 
 <li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
 
@@ -3658,7 +3658,7 @@ the deployment to your needs.
 <ul class="ul">
 <li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
 
-<li class="li"><a class="xref" href="#unique_1734056882">Provisioning load balancers for UCP and DTR</a></li>
+<li class="li"><a class="xref" href="#unique_1576949280">Provisioning load balancers for UCP and DTR</a></li>
 
 <li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
 
@@ -3854,7 +3854,7 @@ order to have a synchronized clock across the environment. It will use the list 
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title56" id="unique_1734056882">
+<div class="topic nested1" aria-labelledby="ariaid-title56" id="unique_1576949280">
 <h2 class="title topictitle2" id="ariaid-title56">Provisioning load balancers for UCP and DTR</h2>
 
 <div class="body">
@@ -7037,7 +7037,7 @@ test_01
   
 <pre class="pre codeblock"><code>
 # docker volume ls | grep vsphere
-vsphere:latest      prom_clh-db-data@Docker_CLH
+vsphere:latest      prom_hpe-db-data@Docker_CLH
 vsphere:latest      test_01@Docker_CLH
 </code></pre>  
 
@@ -7081,18 +7081,18 @@ Status: Downloaded newer image for alpine:latest
 
 <pre class="pre codeblock"><code>
 backup_policies:
- - name: 'clh-gold'
+ - name: 'hpe-gold'
    days: 'All'
    start_time: '00:00'
    frequency: '60'
    retention: '43200'
 
-dummy_vm_prefix: 'clh-VM'
+dummy_vm_prefix: 'hpe-VM'
 
-docker_volumes_policy: 'clh-gold'
+docker_volumes_policy: 'hpe-gold'
 </code></pre>
 
-<p class="p">The backup policy <code class="ph codeph">clh-gold</code> is assigned to the special VM that is used to back up the Docker volumes. 
+<p class="p">The backup policy <code class="ph codeph">hpe-gold</code> is assigned to the special VM that is used to back up the Docker volumes. 
   This policy specifies that a backup is taken every hour (<code class="ph codeph">frequency: '60'</code> means sixty minutes) 
   while the backup is retained for one month (<code class="ph codeph">retention: '43200'</code> means 43200 minutes or thirty days).</p>
   
@@ -7171,7 +7171,7 @@ docker_volumes_policy: 'clh-gold'
 
 
 <p class="p">The name of the new virtual machine will default to a combination of the special VM name and a timestamp, 
-  in this instance <code class="ph codeph">hpe-VM-in-dockervols-Docker_SVT-2017-10-26-09h47m00s</code>. 
+  in this instance <code class="ph codeph">hpe-VM-in-dockervols-Docker_HPE-2018-11-26-20h47m01s</code>. 
   The datastore should be the one specified in the datastores array from the <code class="ph codeph">group_vars/vars</code> file. 
   Click OK to restore the virtual machine.</p>
 
@@ -7244,8 +7244,8 @@ docker_volumes_policy: 'clh-gold'
 
 <pre class="pre codeblock"><code>
 # docker volume ls | grep vsphere
-vsphere:latest      prom_clh-db-data@Docker_CLH
-vsphere:latest      <strong class="ph b">test_01@Docker_CLH</strong>
+vsphere:latest      prom_hpe-db-data@Docker_HPE
+vsphere:latest      <strong class="ph b">test_01@Docker_HPE</strong>
 </code></pre>
 
 <p class="p">You can verify that the volume contains the correct data by spinning up a container and running a shell command:</p>

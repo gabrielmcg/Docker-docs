@@ -46,7 +46,7 @@ test_01
   
 <codeblock>
 # docker volume ls | grep vsphere
-vsphere:latest      prom_clh-db-data@Docker_CLH
+vsphere:latest      prom_hpe-db-data@Docker_CLH
 vsphere:latest      test_01@Docker_CLH
 </codeblock>  
 
@@ -85,18 +85,18 @@ Status: Downloaded newer image for alpine:latest
 
 <codeblock>
 backup_policies:
- - name: 'clh-gold'
+ - name: 'hpe-gold'
    days: 'All'
    start_time: '00:00'
    frequency: '60'
    retention: '43200'
 
-dummy_vm_prefix: 'clh-VM'
+dummy_vm_prefix: 'hpe-VM'
 
-docker_volumes_policy: 'clh-gold'
+docker_volumes_policy: 'hpe-gold'
 </codeblock>
 
-<p>The backup policy <codeph>clh-gold</codeph> is assigned to the special VM that is used to back up the Docker volumes. 
+<p>The backup policy <codeph>hpe-gold</codeph> is assigned to the special VM that is used to back up the Docker volumes. 
   This policy specifies that a backup is taken every hour (<codeph>frequency: '60'</codeph> means sixty minutes) 
   while the backup is retained for one month (<codeph>retention: '43200'</codeph> means 43200 minutes or thirty days).</p>  
 </section>  
@@ -161,7 +161,7 @@ docker_volumes_policy: 'clh-gold'
 </fig>
 
 <p>The name of the new virtual machine will default to a combination of the special VM name and a timestamp, 
-  in this instance <codeph>hpe-VM-in-dockervols-Docker_SVT-2017-10-26-09h47m00s</codeph>. 
+  in this instance <codeph>hpe-VM-in-dockervols-Docker_HPE-2018-11-26-20h47m01s</codeph>. 
   The datastore should be the one specified in the datastores array from the <codeph>group_vars/vars</codeph> file. 
   Click OK to restore the virtual machine.</p>
 
@@ -221,8 +221,8 @@ docker_volumes_policy: 'clh-gold'
 
 <codeblock>
 # docker volume ls | grep vsphere
-vsphere:latest      prom_clh-db-data@Docker_CLH
-vsphere:latest      <b>test_01@Docker_CLH</b>
+vsphere:latest      prom_hpe-db-data@Docker_HPE
+vsphere:latest      <b>test_01@Docker_HPE</b>
 </codeblock>
 
 <p>You can verify that the volume contains the correct data by spinning up a container and running a shell command:</p>
