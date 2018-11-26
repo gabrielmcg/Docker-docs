@@ -16,7 +16,7 @@ The solution can deployed using these loadbalancers, external load balancers, no
 the legacy version of standalone load balancers. 
 </li>  
     
-<li><b>Default storage driver:</b> The default graph driver (storage driver) is now <codeph>overlay2</codeph> as recommended by Docker. Previously, the
+<li><b>Default storage driver:</b> The default storage driver is now <codeph>overlay2</codeph>, as recommended by Docker. Previously, the
 <codeph>devicemapper</codeph> was configured in <codeph>direct-lvm</codeph> mode.</li>    
     
 <li><b>Windows workers behind proxy:</b> Windows worker nodes can now be deployed behind a proxy. Simple HTTP proxy support is provided and the playbooks 

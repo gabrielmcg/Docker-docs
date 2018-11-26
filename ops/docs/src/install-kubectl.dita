@@ -6,7 +6,7 @@
 
 <p>You can find the version number for the current stable version of <codeph>kubectl</codeph> at 
   <xref href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" format="html" scope="external"/>.
-  At the time of writing, the stable version is <codeph>1.11.2</codeph>.</p>
+  At the time of writing, the stable version is <codeph>1.13</codeph>.</p>
   
   
 <p>However, this version of <codeph>kubectl</codeph> is not compatible with UCP 3.0.*. Instead, you need to install

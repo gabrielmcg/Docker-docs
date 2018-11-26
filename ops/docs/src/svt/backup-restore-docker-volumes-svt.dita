@@ -7,7 +7,7 @@
   purpose of backing up Docker volumes. There is one such VM for each datastore defined in the datastores array 
   in the <codeph>group_vars/vars</codeph> file. By default, a single datastore is specified in the playbooks:
 </p>
-<codeblock>datastores: ['Docker_CLH']</codeblock>
+<codeblock>datastores: ['Docker_HPE']</codeblock>
   
 <note type="note">The use of a single datastore is recommended. If you have configured multiple datastores, you need to 
   understand and keep track of how your Docker volumes are distributed across the datastores.</note>
@@ -15,7 +15,7 @@
 <p>The name of the special VM follows the pattern &lt;prefix>-in-dockervols-&lt;Datastore> where:</p>
 
 <ul>
-<li>&lt;prefix> is the value of the variable dummy_vm_prefix from the file group_vars/vars</li>
+<li>&lt;prefix> is the value of the variable <codeph>dummy_vm_prefix</codeph> from the file <codeph>group_vars/vars</codeph></li>
 <li>&lt;Datastore> is the name of the datastore</li>
 </ul>
 
