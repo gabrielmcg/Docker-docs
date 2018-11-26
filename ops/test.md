@@ -670,7 +670,7 @@
 <ul class="ul">
 <li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
 
-<li class="li"><a class="xref" href="#unique_1941740498">Provisioning load balancers for UCP and DTR</a></li>
+<li class="li"><a class="xref" href="#unique_1902020288">Provisioning load balancers for UCP and DTR</a></li>
 
 <li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
 
@@ -2226,7 +2226,7 @@ environment, you will have to install the <code class="ph codeph">yum-utils</cod
 </li>
  
 
-<li class="li"><p class="p">Install Ansible 2.4.2 or higher. The playbooks have been tested with 2.4.2 and 2.5.0</p>
+<li class="li"><p class="p">Install Ansible 2.7 or higher. </p>
 
 
 <pre class="pre codeblock"><code># yum install ansible</code></pre>    
@@ -3659,7 +3659,7 @@ the deployment to your needs.
 <ul class="ul">
 <li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
 
-<li class="li"><a class="xref" href="#unique_1941740498">Provisioning load balancers for UCP and DTR</a></li>
+<li class="li"><a class="xref" href="#unique_1902020288">Provisioning load balancers for UCP and DTR</a></li>
 
 <li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
 
@@ -3855,7 +3855,7 @@ order to have a synchronized clock across the environment. It will use the list 
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title56" id="unique_1941740498">
+<div class="topic nested1" aria-labelledby="ariaid-title56" id="unique_1902020288">
 <h2 class="title topictitle2" id="ariaid-title56">Provisioning load balancers for UCP and DTR</h2>
 
 <div class="body">

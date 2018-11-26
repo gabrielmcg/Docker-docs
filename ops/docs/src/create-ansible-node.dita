@@ -45,7 +45,7 @@ environment, you will have to install the <codeph>yum-utils</codeph> package.
 # yum-config-manager --enable rhel-7-server-extras-rpms</codeblock>    
 </li> 
 
-<li><p>Install Ansible 2.4.2 or higher. The playbooks have been tested with 2.4.2 and 2.5.0</p>
+<li><p>Install Ansible 2.7 or higher. </p>
 
 <codeblock># yum install ansible</codeblock>    
 </li> 
