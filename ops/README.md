@@ -116,6 +116,19 @@
 <meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
 <meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
 <meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
+<meta name="prodname" content="HPE Enterprise Containers as a Service with Docker Enterprise Edition" />
 <meta name="version" content="1.0" />
 <meta name="version" content="1.0" />
 <meta name="version" content="1.0" />
@@ -226,6 +239,45 @@
 <meta name="version" content="1.0" />
 <meta name="version" content="1.0" />
 <meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="version" content="1.0" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
+<meta name="copyright" content="HPE 2018" type="primary" />
+<meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
 <meta name="copyright" content="HPE 2018" type="primary" />
 <meta name="DC.Rights.Owner" content="HPE 2018" type="primary" />
 <meta name="copyright" content="HPE 2018" type="primary" />
@@ -456,28 +508,37 @@
 
 <div class="body">
 <ul class="ul">
-    
+
 <li class="li"><a class="xref" href="#introduction">Executive Summary</a>
 
 </li>
- 
+
 
 <li class="li"><a class="xref" href="#release-notes-syn-mvi2">Release Notes</a>
 <ul class="ul">
-<li class="li"><a class="xref" href="#new-features-mvi2">New features</a></li>
- 
-<li class="li"><a class="xref" href="#changes-mvi2">Changes from previous release</a></li>
+<li class="li"><a class="xref" href="new-features.html">New features</a></li>
 
-  
+<li class="li"><a class="xref" href="changes-from-previous.html">Changes from previous release</a></li>
+
+
 </ul>
-
 
 </li>
 
-    
+
 <li class="li"><a class="xref" href="#architecture">Solution overview</a>
 <ul class="ul">
-<li class="li"><a class="xref" href="#solution-config">Solution configuration</a></li>
+<li class="li"><a class="xref" href="#solution-config">Solution configuration</a>
+<ul class="ul">
+<li class="li"><a class="xref" href="#svt-config">HPE SimpliVity configuration</a></li>
+
+<li class="li"><a class="xref" href="#linux-config">Linux-only VM configuration</a></li>
+
+<li class="li"><a class="xref" href="#hybrid-config">Hybrid VM configuration (Windows and Linux)</a></li>
+
+</ul>
+
+</li>
 
 <li class="li"><a class="xref" href="#ha">High availability</a></li>
 
@@ -490,16 +551,15 @@
 </ul>
 
 </li>
- 
-    
+
+
 <li class="li"><a class="xref" href="#solution-components">Solution components</a>
 
-    
 <ul class="ul">
 <li class="li"><a class="xref" href="#hardware-svt">Hardware</a>
 <ul class="ul">
-<li class="li"><a class="xref" href="#simplivity">About SimpliVity</a></li>
-      
+<li class="li"><a class="xref" href="#simplivity">About HPE SimpliVity</a></li>
+
 </ul>
 
 </li>
@@ -509,27 +569,27 @@
 <li class="li"><a class="xref" href="#about-ansible">About Ansible</a></li>
 
 <li class="li"><a class="xref" href="#docker-ee">About Docker Enterprise Edition</a></li>
-      
+
 </ul>
 
 </li>
 
-    
+
 <li class="li"><a class="xref" href="#application-software">Application software</a>
 <ul class="ul">
 <li class="li"><a class="xref" href="#architecture-splunk-sysdig">Monitoring with Splunk and Sysdig</a></li>
 
 <li class="li"><a class="xref" href="#architecture-promgraf">Monitoring with Prometheus and Grafana</a></li>
-    
+
 </ul>
 
 </li>
-       
+
 </ul>
 
 </li>
-    
-    
+
+
 <li class="li"><a class="xref" href="#provisioning">Preparing the environment</a>
 <ul class="ul">
 
@@ -544,9 +604,8 @@
 
 <li class="li"><a class="xref" href="#create-rhel-template">Create the Red Hat Linux template</a></li>
 
-<li class="li"><a class="xref" href="#create-template-win">Create the Windows Template (optional)</a></li>
 
-    
+
 
 
 
@@ -554,37 +613,33 @@
 
 </li>
 
-    
-<li class="li"><a class="xref" href="#edit-group-var">Configuring the solution components</a>
+
+<li class="li"><a class="xref" href="#edit-group-var">Configuring the core components</a>
 <ul class="ul">
 <li class="li"><a class="xref" href="#ansible-config">Ansible configuration</a></li>
 
 <li class="li"><a class="xref" href="#edit-inventory">Editing the inventory</a></li>
-     
+
 <li class="li"><a class="xref" href="#vmware-config">VMware configuration</a></li>
 
+<li class="li"><a class="xref" href="#svt-variables-config">HPE SimpliVity configuration</a></li>
+
 <li class="li"><a class="xref" href="#network-config">Networking configuration</a></li>
-   
+
 <li class="li"><a class="xref" href="#environment-config">Environment configuration</a></li>
-   
+
 <li class="li"><a class="xref" href="#docker-config">Docker configuration</a></li>
-   
+
 <li class="li"><a class="xref" href="#orchestrator-config">Orchestrator configuration</a></li>
 
 <li class="li"><a class="xref" href="#k8s-config">Kubernetes configuration</a>
-<ul class="ul"><li class="li"><a class="xref" href="#k8s-persistent-volume-config">Kubernetes Persistent Volume configuration</a></li>
+<ul class="ul">
+<li class="li"><a class="xref" href="#k8s-persistent-volume-config">Kubernetes Persistent Volume configuration</a></li>
+
 </ul>
 
 </li>
-    
-<li class="li"><a class="xref" href="#windows-config">Windows configuration</a></li>
- 
-<li class="li"><a class="xref" href="#monitoring-config-splunk">Splunk configuration</a></li>
- 
-<li class="li"><a class="xref" href="#monitoring-config-sysdig">Sysdig configuration</a></li>
 
-<li class="li"><a class="xref" href="#monitoring-config-promgraf">Prometheus and Grafana configuration</a></li>
-   
 <li class="li"><a class="xref" href="#edit-vault">Protecting sensitive information</a></li>
 
 <li class="li"><a class="xref" href="#inventory-group-variables">Inventory group variables</a></li>
@@ -592,89 +647,177 @@
 </ul>
 
 </li>
-   
-    
-<li class="li"><a class="xref" href="#playbooks-overview">Overview of the playbooks</a></li>
 
-    
-<li class="li"><a class="xref" href="#running-playbooks">Running the playbooks</a>
+
+<li class="li"><a class="xref" href="#playbooks-overview">Overview of the playbooks</a>
 <ul class="ul">
-<li class="li"><a class="xref" href="#running-playbooks-linux">Linux-only deployment</a></li>
+<li class="li"><a class="xref" href="#core-infrastructure">Core components</a></li>
 
-<li class="li"><a class="xref" href="#running-playbooks-hybrid">Hybrid Windows and Linux deployment</a></li>
+<li class="li"><a class="xref" href="#optional-playbooks">Optional components</a></li>
+
+<li class="li"><a class="xref" href="#backup-restore-playbooks">Backup and restore playbooks</a></li>
+
+<li class="li"><a class="xref" href="#convenience-playbooks">Convenience playbooks</a></li>
+
+<li class="li"><a class="xref" href="#convenience-scripts">Convenience scripts</a></li>
+
+</ul>
+
+</li>
+
+
+<li class="li"><a class="xref" href="#running-playbooks">Deploying the core components</a>
+<ul class="ul">
+<li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
+
+<li class="li"><a class="xref" href="#unique_1941740498">Provisioning load balancers for UCP and DTR</a></li>
+
+<li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
+
+<li class="li"><a class="xref" href="#add-rhel-workers">Deploying RHEL workers</a>
+</li>
+
+</ul>
+
+</li>
+
+
+<li class="li"><a class="xref" href="#deploying-windows-workers">Deploying Windows workers</a>
+<ul class="ul">
+<li class="li"><a class="xref" href="#create-template-win">Create the Windows Template</a></li>
+
+<li class="li"><a class="xref" href="#add-windows-workers">Playbooks for adding Windows workers</a></li>
+
+<li class="li"><a class="xref" href="#windows-config">Windows configuration</a></li>
+
+<li class="li"><a class="xref" href="#windows-proxy">Deploying Windows workers behind a proxy</a></li>
+
+<li class="li"><a class="xref" href="#lifecycle-windows">Windows operating system and Docker EE</a></li>
+
+</ul>
+
+</li>
+
+
+<li class="li"><a class="xref" href="#deploying-sysdig">Deploying Sysdig monitoring</a>
+<ul class="ul">
+<li class="li"><a class="xref" href="#sysdig">Monitoring with Sysdig</a></li>
+
+<li class="li"><a class="xref" href="#install-sysdig">Playbooks for installing Sysdig on RHEL</a></li>
+
+<li class="li"><a class="xref" href="#monitoring-config-sysdig">Sysdig configuration</a></li>
+
+<li class="li"><a class="xref" href="#sysdig-trial">Registering for Sysdig trial</a></li>
+
+<li class="li"><a class="xref" href="#deploying-sysdig-k8s">Deploying Sysdig monitoring on Kubernetes</a></li>
+
+<li class="li"><a class="xref" href="#deploying-sysdig-swarm">Deploying Sysdig monitoring on Docker Swarm</a></li>
+
+</ul>
+
+</li>
+
+
+<li class="li"><a class="xref" href="#deploying-splunk">Deploying Splunk</a>
+<ul class="ul">
+<li class="li"><a class="xref" href="#splunk">Monitoring with Splunk</a></li>
+
+<li class="li"><a class="xref" href="#install-splunk">Playbooks for installing Splunk</a></li>
+
+<li class="li"><a class="xref" href="#monitoring-config-splunk">Splunk configuration</a></li>
+
+<li class="li"><a class="xref" href="#redeploying-splunk-demo">Redeploying Splunk demo</a></li>
+
+</ul>
+
+</li>
+
+
+<li class="li"><a class="xref" href="#prometheus-grafana">Deploying Prometheus and Grafana on Docker RHEL nodes</a>
+<ul class="ul">
+<li class="li"><a class="xref" href="#promgraf-overview">Monitoring with Prometheus and Grafana</a></li>
+
+<li class="li"><a class="xref" href="#prometheus-grafana-playbooks">Playbooks for installing Prometheus and Grafana</a></li>
+
+<li class="li"><a class="xref" href="#monitoring-config-promgraf">Prometheus and Grafana configuration</a></li>
+
+</ul>
+
+</li>
+
 
 <li class="li"><a class="xref" href="#post-deployment">Post deployment</a>
 <ul class="ul">
 <li class="li"><a class="xref" href="#install-kubectl">Installing kubectl</a></li>
 
 <li class="li"><a class="xref" href="#k8s-example-guestbook">Kubernetes guestbook example with Redis</a></li>
-   
-<li class="li"><a class="xref" href="#redeploying-splunk-demo">Redeploying Splunk demo</a></li>
 
-</ul>
-
-</li>
-     
-    
 <li class="li"><a class="xref" href="#k8s-nfs-provisioner">Deploying the NFS provisioner for Kubernetes</a>
 <ul class="ul">
 <li class="li"><a class="xref" href="#k8s-nfs-provisioner-vm">Using NFS VM for post-deployment verification</a></li>
 
-    
+
 </ul>
 
 </li>
 
-<li class="li"><a class="xref" href="#deploying-sysdig">Deploying Sysdig monitoring</a>
-<ul class="ul">
-<li class="li"><a class="xref" href="#sysdig-trial">Registering for Sysdig trial</a></li>
-
-<li class="li"><a class="xref" href="#deploying-sysdig-k8s">Deploying Sysdig monitoring on Kubernetes</a></li>
-
-<li class="li"><a class="xref" href="#deploying-sysdig-swarm">Deploying Sysdig monitoring on Docker Swarm</a></li>
-    
 </ul>
 
 </li>
 
-   
-</ul>
 
-</li>
 
-    
-<li class="li"><a class="xref" href="#lifecycle">Solution lifecycle management</a></li>
-    
-    
+
+
+
+
 <li class="li"><a class="xref" href="#backup-restore">Backup and restore</a>
 <ul class="ul">
 <li class="li"><a class="xref" href="#backup-restore-ucp-dtr">Backup and restore UCP and DTR</a></li>
-    
-<li class="li"><a class="xref" href="synergy/backup-restore-docker-volumes.html">Backup and restore Docker persistent volumes</a></li>
 
-<li class="li"><a class="xref" href="#integrate-backup">Integrate UCP and DTR backup with HPE RMC and HPE StoreOnce</a></li>
+
+<li class="li"><a class="xref" href="#backup-restore-docker-volumes-svt">Backup and restore Docker persistent volumes</a></li>
+
+<li class="li"><a class="xref" href="integrate-backup.html">Integrate UCP and DTR backup with HPE RMC and HPE StoreOnce</a></li>
 
 </ul>
 
 </li>
 
-    
+
+<li class="li"><a class="xref" href="#lifecycle">Solution lifecycle management</a>
+<ul class="ul">
+<li class="li"><a class="xref" href="#lifecycle-svt">HPE SimpliVity environment</a></li>
+
+<li class="li"><a class="xref" href="#lifecycle-vdvs">vSphere Docker Volume Service Plug-in</a></li>
+
+<li class="li"><a class="xref" href="#lifecycle-rhel">Red Hat Enterprise Linux operating system</a></li>
+
+<li class="li"><a class="xref" href="#lifecycle-rhel">Red Hat Enterprise Linux operating system</a></li>
+
+<li class="li"><a class="xref" href="#lifecycle-monitoring">Monitoring Tools</a></li>
+
+</ul>
+
+</li>
+
+
 <li class="li"><a class="xref" href="#summary">Summary</a></li>
-     
-    
+
+
 <li class="li"><a class="xref" href="#bom">Appendix A: Bill of materials</a></li>
-     
+
 <li class="li"><a class="xref" href="#customer-certs">Appendix B: Using customer supplied certificates for UCP and DTR</a></li>
-    
+
 <li class="li"><a class="xref" href="#splunk-ssl">Appendix C: Enabling SSL between the universal forwarders and the Splunk indexers using your certificates</a></li>
 
 <li class="li"><a class="xref" href="#post-deployment-check-certs">Appendix D: How to check that certs were deployed correctly</a></li>
-    
+
 <li class="li"><a class="xref" href="#resources-links">Resources and additional links</a></li>
-    
+
 </ul>
-   
-  
+
+
 </div>
 
 </div>
@@ -690,7 +833,7 @@
 complete solution from Hewlett Packard Enterprise that includes all the hardware,
 software, professional services, and support you need to deploy a
 Containers-as-a-Service (CaaS) platform, allowing you to get up and running quickly
-and efficiently. The solution takes <span class="ph"><span class="keyword">HPE Simplivity</span></span> infrastructure and combines it
+and efficiently. The solution takes <span class="ph"><span class="keyword">HPE SimpliVity</span></span> infrastructure and combines it
 with Docker’s enterprise-grade container platform, popular open source tools, along
 with deployment and advisory services from HPE Pointnext. </p>
 
@@ -736,153 +879,128 @@ around Linux®, Microsoft Windows® and VMware® technologies.</p>
 <h1 class="title topictitle1" id="ariaid-title4">Release Notes</h1>
 
 <div class="body">
+<div class="section"><h2 class="title sectiontitle">New features</h2>
+
+
+<p class="p">This release of the <span class="ph"><span class="keyword">Docker-SimpliVity</span></span> playbooks is  based on the recent release of the corresponding 
+<span class="ph"><span class="keyword">Docker-Synergy</span></span> playbooks with some specific additions:
+</p>
  
-
+    
+<ul class="ul">
+<li class="li"><strong class="ph b">Load balancers:</strong> The playbooks now support load balancers based on VRRP, using <code class="ph codeph">HAproxy</code> and <code class="ph codeph">keepalived</code>.
+The solution can deployed using these loadbalancers, external load balancers, no load load balancers or 
+the legacy version of standalone load balancers. 
+</li>
   
-</div>
-
-<div class="topic nested1" aria-labelledby="ariaid-title5" id="new-features-mvi2">
-<h2 class="title topictitle2" id="ariaid-title5">New features</h2>
-
-<div class="body">
-
-<div class="section"><h3 class="title sectiontitle">Docker EE 2.0 and Kubernetes</h3>
- 
-
-<p class="p">Docker Enterprise Edition (EE) 2.0 is the only platform that manages and secures applications on Kubernetes 
-  in multi-Linux, multi-OS and multi-cloud customer environments. With Docker EE 2.0, you get simplified workflows for the day-to-day management of a Kubernetes environment 
-  while still having access to native Kubernetes APIs, CLIs, and interfaces.</p>
-  
- 
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> Docker EE 2.0 installs Kubernetes version 1.8. In this release, Docker Universal Control Plane (UCP) uses its own role-based acccess control (RBAC) system which is not compatible with Kubernetes RBAC.</div><hr />
-  
-
-<p class="p">For more information on Docker EE 2.0, see 
-  <a class="xref" href="https://blog.docker.com/2018/04/announcing-docker-enterprise-edition-2-0/" target="_blank">https://blog.docker.com/2018/04/announcing-docker-enterprise-edition-2-0/</a>
-  and <a class="xref" href="https://www.docker.com/products/docker-enterprise" target="_blank">https://www.docker.com/products/docker-enterprise</a>.
-
-</p>
-
-
-<p class="p">A sample Kubernetes application has been documented in the section <a class="xref" href="#k8s-example-guestbook">Kubernetes guestbook example with Redis</a> to facilitate verification of 
-  the deployed playbooks and configuration. This example is also useful for exploring the new Kubernetes-specific features in 
-  the latest Splunk and Sysidg offerings.
-
-</p>
-
-  
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> The version of <code class="ph codeph">kubectl</code> used to access the Kubernetes cluster needs to be 1.10 or below. The current release
-of <code class="ph codeph">kubectl</code> is not compatible with the version of Kubernetes (1.8) shipped with Docker EE 2.0.
-See the section <a class="xref" href="#install-kubectl">Installing kubectl</a>.
-</div><hr />
-  
-</div>
-
-  
-<div class="section"><h3 class="title sectiontitle">Splunk 7.1.2 and Kubernetes</h3>
-  
-
-
-<p class="p">Splunk Enterprise supports monitoring of Kubernetes logs and metrics. Kubernetes metadata is collected by 
-  a universal forwarder implemented as a <code class="ph codeph">Deployment</code> (with just one replica), while logs are collected by a 
-  universal forwarder running on each Kubernetes node using a <code class="ph codeph">DaemonSet</code>. The integration 
-  leverages the open-source Splunk IT Monitoring and Troubleshooting project at
-  <a class="xref" href="https://github.com/splunk/docker-itmonitoring" target="_blank">https://github.com/splunk/docker-itmonitoring</a>.  
-
-</p>
-
-
-<p class="p">See the section for installing Splunk prequisites including how to install
-  the <strong class="ph b">Splunk App for Windows Infrastructure</strong> and its dependencies 
-  <a class="xref" href="#splunk-pre-deploy__splunk-mvi2-versions">here</a>.</p>
-  
-  
-</div>
-  
-  
-<div class="section"><h3 class="title sectiontitle">Sysdig and Kubernetes</h3>
-  
-  
-<p class="p">Sysdig supports the monitoring of Kubernetes clusters and the playbooks have been updated to make use of this new functionality.
-See the section <a class="xref" href="#deploying-sysdig-k8s">Deploying Sysdig monitoring on Kubernetes</a> for more information. 
-</p>
-  
-  
-</div>
-  
-
-<div class="section"><h3 class="title sectiontitle">Prometheus and Grafana</h3>
-
-  
-<p class="p">Prometheus has been updated to version <code class="ph codeph">v2.3.2</code> while Grafana is now at version <code class="ph codeph">5.2.3</code></p>
-  
-  
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> Prometheus and Grafana do not currently support monitoring Kubernetes worker nodes in this solution and so can only be
-used in conjunction with Docker swarm deployments.</div><hr />
-  
-</div>
-
-</div>
-
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title6" id="changes-mvi2">
-<h2 class="title topictitle2" id="ariaid-title6">Changes from previous release</h2>
-
-<div class="body">
-
-
-
+    
+<li class="li"><strong class="ph b">Default storage driver:</strong> The default graph driver (storage driver) is now <code class="ph codeph">overlay2</code> as recommended by Docker. Previously, the
+<code class="ph codeph">devicemapper</code> was configured in <code class="ph codeph">direct-lvm</code> mode.</li>
+    
+    
+<li class="li"><strong class="ph b">Windows workers behind proxy:</strong> Windows worker nodes can now be deployed behind a proxy. Simple HTTP proxy support is provided and the playbooks 
+do not support any type of authentication with the proxy (on either RHEL or Windows nodes).</li>
     
 
-  
-
-  
-</div>
-
-<div class="topic nested2" aria-labelledby="software-updates__changes-mvi2-software" id="software-updates">
-<h3 class="title topictitle3" id="software-updates__changes-mvi2-software">Software updates</h3>
-  
-<div class="body">
-   
-<ul class="ul">
-<li class="li">Docker EE version 2.0 (UCP version 3.0.4, DTR version 2.5.3). The recommended  RAM requirement for UCP has been increased to 16GB for production systems.  </li>
-
-<li class="li">Splunk Enterprise version 7.1.2. You must download and install version 7.1.2 of the relevant Splunk Universal Forwarder(s)  
-    as described in <a class="xref" href="#splunk-pre-deploy">Splunk prerequisites</a>.</li>
-  
-<li class="li">RHEL 7.5</li>
-
-<li class="li">Prometheus v2.3.2</li>
-
-<li class="li">Grafana 5.2.3</li>
+<li class="li"><strong class="ph b">Windows boot drive:</strong> The OS partition of Windows worker nodes is now resized to occupy all the boot disk, whereas, previuosly, there would have been some
+unallocated space.
+</li>
 
 </ul>
+    
+</div>
 
     
+<div class="section"><h2 class="title sectiontitle">Features taken from <span class="ph"><span class="keyword">Docker-Synergy</span></span> release</h2>
+  
+    
+<p class="p">The principal features inherited from this release include:</p>
+
+
+<ul class="ul">
+<li class="li">Docker 2.0 with Kubernetes 1.8</li>
+    
+<li class="li">Splunk support for monitoring Kubernetes logs and metrics</li>
+
+<li class="li">Sysdig support for monitoring Kubernetes clusters</li>
+  
+<li class="li">Updated versions of Prometheus and Grafana</li>
+    
+    
+</ul>
+
+
 
 </div>
-
+    
+    
+    
+  
 </div>
-<div class="topic nested2" aria-labelledby="playbook-updates-svt__changes-playbooks-svt" id="playbook-updates-svt">
-<h3 class="title topictitle3" id="playbook-updates-svt__changes-playbooks-svt">Playbook updates</h3>
+
+<div class="topic nested1" aria-labelledby="playbook-updates-svt__changes-playbooks-svt" id="playbook-updates-svt">
+<h2 class="title topictitle2" id="playbook-updates-svt__changes-playbooks-svt">Playbook updates</h2>
   
 <div class="body">
  
 <p class="p">An overview of all the playbooks is available <a class="xref" href="#playbooks-overview">here</a>. This section outlines the changes 
     from the previous release of the playbooks.</p>
 
-  
+ 
+<p class="p">The playbooks that were available previously as part of the <code class="ph codeph">Dev Edition</code> have been removed in this release, leaving a 
+single codebase that currently focuses on operations functionality. Some of the development-specific stacks may be reinstated in a future release.</p>
+
+<p class="p"></p>
+ 
+    
+<p class="p">Windows-specific playbooks have now been merged into the core, so running <code class="ph codeph">site.yml</code> will automatically install
+Windows workers, if they are declared in the inventory. Non-core playbooks such as those for the monitoring stacks will automatically install
+any required Windows software.
+</p>
+    
+    
+<p class="p">The  <span class="ph"><span class="keyword">HPE SimpliVity</span></span>-specific playbooks releated to backup have been redesigned:</p>
+
+<ul class="ul">
+<li class="li">playbooks/config_dummy_vms_for_docker_volumes_backup.yml</li>
+   
+<li class="li">playbooks/config_simplivity_backups.yml</li>
+
+</ul>
+
+
+    
+<p class="p">
+    
+    
+</p>
+    
   
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="configuration-updates__changes-mvi2-configuiration" id="configuration-updates">
-<h3 class="title topictitle3" id="configuration-updates__changes-mvi2-configuiration">Configuration updates</h3>
+<div class="topic nested1" aria-labelledby="configuration-updates__changes-mvi2-configuration" id="configuration-updates">
+<h2 class="title topictitle2" id="configuration-updates__changes-mvi2-configuration">Configuration updates</h2>
   
 <div class="body">
+<p class="p">New variables and configuration files introduced in this release of  <span class="ph"><span class="keyword">Docker-SimpliVity</span></span>:</p>
 
 
-<p class="p">New variables and configuration files have been introduced:</p>
+<ul class="ul">
+<li class="li"><code class="ph codeph">docker_ee_version_windows</code> variable in <code class="ph codeph">group_vars/vars</code> - see <a class="xref" href="#windows-config">Windows configuration</a></li>
+ 
+<li class="li"><code class="ph codeph">windows_update</code> variable in <code class="ph codeph">group_vars/vars</code> - see <a class="xref" href="#windows-config">Windows configuration</a></li>
+ 
+<li class="li"><code class="ph codeph">windows_winrm_script</code> variable in <code class="ph codeph">group_vars/vars</code> - see <a class="xref" href="#windows-config">Windows configuration</a></li>
+
+<li class="li"><code class="ph codeph">docker_storage_driver</code> variable in <code class="ph codeph">group_vars/vars</code> - see TODO </li>
+
+</ul>
+
+    
+    
+
+<p class="p">Recently added variables and configuration files inherited from the underlying <span class="ph"><span class="keyword">Docker-Synergy</span></span> release:</p>
 
 <ul class="ul">
 <li class="li"><code class="ph codeph">splunk_uf_password</code> variable in <code class="ph codeph">group_vars/vault</code> - see <a class="xref" href="#splunk-pre-deploy">Splunk prerequisites</a></li>
@@ -903,15 +1021,29 @@ used in conjunction with Docker swarm deployments.</div><hr />
 </div>
 
 </div>
+<div class="topic nested1" aria-labelledby="ariaid-title7" id="fixed-release-svt">
+<h2 class="title topictitle2" id="ariaid-title7">Fixed in this release</h2>
+
+<div class="body">
+<p class="p">Port 12388 is now opened on UCP nodes to facilitate access to the Kubernetes API from withing the cluster.</p>
+
+  
+<p class="p">When deploying the Splunk Universal Forwarder on Windows worker nodes, port 1514 is now opened on logger VM, as opposed to
+previously where the playbook incorrectly opened it on the Ansible box.</p>
+
+  
+  
+</div>
+
 </div>
 </div>
-<div class="topic nested0" aria-labelledby="ariaid-title10" id="architecture">
-<h1 class="title topictitle1" id="ariaid-title10">Solution overview</h1>
+<div class="topic nested0" aria-labelledby="ariaid-title8" id="architecture">
+<h1 class="title topictitle1" id="ariaid-title8">Solution overview</h1>
 
 <div class="body">
 
 <p class="p">The <span class="ph"><span class="keyword">HPE Express Containers with Docker Enterprise Edition on HPE SimpliVity</span></span> consists of a set of Ansible playbooks that 
-run on top of a VMware virtualization platform on <span class="ph"><span class="keyword">HPE Simplivity</span></span>
+run on top of a VMware virtualization platform on <span class="ph"><span class="keyword">HPE SimpliVity</span></span>
 hardware. The solution allows you to configure a flexible OS environment (with both RHEL and Windows workers)  providing built-in
 high availability (HA), container monitoring and security, and backup and restore functionality. </p>
 
@@ -922,14 +1054,14 @@ high availability (HA), container monitoring and security, and backup and restor
 
 
 
-<div class="fig fignone" id="architecture__d15e16">
+<div class="fig fignone" id="architecture__d19e17">
 
 <br /><img class="image" src="svt/../media/overview-graphic-svt.png" /><br />
 <div><span class="figcap"><span class="fig--title-label"><b>Figure 1. </b></span>Solution overview</span></div><p> </p></div>
   
     
 <p class="p"><a class="xref" href="svt/architecture-svt.html#architecture-svt__overview-graphic">Figure 1</a> provides an overview of the steps used to deploy the solution. 
-   Deploying your hardware and <span class="ph"><span class="keyword">HPE Simplivity</span></span> is specific to your environment and is not covered here.
+   Deploying your hardware and <span class="ph"><span class="keyword">HPE SimpliVity</span></span> is specific to your environment and is not covered here.
    This document shows you how to:    
 </p>
   
@@ -953,30 +1085,30 @@ high availability (HA), container monitoring and security, and backup and restor
  
 </div>
 
-<div class="topic nested1" aria-labelledby="ariaid-title11" id="solution-config">
-<h2 class="title topictitle2" id="ariaid-title11">Solution configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title9" id="solution-config">
+<h2 class="title topictitle2" id="ariaid-title9">Solution configuration</h2>
 
 <div class="body">
     
 </div>
 
-<div class="topic nested2" aria-labelledby="ariaid-title12" id="svt-config">
-<h3 class="title topictitle3" id="ariaid-title12">SimpliVity configuration</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title10" id="svt-config">
+<h3 class="title topictitle3" id="ariaid-title10"><span class="ph"><span class="keyword">HPE SimpliVity</span></span> configuration</h3>
 
 <div class="body">
 <p class="p">The Ansible playbooks are available to download at 
-<a class="xref" href="https://github.com/HewlettPackard/Docker-Simplivity" target="_blank">https://github.com/HewlettPackard/Docker-Simplivity</a>. 
+<span class="ph"><a class="xref" href="https://github.com/HewlettPackard/Docker-SimpliVity" target="_blank"><span class="keyword">https://github.com/HewlettPackard/Docker-SimpliVity</span></a></span>. 
 By default, the  playbooks  are configured as shown in <a class="xref" href="#solution-config__architecture-3node">#solution-config/architecture-3node</a> to set up a 3 node environment. This is the 
 minimal starter configuration recommended by HPE and Docker for 
 production. 
 </p>
 
 
-<p class="p">The Operations environment is comprised of three HPE SimpliVity 380 Gen10 servers. 
-    HPE recommends dual socket HPE SimpliVity systems with at least 14 CPU cores per socket (28 total cores per system) 
-    for optimal performance and support during HA failover scenario. Since the HPE SimpliVity technology 
+<p class="p">The Operations environment is comprised of three <span class="ph"><span class="keyword">HPE SimpliVity</span></span> 380 Gen10 servers. 
+    HPE recommends dual socket <span class="ph"><span class="keyword">HPE SimpliVity</span></span> systems with at least 14 CPU cores per socket (28 total cores per system) 
+    for optimal performance and support during HA failover scenarios. Since the <span class="ph"><span class="keyword">HPE SimpliVity</span></span> technology 
     relies on VMware virtualization, the servers are managed using vCenter. The load among the three hosts will 
-    be shared as per Figure .
+    be shared as per Figure TODO.
 
 </p>
 
@@ -984,8 +1116,8 @@ production.
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title13" id="linux-config">
-<h3 class="title topictitle3" id="ariaid-title13">Linux-only VM configuration</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title11" id="linux-config">
+<h3 class="title topictitle3" id="ariaid-title11">Linux-only VM configuration</h3>
     
 <div class="body">  
 
@@ -1027,8 +1159,10 @@ failure </li>
 </ul>
 
 
-<p class="p">Three load balancers are provided to increase availability of the UCP, DTR and worker nodes and these are typically
-distributed evenly across 3 physical nodes.</p>
+<p class="p">By default, two load balancers are deployed to increase availability of UCP and DTR and these are placed on separate physical nodes.
+    Load balancing for applications running on worker nodes can achieved by using the playbooks to deploy
+additional load balancers, or by manually configuring the existing two to support your applications in addition to supporting UCP and DTR. 
+</p>
 
 
 <ul class="ul">  
@@ -1039,7 +1173,7 @@ distributed evenly across 3 physical nodes.</p>
 </ul>
 
 
-<p class="p">With the addition of the NFS and logging VMs, a total of 14 VMs are created for the default Linux-only deployment.  In addition to these VMs, the playbooks also set up the Docker persistent storage plug-in from VMware.  
+<p class="p">With the addition of the NFS and logging VMs, a total of 13 VMs are created for the default Linux-only deployment.  In addition to these VMs, the playbooks also set up the Docker persistent storage plug-in from VMware.  
 The vSphere Docker volume plug-in  facilitates the storage of data in a shared datastore that can be accessed from any machine in the cluster.</p>
 
 
@@ -1049,8 +1183,8 @@ The vSphere Docker volume plug-in  facilitates the storage of data in a shared d
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title14" id="hybrid-config">
-<h3 class="title topictitle3" id="ariaid-title14">Hybrid VM configuration (Windows and Linux)</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title12" id="hybrid-config">
+<h3 class="title topictitle3" id="ariaid-title12">Hybrid VM configuration (Windows and Linux)</h3>
     
 <div class="body">
     
@@ -1075,8 +1209,8 @@ Some of the application
 
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title15" id="ha">
-<h2 class="title topictitle2" id="ariaid-title15">High availability</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title13" id="ha">
+<h2 class="title topictitle2" id="ariaid-title13">High availability</h2>
 
 <div class="body">
 <p class="p">Uptime is paramount for  businesses implementing Docker containers in business critical
@@ -1094,8 +1228,8 @@ your high availability (HA) needs.</p>
 </div>
 
 
-<div class="topic nested2" aria-labelledby="ariaid-title16" id="load-balancers">
-<h3 class="title topictitle3" id="ariaid-title16">Load Balancers</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title14" id="load-balancers">
+<h3 class="title topictitle3" id="ariaid-title14">Load Balancers</h3>
 
 
 <div class="body">
@@ -1126,8 +1260,8 @@ your high availability (HA) needs.</p>
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title17" id="sizing">
-<h2 class="title topictitle2" id="ariaid-title17">Sizing considerations</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title15" id="sizing">
+<h2 class="title topictitle2" id="ariaid-title15">Sizing considerations</h2>
 
 <div class="body">
 <p class="p">A node is a machine in the cluster (virtual or physical) with Docker Engine running on
@@ -1144,7 +1278,7 @@ and 3GB of storage. For production systems, 16GB of RAM is recommended for manag
 More detailed requirements are in the Docker EE UCP documentation
  at <a class="xref" href="https://docs.docker.com/ee/ucp/admin/install/system-requirements/" target="_blank">https://docs.docker.com/ee/ucp/admin/install/system-requirements/</a>. </li>
 
-<li class="li">UCP Controller nodes should be provided with more than the minimal requirements if other workloads run on them. </li>
+<li class="li">UCP Controller nodes should be provisioned with more than the minimal requirements if other workloads run on them. </li>
 
 <li class="li">Ideally, worker node size will vary based on your workloads so it is impossible to
 define a universal standard size. </li>
@@ -1175,180 +1309,166 @@ allocation is described in <a class="xref" href="#sizing__memory-alloc-table-con
 
 <table cellpadding="4" cellspacing="0" summary="" id="sizing__vcpu-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>vCPU</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e2945">vCPUs</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2948">node01</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2951">node02</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e2954">node03</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3381">vCPUs</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e3384">node01</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e3387">node02</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e3390">node03</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">ucp1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">ucp1</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">ucp2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">ucp2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">ucp3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">4</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">ucp3</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 ">4</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">dtr1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">dtr1</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">dtr2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">dtr2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">
 
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">
-
-</td>
-</tr>
-
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">dtr3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">
-
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">
-
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">2</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">worker1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 "> </td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">worker2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">
-
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 ">2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 ">
 
 </td>
 </tr>
+
+
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">worker3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">dtr3</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">
 
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 ">2</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">worker1</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 "> </td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">worker2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 ">
+
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">worker3</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 ">
 <p class="p"></p>
 
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 ">4</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">win-worker1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">win-worker1</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 "> </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">win-worker2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">win-worker2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 "> </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">win-worker3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">4</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">win-worker3</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 ">4</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">ucb_lb
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">lb1</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">2
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">2
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 ">
 
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">
-
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">dtr_lb
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">2
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 ">
 
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">worker_lb
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">lb2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">
-
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 ">2
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">
-
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">2
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">nfs
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">
-
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">
-
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">2
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">logger
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">
-
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">2
-</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">
-<p class="p"></p>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 ">
 
 </td>
 </tr>
+
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e2945 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">nfs
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 ">2
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">logger
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">
+
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 ">2
+</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 ">
+ 
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3381 ">
 Total vCPU per node
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2948 ">
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3384 ">
 16
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2951 ">
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3387 ">
 18
 </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e2954 ">
-18
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3390 ">
+16
 </td>
 </tr>
 </tbody></table>
@@ -1358,7 +1478,7 @@ Total vCPU per node
 
 <hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
 <p class="p">In the case of one ESX host failure, 2 nodes are enough to accommodate the amount
-of vCPU required</p>
+of vCPU required.</p>
 
 </div><hr />
 
@@ -1371,150 +1491,145 @@ of vCPU required</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="sizing__memory-alloc-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>Memory allocation</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3255">RAM (GB)</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e3258">node01</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e3261">node02</th>
-<th class="entry nocellnorowborder" align="center" valign="top" id="d29e3264">node03</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3673">RAM (GB)</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e3676">node01</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e3679">node02</th>
+<th class="entry nocellnorowborder" align="center" valign="top" id="d29e3682">node03</th>
 </tr>
 </thead><tbody class="tbody">		
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">ucp1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 ">16</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">ucp1</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 ">16</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">ucp2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>							
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 ">16</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">ucp2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "> </td>							
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 ">16</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">ucp3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 ">16</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">ucp3</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 ">16</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">dtr1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 ">16</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">dtr1</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 ">16</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">dtr2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 ">16</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">dtr2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 ">16</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "> </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">dtr3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 ">16</td>
-</tr>
-
-
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">ucb_lb</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "> </td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">dtr_lb</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "> </td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">worker_lb</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 ">4</td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">nfs</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 ">4</td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">logger</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 ">4</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "> </td>
-</tr>
-
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">worker1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 ">64</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "> </td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">worker2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 ">64</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "> </td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">worker3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 ">64</td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">win-worker1</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 ">64</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "> </td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">win-worker2</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 ">64</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "> </td>
-</tr>
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 ">win-worker3</td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "> </td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 ">64</td>
-</tr>
-
-
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 "><strong class="ph b">Total RAM required (per node)</strong></td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "><strong class="ph b">164</strong></td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "><strong class="ph b">168</strong></td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "><strong class="ph b">168</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">dtr3</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 ">16</td>
 </tr>
 
 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3255 "><strong class="ph b">Available RAM</strong></td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3258 "><strong class="ph b">384</strong></td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3261 "><strong class="ph b">384</strong></td>
-<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3264 "><strong class="ph b">384</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">lb1</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "> </td>
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">lb2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "> </td>
+</tr>
+
+
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">nfs</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 ">4</td>
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">logger</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 ">4</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "> </td>
+</tr>
+
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">worker1</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 ">64</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "> </td>
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">worker2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 ">64</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "> </td>
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">worker3</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 ">64</td>
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">win-worker1</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 ">64</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "> </td>
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">win-worker2</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 ">64</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "> </td>
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 ">win-worker3</td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "> </td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 ">64</td>
+</tr>
+
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 "><strong class="ph b">Total RAM required (per node)</strong></td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "><strong class="ph b">164</strong></td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "><strong class="ph b">168</strong></td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "><strong class="ph b">164</strong></td>
+</tr>
+
+
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3673 "><strong class="ph b">Available RAM</strong></td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3676 "><strong class="ph b">384</strong></td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3679 "><strong class="ph b">384</strong></td>
+<td class="entry nocellnorowborder" align="center" valign="top" headers="d29e3682 "><strong class="ph b">384</strong></td>
 </tr>
 </tbody></table>
 </div>
@@ -1534,8 +1649,8 @@ amount of RAM required for all VMs.</p>
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title18" id="disaster-recovery">
-<h2 class="title topictitle2" id="ariaid-title18">Disaster Recovery</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title16" id="disaster-recovery">
+<h2 class="title topictitle2" id="ariaid-title16">Disaster Recovery</h2>
 
 <div class="body">
     
@@ -1557,12 +1672,12 @@ implementing disaster recovery.
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title19" id="security">
-<h2 class="title topictitle2" id="ariaid-title19">Security</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title17" id="security">
+<h2 class="title topictitle2" id="ariaid-title17">Security</h2>
 
 <div class="body">
 <p class="p">The Docker Reference architecture for Securing Docker EE and Security Best Practices is
-available at <a class="xref" href="https://success.docker.com/article/Docker_Reference_Architecture-_Securing_Docker_EE_and_Security_Best_Practices" target="_blank">https://success.docker.com/article/Docker_Reference_Architecture-_Securing_Docker_EE_and_Security_Best_Practices</a></p>
+available at <a class="xref" href="https://success.docker.com/article/Docker_Reference_Architecture-_Securing_Docker_EE_and_Security_Best_Practices" target="_blank">https://success.docker.com/article/Docker_Reference_Architecture-_Securing_Docker_EE_and_Security_Best_Practices</a>.</p>
 
 
 <p class="p">In addition to having all logs centralized in a single place and the image scanning
@@ -1581,45 +1696,45 @@ security. The document can be found at <a class="xref" href="http://h20195.www2.
 
 </div>
 </div>
-<div class="topic nested0" aria-labelledby="ariaid-title20" id="solution-components">
-<h1 class="title topictitle1" id="ariaid-title20">Solution components</h1>
+<div class="topic nested0" aria-labelledby="ariaid-title18" id="solution-components">
+<h1 class="title topictitle1" id="ariaid-title18">Solution components</h1>
 
 <div class="body">
 <p class="p">This section describes the various components that were utilized in this Reference Configuration.</p>
 
 </div>
 
-<div class="topic nested1" aria-labelledby="ariaid-title21" id="hardware-svt">
-<h2 class="title topictitle2" id="ariaid-title21">Hardware</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title19" id="hardware-svt">
+<h2 class="title topictitle2" id="ariaid-title19">Hardware</h2>
 
 <div class="body">
 </div>
 
-<div class="topic nested2" aria-labelledby="ariaid-title22" id="simplivity">
-<h3 class="title topictitle3" id="ariaid-title22">About SimpliVity</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title20" id="simplivity">
+<h3 class="title topictitle3" id="ariaid-title20">About <span class="ph"><span class="keyword">HPE SimpliVity</span></span></h3>
 
 <div class="body">
-<p class="p">HPE Simplivity is an enterprise-grade hyper-converged platform uniting best-in-class data services 
+<p class="p"><span class="ph"><span class="keyword">HPE SimpliVity</span></span> is an enterprise-grade hyper-converged platform uniting best-in-class data services 
   with the world's best-selling server.</p>
 
 
 <p class="p">Rapid proliferation of applications and the increasing cost of maintaining legacy infrastructure causes 
-  significant IT challenges for many organizations. With HPE SimpliVity, you can streamline and enable IT operations at
+  significant IT challenges for many organizations. With <span class="ph"><span class="keyword">HPE SimpliVity</span></span>, you can streamline and enable IT operations at
   a fraction of the cost of traditional and public cloud solutions by combining your IT infrastructure and advanced data 
-  services into a single, integrated solution. HPE SimpliVity is a powerful, simple, and efficient hyperconverged platform 
+  services into a single, integrated solution. <span class="ph"><span class="keyword">HPE SimpliVity</span></span> is a powerful, simple, and efficient hyperconverged platform 
   that joins best-in-class data services with the world’s best-selling server and offers the industry’s most complete guarantee.
 </p>
 
   
-<p class="p">More information about HPE Simplivity can be found at: <a class="xref" href="https://www.hpe.com/us/en/integrated-systems/simplivity.html" target="_blank">https://www.hpe.com/us/en/integrated-systems/simplivity.html</a></p>
+<p class="p">More information about <span class="ph"><span class="keyword">HPE SimpliVity</span></span> can be found at: <a class="xref" href="https://www.hpe.com/us/en/integrated-systems/simplivity.html" target="_blank">https://www.hpe.com/us/en/integrated-systems/simplivity.html</a></p>
 
 
 </div>
 
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title23" id="software">
-<h2 class="title topictitle2" id="ariaid-title23">Software</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title21" id="software">
+<h2 class="title topictitle2" id="ariaid-title21">Software</h2>
 
 <div class="body">
 <p class="p">The software components used in this Reference Configuration are listed in 
@@ -1633,35 +1748,35 @@ security. The document can be found at <a class="xref" href="http://h20195.www2.
 
 <table cellpadding="4" cellspacing="0" summary="" id="software__software-3rd-party-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 3. </span>Third-party software</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3688">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3691">Version</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4112">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4115">Version</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3688 ">Ansible</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3691 ">2.4.2</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4112 ">Ansible</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4115 ">2.7</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3688 ">Docker EE</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3691 ">2.0 with Docker EE Engine 17.06 <p class="p">(tested with UCP 3.0.4 and DTR 2.5.3)</p>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4112 ">Docker EE</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4115 ">2.0 with Docker EE Engine 17.06 <p class="p">(tested with UCP 3.0.6 and DTR 2.5.6)</p>
 </td>  
 </tr> 
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3688 ">Red Hat® Enterprise Linux</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3691 ">7.4, 7.5</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4112 ">Red Hat® Enterprise Linux</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4115 ">7.5, 7.6</td>  
 </tr>   
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3688 ">Microsoft® Windows</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3691 ">Server 2016</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4112 ">Microsoft® Windows</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4115 ">Server 2016</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3688 ">VMware®</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3691 ">ESXi 6.5.0 and vCenter 6.5.0</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4112 ">VMware®</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4115 ">ESXi 6.5.0 and vCenter 6.5.0</td>  
 </tr> 
 
 
@@ -1675,16 +1790,15 @@ security. The document can be found at <a class="xref" href="http://h20195.www2.
 
 <table cellpadding="4" cellspacing="0" summary="" id="software__software-hpe-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 4. </span>HPE Software</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3763">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3766">Version</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4187">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4190">Version</th>
 </tr>
 </thead><tbody class="tbody">
 
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3763 ">HPE SimpliVity OmniStack</td>
-
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3766 ">3.7.1.60</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4187 "><span class="ph"><span class="keyword">HPE SimpliVity</span></span> OmniStack</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4190 ">3.7.6</td>
 </tr>
   
   
@@ -1722,13 +1836,13 @@ system.</p>
 
 
 
-<p class="p">More information about Ansible can be found at <a class="xref" href="http://docs.ansible.com/" target="_blank">http://docs.ansible.com</a></p>
+<p class="p">More information about Ansible can be found at <a class="xref" href="http://docs.ansible.com/" target="_blank">http://docs.ansible.com</a>.</p>
 
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title25" id="docker-ee">
-<h3 class="title topictitle3" id="ariaid-title25">About Docker Enterprise Edition</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title23" id="docker-ee">
+<h3 class="title topictitle3" id="ariaid-title23">About Docker Enterprise Edition</h3>
 
 <div class="body">
 <p class="p">Docker Enterprise Edition (EE) is the leading enterprise-ready container 
@@ -1760,14 +1874,14 @@ security scanning.</li>
 </ul>
 
 
-<p class="p">More information about Docker Enterprise Edition can be found at <a class="xref" href="https://www.docker.com/enterprise-edition" target="_blank">https://www.docker.com/enterprise-edition</a></p>
+<p class="p">More information about Docker Enterprise Edition can be found at <a class="xref" href="https://www.docker.com/enterprise-edition" target="_blank">https://www.docker.com/enterprise-edition</a>.</p>
 
 </div>
 
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title26" id="application-software">
-<h2 class="title topictitle2" id="ariaid-title26">Application software</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title24" id="application-software">
+<h2 class="title topictitle2" id="ariaid-title24">Application software</h2>
 
 <div class="body">
 <p class="p">A number of different logging and monitoring solutions are supported by this solution:</p>
@@ -1793,28 +1907,28 @@ security scanning.</li>
 
 <table cellpadding="4" cellspacing="0" summary="" id="application-software__application-software-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 5. </span>Application software</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3907">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e3910">Version</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4336">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4339">Version</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3907 ">Splunk</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3910 ">7.1.2</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4336 ">Splunk</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4339 ">7.1.2</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3907 ">Sysdig</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3910 ">latest</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4336 ">Sysdig</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4339 ">latest</td>  
 </tr> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3907 ">Prometheus</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3910 ">v2.3.2</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4336 ">Prometheus</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4339 ">v2.3.2</td>  
 </tr> 
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3907 ">Grafana</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e3910 ">5.2.3</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4336 ">Grafana</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4339 ">5.2.3</td>  
 </tr>   
 
 
@@ -1825,8 +1939,8 @@ security scanning.</li>
     
 </div>
 
-<div class="topic nested2" aria-labelledby="ariaid-title27" id="architecture-splunk-sysdig">
-<h3 class="title topictitle3" id="ariaid-title27">Monitoring with Splunk and Sysdig</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title25" id="architecture-splunk-sysdig">
+<h3 class="title topictitle3" id="ariaid-title25">Monitoring with Splunk and Sysdig</h3>
 
 <div class="body">
 <p class="p">The solution can be configured to  use either Splunk or Sysdig or to enable both simultaneously. 
@@ -1838,219 +1952,36 @@ on your cloud.
 </p>
 
     
-<p class="p">The load among the three hosts in a hybrid deployment will be shared as per 
-    <a class="xref" href="#architecture-splunk-sysdig__synergy-ops-architecture">Figure 3</a>.</p>
-
-
-<div class="fig fignone" id="architecture-splunk-sysdig__synergy-ops-architecture">
- 
-<img class="image" src="media/synergy-ops-architecture.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 3. </b></span>Solution architecture: Hybrid Linux and Windows workers with Splunk and Sysdig</span></div><p> </p></div>
-
-    
-</div>
-
-<div class="topic nested3" aria-labelledby="ariaid-title28" id="splunk">
-<h4 class="title topictitle4" id="ariaid-title28">Monitoring with Splunk</h4>
-
-<div class="body">
-
-    
-<p class="p">Splunk Enterprise allows you to collect and index any data from any source, and to monitor systems and infrastructure in real
-time to preempt issues before they happen. It allows you to analyze your data to understand trends, patterns of activity and
-behavior, giving you valuable intelligence across your entire organization.</p>
-    
-    
-<p class="p">This solution allows you to integrate your Container as a Service deployment with an existing Splunk Enterprise installation or to deploy a stand-alone Splunk Enterprise demo environment as
-a Docker stack in your cloud. In both instances, Universal Forwarders are used to collect data from your applications running on your Linux and Windows worker nodes 
-in your cloud, as well as log data from the Docker platform itself and from the infrastructure VMs  and servers. 
-<a class="xref" href="#splunk__splunk-arch">Figure 4</a> shows the Splunk architecture.
-</p>
-
-    
-<div class="fig fignone" id="splunk__splunk-arch">
-
-<img class="image" src="media/splunk-architecture.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 4. </b></span>Splunk architecture</span></div><p> </p></div>
-
-
-
-<p class="p">All the Universal Forwarders run natively on the operating system to allow
-greater flexibility in terms of configuration options. Each forwarder sends the data it collects to one or more indexers in the central
-Splunk. </p>
-
-    
-<p class="p"><strong class="ph b">Linux worker nodes:</strong> The Universal Forwarders on the Linux worker nodes collect log and metrics data. The log data includes:</p>
-    
-
-<ul class="ul">
-<li class="li"><code class="ph codeph">/var/log/messages</code> from the docker host (including the daemon engine logs)</li>
-
-<li class="li"><code class="ph codeph">/var/log/secure</code> from the docker hosts</li>
-
-<li class="li">container logs via a Splunk technical add-on</li>
-
-</ul>
-
-
-<p class="p">The metrics data is collected via a technical add-on and includes:</p>
-
-
-<ul class="ul">
-<li class="li"><code class="ph codeph">docker stats</code></li>
-
-<li class="li"><code class="ph codeph">docker top</code></li>
-
-<li class="li"><code class="ph codeph">docker events</code></li>
-
-<li class="li"><code class="ph codeph">docker service stats</code></li>
-
-</ul>
-
-    
-<p class="p"><strong class="ph b">Windows worker nodes:</strong> The Universal Forwarders running on the  Windows worker nodes collect the following data:</p>
-
-<ul class="ul">
-<li class="li">Windows logs</li>
-
-<li class="li">CPU stats</li>
-
-<li class="li">Memory stats</li>
-
-<li class="li">Network Interface stats</li>
-
-<li class="li">and more</li>
-
-</ul>
-
-
-<p class="p">For more information on configuring standalone Splunk for Linux and Windows worker nodes, see the section on 
-    <a class="xref" href="#splunk-pre-deploy">Splunk prerequisites</a>.
- 
-</p>
-   
- 
-
-<p class="p"><strong class="ph b">UCP and ESXi:</strong> UCP operational logs and ESXi logs are forwarded to the logger VM  via TCP ports 1514 and 514 respectively. 
-Port 1514 is assigned a special <code class="ph codeph">sourcetype</code> of <code class="ph codeph">ucp</code> which is then used by the 
-Splunk Docker APP to interpret UCP logs. The Universal Forwarder runs the rsyslog daemon which will record the 
-log messages coming from the ESX machines into the <code class="ph codeph">/var/log/messages</code> file on the VM. </p>
-
- 
- 
-    
-<div class="p"><strong class="ph b">Non-Docker VMs:</strong> Other VMs, for example, NFS, use a Splunk <code class="ph codeph">monitor</code> to collect and 
-forward data from the following files:
-    
-<ul class="ul">
-<li class="li">/var/log/messages</li>
-
-<li class="li">/var/log/secure (Red Hat)</li>
-
-</ul>
-
-
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> You can configure the list of files monitored by the Universal Forwarder.</div><hr />
-
-</div>
-
-    
-<p class="p">Other syslog senders can be configured to send their data to the logger VM or directly to central Splunk.</p>
-       
-
-</div>
-
-</div>
-<div class="topic nested3" aria-labelledby="ariaid-title29" id="sysdig">
-<h4 class="title topictitle4" id="ariaid-title29">Monitoring with Sysdig</h4>
-
-<div class="body">
-<p class="p">Sysdig's approach to Docker monitoring uses transparent instrumentation to see inside
-containers from the outside, with no need for agents in each container. Metrics from Docker
-containers, and from your applications running inside them, are aggregated in real-time across
-each service to provide meaningful monitoring dashboards and alerts for your application.
-<a class="xref" href="#sysdig__sysdig-arch">Figure 5</a> provides an overview of the Sysdig architecture.
+<p class="p">More information on configuring Splunk and running the relevant playbooks can be found in the section <a class="xref" href="#deploying-splunk">Deploying Splunk</a>.
 </p>
 
   
-<div class="fig fignone" id="sysdig__sysdig-arch">
+<p class="p">More information on configuring Sysdig and running the relevant playbooks can be found in the section <a class="xref" href="#deploying-sysdig">Deploying Sysdig monitoring</a>.
+</p>
   
-  <img class="image" src="media/sysdig-architecture.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 5. </b></span>Sysdig architecture</span></div><p> </p></div>
-  
-  
-<p class="p"><strong class="ph b">Sysdig Monitor</strong> allows you to analyze response times, application performance metrics,
-container and server utilization metrics, and network metrics. You can build dashboards across
-applications, micro-services, container and networks, and explore metadata from Docker,
-Kubernetes, Mesos and AWS.  For more information, see the 
-<a class="xref" href="https://www.youtube.com/watch?v=NR9XLZw0ndo" target="_blank">Sysdig Container Monitoring</a> video overview 
-and the <a class="xref" href="https://sysdig.teachable.com/p/sysdig-101" target="_blank">Sysdig Monitor 101</a> training course. </p>
-
-
-<p class="p"><strong class="ph b">Sysdig Secure</strong> provides security at the orchestrator as well as the container level.
-You create service-aware policies that allow you to take actions (like killing a container) or
-send alerts (to Slack, Splunk, etc) whenever a policy violation occurs. All commands are
-audited to help you identify anomalous actions, along with taking snapshots of all activities
-pre-and-post a policy violation. For more information, see the 
-<a class="xref" href="https://www.youtube.com/watch?v=e_kdjHjK7mY" target="_blank">Sysdig Container Monitoring</a> video overview 
-and the <a class="xref" href="https://sysdig.teachable.com/p/sysdig-secure-101" target="_blank">Sysdig Secure 101</a> training course. </p>
-
-
-<p class="p">The implementation in this solution uses the Software as a Service (SaaS) version of Sysdig.
-The playbooks deploy Sysdig Agent software on each UCP, DTR and Linux worker node, as well as the NFS, logger and load balancer VMs
-and captured data is relayed back to your Sysdig SaaS Cloud portal. The deployment provides access to a 
-90 day try-and-buy, fully featured version of the Sysdig software.</p>
-
-
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> The Sysdig functionality is not turned on by default in this solution - see
-the section on Configuration for more information on how to enable Sysdig. 
- For more information on how to access the 90 day try-and-buy version, see the 
- GitHub repository at <span class="ph"><a class="xref" href="https://github.com/HewlettPackard/Docker-SimpliVity" target="_blank"><span class="keyword">https://github.com/HewlettPackard/Docker-SimpliVity</span></a></span>.
-</div><hr />
 
 </div>
 
 </div>
-</div>
-<div class="topic nested2" aria-labelledby="ariaid-title30" id="architecture-promgraf">
-<h3 class="title topictitle3" id="ariaid-title30">Monitoring with Prometheus and Grafana</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title26" id="architecture-promgraf">
+<h3 class="title topictitle3" id="ariaid-title26">Monitoring with Prometheus and Grafana</h3>
 
 <div class="body">
 <p class="p">The solution can be configured to enable the use of Prometheus and Grafana for monitoring.
 In this setup, there is no need for native installs and all the required monitoring software runs in containers,
-deployed as either services or stacks. The load among the three hosts will be shared as 
-per <a class="xref" href="#architecture-promgraf__synergy-ops-architecture-promgraf">Figure 6</a></p>
-
-
-<div class="fig fignone" id="architecture-promgraf__synergy-ops-architecture-promgraf">
- 
-<img class="image" src="media/synergy-ops-architecture-promgraf.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 6. </b></span>Solution architecture: Linux workers with Prometheus and Grafana</span></div><p> </p></div>
+deployed as either services or stacks. See the section <a class="xref" href="#prometheus-grafana">Deploying Prometheus and Grafana on Docker RHEL nodes</a> for more information on configuring 
+and deploying the software.
+</p>
 
 
 
-<p class="p">The Prometheus
-and Grafana services are declared in a Docker stack as replicated services with one
-replica each, so if they fail, Docker EE will ensure that they are restarted on one
-of the UCP VMs. cAdvisor and node-exporter are declared in the same stack as global
-services, so Docker EE will ensure that there is always one copy of each running on
-every machine in the cluster.</p>
-
-    
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
-Prometheus and Grafana functionality is not turned on by default in this solution - 
-see the section on Configuration for more information on how to enable these tools.
-Additionally, this functionality will not work for the Windows worker nodes in your environment at present.
-</div><hr />
-    
-    
 </div>
 
 </div>
 </div>
 </div>
-<div class="topic nested0" aria-labelledby="ariaid-title31" id="provisioning">
-<h1 class="title topictitle1" id="ariaid-title31">Preparing the environment</h1>
+<div class="topic nested0" aria-labelledby="ariaid-title27" id="provisioning">
+<h1 class="title topictitle1" id="ariaid-title27">Preparing the environment</h1>
 
 <div class="body">
 <div class="section" id="provisioning__provisioning-section">
@@ -2083,12 +2014,12 @@ in the architecture section. The following high level steps are required:</p>
 
 </div>
 
-<div class="topic nested1" aria-labelledby="ariaid-title32" id="verify-prereqs">
-<h2 class="title topictitle2" id="ariaid-title32">Verify prerequisites</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title28" id="verify-prereqs">
+<h2 class="title topictitle2" id="ariaid-title28">Verify prerequisites</h2>
 
 <div class="body">
 <p class="p">Before you start deployment, you must assemble the information required to assign values for each and every variable
-used by the playbooks. The variables are fully documented in the section <a class="xref" href="#edit-group-var">Configuring the solution components</a>.
+used by the playbooks. The variables are fully documented in the section <a class="xref" href="#edit-group-var">Configuring the core components</a>.
 A brief overview of the information required is presented in 
 <a class="xref" href="#verify-prereqs__verify-prereqs-table-conref">Table 6</a>.</p>
 
@@ -2098,20 +2029,20 @@ A brief overview of the information required is presented in
 
 <table cellpadding="4" cellspacing="0" summary="" id="verify-prereqs__verify-prereqs-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 6. </span>Summary of information required</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4316">Component </th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4319">Details </th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4519">Component </th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e4522">Details </th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4316 ">Virtual Infrastructure </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4319 ">The FQDN of your vCenter server and the name of the Datacenter. You
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4519 ">Virtual Infrastructure </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4522 ">The FQDN of your vCenter server and the name of the Datacenter. You
 will also need administrator credentials in order to create templates
 and spin up virtual machines. </td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4316 ">L3 Network requirements </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4319 ">The name of the SimpliVity cluster and the names of the member of this cluster as 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4519 ">L3 Network requirements </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4522 ">The name of the SimpliVity cluster and the names of the member of this cluster as 
     they appear in vCenter. You will also need to know the name of the SimpliVity datastore where 
     you want to land the various virtual machines. You may have to create this datastore if you 
     just installed your SimpliVity cluster. In addition, you will need the IP addresses of the 
@@ -2120,12 +2051,13 @@ and spin up virtual machines. </td>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4316 ">L3 Network requirements </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4319 ">You will need one IP address for each and every VM configured in the
-Ansible inventory (see the section <a class="xref" href="#edit-group-var">Configuring the solution components</a>). The recommended
-minimal deployment (Linux-only) configures 14 virtual machines so you
-would need to allocate 14 IP addresses to use this example inventory.
-If you have a hybrid environment with Windows workers, you will need to increase the allocation.
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4519 ">L3 Network requirements </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4522 ">You will need one IP address for each and every VM configured in the
+Ansible inventory (see the section <a class="xref" href="#edit-group-var">Configuring the core components</a>). The recommended
+minimal deployment (Linux-only) configures 13 virtual machines so you
+would need to allocate 13 IP addresses to use this example inventory.
+You will also need to allocate at least 2 additional addresses for the virtual IPs used by the UCP and DTR loadbalancers.
+If you have a hybrid environment with Windows workers, you will need to increase the allocation based on the number of workers.
 Note that <strong class="ph b">the Ansible playbooks do not support DHCP</strong> so you need static
 IP addresses. All the IPs should be in the same subnet. You will also
 have to specify the size of the subnet (for example /22 or /24) and the
@@ -2133,8 +2065,8 @@ L3 gateway for this subnet. </td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4316 ">DNS </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4319 ">You will need to know the IP addresses of your DNS server. In
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4519 ">DNS </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4522 ">You will need to know the IP addresses of your DNS server. In
 addition, all the VMs you configure in the inventory must have their
 names registered in DNS prior to deployment. In addition, you will need to know the domain name to
 use for configuring the virtual machines (such as <code class="ph codeph">example.com</code>)
@@ -2142,29 +2074,29 @@ use for configuring the virtual machines (such as <code class="ph codeph">exampl
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4316 ">NTP Services </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4319 ">You need time services configured in your environment. The deployed solution
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4519 ">NTP Services </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4522 ">You need time services configured in your environment. The deployed solution
 uses certificates that are time-sensitive. You will need to specify the IP addresses of your time servers
 (NTP). </td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4316 ">RHEL Subscription </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4319 ">A RHEL subscription is required to pull extra packages that are not
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4519 ">RHEL Subscription </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4522 ">A RHEL subscription is required to pull extra packages that are not
 on the DVD. </td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4316 ">Docker Prerequisites </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4319 ">You will need a URL for the official Docker EE software download and
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4519 ">Docker Prerequisites </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4522 ">You will need a URL for the official Docker EE software download and
 a license file. Refer to the Docker documentation to learn more about
 this URL and the licensing requirements at: <a class="xref" href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/" target="_blank">https://docs.docker.com/engine/installation/linux/docker-ee/rhel/</a>
 in the section entitled “Docker EE repository URL” </td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4316 ">Proxy </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4319 ">The playbooks pull the Docker packages from the Internet. If your
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4519 ">Proxy </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e4522 ">The playbooks pull the Docker packages from the Internet. If your
 environment accesses the Internet through a proxy, you will need the
 details of the proxy including the fully qualified domain name and the
 port number. </td>
@@ -2179,23 +2111,23 @@ port number. </td>
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title33" id="vsphere-ha">
-<h2 class="title topictitle2" id="ariaid-title33">Enable vSphere High Availability (HA)</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title29" id="vsphere-ha">
+<h2 class="title topictitle2" id="ariaid-title29">Enable vSphere High Availability (HA)</h2>
 
 <div class="body">
 <p class="p">You must enable vSphere High Availability (HA) to support virtual machine failover during
 a HA event such as a host failure. Sufficient CPU and memory resources must be reserved
-across the system so that all VMs on the affected host(s) can fail over to remaining
-available hosts in the system. You configure an Admission Control Policy (ACP) to
+across the cluster so that all VMs on the affected host(s) can fail over to remaining
+available hosts in the cluster. You configure an Admission Control Policy (ACP) to
 specify the percentage CPU and memory to reserve on all the hosts in the cluster to
 support HA functionality.</p>
 
 
 
 <p class="p">More information on enabling vSphere HA and configuring Admission Control Policy is available in 
-    the HPE SimpliVity documentation. Log in to the HPE Support Center at 
+    the <span class="ph"><span class="keyword">HPE SimpliVity</span></span> documentation. Log in to the HPE Support Center at 
     <a class="xref" href="https://www.hpe.com/us/en/support.html" target="_blank">https://www.hpe.com/us/en/support.html</a> 
-    and search for “HPE SimpliVity 380”. The administration guide is listed when you select the User document type.    
+    and search for “<span class="ph"><span class="keyword">HPE SimpliVity</span></span> 380”. The administration guide is listed when you select the User document type.    
 </p>
 
 
@@ -2211,8 +2143,8 @@ calculate the memory and CPU requirements that are specific to your environment.
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title34" id="install-vdvs">
-<h2 class="title topictitle2" id="ariaid-title34">Install vSphere Docker Volume Service driver on all ESXi hosts</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title30" id="install-vdvs">
+<h2 class="title topictitle2" id="ariaid-title30">Install vSphere Docker Volume Service driver on all ESXi hosts</h2>
 
 <div class="body">
     
@@ -2241,8 +2173,8 @@ Service (vDVS) on containers running on two different hosts at the same time.</p
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title35" id="create-ansible-node">
-<h2 class="title topictitle2" id="ariaid-title35">Create the Ansible node</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title31" id="create-ansible-node">
+<h2 class="title topictitle2" id="ariaid-title31">Create the Ansible node</h2>
 
 <div class="body">
 
@@ -2254,7 +2186,7 @@ environment and it is essential that it is properly installed.</p>
 <ol class="ol">
 <li class="li">
 <p class="p">Create a Virtual Machine and install your preferred OS (in this example, and for the
-sake of simplicity, RHEL7 will be used). The rest of the instructions assume that,
+sake of simplicity, RHEL 7 will be used). The rest of the instructions assume that,
 if you use a different OS, you understand the possible differences in syntax for the
 provided commands. If you use RHEL 7, select <code class="ph codeph">Infrastructure Server</code> as the base
 environment and the <code class="ph codeph">Guests Agents</code> add-on during the installation.</p>
@@ -2320,8 +2252,8 @@ to function as expected. (Update pip if requested).
 
 </div>
 
-<div class="topic nested2" aria-labelledby="ariaid-title36" id="config-yum">
-<h3 class="title topictitle3" id="ariaid-title36">Configure the yum repositories</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title32" id="config-yum">
+<h3 class="title topictitle3" id="ariaid-title32">Configure the yum repositories</h3>
 
 <div class="body">
     
@@ -2404,8 +2336,8 @@ repositories and how to share them, check the Red Hat documentation at <a class=
 
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title37" id="create-rhel-template">
-<h2 class="title topictitle2" id="ariaid-title37">Create the Red Hat Linux template</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title33" id="create-rhel-template">
+<h2 class="title topictitle2" id="ariaid-title33">Create the Red Hat Linux template</h2>
 
 <div class="body">
     
@@ -2453,14 +2385,14 @@ All VMs will connect to this same network. </li>
 <li class="li">For the software selection, choose <strong class="ph b">Infrastructure Server</strong> as the base
 environment and add the <strong class="ph b">Guest Agents</strong> from the lists of add-ons
 available for this environment. The Infrastructure Server environment is
-selected here versus the Minimal Install because Customization of Linux
+selected here versus the Minimal Install because customization of Linux
 guest operating systems requires that Perl is installed in the Linux guest
 operating system. </li>
 
     
 <li class="li">Configure the network settings so that you can later access the VM using
 SSH. Specify an IP address for the network interface, a default gateway,
-DNS settings and possibly any HTTP/HTTS proxies that apply in your environment. </li>
+DNS settings and possibly any HTTP/HTTPS proxies that apply in your environment. </li>
 
     
 <li class="li">Specify a password for the root account and optionally created an admin user. </li>
@@ -2476,8 +2408,8 @@ DNS settings and possibly any HTTP/HTTS proxies that apply in your environment. 
 
 </div>
 
-<div class="topic nested2" aria-labelledby="ariaid-title38" id="finalize-template">
-<h3 class="title topictitle3" id="ariaid-title38">Finalize the template</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title34" id="finalize-template">
+<h3 class="title topictitle3" id="ariaid-title34">Finalize the template</h3>
 
 <div class="body">
     
@@ -2530,143 +2462,9 @@ omitted since it is a basic step and could vary depending on the user’s enviro
 
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title39" id="create-template-win">
-<h2 class="title topictitle2" id="ariaid-title39">Create the Windows Template (optional)</h2>
-
-<div class="body">
-    
-<p class="p">To create the Windows VM Template that you will use as the
-base for all your Windows worker nodes, you will first
-create a Virtual Machine with the OS installed and then convert the Virtual Machine
-to a VM Template. The VM Template is created as lean as possible, with any additional
-software installs and/or system configuration performed subsequently using Ansible.
-</p>
-
-    
-<p class="p">As the creation of the template is
-a one-off task, this procedure has not been automated. The steps to create a VM template
-manually are outlined below.</p>
-
-
-
-<p class="p">Log in to vCenter and create a new Virtual Machine with the following
-characteristics:</p>
-
-
-<ul class="ul">
-<li class="li">Guest OS Family: Windows, Guest OS Version: Microsoft Windows Server
-2016 (64-bit).
-</li>
-
-
-<li class="li">Hard Disk size: 100GB (Thin provisioning), 1 vCPU and 4 GB of RAM. Both vCPU and memory can be altered later after you deploy from this template. 
-</li>
-
-    
-<li class="li">A single network controller connected to the network or VLAN of your
-choice. All VMs will connect to this same network.
-</li>
-
-    
-<li class="li">Change the network type to VMXNET3, and attach the Windows Server
-2016 ISO image from a datastore ensuring you connect the CD/DVD drive on
-boot.
-</li>
-
-    
-<li class="li">Click on the VM Options tab, and in the Boot Options
-section, select <code class="ph codeph">Force BIOS setup(*)</code> to ensure that the machine enters the
-BIOS setup screen on next boot of this VM. This will allow you to adjust the
-boot order, placing the virtual CD-ROM in front of your hard drive.</li>
-
-    
-<li class="li">Optionally you can remove the floppy drive.						
-</li>
-
-</ul>
-
-
-
-
-<p class="p">Install Windows Server 2016:</p>
-
-    
-<ul class="ul">
-<li class="li">Power on the selected VM and then <code class="ph codeph">Open Console</code>.</li>
-
-    
-<li class="li">Once connected to the console, you will be placed in the BIOS setup screen.
-Select the <code class="ph codeph">Boot</code> tab, click on CD-ROM Drive and 
- move up the CD-ROM drive above the hard drive. This allows your Windows
-Server 2016 ISO image to be loaded first on boot. F10 Save and exit is next
-step.</li>
-
-    
-<li class="li">Enter your choices for Language, Time/Currency Format, Keyboard and then
-Install Now.</li>
-
-    
-<li class="li">Select the OS you want to install, and then select Custom: Install Windows
-Only.</li>
-
-    
-<li class="li">Select drive 0, the 100 GB drive you specified earlier, as the location for
-installing windows.</li>
-
-<li class="li">Add a password for the Administrator user.</li>
-
-<li class="li">Install VMware Tools and
-reboot.</li>
-
-</ul>
-
-
-<p class="p">Once the VM has re-booted,</p>
-
-    
-<ul class="ul">    
-<li class="li">Add a temporary network IP address.</li>
-
-<li class="li">Use the sconfig utility from (MS-DOS) command line to install windows updates and enable remote desktop.</li>
-
-<li class="li">Perform any other customizations you require at this point.</li>
-
-</ul>
-    
-    
-<p class="p">Prior to converting the VM to Template, run Sysprep: <code class="ph codeph">C:\Windows\System32\Sysprep\Sysprep.exe</code>.</p>
-
-    
-<ul class="ul">
-<li class="li">Ensure ‘System Out-of-Box Experience (OOBE)’ is selected.</li>
-
-<li class="li">Select the ‘Generalize’ option.</li>
-
-<li class="li">Select ‘Shutdown’ from the Shutdown Options.</li>
-
-</ul>
-
-
-<p class="p">Shutdown VM, and untick  <code class="ph codeph">Connect CD/DVD</code> so that the Windows Server 2016 ISO is no
-longer  mounted. Boot the Windows VM one final time and enter regional settings applicable to your location
-and keyboard mapping, enter a password then Shutdown VM.</p>
-
-
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> The <code class="ph codeph">vmware_guest</code> module used by the playbooks will generate a new SID.</div><hr />
-
-    
-<p class="p">Turn the VM into a template by right-clicking on your VM and selecting <code class="ph codeph">Template -&gt; Convert to Template</code>.	
-This will create a new template visible under VM Templates in Folders, ready for future use.
-</p>
-
-
-
 </div>
-
-</div>
-</div>
-<div class="topic nested0" aria-labelledby="ariaid-title40" id="edit-group-var">
-<h1 class="title topictitle1" id="ariaid-title40">Configuring the solution components</h1>
+<div class="topic nested0" aria-labelledby="ariaid-title35" id="edit-group-var">
+<h1 class="title topictitle1" id="ariaid-title35">Configuring the core components</h1>
 
 <div class="body">
 <p class="p">Once you have prepared your environment, you need to download the solution software and 
@@ -2677,8 +2475,8 @@ edit the configuration variables to match your setup.
 
 
 
-<div class="topic nested1" aria-labelledby="ariaid-title41" id="ansible-config">
-<h2 class="title topictitle2" id="ariaid-title41">Ansible configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title36" id="ansible-config">
+<h2 class="title topictitle2" id="ariaid-title36">Ansible configuration</h2>
 
 <div class="body">
 <ol class="ol">    
@@ -2697,19 +2495,14 @@ edit the configuration variables to match your setup.
 </li>
 
     
-<li class="li"><p class="p">Change to the <code class="ph codeph">ops</code> directory: </p>
-
-
-<pre class="pre codeblock"><code># cd ops</code></pre>
-</li>
-    
+ 
 </ol>
 
 
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> All subsequent file names are relative to the <code class="ph codeph">ops</code> directory. For example
-<code class="ph codeph">vm_hosts</code> is located in <code class="ph codeph">~/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/ops</code> and
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> All subsequent file names are relative to the <code class="ph codeph"><span class="ph"><span class="keyword">Docker-SimpliVity</span></span></code> directory. For example
+<code class="ph codeph">vm_hosts</code> is located in the top-level <code class="ph codeph">~/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span></code> while
 <code class="ph codeph">group_vars/vars</code> corresponds to
-<code class="ph codeph">~/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/ops/groups_vars/vars</code>.</div><hr />
+<code class="ph codeph">~/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/groups_vars/vars</code>.</div><hr />
 
 
 
@@ -2760,12 +2553,12 @@ the playbooks.</p>
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title42" id="edit-inventory">
-<h2 class="title topictitle2" id="ariaid-title42">Editing the inventory</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title37" id="edit-inventory">
+<h2 class="title topictitle2" id="ariaid-title37">Editing the inventory</h2>
 
 <div class="body">
 <p class="p">The inventory is the file named <code class="ph codeph">vm_hosts</code> in the
-<code class="ph codeph">~<span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/ops</code> directory. You need to edit this file to
+<code class="ph codeph">~/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span></code> directory. You need to edit this file to
 describe the configuration you want to deploy.</p>
 
 
@@ -2888,42 +2681,42 @@ mandatory unless otherwise specified.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="edit-inventory__variables-local-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 7. </span>Variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5274">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5277">Scope</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5280">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5341">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5344">Scope</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5347">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5274 ">ip_addr</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5277 ">Node</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5280 ">IP address in CIDR format to be given to a node</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5341 ">ip_addr</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5344 ">Node</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5347 ">IP address in CIDR format to be given to a node</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5274 ">esxi_host</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5277 ">Node</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5280 ">ESXi host where the node will be deployed. If the cluster is configured with DRS, this option will be overridden</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5341 ">esxi_host</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5344 ">Node</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5347 ">ESXi host where the node will be deployed. If the cluster is configured with DRS, this option will be overridden</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5274 ">cpus</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5277 ">Node/Group</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5280 ">Number of CPUs to assign to a VM or a group of VMs</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5341 ">cpus</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5344 ">Node/Group</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5347 ">Number of CPUs to assign to a VM or a group of VMs</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5274 ">ram</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5277 ">Node/Group</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5280 ">Amount of RAM in MB to assign to a VM or a group of VMs</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5341 ">ram</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5344 ">Node/Group</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5347 ">Amount of RAM in MB to assign to a VM or a group of VMs</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5274 ">disk2_usage</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5277 ">Node/Group</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5280 ">Size of the second disk in GB to attach to a VM or a group of VMs. This variable is only mandatory on Docker nodes (UCP, DTR, worker) and NFS node. It is not required for the logger node or the load balancers.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5341 ">disk2_usage</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5344 ">Node/Group</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5347 ">Size of the second disk in GB to attach to a VM or a group of VMs. This variable is only mandatory on Docker nodes (UCP, DTR, worker) and NFS node. It is not required for the logger node or the load balancers.</td>
 </tr>
   
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5274 ">node_policy</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5277 ">Node/Group</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5280 ">HPE Simplivity backup policy to assign to a VM or a group of VMs. The name has to match 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5341 ">node_policy</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5344 ">Node/Group</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5347 ">HPE SimpliVity backup policy to assign to a VM or a group of VMs. The name has to match 
     one of the backup policies defined in the <code class="ph codeph">group_vars/vars</code> file described in the next section.</td>
 </tr>    
 		    
@@ -2935,8 +2728,8 @@ mandatory unless otherwise specified.</p>
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title43" id="vmware-config">
-<h2 class="title topictitle2" id="ariaid-title43">VMware configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title38" id="vmware-config">
+<h2 class="title topictitle2" id="ariaid-title38">VMware configuration</h2>
 
 <div class="body">
 <p class="p">All VMware-related variables are mandatory and are described in <a class="xref" href="#vmware-config__vmware-variables-table-conref">Table 8</a>.</p>
@@ -2948,105 +2741,105 @@ mandatory unless otherwise specified.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="vmware-config__vmware-variables-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 8. </span>VMware variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5402">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5405">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5408">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5469">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5472">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5475">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">vcenter_hostname</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">IP or hostname of the vCenter appliance</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">vcenter_hostname</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">IP or hostname of the vCenter appliance</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">vcenter_username</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">Username to log in to the vCenter appliance. It might include a domain, for
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">vcenter_username</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">Username to log in to the vCenter appliance. It might include a domain, for
 example, '<code class="ph codeph">administrator@vsphere.local</code>'.</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">vcenter_password</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 "><strong class="ph b">group_vars/vault</strong></td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">The password for the <code class="ph codeph">vcenter_username</code> user above.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">vcenter_password</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 "><strong class="ph b">group_vars/vault</strong></td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">The password for the <code class="ph codeph">vcenter_username</code> user above.</td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">vcenter_validate_certs</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">‘no’</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">vcenter_validate_certs</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">‘no’</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">datacenter</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">Name of the datacenter where the environment will be provisioned</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">datacenter</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">Name of the datacenter where the environment will be provisioned</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">vm_username</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">Username to log into the VMs. It needs to match the one from the VM Template, so
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">vm_username</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">Username to log into the VMs. It needs to match the one from the VM Template, so
 unless you have created a user, you must use 'root'.</td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">vm_password</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 "><strong class="ph b">group_vars/vault</strong></td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">The password for the <code class="ph codeph">vm_username</code> user above.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">vm_password</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 "><strong class="ph b">group_vars/vault</strong></td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">The password for the <code class="ph codeph">vm_username</code> user above.</td>
 </tr>
     
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">vm_template</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">Name of the RHEL VM Template to be use. Note that this is the name from a vCenter
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">vm_template</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">Name of the RHEL VM Template to be use. Note that this is the name from a vCenter
 perspective, not the hostname.</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">folder_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">vCenter folder to deploy the VMs. If you do not wish to deploy in a particular
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">folder_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">vCenter folder to deploy the VMs. If you do not wish to deploy in a particular
 folder, the value should be <code class="ph codeph">/</code>. Note: If you want to deploy in a
 specific folder, you need to create this folder in the inventory of the selected
 datacenter before starting the deployment.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">datastores</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">List of datastores to be used, in list format, i.e.
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">datastores</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">List of datastores to be used, in list format, i.e.
 ['<code class="ph codeph">Datastore1</code>','<code class="ph codeph">Datastore2</code>'...]. This or these
 datastore(s) must exist before you run the playbooks. Note that all the datastores should be mounted on all the ESXi hosts.
 
 
-<p class="p">Please note that from a HPE Simplivity perspective, it is a best practice to use only one Datastore. 
+<p class="p">Please note that from a <span class="ph"><span class="keyword">HPE SimpliVity</span></span> perspective, it is a best practice to use only one Datastore. 
     Using more than one will not provide any advantages in terms of reliability and will add additional complexity. </p>
 
 
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">disk2</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">UNIX® name of the second disk for the Docker VMs. Typically
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">disk2</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">UNIX® name of the second disk for the Docker VMs. Typically
 <code class="ph codeph">/dev/sdb</code></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">disk2_part</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">UNIX name of the partition of the second disk for the Docker VMs. Typically
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">disk2_part</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">UNIX name of the partition of the second disk for the Docker VMs. Typically
 <code class="ph codeph">/dev/sdb1</code></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">vsphere_plugin_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 ">Version of the vSphere plugin for Docker. The default is 0.21.2 which is the latest
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">vsphere_plugin_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 ">Version of the vSphere plugin for Docker. The default is 0.21.2 which is the latest
 version at the time of writing this document. The version of the plugin should match
 the version of the vSphere Installation Bundle (VIB) that you installed on the ESXi
 servers.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5402 ">vm_portgroup</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5405 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5408 "><p class="p">Used by the playbook <code class="ph codeph">create_vms.yml</code>, this variable is used to
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5469 ">vm_portgroup</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5472 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5475 "><p class="p">Used by the playbook <code class="ph codeph">create_vms.yml</code>, this variable is used to
 specify the portgroup connected to the network that connects all the VMs. There is
 currently only one network. </p>
 
@@ -3066,48 +2859,48 @@ In addition, you should make sure that the adapter specifies <code class="ph cod
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title44" id="svt-variables-config">
-<h2 class="title topictitle2" id="ariaid-title44">HPE SimpliVity configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title39" id="svt-variables-config">
+<h2 class="title topictitle2" id="ariaid-title39"><span class="ph"><span class="keyword">HPE SimpliVity</span></span> configuration</h2>
 
 <div class="body">
-<p class="p">All HPE SimpliVity-related variables are mandatory and are described in <a class="xref" href="#svt-variables-config__svt-variables-table-conref">Table 9</a>.</p>
+<p class="p">All <span class="ph"><span class="keyword">HPE SimpliVity</span></span>-related variables are mandatory and are described in <a class="xref" href="#svt-variables-config__svt-variables-table-conref">Table 9</a>.</p>
 
 
 
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="svt-variables-config__svt-variables-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 9. </span>HPE SimpliVity variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="svt-variables-config__svt-variables-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 9. </span><span class="ph"><span class="keyword">HPE SimpliVity</span></span> variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5665">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5668">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5671">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5746">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5749">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5752">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5665 ">simplivity_username</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5668 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5671 ">Username to log in to the HPE SimpliVity Omnistack appliances. It might include a domain, for example, <code class="ph codeph">administrator@vsphere.local</code>. 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5746 ">simplivity_username</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5749 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5752 ">Username to log in to the <span class="ph"><span class="keyword">HPE SimpliVity</span></span> Omnistack appliances. It might include a domain, for example, <code class="ph codeph">administrator@vsphere.local</code>. 
 The corresponding password is stored in the variable named <code class="ph codeph">simplivity_password</code>.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5665 ">simplivity_password</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5668 ">group_vars/vault</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5671 ">The password for the <code class="ph codeph">simplivity_username</code> user.</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5746 ">simplivity_password</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5749 ">group_vars/vault</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5752 ">The password for the <code class="ph codeph">simplivity_username</code> user.</td>  
 </tr>
  
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5665 ">omnistack_ovc</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5668 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5671 ">List of Omnistack hosts to be used, in list format, i.e. <code class="ph codeph">[‘omni1.local’,’onmi2.local’...]</code>. 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5746 ">omnistack_ovc</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5749 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5752 ">List of Omnistack hosts to be used, in list format, i.e. <code class="ph codeph">[‘omni1.local’,’onmi2.local’...]</code>. 
   If your OmniStack virtual machines do not have their names registered in DNS, you can use their IP addresses.</td>
 </tr>
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5665 ">backup_policies</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5668 ">group_vars/vault</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5671 ">List of dictionaries containing the different backup policies to be used along with the scheduling information. Any number of backup policies can be created and they need to match the node_policy variables defined in the inventory. Times are indicated in minutes. All month calculations use a 30-day month.
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5746 ">backup_policies</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5749 ">group_vars/vault</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5752 ">List of dictionaries containing the different backup policies to be used along with the scheduling information. Any number of backup policies can be created and they need to match the node_policy variables defined in the inventory. Times are indicated in minutes. All month calculations use a 30-day month.
   All year calculations use a 365-day year. The format is as follows:
 
 <pre class="pre codeblock"><code>
@@ -3127,16 +2920,16 @@ backup_policies:
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5665 ">dummy_vm_prefix</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5668 ">group_vars/vault</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5671 ">In order to be able to backup the Docker volumes, a number of "dummy" VMs need to spin up. 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5746 ">dummy_vm_prefix</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5749 ">group_vars/vault</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5752 ">In order to be able to backup the Docker volumes, a number of "dummy" VMs need to spin up. 
   This variable will set a recognizable prefix for them.</td>  
 </tr>
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5665 ">docker_volumes_policy</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5668 ">group_vars/vault</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5671 ">Backup policy to use for the Docker Volumes.</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5746 ">docker_volumes_policy</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5749 ">group_vars/vault</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5752 ">Backup policy to use for the Docker Volumes.</td>  
 </tr>  
   
   
@@ -3148,7 +2941,7 @@ backup_policies:
 <div class="section"><h3 class="title sectiontitle">Configure dummy VMs to backup Docker volumes</h3>
 
 <p class="p">The playbook <code class="ph codeph">config_dummy_vms_for_docker_volumes_backup.yml</code> ensures that you can back up Docker volumes 
-  that have been created using the vSphere plugin (vDVS) in HPE SimpliVity. There is not a straight forward way to do this, 
+  that have been created using the vSphere plugin (vDVS) in <span class="ph"><span class="keyword">HPE SimpliVity</span></span>. There is not a straight forward way to do this, 
   so you need to use a workaround. Since all Docker volumes are going to be stored in the <code class="ph codeph">dockvols</code> folder 
   in the datastore(s), you need to create a ‘dummy’ VM per datastore. The <code class="ph codeph">vmx</code>, <code class="ph codeph">vmsd</code> 
   and <code class="ph codeph">vmkd</code> files from this VMs will have to be inside the dockvols folder, 
@@ -3158,18 +2951,18 @@ backup_policies:
    
 </div>
 
-<div class="section"><h3 class="title sectiontitle">Configure SimpliVity backups</h3>
+<div class="section"><h3 class="title sectiontitle">Configure <span class="ph"><span class="keyword">HPE SimpliVity</span></span> backups</h3>
   
 <p class="p">The playbook <code class="ph codeph">config_simplivity_backups.yml</code> configures the defined backup policies in the 
-  group variables file in HPE SimpliVity and will include all Docker nodes plus the ‘dummy’ VMs created before, 
-  so the existing Docker volumes are also taken into account. The playbook will mainly use the HPE SimpliVity REST API 
+  group variables file in <span class="ph"><span class="keyword">HPE SimpliVity</span></span> and will include all Docker nodes plus the ‘dummy’ VMs created before, 
+  so the existing Docker volumes are also taken into account. The playbook will mainly use the HPE <span class="ph"><span class="keyword">HPE SimpliVity</span></span> REST API 
   to perform these tasks. A reference to the REST API can be found at: 
   <a class="xref" href="https://api.simplivity.com/rest-api_getting-started_overview/rest-api_getting-started_overview_rest-api-overview.html" target="_blank">https://api.simplivity.com/rest-api_getting-started_overview/rest-api_getting-started_overview_rest-api-overview.html</a> </p>
   
 </div>
 
 
-<div class="section"><h3 class="title sectiontitle">VM placement and number of HPE SimpliVity servers in the cluster</h3>
+<div class="section"><h3 class="title sectiontitle">VM placement and number of <span class="ph"><span class="keyword">HPE SimpliVity</span></span> servers in the cluster</h3>
   
 
 <p class="p">The placement of the various VMs deployed by the playbooks depends on whether DRS is enabled or not:</p>
@@ -3191,7 +2984,7 @@ The playbooks have only been tested with three nodes in the ESX cluster, but the
   
 
 <p class="p">The default <code class="ph codeph">vm_hosts</code> file in the solution GitHub repository corresponds to a deployment 
-  on a 3-node HPE SimpliVity cluster. For each Ansible host in the inventory, you use the <code class="ph codeph">esxi_hosts</code> 
+  on a 3-node <span class="ph"><span class="keyword">HPE SimpliVity</span></span> cluster. For each Ansible host in the inventory, you use the <code class="ph codeph">esxi_hosts</code> 
   variable to specify on which ESX hosts the VM should be placed. 
   The following code extract shows 3 UCP VMs distributed across the three members of the cluster. 
   This is the recommended placement as you don’t want to one node to host two UCP VMs as a failure of 
@@ -3290,8 +3083,8 @@ which may break the earlier placement guideline.
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title45" id="network-config">
-<h2 class="title topictitle2" id="ariaid-title45">Networking configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title40" id="network-config">
+<h2 class="title topictitle2" id="ariaid-title40">Networking configuration</h2>
 
 <div class="body">
 <p class="p">All network-related variables are mandatory and are described in <a class="xref" href="#network-config__network-config-table-conref">Table 10</a>.</p>
@@ -3302,38 +3095,38 @@ which may break the earlier placement guideline.
 
 <table cellpadding="4" cellspacing="0" summary="" id="network-config__network-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 10. </span>Network variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5951">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5954">File</th>    
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e5957">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6061">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6064">File</th>    
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6067">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5951 ">nic_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5954 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5957 ">Name of the device, for RHEL this is typically
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6061 ">nic_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6064 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6067 ">Name of the device, for RHEL this is typically
 <code class="ph codeph">ens192</code> and it is recommended to leave it as
 is.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5951 ">gateway</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5954 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5957 ">IP address of the gateway to be used</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6061 ">gateway</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6064 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6067 ">IP address of the gateway to be used</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5951 ">dns</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5954 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5957 ">List of DNS servers to be used, in list format, i.e.
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6061 ">dns</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6064 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6067 ">List of DNS servers to be used, in list format, i.e.
 ['<code class="ph codeph">10.10.173.1</code>','<code class="ph codeph">10.10.173.2</code>'...]</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5951 ">domain_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5954 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5957 ">Domain name for your Virtual Machines</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6061 ">domain_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6064 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6067 ">Domain name for your Virtual Machines</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5951 ">ntp_server</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5954 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e5957 ">List of NTP servers to be used, in list format, i.e.
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6061 ">ntp_server</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6064 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6067 ">List of NTP servers to be used, in list format, i.e.
 ['<code class="ph codeph">1.2.3.4</code>','<code class="ph codeph">0.us.pool.net.org</code>'...]</td>
 </tr>
 </tbody></table>
@@ -3344,8 +3137,8 @@ is.</td>
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title46" id="environment-config">
-<h2 class="title topictitle2" id="ariaid-title46">Environment configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title41" id="environment-config">
+<h2 class="title topictitle2" id="ariaid-title41">Environment configuration</h2>
 
 <div class="body">
 <p class="p">All Environment-related variables are described in
@@ -3357,15 +3150,15 @@ is.</td>
 
 <table cellpadding="4" cellspacing="0" summary="" id="environment-config__env-variables-table" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 11. </span>Environment variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="" valign="top" id="d29e6078">Variable</th>
-<th class="entry nocellnorowborder" align="" valign="top" id="d29e6081">File</th>    
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6084">Description</th>
+<th class="entry nocellnorowborder" align="" valign="top" id="d29e6188">Variable</th>
+<th class="entry nocellnorowborder" align="" valign="top" id="d29e6191">File</th>    
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6194">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="" valign="top" headers="d29e6078 ">env</td>
-<td class="entry nocellnorowborder" align="" valign="top" headers="d29e6081 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6084 ">Dictionary containing all environment variables. It contains
+<td class="entry nocellnorowborder" align="" valign="top" headers="d29e6188 ">env</td>
+<td class="entry nocellnorowborder" align="" valign="top" headers="d29e6191 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6194 ">Dictionary containing all environment variables. It contains
 three entries described below. Please leave  the proxy related
 settings empty if not required:<ul class="ul">
 <li class="li"><code class="ph codeph">http_proxy</code>: HTTP proxy URL, such as <code class="ph codeph">'http://15.184.4.2:8080'</code>. This variable defines
@@ -3388,8 +3181,8 @@ such as <code class="ph codeph">'localhost,127.0.0.1,.cloudra.local,10.10.174.'<
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title47" id="docker-config">
-<h2 class="title topictitle2" id="ariaid-title47">Docker configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title42" id="docker-config">
+<h2 class="title topictitle2" id="ariaid-title42">Docker configuration</h2>
 
 <div class="body">
 <p class="p">All Docker-related variables are mandatory and are described in <a class="xref" href="#docker-config__docker-config-table-conref">Table 12</a>.</p>
@@ -3401,22 +3194,22 @@ such as <code class="ph codeph">'localhost,127.0.0.1,.cloudra.local,10.10.174.'<
 
 <table cellpadding="4" cellspacing="0" summary="" id="docker-config__docker-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 12. </span>Docker variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6167">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6170">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6173">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6277">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6280">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6283">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6167 ">docker_ee_url</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6170 "><strong class="ph b">group_vars/vault</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6173 ">Note: This is a private link to your Docker EE subscription.  The value for
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6277 ">docker_ee_url</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6280 "><strong class="ph b">group_vars/vault</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6283 ">Note: This is a private link to your Docker EE subscription.  The value for
 <code class="ph codeph">docker_ee_url</code> is the URL documented at the
 following address: <a class="xref" href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/" target="_blank">https://docs.docker.com/engine/installation/linux/docker-ee/rhel/</a>.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6167 ">docker_ee_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6170 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6173 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6277 ">docker_ee_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6280 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6283 ">
 <ul class="ul">
 <li class="li">If this variable is omitted, <code class="ph codeph">install_docker.yml</code> will install the latest stable version of docker-ee available in the repo specified with <code class="ph codeph">docker_ee_url</code></li>
 
@@ -3429,47 +3222,53 @@ following address: <a class="xref" href="https://docs.docker.com/engine/installa
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6167 ">rhel_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6170 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6173 ">For the Docker installation, this sets the version of your RHEL OS, such as <code class="ph codeph">7.5</code>. The
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6277 ">rhel_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6280 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6283 ">For the Docker installation, this sets the version of your RHEL OS, such as <code class="ph codeph">7.5</code>. The
 playbooks were tested with  RHEL 7.4 and 7.5.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6167 ">dtr_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6170 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6173 ">Version of the Docker DTR you wish to install. You can use a
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6277 ">dtr_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6280 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6283 ">Version of the Docker DTR you wish to install. You can use a
 numeric version or <code class="ph codeph">latest</code> for the most recent one.
 The playbooks were tested with 2.5.3.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6167 ">ucp_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6170 ">group_vars/vars</td>      
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6173 ">Version of the Docker UCP you wish to install. You can use a
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6277 ">ucp_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6280 ">group_vars/vars</td>      
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6283 ">Version of the Docker UCP you wish to install. You can use a
 numeric version or <code class="ph codeph">latest</code> for the most recent one.
 The playbooks were tested with UCP 3.0.4.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6167 ">images_folder</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6170 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6173 ">Directory in the NFS server that will be mounted in the DTR nodes
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6277 ">images_folder</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6280 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6283 ">Directory in the NFS server that will be mounted in the DTR nodes
 and that will host your Docker images.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6167 ">license_file</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6170 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6173 ">Full path to your Docker EE license file on your Ansible host. The license file is available from the Docker
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6277 ">license_file</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6280 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6283 ">Full path to your Docker EE license file on your Ansible host. The license file is available from the Docker
 Store</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6167 ">ucp_username</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6170 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6173 ">Username of the administrator user for UCP and DTR, typically
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6277 ">ucp_username</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6280 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6283 ">Username of the administrator user for UCP and DTR, typically
 <code class="ph codeph">admin</code>.</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6167 ">ucp_password</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6170 "><strong class="ph b">group_vars/vault</strong></td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6173 ">The password for the <code class="ph codeph">ucp_username</code> account.</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6277 ">ucp_password</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6280 "><strong class="ph b">group_vars/vault</strong></td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6283 ">The password for the <code class="ph codeph">ucp_username</code> account.</td> 
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6277 ">docker_storage_driver</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6280 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6283 ">Storage driver for Docker nodes. Accepted values are <code class="ph codeph">overlay2</code> (the default) and <code class="ph codeph">devicemapper</code>.</td> 
 </tr>
 
 </tbody></table>
@@ -3482,8 +3281,8 @@ Store</td>
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title48" id="orchestrator-config">
-<h2 class="title topictitle2" id="ariaid-title48">Orchestrator configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title43" id="orchestrator-config">
+<h2 class="title topictitle2" id="ariaid-title43">Orchestrator configuration</h2>
 
 <div class="body">
 
@@ -3544,8 +3343,8 @@ you must migrate them manually. More information is available in the Docker docu
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title49" id="k8s-config">
-<h2 class="title topictitle2" id="ariaid-title49">Kubernetes configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title44" id="k8s-config">
+<h2 class="title topictitle2" id="ariaid-title44">Kubernetes configuration</h2>
 
 <div class="body">
   
@@ -3586,8 +3385,8 @@ how to configure Kubernetes Persistent Volumes.</p>
   
   </div>
 
-<div class="topic nested2" aria-labelledby="ariaid-title50" id="k8s-persistent-volume-config">
-<h3 class="title topictitle3" id="ariaid-title50">Kubernetes Persistent Volume configuration</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title45" id="k8s-persistent-volume-config">
+<h3 class="title topictitle3" id="ariaid-title45">Kubernetes Persistent Volume configuration</h3>
 
 <div class="body">
     
@@ -3601,40 +3400,40 @@ how to configure Kubernetes Persistent Volumes.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="k8s-persistent-volume-config__k8s-persistent-volume-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 13. </span>Kubernetes Persistent Volume variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6491">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6494">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6497">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6619">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6622">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6625">Description</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6491 ">nfs_provisioner_role</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6494 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6497 ">Name of the role to create, for example, <code class="ph codeph">nfs-provisioner-runner</code>.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6619 ">nfs_provisioner_role</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6622 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6625 ">Name of the role to create, for example, <code class="ph codeph">nfs-provisioner-runner</code>.</td>
 </tr>   
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6491 ">nfs_provisioner_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6494 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6497 ">Name of the provisioner, for example, 	<code class="ph codeph">hpe.com/nfs</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6619 ">nfs_provisioner_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6622 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6625 ">Name of the provisioner, for example, 	<code class="ph codeph">hpe.com/nfs</code></td>
 </tr>
  
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6491 ">nfs_provisioner_storage_class_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6494 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6497 ">Name of the storage class to create, for example, 	<code class="ph codeph">nfs</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6619 ">nfs_provisioner_storage_class_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6622 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6625 ">Name of the storage class to create, for example, 	<code class="ph codeph">nfs</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6491 ">nfs_provisioner_server_ip</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6494 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6497 ">IP address (or FQDN) of your external NFS server, for example, 	<code class="ph codeph">hpe-nfs.cloudra.local</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6619 ">nfs_provisioner_server_ip</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6622 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6625 ">IP address (or FQDN) of your external NFS server, for example, 	<code class="ph codeph">hpe-nfs.cloudra.local</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6491 ">nfs_provisioner_server_share</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6494 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6497 ">Name of the NFS share where all the persistent volume data will be stored, for example, 	<code class="ph codeph">/k8s</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6619 ">nfs_provisioner_server_share</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6622 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6625 ">Name of the NFS share where all the persistent volume data will be stored, for example, 	<code class="ph codeph">/k8s</code></td>
 </tr>
 
 
@@ -3663,8 +3462,835 @@ how to configure Kubernetes Persistent Volumes.</p>
 
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title51" id="windows-config">
-<h2 class="title topictitle2" id="ariaid-title51">Windows configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title46" id="edit-vault">
+<h2 class="title topictitle2" id="ariaid-title46">Protecting sensitive information</h2>
+
+<div class="body">
+<p class="p">A vault file is used to protect any sensitive variables that should not appear in clear text in your
+<code class="ph codeph">group_vars/vars</code> file. The vault file will be encrypted and will require a password to be entered before
+it can be read or updated.</p>
+
+    
+<p class="p">A sample vault file is provided named <code class="ph codeph">group_vars/vault.sample</code> that you can
+use as a model for your vault file. To create a vault, you create a new file called
+<code class="ph codeph">group_vars/vault</code> and add entries similar to:</p>
+
+
+<pre class="pre codeblock"><code>---
+docker_ee_url: 'your_url_here'
+vcenter_password: 'xxxx'
+vm_password: 'xxxx'
+
+simplivity_password: 'xxx'
+ucp_password: 'zzzz'
+win_password: 'yourpass'
+sysdig_access_key: 'enter_sysdig_access_key'
+rhn_orgid: "YourOrgId"
+rhn_key: "YourActivationKey"
+#password for the splunk universal forwarder. Must meet password complexiy requirement (see splunk doc)
+splunk_uf_password: 'YourPa$$word12'
+</code></pre>
+
+<p class="p"><code class="ph codeph">rhn_orgid</code> and <code class="ph codeph">rhn_key</code> are the credentials needed to
+subscribe the virtual machines with Red Hat Customer Portal. For more information regarding
+activation keys, see the following URL: <a class="xref" href="https://access.redhat.com/articles/1378093" target="_blank">https://access.redhat.com/articles/1378093</a></p>
+
+    
+<p class="p">To encrypt the vault you need to run the following command:</p>
+
+
+<pre class="pre codeblock"><code># ansible-vault encrypt group_vars/vault</code></pre>
+
+<p class="p">You will be prompted for a password that will decrypt the vault when required. You can
+update the values in your vault by running:</p>
+
+
+<pre class="pre codeblock"><code># ansible-vault edit group_vars/vault</code></pre>
+
+<p class="p">For Ansible to be able to read the vault, you need to specify a file where the password
+is stored, for instance, in a file called <code class="ph codeph">.vault_pass</code>. Once the file is
+created, take the following precautions to avoid illegitimate access to this file:</p>
+
+<ol class="ol">
+<li class="li"> Change the permissions so only <code class="ph codeph">root</code> can read it using <code class="ph codeph">#
+chmod 600 .vault_pass</code>
+</li>
+
+<li class="li"> Add the file to your <code class="ph codeph">.gitignore</code> file if you are using a Git repository to manage your playbooks. </li>
+
+</ol>
+
+<p class="p"></p>
+
+    
+<p class="p">When you use a vault, you must specify the password file every time on the command line, for example,</p>
+   
+    
+<pre class="pre codeblock"><code>
+# ansible-playbook -i vm_hosts site.yml <strong class="ph b">--vault-password-file .vault_pass</strong>
+</code></pre>    
+    
+</div>
+
+
+
+
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title47" id="inventory-group-variables">
+<h2 class="title topictitle2" id="ariaid-title47">Inventory group variables</h2>
+
+<div class="body">
+  
+<p class="p">Additional configuration files for each group in the inventory are available, including <code class="ph codeph">group_vars/vms.yml</code>,
+<code class="ph codeph">group_vars/ucp.yml</code>, <code class="ph codeph">group_vars/dtr.yml</code>, <code class="ph codeph">group_vars/worker.yml</code> 
+  and <code class="ph codeph">group_vars/nfs.yml</code>.
+  
+</p>
+
+  
+<p class="p">These group files facilitate more sophisticated settings, such as additional drives and additional network interfaces. For example, here
+  is the <code class="ph codeph">group_vars/nfs.yml</code> file.
+</p>
+   
+
+<pre class="pre codeblock"><code>networks:
+  - name:  '{{ vm_portgroup }}'
+    ip:  "{{ ip_addr | ipaddr('address') }}"
+    netmask: "{{ ip_addr | ipaddr('netmask') }}"
+    gateway: "{{ gateway }}"
+ 
+disks_specs:
+  - size_gb:  '{{ disk1_size }}'
+    type: thin
+    datastore: "{{ datastores | random }}"
+  - size_gb: '{{ disk2_size }}'
+    type: thin
+    datastore: "{{ datastores | random }}"
+  - size_gb: 10
+    type: thin
+    datastore: "{{ datastores | random }}"</code></pre>
+
+
+<p class="p">In this example, the size of the first two drives is specified using the values of the variables <code class="ph codeph">disk1_size</code> and <code class="ph codeph">disk2_size</code>  
+  that are declared in the <code class="ph codeph">group_vars/vars</code> file. This maintains compatability with <code class="ph codeph">vm_hosts</code> inventories 
+  from the previous release of the playbooks. However, it is possible to provide explicit values, depending on your requirements, for the
+individual UCP, DTR, worker or NFS VMs. For example, you may want to increase the size of the second disk for the NFS VM as this is used
+to store the DTR images, so the default value of 500GB may not be sufficient to meet your needs. </p>
+
+ 
+<p class="p">In this release, support has been added for configuring a third drive that can be used to hold Kubernetes persistent volume data.
+The default size (10GB) is set low as the use of the NFS VM for storing persistent volume data is only considered suitable 
+for demo purposes and should not be used in a production environment.
+</p>
+
+  
+<p class="p">In the following example, the <code class="ph codeph">group_vars/nfs.yml</code> has been modified to 
+configure the NFS VM  with a 50GB boot disk, a 500GB drive for DTR images and a 800GB drive for Kubernetes persistent volumes data. 
+</p>
+  
+  
+<pre class="pre codeblock"><code>
+networks:
+  - name:  '{{ vm_portgroup }}'
+    ip:  "{{ ip_addr | ipaddr('address') }}"
+    netmask: "{{ ip_addr | ipaddr('netmask') }}"
+    gateway: "{{ gateway }}"
+ 
+disks_specs:
+  - size_gb:  <strong class="ph b">50</strong>
+    type: thin
+    datastore: "{{ datastores | random }}"
+  - size_gb: <strong class="ph b">500</strong>
+    type: thin
+    datastore: "{{ datastores | random }}"
+  - size_gb: <strong class="ph b">800</strong>
+    type: thin
+    datastore: "{{ datastores | random }}"</code></pre>
+
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> The number of drives and the purpose of each drive is determined by the role of the VM and the specific playbooks
+  that uses the information. The first disk is always used as the boot disk, irrespective of VM role, while the purpose of the 
+  second or third disk is specific to the role.</div><hr />
+
+  
+</div>
+
+</div>
+</div>
+<div class="topic nested0" aria-labelledby="ariaid-title48" id="playbooks-overview">
+<h1 class="title topictitle1" id="ariaid-title48">Overview of the playbooks</h1>
+
+<div class="body">
+
+<p class="p">The Ansible playbooks are available to download at 
+<span class="ph"><a class="xref" href="https://github.com/HewlettPackard/Docker-SimpliVity" target="_blank"><span class="keyword">https://github.com/HewlettPackard/Docker-SimpliVity</span></a></span>. 
+Once you have cloned the repository, change directory to <code class="ph codeph">/root/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span></code>.</p>
+
+
+
+<p class="p">You can use the playbook <code class="ph codeph">site.yml</code> as the day 0 playbook to deploy the solution.
+It is simply a wrapper around a number of required and optional playbooks that allow you to configure 
+the deployment to your needs. 
+</p>
+
+    
+<p class="p">To start a deployment, use the following command:</p>
+
+
+<pre class="pre codeblock"><code># ansible-playbook -i vm_hosts site.yml --vault-password-file .vault_pass</code></pre>
+
+    
+<p class="p">The playbooks should run for approximately 35-40 minutes for the default deployment with 3 UCP, 3 DTR and 3 Linux worker nodes
+    (depending on your server specifications and the size of your environment).</p>
+
+   
+</div>
+
+
+
+<div class="topic nested1" aria-labelledby="ariaid-title49" id="core-infrastructure">
+<h2 class="title topictitle2" id="ariaid-title49">Core components</h2>
+
+<div class="body">
+    
+<p class="p">The playbooks for deploying th core components  are described in the following sections:</p>
+
+
+<ul class="ul">
+<li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
+
+<li class="li"><a class="xref" href="#unique_1941740498">Provisioning load balancers for UCP and DTR</a></li>
+
+<li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
+
+<li class="li"><a class="xref" href="#add-rhel-workers">Deploying RHEL workers</a></li>
+
+</ul>
+
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title50" id="optional-playbooks">
+<h2 class="title topictitle2" id="ariaid-title50">Optional components</h2>
+
+<div class="body">
+
+<p class="p">The playbooks for deploying optional components are described in the following sections:</p>
+   
+<ul class="ul">
+<li class="li"><a class="xref" href="#add-windows-workers">Playbooks for adding Windows workers</a></li>
+
+<li class="li"><a class="xref" href="#install-sysdig">Playbooks for installing Sysdig on RHEL</a></li>
+
+<li class="li"><a class="xref" href="#install-splunk">Playbooks for installing Splunk</a></li>
+   
+<li class="li"><a class="xref" href="#prometheus-grafana">Deploying Prometheus and Grafana on Docker RHEL nodes</a></li>
+
+</ul>
+
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title51" id="backup-restore-playbooks">
+<h2 class="title topictitle2" id="ariaid-title51">Backup and restore playbooks</h2>
+
+    
+<div class="body">
+    
+<div class="section">
+<p class="p">Best practices and procedures are described in the section <a class="xref" href="#backup-restore">Backup and restore</a>. The following playbooks are used to perform backups:</p>
+
+    
+<ul class="ul">
+<li class="li"><code class="ph codeph">playbooks/backup_swarm.yml</code> is used to back up the swarm data</li>
+
+<li class="li"><code class="ph codeph">playbooks/backup_ucp.yml</code> is used to back up UCP</li>
+
+<li class="li"><code class="ph codeph">playbooks/backup_dtr_meta.yml</code> is used to back up DTR metadata</li>
+
+<li class="li"><code class="ph codeph">playbooks/backup_dtr_images.yml</code> is used to back up DTR images</li>
+
+</ul>
+
+
+
+</div>
+
+    
+<div class="section">
+<p class="p">The following playbooks are used to restore the system:</p>
+
+    
+<ul class="ul">
+<li class="li"><code class="ph codeph">playbooks/restore_dtr_images.yml</code> is used to restore DTR images</li>
+
+<li class="li"><code class="ph codeph">playbooks/restore_dtr_metadata.yml</code> is used to restore DTR metadata</li>
+
+<li class="li"><code class="ph codeph">playbooks/restore_ucp.yml</code> is used to restore UCP</li>
+
+</ul>
+
+    
+    
+</div>
+    
+    
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title52" id="convenience-playbooks">
+<h2 class="title topictitle2" id="ariaid-title52">Convenience playbooks</h2>
+
+    
+<div class="body">
+ 
+<div class="section">
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">playbooks/clean_all.yml</code> powers off and deletes all VMs in your inventory.</li>
+    
+<li class="li"><code class="ph codeph">playbooks/distribute_keys.yml</code> distributes public keys between all nodes, to allow each node to 
+password-less log in to every other node. As this is not essential and can be regarded as a security risk 
+(a worker node probably should not be able to log in to a UCP node, for instance), this playbook is commented out in
+ <code class="ph codeph">site.yml</code> by default.</li>
+    
+</ul>
+
+    
+</div>
+ 
+</div>
+        
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title53" id="convenience-scripts">
+<h2 class="title topictitle2" id="ariaid-title53">Convenience scripts</h2>
+
+    
+<div class="body">
+ 
+<div class="section">
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">backup.sh</code> can be used to take a backup of the swarm, UCP, DTR metadata and the DTR images in one go.</li>
+
+<li class="li"><code class="ph codeph">restore_dtr.sh</code> can be used to restore DTR metadata and DTR images.</li>
+
+<li class="li"><code class="ph codeph">scale_worker.sh</code> can be used to scale the worker nodes.</li>
+
+</ul>
+
+
+ 
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="topic nested0" aria-labelledby="ariaid-title54" id="running-playbooks">
+<h1 class="title topictitle1" id="ariaid-title54">Deploying the core components</h1>
+
+<div class="body">
+<div class="section" id="running-playbooks__running-playbooks-section">
+<p class="p">At this point, the system is ready to be deployed. Make sure you are logged on as 
+    <code class="ph codeph">root</code> on your ansible box and that your current directory is <code class="ph codeph">/root/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span></code></p>
+
+
+
+    
+
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> As well as configuring your <code class="ph codeph">vars</code> and <code class="ph codeph">vault</code> files, you must also provide a <code class="ph codeph">backups</code> configuration 
+    file in the <code class="ph codeph">group_vars</code> folder when running <code class="ph codeph">site.yml</code>. 
+    An example file is provided in the repository named <code class="ph codeph">backups.sample</code>. Rename it to backups before 
+    running the playbooks. Details on how to configure this file are available in the section 
+    <a class="xref" href="#backup-restore">Backup and restore</a>. </div><hr />
+ 
+    
+</div>
+
+</div>
+
+<div class="topic nested1" aria-labelledby="ariaid-title55" id="create-rhel-vms">
+<h2 class="title topictitle2" id="ariaid-title55">Provisioning RHEL VMs</h2>
+
+<div class="body">
+  
+<p class="p">The following playbooks are used to provision RHEL VMs.</p>
+  
+  
+<ul class="ul">
+
+<li class="li"><code class="ph codeph">playbooks/create_vms.yml</code> will create all the necessary virtual machines for 
+the environment from the VM Template defined in the <code class="ph codeph">vm_template</code> variable. All Linux VMs are now created in one go, regardless of the number of drives they have. 
+This playbook also has the potential to configure additional network adapters.
+</li>
+
+
+<li class="li"><code class="ph codeph">playbooks/config_networking.yml</code> will configure the network settings in all the virtual machines.</li>
+
+
+<li class="li"><code class="ph codeph" id="create-rhel-vms__resize_syspart">playbooks/resize_syspart.yml</code> resizes the logical volume that holds the <code class="ph codeph">/</code> partition 
+of the Linux VMs to use all the space available on the drive.</li>
+
+
+<li class="li"><code class="ph codeph">playbooks/config_subscription.yml</code> registers and subscribes all virtual machines to the Red Hat Customer Portal. 
+This is only needed if you pull packages from Red Hat. This playbook is commented out by default but you should uncomment 
+it to make sure each VM registers with the Red Hat portal. It is commented out so that you can test the deployment first 
+without having to unregister all the VMs from the Red Hat Customer Portal between each test. If you are using an 
+internal repository, as described in the section "Create a VM template", you can keep this playbook commented out.</li>
+
+
+
+<li class="li"><code class="ph codeph">playbooks/config_ntp.yml</code> configures the <strong class="ph b">chrony</strong> client package in all virtual machines in 
+order to have a synchronized clock across the environment. It will use the list of servers specified in the 
+<code class="ph codeph">ntp_servers</code> variable in the file <code class="ph codeph">group_vars/vars</code>.</li>
+
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title56" id="unique_1941740498">
+<h2 class="title topictitle2" id="ariaid-title56">Provisioning load balancers for UCP and DTR</h2>
+
+<div class="body">
+    
+<div class="section">
+    
+<p class="p">The playbook <code class="ph codeph">playbooks/loadbalancer.yml</code> is used to deploy load balancers in an <code class="ph codeph">active-active</code>
+configuration to provide highly-available access to UCP and DTR.</p>
+
+
+<p class="p">At least two nodes are specified in the <code class="ph codeph">[loadbalancer]</code> group in the inventory, 
+    along with group variables defining CPU and RAM requirements. These nodes  run
+<code class="ph codeph">keepalived</code> and <code class="ph codeph">HAproxy</code>.</p>
+
+
+<pre class="pre codeblock"><code>
+[loadbalancer]
+hpe-lb1 ip_addr='10.10.174.248/22' esxi_host='simply04.am2.cloudra.local' ucp=true
+hpe-lb2 ip_addr='10.10.174.249/22' esxi_host='simply05.am2.cloudra.local' dtr=true
+
+[loadbalancer:vars]
+cpus='2'
+ram='4096'
+node_policy='hpe-bronze'
+</code></pre>
+    
+<p class="p">The virtual IP for UCP will be handled by <code class="ph codeph">hpe-lb1</code> by default, which will split the traffic across
+the three UCP VMs <code class="ph codeph">hpe-ucp01</code>, <code class="ph codeph">hpe-ucp02</code> and <code class="ph codeph">hpe-ucp03</code>.
+In the case of a failure of <code class="ph codeph">hpe-lb1</code>, the virtual IP for UCP will automatically move
+to the second load balancer node <code class="ph codeph">hpe-lb2</code> which will again distribute the traffic to the UCP VMs.</p>
+
+    
+<p class="p">Similarly, the virtual IP for DTR will be handled by default by the load balancer <code class="ph codeph">hpe-lb2</code>,
+splitting the traffic across
+the three DTR VMs <code class="ph codeph">hpe-dtr01</code>, <code class="ph codeph">hpe-dtr02</code> and <code class="ph codeph">hpe-dtr03</code>.    
+In the case of a failure of <code class="ph codeph">hpe-lb2</code>, the virtual IP for DTR will automatically move
+to the first load balancer node <code class="ph codeph">hpe-lb1</code> which will again distribute the traffic to the DTR VMs.</p>
+    
+
+
+<p class="p">To configure the virtual IPs for UCP and DTR, you need to add a <code class="ph codeph">loadbalancers</code> dictionary to your
+<code class="ph codeph">group_vars/vars</code> file as shown in the excerpt below:</p>
+
+    
+<pre class="pre codeblock"><code>
+loadbalancers:
+  ucp:
+    public_interface: 'ens192'
+    public_vip: '10.60.59.251'
+    public_fqdn: hpe-ucpvip.cloudra.local
+    virtual_router_id: 54
+  dtr:
+    public_interface: 'ens192'
+    public_vip: '10.60.59.252'
+    public_fqdn: hpe-dtrvip.cloudra.local
+    virtual_router_id: 55
+
+</code></pre>
+ 
+<hr /><div class="note warning"><span class="warningtitle"><b>Warning:</b></span> If you re-run <code class="ph codeph">playbooks/loadbalancer.yml</code> after a configuration change, you may need to 
+subsequently run <code class="ph codeph">playbooks/reconfigure_dtr.yml</code> as the latter playbook configures the virtual IP address for accessing
+the UCP Single-Sign-On (SSO) page. If there is no virtual IP or FQDN defined for UCP in the variables file, the playbook will choose
+the address of the first UCP node in the <code class="ph codeph">[ucp]</code> group. This scenario introduces a single point of failure and should be avoided.
+</div><hr />
+
+
+
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> By default, the playbook supports ports 
+<code class="ph codeph">433</code> and <code class="ph codeph">6443</code> for UCP and port <code class="ph codeph">433</code> for DTR. 
+If you deploy Prometheus and Grafana on Docker Swarm, the Grafana port <code class="ph codeph">3000</code>
+will be handled as well.</div><hr />
+
+
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> The playbook <code class="ph codeph">playbooks/loadbalancer.yml</code> can be used to create one or more load balancers 
+for applications running on your worker nodes. However, it is impossible for the playbooks to know what ports to support, so
+manual configuration of HAproxy and keepalived may be required. By default, the playbooks supports ports <code class="ph codeph">80</code> and 
+<code class="ph codeph">443</code> for worker nodes.</div><hr />
+
+
+</div>
+    
+    
+    
+
+
+<div class="section"><h3 class="title sectiontitle">Legacy stand-alone load balancers</h3>
+   
+    
+<p class="p">The playbook <code class="ph codeph">playbooks/install_haproxy.yml</code> is used to deploy three separate load balancers, for the UCP,
+DTR and worker nodes. It is recommended that you use the HAproxy/keepalived solution documented above instead of this option.
+</p>
+    
+    
+</div>
+
+
+
+<div class="section"><h3 class="title sectiontitle">Deploying without load balancers</h3>
+ 
+<p class="p">If you do not want to deploy load balancers when running <code class="ph codeph">site.yml</code>, you should comment out any declarations in the inventory and variables files. This
+includes any legacy stand-alone load balancers.</p>
+    
+</div>
+    
+    
+    
+<div class="section"><h3 class="title sectiontitle">Deploying with your own load balancers</h3>
+ 
+<p class="p">If you are using external load balancers for UCP and DTR, you can configure DTR to use these external load balancers 
+by specifying FQDNs in the <code class="ph codeph">loadbalancers</code> dictionary in <code class="ph codeph">group_vars/vars</code>:</p>
+ 
+    
+<pre class="pre codeblock"><code>
+loadbalancers:
+  ucp:
+    public_fqdn: external-ucpvip.am2.cloudra.local
+  dtr:
+    public_fqdn: external-dtrvip.am2.cloudra.local
+</code></pre>    
+    
+    
+    
+</div>
+    
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title57" id="install-docker-ucp-dtr">
+<h2 class="title topictitle2" id="ariaid-title57">Installing Docker UCP and DTR on RHEL VMs</h2>
+
+<div class="body">
+  
+<p class="p">The following playbooks are used to Docker UCP and DTR on RHEL VMs.</p>
+    
+  
+<ul class="ul">
+
+<li class="li"><code class="ph codeph">playbooks/config_storage_driver.yml</code> TODO </li>
+
+
+  
+  
+<li class="li"><code class="ph codeph">playbooks/install_docker.yml</code> installs Docker along with all of its dependencies.</li>
+
+
+
+<li class="li"><code class="ph codeph">playbooks/install_rsyslog.yml</code> installs and configures <strong class="ph b">rsyslog</strong> in the logger node 
+and in all Docker nodes. The logger node will be configured to receive all <code class="ph codeph">syslogs</code> on port 514 and 
+the Docker nodes will be configured to send all logs (including container logs) to the logger node.</li>
+
+
+
+
+
+<li class="li"><code class="ph codeph">playbooks/docker_post_config.yml</code> performs a variety of tasks to complete 
+the installation of the Docker environment, including configuration of the HTTP/HTTPS proxies, if any, 
+and installation of the VMware vSphere Storage for Docker volume plugin.</li>
+
+
+
+<li class="li"><code class="ph codeph">playbooks/install_nfs_server.yml</code> installs and configures an NFS server on the NFS node.
+
+<p class="p">This playbook has been updated to configure a third drive which is used to hold the data of the persistent volumes 
+created with the NFS provisioner. This default size for this drive is purposefully kept small because 
+using the NFS VM to store persistent volumes is not recommended for production use. However, this can be useful for demo purposes.</p>
+
+</li>
+
+
+
+<li class="li"><code class="ph codeph">playbooks/install_nfs_clients.yml</code> installs the required packages on the DTR nodes 
+to be able to mount an NFS share.</li>
+
+
+
+<li class="li"><code class="ph codeph">playbooks/create_main_ucp.yml</code> installs and
+configures the first Docker UCP instance on the target node
+defined by the group <code class="ph codeph">ucp_main</code> in the
+<code class="ph codeph">vm_hosts</code> inventory.</li>
+
+
+
+<li class="li"><code class="ph codeph">playbooks/scale_ucp.yml</code> installs and configures
+additional instances of UCP on the target node defined by
+the group <code class="ph codeph">ucp</code> in the
+<code class="ph codeph">vm_hosts</code> inventory, except for the node defined in the group
+<code class="ph codeph">ucp_main</code>.</li>
+
+
+	
+
+<li class="li"><code class="ph codeph">playbooks/create_main_dtr.yml</code> installs and
+configures the first Docker DTR instance on the target nodes
+defined by the group <code class="ph codeph">dtr_main</code> in the <code class="ph codeph">vm_hosts</code> inventory.</li>
+
+  
+
+<li class="li"><code class="ph codeph">playbooks/config_scheduler.yml</code> configures the scheduler to prevent regular users 
+(i.e. non-admin users) scheduling containers on the Docker nodes running instances of UCP and DTR.</li>
+
+	
+
+<li class="li"><code class="ph codeph">playbooks/scale_dtr.yml</code> installs and configures additional instances (or replicas) 
+of DTR on the target nodes defined by the group <code class="ph codeph">dtr</code> in the <code class="ph codeph">vm_hosts</code> inventory, 
+with the exception of the node defined in the group <code class="ph codeph">dtr_main</code>.</li>
+
+
+	
+
+<li class="li"><code class="ph codeph">playbooks/reconfigure_dtr.yml</code>	is used to reconfigure DTR with the FQDN of the UCP Load Balancer and also 
+enables image scanning.
+</li>
+
+  
+  
+  
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title58" id="add-rhel-workers">
+<h2 class="title topictitle2" id="ariaid-title58">Deploying RHEL workers</h2>
+
+<div class="body">
+  
+<p class="p">By default, <code class="ph codeph">site.yml</code> will automatically deploy any RHEL (and / or Windows) worker nodes that are declared in the inventory. 
+</p>
+
+  
+<p class="p">
+If you subsequently want additional RHEL worker nodes, add them to the inventory as appropriate and 
+then run the playbooks for <a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a>, followed by the specific playbooks for RHEL worker nodes outlined below: 
+</p>
+  
+  
+<ul class="ul">
+	
+<li class="li"><code class="ph codeph">playbooks/scale_workers.yml</code> installs and configures additional Linux workers 
+on the target nodes defined by the group <code class="ph codeph">worker</code> in the <code class="ph codeph">vm_hosts</code> inventory.</li>
+
+
+	
+  
+</ul>
+
+</div>
+
+</div>
+</div>
+<div class="topic nested0" aria-labelledby="ariaid-title59" id="deploying-windows-workers">
+<h1 class="title topictitle1" id="ariaid-title59">Deploying Windows workers</h1>
+
+<div class="body">
+
+<p class="p">The <code class="ph codeph">site.yml</code> playbook will automatically deploy any Windows workers declared in the inventory.
+The playbooks should run for approximately 70-80 minutes with 3 Windows workers added to the default deployment 
+(depending on your server specifications and the size of your environment). The increase in 
+running time is primarily due to the need to update Windows after creating the VMs.  
+</p>
+
+
+<p class="p">This section described the functionality and configuration of the Windows-specific playbooks. It also details how 
+  to create the initial Windows template and how to manage deploying Windows worker nodes behind a proxy. </p>
+
+  
+</div>
+
+<div class="topic nested1" aria-labelledby="ariaid-title60" id="create-template-win">
+<h2 class="title topictitle2" id="ariaid-title60">Create the Windows Template</h2>
+
+<div class="body">
+    
+<p class="p">To create the Windows VM Template that you will use as the
+base for all your Windows worker nodes, you will first
+create a Virtual Machine with the OS installed and then convert the Virtual Machine
+to a VM Template. The VM Template is created as lean as possible, with any additional
+software installs and/or system configuration performed subsequently using Ansible.
+</p>
+
+    
+<p class="p">As the creation of the template is
+a one-off task, this procedure has not been automated. The steps to create a VM template
+manually are outlined below.</p>
+
+
+
+<p class="p">Log in to vCenter and create a new Virtual Machine with the following
+characteristics:</p>
+
+
+<ul class="ul">
+<li class="li">Guest OS Family: Windows, Guest OS Version: Microsoft Windows Server
+2016 (64-bit).
+</li>
+
+
+<li class="li">Hard Disk size: 100GB (Thin provisioning), 1 vCPU and 4 GB of RAM. Both vCPU and memory can be altered later after you deploy from this template. 
+</li>
+
+    
+<li class="li">A single network controller connected to the network or VLAN of your
+choice. All VMs will connect to this same network.
+</li>
+
+    
+<li class="li">Change the network type to VMXNET3, and attach the Windows Server
+2016 ISO image from a datastore ensuring you connect the CD/DVD drive on
+boot.
+</li>
+
+    
+<li class="li">Click on the VM Options tab, and in the Boot Options
+section, select <code class="ph codeph">Force BIOS setup(*)</code> to ensure that the machine enters the
+BIOS setup screen on next boot of this VM. This will allow you to adjust the
+boot order, placing the virtual CD-ROM in front of your hard drive.</li>
+
+    
+<li class="li">Optionally you can remove the floppy drive.						
+</li>
+
+</ul>
+
+
+
+
+<p class="p">Install Windows Server 2016:</p>
+
+    
+<ul class="ul">
+<li class="li">Power on the selected VM and then <code class="ph codeph">Open Console</code>.</li>
+
+    
+<li class="li">Once connected to the console, you will be placed in the BIOS setup screen.
+Select the <code class="ph codeph">Boot</code> tab, click on CD-ROM Drive and 
+ move up the CD-ROM drive above the hard drive. This allows your Windows
+Server 2016 ISO image to be loaded first on boot. F10 Save and exit is next
+step.</li>
+
+    
+<li class="li">Enter your choices for Language, Time/Currency Format, Keyboard and then
+Install Now.</li>
+
+    
+<li class="li">Select the OS you want to install, and then select Custom: Install Windows
+Only.</li>
+
+    
+<li class="li">Select drive 0, the 100 GB drive you specified earlier, as the location for
+installing windows.</li>
+
+<li class="li">Add a password for the Administrator user.</li>
+
+<li class="li">Install VMware Tools and
+reboot.</li>
+
+</ul>
+
+
+<p class="p">Once the VM has re-booted,</p>
+
+    
+<ul class="ul">    
+<li class="li">Add a temporary network IP address and configure any proxy settings required to download Windows Updates.</li>
+
+<li class="li">Use the <code class="ph codeph">sconfig</code> utility from (MS-DOS) command line to install Windows Updates and enable Remote Desktop.</li>
+
+<li class="li">Perform any other customizations you require at this point.</li>
+
+</ul>
+    
+    
+<p class="p">Prior to converting the VM to Template, run Sysprep: <code class="ph codeph">C:\Windows\System32\Sysprep\Sysprep.exe</code>.</p>
+
+    
+<ul class="ul">
+<li class="li">Ensure ‘System Out-of-Box Experience (OOBE)’ is selected.</li>
+
+<li class="li">Select the ‘Generalize’ option.</li>
+
+<li class="li">Select ‘Shutdown’ from the Shutdown Options.</li>
+
+</ul>
+
+
+<p class="p">Shutdown VM, and untick  <code class="ph codeph">Connect CD/DVD</code> so that the Windows Server 2016 ISO is no
+longer  mounted. Boot the Windows VM one final time and enter regional settings applicable to your location
+and keyboard mapping, enter an Administrator user password then Shutdown VM.</p>
+
+
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> The <code class="ph codeph">vmware_guest</code> module used by the playbooks will generate a new SID.</div><hr />
+
+    
+<p class="p">Turn the VM into a template by right-clicking on your VM and selecting <code class="ph codeph">Template -&gt; Convert to Template</code>.	
+This will create a new template visible under VM Templates in Folders, ready for future use.
+</p>
+
+
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title61" id="add-windows-workers">
+<h2 class="title topictitle2" id="ariaid-title61">Playbooks for adding Windows workers</h2>
+
+<div class="body">
+<ul class="ul">  
+     
+<li class="li"><code class="ph codeph">playbooks/create_windows.yml</code> will create all the necessary Windows 2016 VMs 
+for the environment based on the Windows VM Template defined in the <code class="ph codeph">win_vm_template</code> variable.</li>
+   
+    
+
+<li class="li"><code class="ph codeph">playbooks/install_docker_windows.yml</code> installs Docker along with all its dependencies 
+on your Windows VMs</li>
+
+
+
+<li class="li"><code class="ph codeph">playbooks/scale_workers.yml</code> installs and configures additional Windows workers on the target nodes 
+    defined by the group <code class="ph codeph">win_worker</code> in the <code class="ph codeph">vm_hosts</code> inventory.</li>
+
+ 
+<li class="li"><code class="ph codeph">playbooks/splunk_uf_win.yml</code> installs and configures the Splunk Universal Forwarder on each Windows machine in the inventory.</li>
+
+ 
+</ul>
+ 
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title62" id="windows-config">
+<h2 class="title topictitle2" id="ariaid-title62">Windows configuration</h2>
 
 <div class="body">
 <div class="section">
@@ -3678,53 +4304,48 @@ how to configure Kubernetes Persistent Volumes.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="windows-config__windows-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 14. </span>Windows variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6640">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6643">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6646">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7842">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7845">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7848">Description</th>
 </tr>
 </thead><tbody class="tbody">
 
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6640 ">enable_windows</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6643 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6646 ">If <code class="ph codeph">true</code>, the creation of Windows 2016 worker
-nodes will be actioned. The default value is
-<code class="ph codeph">false</code>.</td>
-</tr>   
+
+
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6640 ">win_vm_template</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6643 ">group_vars/vars</td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6646 ">Name of the Windows 2016 VM Template to use. Note that this is the name from a
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7842 ">win_vm_template</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7845 ">group_vars/vars</td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7848 ">Name of the Windows 2016 VM Template to use. Note that this is the name from a
 vCenter perspective, not the hostname.</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6640 ">win_username</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6643 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6646 ">Windows user name. The default is <code class="ph codeph">Administrator</code>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7842 ">win_username</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7845 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7848 ">Windows user name. The default is <code class="ph codeph">Administrator</code>
 </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6640 ">win_password</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6643 "><strong class="ph b">group_vars/vault</strong></td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6646 ">The password for the Windows account.
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7842 ">win_password</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7845 "><strong class="ph b">group_vars/vault</strong></td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7848 ">The password for the Windows account.
 </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6640 ">windows_vdvs_ps</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6643 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6646 ">Variable used to download the PowerShell script that is used to install vDVS for Windows. For example,
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7842 ">windows_vdvs_ps</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7845 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7848 ">Variable used to download the PowerShell script that is used to install vDVS for Windows. For example,
 <code class="ph codeph">https://raw.githubusercontent.com/vmware/vsphere-storage-for-docker/master/install-vdvs.ps1</code>
 </td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6640 ">windows_vdvs_path</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6643 ">group_vars/vars</td>     
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6646 ">Variable used to download vSphere Docker Volume Service software. This variable is combined 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7842 ">windows_vdvs_path</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7845 ">group_vars/vars</td>     
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7848 ">Variable used to download vSphere Docker Volume Service software. This variable is combined 
 with <code class="ph codeph">windows_vdvs_version</code> (below) to generate a URL of the form <code class="ph codeph">&lt;windows_vdvs_path&gt;_&lt;windows_vdvs_version&gt;.zip</code> to download the software. 
 For example, to download version 0.21, set <code class="ph codeph">windows_vdvs_path</code> equal to <code class="ph codeph">https://vmware.bintray.com/vDVS/vsphere-storage-for-docker_windows</code> 
 and <code class="ph codeph">windows_vdvs_version</code> equal to <code class="ph codeph">0.21</code>
@@ -3732,16 +4353,47 @@ and <code class="ph codeph">windows_vdvs_version</code> equal to <code class="ph
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6640 ">windows_vdvs_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6643 ">group_vars/vars</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6646 ">Combined with <code class="ph codeph">windows_vdvs_path</code>, this variable is used to generate the URL for downloading the software.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7842 ">windows_vdvs_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7845 ">group_vars/vars</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7848 ">Combined with <code class="ph codeph">windows_vdvs_path</code>, this variable is used to generate the URL for downloading the software.</td>
 </tr>  
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6640 ">windows_vdvs_directory</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6643 ">group_vars/vars</td>    
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6646 ">Variable used to determine where vDVS software will be unzipped and installed from. The default is <code class="ph codeph">C:\Users\Administrator\Downloads</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7842 ">windows_vdvs_directory</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7845 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7848 ">Variable used to determine where vDVS software will be unzipped and installed from. The default is <code class="ph codeph">C:\Users\Administrator\Downloads</code></td>
 </tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7842 ">windows_winrm_script</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7845 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7848 ">Variable used to determine where the <code class="ph codeph">winrm</code> Powershell script will be downloaded from. See the section 
+    <a class="xref" href="#windows-proxy">Deploying Windows workers behind a proxy</a> for more information.
+
+</td>
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7842 ">docker_ee_version_windows</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7845 "><strong class="ph b">group_vars/vars.yml</strong></td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7848 ">It is important that the version of the Docker engine running on your Windows worker nodes is the same as that running on RHEL in the
+the rest of your cluster. You should use this variable to explicitly match up the versions. For Docker 2.0, the recommended value is 
+<code class="ph codeph">'17.06'</code>. If you do not explicityly set this value, you may end up with an incompatible newer version running on
+your Windows workers.</td>
+</tr>
+
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7842 ">windows_update</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7845 ">group_vars/vars</td>    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7848 ">Variable used to determine if Windows updates are automatically downloaded when installing Docker on Windows worker nodes 
+    (in the <code class="ph codeph">playbooks/install_docker.yml).</code>. 
+Defaults to <code class="ph codeph">true</code>.
+
+</td>
+</tr>
+    
+    
+    
 </tbody></table>
 </div>
    
@@ -3776,59 +4428,62 @@ used in the following playbooks:
 
 <table cellpadding="4" cellspacing="0" summary="" id="windows-config__windows-advanced-config-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 15. </span>Advanced windows variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6841">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6844">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e6847">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8078">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8081">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8084">Description</th>
 </tr>
 </thead><tbody class="tbody"> 
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6841 ">ansible_user</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6844 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6847 ">Defaults to the Windows user account <code class="ph codeph">win_username</code> as specified in <code class="ph codeph">group_vars/vars</code> </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8078 ">ansible_user</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8081 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8084 ">Defaults to the Windows user account <code class="ph codeph">win_username</code> as specified in <code class="ph codeph">group_vars/vars</code> </td>
 </tr>   
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6841 ">ansible_password</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6844 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6847 ">Defaults to the Windows user password <code class="ph codeph">win_password</code> as specified in <code class="ph codeph">group_vars/vault</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8078 ">ansible_password</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8081 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8084 ">Defaults to the Windows user password <code class="ph codeph">win_password</code> as specified in <code class="ph codeph">group_vars/vault</code></td>
 </tr>   
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6841 ">ansible_port</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6844 "><strong class="ph b">group_vars/win_worker.yml</strong></td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6847 ">5986</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8078 ">ansible_port</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8081 "><strong class="ph b">group_vars/win_worker.yml</strong></td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8084 ">5986</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6841 ">ansible_connection</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6844 "><strong class="ph b">group_vars/win_worker.yml</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6847 ">winrm</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8078 ">ansible_connection</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8081 "><strong class="ph b">group_vars/win_worker.yml</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8084 ">winrm</td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6841 ">ansible_winrm_server_cert_validation</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6844 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6847 ">Defaults to <code class="ph codeph">ignore</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8078 ">ansible_winrm_server_cert_validation</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8081 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8084 ">Defaults to <code class="ph codeph">ignore</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6841 ">ansible_winrm_operation_timeout_sec</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6844 "><strong class="ph b">group_vars/win_worker.yml</strong></td>   
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6847 ">Defaults to <code class="ph codeph">250</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8078 ">ansible_winrm_operation_timeout_sec</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8081 "><strong class="ph b">group_vars/win_worker.yml</strong></td>   
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8084 ">Defaults to <code class="ph codeph">250</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6841 ">ansible_winrm_read_timeout_sec</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6844 "><strong class="ph b">group_vars/win_worker.yml</strong></td>   
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6847 ">Defaults to <code class="ph codeph">300</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8078 ">ansible_winrm_read_timeout_sec</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8081 "><strong class="ph b">group_vars/win_worker.yml</strong></td>   
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8084 ">Defaults to <code class="ph codeph">300</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6841 ">windows_timezone</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6844 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e6847 ">Defaults to <code class="ph codeph">15</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8078 ">windows_timezone</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8081 "><strong class="ph b">group_vars/win_worker.yml</strong></td>  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8084 ">Defaults to <code class="ph codeph">15</code></td>
 </tr>
+
+
+
 
 </tbody></table>
 </div>
@@ -3840,8 +4495,661 @@ used in the following playbooks:
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title52" id="monitoring-config-splunk">
-<h2 class="title topictitle2" id="ariaid-title52">Splunk configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title63" id="windows-proxy">
+<h2 class="title topictitle2" id="ariaid-title63">Deploying Windows workers behind a proxy</h2>
+
+<div class="body">
+
+
+<div class="section"><h3 class="title sectiontitle">Configuring the <code class="ph codeph">winrm</code> remoting script</h3>
+  
+
+
+
+<p class="p">The playbooks for deploying Windows workers rely on a Powershell script for remote access from the Ansible machine. The script
+<code class="ph codeph">ConfigureRemotingForAnsible.ps1</code> is available online on GitHub and you can configure the playbooks to use
+  the script directly as follows:</p>
+
+  
+<pre class="pre codeblock"><code>windows_winrm_script: 'https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1'</code></pre>
+
+<p class="p">
+However, if the deployment is running behind a proxy, you may need to make this script available locally.
+</p>
+  
+
+<ol class="ol">
+<li class="li">Download the script:    
+<pre class="pre codeblock"><code>
+wget https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
+</code></pre>      
+</li>
+
+  
+<li class="li">Deploy a local HTTP server, enabling port 80, for example:
+<pre class="pre codeblock"><code>
+yum install httpd
+systemctl enable httpd
+systemctl start httpd
+firewall-cmd --permanent --add-port 80/tcp --zone=pubpic
+firewall-cmd --reload
+</code></pre>    
+</li>
+
+
+<li class="li">Copy the downloaded script to the web server:
+<pre class="pre codeblock"><code>
+cp ConfigureRemotingForAnsible.ps1 /var/www/html
+</code></pre>
+</li>
+
+
+</ol>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title64" id="lifecycle-windows">
+<h2 class="title topictitle2" id="ariaid-title64">Windows operating system and Docker EE</h2>
+
+<div class="body">
+<div class="section">
+
+
+
+<p class="p">Docker Enterprise Edition for Windows Server (Docker EE) enables native Docker containers on Windows Server. 
+Windows Server 2016 and later versions are supported. This solution has been tested with Windows worker nodes running Windows Server 2016 
+and with Docker EE 17.06.</p>
+
+
+    
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
+<p class="p">Docker Universal Control Plane is not currently supported on Windows Server 1709 due to image incompatibility issues. 
+For more information, see the Docker documentation <a class="xref" href="https://docs.docker.com/install/windows/docker-ee/" target="_blank">Install Docker Enterprise Edition for Windows Server</a></p>
+        
+
+<p class="p">This solution recommends that you only run Windows Server 2016 on your Windows worker nodes 
+and that you install any required updates to your Windows nodes in a timely manner.</p>
+
+</div><hr />
+    
+
+  
+<p class="p">For information on how to update Docker EE on Windows Server 2016, see the Docker 
+documentation <a class="xref" href="https://docs.docker.com/install/windows/docker-ee/#update-docker-ee" target="_blank">Update Docker EE</a></p>
+
+
+
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="topic nested0" aria-labelledby="ariaid-title65" id="deploying-sysdig">
+<h1 class="title topictitle1" id="ariaid-title65">Deploying Sysdig monitoring</h1>
+
+<div class="body">
+
+<p class="p"> By default, the playbooks for deploying Sysdig are commented out in
+<code class="ph codeph">site.yml</code> and must be explicitly enabled in that file if you want it included in the initial
+  deployment. Alternatively, you can run the specific playbooks detailed in this section in a stand-alone manner, 
+  subsequent to the initial deployment. </p>
+
+
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> <p class="p">By default, you must have outgoing port 6666 open in your firewall, to allow data to flow
+to <code class="ph codeph">collector.sysdigcloud.com</code>. You can configure the agent to use a different port by setting the 
+<code class="ph codeph">collector_port</code> parameter in the configuration file <code class="ph codeph">/opt/draios/etc/dragent.yaml</code>. For more
+information, see the relevant Sysdig documentation at 
+<a class="xref" href="https://support.sysdig.com/hc/en-us/articles/204205969" target="_blank">https://support.sysdig.com/hc/en-us/articles/204205969</a>.</p>
+
+   
+<p class="p">If you are using a proxy, it must be configured to be "fully-transparent". Non-transparent proxies will not allow the agent to connect.</p>
+   
+</div><hr />
+
+  
+</div>
+
+<div class="topic nested1" aria-labelledby="ariaid-title66" id="sysdig">
+<h2 class="title topictitle2" id="ariaid-title66">Monitoring with Sysdig</h2>
+
+<div class="body">
+<p class="p">Sysdig's approach to Docker monitoring uses transparent instrumentation to see inside
+containers from the outside, with no need for agents in each container. Metrics from Docker
+containers, and from your applications running inside them, are aggregated in real-time across
+each service to provide meaningful monitoring dashboards and alerts for your application.
+<a class="xref" href="#sysdig__sysdig-arch">Figure 3</a> provides an overview of the Sysdig architecture.
+</p>
+
+  
+<div class="fig fignone" id="sysdig__sysdig-arch">
+  
+  <img class="image" src="media/sysdig-architecture.png" />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 3. </b></span>Sysdig architecture</span></div><p> </p></div>
+  
+  
+<p class="p"><strong class="ph b">Sysdig Monitor</strong> allows you to analyze response times, application performance metrics,
+container and server utilization metrics, and network metrics. You can build dashboards across
+applications, micro-services, container and networks, and explore metadata from Docker,
+Kubernetes, Mesos and AWS.  For more information, see the 
+<a class="xref" href="https://www.youtube.com/watch?v=NR9XLZw0ndo" target="_blank">Sysdig Container Monitoring</a> video overview 
+and the <a class="xref" href="https://sysdig.teachable.com/p/sysdig-101" target="_blank">Sysdig Monitor 101</a> training course. </p>
+
+
+<p class="p"><strong class="ph b">Sysdig Secure</strong> provides security at the orchestrator as well as the container level.
+You create service-aware policies that allow you to take actions (like killing a container) or
+send alerts (to Slack, Splunk, etc) whenever a policy violation occurs. All commands are
+audited to help you identify anomalous actions, along with taking snapshots of all activities
+pre-and-post a policy violation. For more information, see the 
+<a class="xref" href="https://www.youtube.com/watch?v=e_kdjHjK7mY" target="_blank">Sysdig Container Monitoring</a> video overview 
+and the <a class="xref" href="https://sysdig.teachable.com/p/sysdig-secure-101" target="_blank">Sysdig Secure 101</a> training course. </p>
+
+
+<p class="p">The implementation in this solution uses the Software as a Service (SaaS) version of Sysdig.
+The playbooks deploy Sysdig Agent software on each UCP, DTR and Linux worker node, as well as the NFS, logger and load balancer VMs
+and captured data is relayed back to your Sysdig SaaS Cloud portal. The deployment provides access to a 
+90 day try-and-buy, fully featured version of the Sysdig software.</p>
+
+
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> The Sysdig functionality is not turned on by default in this solution - see
+the section on Configuration for more information on how to enable Sysdig. 
+ For more information on how to access the 90 day try-and-buy version, see the 
+ GitHub repository at <span class="ph"><a class="xref" href="https://github.com/HewlettPackard/Docker-SimpliVity" target="_blank"><span class="keyword">https://github.com/HewlettPackard/Docker-SimpliVity</span></a></span>.
+</div><hr />
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title67" id="install-sysdig">
+<h2 class="title topictitle2" id="ariaid-title67">Playbooks for installing Sysdig on RHEL</h2>
+
+<div class="body">
+<ul class="ul">
+<li class="li"><code class="ph codeph">playbooks/install_sysdig.yml</code> is used to configure Sysdig. It opens the required port in the firewall, 
+and installs the latest version of the Sysdig agent image on the nodes. By default, this playbook is commented out in <code class="ph codeph">site.yml</code>, so if you want to use the solution to 
+automatically configure Sysdig, you must uncomment this line or run this playbook post-deployment.
+</li>
+	  
+</ul>
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title68" id="monitoring-config-sysdig">
+<h2 class="title topictitle2" id="ariaid-title68">Sysdig configuration</h2>
+
+<div class="body">
+
+
+<div class="section" id="monitoring-config-sysdig__sysdig-config-docker-swarm"><h3 class="title sectiontitle">Sysdig configuration for Docker swarm</h3>
+   
+   
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-sysdig__sysdig-config-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 16. </span>Sysdig variables for Docker swarm</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8473">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8476">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8479">Description</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8473 ">sysdig_access_key</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8476 "><strong class="ph b">group_vars/vault</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8479 ">After the activation of your account on the Sysdig portal, you will be 
+provided with your access key which will be used by the playbooks to install the agent on each UCP, DTR and Linux worker node, 
+as well as the NFS, logger and load balancer VMs.
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8473 ">sysdig_agent</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8476 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8479 ">Specifies the URL to the Sysdig Linux native install agent, for example, <code class="ph codeph">https://s3.amazonaws.com/download.draios.com/stable/install-agent</code></td>
+</tr>    
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8473 ">sysdig_tags</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8476 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8479 ">Tagging your hosts is highly recommended. Tags allow you to sort the nodes of your infrastructure 
+   into custom groups in Sysdig Monitor. Specify location, role, and owner in the format: <code class="ph codeph">'location:City,role:Enterprise CaaS,owner:Customer Name'</code></td>
+</tr>    
+</tbody></table>
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="section" id="monitoring-config-sysdig__sysdig-config-k8s"><h3 class="title sectiontitle">Sysdig configuration for Kubernetes</h3>
+   
+   
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-sysdig__sysdig-config-k8s-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 17. </span>Sysdig variables for Kubernetes</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8553">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8556">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8559">Description</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8553 ">sysdig_access_key</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8556 "><strong class="ph b">group_vars/vault</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8559 ">After the activation of your account on the Sysdig portal, you will be 
+provided with your access key which will be used by the playbooks to install the agent on each UCP, DTR and Linux Kubernetes worker node.
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8553 ">sysdig_restricted_control_role</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8556 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8559 ">The Sysdig service account requires the 'Restricted Control' grant. So this value will typically be set as follows:
+<pre class="pre codeblock"><code><strong class="ph b">sysdig_restricted_control_role: 'Restricted Control'</strong></code></pre>
+</td>  
+</tr>    
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8553 ">k8s_cluster</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8556 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8559 ">This should match the cluster name displayed when you source the environment setup script, for example, 
+<pre class="pre codeblock"><code># source env.sh
+Cluster "<strong class="ph b">ucp_gab-ucp.cloudra.local</strong>:6443_admin" set.
+User "ucp_gab-ucp.cloudra.local:6443_admin" set.
+</code></pre>
+For more information, see the section on installing the UCP client bundle in <a class="xref" href="#deploying-sysdig-k8s">Deploying Sysdig monitoring on Kubernetes</a>,   
+</td>
+</tr>    
+</tbody></table>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+   
+   
+   
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title69" id="sysdig-trial">
+<h2 class="title topictitle2" id="ariaid-title69">Registering for Sysdig trial</h2>
+
+<div class="body">
+  
+<p class="p">Browse to the registration page at <a class="xref" href="https://sysdig.com/partner-hpe/" target="_blank">https://sysdig.com/partner-hpe/</a>
+    as shown in <a class="xref" href="#sysdig-trial__sysdig-hpe">Figure 4</a>. 
+</p>
+
+ 
+<div class="fig fignone" id="sysdig-trial__sysdig-hpe">
+
+<br /><img class="image" src="media/sysdig-hpe.png" /><br />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 4. </b></span>Sysdig and HPE</span></div><p> </p></div>
+
+
+<p class="p">Scroll to the registration form at the bottom of the page, as shown in <a class="xref" href="#sysdig-trial__sysdig-registration">Figure 5</a>. </p>
+
+  
+<div class="fig fignone" id="sysdig-trial__sysdig-registration">
+
+<br /><img class="image" src="media/sysdig-registration.png" /><br />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 5. </b></span>Sysdig trial registration</span></div><p> </p></div>
+  
+
+<p class="p">After completing and submitting the form, you will receive an email containing an activation link, 
+as shown in <a class="xref" href="#sysdig-trial__sysdig-email">Figure 6</a>. </p>
+
+
+
+<div class="fig fignone" id="sysdig-trial__sysdig-email">
+
+<br /><img class="image" src="media/sysdig-email.png" /><br />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 6. </b></span>Sysdig email</span></div><p> </p></div>
+  
+ 
+<p class="p">Clicking on the activation link will bring you to the Sysdig Monitor welcome page,
+as shown in <a class="xref" href="#sysdig-trial__sysdig-monitor-welcome">Figure 7</a>. </p>
+
+
+<div class="fig fignone" id="sysdig-trial__sysdig-monitor-welcome">
+
+<br /><img class="image" src="media/sysdig-monitor-welcome.png" /><br />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 7. </b></span>Sysdig Monitor welcome page</span></div><p> </p></div>
+  
+
+
+<p class="p">Click  the <code class="ph codeph">Next</code> button to set up you environment,
+as shown in <a class="xref" href="#sysdig-trial__sysdig-setup-env">Figure 8</a>.</p>
+
+
+<div class="fig fignone" id="sysdig-trial__sysdig-setup-env">
+
+<br /><img class="image" src="media/sysdig-setup-env.png" /><br />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 8. </b></span>Sysdig Monitor set up environment</span></div><p> </p></div>
+ 
+  
+  
+<div class="section"><h3 class="title sectiontitle">Sysdig Monitoring for Kubernetes</h3>
+
+<p class="p">If you are deploying Sysdig monitoring on Kubernetes, select the <code class="ph codeph">Kubernetes | GKE | OpenShift</code> option. 
+You will be presented with an access code, as shown in 
+<a class="xref" href="#sysdig-trial__sysdig-k8s">Figure 9</a>.
+</p>
+
+  
+<div class="fig fignone" id="sysdig-trial__sysdig-k8s">
+
+<br /><img class="image" src="media/sysdig-k8s.png" /><br />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 9. </b></span>Sysdig Monitor access code for Kubernetes</span></div><p> </p></div>
+ 
+
+<p class="p">Use the <code class="ph codeph">sysdig_access_key</code> field in your <code class="ph codeph">group_vars/vault</code>,
+as described in the section <a class="xref" href="#monitoring-config-sysdig__sysdig-config-k8s">Sysdig configuration for Kubernetes</a>. 
+Once you deploy your environment and your Kubernetes nodes connect to the Sysdig SaaS platform, 
+Sysdig will automatically display information regarding your setup,
+as shown in <a class="xref" href="#sysdig-trial__sysdig-k8s-spotlight">Figure 10</a>.
+</p>
+
+
+<div class="fig fignone" id="sysdig-trial__sysdig-k8s-spotlight">
+
+<br /><img class="image" src="media/sysdig-k8s-spotlight.png" /><br />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 10. </b></span>Sysdig Monitor Spotlight for Kubernetes</span></div><p> </p></div>
+ 
+
+<p class="p">Select <code class="ph codeph">View Dashboard</code> for an entry point to accessing all your monitoring data.
+Alternatively, you can browse to 
+<a class="xref" href="https://app.sysdigcloud.com" target="_blank">https://app.sysdigcloud.com</a> at any time to access your dashboards.  
+</p>
+
+  
+</div>
+
+  
+<div class="section"><h3 class="title sectiontitle">Sysdig Monitor for Docker swarm</h3>
+
+<p class="p">If you are deploying Sysdig monitoring on Docker swarm, select the <code class="ph codeph">Non-Orchestrated: <strong class="ph b">Native Linux</strong></code> option.
+You will be presented with a screen containing details for the URL to download the Sysdig agent, along with your access code
+embedded in the command, as shown in <a class="xref" href="#sysdig-trial__sysdig-docker">Figure 11</a>.
+</p>
+
+  
+<div class="fig fignone" id="sysdig-trial__sysdig-docker">
+
+<br /><img class="image" src="media/sysdig-docker.png" /><br />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 11. </b></span>Sysdig Monitor download location and access code for Docker</span></div><p> </p></div>
+ 
+  
+<p class="p">The download URL is used in the <code class="ph codeph">sysdig_agent</code> field in <code class="ph codeph">group_vars/vars</code> while the access code is 
+stored in the <code class="ph codeph">sysdig_access_key</code> field in your <code class="ph codeph">group_vars/vault</code>,
+as described in the section <a class="xref" href="#monitoring-config-sysdig__sysdig-config-docker-swarm">Sysdig configuration for Docker swarm</a>. 
+</p>
+  
+ 
+<p class="p">Once you deploy your environment and your Docker swarm nodes connect to the Sysdig SaaS platform, 
+Sysdig will automatically display information regarding your setup. Alternatively, you can browse to 
+<a class="xref" href="https://app.sysdigcloud.com" target="_blank">https://app.sysdigcloud.com</a> at any time to access your dashboards.</p>
+
+
+
+</div>
+
+  
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title70" id="deploying-sysdig-k8s">
+<h2 class="title topictitle2" id="ariaid-title70">Deploying Sysdig monitoring on Kubernetes</h2>
+
+<div class="body">
+
+<div class="section"><h3 class="title sectiontitle">Prerequisites</h3>
+
+  
+<ul class="ul">
+<li class="li">Install the <code class="ph codeph">kubectl</code> binary on your Ansible box -  
+  see <a class="xref" href="https://docs.docker.com/ee/ucp/user-access/kubectl/" target="_blank">https://docs.docker.com/ee/ucp/user-access/kubectl/</a>.
+
+</li>
+  
+<li class="li">Install the UCP Client bundle for the <code class="ph codeph">admin</code> user - 
+  see <a class="xref" href="https://docs.docker.com/ee/ucp/user-access/cli/" target="_blank">https://docs.docker.com/ee/ucp/user-access/cli/</a></li>
+  
+<li class="li">Confirm that you can connect to the cluster by running a test command, for example, <code class="ph codeph">kubectl get nodes</code></li>
+
+<li class="li">Ensure that you have configured the required variables, as described in the section 
+  <a class="xref" href="#monitoring-config-sysdig__sysdig-config-k8s">Sysdig configuration for Kubernetes</a>.
+  
+For example, you add the the relevant variables in the <code class="ph codeph">group_vars/vars</code> file.
+
+<pre class="pre codeblock"><code>sysdig_restricted_control_role: 'Restricted Control'
+k8s_cluster: ucp_gab-ucp.cloudra.local
+</code></pre>
+  
+You should add the access key  to the encrypted <code class="ph codeph">group_vars/vault</code> using the command <code class="ph codeph">ansible-vault edit group_vars/vault</code>.
+  
+<pre class="pre codeblock"><code>sysdig_access_key: '10****97-9160-****-9061-84bfd0f****0'
+</code></pre>
+  
+</li>
+  
+</ul>
+  
+</div>
+
+  
+<div class="section"><h3 class="title sectiontitle">Running the playbook</h3>
+  
+  
+<pre class="pre codeblock"><code># cd <span class="ph"><span class="keyword">Docker-SimpliVity</span></span>
+# ansible-playbook -i vm_hosts playbooks/k8s-install-sysdig.yml --vault-password-file .vault_pass
+</code></pre> 
+ 
+</div>
+
+
+
+
+<div class="section">
+<p class="p">Using the Sysdig software as a solution (SaaS) website <a class="xref" href="https://app.sysdigcloud.com" target="_blank">https://app.sysdigcloud.com</a>, you are able to view, analyze and
+inspect various different dashboards. Initially, you will just see the monitoring information for the 
+infrastructure itself. Deploy a sample application, as detailed in the section <a class="xref" href="#k8s-example-guestbook">Kubernetes guestbook example with Redis</a>,
+  and use the Sysdig solution to analyze the different facets of the deployed application. 
+
+</p>
+  
+  
+</div>
+
+
+  
+<p class="p"></p>
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title71" id="deploying-sysdig-swarm">
+<h2 class="title topictitle2" id="ariaid-title71">Deploying Sysdig monitoring on Docker Swarm</h2>
+
+<div class="body">
+  
+<p class="p">The playbook <code class="ph codeph">playbooks/install_sysdig.yml</code> is used to automate the
+configuration of the SaaS setup. By default, this playbook is commented out in
+<code class="ph codeph">site.yml</code> and must be explicitly enabled. An access key variable must be set
+in the <code class="ph codeph">group_vars/vault</code> file as detailed in <a class="xref" href="#monitoring-config-sysdig__sysdig-config-table-content">Table 16</a>.</p>
+  
+  
+<pre class="pre codeblock"><code># cd <span class="ph"><span class="keyword">Docker-SimpliVity</span></span>
+# ansible-playbook -i vm_hosts playbooks/install_sysdig.yml --vault-password-file .vault_pass
+</code></pre> 
+
+<p class="p">Using the Sysdig software as a solution (SaaS) website <a class="xref" href="https://app.sysdigcloud.com" target="_blank">https://app.sysdigcloud.com</a>, you are able to view, analyze and
+inspect various different dashboards.</p>
+
+
+
+</div>
+
+</div>
+</div>
+<div class="topic nested0" aria-labelledby="ariaid-title72" id="deploying-splunk">
+<h1 class="title topictitle1" id="ariaid-title72">Deploying Splunk</h1>
+
+<div class="body">
+    
+</div>
+
+<div class="topic nested1" aria-labelledby="ariaid-title73" id="splunk">
+<h2 class="title topictitle2" id="ariaid-title73">Monitoring with Splunk</h2>
+
+<div class="body">
+
+    
+<p class="p">Splunk Enterprise allows you to collect and index any data from any source, and to monitor systems and infrastructure in real
+time to preempt issues before they happen. It allows you to analyze your data to understand trends, patterns of activity and
+behavior, giving you valuable intelligence across your entire organization.</p>
+    
+    
+<p class="p">This solution allows you to integrate your Container as a Service deployment with an existing Splunk Enterprise installation or to deploy a stand-alone Splunk Enterprise demo environment as
+a Docker stack in your cloud. In both instances, Universal Forwarders are used to collect data from your applications running on your Linux and Windows worker nodes 
+in your cloud, as well as log data from the Docker platform itself and from the infrastructure VMs  and servers. 
+<a class="xref" href="#splunk__splunk-arch">Figure 12</a> shows the Splunk architecture.
+</p>
+
+    
+<div class="fig fignone" id="splunk__splunk-arch">
+
+<img class="image" src="media/splunk-architecture.png" />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 12. </b></span>Splunk architecture</span></div><p> </p></div>
+
+
+
+<p class="p">All the Universal Forwarders run natively on the operating system to allow
+greater flexibility in terms of configuration options. Each forwarder sends the data it collects to one or more indexers in the central
+Splunk. </p>
+
+    
+<p class="p"><strong class="ph b">Linux worker nodes:</strong> The Universal Forwarders on the Linux worker nodes collect log and metrics data. The log data includes:</p>
+    
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">/var/log/messages</code> from the docker host (including the daemon engine logs)</li>
+
+<li class="li"><code class="ph codeph">/var/log/secure</code> from the docker hosts</li>
+
+<li class="li">container logs via a Splunk technical add-on</li>
+
+</ul>
+
+
+<p class="p">The metrics data is collected via a technical add-on and includes:</p>
+
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">docker stats</code></li>
+
+<li class="li"><code class="ph codeph">docker top</code></li>
+
+<li class="li"><code class="ph codeph">docker events</code></li>
+
+<li class="li"><code class="ph codeph">docker service stats</code></li>
+
+</ul>
+
+    
+<p class="p"><strong class="ph b">Windows worker nodes:</strong> The Universal Forwarders running on the  Windows worker nodes collect the following data:</p>
+
+<ul class="ul">
+<li class="li">Windows logs</li>
+
+<li class="li">CPU stats</li>
+
+<li class="li">Memory stats</li>
+
+<li class="li">Network Interface stats</li>
+
+<li class="li">and more</li>
+
+</ul>
+
+
+<p class="p">For more information on configuring standalone Splunk for Linux and Windows worker nodes, see the section on 
+    <a class="xref" href="#splunk-pre-deploy">Splunk prerequisites</a>.
+ 
+</p>
+   
+ 
+
+<p class="p"><strong class="ph b">UCP and ESXi:</strong> UCP operational logs and ESXi logs are forwarded to the logger VM  via TCP ports 1514 and 514 respectively. 
+Port 1514 is assigned a special <code class="ph codeph">sourcetype</code> of <code class="ph codeph">ucp</code> which is then used by the 
+Splunk Docker APP to interpret UCP logs. The Universal Forwarder runs the rsyslog daemon which will record the 
+log messages coming from the ESX machines into the <code class="ph codeph">/var/log/messages</code> file on the VM. </p>
+
+ 
+ 
+    
+<div class="p"><strong class="ph b">Non-Docker VMs:</strong> Other VMs, for example, NFS, use a Splunk <code class="ph codeph">monitor</code> to collect and 
+forward data from the following files:
+    
+<ul class="ul">
+<li class="li">/var/log/messages</li>
+
+<li class="li">/var/log/secure (Red Hat)</li>
+
+</ul>
+
+
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> You can configure the list of files monitored by the Universal Forwarder.</div><hr />
+
+</div>
+
+    
+<p class="p">Other syslog senders can be configured to send their data to the logger VM or directly to central Splunk.</p>
+       
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title74" id="install-splunk">
+<h2 class="title topictitle2" id="ariaid-title74">Playbooks for installing Splunk</h2>
+
+<div class="body">
+  
+<p class="p">The following playbooks are used to deploy Splunk.</p>
+  
+  
+<ul class="ul">
+<li class="li"><code class="ph codeph">playbooks/splunk_demo.yml</code> installs a demo of Splunk Enterprise in the cluster (if the <code class="ph codeph">splunk_demo</code> deployment option is selected. A value of <code class="ph codeph">splunk</code>
+is used to configure an external production Splunk deployment.)</li>
+    
+
+<li class="li"><code class="ph codeph">playbooks/splunk_uf.yml</code> installs and configures the Splunk Universal Forwarder on each Linux and Windows machine in the inventory</li>
+
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title75" id="monitoring-config-splunk">
+<h2 class="title topictitle2" id="ariaid-title75">Splunk configuration</h2>
 
 <div class="body">
 <p class="p">This solution supports two types of Splunk deployment. Firstly, there is a built-in deployment 
@@ -3867,8 +5175,8 @@ Windows so you must use a Linux node to access the UI.</p>
   
 </div>
 
-<div class="topic nested2" aria-labelledby="ariaid-title53" id="splunk-pre-deploy">
-<h3 class="title topictitle3" id="ariaid-title53">Splunk prerequisites</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title76" id="splunk-pre-deploy">
+<h3 class="title topictitle3" id="ariaid-title76">Splunk prerequisites</h3>
 
 <div class="body">
 <div class="section">
@@ -3990,8 +5298,8 @@ the message <code class="ph codeph">eventtype wineventlog-ds does not exist or i
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title54" id="splunk-ucp-syslog">
-<h3 class="title topictitle3" id="ariaid-title54">Configuring syslog in UCP</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title77" id="splunk-ucp-syslog">
+<h3 class="title topictitle3" id="ariaid-title77">Configuring syslog in UCP</h3>
 
 <div class="body">
 <p class="p">In order to see some data in the UCP operational dashboard, you need to have UCP send its
@@ -4002,32 +5310,32 @@ logs to the VM configured in the [logger] group. For example, for the following 
 hpe-logger ip_addr='10.60.59.24/16' esxi_host='esxi-hpe-2.cloudra.local'</code></pre>
 
 <p class="p">This will configure UCP to send its logs to <code class="ph codeph">hpe-logger.cloudra.local:1514</code>. You
-need to select the TCP protocol as shown in <a class="xref" href="#splunk-ucp-syslog__ucp-config-syslog">Figure 7</a>.</p>
+need to select the TCP protocol as shown in <a class="xref" href="#splunk-ucp-syslog__ucp-config-syslog">Figure 13</a>.</p>
 
 
 <div class="fig fignone" id="splunk-ucp-syslog__ucp-config-syslog">
 
 <img class="image" src="media/ucp-config-syslog.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 7. </b></span>Configure Remote Syslog Server in UCP</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 13. </b></span>Configure Remote Syslog Server in UCP</span></div><p> </p></div>
 
 
 
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title55" id="splunk-esx-syslog">
-<h3 class="title topictitle3" id="ariaid-title55">Configuring syslog in ESX</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title78" id="splunk-esx-syslog">
+<h3 class="title topictitle3" id="ariaid-title78">Configuring syslog in ESX</h3>
 
 <div class="body">
 <p class="p">This configuration must be done manually for each ESX server. The syslog server should be the
 server configured in the [logger] group in your <code class="ph codeph">vm_hosts</code> inventory. The protocol should be <code class="ph codeph">tcp</code> and
-the port <code class="ph codeph">514</code> as shown in <a class="xref" href="#splunk-esx-syslog__esx-config-syslog">Figure 8</a>.</p>
+the port <code class="ph codeph">514</code> as shown in <a class="xref" href="#splunk-esx-syslog__esx-config-syslog">Figure 14</a>.</p>
 
 
 <div class="fig fignone" id="splunk-esx-syslog__esx-config-syslog">
 
 <img class="image" src="media/esx-config-syslog.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 8. </b></span>Configure Syslog on ESXi Hosts</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 14. </b></span>Configure Syslog on ESXi Hosts</span></div><p> </p></div>
 
 
 <p class="p">For more information, see the VMware documentation at
@@ -4037,8 +5345,8 @@ the port <code class="ph codeph">514</code> as shown in <a class="xref" href="#s
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title56" id="splunk-related-playbooks">
-<h3 class="title topictitle3" id="ariaid-title56">Related playbooks</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title79" id="splunk-related-playbooks">
+<h3 class="title topictitle3" id="ariaid-title79">Related playbooks</h3>
 
 <div class="body">
 <ul class="ul">
@@ -4051,8 +5359,8 @@ the port <code class="ph codeph">514</code> as shown in <a class="xref" href="#s
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title57" id="splunk-limitations">
-<h3 class="title topictitle3" id="ariaid-title57">Limitations</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title80" id="splunk-limitations">
+<h3 class="title topictitle3" id="ariaid-title80">Limitations</h3>
 
 <div class="body">
 <ul class="ul">
@@ -4074,464 +5382,98 @@ the port <code class="ph codeph">514</code> as shown in <a class="xref" href="#s
 
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title58" id="monitoring-config-sysdig">
-<h2 class="title topictitle2" id="ariaid-title58">Sysdig configuration</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title81" id="redeploying-splunk-demo">
+<h2 class="title topictitle2" id="ariaid-title81">Redeploying Splunk demo</h2>
 
 <div class="body">
+<p class="p">The Splunk demo deployment, whilst fully featured, is serverely restricted in the amount of data it can process. Once this limit has been
+reached, often after running for just one or two days, it is necessary to re-deploy the application if you want to continue 
+experimenting with the demo.</p>
 
+  
+<p class="p">Before you redeploy, it is necessary to remove the corresponing Docker stack and delete the associated volumes.</p>
+  
+  
+<pre class="pre codeblock"><code># ssh gab-ucp02
 
-<div class="section" id="monitoring-config-sysdig__sysdig-config-docker-swarm"><h3 class="title sectiontitle">Sysdig configuration for Docker swarm</h3>
-   
-   
+[root@gab-ucp02 ~]# docker stack rm splunk_demo
+Removing service splunk_demo_splunkenterprise
+Removing network splunk_demo_default
 
-<div class="tablenoborder">
+[root@gab-ucp02 ~]# docker volume ls | grep splunk
+vsphere:latest      splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
+vsphere:latest      splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
 
-<table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-sysdig__sysdig-config-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 16. </span>Sysdig variables for Docker swarm</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7408">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7411">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7414">Description</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7408 ">sysdig_access_key</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7411 "><strong class="ph b">group_vars/vault</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7414 ">After the activation of your account on the Sysdig portal, you will be 
-provided with your access key which will be used by the playbooks to install the agent on each UCP, DTR and Linux worker node, 
-as well as the NFS, logger and load balancer VMs.
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7408 ">sysdig_agent</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7411 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7414 ">Specifies the URL to the Sysdig Linux native install agent, for example, <code class="ph codeph">https://s3.amazonaws.com/download.draios.com/stable/install-agent</code></td>
-</tr>    
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7408 ">sysdig_tags</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7411 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7414 ">Tagging your hosts is highly recommended. Tags allow you to sort the nodes of your infrastructure 
-   into custom groups in Sysdig Monitor. Specify location, role, and owner in the format: <code class="ph codeph">'location:City,role:Enterprise CaaS,owner:Customer Name'</code></td>
-</tr>    
-</tbody></table>
-</div>
+[root@gab-ucp02 ~]# docker volume rm splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
+splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
 
+[root@gab-ucp02 ~]# docker volume rm splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
+splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
 
+</code></pre>  
+ 
+<p class="p">Then re-run the playbook on your ansible node.</p>
 
-</div>
-
-
-
-
-<div class="section" id="monitoring-config-sysdig__sysdig-config-k8s"><h3 class="title sectiontitle">Sysdig configuration for Kubernetes</h3>
-   
-   
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-sysdig__sysdig-config-k8s-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 17. </span>Sysdig variables for Kubernetes</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7488">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7491">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7494">Description</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7488 ">sysdig_access_key</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7491 "><strong class="ph b">group_vars/vault</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7494 ">After the activation of your account on the Sysdig portal, you will be 
-provided with your access key which will be used by the playbooks to install the agent on each UCP, DTR and Linux Kubernetes worker node.
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7488 ">sysdig_restricted_control_role</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7491 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7494 ">The Sysdig service account requires the 'Restricted Control' grant. So this value will typically be set as follows:
-<pre class="pre codeblock"><code><strong class="ph b">sysdig_restricted_control_role: 'Restricted Control'</strong></code></pre>
-</td>  
-</tr>    
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7488 ">k8s_cluster</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7491 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7494 ">This should match the cluster name displayed when you source the environment setup script, for example, 
-<pre class="pre codeblock"><code># source env.sh
-Cluster "<strong class="ph b">ucp_gab-ucp.cloudra.local</strong>:6443_admin" set.
-User "ucp_gab-ucp.cloudra.local:6443_admin" set.
-</code></pre>
-For more information, see the section on installing the UCP client bundle in <a class="xref" href="#deploying-sysdig-k8s">Deploying Sysdig monitoring on Kubernetes</a>,   
-</td>
-</tr>    
-</tbody></table>
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-   
-   
-   
-
-</div>
-
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title59" id="monitoring-config-promgraf">
-<h2 class="title topictitle2" id="ariaid-title59">Prometheus and Grafana configuration</h2>
-
-<div class="body">
-<p class="p">All Monitoring-related variables for Prometheus and Grafana are described in <a class="xref" href="#monitoring-config-promgraf__monitoring-config-table-conref">Table 18</a>. The variables determine
-the versions of various software tools that are used and it is
-recommended that the values given below are used.</p>
+  
+<pre class="pre codeblock"><code>ansible-playbook -i vm_hosts playbooks/splunk_demo.yml --vault-password-file .vault_pass</code></pre>
  
 
-
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-promgraf__monitoring-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 18. </span>Monitoring variables</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7590">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e7593">Description</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7590 ">cadvisor_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7593 ">
-<code class="ph codeph">v0.28.3</code>
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7590 ">node_exporter_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7593 ">
-<code class="ph codeph">v1.15.0</code>
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7590 ">prometheus_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7593 ">
-<code class="ph codeph">v2.3.2</code>
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7590 ">grafana_version</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7593 ">
-<code class="ph codeph">5.2.3</code>
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7590 ">prom_persistent_vol_name</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7593 ">The name of the volume which will be used to store the monitoring
-data. The volume is created using the vSphere Docker Volume
-plugin.</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7590 ">prom_persistent_vol_size</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e7593 ">The size of the volume which will hold the monitoring data. The
-exact syntax is dictated by the vSphere Docker Volume plugin. The
-default value is 10GB.</td>
-</tr>
-</tbody></table>
-</div>
-
-
-
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title60" id="edit-vault">
-<h2 class="title topictitle2" id="ariaid-title60">Protecting sensitive information</h2>
-
-<div class="body">
-<p class="p">A vault file is used to protect any sensitive variables that should not appear in clear text in your
-<code class="ph codeph">group_vars/vars</code> file. The vault file will be encrypted and will require a password to be entered before
-it can be read or updated.</p>
-
-    
-<p class="p">A sample vault file is provided named <code class="ph codeph">group_vars/vault.sample</code> that you can
-use as a model for your vault file. To create a vault, you create a new file called
-<code class="ph codeph">group_vars/vault</code> and add entries similar to:</p>
-
-
-<pre class="pre codeblock"><code>---
-docker_ee_url: 'your_url_here'
-vcenter_password: 'xxxx'
-vm_password: 'xxxx'
-
-simplivity_password: 'xxx'
-ucp_password: 'zzzz'
-win_password: 'yourpass'
-sysdig_access_key: 'enter_sysdig_access_key'
-rhn_orgid: "YourOrgId"
-rhn_key: "YourActivationKey"
-#password for the splunk universal forwarder. Must meet password complexiy requirement (see splunk doc)
-splunk_uf_password: 'YourPa$$word12'
-</code></pre>
-
-<p class="p"><code class="ph codeph">rhn_orgid</code> and <code class="ph codeph">rhn_key</code> are the credentials needed to
-subscribe the virtual machines with Red Hat Customer Portal. For more information regarding
-activation keys, see the following URL: <a class="xref" href="https://access.redhat.com/articles/1378093" target="_blank">https://access.redhat.com/articles/1378093</a></p>
-
-    
-<p class="p">To encrypt the vault you need to run the following command:</p>
-
-
-<pre class="pre codeblock"><code># ansible-vault encrypt group_vars/vault</code></pre>
-
-<p class="p">You will be prompted for a password that will decrypt the vault when required. You can
-update the values in your vault by running:</p>
-
-
-<pre class="pre codeblock"><code># ansible-vault edit group_vars/vault</code></pre>
-
-<p class="p">For Ansible to be able to read the vault, you need to specify a file where the password
-is stored, for instance, in a file called <code class="ph codeph">.vault_pass</code>. Once the file is
-created, take the following precautions to avoid illegitimate access to this file:</p>
-
-<ol class="ol">
-<li class="li"> Change the permissions so only <code class="ph codeph">root</code> can read it using <code class="ph codeph">#
-chmod 600 .vault_pass</code>
-</li>
-
-<li class="li"> Add the file to your <code class="ph codeph">.gitignore</code> file if you are using a Git repository to manage your playbooks. </li>
-
-</ol>
-
-<p class="p"></p>
-
-    
-<p class="p">When you use a vault, you must specify the password file every time on the command line, for example,</p>
-   
-    
-<pre class="pre codeblock"><code>
-# ansible-playbook -i vm_hosts site.yml <strong class="ph b">--vault-password-file .vault_pass</strong>
-</code></pre>    
-    
 </div>
-
-
-
-
-
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title61" id="inventory-group-variables">
-<h2 class="title topictitle2" id="ariaid-title61">Inventory group variables</h2>
+<div class="topic nested0" aria-labelledby="ariaid-title82" id="prometheus-grafana">
+<h1 class="title topictitle1" id="ariaid-title82">Deploying Prometheus and Grafana on Docker RHEL nodes </h1>
 
 <div class="body">
   
-<p class="p">Additional configuration files for each group in the inventory are available, including <code class="ph codeph">group_vars/vms.yml</code>,
-<code class="ph codeph">group_vars/ucp.yml</code>, <code class="ph codeph">group_vars/dtr.yml</code>, <code class="ph codeph">group_vars/worker.yml</code> 
-  and <code class="ph codeph">group_vars/nfs.yml</code>.
-  
-</p>
-
-  
-<p class="p">These group files facilitate more sophisticated settings, such as additional drives and additional network interfaces. For example, here
-  is the <code class="ph codeph">group_vars/nfs.yml</code> file.
-</p>
-   
-
-<pre class="pre codeblock"><code>networks:
-  - name:  '{{ vm_portgroup }}'
-    ip:  "{{ ip_addr | ipaddr('address') }}"
-    netmask: "{{ ip_addr | ipaddr('netmask') }}"
-    gateway: "{{ gateway }}"
- 
-disks_specs:
-  - size_gb:  '{{ disk1_size }}'
-    type: thin
-    datastore: "{{ datastores | random }}"
-  - size_gb: '{{ disk2_size }}'
-    type: thin
-    datastore: "{{ datastores | random }}"
-  - size_gb: 10
-    type: thin
-    datastore: "{{ datastores | random }}"</code></pre>
-
-
-<p class="p">In this example, the size of the first two drives is specified using the values of the variables <code class="ph codeph">disk1_size</code> and <code class="ph codeph">disk2_size</code>  
-  that are declared in the <code class="ph codeph">group_vars/vars</code> file. This maintains compatability with <code class="ph codeph">vm_hosts</code> inventories 
-  from the previous release of the playbooks. However, it is possible to provide explicit values, depending on your requirements, for the
-individual UCP, DTR, worker or NFS VMs. For example, you may want to increase the size of the second disk for the NFS VM as this is used
-to store the DTR images, so the default value of 500GB may not be sufficient to meet your needs. </p>
-
- 
-<p class="p">In this release, support has been added for configuring a third drive that can be used to hold Kubernetes persistent volume data.
-The default size (10GB) is set low as the use of the NFS VM for storing persistent volume data is only considered suitable 
-for demo purposes and should not be used in a production environment.
-</p>
-
-  
-<p class="p">In the following example, the <code class="ph codeph">group_vars/nfs.yml</code> has been modified to 
-configure the NFS VM  with a 50GB boot disk, a 500GB drive for DTR images and a 800GB drive for Kubernetes persistent volumes data. 
-</p>
-  
-  
-<pre class="pre codeblock"><code>
-networks:
-  - name:  '{{ vm_portgroup }}'
-    ip:  "{{ ip_addr | ipaddr('address') }}"
-    netmask: "{{ ip_addr | ipaddr('netmask') }}"
-    gateway: "{{ gateway }}"
- 
-disks_specs:
-  - size_gb:  <strong class="ph b">50</strong>
-    type: thin
-    datastore: "{{ datastores | random }}"
-  - size_gb: <strong class="ph b">500</strong>
-    type: thin
-    datastore: "{{ datastores | random }}"
-  - size_gb: <strong class="ph b">800</strong>
-    type: thin
-    datastore: "{{ datastores | random }}"</code></pre>
-
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> The number of drives and the purpose of each drive is determined by the role of the VM and the specific playbooks
-  that uses the information. The first disk is always used as the boot disk, irrespective of VM role, while the purpose of the 
-  second or third disk is specific to the role.</div><hr />
-
-  
-</div>
 
 </div>
-</div>
-<div class="topic nested0" aria-labelledby="ariaid-title62" id="playbooks-overview">
-<h1 class="title topictitle1" id="ariaid-title62">Overview of the playbooks</h1>
+
+<div class="topic nested1" aria-labelledby="ariaid-title83" id="promgraf-overview">
+
+<h2 class="title topictitle2" id="ariaid-title83">Monitoring with Prometheus and Grafana</h2>
 
 <div class="body">
+<p class="p">The solution can be configured to enable the use of Prometheus and Grafana for monitoring.
+In this setup, there is no need for native installs and all the required monitoring software runs in containers,
+deployed as either services or stacks. 
+The load among the three hosts will be shared as 
+per <a class="xref" href="#promgraf-overview__simplivity-ops-architecture-promgraf">Figure 15</a>.</p>
+
+
+<div class="fig fignone" id="promgraf-overview__simplivity-ops-architecture-promgraf">
+ 
+<img class="image" src="media/simplivity-ops-architecture-promgraf.png" />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 15. </b></span>Solution architecture: Linux workers with Prometheus and Grafana</span></div><p> </p></div>
+
+
+
+<p class="p">The Prometheus
+and Grafana services are declared in a Docker stack as replicated services with one
+replica each, so if they fail, Docker EE will ensure that they are restarted on one
+of the UCP VMs. cAdvisor and node-exporter are declared in the same stack as global
+services, so Docker EE will ensure that there is always one copy of each running on
+every machine in the cluster.</p>
+
     
-<p class="p">The Ansible playbooks are available to download at 
-    <span class="ph"><a class="xref" href="https://github.com/HewlettPackard/Docker-SimpliVity" target="_blank"><span class="keyword">https://github.com/HewlettPackard/Docker-SimpliVity</span></a></span>. 
-    Once you have cloned the repository, change directory to <code class="ph codeph">/root/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/ops</code>.</p>
-
-
-<p class="p">There are two main entry points for the playbooks:</p>
-
+<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
+Prometheus and Grafana functionality is not turned on by default in this solution - 
+see the section on Configuration for more information on how to enable these tools.
+Additionally, this functionality will not work for the Windows worker nodes in your environment at present.
+</div><hr />
     
+    
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title84" id="prometheus-grafana-playbooks">
+<h2 class="title topictitle2" id="ariaid-title84">Playbooks for installing Prometheus and Grafana</h2>
+
+<div class="body">
+<p class="p">The following playbooks are used to deploy Prometheus and Grafana on Docker RHEL nodes.</p>
+  
 <ul class="ul">
-<li class="li"><code class="ph codeph">site.yml</code> deploys a Linux-only environment</li>
-
-<li class="li"><code class="ph codeph">hybrid.yml</code> deploys a mixed environment with Linux and Windows worker nodes</li>
-    
-</ul>
-    
-</div>
-
-    
-
-<div class="topic nested1" aria-labelledby="ariaid-title63" id="site">
-<h2 class="title topictitle2" id="ariaid-title63">site.yml and related playbooks</h2>
-
-<div class="body">  
-
-
- 
-<p class="p">The playbook <code class="ph codeph">./site.yml</code> is the day 0 playbook you use to deploy the solution and it invokes the 
-following playbooks:</p>
-
-    
-<ul class="ul">
-	
-<li class="li"><code class="ph codeph">playbooks/create_vms.yml</code> will create all the necessary virtual machines for 
-the environment from the VM Template defined in the <code class="ph codeph">vm_template</code> variable. All Linux VMs are now created in one go, regardless of the number of drives they have. 
-This playbook also has the potential to configure additional network adapters.
-</li>
-
-
-
-
-<li class="li"><code class="ph codeph">playbooks/config_networking.yml</code> will configure the network settings in all the virtual machines.</li>
-
-
-<li class="li"><code class="ph codeph" id="site__resize_syspart">playbooks/resize_syspart.yml</code> resizes the logical volume that holds the <code class="ph codeph">/</code> partition 
-    of the Linux VMs to use all the space available on the drive. In this release, there is no equivalent for the Windows machines.</li>
-
-
-<li class="li"><code class="ph codeph">playbooks/config_subscription.yml</code> registers and subscribes all virtual machines to the Red Hat Customer Portal. 
-This is only needed if you pull packages from Red Hat. This playbook is commented out by default but you should uncomment 
-it to make sure each VM registers with the Red Hat portal. It is commented out so that you can test the deployment first 
-without having to unregister all the VMs from the Red Hat Customer Portal between each test. If you are using an 
-internal repository, as described in the section "Create a VM template", you can keep this playbook commented out.</li>
-
-
-
-
-<li class="li"><code class="ph codeph">playbooks/install_haproxy.yml</code> installs and configures the HAProxy package in the 
-load balancer nodes. HAProxy is the tool chosen to implement load balancing for UCP nodes, DTR nodes and worker nodes.</li>
-
-
-
-<li class="li"><code class="ph codeph">playbooks/config_ntp.yml</code> configures the <strong class="ph b">chrony</strong> client package in all virtual machines in 
-order to have a synchronized clock across the environment. It will use the list of servers specified in the 
-<code class="ph codeph">ntp_servers</code> variable in the file <code class="ph codeph">group_vars/vars</code>.</li>
-
-
-
-<li class="li"><code class="ph codeph">playbooks/install_docker.yml</code> installs Docker along with all of its dependencies.</li>
-
-
-
-<li class="li"><code class="ph codeph">playbooks/install_rsyslog.yml</code> installs and configures <strong class="ph b">rsyslog</strong> in the logger node 
-and in all Docker nodes. The logger node will be configured to receive all <code class="ph codeph">syslogs</code> on port 514 and 
-the Docker nodes will be configured to send all logs (including container logs) to the logger node.</li>
-
-
-<li class="li"><code class="ph codeph">playbooks/config_docker_lvs.yml</code> performs a set of operations on the Docker nodes 
-in order to create a partition on the second disk and carry out the LVM configuration, 
-required for a sound Docker installation.</li>
-
-
-
-<li class="li"><code class="ph codeph">playbooks/docker_post_config.yml</code> performs a variety of tasks to complete 
-the installation of the Docker environment, including configuration of the HTTP/HTTPS proxies, if any, 
-and installation of the VMware vSphere Storage for Docker volume plugin.</li>
-
-
-
-<li class="li"><code class="ph codeph">playbooks/install_nfs_server.yml</code> installs and configures an NFS server on the NFS node.
-
-<p class="p">This playbook has been updated to configure a third drive which is used to hold the data of the persistent volumes 
-created with the NFS provisioner. This default size for this drive is purposefully kept small because 
-using the NFS VM to store persistent volumes is not recommended for production use. However, this can be useful for demo purposes.</p>
-
-</li>
-
-
-
-<li class="li"><code class="ph codeph">playbooks/install_nfs_clients.yml</code> installs the required packages on the DTR nodes 
-to be able to mount an NFS share.</li>
-
-
-
-<li class="li"><code class="ph codeph">playbooks/create_main_ucp.yml</code> installs and
-configures the first Docker UCP instance on the target node
-defined by the group <code class="ph codeph">ucp_main</code> in the
-<code class="ph codeph">vm_hosts</code> inventory.</li>
-
-
-
-<li class="li"><code class="ph codeph">playbooks/scale_ucp.yml</code> installs and configures
-additional instances of UCP on the target node defined by
-the group <code class="ph codeph">ucp</code> in the
-<code class="ph codeph">vm_hosts</code> inventory, except for the node defined in the group
-<code class="ph codeph">ucp_main</code>.</li>
-
-
-	
-
-<li class="li"><code class="ph codeph">playbooks/create_main_dtr.yml</code> installs and
-configures the first Docker DTR instance on the target nodes
-defined by the group <code class="ph codeph">dtr_main</code> in the <code class="ph codeph">vm_hosts</code> inventory.</li>
-
-
-	
-<li class="li"><code class="ph codeph">playbooks/scale_workers.yml</code> installs and configures additional Linux workers 
-on the target nodes defined by the group <code class="ph codeph">worker</code> in the <code class="ph codeph">vm_hosts</code> inventory.</li>
-
-
-	
 
 <li class="li"><code class="ph codeph">playbooks/install_logspout.yml</code> installs and configures <strong class="ph b">Logspout</strong> on all Docker nodes. 
 Logspout is responsible for sending logs produced by containers running on the Docker nodes to the central logger VM.
@@ -4545,254 +5487,81 @@ based on Grafana, Prometheus, cAdvisor and node-exporter Docker containers. By d
 deploy a Prometheus/Grafana monitoring system, you must explicitly uncomment both this and the <code class="ph codeph">playbooks/install_logspout.yml</code>
 playbook in <code class="ph codeph">site.yml</code> or run these playbooks post-deployment.
 </li>
-
-
-
-
-
-    
-<li class="li"><code class="ph codeph">playbooks/splunk_demo.yml</code> installs a demo of Splunk Enterprise in the cluster (if the <code class="ph codeph">splunk_demo</code> deployment option is selected. A value of <code class="ph codeph">splunk</code>
-is used to configure an external production Splunk deployment.)</li>
-    
-
-<li class="li"><code class="ph codeph">playbooks/splunk_uf.yml</code> installs and configures the Splunk Universal Forwarder on each Linux machine in the inventory</li>
-
-
-
-<li class="li"><code class="ph codeph">playbooks/config_scheduler.yml</code> configures the scheduler to prevent regular users 
-(i.e. non-admin users) scheduling containers on the Docker nodes running instances of UCP and DTR.</li>
-
-	
-
-<li class="li"><code class="ph codeph">playbooks/scale_dtr.yml</code> installs and configures additional instances (or replicas) 
-of DTR on the target nodes defined by the group <code class="ph codeph">dtr</code> in the <code class="ph codeph">vm_hosts</code> inventory, 
-with the exception of the node defined in the group <code class="ph codeph">dtr_main</code>.</li>
-
-
-	
-
-<li class="li"><code class="ph codeph">playbooks/reconfigure_dtr.yml</code>	is used to reconfigure DTR with the FQDN of the UCP Load Balancer and also 
-enables image scanning.
-</li>
-
-
-<li class="li"><code class="ph codeph">playbooks/install_sysdig.yml</code> is used to configure Sysdig. It opens the required port in the firewall, 
-and installs the latest version of the Sysdig agent image on the nodes. By default, this playbook is commented out in <code class="ph codeph">site.yml</code>, so if you want to use the solution to 
-automatically configure Sysdig, you must uncomment this line or run this playbook post-deployment.
-</li>
-	
-</ul>
-
-    
-</div>
- 
-</div>
-
-
-
-<div class="topic nested1" aria-labelledby="ariaid-title64" id="windows-playbooks">
-<h2 class="title topictitle2" id="ariaid-title64">Windows playbooks</h2>
-
-    
-<div class="body">
-<p class="p"><code class="ph codeph">hybrid.yml</code> invokes the following  Windows-specific playbooks, together with the preceding ones for Linux.</p>
-  
-    
-<ul class="ul">  
-     
-<li class="li"><code class="ph codeph">playbooks/create_windows_vms.yml</code> will create all the necessary Windows 2016 VMs 
-for the environment based on the Windows VM Template defined in the <code class="ph codeph">win_vm_template</code> variable.</li>
-   
-    
-
-<li class="li"><code class="ph codeph">playbooks/install_docker_windows.yml</code> installs Docker along with all its dependencies 
-on your Windows VMs</li>
-
-
-
-<li class="li"><code class="ph codeph">playbooks/scale_workers_win.yml</code> installs and configures additional Windows workers on the target nodes 
-    defined by the group <code class="ph codeph">win_worker</code> in the <code class="ph codeph">vm_hosts</code> inventory.</li>
-
- 
-<li class="li"><code class="ph codeph">playbooks/splunk_uf_win.yml</code> installs and configures the Splunk Universal Forwarder on each Windows machine in the inventory.</li>
-
- 
-</ul>
- 
-</div>
-    
-</div>
-
-    
-
-<div class="topic nested1" aria-labelledby="ariaid-title65" id="backup-restore-playbooks">
-<h2 class="title topictitle2" id="ariaid-title65">Backup and restore playbooks</h2>
-
-    
-<div class="body">
-    
-<div class="section">
-<p class="p">Best practices and procedures are described in the section <a class="xref" href="#backup-restore">Backup and restore</a>. The following playbooks are used to perform backups:</p>
-
-    
-<ul class="ul">
-<li class="li"><code class="ph codeph">playbooks/backup_swarm.yml</code> is used to back up the swarm data</li>
-
-<li class="li"><code class="ph codeph">playbooks/backup_ucp.yml</code> is used to back up UCP</li>
-
-<li class="li"><code class="ph codeph">playbooks/backup_dtr_meta.yml</code> is used to back up DTR metadata</li>
-
-<li class="li"><code class="ph codeph">playbooks/backup_dtr_images.yml</code> is used to back up DTR images</li>
-
-</ul>
-
-
-
-</div>
-
-    
-<div class="section">
-<p class="p">The following playbooks are used to restore the system:</p>
-
-    
-<ul class="ul">
-<li class="li"><code class="ph codeph">playbooks/restore_dtr_images.yml</code> is used to restore DTR images</li>
-
-<li class="li"><code class="ph codeph">playbooks/restore_dtr_metadata.yml</code> is used to restore DTR metadata</li>
-
-<li class="li"><code class="ph codeph">playbooks/restore_ucp.yml</code> is used to restore UCP</li>
-
-</ul>
-
-    
-    
-</div>
-    
-    
-
-</div>
-
-</div>
-
-
-<div class="topic nested1" aria-labelledby="ariaid-title66" id="convenience-playbooks">
-<h2 class="title topictitle2" id="ariaid-title66">Convenience playbooks</h2>
-
-    
-<div class="body">
- 
-<div class="section">
-
-<ul class="ul">
-<li class="li"><code class="ph codeph">playbooks/clean_all.yml</code> powers off and deletes all VMs in your inventory.</li>
-    
-<li class="li"><code class="ph codeph">playbooks/distribute_keys.yml</code> distributes public keys between all nodes, to allow each node to 
-password-less log in to every other node. As this is not essential and can be regarded as a security risk 
-(a worker node probably should not be able to log in to a UCP node, for instance), this playbook is commented out in
- <code class="ph codeph">site.yml</code> by default.</li>
-    
-</ul>
-
-    
-</div>
- 
-</div>
-        
-</div>
-
-
-<div class="topic nested1" aria-labelledby="ariaid-title67" id="convenience-scripts">
-<h2 class="title topictitle2" id="ariaid-title67">Convenience scripts</h2>
-
-    
-<div class="body">
- 
-<div class="section">
-
-<ul class="ul">
-<li class="li"><code class="ph codeph">backup.sh</code> can be used to take a backup of the swarm, UCP, DTR metadata and the DTR images in one go.</li>
-
-<li class="li"><code class="ph codeph">restore_dtr.sh</code> can be used to restore DTR metadata and DTR images.</li>
-
-<li class="li"><code class="ph codeph">scale_worker.sh</code> can be used to scale the worker nodes.</li>
-
-</ul>
-
-
- 
-</div>
-
-</div>
-
-</div>
-
-    
-
-</div>
-<div class="topic nested0" aria-labelledby="ariaid-title68" id="running-playbooks">
-<h1 class="title topictitle1" id="ariaid-title68">Running the playbooks</h1>
-
-<div class="body">
-<div class="section" id="running-playbooks__running-playbooks-section">
-<p class="p">At this point, the system is ready to be deployed. Make sure you are logged on as 
-    <code class="ph codeph">root</code> on your ansible box and that your current directory is <code class="ph codeph">/root/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/ops</code></p>
-
-
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> As well as configuring your <code class="ph codeph">vars</code> and <code class="ph codeph">vault</code> files, you must also provide a <code class="ph codeph">backups</code> configuration 
-    file in the <code class="ph codeph">group_vars</code> folder when running <code class="ph codeph">site.yml</code> or <code class="ph codeph">hybrid.yml</code>. 
-    An example file is provided in the repository named <code class="ph codeph">backups.sample</code>. Rename it to backups before 
-    running the playbooks. Details on how to configure this file are available in the section 
-    <a class="xref" href="#backup-restore">Backup and restore</a>. </div><hr />
- 
-    
-</div>
-
-</div>
-
-<div class="topic nested1" aria-labelledby="ariaid-title69" id="running-playbooks-linux">
-<h2 class="title topictitle2" id="ariaid-title69">Linux-only deployment</h2>
-
-<div class="body">
-
-<p class="p">To start a Linux-only deployment, use the following command:</p>
-
-
-<pre class="pre codeblock"><code># ansible-playbook -i vm_hosts site.yml --vault-password-file .vault_pass</code></pre>
-
-    
-<p class="p">The playbooks should run for 35-40 minutes depending on your server specifications and the size of your environment.</p>
-
-
-
-</div>
-  
-
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title70" id="running-playbooks-hybrid">
-<h2 class="title topictitle2" id="ariaid-title70">Hybrid Windows and Linux deployment</h2>
-
-<div class="body">
-
-<p class="p">To start a hybrid, Windows and Linux deployment, use the following command:</p>
-
-
-<pre class="pre codeblock"><code># ansible-playbook -i vm_hosts hybrid.yml --vault-password-file .vault_pass</code></pre>
-
-        
-<p class="p">The playbooks should run for 70-80 minutes depending on your server specifications and the size of your environment. The increase in 
-running time is primarily due to the need to update Windows after creating the VMs.</p>
-
- 
-
   
   
+</ul>
+
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title71" id="post-deployment">
-<h2 class="title topictitle2" id="ariaid-title71">
+<div class="topic nested1" aria-labelledby="ariaid-title85" id="monitoring-config-promgraf">
+<h2 class="title topictitle2" id="ariaid-title85">Prometheus and Grafana configuration</h2>
+
+<div class="body">
+<p class="p">All Monitoring-related variables for Prometheus and Grafana are described in <a class="xref" href="#monitoring-config-promgraf__monitoring-config-table-conref">Table 18</a>. The variables determine
+the versions of various software tools that are used and it is
+recommended that the values given below are used.</p>
+ 
+
+
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="monitoring-config-promgraf__monitoring-config-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 18. </span>Monitoring variables</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9703">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9706">Description</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9703 ">cadvisor_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9706 ">
+<code class="ph codeph">v0.28.3</code>
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9703 ">node_exporter_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9706 ">
+<code class="ph codeph">v1.15.0</code>
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9703 ">prometheus_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9706 ">
+<code class="ph codeph">v2.3.2</code>
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9703 ">grafana_version</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9706 ">
+<code class="ph codeph">5.2.3</code>
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9703 ">prom_persistent_vol_name</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9706 ">The name of the volume which will be used to store the monitoring
+data. The volume is created using the vSphere Docker Volume
+plugin.</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9703 ">prom_persistent_vol_size</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9706 ">The size of the volume which will hold the monitoring data. The
+exact syntax is dictated by the vSphere Docker Volume plugin. The
+default value is 10GB.</td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+</div>
+
+</div>
+</div>
+<div class="topic nested0" aria-labelledby="ariaid-title86" id="post-deployment">
+<h1 class="title topictitle1" id="ariaid-title86">
 <span class="ph">Post deployment</span>
-</h2>
+</h1>
 
 <div class="body">
 <p class="p">
@@ -4800,7 +5569,7 @@ The playbooks are intended to be used to deploy a new environment. You should on
 </p>
 
 <p class="p">
-The Ansible log is stored in the <code class="ph codeph">ops</code> folder (<code class="ph codeph">/root/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/ops</code>). 
+The Ansible log is stored in the folder <code class="ph codeph">/root/<span class="ph"><span class="keyword">Docker-SimpliVity</span></span></code>. 
     If the deployment fails, you may find useful hints in this log.
 </p>
 
@@ -4816,8 +5585,8 @@ The Ansible log is stored in the <code class="ph codeph">ops</code> folder (<cod
 
 
 
-<div class="topic nested2" aria-labelledby="ariaid-title72" id="install-kubectl">
-<h3 class="title topictitle3" id="ariaid-title72">Installing kubectl</h3>
+<div class="topic nested1" aria-labelledby="ariaid-title87" id="install-kubectl">
+<h2 class="title topictitle2" id="ariaid-title87">Installing kubectl</h2>
 
 <div class="body">
 
@@ -4849,8 +5618,8 @@ Server Version: version.Info{Major:"1", Minor:"8+", GitVersion:"v1.8.11-docker-8
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title73" id="k8s-example-guestbook">
-<h3 class="title topictitle3" id="ariaid-title73">Kubernetes guestbook example with Redis </h3>
+<div class="topic nested1" aria-labelledby="ariaid-title88" id="k8s-example-guestbook">
+<h2 class="title topictitle2" id="ariaid-title88">Kubernetes guestbook example with Redis </h2>
 
 <div class="body">
 
@@ -5191,62 +5960,22 @@ redis-slave    ClusterIP   10.96.82.175    &lt;none&gt;        6379/TCP       27
 
 
 <p class="p">Access the UI, using the identified port, at <code class="ph codeph">http://gab-ucp03.cloudra.local:<strong class="ph b">35440</strong>/ </code>
-    as shown in <a class="xref" href="#k8s-example-guestbook__k8s-guestbook1">Figure 9</a>. 
+    as shown in <a class="xref" href="#k8s-example-guestbook__k8s-guestbook1">Figure 16</a>. 
 </p>
 
  
 <div class="fig fignone" id="k8s-example-guestbook__k8s-guestbook1">
 
 <br /><img class="image" src="media/k8s-guestbook1.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 9. </b></span>Guestbook UI</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 16. </b></span>Guestbook UI</span></div><p> </p></div>
    
   
 
 </div>
 
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title74" id="redeploying-splunk-demo">
-<h3 class="title topictitle3" id="ariaid-title74">Redeploying Splunk demo</h3>
-
-<div class="body">
-<p class="p">The Splunk demo deployment, whilst fully featured, is serverely restricted in the amount of data it can process. Once this limit has been
-reached, often after running for just one or two days, it is necessary to re-deploy the application if you want to continue 
-experimenting with the demo.</p>
-
-  
-<p class="p">Before you redeploy, it is necessary to remove the corresponing Docker stack and delete the associated volumes.</p>
-  
-  
-<pre class="pre codeblock"><code># ssh gab-ucp02
-
-[root@gab-ucp02 ~]# docker stack rm splunk_demo
-Removing service splunk_demo_splunkenterprise
-Removing network splunk_demo_default
-
-[root@gab-ucp02 ~]# docker volume ls | grep splunk
-vsphere:latest      splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
-vsphere:latest      splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
-
-[root@gab-ucp02 ~]# docker volume rm splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
-splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
-
-[root@gab-ucp02 ~]# docker volume rm splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
-splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
-
-</code></pre>  
- 
-<p class="p">Then re-run the playbook on your ansible node.</p>
-
-  
-<pre class="pre codeblock"><code>ansible-playbook -i vm_hosts playbooks/splunk_demo.yml --vault-password-file .vault_pass</code></pre>
- 
-
-</div>
-
-</div>
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title75" id="k8s-nfs-provisioner">
-<h2 class="title topictitle2" id="ariaid-title75">Deploying the NFS provisioner for Kubernetes</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title89" id="k8s-nfs-provisioner">
+<h2 class="title topictitle2" id="ariaid-title89">Deploying the NFS provisioner for Kubernetes</h2>
 
 <div class="body">
 <div class="section"><h3 class="title sectiontitle">Prerequisites</h3>
@@ -5274,7 +6003,7 @@ splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
 <p class="p">Once the prerequisites are satisfied, run the appropriate playbook on your Ansible node:</p>
   
   
-<pre class="pre codeblock"><code># cd <span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/ops
+<pre class="pre codeblock"><code># cd <span class="ph"><span class="keyword">Docker-SimpliVity</span></span>
 # ansible-playbook -i vm_hosts playbooks/k8s-nfs-provisioner.yml --vault-password-file .vault_pass
 </code></pre>  
   
@@ -5285,8 +6014,8 @@ splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
   
 </div>
 
-<div class="topic nested2" aria-labelledby="ariaid-title76" id="k8s-nfs-provisioner-vm">
-<h3 class="title topictitle3" id="ariaid-title76">Using NFS VM for post-deployment verification</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title90" id="k8s-nfs-provisioner-vm">
+<h3 class="title topictitle3" id="ariaid-title90">Using NFS VM for post-deployment verification</h3>
 
 <div class="body">
 <div class="section">
@@ -5300,35 +6029,35 @@ splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
 
 <table cellpadding="4" cellspacing="0" summary="" id="k8s-nfs-provisioner-vm__k8s-persistent-volume-verify" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 19. </span>Configuration values</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8812">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e8815">Value</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10183">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10186">Value</th>
 </tr>
 </thead><tbody class="tbody">
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8812 ">nfs_provisioner_role</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8815 "><code class="ph codeph">nfs-provisioner-runner</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10183 ">nfs_provisioner_role</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10186 "><code class="ph codeph">nfs-provisioner-runner</code></td>
 </tr>     
 
  
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8812 ">nfs_provisioner_name</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8815 "><code class="ph codeph">hpe.com/nfs</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10183 ">nfs_provisioner_name</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10186 "><code class="ph codeph">hpe.com/nfs</code></td>
 </tr>
  
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8812 ">nfs_provisioner_storage_class_name</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8815 "><code class="ph codeph"><strong class="ph b">nfs</strong></code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10183 ">nfs_provisioner_storage_class_name</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10186 "><code class="ph codeph"><strong class="ph b">nfs</strong></code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8812 ">nfs_provisioner_server_ip</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8815 "><code class="ph codeph">hpe-nfs.cloudra.local</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10183 ">nfs_provisioner_server_ip</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10186 "><code class="ph codeph">hpe-nfs.cloudra.local</code></td>
 </tr>
 
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8812 ">nfs_provisioner_server_share</td> 
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e8815 "><code class="ph codeph">/k8s</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10183 ">nfs_provisioner_server_share</td> 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10186 "><code class="ph codeph">/k8s</code></td>
 </tr>
 
   
@@ -5342,7 +6071,7 @@ splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
 <p class="p">Ensure that your environment satisfies the prerequisites as described in <a class="xref" href="#k8s-nfs-provisioner">Deploying the NFS provisioner for Kubernetes</a> and then run the playbook:</p>
   
 
-<pre class="pre codeblock"><code># cd <span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/ops
+<pre class="pre codeblock"><code># cd <span class="ph"><span class="keyword">Docker-SimpliVity</span></span>
 # ansible-playbook -i vm_hosts playbooks/k8s-nfs-provisioner.yml --vault-password-file .vault_pass
 </code></pre> 
 
@@ -5474,713 +6203,9 @@ default-dynnfs-testpvc-pvc-e685a9d2-8a6f-11e8-9025-0242ac110010
 
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title77" id="deploying-sysdig">
-<h2 class="title topictitle2" id="ariaid-title77">Deploying Sysdig monitoring</h2>
-
-<div class="body">
-
-<p class="p"> By default, the playbooks for deploying Sysdig are commented out in
-<code class="ph codeph">site.yml</code> and must be explicitly enabled in that file if you want it included in the initial
-  deployment. Alternatively, you can run the specific playbooks detailed in this section in a stand-alone manner, 
-  subsequent to the initial deployment. </p>
-
-
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> <p class="p">By default, you must have outgoing port 6666 open in your firewall, to allow data to flow
-to <code class="ph codeph">collector.sysdigcloud.com</code>. You can configure the agent to use a different port by setting the 
-<code class="ph codeph">collector_port</code> parameter in the configuration file <code class="ph codeph">/opt/draios/etc/dragent.yaml</code>. For more
-information, see the relevant Sysdig documentation at 
-<a class="xref" href="https://support.sysdig.com/hc/en-us/articles/204205969" target="_blank">https://support.sysdig.com/hc/en-us/articles/204205969</a>.</p>
-
-   
-<p class="p">If you are using a proxy, it must be configured to be "fully-transparent". Non-transparent proxies will not allow the agent to connect.</p>
-   
-</div><hr />
-
-  
 </div>
-
-<div class="topic nested2" aria-labelledby="ariaid-title78" id="sysdig-trial">
-<h3 class="title topictitle3" id="ariaid-title78">Registering for Sysdig trial</h3>
-
-<div class="body">
-  
-<p class="p">Browse to the registration page at <a class="xref" href="https://sysdig.com/partner-hpe/" target="_blank">https://sysdig.com/partner-hpe/</a>
-    as shown in <a class="xref" href="#sysdig-trial__sysdig-hpe">Figure 10</a>. 
-</p>
-
- 
-<div class="fig fignone" id="sysdig-trial__sysdig-hpe">
-
-<br /><img class="image" src="media/sysdig-hpe.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 10. </b></span>Sysdig and HPE</span></div><p> </p></div>
-
-
-<p class="p">Scroll to the registration form at the bottom of the page, as shown in <a class="xref" href="#sysdig-trial__sysdig-registration">Figure 11</a>. </p>
-
-  
-<div class="fig fignone" id="sysdig-trial__sysdig-registration">
-
-<br /><img class="image" src="media/sysdig-registration.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 11. </b></span>Sysdig trial registration</span></div><p> </p></div>
-  
-
-<p class="p">After completing and submitting the form, you will receive an email containing an activation link, 
-as shown in <a class="xref" href="#sysdig-trial__sysdig-email">Figure 12</a>. </p>
-
-
-
-<div class="fig fignone" id="sysdig-trial__sysdig-email">
-
-<br /><img class="image" src="media/sysdig-email.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 12. </b></span>Sysdig email</span></div><p> </p></div>
-  
- 
-<p class="p">Clicking on the activation link will bring you to the Sysdig Monitor welcome page,
-as shown in <a class="xref" href="#sysdig-trial__sysdig-monitor-welcome">Figure 13</a>. </p>
-
-
-<div class="fig fignone" id="sysdig-trial__sysdig-monitor-welcome">
-
-<br /><img class="image" src="media/sysdig-monitor-welcome.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 13. </b></span>Sysdig Monitor welcome page</span></div><p> </p></div>
-  
-
-
-<p class="p">Click  the <code class="ph codeph">Next</code> button to set up you environment,
-as shown in <a class="xref" href="#sysdig-trial__sysdig-setup-env">Figure 14</a>.</p>
-
-
-<div class="fig fignone" id="sysdig-trial__sysdig-setup-env">
-
-<br /><img class="image" src="media/sysdig-setup-env.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 14. </b></span>Sysdig Monitor set up environment</span></div><p> </p></div>
- 
-  
-  
-<div class="section"><h4 class="title sectiontitle">Sysdig Monitoring for Kubernetes</h4>
-
-<p class="p">If you are deploying Sysdig monitoring on Kubernetes, select the <code class="ph codeph">Kubernetes | GKE | OpenShift</code> option. 
-You will be presented with an access code, as shown in 
-<a class="xref" href="#sysdig-trial__sysdig-k8s">Figure 15</a>.
-</p>
-
-  
-<div class="fig fignone" id="sysdig-trial__sysdig-k8s">
-
-<br /><img class="image" src="media/sysdig-k8s.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 15. </b></span>Sysdig Monitor access code for Kubernetes</span></div><p> </p></div>
- 
-
-<p class="p">Use the <code class="ph codeph">sysdig_access_key</code> field in your <code class="ph codeph">group_vars/vault</code>,
-as described in the section <a class="xref" href="#monitoring-config-sysdig__sysdig-config-k8s">Sysdig configuration for Kubernetes</a>. 
-Once you deploy your environment and your Kubernetes nodes connect to the Sysdig SaaS platform, 
-Sysdig will automatically display information regarding your setup,
-as shown in <a class="xref" href="#sysdig-trial__sysdig-k8s-spotlight">Figure 16</a>.
-</p>
-
-
-<div class="fig fignone" id="sysdig-trial__sysdig-k8s-spotlight">
-
-<br /><img class="image" src="media/sysdig-k8s-spotlight.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 16. </b></span>Sysdig Monitor Spotlight for Kubernetes</span></div><p> </p></div>
- 
-
-<p class="p">Select <code class="ph codeph">View Dashboard</code> for an entry point to accessing all your monitoring data.
-Alternatively, you can browse to 
-<a class="xref" href="https://app.sysdigcloud.com" target="_blank">https://app.sysdigcloud.com</a> at any time to access your dashboards.  
-</p>
-
-  
-</div>
-
-  
-<div class="section"><h4 class="title sectiontitle">Sysdig Monitor for Docker swarm</h4>
-
-<p class="p">If you are deploying Sysdig monitoring on Docker swarm, select the <code class="ph codeph">Non-Orchestrated: <strong class="ph b">Native Linux</strong></code> option.
-You will be presented with a screen containing details for the URL to download the Sysdig agent, along with your access code
-embedded in the command, as shown in <a class="xref" href="#sysdig-trial__sysdig-docker">Figure 17</a>.
-</p>
-
-  
-<div class="fig fignone" id="sysdig-trial__sysdig-docker">
-
-<br /><img class="image" src="media/sysdig-docker.png" /><br />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 17. </b></span>Sysdig Monitor download location and access code for Docker</span></div><p> </p></div>
- 
-  
-<p class="p">The download URL is used in the <code class="ph codeph">sysdig_agent</code> field in <code class="ph codeph">group_vars/vars</code> while the access code is 
-stored in the <code class="ph codeph">sysdig_access_key</code> field in your <code class="ph codeph">group_vars/vault</code>,
-as described in the section <a class="xref" href="#monitoring-config-sysdig__sysdig-config-docker-swarm">Sysdig configuration for Docker swarm</a>. 
-</p>
-  
- 
-<p class="p">Once you deploy your environment and your Docker swarm nodes connect to the Sysdig SaaS platform, 
-Sysdig will automatically display information regarding your setup. Alternatively, you can browse to 
-<a class="xref" href="https://app.sysdigcloud.com" target="_blank">https://app.sysdigcloud.com</a> at any time to access your dashboards.</p>
-
-
-
-</div>
-
-  
-</div>
-
-</div>
-<div class="topic nested2" aria-labelledby="ariaid-title79" id="deploying-sysdig-k8s">
-<h3 class="title topictitle3" id="ariaid-title79">Deploying Sysdig monitoring on Kubernetes</h3>
-
-<div class="body">
-
-<div class="section"><h4 class="title sectiontitle">Prerequisites</h4>
-
-  
-<ul class="ul">
-<li class="li">Install the <code class="ph codeph">kubectl</code> binary on your Ansible box -  
-  see <a class="xref" href="https://docs.docker.com/ee/ucp/user-access/kubectl/" target="_blank">https://docs.docker.com/ee/ucp/user-access/kubectl/</a>.
-
-</li>
-  
-<li class="li">Install the UCP Client bundle for the <code class="ph codeph">admin</code> user - 
-  see <a class="xref" href="https://docs.docker.com/ee/ucp/user-access/cli/" target="_blank">https://docs.docker.com/ee/ucp/user-access/cli/</a></li>
-  
-<li class="li">Confirm that you can connect to the cluster by running a test command, for example, <code class="ph codeph">kubectl get nodes</code></li>
-
-<li class="li">Ensure that you have configured the required variables, as described in the section 
-  <a class="xref" href="#monitoring-config-sysdig__sysdig-config-k8s">Sysdig configuration for Kubernetes</a>.
-  
-For example, you add the the relevant variables in the <code class="ph codeph">group_vars/vars</code> file.
-
-<pre class="pre codeblock"><code>sysdig_restricted_control_role: 'Restricted Control'
-k8s_cluster: ucp_gab-ucp.cloudra.local
-</code></pre>
-  
-You should add the access key  to the encrypted <code class="ph codeph">group_vars/vault</code> using the command <code class="ph codeph">ansible-vault edit group_vars/vault</code>.
-  
-<pre class="pre codeblock"><code>sysdig_access_key: '10****97-9160-****-9061-84bfd0f****0'
-</code></pre>
-  
-</li>
-  
-</ul>
-  
-</div>
-
-  
-<div class="section"><h4 class="title sectiontitle">Running the playbook</h4>
-  
-  
-<pre class="pre codeblock"><code># cd <span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/ops
-# ansible-playbook -i vm_hosts playbooks/k8s-install-sysdig.yml --vault-password-file .vault_pass
-</code></pre> 
- 
-</div>
-
-
-
-
-<div class="section">
-<p class="p">Using the Sysdig software as a solution (SaaS) website <a class="xref" href="https://app.sysdigcloud.com" target="_blank">https://app.sysdigcloud.com</a>, you are able to view, analyze and
-inspect various different dashboards. Initially, you will just see the monitoring information for the 
-infrastructure itself. Deploy a sample application, as detailed in the section <a class="xref" href="#k8s-example-guestbook">Kubernetes guestbook example with Redis</a>,
-  and use the Sysdig solution to analyze the different facets of the deployed application. 
-
-</p>
-  
-  
-</div>
-
-
-  
-<p class="p"></p>
-
-</div>
-
-</div>
-<div class="topic nested2" aria-labelledby="ariaid-title80" id="deploying-sysdig-swarm">
-<h3 class="title topictitle3" id="ariaid-title80">Deploying Sysdig monitoring on Docker Swarm</h3>
-
-<div class="body">
-  
-<p class="p">The playbook <code class="ph codeph">playbooks/install_sysdig.yml</code> is used to automate the
-configuration of the SaaS setup. By default, this playbook is commented out in
-<code class="ph codeph">site.yml</code> and must be explicitly enabled. An access key variable must be set
-in the <code class="ph codeph">group_vars/vault</code> file as detailed in <a class="xref" href="#monitoring-config-sysdig__sysdig-config-table-content">Table 16</a>.</p>
-  
-  
-<pre class="pre codeblock"><code># cd <span class="ph"><span class="keyword">Docker-SimpliVity</span></span>/ops
-# ansible-playbook -i vm_hosts playbooks/install_sysdig.yml --vault-password-file .vault_pass
-</code></pre> 
-
-<p class="p">Using the Sysdig software as a solution (SaaS) website <a class="xref" href="https://app.sysdigcloud.com" target="_blank">https://app.sysdigcloud.com</a>, you are able to view, analyze and
-inspect various different dashboards.</p>
-
-
-
-</div>
-
-</div>
-</div>
-</div>
-<div class="topic nested0" aria-labelledby="ariaid-title81" id="lifecycle">
-<h1 class="title topictitle1" id="ariaid-title81">Solution lifecycle management</h1>
-
-<div class="body">
-<div class="section">
-
-<p class="p">Lifecycle management with respect to this solution refers to the maintenance and
-management of software and hardware of various components that make up the solution
-stack. Lifecycle management is required to keep the solution up-to-date and ensure
-that the latest versions of the software are running to provide optimal performance,
-security and to fix any existing defects within the product.</p>
-
-    
-<p class="p">In this section, we will cover life cycle management of the different components that
-are used in this solution. The lifecycle of the following stacks need to be maintained and managed: </p>
-
-    
-<ul class="ul">
-<li class="li">Monitoring Tools (Splunk or Prometheus and Grafana)</li>
-
-<li class="li">Docker Enterprise Edition Environment</li>
-
-<li class="li">Virtual Machine Operating systems</li>
-
-<li class="li"><span class="ph"><span class="keyword">HPE Simplivity</span></span> environment</li>
-
-</ul>
-
-    
-<p class="p">The general practice and recommendation is to follow a bottom-up approach for
-updating all components of the environment and making sure the dependencies are met.
-In our solution, we would start with <span class="ph"><span class="keyword">HPE Simplivity</span></span> and end with the monitoring
-environment. If all components are not being updated at the same time, the same
-approach can be followed – updating only the components that require updates while
-adhering to the interdependencies for each component that is being updated.</p>
-
-</div>
-
-
-    
-
-</div>
-
-<div class="topic nested1" aria-labelledby="ariaid-title82" id="lifecycle-svt">
-<h2 class="title topictitle2" id="ariaid-title82">HPE SimpliVity environment</h2>
-
-<div class="body">
-
-<div class="section">
-<p class="p">The HPE SimpliVity environment is made up of proprietary HPE SimpliVity software, VMware software and HPE firmware. 
-  There are interdependencies between the various components that need to be accounted for and are provided in the table below. 
-  The components in <a class="xref" href="#lifecycle-svt__svt-components-table-content">Table 20</a> are part of the HPE SimpliVity environment that require lifecycle management.</p>
-
-
-<p class="p">In general, ensure that the software bits for the Arbiter and vSphere extension corresponding to an OmniStack release are used.</p>
-
-  
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-svt__svt-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 20. </span>SimpliVity components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9495">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9498">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9501">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9504">Download/Documentation</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9495 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9498 ">HPE SimpliVity Arbiter</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9501 ">1. HPE OmniStack</td>
-<td class="entry nocellnorowborder" rowspan="4" align="left" valign="top" headers="d29e9504 ">SimpliVity OmniStack for vSphere Upgrade Guide
-
-<p class="p">Download software bits from HPE’s support website.</p>
-
-  
-<p class="p"><a class="xref" href="http://www.hpe.com/support" target="_blank">http://www.hpe.com/support</a></p>
-  
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9495 ">2.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9498 ">HPE SimpliVity VMware Plug-in</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9501 ">1. HPE SimpliVity Arbiter 
-<p class="p">2. HPE OmniStack</p>
-
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9495 ">3.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9498 ">HPE Omnistack</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9501 ">1. HPE SimpliVity VMware Plug-in  
-<p class="p">2. HPE SimpliVity Arbiter</p>
-
-</td>
-  
-  
-</tr>
-</tbody></table>
-</div>
-
-      
-</div>
-
-  
-<div class="section"><h3 class="title sectiontitle">VMware components</h3>
-  
-  
-<p class="p">The HPE SimpliVity solution used in this deployment guide is built on VMware vSphere. VMware ESXi and vCenter 
-  (see <a class="xref" href="#lifecycle-svt__vmware-components-table-content">Table 21</a>) 
-  are the two components from VMware that are leveraged by the HPE SimpliVity software.</p>
-  
-
-
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-svt__vmware-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 21. </span>VMware components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9600">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9603">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9606">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9609">Download/Documentation</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9600 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9603 ">VMware vCenter</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9606 ">1. HPE OmniStack
-<p class="p">2. VMware ESXi</p>
-
-</td>
-<td class="entry nocellnorowborder" rowspan="3" align="left" valign="top" headers="d29e9609 "><a class="xref" href="https://support.hpe.com/hpsc/doc/public/display?sp4ts.oid=1010292248&amp;docLocale=en_US&amp;docId=emr_na-a00028056en_us" target="_blank">VMware Upgrade for SimpliVity</a>
-</td>
-</tr>
-  
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9600 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9603 ">VMware ESXi</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9606 ">1. HPE OmniStack
-<p class="p">2. VMware vCenter</p>
-
-</td>  
-</tr>
-  
-</tbody></table>
-</div>
-
-  
-
-</div>
-  
-  
-<div class="section"><h3 class="title sectiontitle">HPE server software</h3>
-
-
-<p class="p">HPE SimpliVity servers are based on HPE server platforms and require a compatible firmware version to 
-  function with HPE OmniStack Software, as shown in
-  <a class="xref" href="#lifecycle-svt__hpe-components-table-content">Table 22</a>.</p>
-
-
-
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-svt__hpe-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 22. </span>HPE server components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9688">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9691">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9694">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9697">Download/Documentation</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9688 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9691 ">HPE Firmware</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9694 ">1. HPE OmniStack
-</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9697 "><a class="xref" href="https://support.hpe.com/hpesc/public/home/result?qt=HPE+SimpliVity+380" target="_blank">Firmware Upgrade for SimpliVity</a>
-</td>  
-</tr>
-</tbody></table>
-</div>
-
-  
-</div>
-  
-  
-  
-  </div>
-
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title83" id="lifecycle-vdvs">
-<h2 class="title topictitle2" id="ariaid-title83">vSphere Docker Volume Service Plug-in</h2>
-
-<div class="body">
-<div class="section">
-
-<p class="p"> vSphere Docker Volume service plug-in is part of an open source project by VMware
-that enables running stateful containers by providing persistent Docker volumes
-leveraging existing storage technology from VMware. There are two parts to the
-plug-in, namely, client software and server software (see <a class="xref" href="#lifecycle-vdvs__vdvs-components-table-conref">Table 23</a>).
-Every version of the plug-in that is released includes both pieces of software and
-it is imperative that the version number installed on the client side and server
-side are the same. </p>
-
-<p class="p">When updating the Docker Volume service plug-in, ensure the ESXi version you are
-running is supported and that the client software is compatible with the operating
-system.</p>
-
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-vdvs__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 23. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9771">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9774">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9777">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9780">Download/Documentation</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9771 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9774 ">Server Software</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9777 "><ol class="ol"><li class="li">VMware ESXi</li>
-<li class="li">Docker EE</li>
-</ol>
-</td>
-<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e9780 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html" target="_blank">vSphere Docker Volume Service on GitHub</a></td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9771 ">2.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9774 ">Client Software</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9777 "><ol class="ol"><li class="li">VM Operating System</li>
-<li class="li">Docker EE</li>
-</ol>
-</td>
-</tr>
-</tbody></table>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title84" id="lifecycle-rhel">
-<h2 class="title topictitle2" id="ariaid-title84">Red Hat Enterprise Linux operating system</h2>
-
-<div class="body">
-<div class="section">
-
-<p class="p">This solution is built using Red Hat Enterprise Linux (see <a class="xref" href="#lifecycle-rhel__rhel-components-table-content">Table 24</a>) as the base operating system. When upgrading the operating system on the 
-VMs, first verify that the OS version is compatible with Docker EE by looking at the Docker OS compatibility matrix.</p>
-
-
-
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-rhel__rhel-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 24. </span>Operating system</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9869">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9872">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9875">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9878">Download/Documentation</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9869 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9872 ">Red Hat Enterprise Linux</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9875 "><ul class="ul"><li class="li">Docker EE</li>
-<li class="li">vDVS client software plugin</li>
-</ul>
-</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9878 "><a class="xref" href="https://access.redhat.com/articles/11258" target="_blank">RHEL</a></td>
-</tr>
-</tbody></table>
-</div>
-
-    
-    
-
-</div>
-
-</div>
-
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title85" id="lifecycle-docker-ee">
-<h2 class="title topictitle2" id="ariaid-title85">Docker EE Environment</h2>
-
-<div class="body">
-<div class="section">
-
-<p class="p">Each release of Docker Enterprise Edition contains three technology components – UCP,
-DTR and the Docker Daemon or Engine. It is imperative that the components belonging
-to the same version are deployed or upgraded together – see <a class="xref" href="#lifecycle-docker-ee__dockeree-components-table-content">Table 25</a>
-</p>
-
-<p class="p">A banner will be displayed on the UI, as shown in <a class="xref" href="#lifecycle-docker-ee__docker-update">Figure 18</a>, when an update is
-available for UCP or DTR. You can start the upgrade process by clicking on the
-banner.</p>
-
-<div class="fig fignone" id="lifecycle-docker-ee__docker-update">
-
-<img class="image" src="media/dockerupdate.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 18. </b></span>Docker update notification</span></div><p> </p></div>
-
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-docker-ee__dockeree-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 25. </span>Docker EE components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9966">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9969">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9972">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e9975">Download/Documentation</th>
-</tr>
-</thead><tbody class="tbody">
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9966 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9969 ">Docker Daemon/Engine</td>
-<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e9972 "><ol class="ol">
-<li class="li">VM Operating System</li>
-
-<li class="li">vDVS plugin</li>
-
-<li class="li">Prometheus and Grafana</li>
-
-</ol>
-</td>
-<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e9975 "><ul class="ul">
-<li class="li"><a class="xref" href="https://success.docker.com/Policies/Maintenance_Lifecycle" target="_blank">Docker Lifecycle Maintenance</a></li>
-
-<li class="li"><a class="xref" href="https://success.docker.com/Policies/Compatibility_Matrix" target="_blank">Docker Compatibility Matrix</a></li>
-
-</ul>
-
-</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9966 ">2.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9969 ">Universal Control Plane</td>
-</tr>
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9966 ">3.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e9969 ">Docker Trusted Registry</td>
-</tr>
-</tbody></table>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title86" id="lifecycle-monitoring">
-<h2 class="title topictitle2" id="ariaid-title86">Monitoring Tools</h2>
-
-<div class="body">
-<div class="section">
-
-    
-<p class="p">To learn more about upgrading Splunk, see the relevant documentation at <a class="xref" href="http://docs.splunk.com/Documentation/Splunk/7.1.2/Installation/HowtoupgradeSplunk" target="_blank">How to upgrade Splunk Enterprise</a>.</p>
-    
-
-<p class="p">The Sysdig agent runs as a container and the latest version is pulled from the Docker hub on first installation. Re-run the <code class="ph codeph">install_sysdig.yml</code> playbook
-to update to the newest version if required.</p>
-
-    
-    
-<p class="p">Prometheus and Grafana monitoring tools (see <a class="xref" href="#lifecycle-monitoring__promgraf-table-content">Table 26</a>) run as containers within the
-Docker environment. Newer versions of these tools can be deployed by pulling the
-Docker images from Docker Hub. Verify that the version of Prometheus that is being
-used is compatible with the version of Docker EE.</p>
-
-    
-
-<div class="tablenoborder">
-
-<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-monitoring__promgraf-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 26. </span>Monitoring tools: Prometheus and Grafana</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
-<tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10096">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10099">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10102">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10105">Download/Documentation</th>
-</tr>
-</thead><tbody class="tbody">  
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10096 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10099 ">Prometheus</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10102 "><ol class="ol"><li class="li">Grafana</li>
-<li class="li">Docker EE</li>
-</ol>
-</td>
-<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e10105 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
-<li class="li"><a class="xref" href="http://docs.grafana.org/installation/upgrading/" target="_blank">Upgrading Grafana</a></li>
-
-</ol>
-</td>
-</tr>    
-<tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10096 ">2.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10099 ">Grafana</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10102 "><ol class="ol"><li class="li">Prometheus</li>
-<li class="li">Docker EE</li>
-</ol>
-</td>   
-</tr>
-</tbody></table>
-</div>
-    
-    
-    
-</div>
-
-</div>
-
-</div>
-<div class="topic nested1" aria-labelledby="ariaid-title87" id="lifecycle-windows">
-<h2 class="title topictitle2" id="ariaid-title87">Windows operating system and Docker EE</h2>
-
-<div class="body">
-<div class="section">
-
-
-
-<p class="p">Docker Enterprise Edition for Windows Server (Docker EE) enables native Docker containers on Windows Server. 
-Windows Server 2016 and later versions are supported. This solution has been tested with Windows worker nodes running Windows Server 2016 
-and with Docker EE 17.06.</p>
-
-
-    
-<hr /><div class="note note"><span class="notetitle"><b>Note:</b></span> 
-<p class="p">Docker Universal Control Plane is not currently supported on Windows Server 1709 due to image incompatibility issues. 
-For more information, see the Docker documentation <a class="xref" href="https://docs.docker.com/install/windows/docker-ee/" target="_blank">Install Docker Enterprise Edition for Windows Server</a></p>
-        
-
-<p class="p">This solution recommends that you only run Windows Server 2016 on your Windows worker nodes 
-and that you install any required updates to your Windows nodes in a timely manner.</p>
-
-</div><hr />
-    
-
-  
-<p class="p">For information on how to update Docker EE on Windows Server 2016, see the Docker 
-documentation <a class="xref" href="https://docs.docker.com/install/windows/docker-ee/#update-docker-ee" target="_blank">Update Docker EE</a></p>
-
-
-
-
-</div>
-
-</div>
-
-</div>
-</div>
-<div class="topic nested0" aria-labelledby="ariaid-title88" id="backup-restore">
-<h1 class="title topictitle1" id="ariaid-title88">Backup and restore</h1>
+<div class="topic nested0" aria-labelledby="ariaid-title91" id="backup-restore">
+<h1 class="title topictitle1" id="ariaid-title91">Backup and restore</h1>
 
 <div class="body">
 <p class="p">This reference configuration provides playbooks and scripts to help you back up and restore:</p>
@@ -6194,8 +6219,8 @@ documentation <a class="xref" href="https://docs.docker.com/install/windows/dock
 
 </div>
 
-<div class="topic nested1" aria-labelledby="ariaid-title89" id="backup-restore-ucp-dtr">
-<h2 class="title topictitle2" id="ariaid-title89">Backup and restore UCP and DTR</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title92" id="backup-restore-ucp-dtr">
+<h2 class="title topictitle2" id="ariaid-title92">Backup and restore UCP and DTR</h2>
 
 <div class="body">
 
@@ -6231,8 +6256,8 @@ existing UCP Client bundles will not work when you restore UCP on a new swarm.
 
    
     
-<div class="topic nested2" aria-labelledby="ariaid-title90" id="backup-ucp-dtr">
-<h3 class="title topictitle3" id="ariaid-title90">Backup UCP and DTR</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title93" id="backup-ucp-dtr">
+<h3 class="title topictitle3" id="ariaid-title93">Backup UCP and DTR</h3>
 
 
 <div class="body">   
@@ -6240,13 +6265,13 @@ existing UCP Client bundles will not work when you restore UCP on a new swarm.
 
 </div>
 
-<div class="topic nested3" aria-labelledby="ariaid-title91" id="backup-variables">
-<h4 class="title topictitle4" id="ariaid-title91">Backup configuration variables</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title94" id="backup-variables">
+<h4 class="title topictitle4" id="ariaid-title94">Backup configuration variables</h4>
 
 <div class="body">
 
 
-<p class="p"><a class="xref" href="#backup-variables__backup-ucp-table-content">Table 27</a>
+<p class="p"><a class="xref" href="#backup-variables__backup-ucp-table-content">Table 20</a>
 shows the variables related to backing up UCP and DTR. All these variables are defined in
 the file <strong class="ph b">group_vars/backups</strong>. All the data that is backed up is streamed over an SSH
 connection to the backup server. Currently, the playbooks only support the use of the
@@ -6256,30 +6281,30 @@ Ansible box as the backup server.</p>
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="backup-variables__backup-ucp-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 27. </span>Backup variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="backup-variables__backup-ucp-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 20. </span>Backup variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10304">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10307">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10310">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10499">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10502">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10505">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10304 ">backup_server</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10307 "><strong class="ph b">group_vars/backups</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10310 ">Currently, the playbooks only support the use of the Ansible box as the backup
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10499 ">backup_server</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10502 "><strong class="ph b">group_vars/backups</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10505 ">Currently, the playbooks only support the use of the Ansible box as the backup
 server. </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10304 ">backup_dest</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10307 "><strong class="ph b">group_vars/backups</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10310 ">This variable should point to an existing folder on your Ansible box where the
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10499 ">backup_dest</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10502 "><strong class="ph b">group_vars/backups</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10505 ">This variable should point to an existing folder on your Ansible box where the
 <code class="ph codeph">root</code> user has write access. All the backups will be stored in this folder. For
 example, <code class="ph codeph">/root/backup</code></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10304 ">#swarm_offline_backups</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10307 "><strong class="ph b">group_vars/backup</strong></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10310 ">This variable is commented out by default. More information on this variable is provided below. </td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10499 ">#swarm_offline_backups</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10502 "><strong class="ph b">group_vars/backup</strong></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10505 ">This variable is commented out by default. More information on this variable is provided below. </td>
 </tr>    
 </tbody></table>
 </div>
@@ -6288,8 +6313,8 @@ example, <code class="ph codeph">/root/backup</code></td>
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title92" id="backup-swarm">
-<h4 class="title topictitle4" id="ariaid-title92">Backing up the Swarm</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title95" id="backup-swarm">
+<h4 class="title topictitle4" id="ariaid-title95">Backing up the Swarm</h4>
 
 <div class="body">
 
@@ -6341,48 +6366,48 @@ documentation at <a class="xref" href="https://docs.docker.com/engine/swarm/admi
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title93" id="backup-ucp">
-<h4 class="title topictitle4" id="ariaid-title93">Backing up the Universal Control Plane (UCP)</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title96" id="backup-ucp">
+<h4 class="title topictitle4" id="ariaid-title96">Backing up the Universal Control Plane (UCP)</h4>
 
 <div class="body">
 
-<p class="p">When you backup UCP, you save the data/metadata outlined in <a class="xref" href="#backup-ucp__backup-ucp-data-meta-table-content">Table 28</a>: </p>
+<p class="p">When you backup UCP, you save the data/metadata outlined in <a class="xref" href="#backup-ucp__backup-ucp-data-meta-table-content">Table 21</a>: </p>
 
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="backup-ucp__backup-ucp-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 28. </span>UCP data backed up</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="backup-ucp__backup-ucp-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 21. </span>UCP data backed up</span></caption><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10484">Data</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10487">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10679">Data</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10682">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10484 ">Configurations</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10487 ">The UCP cluster configurations, as shown by <code class="ph codeph">docker config ls</code>,
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Configurations</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">The UCP cluster configurations, as shown by <code class="ph codeph">docker config ls</code>,
 including Docker EE license and swarm and client CAs </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10484 ">Access control</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10487 ">Permissions for team access to swarm resources, including collections, grants, and
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Access control</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">Permissions for team access to swarm resources, including collections, grants, and
 roles</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10484 ">Certificates and keys</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10487 ">The certificates, public keys, and private keys that are used for
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Certificates and keys</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">The certificates, public keys, and private keys that are used for
 authentication and mutual TLS communication</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10484 ">Metrics data</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10487 ">Monitoring data gathered by UCP</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Metrics data</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">Monitoring data gathered by UCP</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10484 ">Organizations</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10487 ">Your users, teams, and orgs</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Organizations</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">Your users, teams, and orgs</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10484 ">Volumes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10487 ">All <a class="xref" href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp" target="_blank">UCP named volumes</a>, which include all UCP component certs and
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Volumes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">All <a class="xref" href="https://docs.docker.com/datacenter/ucp/2.2/guides/architecture/#volumes-used-by-ucp" target="_blank">UCP named volumes</a>, which include all UCP component certs and
 data</td>
 </tr>
 </tbody></table>
@@ -6437,69 +6462,69 @@ affected manager node will be disconnected.</div><hr />
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title94" id="backup-dtr-meta">
-<h4 class="title topictitle4" id="ariaid-title94">Backing up the Docker Trusted Registry (DTR)</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title97" id="backup-dtr-meta">
+<h4 class="title topictitle4" id="ariaid-title97">Backing up the Docker Trusted Registry (DTR)</h4>
 
 <div class="body">
 
 <p class="p">When you backup DTR, you save the data/metadata outlined in 
-   <a class="xref" href="#backup-dtr-meta__backup-dtr-data-meta-table-content">Table 29</a>:</p>
+   <a class="xref" href="#backup-dtr-meta__backup-dtr-data-meta-table-content">Table 22</a>:</p>
 
     
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="backup-dtr-meta__backup-dtr-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 29. </span>DTR data backed up</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="backup-dtr-meta__backup-dtr-data-meta-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 22. </span>DTR data backed up</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10679">Data</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10682">Backed up?</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10685">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10874">Data</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10877">Backed up?</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e10880">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Configurations</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10685 ">DTR settings</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10874 ">Configurations</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10877 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10880 ">DTR settings</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Repository metadata</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10685 ">Metadata like image architecture and size</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10874 ">Repository metadata</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10877 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10880 ">Metadata like image architecture and size</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Access control to repos and images</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10685 ">Data about who has access to which images</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10874 ">Access control to repos and images</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10877 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10880 ">Data about who has access to which images</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Notary data</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10685 ">Signatures and digests for images that are signed</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10874 ">Notary data</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10877 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10880 ">Signatures and digests for images that are signed</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Scan results</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10685 ">Information about vulnerabilities in your images</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10874 ">Scan results</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10877 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10880 ">Information about vulnerabilities in your images</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Certificates and keys</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">yes</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10685 ">TLS certificates and keys used by DTR</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10874 ">Certificates and keys</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10877 ">yes</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10880 ">TLS certificates and keys used by DTR</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Image content</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">no</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10685 ">Needs to be backed up separately, depends on DTR configuration</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10874 ">Image content</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10877 ">no</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10880 ">Needs to be backed up separately, depends on DTR configuration</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Users, orgs, teams</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">no</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10685 ">Create a UCP backup to backup this data</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10874 ">Users, orgs, teams</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10877 ">no</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10880 ">Create a UCP backup to backup this data</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10679 ">Vulnerability database</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10682 ">no</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10685 ">Can be re-downloaded after a restore</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10874 ">Vulnerability database</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10877 ">no</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e10880 ">Can be re-downloaded after a restore</td>
 </tr>  
 </tbody></table>
 </div>
@@ -6546,8 +6571,8 @@ command line when running the playbook. In the example below: </p>
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title95" id="backup-dtr-data">
-<h4 class="title topictitle4" id="ariaid-title95">Backing up DTR data (images)</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title98" id="backup-dtr-data">
+<h4 class="title topictitle4" id="ariaid-title98">Backing up DTR data (images)</h4>
 
 <div class="body">
 
@@ -6593,8 +6618,8 @@ command line when running the playbook, as shown in the example below: </p>
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title96" id="backup-other">
-<h4 class="title topictitle4" id="ariaid-title96">Backing up other metadata, including passwords</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title99" id="backup-other">
+<h4 class="title topictitle4" id="ariaid-title99">Backing up other metadata, including passwords</h4>
 
 <div class="body">
 
@@ -6627,14 +6652,14 @@ dtr_version="&lt;DTR version of DTR backup&gt;"</code></pre>
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title97" id="backup-utility">
-<h4 class="title topictitle4" id="ariaid-title97">Backup Utility</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title100" id="backup-utility">
+<h4 class="title topictitle4" id="ariaid-title100">Backup Utility</h4>
  
 <div class="body">
 
 <p class="p">The script <code class="ph codeph">backup.sh</code> can be used to take a backup of the swarm, UCP, DTR metadata and the DTR images in one go. 
 You can pass this script an argument (tag) that will be used to prefix the backup filenames, thereby overriding the default naming. 
-<a class="xref" href="#backup-utility__backup-utility-table-content">Table 30</a> 
+<a class="xref" href="#backup-utility__backup-utility-table-content">Table 23</a> 
 shows the file names produced by <code class="ph codeph">backup.sh</code> based on the argument passed in the command line.    
 </p>
 
@@ -6642,31 +6667,31 @@ shows the file names produced by <code class="ph codeph">backup.sh</code> based 
 
 <div class="tablenoborder">
 
-<table cellpadding="4" cellspacing="0" summary="" id="backup-utility__backup-utility-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 30. </span>Backup utility</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<table cellpadding="4" cellspacing="0" summary="" id="backup-utility__backup-utility-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 23. </span>Backup utility</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11040">Example</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11043">Command line</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11046">Generated filenames</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11235">Example</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11238">Command line</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e11241">Generated filenames</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11040 ">Default</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11043 "><code class="ph codeph">./backup.sh</code></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11046 ">backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11235 ">Default</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11238 "><code class="ph codeph">./backup.sh</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11241 ">backup_swarm_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
 backup_ucp_&lt;ucpid&gt;_&lt;vmname&gt;_&lt;timestamp&gt;.tgz, 
 backup_dtr_meta_&lt;replica_id&gt;_&lt;vmname&gt;_&lt;timestamp&gt;.tgz,
 backup_dtr_data_&lt;replica_id&gt;_&lt;vmname&gt;_&lt;timestamp&gt;.tgz
 and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11040 ">Custom</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11043 "><code class="ph codeph">./backup.sh my_backup</code></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11046 ">my_backup_swarm.tgz, my_backup_ucp.tgz, my_backup_dtr_meta.tgz, my_backup_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11235 ">Custom</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11238 "><code class="ph codeph">./backup.sh my_backup</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11241 ">my_backup_swarm.tgz, my_backup_ucp.tgz, my_backup_dtr_meta.tgz, my_backup_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11040 ">Date</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11043 "><code class="ph codeph">./backup.sh $(date '+%Y_%m_%d_%H%M%S')</code></td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11046 ">&lt;date&gt;_swarm.tgz, &lt;date&gt;_ucp.tgz, &lt;date&gt;_dtr_meta.tgz,  &lt;date&gt;_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11235 ">Date</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11238 "><code class="ph codeph">./backup.sh $(date '+%Y_%m_%d_%H%M%S')</code></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e11241 ">&lt;date&gt;_swarm.tgz, &lt;date&gt;_ucp.tgz, &lt;date&gt;_dtr_meta.tgz,  &lt;date&gt;_dtr_data.tgz, and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </tr>    
 </tbody></table>
 </div>
@@ -6684,8 +6709,8 @@ and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title98" id="backup-playbooks">
-<h4 class="title topictitle4" id="ariaid-title98">Related playbooks</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title101" id="backup-playbooks">
+<h4 class="title topictitle4" id="ariaid-title101">Related playbooks</h4>
   
 <div class="body">
 
@@ -6707,8 +6732,8 @@ and the corresponding <code class="ph codeph">.vars.tgz</code> files</td>
 
 </div>
 </div>
-<div class="topic nested2" aria-labelledby="ariaid-title99" id="restore-ucp-dtr">
-<h3 class="title topictitle3" id="ariaid-title99">Restoring your cluster after a disaster</h3>
+<div class="topic nested2" aria-labelledby="ariaid-title102" id="restore-ucp-dtr">
+<h3 class="title topictitle3" id="ariaid-title102">Restoring your cluster after a disaster</h3>
  
     
 <div class="body">
@@ -6729,8 +6754,8 @@ Other scenarios and how to handle them are described in the Docker documentation
      
 </div>
    
-<div class="topic nested3" aria-labelledby="ariaid-title100" id="before-restore">
-<h4 class="title topictitle4" id="ariaid-title100">Before you restore</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title103" id="before-restore">
+<h4 class="title topictitle4" id="ariaid-title103">Before you restore</h4>
  
 <div class="body">
 
@@ -6766,7 +6791,7 @@ associated with the archive of the DTR metadata. You can retrieve this as follow
 </p>
 
 
-<pre class="pre codeblock"><code>[root@hpe2-ansible ops]# tar -Oxf /root/restore/2018_04_17_151734_dtr_meta.vars.tgz meta.yml
+<pre class="pre codeblock"><code># tar -Oxf /root/restore/2018_04_17_151734_dtr_meta.vars.tgz meta.yml
 backup_node="hpe-dtr01"
 replica_id="<strong class="ph b">ad5204e8a4d0</strong>"
 backup_source=""
@@ -6774,7 +6799,7 @@ ucp_version=""
 dtr_version="<strong class="ph b">2.4.3</strong>"
 </code></pre>
 
-<pre class="pre codeblock"><code>[root@hpe2-ansible ops]# tar -Oxf /root/restore/2018_04_17_151734_ucp.vars.tgz meta.yml
+<pre class="pre codeblock"><code># tar -Oxf /root/restore/2018_04_17_151734_ucp.vars.tgz meta.yml
 backup_node="hpe-ucp01"
 replica_id=""
 backup_source=""
@@ -6808,10 +6833,10 @@ You must ensure that the versions specified in your current <code class="ph code
 </p>
 
 
-<pre class="pre codeblock"><code>[root@hpe2-ansible ops]# cat group_vars/vars | grep dtr_version
+<pre class="pre codeblock"><code># cat group_vars/vars | grep dtr_version
 dtr_version: '2.4.3'</code></pre>
 <pre class="pre codeblock"><code>
-[root@hpe2-ansible ops]# cat group_vars/vars | grep ucp_version
+# cat group_vars/vars | grep ucp_version
 ucp_version: '2.2.7'</code></pre>    
 
 <p class="p"><strong class="ph b">Step 5:</strong> Restore UCP admin credentials if required</p>
@@ -6831,8 +6856,8 @@ You can find a copy of the inventory as it was when the backup was taken in the 
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title101" id="restore-ucp-dtr-details">
-<h4 class="title topictitle4" id="ariaid-title101">Restore UCP and DTR</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title104" id="restore-ucp-dtr-details">
+<h4 class="title topictitle4" id="ariaid-title104">Restore UCP and DTR</h4>
  
 <div class="body">
 
@@ -6867,8 +6892,8 @@ For more information, see the Docker documentation  <a class="xref" href="https:
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title102" id="restore-dtr-meta-images">
-<h4 class="title topictitle4" id="ariaid-title102">Restore DTR metadata and DTR images</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title105" id="restore-dtr-meta-images">
+<h4 class="title topictitle4" id="ariaid-title105">Restore DTR metadata and DTR images</h4>
  
 <div class="body">
 
@@ -6887,7 +6912,7 @@ In this scenario, you need the archives for the DTR metadata and the DTR images.
 <li class="li">Remove the DTR nodes from the swarm by running the <code class="ph codeph">docker node rm &lt;DTR node&gt;</code> command on a UCP node for each DTR node in your cluster.
 The following example shows the sequence of commands to use to remove the DTR nodes:
 
-<pre class="pre codeblock"><code>[root@hpe2-ansible ops]# docker node ls
+<pre class="pre codeblock"><code># docker node ls
 ID         HOSTNAME                     STATUS              AVAILABILITY
 aiz... *   hpe-ucp02.cloudra.local      Ready               Active
 gvf...     hpe-dtr01.cloudra.local      Down                Active
@@ -6899,15 +6924,15 @@ zdu...     hpe-dtr03.cloudra.local      Down                Active
 </code></pre>    
 
 
-<pre class="pre codeblock"><code>[root@hpe2-ansible ops]# docker node rm hpe-dtr01.cloudra.local
+<pre class="pre codeblock"><code># docker node rm hpe-dtr01.cloudra.local
 hpe-dtr01.cloudra.local
-[root@hpe2-ansible ops]# docker node rm hpe-dtr02.cloudra.local
+# docker node rm hpe-dtr02.cloudra.local
 hpe-dtr02.cloudra.local
-[root@hpe2-ansible ops]# docker node rm hpe-dtr03.cloudra.local
+# docker node rm hpe-dtr03.cloudra.local
 hpe-dtr03.cloudra.local
 </code></pre>
 
-<pre class="pre codeblock"><code>[root@hpe2-ansible ops]# docker node ls
+<pre class="pre codeblock"><code># docker node ls
 ID         HOSTNAME                     STATUS              AVAILABILITY        
 aiz...     hpe-ucp02.cloudra.local      Ready               Active     
 ir4...     hpe-ucp03.cloudra.local      Ready               Active    
@@ -6934,8 +6959,8 @@ For more information, see the Docker documentation  <a class="xref" href="https:
 </div>
 
 </div>
-<div class="topic nested3" aria-labelledby="ariaid-title103" id="restore-playbooks">
-<h4 class="title topictitle4" id="ariaid-title103">Related playbooks</h4>
+<div class="topic nested3" aria-labelledby="ariaid-title106" id="restore-playbooks">
+<h4 class="title topictitle4" id="ariaid-title106">Related playbooks</h4>
   
 <div class="body">
 
@@ -6956,8 +6981,8 @@ For more information, see the Docker documentation  <a class="xref" href="https:
 </div>
 </div>
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title104" id="backup-restore-docker-volumes-svt">
-<h2 class="title topictitle2" id="ariaid-title104">Backup and restore Docker persistent volumes</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title107" id="backup-restore-docker-volumes-svt">
+<h2 class="title topictitle2" id="ariaid-title107">Backup and restore Docker persistent volumes</h2>
 
 <div class="body">
 <p class="p">In order to restore a Docker volume, you need to restore a special VM that has been deployed for the sole 
@@ -7080,25 +7105,25 @@ docker_volumes_policy: 'clh-gold'
 
 <p class="p">Rather than waiting for an automated backup to take place, you can create a backup immediately. 
   Right-click on the special VM, in this case <code class="ph codeph">hpe-VM-in-dockervols-Docker_HPE</code>, 
-  select <code class="ph codeph">All HPE SimpliVity Actions</code> and choose <code class="ph codeph">Backup Virtual Machine</code> as shown in 
-  <a class="xref" href="#backup-restore-docker-volumes-svt__backup-virtual-machine">Figure 19</a>.</p>
+  select <code class="ph codeph">All <span class="ph"><span class="keyword">HPE SimpliVity</span></span> Actions</code> and choose <code class="ph codeph">Backup Virtual Machine</code> as shown in 
+  <a class="xref" href="#backup-restore-docker-volumes-svt__backup-virtual-machine">Figure 17</a>.</p>
 
 
 <div class="fig fignone" id="backup-restore-docker-volumes-svt__backup-virtual-machine">
  
 <img class="image" src="media/backup-virtual-machine.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 19. </b></span>Backup virtual machine</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 17. </b></span>Backup virtual machine</span></div><p> </p></div>
 
  
 <p class="p">You can specify a backup name, in this case <code class="ph codeph">manual_backup_test_01</code>, as shown in 
- <a class="xref" href="#backup-restore-docker-volumes-svt__backup-vm-details">Figure 20</a>.</p>
+ <a class="xref" href="#backup-restore-docker-volumes-svt__backup-vm-details">Figure 18</a>.</p>
 
 
 
 <div class="fig fignone" id="backup-restore-docker-volumes-svt__backup-vm-details">
  
 <img class="image" src="media/backup-vm-details.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 20. </b></span>Backup virtual machine details</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 18. </b></span>Backup virtual machine details</span></div><p> </p></div>
 
 
 </div>
@@ -7108,15 +7133,15 @@ docker_volumes_policy: 'clh-gold'
   
   
 <p class="p">Right-click on the special VM, in this case hpe-VM-in-dockervols-Docker_HPE. 
-  On the <code class="ph codeph">Configure</code> tab, select <code class="ph codeph">HPE SimpliVity Search Backups</code> as shown in 
-<a class="xref" href="#backup-restore-docker-volumes-svt__search-backups">Figure 21</a>.
+  On the <code class="ph codeph">Configure</code> tab, select <code class="ph codeph"><span class="ph"><span class="keyword">HPE SimpliVity</span></span> Search Backups</code> as shown in 
+<a class="xref" href="#backup-restore-docker-volumes-svt__search-backups">Figure 19</a>.
 </p>
   
   
 <div class="fig fignone" id="backup-restore-docker-volumes-svt__search-backups">
  
 <img class="image" src="media/search-backups.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 21. </b></span>Search backups</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 19. </b></span>Search backups</span></div><p> </p></div>
 
 
 <p class="p">You can narrow the search based on the time of the backup. If you are restoring from an automatic backup, 
@@ -7125,25 +7150,25 @@ docker_volumes_policy: 'clh-gold'
 
   
 <p class="p">Right-click on the backup you wish to restore, as shown in 
-  <a class="xref" href="#backup-restore-docker-volumes-svt__restore-vm">Figure 22</a>, 
+  <a class="xref" href="#backup-restore-docker-volumes-svt__restore-vm">Figure 20</a>, 
   and select <code class="ph codeph">Restore Virtual Machine</code>.</p>
   
   
 <div class="fig fignone" id="backup-restore-docker-volumes-svt__restore-vm">
  
 <img class="image" src="media/restore-vm.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 22. </b></span>Restore virtual machine</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 20. </b></span>Restore virtual machine</span></div><p> </p></div>
 
 
 <p class="p">In the details screen, shown in 
-  <a class="xref" href="#backup-restore-docker-volumes-svt__restore-vm-details">Figure 23</a>, 
+  <a class="xref" href="#backup-restore-docker-volumes-svt__restore-vm-details">Figure 21</a>, 
   you can choose a name for the new virtual machine and specify the datastore.</p>
 
 
 <div class="fig fignone" id="backup-restore-docker-volumes-svt__restore-vm-details">
  
 <img class="image" src="media/restore-vm-details.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 23. </b></span>Restore virtual machine details</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 21. </b></span>Restore virtual machine details</span></div><p> </p></div>
 
 
 <p class="p">The name of the new virtual machine will default to a combination of the special VM name and a timestamp, 
@@ -7153,18 +7178,18 @@ docker_volumes_policy: 'clh-gold'
 
 
 <p class="p">Once the virtual machine has been restored, navigate to the datastore and locate the new VM in the file browser, as shown in 
-<a class="xref" href="#backup-restore-docker-volumes-svt__browse-restored-vm">Figure 24</a>.
+<a class="xref" href="#backup-restore-docker-volumes-svt__browse-restored-vm">Figure 22</a>.
 </p>
 
 
 <div class="fig fignone" id="backup-restore-docker-volumes-svt__browse-restored-vm">
  
 <img class="image" src="media/browse-restored-vm.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 24. </b></span>Restore virtual machine details</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 22. </b></span>Restore virtual machine details</span></div><p> </p></div>
 
 
 <p class="p">Navigate to the folder named <code class="ph codeph">1111111-1111-1111-1111-...</code> as shown in 
-  <a class="xref" href="#backup-restore-docker-volumes-svt__vmdk-files">Figure 25</a>. 
+  <a class="xref" href="#backup-restore-docker-volumes-svt__vmdk-files">Figure 23</a>. 
   You will see files with names based on the Docker volume name that you used at the start, 
   in this instance <code class="ph codeph">test_01.vmdk</code> and <code class="ph codeph">test_01-478...f1f.vmfd</code></p>
 
@@ -7172,40 +7197,40 @@ docker_volumes_policy: 'clh-gold'
 <div class="fig fignone" id="backup-restore-docker-volumes-svt__vmdk-files">
  
 <img class="image" src="media/vmdk-files.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 25. </b></span>Locate vmdk and vmfd files</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 23. </b></span>Locate vmdk and vmfd files</span></div><p> </p></div>
 
 
 <p class="p">You need to move these two files to the <code class="ph codeph">dockvols</code> sub-directory named <code class="ph codeph">1111111-1111-1111-1111-...</code> 
   in the same datastore. Right click on the <code class="ph codeph">.vmdk</code> file and choose <code class="ph codeph">Move to...</code> as shown in 
-  <a class="xref" href="#backup-restore-docker-volumes-svt__move-to">Figure 26</a>.</p>
+  <a class="xref" href="#backup-restore-docker-volumes-svt__move-to">Figure 24</a>.</p>
 
 
 
 <div class="fig fignone" id="backup-restore-docker-volumes-svt__move-to">
  
 <img class="image" src="media/move-to.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 26. </b></span>Move files</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 24. </b></span>Move files</span></div><p> </p></div>
 
   
 <p class="p">Set the destination folder to the <code class="ph codeph">dockvols</code> sub-directory named <code class="ph codeph">1111111-1111-1111-1111-...</code> 
-  as shown in <a class="xref" href="#backup-restore-docker-volumes-svt__destination">Figure 27</a>.</p>
+  as shown in <a class="xref" href="#backup-restore-docker-volumes-svt__destination">Figure 25</a>.</p>
   
   
 <div class="fig fignone" id="backup-restore-docker-volumes-svt__destination">
  
 <img class="image" src="media/destination.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 27. </b></span>Move to destination</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 25. </b></span>Move to destination</span></div><p> </p></div>
 
  
 <p class="p">It is only necessary to move the <code class="ph codeph">.vmdk</code> file as the <code class="ph codeph">.vmfd</code> file will automatically follow. 
   The dockvols sub-directory named <code class="ph codeph">1111111-1111-1111-1111-...</code> should now contain both files as shown in 
-  <a class="xref" href="#backup-restore-docker-volumes-svt__moved">Figure 28</a>.</p>
+  <a class="xref" href="#backup-restore-docker-volumes-svt__moved">Figure 26</a>.</p>
  
   
 <div class="fig fignone" id="backup-restore-docker-volumes-svt__moved">
  
 <img class="image" src="media/moved.png" />
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 28. </b></span>Files moved to destination</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 26. </b></span>Files moved to destination</span></div><p> </p></div>
   
   
   
@@ -7244,92 +7269,446 @@ vsphere:latest      <strong class="ph b">test_01@Docker_CLH</strong>
   </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title105" id="integrate-backup">
-<h2 class="title topictitle2" id="ariaid-title105">Integrate UCP and DTR backup with HPE RMC and HPE StoreOnce</h2>
+</div>
+<div class="topic nested0" aria-labelledby="ariaid-title108" id="lifecycle">
+<h1 class="title topictitle1" id="ariaid-title108">Solution lifecycle management</h1>
 
 <div class="body">
-<p class="p">You can take advantage of HPE Recovery Manager Central and HPE StoreOnce to provide scheduled snapshots and backup protection
-for the data generated by the backup procedure for Docker UCP and DTR.</p>
+<div class="section">
+
+<p class="p">Lifecycle management with respect to this solution refers to the maintenance and
+management of software and hardware of various components that make up the solution
+stack. Lifecycle management is required to keep the solution up-to-date and ensure
+that the latest versions of the software are running to provide optimal performance,
+security and to fix any existing defects within the product.</p>
+
+    
+<p class="p">In this section, we will cover life cycle management of the different components that
+are used in this solution. The lifecycle of the following stacks need to be maintained and managed: </p>
+
+    
+<ul class="ul">
+<li class="li">Monitoring Tools (Splunk or Prometheus and Grafana)</li>
+
+<li class="li">Docker Enterprise Edition Environment</li>
+
+<li class="li">Virtual Machine Operating systems</li>
+
+<li class="li"><span class="ph"><span class="keyword">HPE SimpliVity</span></span> environment</li>
+
+</ul>
+
+    
+<p class="p">The general practice and recommendation is to follow a bottom-up approach for
+updating all components of the environment and making sure the dependencies are met.
+In our solution, we would start with <span class="ph"><span class="keyword">HPE SimpliVity</span></span> and end with the monitoring
+environment. If all components are not being updated at the same time, the same
+approach can be followed – updating only the components that require updates while
+adhering to the interdependencies for each component that is being updated.</p>
+
+</div>
+
+
+    
+
+</div>
+
+<div class="topic nested1" aria-labelledby="ariaid-title109" id="lifecycle-svt">
+<h2 class="title topictitle2" id="ariaid-title109"><span class="ph"><span class="keyword">HPE SimpliVity</span></span> environment</h2>
+
+<div class="body">
+
+<div class="section">
+<p class="p">The <span class="ph"><span class="keyword">HPE SimpliVity</span></span>environment is made up of proprietary <span class="ph"><span class="keyword">HPE SimpliVity</span></span> software, VMware software and HPE firmware. 
+  There are interdependencies between the various components that need to be accounted for and are provided in the table below. 
+  The components in <a class="xref" href="#lifecycle-svt__svt-components-table-content">Table 24</a> are part of the <span class="ph"><span class="keyword">HPE SimpliVity</span></span> environment that require lifecycle management.</p>
+
+
+<p class="p">In general, ensure that the software bits for the Arbiter and vSphere extension corresponding to an OmniStack release are used.</p>
 
   
-<p class="p">Create a datastore from the Backup virtual volume you created and present it to all hosts in the vSphere cluster.  
-This backup datastore is used for storing copies of Docker persistent volumes as well as backups of DTR and UCP.</p>
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-svt__svt-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 24. </span><span class="ph"><span class="keyword">HPE SimpliVity</span></span>components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12204">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12207">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12210">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12213">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12204 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12207 "><span class="ph"><span class="keyword">HPE SimpliVity</span></span> Arbiter</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12210 ">1. HPE OmniStack</td>
+<td class="entry nocellnorowborder" rowspan="4" align="left" valign="top" headers="d29e12213 "><span class="ph"><span class="keyword">HPE SimpliVity</span></span> OmniStack for vSphere Upgrade Guide
+
+<p class="p">Download software bits from HPE’s support website.</p>
 
   
-<p class="p">The Ansible server is used to create backup and restore files for DTR and UCP on the local hard drive. 
-The backup files should be copied to the <code class="ph codeph">DockerBackup</code> datastore which can be automatically 
-configured for snapshots and offsite backup.</p>
-
+<p class="p"><a class="xref" href="http://www.hpe.com/support" target="_blank">http://www.hpe.com/support</a></p>
   
-<p class="p">Edit the Ansible server configuration from vCenter.  Add a new hard disk and specify the location as the Docker Backup datastore as
-shown in <a class="xref" href="#integrate-backup__new-hard-disk">Figure 29</a>.</p>
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12204 ">2.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12207 "><span class="ph"><span class="keyword">HPE SimpliVity</span></span> VMware Plug-in</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12210 ">1. <span class="ph"><span class="keyword">HPE SimpliVity</span></span> Arbiter 
+<p class="p">2. HPE OmniStack</p>
 
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12204 ">3.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12207 ">HPE Omnistack</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12210 ">1. <span class="ph"><span class="keyword">HPE SimpliVity</span></span> VMware Plug-in  
+<p class="p">2. <span class="ph"><span class="keyword">HPE SimpliVity</span></span> Arbiter</p>
 
-<div class="fig fignone" id="integrate-backup__new-hard-disk">
-
-<img class="image" src="media/add-new-disk.png" />  
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 29. </b></span>Add new hard disk</span></div><p> </p></div>
-
-
-<p class="p">After the hard disk is added, it is visible from the Linux operating system.  From the Ansible server:</p>
-
-  
-<pre class="pre codeblock"><code># ls /dev/sd*</code></pre>
-  
-<p class="p">The newly added storage should appear as <code class="ph codeph">/dev/sdb</code>. Now, make a filesystem, ignoring any warnings:</p>
-
-  
-<pre class="pre codeblock"><code># mkfs -t ext4 /dev/sdb </code></pre>
-  
-<p class="p">Create a mount point for the new disk:</p>
-
-
-<pre class="pre codeblock"><code># mkdir /dockerbackup</code></pre>
-  
-<p class="p">Edit the <code class="ph codeph">/etc/fstab</code> file and add the following line:</p>
+</td>
   
   
-<pre class="pre codeblock"><code>/dev/sdb /dockerbackup ext4 defaults 0  0</code></pre>
+</tr>
+</tbody></table>
+</div>
+
+      
+</div>
+
   
-<p class="p">After saving the change, mount the new volume using:</p>
+<div class="section"><h3 class="title sectiontitle">VMware components</h3>
+  
+  
+<p class="p">The <span class="ph"><span class="keyword">HPE SimpliVity</span></span> solution used in this deployment guide is built on VMware vSphere. VMware ESXi and vCenter 
+  (see <a class="xref" href="#lifecycle-svt__vmware-components-table-content">Table 25</a>) 
+  are the two components from VMware that are leveraged by the <span class="ph"><span class="keyword">HPE SimpliVity</span></span> software.</p>
+  
 
 
-<pre class="pre codeblock"><code>#mount -a</code></pre>
-  
-  
-<p class="p">Each time you  backup Docker UCP and DTR using the <code class="ph codeph">backup.sh</code> script, 
-you should copy the generated files from the <code class="ph codeph">/root/backups</code> folder to <code class="ph codeph">/dockerbackup</code>.  
-You may wish to add a command to the backup script to automate this process.</p>
 
- 
-<p class="p">The virtual volume used to host the <code class="ph codeph">DockerBackup</code> datastore can be scheduled for snapshot and backup protection 
-with HPE Recovery Manager Central and HPE StoreOnce as described in the section <a class="xref" href="synergy/backup-restore-docker-volumes.html">Backup and restore Docker persistent volumes</a>.
-Data backed up to HPE StoreOnce can be restored to the HPE 3PAR StoreServ and attached to the Ansible host for recovery.
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-svt__vmware-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 25. </span>VMware components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12338">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12341">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12344">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12347">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12338 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12341 ">VMware vCenter</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12344 ">1. HPE OmniStack
+<p class="p">2. VMware ESXi</p>
+
+</td>
+<td class="entry nocellnorowborder" rowspan="3" align="left" valign="top" headers="d29e12347 "><a class="xref" href="https://support.hpe.com/hpsc/doc/public/display?sp4ts.oid=1010292248&amp;docLocale=en_US&amp;docId=emr_na-a00028056en_us" target="_blank">VMware Upgrade for SimpliVity</a>
+</td>
+</tr>
+  
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12338 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12341 ">VMware ESXi</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12344 ">1. HPE OmniStack
+<p class="p">2. VMware vCenter</p>
+
+</td>  
+</tr>
+  
+</tbody></table>
+</div>
+
+  
+
+</div>
+  
+  
+<div class="section"><h3 class="title sectiontitle">HPE server software</h3>
+
+
+<p class="p"><span class="ph"><span class="keyword">HPE SimpliVity</span></span> servers are based on HPE server platforms and require a compatible firmware version to 
+  function with HPE OmniStack Software, as shown in
+  <a class="xref" href="#lifecycle-svt__hpe-components-table-content">Table 26</a>.</p>
+
+
+
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-svt__hpe-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 26. </span>HPE server components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12429">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12432">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12435">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12438">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12429 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12432 ">HPE Firmware</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12435 ">1. HPE OmniStack
+</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12438 "><a class="xref" href="https://support.hpe.com/hpesc/public/home/result?qt=HPE+SimpliVity+380" target="_blank">Firmware Upgrade for <span class="ph"><span class="keyword">HPE SimpliVity</span></span></a>
+</td>  
+</tr>
+</tbody></table>
+</div>
+
+  
+</div>
+  
+  
+  
+  </div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title110" id="lifecycle-vdvs">
+<h2 class="title topictitle2" id="ariaid-title110">vSphere Docker Volume Service Plug-in</h2>
+
+<div class="body">
+<div class="section">
+
+<p class="p"> vSphere Docker Volume service plug-in is part of an open source project by VMware
+that enables running stateful containers by providing persistent Docker volumes
+leveraging existing storage technology from VMware. There are two parts to the
+plug-in, namely, client software and server software (see <a class="xref" href="#lifecycle-vdvs__vdvs-components-table-conref">Table 27</a>).
+Every version of the plug-in that is released includes both pieces of software and
+it is imperative that the version number installed on the client side and server
+side are the same. </p>
+
+<p class="p">When updating the Docker Volume service plug-in, ensure the ESXi version you are
+running is supported and that the client software is compatible with the operating
+system.</p>
+
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-vdvs__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 27. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12515">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12518">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12521">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12524">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12515 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12518 ">Server Software</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12521 "><ol class="ol"><li class="li">VMware ESXi</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>
+<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e12524 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html" target="_blank">vSphere Docker Volume Service on GitHub</a></td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12515 ">2.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12518 ">Client Software</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12521 "><ol class="ol"><li class="li">VM Operating System</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title111" id="lifecycle-rhel">
+<h2 class="title topictitle2" id="ariaid-title111">Red Hat Enterprise Linux operating system</h2>
+
+<div class="body">
+<div class="section">
+
+<p class="p">This solution is built using Red Hat Enterprise Linux (see <a class="xref" href="#lifecycle-rhel__rhel-components-table-content">Table 28</a>) as the base operating system. When upgrading the operating system on the 
+VMs, first verify that the OS version is compatible with Docker EE by looking at the Docker OS compatibility matrix.</p>
+
+
+
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-rhel__rhel-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 28. </span>Operating system</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12613">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12616">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12619">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12622">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12613 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12616 ">Red Hat Enterprise Linux</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12619 "><ul class="ul"><li class="li">Docker EE</li>
+<li class="li">vDVS client software plugin</li>
+</ul>
+</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12622 "><a class="xref" href="https://access.redhat.com/articles/11258" target="_blank">RHEL</a></td>
+</tr>
+</tbody></table>
+</div>
+
+    
+    
+
+</div>
+
+</div>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title112" id="lifecycle-docker-ee">
+<h2 class="title topictitle2" id="ariaid-title112">Docker EE Environment</h2>
+
+<div class="body">
+<div class="section">
+
+<p class="p">Each release of Docker Enterprise Edition contains three technology components – UCP,
+DTR and the Docker Daemon or Engine. It is imperative that the components belonging
+to the same version are deployed or upgraded together – see <a class="xref" href="#lifecycle-docker-ee__dockeree-components-table-content">Table 29</a>
 </p>
- 
-  
+
+<p class="p">A banner will be displayed on the UI, as shown in <a class="xref" href="#lifecycle-docker-ee__docker-update">Figure 27</a>, when an update is
+available for UCP or DTR. You can start the upgrade process by clicking on the
+banner.</p>
+
+<div class="fig fignone" id="lifecycle-docker-ee__docker-update">
+
+<img class="image" src="media/dockerupdate.png" />
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 27. </b></span>Docker update notification</span></div><p> </p></div>
+
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-docker-ee__dockeree-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 29. </span>Docker EE components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12710">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12713">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12716">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12719">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12710 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12713 ">Docker Daemon/Engine</td>
+<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e12716 "><ol class="ol">
+<li class="li">VM Operating System</li>
+
+<li class="li">vDVS plugin</li>
+
+<li class="li">Prometheus and Grafana</li>
+
+</ol>
+</td>
+<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e12719 "><ul class="ul">
+<li class="li"><a class="xref" href="https://success.docker.com/Policies/Maintenance_Lifecycle" target="_blank">Docker Lifecycle Maintenance</a></li>
+
+<li class="li"><a class="xref" href="https://success.docker.com/Policies/Compatibility_Matrix" target="_blank">Docker Compatibility Matrix</a></li>
+
+</ul>
+
+</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12710 ">2.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12713 ">Universal Control Plane</td>
+</tr>
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12710 ">3.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12713 ">Docker Trusted Registry</td>
+</tr>
+</tbody></table>
 </div>
 
 </div>
+
 </div>
-<div class="topic nested0" aria-labelledby="ariaid-title106" id="summary">
-<h1 class="title topictitle1" id="ariaid-title106">Summary</h1>
+
+</div>
+<div class="topic nested1" aria-labelledby="ariaid-title113" id="lifecycle-monitoring">
+<h2 class="title topictitle2" id="ariaid-title113">Monitoring Tools</h2>
 
 <div class="body">
-<p class="p">This document has described how to architect and deploy a Docker CaaS platform on <span class="ph"><span class="keyword">HPE Simplivity</span></span>,
+<div class="section">
+
+    
+<p class="p">To learn more about upgrading Splunk, see the relevant documentation at <a class="xref" href="http://docs.splunk.com/Documentation/Splunk/7.1.2/Installation/HowtoupgradeSplunk" target="_blank">How to upgrade Splunk Enterprise</a>.</p>
+    
+
+<p class="p">The Sysdig agent runs as a container and the latest version is pulled from the Docker hub on first installation. Re-run the <code class="ph codeph">install_sysdig.yml</code> playbook
+to update to the newest version if required.</p>
+
+    
+    
+<p class="p">Prometheus and Grafana monitoring tools (see <a class="xref" href="#lifecycle-monitoring__promgraf-table-content">Table 30</a>) run as containers within the
+Docker environment. Newer versions of these tools can be deployed by pulling the
+Docker images from Docker Hub. Verify that the version of Prometheus that is being
+used is compatible with the version of Docker EE.</p>
+
+    
+
+<div class="tablenoborder">
+
+<table cellpadding="4" cellspacing="0" summary="" id="lifecycle-monitoring__promgraf-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 30. </span>Monitoring tools: Prometheus and Grafana</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+<tr class="row">
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12840">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12843">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12846">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12849">Download/Documentation</th>
+</tr>
+</thead><tbody class="tbody">  
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12840 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12843 ">Prometheus</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12846 "><ol class="ol"><li class="li">Grafana</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>
+<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e12849 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
+<li class="li"><a class="xref" href="http://docs.grafana.org/installation/upgrading/" target="_blank">Upgrading Grafana</a></li>
+
+</ol>
+</td>
+</tr>    
+<tr class="row">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12840 ">2.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12843 ">Grafana</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12846 "><ol class="ol"><li class="li">Prometheus</li>
+<li class="li">Docker EE</li>
+</ol>
+</td>   
+</tr>
+</tbody></table>
+</div>
+    
+    
+    
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="topic nested0" aria-labelledby="ariaid-title114" id="summary">
+<h1 class="title topictitle1" id="ariaid-title114">Summary</h1>
+
+<div class="body">
+<p class="p">This document has described how to architect and deploy a Docker CaaS platform on <span class="ph"><span class="keyword">HPE SimpliVity</span></span>,
 using Ansible playbooks to quickly install and deploy a production ready
 container environment. This deployment includes a highly available container cluster with
 backup services and persistent data support. This solution is ideal for customers looking to
 run containers on VMs to take advantage of the resource efficient usage of virtual machines
 for Docker containers, and having the ability to run legacy and new container applications
 side-by-side. Customers deploying Docker containers on a large scale, on Linux and Microsoft
-Windows, should consider <span class="ph"><span class="keyword">HPE Simplivity</span></span> as the deployment infrastructure. </p>
+Windows, should consider <span class="ph"><span class="keyword">HPE SimpliVity</span></span> as the deployment infrastructure. </p>
 
 </div>
 
 </div>
-<div class="topic nested0" aria-labelledby="ariaid-title107" id="bom">
-<h1 class="title topictitle1" id="ariaid-title107">Appendix A: Bill of materials</h1>
+<div class="topic nested0" aria-labelledby="ariaid-title115" id="bom">
+<h1 class="title topictitle1" id="ariaid-title115">Appendix A: Bill of materials</h1>
 
 <div class="body">
 <p class="p">The following BOMs contain electronic license to use (E-LTU) parts. 
@@ -7348,8 +7727,8 @@ Windows, should consider <span class="ph"><span class="keyword">HPE Simplivity</
   
 </div>
 
-<div class="topic nested1" aria-labelledby="ariaid-title108" id="bom-svt">
-<h2 class="title topictitle2" id="ariaid-title108"></h2>
+<div class="topic nested1" aria-labelledby="ariaid-title116" id="bom-svt">
+<h2 class="title topictitle2" id="ariaid-title116"></h2>
 
 <div class="body">
   
@@ -7357,8 +7736,8 @@ Windows, should consider <span class="ph"><span class="keyword">HPE Simplivity</
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title109" id="software-licences-svt">
-<h2 class="title topictitle2" id="ariaid-title109">Software Licenses</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title117" id="software-licences-svt">
+<h2 class="title topictitle2" id="ariaid-title117">Software Licenses</h2>
 
 <div class="body">
 <div class="section">
@@ -7387,8 +7766,8 @@ Windows, should consider <span class="ph"><span class="keyword">HPE Simplivity</
 
 </div>
 </div>
-<div class="topic nested0" aria-labelledby="ariaid-title110" id="customer-certs">
-<h1 class="title topictitle1" id="ariaid-title110">Appendix B: Using customer supplied certificates for UCP and DTR</h1>
+<div class="topic nested0" aria-labelledby="ariaid-title118" id="customer-certs">
+<h1 class="title topictitle1" id="ariaid-title118">Appendix B: Using customer supplied certificates for UCP and DTR</h1>
 
 
 <div class="body">
@@ -7403,15 +7782,15 @@ customer supplied certificates for UCP and DTR.
 
 <table cellpadding="4" cellspacing="0" summary="" id="customer-certs__customer-certs-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 31. </span>Customer certs variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12123">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12126">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12129">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13032">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13035">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13038">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12123 ">ucp_certs_dir</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12126 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12129 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13032 ">ucp_certs_dir</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13035 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13038 ">
 <ul class="ul">
 <li class="li">If <strong class="ph b">ucp_certs_dir</strong> is not defined, UCP is installed with self-signed
 certificates and DTR is installed with the <code class="ph codeph">--ucp-insecure-tls</code>
@@ -7437,9 +7816,9 @@ certificates</li>
 </td> 
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12123 ">dtr_certs_dir</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12126 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12129 ">    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13032 ">dtr_certs_dir</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13035 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13038 ">    
 <ul class="ul">
 <li class="li">If <strong class="ph b">dtr_certs_dir</strong> is not defined, DTR is installed with self-signed
 certificates</li>
@@ -7491,8 +7870,8 @@ This applies to both the UCP server certificate and the DTR server certificate.<
 
 </div>
 
-<div class="topic nested1" aria-labelledby="ariaid-title111" id="customer-certs-generate-test">
-<h2 class="title topictitle2" id="ariaid-title111">Generating and testing certificates</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title119" id="customer-certs-generate-test">
+<h2 class="title topictitle2" id="ariaid-title119">Generating and testing certificates</h2>
 
 <div class="body">
 <p class="p">In the example described here we have a root CA named <code class="ph codeph">Example root CA</code> and an 
@@ -7638,8 +8017,8 @@ pr/fYulyi5lYPalQHYH3OyvNqQQ3arEbTbZp8hEyY0gxtZRXmmaoqOY=
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title112" id="verify-certs">
-<h2 class="title topictitle2" id="ariaid-title112">Verify your certificates</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title120" id="verify-certs">
+<h2 class="title topictitle2" id="ariaid-title120">Verify your certificates</h2>
 
 <div class="body">
 <p class="p">The playbooks do not verify the validity of the certificate files you supply so  you should verify them manually 
@@ -7700,8 +8079,8 @@ error 20 at 0 depth lookup:unable to get local issuer certificate</code></pre>
 
 </div>
 </div>
-<div class="topic nested0" aria-labelledby="ariaid-title113" id="splunk-ssl">
-<h1 class="title topictitle1" id="ariaid-title113">Appendix C: Enabling SSL between the universal forwarders and the Splunk indexers using your
+<div class="topic nested0" aria-labelledby="ariaid-title121" id="splunk-ssl">
+<h1 class="title topictitle1" id="ariaid-title121">Appendix C: Enabling SSL between the universal forwarders and the Splunk indexers using your
 certificates</h1>
 
 <div class="body">
@@ -7888,8 +8267,8 @@ Windows servers but specifies a TCP port that enables SSL.</p>
 </div>
 
 </div>
-<div class="topic nested0" aria-labelledby="ariaid-title114" id="post-deployment-check-certs">
-<h1 class="title topictitle1" id="ariaid-title114">Appendix D: How to check that certs were deployed correctly</h1>
+<div class="topic nested0" aria-labelledby="ariaid-title122" id="post-deployment-check-certs">
+<h1 class="title topictitle1" id="ariaid-title122">Appendix D: How to check that certs were deployed correctly</h1>
 
 <div class="body">
 <p class="p">The following commands should return the CA certificates used by
@@ -7937,30 +8316,30 @@ More details here: http://curl.haxx.se/docs/sslcerts.html
 </div>
 
 
-<div class="topic nested1" aria-labelledby="ariaid-title115" id="enable-certs">
-<h2 class="title topictitle2" id="ariaid-title115">Enable certs for browser (Windows 2016 example)</h2>
+<div class="topic nested1" aria-labelledby="ariaid-title123" id="enable-certs">
+<h2 class="title topictitle2" id="ariaid-title123">Enable certs for browser (Windows 2016 example)</h2>
 
 <div class="body">
 <p class="p">Choose <code class="ph codeph">Manage computer certificates</code> in the control panel as shown in
-<a class="xref" href="#enable-certs__manage-computer-certificates">Figure 30</a>
+<a class="xref" href="#enable-certs__manage-computer-certificates">Figure 28</a>
 </p>
 
 	
 <div class="fig fignone" id="enable-certs__manage-computer-certificates">
 
 <br /><img class="image" src="media/manage-computer-certificates.png" /><br />	
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 30. </b></span>Manage computer certificates</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 28. </b></span>Manage computer certificates</span></div><p> </p></div>
 	
 
 <p class="p">Import the <code class="ph codeph">ca.pem</code> for UCP into the Trusted Root Certification Authorities, as shown in
-<a class="xref" href="#enable-certs__import-ca-pem">Figure 31</a>
+<a class="xref" href="#enable-certs__import-ca-pem">Figure 29</a>
 </p>
 
 
 <div class="fig fignone" id="enable-certs__import-ca-pem">
 	
 <br /><img class="image" src="media/import-ca-pem.png" /><br />	
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 31. </b></span>Import the ca.pem</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 29. </b></span>Import the ca.pem</span></div><p> </p></div>
 
 	
 
@@ -7968,13 +8347,13 @@ More details here: http://curl.haxx.se/docs/sslcerts.html
 
 
 <p class="p">It should now show up in the list of certificates. You may need to restart your browser to see the green, 
- secure lock symbol as shown in <a class="xref" href="#enable-certs__green-https">Figure 32</a></p>
+ secure lock symbol as shown in <a class="xref" href="#enable-certs__green-https">Figure 30</a></p>
 
 	
 <div class="fig fignone" id="enable-certs__green-https">
 
 <br /><img class="image" src="media/green-https.png" /><br />	
-<div><span class="figcap"><span class="fig--title-label"><b>Figure 32. </b></span>Secure HTTPS</span></div><p> </p></div>
+<div><span class="figcap"><span class="fig--title-label"><b>Figure 30. </b></span>Secure HTTPS</span></div><p> </p></div>
 
 	
 	
@@ -7984,8 +8363,8 @@ More details here: http://curl.haxx.se/docs/sslcerts.html
 
   
 </div>
-<div class="topic nested0" aria-labelledby="ariaid-title116" id="resources-links">
-<h1 class="title topictitle1" id="ariaid-title116">Resources and additional links</h1>
+<div class="topic nested0" aria-labelledby="ariaid-title124" id="resources-links">
+<h1 class="title topictitle1" id="ariaid-title124">Resources and additional links</h1>
 
   
 <div class="body">
@@ -7993,7 +8372,7 @@ More details here: http://curl.haxx.se/docs/sslcerts.html
 
 
 
-<p class="p">HPE SimpliVity, <a class="xref" href="http://hpe.com/info/simplivity" target="_blank">hpe.com/info/simplivity</a></p>
+<p class="p"><span class="ph"><span class="keyword">HPE SimpliVity</span></span>, <a class="xref" href="http://hpe.com/info/simplivity" target="_blank">hpe.com/info/simplivity</a></p>
     
 <p class="p">HPE Servers, <a class="xref" href="http://hpe.com/servers" target="_blank">hpe.com/servers</a></p>
 
