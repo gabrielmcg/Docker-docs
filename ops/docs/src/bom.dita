@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="bom">
-<title>Appendix A: Bill of materials</title>
+<title>Appendix A<!--: Bill of materials--></title>
 <body>
-<p>The following BOMs contain electronic license to use (E-LTU) parts. 
+<!--<p>The following BOMs contain electronic license to use (E-LTU) parts. 
   Electronic software license delivery is now available in most countries. 
   HPE recommends purchasing electronic products over physical products (when available)
   for faster delivery and for the convenience of not tracking and managing confidential 
@@ -13,7 +13,7 @@
   The bill of materials does not include complete support options or other rack 
   and power requirements. If you have questions regarding ordering, please consult 
   with your HPE Reseller or HPE Sales Representative for more details. 
-  <xref href="http://www.hpe.com/us/en/services/consulting.html" format="html" scope="external"></xref>.</note>
+  <xref href="http://www.hpe.com/us/en/services/consulting.html" format="html" scope="external"></xref>.</note>-->
   
 </body>
 </topic>

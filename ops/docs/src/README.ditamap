@@ -285,9 +285,14 @@
     </topicref>
 
     <!--<topicref href="synergy/backup-restore-docker-volumes.dita" navtitle="Backup and restore Docker volumes"/>-->
+    <topicref href="svt/simplivity-backups.dita">
+      <topicref href="svt/svt-backup-playbooks.dita"/>
+      <topicref href="svt/svt-backup-config.dita"/>
 
-    <topicref href="svt/backup-restore-docker-volumes-svt.dita"
-      navtitle="Backup and restore Docker volumes"/>
+      <topicref href="svt/backup-restore-docker-volumes-svt.dita"
+        navtitle="Backup and restore Docker volumes"/>
+    </topicref>
+
 
     <!--<topicref href="integrate-backup.dita" navtitle="Integrate backup"/>-->
 
@@ -311,7 +316,7 @@
     <!--<topicref href="synergy/bom-synergy.dita"/>
     <topicref href="synergy/software-licences-synergy.dita"/>
     -->
-    <topicref href="svt/bom-svt.dita"/>
+    <!--<topicref href="svt/bom-svt.dita"/>-->
     <topicref href="svt/software-licences-svt.dita"/>
   </topicref>
 

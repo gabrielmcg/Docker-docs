@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="svt-backup-config">
+<title></title>
+<body>
+
+<table id="svt-backup-variables-table-content" frame="none">
+<title><ph conkeyref="conrefs/hardware-string"/> backup variables</title>
+<!--<colgroup xmlns:ac="ac" xmlns:ri="ri">
+<col/>
+<col/>
+</colgroup>-->
+
+<tgroup cols="3">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Variable</entry>
+<entry>File</entry>
+<entry>Description</entry>
+</row>
+</thead>
+<tbody>
+  
+<row>
+<entry>backup_policies</entry>
+<entry>group_vars/vault</entry>  
+<entry>List of dictionaries containing the different backup policies to be used along with the scheduling information. Any number of backup policies can be created and they need to match the node_policy variables defined in the inventory. Times are indicated in minutes. All month calculations use a 30-day month.
+  All year calculations use a 365-day year. The format is as follows:
+
+<codeblock>
+backup_policies:
+ - name: daily'   
+   days: 'All'   
+   start_time: '11:30'   
+   frequency: '1440'   
+   retention: '10080' 
+ - name: 'hourly'   
+   days: 'All'   
+   start_time: '00:00'   
+   frequency: '60'   
+   retention: '2880'
+</codeblock>
+</entry>  
+</row>
+
+<row>
+<entry>dummy_vm_prefix</entry>
+<entry>group_vars/vault</entry>  
+<entry>In order to be able to backup the Docker volumes, a number of "dummy" VMs need to spin up. 
+  This variable will set a recognizable prefix for them.</entry>  
+</row>
+  
+<row>
+<entry>docker_volumes_policy</entry>
+<entry>group_vars/vault</entry>  
+<entry>Backup policy to use for the Docker Volumes.</entry>  
+</row>    
+ 
+</tbody>
+</tgroup>
+</table>
+
+
+</body>
+</topic>

@@ -18,15 +18,28 @@ any required Windows software.
     
 <p>The  <ph conkeyref="conrefs/hardware-string"/>-specific playbooks releated to backup have been redesigned:</p>
 <ul>
-<li>playbooks/config_dummy_vms_for_docker_volumes_backup.yml</li>   
-<li>playbooks/config_simplivity_backups.yml</li>
+<li><codeph>playbooks/config_dummy_vms_for_docker_volumes_backup.yml</codeph> now uses the same mechanism as the 
+    <codeph>playbooks/create_vms.yml</codeph> to deploy the dummy VM.</li>   
+    
+<li><codeph>playbooks/config_simplivity_backups.yml</codeph> has been refactored to be more modular, with separate plays for
+creating backup policies, populating policies with rules, and assigning backup policies to VMs. The reliability of the 
+playbook has been improved by minimizing the number of concurrent operations to the least number of nodes. The playbook 
+creates the policies based on the <codeph>backup_policies</codeph> data structure in the <codeph>group_vars/vars</codeph> file.
+Any exisiting policies will not be over-written when running the playbook, but rules attached to the policies will be updated
+based on the information supplied in the variables file. If you omit the <codeph>node_policy</codeph> variable for a group of nodes,
+ no policy will be assigned by default.
+</li>
 </ul>
-
+       
     
-<p>
-    
-    
+<p><codeph>playbooks/config_storage_driver.yml</codeph> prepares drives for local Docker volumes and container images. 
+    It also configures Docker with either the <codeph>overlay2</codeph> storage driver (the default) or the 
+    <codeph>devicemapper</codeph> storage driver, depending on the value of the <codeph>docker_storage_driver</codeph>
+    in <codeph>group_vars/vars</codeph>. This playbook was previously called <codeph>playbooks/config_docker_lvs.yml</codeph>
+    in earlier releases of the solution.
 </p>    
+  
+<p></p>  
   
 </body>
 </topic>
