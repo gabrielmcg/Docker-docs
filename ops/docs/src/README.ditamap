@@ -134,7 +134,7 @@
 
     <topicref href="vmware-config.dita" navtitle="VMware configuration"/>
 
-    <!--  TODO conditional content  SVT -->
+    <!--  conditional content  SVT -->
     <topicref href="svt/svt-variables-config.dita"/>
     
     <topicref href="svt/svt-backup-config.dita"/>
@@ -175,7 +175,6 @@
     <topicref href="optional-playbooks.dita"> </topicref>
 
     <topicref href="misc/backup-restore-playbooks.dita"/>
-    <!--  TODO SimpliVity backup/restore playbooks overview -->
 
     <topicref href="misc/convenience-playbooks.dita"/>
     <topicref href="misc/convenience-scripts.dita"/>

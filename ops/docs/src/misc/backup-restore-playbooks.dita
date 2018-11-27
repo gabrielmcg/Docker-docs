@@ -28,8 +28,20 @@
 </ul>
     
     
-</section>    
+</section> 
+<!--  conditional simplivity content -->    
+<section>
+<p>The  <ph conkeyref="conrefs/hardware-string"/>-specific playbooks:</p>
+<ul>
+<li><codeph>playbooks/config_dummy_vms_for_docker_volumes_backup.yml</codeph> </li>      
+<li><codeph>playbooks/config_simplivity_backups.yml</codeph>    
+</li>
+</ul>
     
+    
+</section>
+
+
 
 </body>
 </topic>

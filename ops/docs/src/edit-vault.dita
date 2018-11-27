@@ -15,7 +15,7 @@ use as a model for your vault file. To create a vault, you create a new file cal
 docker_ee_url: 'your_url_here'
 vcenter_password: 'xxxx'
 vm_password: 'xxxx'
-<!-- TODO conditonal content SVT -->
+<!-- conditonal content SVT -->
 simplivity_password: 'xxx'
 ucp_password: 'zzzz'
 win_password: 'yourpass'

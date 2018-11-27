@@ -5,7 +5,7 @@
   
 <body>
 <p>HPE Reference Architectures, <xref href="http://hpe.com/info/ra" format="html" scope="external">hpe.com/info/ra</xref></p>
-<!-- TODO confditional content -->
+<!-- conditional content -->
 <!--<p>HPE Synergy, <xref href="http://hpe.com/info/synergy" scope="external" format="html">hpe.com/info/synergy</xref></p>-->
 <p><ph conkeyref="conrefs/hardware-string"/>, <xref href="http://hpe.com/info/simplivity" scope="external" format="html">hpe.com/info/simplivity</xref></p>    
 <p>HPE Servers, <xref href="http://hpe.com/servers" format="html" scope="external">hpe.com/servers</xref></p>

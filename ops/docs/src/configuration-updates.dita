@@ -9,7 +9,7 @@
 <li><codeph>docker_ee_version_windows</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="windows-config.dita"/></li> 
 <li><codeph>windows_update</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="windows-config.dita"/></li> 
 <li><codeph>windows_winrm_script</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="windows-config.dita"/></li>
-<li><codeph>docker_storage_driver</codeph> variable in <codeph>group_vars/vars</codeph> - see TODO </li>
+<li><codeph>docker_storage_driver</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="docker-config.dita"/> </li>
 </ul>
     
     

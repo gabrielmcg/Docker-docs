@@ -32,14 +32,11 @@ based on the information supplied in the variables file. If you omit the <codeph
 </ul>
        
     
-<p><codeph>playbooks/config_storage_driver.yml</codeph> prepares drives for local Docker volumes and container images. 
-    It also configures Docker with either the <codeph>overlay2</codeph> storage driver (the default) or the 
-    <codeph>devicemapper</codeph> storage driver, depending on the value of the <codeph>docker_storage_driver</codeph>
-    in <codeph>group_vars/vars</codeph>. This playbook was previously called <codeph>playbooks/config_docker_lvs.yml</codeph>
-    in earlier releases of the solution.
+<p><codeph>playbooks/config_storage_driver.yml</codeph> prepares drives for local Docker volumes and container images
+    and configures the Docker storage driver based on the value of the <codeph>docker_storage_driver</codeph> variable
+    in <codeph>group_vars/vars</codeph>.
 </p>    
   
-<p></p>  
   
 </body>
 </topic>

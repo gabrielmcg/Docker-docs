@@ -8,8 +8,12 @@
   
 <ul>
 
-<li><codeph>playbooks/config_storage_driver.yml</codeph> TODO </li>
-<!-- TODO STORAGE DRIVERS -->
+<li><codeph>playbooks/config_storage_driver.yml</codeph> prepares drives for local Docker volumes and container images. 
+    It also configures Docker with either the <codeph>overlay2</codeph> storage driver (the default) or the 
+    <codeph>devicemapper</codeph> storage driver, depending on the value of the <codeph>docker_storage_driver</codeph> variable
+    in <codeph>group_vars/vars</codeph>. This playbook was previously called <codeph>playbooks/config_docker_lvs.yml</codeph>
+    in earlier releases of the solution.
+</li>  
   
   
 <li><codeph>playbooks/install_docker.yml</codeph> installs Docker along with all of its dependencies.</li>

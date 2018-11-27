@@ -45,9 +45,9 @@ The playbooks have only been tested with three nodes in the ESX cluster, but the
   
 <codeblock>
 [ucp]
-clh-ucp01 ip_addr='10.10.174.112/22' esxi_host='simply01.am2.cloudra.local'
-clh-ucp02 ip_addr='10.10.174.113/22' esxi_host='simply02.am2.cloudra.local'
-clh-ucp03 ip_addr='10.10.174.114/22' esxi_host='simply03.am2.cloudra.local'
+hpe-ucp01 ip_addr='10.10.174.112/22' esxi_host='simply01.am2.cloudra.local'
+hpe-ucp02 ip_addr='10.10.174.113/22' esxi_host='simply02.am2.cloudra.local'
+hpe-ucp03 ip_addr='10.10.174.114/22' esxi_host='simply03.am2.cloudra.local'
 </codeblock>  
 
 <p>In the above example, the first UCP VM will be placed on the ESX host named <codeph>simply01.am2.cloudra.local</codeph>. 
@@ -57,19 +57,19 @@ clh-ucp03 ip_addr='10.10.174.114/22' esxi_host='simply03.am2.cloudra.local'
 
 <codeblock>
 [worker]
-clh-worker01 ip_addr='10.10.174.122/22' esxi_host='simply01.am2.cloudra.local'
-clh-worker02 ip_addr='10.10.174.123/22' esxi_host='simply02.am2.cloudra.local'
-clh-worker03 ip_addr='10.10.174.124/22' esxi_host='simply03.am2.cloudra.local'
+hpe-worker01 ip_addr='10.10.174.122/22' esxi_host='simply01.am2.cloudra.local'
+hpe-worker02 ip_addr='10.10.174.123/22' esxi_host='simply02.am2.cloudra.local'
+hpe-worker03 ip_addr='10.10.174.124/22' esxi_host='simply03.am2.cloudra.local'
 </codeblock>
 
 <p>If you have more than three ESX hosts in your cluster, you can add an additional worker node as follows:</p>
   
 <codeblock>
 [worker]
-clh-worker01 ip_addr='10.10.174.122/22' esxi_host='simply01.am2.cloudra.local'
-clh-worker02 ip_addr='10.10.174.123/22' esxi_host='simply02.am2.cloudra.local'
-clh-worker03 ip_addr='10.10.174.124/22' esxi_host='simply03.am2.cloudra.local'
-clh-worker04 ip_addr='10.10.174.1xx/22' esxi_host='simply04.am2.cloudra.local'
+hpe-worker01 ip_addr='10.10.174.122/22' esxi_host='simply01.am2.cloudra.local'
+hpe-worker02 ip_addr='10.10.174.123/22' esxi_host='simply02.am2.cloudra.local'
+hpe-worker03 ip_addr='10.10.174.124/22' esxi_host='simply03.am2.cloudra.local'
+hpe-worker04 ip_addr='10.10.174.150/22' esxi_host='simply04.am2.cloudra.local'
 </codeblock>  
 
 <p>You can also distribute the infrastructure VMs across fours nodes rather than across the default nodes. 
@@ -77,14 +77,14 @@ clh-worker04 ip_addr='10.10.174.1xx/22' esxi_host='simply04.am2.cloudra.local'
 
 <codeblock>
 [nfs]
-clh-nfs ip_addr='10.10.174.121/22'    esxi_host='simply03.am2.cloudra.local'
+hpe-nfs ip_addr='10.10.174.121/22'    esxi_host='simply03.am2.cloudra.local'
 </codeblock>
 
 <p>Instead, you can change the placement NFS server VM, leveraging a fourth ESX node:</p>
   
 <codeblock>
 [nfs]
-clh-nfs ip_addr='10.10.174.1xx/22'    esxi_host='simply04.am2.cloudra.local'
+hpe-nfs ip_addr='10.10.174.121/22'    esxi_host='simply04.am2.cloudra.local'
 </codeblock>  
 
 <p>When you specify the placement of the VM, you should ensure that you follow these placement guidelines:</p>

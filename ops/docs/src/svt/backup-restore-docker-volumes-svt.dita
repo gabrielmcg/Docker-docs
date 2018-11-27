@@ -46,8 +46,8 @@ test_01
   
 <codeblock>
 # docker volume ls | grep vsphere
-vsphere:latest      prom_hpe-db-data@Docker_CLH
-vsphere:latest      test_01@Docker_CLH
+vsphere:latest      prom_hpe-db-data@Docker_HPE
+vsphere:latest      test_01@Docker_HPE
 </codeblock>  
 
 <p>You can attach a container to the volume and then add data to it by creating a text file with some arbitrary content:</p>
