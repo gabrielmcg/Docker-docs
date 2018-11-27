@@ -10,7 +10,7 @@ that you  have already set up your <ph conkeyref="conrefs/synergy-string"/> hard
 and have configured HPE 3PAR for storage.
 </p>
 
-<!-- TODO -->
+<!-- TODO synergy -->
 <fig id="overview-graphic">
 <title>Solution overview</title>
 <image href="../media/overview-graphic.png" placement="break"/>

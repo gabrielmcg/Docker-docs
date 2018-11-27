@@ -65,13 +65,13 @@
 </thead>
 <tbody>
 
-<!-- TODO conditional content SimpliVity -->  
+<!--  conditional content SimpliVity -->  
 <row>
 <entry><ph conkeyref="conrefs/hardware-string"/> OmniStack</entry>
 <entry>3.7.6</entry>
 </row>
   
-<!-- TODO conditional content Synergy -->  
+<!--  conditional content Synergy -->  
 <!--<row>
 <entry>HPE Recovery Manager Central </entry>
 <entry>5.0.1</entry>  

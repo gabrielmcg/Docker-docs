@@ -22,7 +22,7 @@
 will also need administrator credentials in order to create templates
 and spin up virtual machines. </entry>
 </row>
-    <!-- TODO conditional content -->
+    <!--  conditional content -->
 <row>
 <entry>L3 Network requirements </entry>
 <entry>The name of the SimpliVity cluster and the names of the member of this cluster as 

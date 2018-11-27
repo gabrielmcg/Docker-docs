@@ -18,7 +18,7 @@
 </thead>
 <tbody>
 
-<!-- TODO document change -->
+<!--  document change -->
 <!--<row>
 <entry>enable_windows</entry>
 <entry>group_vars/vars</entry>  
@@ -83,7 +83,7 @@ and <codeph>windows_vdvs_version</codeph> equal to <codeph>0.21</codeph>
 <entry>group_vars/vars</entry>    
 <entry>Variable used to determine where the <codeph>winrm</codeph> Powershell script will be downloaded from. See the section 
     <xref href="windows/windows-proxy.dita"/> for more information.
-<!-- TODO ref to proxy section -->
+
 </entry>
 </row>
 
@@ -101,8 +101,8 @@ your Windows workers.</entry>
 <entry>group_vars/vars</entry>    
 <entry>Variable used to determine if Windows updates are automatically downloaded when installing Docker on Windows worker nodes 
     (in the <codeph>playbooks/install_docker.yml).</codeph>. 
-Defaults to <codeph>true</codeph>.
-<!-- TODO ref to proxy section -->
+Defaults to <codeph>true</codeph>. See the section 
+    <xref href="windows/windows-proxy.dita"/> for more information.
 </entry>
 </row>
     

@@ -13,8 +13,8 @@ production.
 <p>The Operations environment is comprised of three <ph conkeyref="conrefs/hardware-string"/> 380 Gen10 servers. 
     HPE recommends dual socket <ph conkeyref="conrefs/hardware-string"/> systems with at least 14 CPU cores per socket (28 total cores per system) 
     for optimal performance and support during HA failover scenarios. Since the <ph conkeyref="conrefs/hardware-string"/> technology 
-    relies on VMware virtualization, the servers are managed using vCenter. The load among the three hosts will 
-    be shared as per Figure TODO.
+    relies on VMware virtualization, the servers are managed using vCenter. <!--The load among the three hosts will 
+    be shared as per Figure TODO.-->
 <!-- TODO Add link to figure for load across hosts -->
 </p>
     

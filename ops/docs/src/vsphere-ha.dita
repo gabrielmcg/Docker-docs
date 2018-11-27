@@ -10,7 +10,7 @@ available hosts in the cluster. You configure an Admission Control Policy (ACP) 
 specify the percentage CPU and memory to reserve on all the hosts in the cluster to
 support HA functionality.</p>
 
-<!-- TODO conditional content -->
+<!--  conditional content -->
 <p>More information on enabling vSphere HA and configuring Admission Control Policy is available in 
     the <ph conkeyref="conrefs/hardware-string"/> documentation. Log in to the HPE Support Center at 
     <xref href="https://www.hpe.com/us/en/support.html" scope="external" format="html"/> 

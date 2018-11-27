@@ -81,7 +81,7 @@ datacenter before starting the deployment.</entry>
 ['<codeph>Datastore1</codeph>','<codeph>Datastore2</codeph>'...]. This or these
 datastore(s) must exist before you run the playbooks. Note that all the datastores should be mounted on all the ESXi hosts.
 
-<!-- TODO conditional content -->
+<!-- conditional content -->
 <p>Please note that from a <ph conkeyref="conrefs/hardware-string"/> perspective, it is a best practice to use only one Datastore. 
     Using more than one will not provide any advantages in terms of reliability and will add additional complexity. </p>
 
