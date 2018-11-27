@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="backup-restore-docker-volumes-svt">
-<title>Backup and restore Docker persistent volumes</title>
+<title>Backup and restore Docker persistent volumes with <ph conkeyref="conrefs/hardware-string"/></title>
 <body>
 <p>In order to restore a Docker volume, you need to restore a special VM that has been deployed for the sole 
   purpose of backing up Docker volumes. There is one such VM for each datastore defined in the datastores array 

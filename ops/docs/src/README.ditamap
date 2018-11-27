@@ -136,6 +136,8 @@
 
     <!--  TODO conditional content  SVT -->
     <topicref href="svt/svt-variables-config.dita"/>
+    
+    <topicref href="svt/svt-backup-config.dita"/>
 
     <topicref href="network-config.dita" navtitle="Network configuration"/>
 
@@ -193,6 +195,7 @@
     <topicref href="rhel/load-balancers.dita"/>
     <topicref href="rhel/install-docker-ucp-dtr.dita"/>
     <topicref href="rhel/add-rhel-workers.dita"/>
+    <topicref href="svt/svt-backup-playbooks.dita"/>
 
   </topicref>
 
@@ -286,8 +289,8 @@
 
     <!--<topicref href="synergy/backup-restore-docker-volumes.dita" navtitle="Backup and restore Docker volumes"/>-->
     <topicref href="svt/simplivity-backups.dita">
-      <topicref href="svt/svt-backup-playbooks.dita"/>
-      <topicref href="svt/svt-backup-config.dita"/>
+      <!--<topicref href="svt/svt-backup-playbooks.dita"/>-->
+      <!--<topicref href="svt/svt-backup-config.dita"/>-->
 
       <topicref href="svt/backup-restore-docker-volumes-svt.dita"
         navtitle="Backup and restore Docker volumes"/>
