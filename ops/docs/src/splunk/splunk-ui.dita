@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="splunk-ui">
+<title>Accessing Splunk UI</title>
+<body>
+  
+<p>After the installation is complete, the Splunk UI can be reached at <codeph>http://&lt;fqdn>:8000</codeph>,
+where <codeph>&lt;fqdn></codeph> is the FQDN of one of your Linux Docker nodes. Mesh routing does not currently work on
+Windows so you must use a Linux node to access the UI.</p>
+  
+  
+</body>
+</topic>

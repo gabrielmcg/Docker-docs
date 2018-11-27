@@ -4,7 +4,7 @@
 <title>Installing Docker UCP and DTR on RHEL VMs</title>
 <body>
   
-<p>The following playbooks are used to Docker UCP and DTR on RHEL VMs.</p>    
+<p>The following playbooks are used to install Docker UCP and DTR on RHEL VMs.</p>    
   
 <ul>
 

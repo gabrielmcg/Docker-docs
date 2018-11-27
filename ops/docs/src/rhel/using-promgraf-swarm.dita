@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="using-promgraf-swarm">
-<title>Accessing Grafana for Docker swarm</title>
+<title>Accessing Grafana UI</title>
 <body>
  
 <p>The Grafana UI is available at the UCP VIP, using <codeph>HTTP</codeph> on port <codeph>3000</codeph>, for example, </p>

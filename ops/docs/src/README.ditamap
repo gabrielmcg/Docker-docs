@@ -235,6 +235,7 @@
       <topicref href="splunk-related-playbooks.dita" navtitle="Related playbooks"/>
       <topicref href="splunk-limitations.dita" navtitle="Limitations"/>
     </topicref>
+    <topicref href="splunk/splunk-ui.dita"/>
     <topicref href="redeploying-splunk-demo.dita" navtitle="Redeploying Splunk demo"/>
   </topicref>
 
