@@ -243,6 +243,7 @@
     <topicref href="rhel/prometheus-grafana-playbooks.dita"/>
     <topicref href="monitoring-config-promgraf.dita" navtitle="Prometheus and Grafana configuration"
     />
+    <topicref href="rhel/using-promgraf-swarm.dita"/>
   </topicref>
 
   <topicref href="post-deployment.dita" navtitle="Post-deployment">

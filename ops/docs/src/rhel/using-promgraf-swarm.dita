@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="using-promgraf-swarm">
+<title>Accessing Grafana for Docker swarm</title>
+<body>
+ 
+<p>The Grafana UI is available at the UCP VIP, using <codeph>HTTP</codeph> on port <codeph>3000</codeph>, for example, </p>
+<codeblock>http://hpe-ucpvip.am2.cloudra.local:3000</codeblock>
+
+<p>The default username and password for Grafana is <codeph>admin</codeph>/<codeph>admin</codeph>.
+The first time you login, you will be asked to reset the default <codeph>admin</codeph> password.</p>	
+  
+<p>Select the <codeph>Docker Swarm Monitor</codeph> dashboard that has already been loaded by the playbooks, 
+as shown in <xref href="using-promgraf-swarm.dita#using-promgraf-swarm/grafana-dashboard" type="fig"/> and 
+<xref href="using-promgraf-swarm.dita#using-promgraf-swarm/grafana-dashboard2" type="fig"/>. 
+</p>
+  
+<fig id="grafana-dashboard">
+<title>Docker Swarm Monitor</title>
+<image href="../media/grafana-dashboard.png" placement="break"/>
+</fig>  
+
+
+<fig id="grafana-dashboard2">
+<title>Docker Swarm Monitor</title>
+<image href="../media/grafana-dashboard2.png" placement="break"/>
+</fig>  
+  
+    
+</body>
+</topic>
