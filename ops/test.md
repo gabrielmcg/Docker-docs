@@ -686,7 +686,7 @@
 <ul class="ul">
 <li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
 
-<li class="li"><a class="xref" href="#unique_1402938222">Provisioning load balancers for UCP and DTR</a></li>
+<li class="li"><a class="xref" href="#unique_1890840900">Provisioning load balancers for UCP and DTR</a></li>
 
 <li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
 
@@ -3714,7 +3714,7 @@ the deployment to your needs.
 <ul class="ul">
 <li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
 
-<li class="li"><a class="xref" href="#unique_1402938222">Provisioning load balancers for UCP and DTR</a></li>
+<li class="li"><a class="xref" href="#unique_1890840900">Provisioning load balancers for UCP and DTR</a></li>
 
 <li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
 
@@ -3928,7 +3928,7 @@ order to have a synchronized clock across the environment. It will use the list 
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title57" id="unique_1402938222">
+<div class="topic nested1" aria-labelledby="ariaid-title57" id="unique_1890840900">
 <h2 class="title topictitle2" id="ariaid-title57">Provisioning load balancers for UCP and DTR</h2>
 
 <div class="body">
@@ -5476,9 +5476,11 @@ the port <code class="ph codeph">514</code> as shown in <a class="xref" href="#s
 
 <div class="body">
 <ul class="ul">
-<li class="li"><code class="ph codeph">playbooks/monitoring.yml</code> installs and configures the Splunk Universal Forwarders</li>
 
 <li class="li"><code class="ph codeph">playbooks/splunk_demo.yml</code> installs a demo of Splunk Enterprise in the cluster (if the <code class="ph codeph">splunk_demo</code> deployment option is selected)</li>
+
+
+<li class="li"><code class="ph codeph">playbooks/splunk_uf.yml</code> installs and configures the Splunk Universal Forwarders</li>
 
 </ul>
 
