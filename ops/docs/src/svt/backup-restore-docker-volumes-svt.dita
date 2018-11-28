@@ -203,7 +203,7 @@ docker_volumes_policy: 'hpe-gold'
 </fig>
  
 <p>It is only necessary to move the <codeph>.vmdk</codeph> file as the <codeph>.vmfd</codeph> file will automatically follow. 
-  The dockvols sub-directory named <codeph>1111111-1111-1111-1111-...</codeph> should now contain both files as shown in 
+  The <codeph>dockvols</codeph> sub-directory named <codeph>1111111-1111-1111-1111-...</codeph> should now contain both files as shown in 
   <xref href="backup-restore-docker-volumes-svt.dita#backup-restore-docker-volumes-svt/moved" type="fig"/>.</p> 
   
 <fig id="moved">

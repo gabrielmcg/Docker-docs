@@ -33,7 +33,7 @@ command line when running the playbook, as shown in the example below: </p>
 &lt;backup_dest>/my_dtr_data_backup.vars.tgz</codeblock>  
 
 <p>For more information on DTR backups, see the Docker documentation at 
-<xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/backups-and-disaster-recovery/" format="html" scope="external"/></p>
+<xref href="https://docs.docker.com/datacenter/dtr/2.5/guides/admin/backups-and-disaster-recovery/" format="html" scope="external"/></p>
 
 
 

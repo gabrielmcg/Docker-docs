@@ -9,20 +9,20 @@ experimenting with the demo.</p>
   
 <p>Before you redeploy, it is necessary to remove the corresponing Docker stack and delete the associated volumes.</p>  
   
-<codeblock># ssh gab-ucp02
+<codeblock># ssh hpe-ucp02
 
-[root@gab-ucp02 ~]# docker stack rm splunk_demo
+# docker stack rm splunk_demo
 Removing service splunk_demo_splunkenterprise
 Removing network splunk_demo_default
 
-[root@gab-ucp02 ~]# docker volume ls | grep splunk
+# docker volume ls | grep splunk
 vsphere:latest      splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
 vsphere:latest      splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
 
-[root@gab-ucp02 ~]# docker volume rm splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
+# docker volume rm splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
 splunk_demo_vsplunk-opt-splunk-etc@Docker_GAB
 
-[root@gab-ucp02 ~]# docker volume rm splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
+# docker volume rm splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
 splunk_demo_vsplunk-opt-splunk-var@Docker_GAB
 
 </codeblock>  

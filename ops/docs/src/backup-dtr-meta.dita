@@ -99,7 +99,7 @@ command line when running the playbook. In the example below: </p>
 &lt;backup_dest>/my_dtr_metadata_backup.vars.tgz</codeblock>
 
 <p>For more information on DTR backups, see the Docker documentation at 
-<xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/backups-and-disaster-recovery/" format="html"/></p>
+<xref href="https://docs.docker.com/datacenter/dtr/2.5/guides/admin/backups-and-disaster-recovery/" format="html"/></p>
 
 
 </body>

@@ -20,7 +20,7 @@ You will need to restore your Docker volumes and your applications (stacks and s
 <codeblock>ansible-playbook -i vm_hosts restore.yml</codeblock>
 </li>
 <li>If you are using the image scanning functionality in DTR, you will need to re-download the vulnerability database. 
-For more information, see the Docker documentation  <xref href="https://docs.docker.com/datacenter/dtr/2.4/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license" format="html" scope="external">here</xref>.</li>
+For more information, see the Docker documentation  <xref href="https://docs.docker.com/datacenter/dtr/2.5/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license" format="html" scope="external">here</xref>.</li>
 </ol>
 
 <p>You are now ready to restore your Docker volumes and your applications.</p>
