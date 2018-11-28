@@ -6,10 +6,11 @@
 <p>New variables and configuration files introduced in this release of  <ph conkeyref="conrefs/gitrepo-string"/>:</p>
 
 <ul>
+<li><codeph>docker_ee_reponame</codeph> variable in <codeph>group_vars/vars</codeph> replaces <codeph>docker_ee_version</codeph> - see <xref href="docker-config.dita"/> </li>
 <li><codeph>docker_ee_version_windows</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="windows-config.dita"/></li> 
+<li><codeph>docker_storage_driver</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="docker-config.dita"/> </li>    
 <li><codeph>windows_update</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="windows-config.dita"/></li> 
 <li><codeph>windows_winrm_script</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="windows-config.dita"/></li>
-<li><codeph>docker_storage_driver</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="docker-config.dita"/> </li>
 </ul>
     
     
@@ -21,7 +22,7 @@
 <li><codeph>k8s_pod_cidr</codeph> variable in <codeph>group_vars/vars</codeph> - see <xref href="k8s-config.dita"/></li> 
 <li>Additional configuration files for each group in the inventory including <codeph>group_vars/vms.yml</codeph>,
 <codeph>group_vars/ucp.yml</codeph>, <codeph>group_vars/dtr.yml</codeph>, <codeph>group_vars/worker.yml</codeph> 
-    and <codeph>group_vars/nfs.yml</codeph> - see <xref href="inventory-group-variables.dita"/>.
+and <codeph>group_vars/nfs.yml</codeph> - see <xref href="inventory-group-variables.dita"/>.
 </li>
 </ul>
 

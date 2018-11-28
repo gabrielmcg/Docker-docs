@@ -27,7 +27,11 @@ href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/"
 >https://docs.docker.com/engine/installation/linux/docker-ee/rhel/</xref>.</entry>
 </row>
 <row>
-<entry>docker_ee_version</entry>
+<entry>docker_ee_reponame</entry>
+<entry>group_vars/vars</entry>    
+<entry>For Docker EE 2.0, this variable must be set to the value <codeph>stable-17.06</codeph></entry>
+
+<!--<entry>docker_ee_version</entry>
 <entry>group_vars/vars</entry>    
 <entry>
 <ul>
@@ -36,7 +40,7 @@ href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/"
 <codeblock>docker_ee_version: 'docker-ee-17.06.2.ee.6-3.el7.rhel.x86_64'</codeblock>
 </li>
 </ul>
-</entry>
+</entry>-->
 </row>
 <row>
 <entry>rhel_version</entry>

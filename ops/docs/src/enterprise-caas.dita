@@ -13,8 +13,11 @@
 
 <li><xref href="release-notes.dita"/>
 <ul>
-<li><xref href="new-features.dita"/></li>
-<li><xref href="changes-from-previous.dita"/></li>
+<li><xref href="svt/playbook-updates-svt.dita"/></li>
+<li><xref href="configuration-updates.dita"/></li>
+<li><xref href="svt/fixed-release-svt.dita"/></li>
+<!--<li><xref href="new-features.dita"/></li>
+<li><xref href="changes-from-previous.dita"/></li>-->
 <!--<li><xref href="synergy/fixed-syn.dita"/></li>
 <li><xref href="synergy/known-issues-syn.dita"/></li>  -->
 </ul>
@@ -89,6 +92,7 @@
 <li><xref href="edit-inventory.dita"/></li>
 <li><xref href="vmware-config.dita"/></li>
 <li><xref href="svt/svt-variables-config.dita"/></li>
+<li><xref href="svt/svt-backup-config.dita"/></li>
 <li><xref href="network-config.dita"/></li>
 <li><xref href="environment-config.dita"/></li>
 <li><xref href="docker-config.dita"/></li>
@@ -118,8 +122,8 @@
 <li><xref href="rhel/create-rhel-vms.dita"/></li>
 <li><xref href="rhel/load-balancers.dita"/></li>
 <li><xref href="rhel/install-docker-ucp-dtr.dita"/></li>
-<li><xref href="rhel/add-rhel-workers.dita"/>
-</li>
+<li><xref href="rhel/add-rhel-workers.dita"/></li>
+<li><xref href="svt/svt-backup-playbooks.dita"/></li>
 </ul>
 </li>
 
@@ -149,6 +153,7 @@
 <li><xref href="splunk.dita"/></li>
 <li><xref href="splunk/install-splunk.dita"/></li>
 <li><xref href="monitoring-config-splunk.dita"/></li>
+<li><xref href="splunk/splunk-ui.dita"/></li>
 <li><xref href="redeploying-splunk-demo.dita"/></li>
 </ul>
 </li>
@@ -158,6 +163,7 @@
 <li><xref href="rhel/promgraf-overview.dita"/></li>
 <li><xref href="rhel/prometheus-grafana-playbooks.dita"/></li>
 <li><xref href="monitoring-config-promgraf.dita"/></li>
+<li><xref href="rhel/using-promgraf-swarm.dita"/></li>
 </ul>
 </li>
 
