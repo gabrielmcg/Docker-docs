@@ -18,6 +18,10 @@ You will need to restore your Docker volumes and your applications (stacks and s
 <li>Ensure that you have completed all the preliminary steps as outlined in the section <xref href="before-restore.dita#before-restore" type="section">Before you restore</xref> </li>
 <li>Run the restore playbook
 <codeblock>ansible-playbook -i vm_hosts restore.yml</codeblock>
+<p>You may need to modify <codeph>restore.yml</codeph> before you run it, depending on what optional components you have deployed.
+For example, if you have not deployed Splunk, you will need to comment out the line:</p>
+<codeblock>- import_playbook: playbooks/splunk_uf.yml</codeblock>
+<p>If not, you will get an error saying that Splunk components could not be restored when you run the playbook.</p>    
 </li>
 <li>If you are using the image scanning functionality in DTR, you will need to re-download the vulnerability database. 
 For more information, see the Docker documentation  <xref href="https://docs.docker.com/datacenter/dtr/2.5/guides/admin/configure/set-up-vulnerability-scans/#get-the-security-scanning-license" format="html" scope="external">here</xref>.</li>

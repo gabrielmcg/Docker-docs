@@ -691,7 +691,7 @@
 <ul class="ul">
 <li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
 
-<li class="li"><a class="xref" href="#unique_1995078603">Provisioning load balancers for UCP and DTR</a></li>
+<li class="li"><a class="xref" href="#unique_183022988">Provisioning load balancers for UCP and DTR</a></li>
 
 <li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
 
@@ -3718,7 +3718,7 @@ the deployment to your needs.
 <ul class="ul">
 <li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
 
-<li class="li"><a class="xref" href="#unique_1995078603">Provisioning load balancers for UCP and DTR</a></li>
+<li class="li"><a class="xref" href="#unique_183022988">Provisioning load balancers for UCP and DTR</a></li>
 
 <li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
 
@@ -3932,7 +3932,7 @@ order to have a synchronized clock across the environment. It will use the list 
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title57" id="unique_1995078603">
+<div class="topic nested1" aria-labelledby="ariaid-title57" id="unique_183022988">
 <h2 class="title topictitle2" id="ariaid-title57">Provisioning load balancers for UCP and DTR</h2>
 
 <div class="body">
@@ -7093,6 +7093,12 @@ You will need to restore your Docker volumes and your applications (stacks and s
 
 <li class="li">Run the restore playbook
 <pre class="pre codeblock"><code>ansible-playbook -i vm_hosts restore.yml</code></pre>
+<p class="p">You may need to modify <code class="ph codeph">restore.yml</code> before you run it, depending on what optional components you have deployed.
+For example, if you have not deployed Splunk, you will need to comment out the line:</p>
+
+<pre class="pre codeblock"><code>- import_playbook: playbooks/splunk_uf.yml</code></pre>
+<p class="p">If not, you will get an error saying that Splunk components could not be restored when you run the playbook.</p>
+    
 </li>
 
 <li class="li">If you are using the image scanning functionality in DTR, you will need to re-download the vulnerability database. 
@@ -7555,17 +7561,17 @@ adhering to the interdependencies for each component that is being updated.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle-svt__svt-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 25. </span><span class="ph"><span class="keyword">HPE SimpliVity</span></span>components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12698">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12701">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12704">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12707">Download/Documentation</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12710">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12713">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12716">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12719">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12698 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12701 "><span class="ph"><span class="keyword">HPE SimpliVity</span></span> Arbiter</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12704 ">1. HPE OmniStack</td>
-<td class="entry nocellnorowborder" rowspan="4" align="left" valign="top" headers="d29e12707 "><span class="ph"><span class="keyword">HPE SimpliVity</span></span> OmniStack for vSphere Upgrade Guide
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12710 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12713 "><span class="ph"><span class="keyword">HPE SimpliVity</span></span> Arbiter</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12716 ">1. HPE OmniStack</td>
+<td class="entry nocellnorowborder" rowspan="4" align="left" valign="top" headers="d29e12719 "><span class="ph"><span class="keyword">HPE SimpliVity</span></span> OmniStack for vSphere Upgrade Guide
 
 <p class="p">Download software bits from HPE’s support website.</p>
 
@@ -7575,17 +7581,17 @@ adhering to the interdependencies for each component that is being updated.</p>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12698 ">2.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12701 "><span class="ph"><span class="keyword">HPE SimpliVity</span></span> VMware Plug-in</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12704 ">1. <span class="ph"><span class="keyword">HPE SimpliVity</span></span> Arbiter 
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12710 ">2.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12713 "><span class="ph"><span class="keyword">HPE SimpliVity</span></span> VMware Plug-in</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12716 ">1. <span class="ph"><span class="keyword">HPE SimpliVity</span></span> Arbiter 
 <p class="p">2. HPE OmniStack</p>
 
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12698 ">3.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12701 ">HPE Omnistack</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12704 ">1. <span class="ph"><span class="keyword">HPE SimpliVity</span></span> VMware Plug-in  
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12710 ">3.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12713 ">HPE Omnistack</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12716 ">1. <span class="ph"><span class="keyword">HPE SimpliVity</span></span> VMware Plug-in  
 <p class="p">2. <span class="ph"><span class="keyword">HPE SimpliVity</span></span> Arbiter</p>
 
 </td>
@@ -7613,27 +7619,27 @@ adhering to the interdependencies for each component that is being updated.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle-svt__vmware-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 26. </span>VMware components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12832">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12835">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12838">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12841">Download/Documentation</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12844">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12847">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12850">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12853">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12832 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12835 ">VMware vCenter</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12838 ">1. HPE OmniStack
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12844 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12847 ">VMware vCenter</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12850 ">1. HPE OmniStack
 <p class="p">2. VMware ESXi</p>
 
 </td>
-<td class="entry nocellnorowborder" rowspan="3" align="left" valign="top" headers="d29e12841 "><a class="xref" href="https://support.hpe.com/hpsc/doc/public/display?sp4ts.oid=1010292248&amp;docLocale=en_US&amp;docId=emr_na-a00028056en_us" target="_blank">VMware Upgrade for SimpliVity</a>
+<td class="entry nocellnorowborder" rowspan="3" align="left" valign="top" headers="d29e12853 "><a class="xref" href="https://support.hpe.com/hpsc/doc/public/display?sp4ts.oid=1010292248&amp;docLocale=en_US&amp;docId=emr_na-a00028056en_us" target="_blank">VMware Upgrade for SimpliVity</a>
 </td>
 </tr>
   
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12832 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12835 ">VMware ESXi</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12838 ">1. HPE OmniStack
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12844 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12847 ">VMware ESXi</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12850 ">1. HPE OmniStack
 <p class="p">2. VMware vCenter</p>
 
 </td>  
@@ -7661,18 +7667,18 @@ adhering to the interdependencies for each component that is being updated.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle-svt__hpe-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 27. </span>HPE server components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12923">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12926">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12929">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12932">Download/Documentation</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12935">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12938">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12941">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e12944">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12923 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12926 ">HPE Firmware</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12929 ">1. HPE OmniStack
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12935 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12938 ">HPE Firmware</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12941 ">1. HPE OmniStack
 </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12932 "><a class="xref" href="https://support.hpe.com/hpesc/public/home/result?qt=HPE+SimpliVity+380" target="_blank">Firmware Upgrade for <span class="ph"><span class="keyword">HPE SimpliVity</span></span></a>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e12944 "><a class="xref" href="https://support.hpe.com/hpesc/public/home/result?qt=HPE+SimpliVity+380" target="_blank">Firmware Upgrade for <span class="ph"><span class="keyword">HPE SimpliVity</span></span></a>
 </td>  
 </tr>
 </tbody></table>
@@ -7709,25 +7715,25 @@ system.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle-vdvs__vdvs-components-table-conref" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 28. </span>vSphere Docker Volume service components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13009">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13012">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13015">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13018">Download/Documentation</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13021">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13024">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13027">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13030">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13009 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13012 ">Server Software</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13015 "><ol class="ol"><li class="li">VMware ESXi</li>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13021 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13024 ">Server Software</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13027 "><ol class="ol"><li class="li">VMware ESXi</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e13018 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html" target="_blank">vSphere Docker Volume Service on GitHub</a></td>
+<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e13030 "><a class="xref" href="http://vmware.github.io/vsphere-storage-for-docker/documentation/index.html" target="_blank">vSphere Docker Volume Service on GitHub</a></td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13009 ">2.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13012 ">Client Software</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13015 "><ol class="ol"><li class="li">VM Operating System</li>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13021 ">2.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13024 ">Client Software</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13027 "><ol class="ol"><li class="li">VM Operating System</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
@@ -7756,20 +7762,20 @@ VMs, first verify that the OS version is compatible with Docker EE by looking at
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle-rhel__rhel-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 29. </span>Operating system</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13107">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13110">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13113">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13116">Download/Documentation</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13119">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13122">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13125">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13128">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13107 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13110 ">Red Hat Enterprise Linux</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13113 "><ul class="ul"><li class="li">Docker EE</li>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13119 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13122 ">Red Hat Enterprise Linux</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13125 "><ul class="ul"><li class="li">Docker EE</li>
 <li class="li">vDVS client software plugin</li>
 </ul>
 </td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13116 "><a class="xref" href="https://access.redhat.com/articles/11258" target="_blank">RHEL</a></td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13128 "><a class="xref" href="https://access.redhat.com/articles/11258" target="_blank">RHEL</a></td>
 </tr>
 </tbody></table>
 </div>
@@ -7807,16 +7813,16 @@ banner.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle-docker-ee__dockeree-components-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 30. </span>Docker EE components</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13204">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13207">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13210">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13213">Download/Documentation</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13216">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13219">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13222">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13225">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13204 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13207 ">Docker Daemon/Engine</td>
-<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e13210 "><ol class="ol">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13216 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13219 ">Docker Daemon/Engine</td>
+<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e13222 "><ol class="ol">
 <li class="li">VM Operating System</li>
 
 <li class="li">vDVS plugin</li>
@@ -7825,7 +7831,7 @@ banner.</p>
 
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e13213 "><ul class="ul">
+<td class="entry nocellnorowborder" rowspan="3" align="left" valign="middle" headers="d29e13225 "><ul class="ul">
 <li class="li"><a class="xref" href="https://success.docker.com/Policies/Maintenance_Lifecycle" target="_blank">Docker Lifecycle Maintenance</a></li>
 
 <li class="li"><a class="xref" href="https://success.docker.com/Policies/Compatibility_Matrix" target="_blank">Docker Compatibility Matrix</a></li>
@@ -7835,12 +7841,12 @@ banner.</p>
 </td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13204 ">2.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13207 ">Universal Control Plane</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13216 ">2.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13219 ">Universal Control Plane</td>
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13204 ">3.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13207 ">Docker Trusted Registry</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13216 ">3.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13219 ">Docker Trusted Registry</td>
 </tr>
 </tbody></table>
 </div>
@@ -7876,29 +7882,29 @@ used is compatible with the version of Docker EE.</p>
 
 <table cellpadding="4" cellspacing="0" summary="" id="lifecycle-monitoring__promgraf-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 31. </span>Monitoring tools: Prometheus and Grafana</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13334">Order</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13337">Component</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13340">Dependency (compatibility)</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13343">Download/Documentation</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13346">Order</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13349">Component</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13352">Dependency (compatibility)</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13355">Download/Documentation</th>
 </tr>
 </thead><tbody class="tbody">  
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13334 ">1.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13337 ">Prometheus</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13340 "><ol class="ol"><li class="li">Grafana</li>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13346 ">1.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13349 ">Prometheus</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13352 "><ol class="ol"><li class="li">Grafana</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>
-<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e13343 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
+<td class="entry nocellnorowborder" rowspan="2" align="left" valign="middle" headers="d29e13355 "><ol class="ol"><li class="li">Prometheus Images on Docker Hub</li>
 <li class="li"><a class="xref" href="http://docs.grafana.org/installation/upgrading/" target="_blank">Upgrading Grafana</a></li>
 
 </ol>
 </td>
 </tr>    
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13334 ">2.</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13337 ">Grafana</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13340 "><ol class="ol"><li class="li">Prometheus</li>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13346 ">2.</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13349 ">Grafana</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13352 "><ol class="ol"><li class="li">Prometheus</li>
 <li class="li">Docker EE</li>
 </ol>
 </td>   
@@ -7984,15 +7990,15 @@ customer supplied certificates for UCP and DTR.
 
 <table cellpadding="4" cellspacing="0" summary="" id="customer-certs__customer-certs-table-content" class="table" frame="void" border="1" rules="all"><caption><span class="tablecap"><span class="table--title-label">Table 32. </span>Customer certs variables</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
 <tr class="row">
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13504">Variable</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13507">File</th>
-<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13510">Description</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13516">Variable</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13519">File</th>
+<th class="entry nocellnorowborder" align="left" valign="top" id="d29e13522">Description</th>
 </tr>
 </thead><tbody class="tbody">
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13504 ">ucp_certs_dir</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13507 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13510 ">
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13516 ">ucp_certs_dir</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13519 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13522 ">
 <ul class="ul">
 <li class="li">If <strong class="ph b">ucp_certs_dir</strong> is not defined, UCP is installed with self-signed
 certificates and DTR is installed with the <code class="ph codeph">--ucp-insecure-tls</code>
@@ -8018,9 +8024,9 @@ certificates</li>
 </td> 
 </tr>
 <tr class="row">
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13504 ">dtr_certs_dir</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13507 ">group_vars/vars</td>
-<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13510 ">    
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13516 ">dtr_certs_dir</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13519 ">group_vars/vars</td>
+<td class="entry nocellnorowborder" align="left" valign="top" headers="d29e13522 ">    
 <ul class="ul">
 <li class="li">If <strong class="ph b">dtr_certs_dir</strong> is not defined, DTR is installed with self-signed
 certificates</li>
