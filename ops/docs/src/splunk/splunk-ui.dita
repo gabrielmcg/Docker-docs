@@ -6,8 +6,37 @@
   
 <p>After the installation is complete, the Splunk UI can be reached at <codeph>http://&lt;fqdn>:8000</codeph>,
 where <codeph>&lt;fqdn></codeph> is the FQDN of one of your Linux Docker nodes. Mesh routing does not currently work on
-Windows so you must use a Linux node to access the UI.</p>
+Windows so you must use a Linux node to access the UI. For example: </p>
+  
+<codeblock>http://hpe-ucp01.am2.cloudra.local:8000/</codeblock>  
+  
+<p>The default username and password for Splunk is <codeph>admin</codeph> / <codeph>changeme</codeph>.</p>  
+  
+<p>Use the <codeph>Docker App</codeph> to view the Docker overview
+as shown in <xref href="splunk-ui.dita#splunk-ui/splunk-ui-docker" type="fig"/> and the Docker stats as shown in 
+<xref href="splunk-ui.dita#splunk-ui/splunk-ui-docker-stats" type="fig"/>. 
+</p>
+  
+<fig id="splunk-ui-docker">
+<title>Docker overview</title>
+<image href="../media/splunk-ui-docker.png" placement="break"/>
+</fig>  
+
+<fig id="splunk-ui-docker-stats">
+<title>Docker stats</title>
+<image href="../media/splunk-ui-docker-stats.png" placement="break"/>
+</fig>  
   
   
+<p>Use the <codeph>k8s App</codeph> to see the Kubernetes overview as shown in 
+<xref href="splunk-ui.dita#splunk-ui/splunk-ui-docker" type="fig"/> and then access the details for deployments, daemon sets,
+replica sets, services, etc.</p>  
+
+<fig id="splunk-k8s-overview">
+<title>Kubernetes overview</title>
+<image href="../media/splunk-k8s-overview.png" placement="break"/>
+</fig>  
+
+
 </body>
 </topic>
