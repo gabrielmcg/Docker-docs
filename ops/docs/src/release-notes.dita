@@ -12,7 +12,7 @@
     
 <ul>
 <li><b>Load balancers:</b> The playbooks now support load balancers based on VRRP, using <codeph>HAproxy</codeph> and <codeph>keepalived</codeph>.
-The solution can deployed using these loadbalancers, external load balancers, no load load balancers or 
+The solution can be deployed using these loadbalancers, external load balancers, no load balancers or 
 the legacy version of standalone load balancers. 
 </li>  
     
@@ -22,7 +22,7 @@ the legacy version of standalone load balancers.
 <li><b>Windows workers behind proxy:</b> Windows worker nodes can now be deployed behind a proxy. Simple HTTP proxy support is provided and the playbooks 
 do not support any type of authentication with the proxy (on either RHEL or Windows nodes).</li>    
 
-<li><b>Windows boot drive:</b> The OS partition of Windows worker nodes is now resized to occupy all the boot disk, whereas, previuosly, there would have been some
+<li><b>Windows boot drive:</b> The OS partition of Windows worker nodes is now resized to occupy all the boot disk, whereas, previously, there would have been some
 unallocated space.
 </li>
 </ul>    

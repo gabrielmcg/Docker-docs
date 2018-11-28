@@ -33,7 +33,7 @@ All VMs will connect to this same network. </li>
     
 <ol>
     
-<li>Select a language which is selected by Docker </li>
+<li>Select a language which is supported by Docker </li>
     
 <li>For the software selection, choose <b>Infrastructure Server</b> as the base
 environment and add the <b>Guest Agents</b> from the lists of add-ons

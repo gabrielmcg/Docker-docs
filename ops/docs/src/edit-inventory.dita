@@ -24,16 +24,7 @@ node. Typically you should have either 3 or 5 nodes under this group.</li>
 <li><codeph>[worker]</codeph>: A group containing all the Linux worker nodes.</li>
 <li><codeph>[win_worker]</codeph>: A group containing all the Windows worker nodes.</li>
     
-<li><codeph>[ucp_lb]</codeph>: A group containing one single node which will be the load
-balancer for the UCP nodes. Do not add more than one node under this group.</li>
-<li><codeph>[dtr_lb]</codeph>: A group containing one single node which will be the load
-balancer for the DTR nodes. Do not add more than one node under this group.</li>
-<li><codeph>[worker_lb]</codeph>: A group containing one single node which will be the
-load balancer for the worker nodes. Do not add more than one node under this
-group.</li>
-    
-<li><codeph>[lbs]</codeph>: A group containing all the load balancers. This group will
-have 3 nodes, also defined individually in the three groups above.</li>
+
 <li><codeph>[nfs]</codeph>: A group containing one single node which will be the NFS
 node. Do not add more than one node under this group.</li>
 <li><codeph>[logger]</codeph>: A group containing one single node which will be the
@@ -41,6 +32,31 @@ logger node. Do not add more than one node under this group.</li>
 <li><codeph>[local]</codeph>: A group containing the local Ansible host. It contains an
 entry that should not be modified.</li>
 </ul>
+
+<p>If you are deploying the new loadbalancers, using floating IPs managed by <codeph>keepalived</codeph>:</p>
+    
+<ul>
+<li><codeph>[lb1]</codeph>: A group containing one single node which will be the load
+balancer for the UCP nodes. Do not add more than one node under this group.</li>    
+<li><codeph>[lb2]</codeph>: A group containing one single node which will be the load
+balancer for the DTR nodes. Do not add more than one node under this group.</li>   
+<li><codeph>loadbalancer</codeph>: A group containing the UCP, DTR and any worker load balancers you are deploying.</li>    
+</ul>
+    
+    
+<p>If you are using the legacy, standalone load balancers:</p>
+<ul>
+<li><codeph>[ucp_lb]</codeph>: A group containing one single node which will be the load
+balancer for the UCP nodes. Do not add more than one node under this group.</li>
+<li><codeph>[dtr_lb]</codeph>: A group containing one single node which will be the load
+balancer for the DTR nodes. Do not add more than one node under this group.</li>
+<li><codeph>[worker_lb]</codeph>: A group containing one single node which will be the
+load balancer for the worker nodes. Do not add more than one node under this
+group.</li>    
+<li><codeph>[lbs]</codeph>: A group containing all the legacy standalone load balancers. This group will
+have 3 nodes, also defined individually in the three groups above.</li>    
+</ul>    
+    
 
 <p>There are also a few special groups:</p>
 <ul>
@@ -61,6 +77,8 @@ group.</li>
 [<codeph>worker</codeph>] group.</li>
 <li>[win_worker:vars]: A set of variables defined for all nodes in the
 [<codeph>win_worker</codeph>] group.</li>
+<li>[loadbalancer:vars]: A set of variables defined for all nodes in the [<codeph>loadbalancer</codeph>]
+group.</li>    
 <li>[lbs:vars]: A set of variables defined for all nodes in the [<codeph>lbs</codeph>]
 group.</li>
 <li>[nfs:vars]: A set of variables defined for all nodes in the [<codeph>nfs</codeph>]

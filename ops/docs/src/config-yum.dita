@@ -67,8 +67,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 <p>To see how you can create a local mirror of the Red Hat
 repositories and how to share them, check the Red Hat documentation at <xref format="html" scope="external"
 href="https://access.redhat.com/solutions/23016"
->https://access.redhat.com/solutions/23016</xref> and at
-
+>https://access.redhat.com/solutions/23016</xref> and at 
 <xref format="html" scope="external" href="https://access.redhat.com/solutions/7227"
 >https://access.redhat.com/solutions/7227</xref>.
 

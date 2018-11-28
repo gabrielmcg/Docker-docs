@@ -16,14 +16,15 @@ Windows workers, if they are declared in the inventory. Non-core playbooks such 
 any required Windows software.
 </p>    
     
-<p>The  <ph conkeyref="conrefs/hardware-string"/>-specific playbooks releated to backup have been redesigned:</p>
+<p>The playbooks that are specific to <ph conkeyref="conrefs/hardware-string"/> and related to backup have been redesigned:</p>
+    
 <ul>
 <li><codeph>playbooks/config_dummy_vms_for_docker_volumes_backup.yml</codeph> now uses the same mechanism as the 
     <codeph>playbooks/create_vms.yml</codeph> to deploy the dummy VM.</li>   
     
 <li><codeph>playbooks/config_simplivity_backups.yml</codeph> has been refactored to be more modular, with separate plays for
 creating backup policies, populating policies with rules, and assigning backup policies to VMs. The reliability of the 
-playbook has been improved by minimizing the number of concurrent operations to the least number of nodes. The playbook 
+playbook has been improved by minimizing the number of concurrent operations to the least number of nodes possible. The playbook 
 creates the policies based on the <codeph>backup_policies</codeph> data structure in the <codeph>group_vars/vars</codeph> file.
 Any exisiting policies will not be over-written when running the playbook, but rules attached to the policies will be updated
 based on the information supplied in the variables file. If you omit the <codeph>node_policy</codeph> variable for a group of nodes,

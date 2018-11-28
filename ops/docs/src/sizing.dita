@@ -6,7 +6,7 @@
 <p>A node is a machine in the cluster (virtual or physical) with Docker Engine running on
 it. There are two types of nodes: managers and workers. UCP will run on the manager nodes. 
 Although DTR runs on a worker node, Docker does not recommend running other 
-application containers on them. </p>
+application containers on these nodes.</p>
 <p>To decide what size the node should be in terms of CPU, RAM, and storage resources,
 consider the following:</p>
 <ol>

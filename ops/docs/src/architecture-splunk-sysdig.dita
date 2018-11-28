@@ -14,7 +14,7 @@ on your cloud.
 <p>More information on configuring Splunk and running the relevant playbooks can be found in the section <xref href="splunk/deploying-splunk.dita"/>.
 </p>
   
-<p>More information on configuring Sysdig and running the relevant playbooks can be found in the section <xref href="sysdig/deploying-sysdig.dita"/>.
+<p>For more information on configuring Sysdig and running the relevant playbooks, see the section <xref href="sysdig/deploying-sysdig.dita"/>.
 </p>  
 
 </body>

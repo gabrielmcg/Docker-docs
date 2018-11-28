@@ -20,18 +20,15 @@ your high availability (HA) needs.</p>
 
 <body>
 <p>This Reference Configuration  also deploys load balancers in the system to help with
-                container traffic management. There are three load balancer VMs – UCP load balancer,
-                DTR load balancer, and Docker worker node load balancer 
-                as shown in <xref href="ha.dita#load-balancers/lbs" type="fig"/>. Since these load balancers
-                exist in VMs, they have some degree of HA but may incur some downtime during the
-                restoration of these VMs due to a planned or unplanned outage. For optimal HA
-                configuration, the system administrator should consider implementing an HA load balancer architecture
-                using the Virtual Router Redundancy Protocol (VRRP). For more information, see <xref
-                    format="html" scope="external"
-                    href="http://www.haproxy.com/solutions/high-availability/"
-                    >http://www.haproxy.com/solutions/high-availability/</xref>.</p>
-<p/>
-
+container traffic management. There are two load balancer VMs – the UCP load balancer and
+DTR load balancer. The playbooks can be configured to deploy one or more worker load
+balancers depending on the requirements of your applications. A typical load balancer architecture for
+applciations running on Docker EE Is shown in <xref href="ha.dita#load-balancers/lbs" type="fig"/>. 
+The playbooks now support load balancers based on VRRP, using <codeph>HAproxy</codeph> and <codeph>keepalived</codeph>.
+The solution can be deployed using these loadbalancers, external load balancers, no load balancers or 
+the legacy version of standalone load balancers.             
+</p>
+    
 
 <fig id="lbs">
 <title>Load balancer architecture</title>
