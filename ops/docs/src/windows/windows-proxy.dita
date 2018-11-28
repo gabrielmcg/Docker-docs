@@ -22,14 +22,12 @@ However, if the deployment is running behind a proxy, you may need to make this 
 
 <ol>
 <li>Download the script:    
-<codeblock>
-wget https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
+<codeblock>wget https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
 </codeblock>      
 </li>
   
 <li>Deploy a local HTTP server, enabling port 80, for example:
-<codeblock>
-yum install httpd
+<codeblock>yum install httpd
 systemctl enable httpd
 systemctl start httpd
 firewall-cmd --permanent --add-port 80/tcp --zone=pubpic
@@ -38,9 +36,12 @@ firewall-cmd --reload
 </li>
 
 <li>Copy the downloaded script to the web server:
-<codeblock>
-cp ConfigureRemotingForAnsible.ps1 /var/www/html
+<codeblock>cp ConfigureRemotingForAnsible.ps1 /var/www/html
 </codeblock>
+</li>
+
+<li>Configure the location to point at the local web server, for example,  
+<codeblock>windows_winrm_script: 'http://10.10.174.230/ConfigureRemotingForAnsible.ps1'</codeblock>  
 </li>
 
 </ol>

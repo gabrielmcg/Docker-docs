@@ -91,7 +91,7 @@ and <codeph>windows_vdvs_version</codeph> equal to <codeph>0.21</codeph>
 <entry>docker_ee_version_windows</entry>
 <entry><b>group_vars/vars.yml</b></entry>  
 <entry>It is important that the version of the Docker engine running on your Windows worker nodes is the same as that running on RHEL in the
-the rest of your cluster. You should use this variable to explicitly match up the versions. For Docker 2.0, the recommended value is 
+rest of your cluster. You should use this variable to explicitly match up the versions. For Docker 2.0, the recommended value is 
 <codeph>'17.06'</codeph>. If you do not explicityly set this value, you may end up with an incompatible newer version running on
 your Windows workers.</entry>
 </row>
@@ -100,7 +100,7 @@ your Windows workers.</entry>
 <entry>windows_update</entry>
 <entry>group_vars/vars</entry>    
 <entry>Variable used to determine if Windows updates are automatically downloaded when installing Docker on Windows worker nodes 
-    (in the <codeph>playbooks/install_docker.yml).</codeph>. 
+    (in the <codeph>playbooks/install_docker.yml</codeph>). 
 Defaults to <codeph>true</codeph>. See the section 
     <xref href="windows/windows-proxy.dita"/> for more information.
 </entry>

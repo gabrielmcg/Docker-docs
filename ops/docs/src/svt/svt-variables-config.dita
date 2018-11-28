@@ -3,7 +3,7 @@
 <topic id="svt-variables-config">
 <title><ph conkeyref="conrefs/hardware-string"/> configuration</title>
 <body>
-<p>All <ph conkeyref="conrefs/hardware-string"/>-related variables are mandatory and are described in <xref href="svt-variables-config.dita#svt-variables-config/svt-variables-table-conref"/>.</p>
+<p>Variables related to your  <ph conkeyref="conrefs/hardware-string"/> deployment are mandatory and are described in <xref href="svt-variables-config.dita#svt-variables-config/svt-variables-table-conref"/>.</p>
 
 
 <table id="svt-variables-table-conref" conref="svt-variables-table.dita#svt-variables-table/svt-variables-table-content">

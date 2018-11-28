@@ -42,21 +42,21 @@ href="https://docs.docker.com/engine/installation/linux/docker-ee/rhel/"
 <entry>rhel_version</entry>
 <entry>group_vars/vars</entry>  
 <entry>For the Docker installation, this sets the version of your RHEL OS, such as <codeph>7.5</codeph>. The
-playbooks were tested with  RHEL 7.4 and 7.5.</entry>
+playbooks were tested with RHEL 7.5.</entry>
 </row>
 <row>
 <entry>dtr_version</entry>
 <entry>group_vars/vars</entry>  
 <entry>Version of the Docker DTR you wish to install. You can use a
 numeric version or <codeph>latest</codeph> for the most recent one.
-The playbooks were tested with 2.5.3.</entry>
+The playbooks were tested with 2.5.6.</entry>
 </row>
 <row>
 <entry>ucp_version</entry>
 <entry>group_vars/vars</entry>      
 <entry>Version of the Docker UCP you wish to install. You can use a
 numeric version or <codeph>latest</codeph> for the most recent one.
-The playbooks were tested with UCP 3.0.4.</entry>
+The playbooks were tested with UCP 3.0.6.</entry>
 </row>
 <row>
 <entry>images_folder</entry>
@@ -85,7 +85,8 @@ Store</entry>
 <row>
 <entry>docker_storage_driver</entry>
 <entry>group_vars/vars</entry>     
-<entry>Storage driver for Docker nodes. Accepted values are <codeph>overlay2</codeph> (the default) and <codeph>devicemapper</codeph>.</entry> 
+<entry>Storage driver for Docker nodes. Accepted values are <codeph>overlay2</codeph> (the default) 
+    and <codeph>devicemapper</codeph>.</entry> 
 </row>
 
 </tbody>

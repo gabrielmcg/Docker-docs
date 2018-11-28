@@ -12,20 +12,22 @@ when using <codeph>site.yml</codeph> to deploy the solution.</p>
 
 <section>
 <title>Configure dummy VMs to backup Docker volumes</title>
-<p>The playbook <codeph>config_dummy_vms_for_docker_volumes_backup.yml</codeph> ensures that you can back up Docker volumes 
+<p>The playbook <codeph>playbooks/config_dummy_vms_for_docker_volumes_backup.yml</codeph> ensures that you can back up Docker volumes 
   that have been created using the vSphere plugin (vDVS) in <ph conkeyref="conrefs/hardware-string"/>. There is not a straight forward way to do this, 
   so you need to use a workaround. Since all Docker volumes are going to be stored in the <codeph>dockvols</codeph> folder 
   in the datastore(s), you need to create a ‘dummy’ VM per datastore. The <codeph>vmx</codeph>, <codeph>vmsd</codeph> 
   and <codeph>vmkd</codeph> files from this VMs will have to be inside the dockvols folder, 
-  so when these VMs are backed up, the volumes are backed up as well. Obviously these VMs don’t need 
-  to take any resources and you can keep them powered off.</p>
+  so that, when these VMs are backed up, the volumes are backed up as well. Obviously these VMs don’t need 
+  to consume any resources and you can keep them powered off.</p>
    
 </section>
+  
 <section>
 <title>Configure <ph conkeyref="conrefs/hardware-string"/> backups</title>  
-<p>The playbook <codeph>config_simplivity_backups.yml</codeph> configures the defined backup policies in the 
-  group variables file in <ph conkeyref="conrefs/hardware-string"/> and will include all Docker nodes plus the ‘dummy’ VMs created before, 
-  so the existing Docker volumes are also taken into account. The playbook will mainly use the <ph conkeyref="conrefs/hardware-string"/> REST API 
+<p>The playbook <codeph>playbooks/config_simplivity_backups.yml</codeph> configures the  backup policies, defined in the 
+  group variables file, on your <ph conkeyref="conrefs/hardware-string"/> installation.
+  It will configure all Docker nodes plus the ‘dummy’ VMs created before, 
+  so that existing Docker volumes are also taken into account. The playbook will mainly use the <ph conkeyref="conrefs/hardware-string"/> REST API 
   to perform these tasks. A reference to the REST API can be found at: 
   <xref href="https://api.simplivity.com/rest-api_getting-started_overview/rest-api_getting-started_overview_rest-api-overview.html"
     scope="external" format="html"/> </p>  

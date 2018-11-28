@@ -16,9 +16,10 @@ then run the playbooks for <xref href="create-rhel-vms.dita"/>, followed by the 
 	
 <li><codeph>playbooks/scale_workers.yml</codeph> installs and configures additional Linux workers 
 on the target nodes defined by the group <codeph>worker</codeph> in the <codeph>vm_hosts</codeph> inventory.</li>
-
-	
   
 </ul>
+    
+<p>A utility script <codeph>scale_worker.sh</codeph> is provided to assist you in adding worker nodes after the initial deployment.</p>    
+    
 </body>
 </topic>

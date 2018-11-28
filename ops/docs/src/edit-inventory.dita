@@ -33,14 +33,14 @@ logger node. Do not add more than one node under this group.</li>
 entry that should not be modified.</li>
 </ul>
 
-<p>If you are deploying the new loadbalancers, using floating IPs managed by <codeph>keepalived</codeph>:</p>
+<p>If you are deploying the new <codeph>active-active</codeph> load balancers, using floating IPs managed by <codeph>keepalived</codeph>:</p>
     
-<ul>
+<ul><!--
 <li><codeph>[lb1]</codeph>: A group containing one single node which will be the load
 balancer for the UCP nodes. Do not add more than one node under this group.</li>    
 <li><codeph>[lb2]</codeph>: A group containing one single node which will be the load
-balancer for the DTR nodes. Do not add more than one node under this group.</li>   
-<li><codeph>loadbalancer</codeph>: A group containing the UCP, DTR and any worker load balancers you are deploying.</li>    
+balancer for the DTR nodes. Do not add more than one node under this group.</li>   -->
+<li><codeph>[loadbalancer]</codeph>: A group containing the UCP, DTR and any worker load balancers you are deploying.</li>    
 </ul>
     
     

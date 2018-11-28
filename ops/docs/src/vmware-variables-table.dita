@@ -110,11 +110,11 @@ servers.</entry>
 <row>
 <entry>vm_portgroup</entry>
 <entry>group_vars/vars</entry>    
-<entry><p>Used by the playbook <codeph>create_vms.yml</codeph>, this variable is used to
-specify the portgroup connected to the network that connects all the VMs. There is
+<entry><p>Used by the playbook <codeph>create_vms.yml</codeph>, this variable 
+specifies the portgroup connected to the network that connects all the VMs. There is
 currently only one network. </p>
-<p>It is recommended that the template which is used as the base
-for all deployed VMs specifies a network adapter but it is not required. If 
+<p>It is recommended that the template, which is used as the base
+for all deployed VMs, specifies a network adapter but it is not required. If 
 a network adapter is specified, you should not attach this adapter to a standard switch
 if the portgroup designated by <codeph>vm_portgroup</codeph> is connected to a distributed vSwitch.
 In addition, you should make sure that the adapter specifies <codeph>Connect At Power On</codeph>.</p>

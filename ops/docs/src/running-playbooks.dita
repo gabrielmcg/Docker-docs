@@ -12,7 +12,7 @@
 <!-- TODO Remove this - fix playbook instead -->
 <note type="note">As well as configuring your <codeph>vars</codeph> and <codeph>vault</codeph> files, you must also provide a <codeph>backups</codeph> configuration 
     file in the <codeph>group_vars</codeph> folder when running <codeph>site.yml</codeph>. 
-    An example file is provided in the repository named <codeph>backups.sample</codeph>. Rename it to backups before 
+    An example file is provided in the repository named <codeph>backups.sample</codeph>. Rename it to <codeph>backups</codeph> before 
     running the playbooks. Details on how to configure this file are available in the section 
     <xref href="backup-restore.dita"/>. </note> 
     

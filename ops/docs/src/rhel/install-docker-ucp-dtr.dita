@@ -41,7 +41,7 @@ using the NFS VM to store persistent volumes is not recommended for production u
 </li>
 
 
-<li><codeph>playbooks/install_nfs_clients.yml</codeph> installs the required packages on the DTR nodes 
+<li><codeph>playbooks/install_nfs_clients.yml</codeph> installs the required packages on the Docker nodes 
 to be able to mount an NFS share.</li>
 
 
@@ -52,7 +52,7 @@ defined by the group <codeph>ucp_main</codeph> in the
 
 
 <li><codeph>playbooks/scale_ucp.yml</codeph> installs and configures
-additional instances of UCP on the target node defined by
+additional instances of UCP on the target nodes defined by
 the group <codeph>ucp</codeph> in the
 <codeph>vm_hosts</codeph> inventory, except for the node defined in the group
 <codeph>ucp_main</codeph>.</li>
@@ -60,7 +60,7 @@ the group <codeph>ucp</codeph> in the
 	
 
 <li><codeph>playbooks/create_main_dtr.yml</codeph> installs and
-configures the first Docker DTR instance on the target nodes
+configures the first Docker DTR instance on the target node
 defined by the group <codeph>dtr_main</codeph> in the <codeph>vm_hosts</codeph> inventory.</li>
   
 

@@ -36,7 +36,7 @@ choice. All VMs will connect to this same network.
 boot.
 </li>
     
-<li>Click on the VM Options tab, and in the Boot Options
+<li>Click on the <codeph>VM Options</codeph> tab, and in the <codeph>Boot Options</codeph>
 section, select <codeph>Force BIOS setup(*)</codeph> to ensure that the machine enters the
 BIOS setup screen on next boot of this VM. This will allow you to adjust the
 boot order, placing the virtual CD-ROM in front of your hard drive.</li>
@@ -55,14 +55,13 @@ boot order, placing the virtual CD-ROM in front of your hard drive.</li>
 <li>Once connected to the console, you will be placed in the BIOS setup screen.
 Select the <codeph>Boot</codeph> tab, click on CD-ROM Drive and 
  move up the CD-ROM drive above the hard drive. This allows your Windows
-Server 2016 ISO image to be loaded first on boot. F10 Save and exit is next
-step.</li>
+Server 2016 ISO image to be loaded first on boot. Save your changes and exit.</li>
     
-<li>Enter your choices for Language, Time/Currency Format, Keyboard and then
-Install Now.</li>
+<li>Enter your choices for Language, Time/Currency Format, Keyboard and then select
+<codeph>Install Now</codeph>.</li>
     
-<li>Select the OS you want to install, and then select Custom: Install Windows
-Only.</li>
+<li>Select the OS you want to install, and then select <codeph>Custom: Install Windows
+Only</codeph>.</li>
     
 <li>Select drive 0, the 100 GB drive you specified earlier, as the location for
 installing windows.</li>
@@ -71,7 +70,7 @@ installing windows.</li>
 reboot.</li>
 </ul>
 
-<p>Once the VM has re-booted,</p>
+<p>Once the VM has re-booted:</p>
     
 <ul>    
 <li>Add a temporary network IP address and configure any proxy settings required to download Windows Updates.</li>
@@ -87,7 +86,7 @@ reboot.</li>
 <li>Select ‘Shutdown’ from the Shutdown Options.</li>
 </ul>
 
-<p>Shutdown VM, and untick  <codeph>Connect CD/DVD</codeph> so that the Windows Server 2016 ISO is no
+<p>Shutdown the VM, and untick  <codeph>Connect CD/DVD</codeph> so that the Windows Server 2016 ISO is no
 longer  mounted. Boot the Windows VM one final time and enter regional settings applicable to your location
 and keyboard mapping, enter an Administrator user password then Shutdown VM.</p>
 

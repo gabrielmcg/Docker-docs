@@ -8,7 +8,7 @@
 it can be read or updated.</p>
     
 <p>A sample vault file is provided named <codeph>group_vars/vault.sample</codeph> that you can
-use as a model for your vault file. To create a vault, you create a new file called
+use as a model for your own vault file. To create a vault, you create a new file called
 <codeph>group_vars/vault</codeph> and add entries similar to:</p>
 
 <codeblock>---
@@ -41,7 +41,7 @@ update the values in your vault by running:</p>
 
 <codeblock># ansible-vault edit group_vars/vault</codeblock>
 
-<p>For Ansible to be able to read the vault, you need to specify a file where the password
+<p>In order for Ansible to be able to read the vault, you need to specify a file where the password
 is stored, for instance, in a file called <codeph>.vault_pass</codeph>. Once the file is
 created, take the following precautions to avoid illegitimate access to this file:</p>
 <ol>

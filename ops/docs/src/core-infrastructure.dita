@@ -4,7 +4,7 @@
 <title>Core components</title>
 <body>
     
-<p>The playbooks for deploying th core components  are described in the following sections:</p>
+<p>The playbooks for deploying the core components  are described in the following sections:</p>
 
 <ul>
 <li><xref href="rhel/create-rhel-vms.dita"/></li>

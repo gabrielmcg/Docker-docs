@@ -6,8 +6,9 @@
 <ul>
 <li><codeph>playbooks/install_sysdig.yml</codeph> is used to configure Sysdig. It opens the required port in the firewall, 
 and installs the latest version of the Sysdig agent image on the nodes. By default, this playbook is commented out in <codeph>site.yml</codeph>, so if you want to use the solution to 
-automatically configure Sysdig, you must uncomment this line or run this playbook post-deployment.
-</li>	  
+automatically configure Sysdig, you must uncomment this line. Alternatively, you can run this playbook standalone, post-deployment.
+</li>
+<li><codeph>playbooks/k8s-install-sysdig.yml</codeph> is used to configure Sysdig for Kubernetes.</li>        
 </ul>
 </body>
 </topic>
