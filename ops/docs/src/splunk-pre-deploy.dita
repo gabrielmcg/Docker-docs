@@ -7,7 +7,7 @@
   
 <p>You should select the Splunk deployment type that you require  by setting the variable 
 <codeph>monitoring_stack</codeph> in the <codeph>group_vars/vars</codeph> file to either <b>splunk</b>,
- to use a standalone Splunk deployment, or <b>splunk_demo</b> for the built-in version.
+ for a standalone Splunk deployment, or <b>splunk_demo</b> for the built-in version.
 If you omit this variable, or if it has an invalid value, no Splunk deployment will be configured.
 </p>
   

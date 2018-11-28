@@ -686,7 +686,7 @@
 <ul class="ul">
 <li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
 
-<li class="li"><a class="xref" href="#unique_1671517021">Provisioning load balancers for UCP and DTR</a></li>
+<li class="li"><a class="xref" href="#unique_1402938222">Provisioning load balancers for UCP and DTR</a></li>
 
 <li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
 
@@ -3714,7 +3714,7 @@ the deployment to your needs.
 <ul class="ul">
 <li class="li"><a class="xref" href="#create-rhel-vms">Provisioning RHEL VMs</a></li>
 
-<li class="li"><a class="xref" href="#unique_1671517021">Provisioning load balancers for UCP and DTR</a></li>
+<li class="li"><a class="xref" href="#unique_1402938222">Provisioning load balancers for UCP and DTR</a></li>
 
 <li class="li"><a class="xref" href="#install-docker-ucp-dtr">Installing Docker UCP and DTR on RHEL VMs</a></li>
 
@@ -3928,7 +3928,7 @@ order to have a synchronized clock across the environment. It will use the list 
 </div>
 
 </div>
-<div class="topic nested1" aria-labelledby="ariaid-title57" id="unique_1671517021">
+<div class="topic nested1" aria-labelledby="ariaid-title57" id="unique_1402938222">
 <h2 class="title topictitle2" id="ariaid-title57">Provisioning load balancers for UCP and DTR</h2>
 
 <div class="body">
@@ -5155,7 +5155,7 @@ time to preempt issues before they happen. It allows you to analyze your data to
 behavior, giving you valuable intelligence across your entire organization.</p>
     
     
-<p class="p">This solution allows you to integrate your Container as a Service deployment with an existing Splunk Enterprise installation or to deploy a stand-alone Splunk Enterprise demo environment as
+<p class="p">This solution allows you to integrate your Containers-as-a-Service (CaaS) deployment with an existing Splunk Enterprise installation or to deploy a stand-alone Splunk Enterprise demo environment as
 a Docker stack in your cloud. In both instances, Universal Forwarders are used to collect data from your applications running on your Linux and Windows worker nodes 
 in your cloud, as well as log data from the Docker platform itself and from the infrastructure VMs  and servers. 
 <a class="xref" href="#splunk__splunk-arch">Figure 12</a> shows the Splunk architecture.
@@ -5309,7 +5309,7 @@ the value of the <code class="ph codeph">splunk_ssl</code> variable is ignored. 
   
 <p class="p">You should select the Splunk deployment type that you require  by setting the variable 
 <code class="ph codeph">monitoring_stack</code> in the <code class="ph codeph">group_vars/vars</code> file to either <strong class="ph b">splunk</strong>,
- to use a standalone Splunk deployment, or <strong class="ph b">splunk_demo</strong> for the built-in version.
+ for a standalone Splunk deployment, or <strong class="ph b">splunk_demo</strong> for the built-in version.
 If you omit this variable, or if it has an invalid value, no Splunk deployment will be configured.
 </p>
 
