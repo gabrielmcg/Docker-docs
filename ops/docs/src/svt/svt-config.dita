@@ -5,7 +5,7 @@
 <body>
 <p>The Ansible playbooks are available to download at 
 <ph conkeyref="conrefs/gitrepo-link"/>. 
-By default, the  playbooks  are configured as shown in <xref href="../solution-config.dita#solution-config/architecture-3node" type="fig"/> to set up a 3 node environment. This is the 
+By default, the  playbooks  are configured <!-- TODO as shown in <xref href="../solution-config.dita#solution-config/architecture-3node" type="fig"/>--> to set up a 3 node environment. This is the 
 minimal starter configuration recommended by HPE and Docker for 
 production. 
 </p>
