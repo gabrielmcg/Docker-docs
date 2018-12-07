@@ -3,6 +3,20 @@
 <topic id="release-notes-syn-mvi2">
 <title>Release Notes</title>
 <body>
+    
+<section>
+<title>Critical security issue in the Kubernetes API Server</title>    
+
+<p>To address <xref href="https://nvd.nist.gov/vuln/detail/CVE-2018-1002105" format="html" scope="external">CVE-2018-1002105</xref>, 
+    a critical security issue in the Kubernetes API Server, 
+    Docker is using a custom build of Kubernetes 1.8.15 for UCP 3.0.7.</p>
+    
+<p>It is recommened that you specify <codeph>ucp_version: 3.0.7</codeph> in your Docker configuration - 
+    see the section <xref href="docker-config.dita"/> for more information.</p>
+
+
+</section>    
+    
 <section>
 <title>New features</title>
 

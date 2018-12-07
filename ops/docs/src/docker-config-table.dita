@@ -60,7 +60,12 @@ The playbooks were tested with 2.5.6.</entry>
 <entry>group_vars/vars</entry>      
 <entry>Version of the Docker UCP you wish to install. You can use a
 numeric version or <codeph>latest</codeph> for the most recent one.
-The playbooks were tested with UCP 3.0.6.</entry>
+The playbooks were tested with UCP 3.0.6.
+<p>To address <xref href="https://nvd.nist.gov/vuln/detail/CVE-2018-1002105" format="html" scope="external">CVE-2018-1002105</xref>, 
+    a critical security issue in the Kubernetes API Server, 
+    Docker is using a custom build of Kubernetes 1.8.15 for UCP 3.0.7.
+It is recommended that you use <codeph>3.0.7</codeph> to avoid this issue. </p>
+</entry>
 </row>
 <row>
 <entry>images_folder</entry>
