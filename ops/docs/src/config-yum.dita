@@ -7,8 +7,8 @@
 <p>The Red Hat packages required during the deployment of the solution come from two
 repositories: <codeph>rhel-7-server-rpms </codeph>and <codeph>rhel-7-server-extras-rpms</codeph>. The first repository is on the Red Hat DVD
 but the second is not. There are two options, with both options requiring a Red Hat
-Network account. Logon in your VM template using SSH with the credentials you
-configured for the root account and implement one of the two options below: </p>
+Network account. Logon to your VM template using SSH with the credentials you
+configured for the root account and then implement one of the two options below: </p>
 
 <p><b>Option 1:</b> Use Red Hat subscription manager to register your system. This is the
 easiest way and will automatically give you access to the official Red Hat repositories.

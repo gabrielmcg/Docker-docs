@@ -40,7 +40,7 @@ The playbooks have only been tested with three nodes in the ESX cluster, but the
   on a 3-node <ph conkeyref="conrefs/hardware-string"/> cluster. For each Ansible host in the inventory, you use the <codeph>esxi_hosts</codeph> 
   variable to specify on which ESX hosts the VM should be placed. 
   The following code extract shows 3 UCP VMs distributed across the three members of the cluster. 
-  This is the recommended placement as you don’t want to one node to host two UCP VMs as a failure of 
+  This is the recommended placement as you do not want to one node to host two UCP VMs since a failure of 
   that node would result in the cluster losing quorum.</p>  
   
 <codeblock>

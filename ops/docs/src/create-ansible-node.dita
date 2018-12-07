@@ -53,7 +53,7 @@ environment, you will have to install the <codeph>yum-utils</codeph> package.
 nodes, worker nodes, NFS server, logger server and load balancers.</p>-->
 
 <li><p>Install the following packages which are a mandatory requirement for the playbooks
-to function as expected. (Update pip if requested).
+to function as expected. (Update <codeph>pip</codeph> if requested).
 </p>
 
 <codeblock># yum install python-pyvmomi python-netaddr python2-jmespath python-pip gcc python-devel openssl-devel git 

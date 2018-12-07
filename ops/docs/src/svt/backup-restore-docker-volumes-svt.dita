@@ -170,7 +170,7 @@ docker_volumes_policy: 'hpe-gold'
 </p>
 
 <fig id="browse-restored-vm">
-<title>Restore virtual machine details</title> 
+<title>Browse for restored virtual machine</title> 
 <image href="../media/browse-restored-vm.png"/>
 </fig>
 

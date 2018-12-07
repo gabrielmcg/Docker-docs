@@ -232,7 +232,7 @@
 
       <topicref href="splunk-ucp-syslog.dita" navtitle="Configuring syslog in UCP"/>
       <topicref href="splunk-esx-syslog.dita" navtitle="Configuring syslog in ESX"/>
-      <topicref href="splunk-related-playbooks.dita" navtitle="Related playbooks"/>
+      <!--<topicref href="splunk-related-playbooks.dita" navtitle="Related playbooks"/>-->
       <topicref href="splunk-limitations.dita" navtitle="Limitations"/>
     </topicref>
     <topicref href="splunk/splunk-ui.dita"/>

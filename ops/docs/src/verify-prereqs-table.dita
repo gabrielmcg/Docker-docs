@@ -24,7 +24,7 @@ and spin up virtual machines. </entry>
 </row>
     <!--  conditional content -->
 <row>
-<entry>L3 Network requirements </entry>
+<entry><ph conkeyref="conrefs/hardware-string"/> Cluster </entry>
 <entry>The name of the <ph conkeyref="conrefs/hardware-string"/> cluster and the names of the members of this cluster as 
     they appear in vCenter. You will also need to know the name of the <ph conkeyref="conrefs/hardware-string"/> datastore where 
     you want to land the various virtual machines. You may have to create this datastore if you 

@@ -5,7 +5,7 @@
 <body>
 
 <section>
-<p>The <ph conkeyref="conrefs/hardware-string"/>environment is made up of proprietary <ph conkeyref="conrefs/hardware-string"/> software, VMware software and HPE firmware. 
+<p>The <ph conkeyref="conrefs/hardware-string"/> environment is made up of proprietary <ph conkeyref="conrefs/hardware-string"/> software, VMware software and HPE firmware. 
   There are interdependencies between the various components that need to be accounted for and are provided in the table below. 
   The components in <xref href="lifecycle-svt.dita#lifecycle-svt/svt-components-table-content" type="table"/> are part of the <ph conkeyref="conrefs/hardware-string"/> environment that require lifecycle management.</p>
 

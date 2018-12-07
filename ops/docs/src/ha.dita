@@ -4,11 +4,11 @@
 <title>High availability</title>
 <body>
 <p>Uptime is paramount for  businesses implementing Docker containers in business critical
-environments. The <ph conkeyref="conrefs/product-title-full-string"/> offers various levels of high
+environments. The <ph conkeyref="conrefs/product-title-full-string"/> solution offers various levels of high
 availability (HA) to support continuous availability. The Docker EE system components 
 run on multiple manager nodes in the cluster. The management plane continues to 
 operate even in the event of a manager node failure. Application containers can be 
-protected through the use of Services running on top of swarm. The swarm orchestrator 
+protected through the use of <codeph>services</codeph> running on top of swarm. The swarm orchestrator 
 works to maintain the number of containers declared as part of the service. 
 The Ansible playbooks can be modified to fit your environment and
 your high availability (HA) needs.</p>
@@ -19,13 +19,13 @@ your high availability (HA) needs.</p>
 <title>Load Balancers</title>
 
 <body>
-<p>This Reference Configuration  also deploys load balancers in the system to help with
+<p>This solution also deploys load balancers in the system to help with
 container traffic management. There are two load balancer VMs – the UCP load balancer and
 DTR load balancer. The playbooks can be configured to deploy one or more worker load
 balancers depending on the requirements of your applications. A typical load balancer architecture for
-applciations running on Docker EE Is shown in <xref href="ha.dita#load-balancers/lbs" type="fig"/>. 
+applciations running on Docker EE is shown in <xref href="ha.dita#load-balancers/lbs" type="fig"/>. 
 The playbooks now support load balancers based on VRRP, using <codeph>HAproxy</codeph> and <codeph>keepalived</codeph>.
-The solution can be deployed using these loadbalancers, external load balancers, no load balancers or 
+The solution can be deployed using these loadbalancers, or external load balancers, or no load balancers or 
 the legacy version of standalone load balancers.             
 </p>
     

@@ -4,9 +4,10 @@
 <title>Disaster Recovery</title>
 <body>
     
-<p>Recovery Time Objective (RTO) refers to the time that it takes to recover your data and applications
-while Recovery Point Objective (RPO) refers to the point in time you can recover to in the event of a disaster.
-In essence, RPO tells you how often you will need to make new backups. </p>
+<p>Recovery Time Objective (RTO) refers to the time that it takes to recover your data and
+            applications while Recovery Point Objective (RPO) refers to the point in time you can
+            recover to, in the event of a disaster. In essence, RPO tells you how often you will
+            need to make new backups. </p>
     
 <p>In order to protect your installation from disasters, you need to take regular backups and 
 transfer the backups to a safe location. This solution provides

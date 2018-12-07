@@ -3,6 +3,7 @@
 <topic id="deploying-splunk">
 <title>Deploying Splunk</title>
 <body>
-    
+<p>This section provides an overview of Splunk, outlines how to configure and run the relevant playbooks and 
+    shows how to access the UI to see the resultant Docker and Kubernetes dashboards.</p>    
 </body>
 </topic>

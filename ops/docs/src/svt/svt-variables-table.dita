@@ -30,7 +30,7 @@ The corresponding password is stored in the variable named <codeph>simplivity_pa
 </row>
 <row>
 <entry>simplivity_password</entry>
-<entry>group_vars/vault</entry>  
+<entry><b>group_vars/vault</b></entry>  
 <entry>The password for the <codeph>simplivity_username</codeph> user.</entry>  
 </row>
  

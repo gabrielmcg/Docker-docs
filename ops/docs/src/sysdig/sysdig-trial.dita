@@ -3,7 +3,11 @@
 <topic id="sysdig-trial">
 <title>Registering for Sysdig trial</title>
 <body>
-  
+
+<p>Hewlett Packard Enterprise has teamed up with Sysdig to offer a fully featured 90-day trial version of 
+    Sysdig Monitor and Secure as part of the <ph conkeyref="conrefs/product-title-full-string"/>. 
+    For more details on how to sign up, see the GitHub repository at <ph conkeyref="conrefs/gitrepo-link"/>.</p>
+
 <p>Browse to the registration page at <xref href="https://sysdig.com/partner-hpe/" format="html" scope="external"/>
     as shown in <xref href="sysdig-trial.dita#sysdig-trial/sysdig-hpe" type="fig"/>. 
 </p>

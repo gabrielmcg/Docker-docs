@@ -28,7 +28,7 @@ this decision will depend on the requirements of your applications.</p>
 failure </li>
 <li>1 Docker DTR load balancer VM to ensure access to DTR in the event of a node
 failure </li>
-<li>1 Docker worker node VM load balancer </li>
+<!--<li>1 Docker worker node VM load balancer </li>-->
 </ul>
 
 <p>By default, two load balancers are deployed to increase availability of UCP and DTR and these are placed on separate physical nodes.

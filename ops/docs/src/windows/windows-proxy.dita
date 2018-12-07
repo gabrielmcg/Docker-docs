@@ -40,7 +40,7 @@ firewall-cmd --reload
 </codeblock>
 </li>
 
-<li>Configure the location to point at the local web server, for example,  
+<li>Configure the variable to point at the local web server, for example,  
 <codeblock>windows_winrm_script: 'http://10.10.174.230/ConfigureRemotingForAnsible.ps1'</codeblock>  
 </li>
 
